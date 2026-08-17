@@ -1,0 +1,64 @@
+project:
+  type: website
+
+website:
+  title: "Fermat's Last Theorem — From Scratch"
+
+  sidebar:
+    style: "docked"
+    search: true
+    page-navigation: true
+    collapse-level: 2
+
+    contents:
+      - index.qmd
+
+      - section: "Chapter 1 — Basics"
+        contents:
+          - chapter-1/calculus-complex-analysis.qmd
+
+      - section: "Chapter 2 — Linear Algebra"
+        contents:
+          - chapter-2/linear-algebra.qmd
+          - chapter-2/matrices.qmd
+          - chapter-2/vector-spaces.qmd
+          - chapter-2/linear-transformations.qmd
+
+      - section: "Chapter 3 — Abstract Algebra"
+        contents:
+          - chapter-3/abstract-algebra.qmd
+          - chapter-3/groups.qmd
+          - chapter-3/rings.qmd
+          - chapter-3/galois-theory.qmd
+          - chapter-3/galois-representations.qmd
+          - chapter-3/p-adic.qmd
+
+      - section: "Chapter 4 — Elliptic Curves"
+        contents:
+          - chapter-4/projective-geometry.qmd
+          - chapter-4/group-law.qmd
+          - chapter-4/reduction-mod-p.qmd
+          - chapter-4/torsion-points.qmd
+          - chapter-4/invariants.qmd
+
+      - section: "Chapter 5 — Modular Forms"
+        contents:
+          - chapter-5/eta-function.qmd
+          - chapter-5/spaces-modular-forms.qmd
+          - chapter-5/hecke-operators.qmd
+          - chapter-5/l-functions.qmd
+
+      - section: "Chapter 6 — The Endgame"
+        contents:
+          - chapter-6/four-clues.qmd
+          - chapter-6/modularity-theorem.qmd
+          - chapter-6/serre-ribet-frey.qmd
+          - chapter-6/final-proof.qmd
+
+format:
+  html:
+    theme:
+      dark: darkly
+      light: flatly
+    toc: true
+

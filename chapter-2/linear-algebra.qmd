@@ -1,0 +1,13 @@
+---
+title: "Linear algebra"
+format: html
+---
+
+# Linear algebra
+
+Mathematics is not only about numbers, it is also about structure. 
+A lot of mathematics is about structures.
+Linear algebra is where we build the
+foundation of that structure.
+
+The content of this chapter is designed to be self-contained, so you do not need any prior knowledge of linear algebra to follow along. However, some familiarity with basic algebra and calculus will be helpful.

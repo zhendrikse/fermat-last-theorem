@@ -1,6 +1,14 @@
-# Fermat's Last Theorem — From Scratch
+# Introduction
 
-This project and its contents are inspired by and based on the video [Proof of Fermat Last Theorem FROM SCRATCH](https://www.youtube.com/watch?v=9f-hGSh8lF0&t=13154s) by 쉽게 풀어보는 수학이론.
+#### Fermat's Last Theorem — From Scratch
+
+---
+
+::: {.callout-note}
+**Video:** [Proof of Fermat Last Theorem FROM SCRATCH](https://www.youtube.com/watch?v=9f-hGSh8lF0)
+
+This project and its contents are inspired by and based on the video *Proof of Fermat Last Theorem FROM SCRATCH*.
+:::
 
 ## Is Fermat's Last Theorem actually interesting?
 
@@ -35,15 +43,16 @@ This project is an attempt to investigate this question.
 ## From a simple equation to modern mathematics
 
 The surprising part of Fermat's Last Theorem is not simply that the equation has no solutions.
-
 The surprising part is **what was eventually needed to prove that it has no solutions**.
 
-The road from Fermat to Wiles passes through mathematics that, at first sight, seems almost completely unrelated to the original problem:
+//TODO: Story here from book love of mathematics that high school mathematics is not representative 
+of modern mathematics.
 
-* linear algebra,
+The road from Fermat to Wiles is a journey through modern mathematics that, at first sight, seems almost completely unrelated to the original problem:
+
+* [Basic calculus and complex analysis](chapter-1/basic_calculus_and_complex_analysis.qmd),
+* [Linear algebra](chapter-2/linear-algebra.qmd),
 * abstract algebra,
-* number theory,
-* algebraic number fields,
 * elliptic curves,
 * modular forms,
 * Galois theory,
@@ -63,8 +72,6 @@ Instead, it establishes deep connections between seemingly different mathematica
 This raises a fascinating possibility.
 
 Perhaps the real mathematical content of Fermat's Last Theorem is not the statement itself, but the **mathematics that the problem led us to discover and understand**.
-
----
 
 ## What does "from scratch" mean?
 
@@ -90,8 +97,6 @@ If a theorem is introduced, we should understand why it is relevant.
 
 And when the argument becomes abstract, we should try to keep sight of the remarkably simple equation with which we started.
 
----
-
 ## A journey rather than a shortcut
 
 This is not intended to be a reproduction of Wiles' original papers. Those papers are highly technical, and understanding every detail of the complete proof requires a substantial amount of modern mathematics.
@@ -113,8 +118,6 @@ and
 will be important throughout the project.
 
 The hope is that, by the time we reach Wiles' proof, the reader will not necessarily be able to reproduce every technical argument from memory, but will understand the architecture of the proof and, more importantly, why the architecture looks the way it does.
-
----
 
 ## So, is Fermat's Last Theorem interesting?
 
