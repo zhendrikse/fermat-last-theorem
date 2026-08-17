@@ -36,6 +36,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../chapter-2/matrices.html" rel="next">
+<link href="../index.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -442,7 +444,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#linear-algebra" id="toc-linear-algebra" class="nav-link active" data-scroll-target="#linear-algebra">Linear algebra</a></li>
+  <li><a href="#why-do-we-need-this" id="toc-why-do-we-need-this" class="nav-link active" data-scroll-target="#why-do-we-need-this">Why do we need this?</a></li>
   </ul>
 </nav>
     </div>
@@ -469,10 +471,31 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="linear-algebra" class="level1">
-<h1>Linear algebra</h1>
-<p>Mathematics is not only about numbers, it is also about structure. A lot of mathematics is about structures. Linear algebra is where we build the foundation of that structure.</p>
 <p>The content of this chapter is designed to be self-contained, so you do not need any prior knowledge of linear algebra to follow along. However, some familiarity with basic algebra and calculus will be helpful.</p>
+<section id="why-do-we-need-this" class="level2">
+<h2 class="anchored" data-anchor-id="why-do-we-need-this">Why do we need this?</h2>
+<p>Mathematics is not only about numbers. It is also about <strong>structure</strong>. A large part of modern mathematics is concerned with understanding structures: what their essential properties are, how they relate to one another, and what can be learned from the transformations that preserve those properties.</p>
+<p>Linear algebra gives us some of the first and most useful tools for thinking in this way. At first, the subject may seem to be mainly about solving systems of equations, manipulating matrices, and calculating determinants. However, this misses the main point.</p>
+<p>Remember that in the introduction we said:</p>
+<blockquote class="blockquote">
+<p><strong>In mathematics, we often try to generalize concepts, theorems, and equations.</strong></p>
+</blockquote>
+<p>Here, the deeper idea is that seemingly unrelated mathematical problems can often be described using the same underlying structure.</p>
+<p>A striking example of this is the <strong>Fourier transform</strong>. Fourier analysis may seem to belong to a completely different part of mathematics. Yet from the perspective of linear algebra, we can think of a function as an element of a vector space. This allows us to ask:</p>
+<blockquote class="blockquote">
+<p><strong>What are the right basis vectors, and what are the coordinates of our object in that basis?</strong></p>
+</blockquote>
+<p>Just as an ordinary vector can be written as a linear combination of basis vectors, a function can be written as a linear combination of basis functions. The familiar sine and cosine waves play the role of such basis functions, forming an <strong>orthonormal basis</strong> with respect to a suitable inner product. The Fourier transform then gives us the coordinates of our function with respect to this basis.</p>
+<p>This gives us a completely different way of looking at a problem. Instead of asking what a complicated function does directly, we can ask how much of each basic frequency it contains.</p>
+<p>What is striking is that problems involving waves, sound, differential equations, or signal processing can all lead to essentially the same mathematical question:</p>
+<blockquote class="blockquote">
+<p><strong>What is the right basis, and what are the coordinates of our object with respect to that basis?</strong></p>
+</blockquote>
+<p>This is one of the reasons linear algebra is so powerful. It gives us a common language in which very different mathematical problems can reveal the same underlying structure.</p>
+<p>The ideas developed in this chapter will reappear in increasingly sophisticated forms. In particular, the language of vector spaces and linear transformations will eventually lead us toward <strong>representations</strong> of groups and, ultimately, <strong>Galois representations</strong>.</p>
+<blockquote class="blockquote">
+<p><strong>The goal of linear algebra is not simply to learn how to calculate with matrices. The goal is to learn how to recognize structure.</strong></p>
+</blockquote>
 
 
 </section>
@@ -564,7 +587,7 @@ ul.task-list li input[type="checkbox"] {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/zhendrikse\.github\.io\/fermat-last-theorem\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -891,6 +914,18 @@ ul.task-list li input[type="checkbox"] {
     }
   });
   </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../index.html" class="pagination-link" aria-label="Introduction">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Introduction</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../chapter-2/matrices.html" class="pagination-link" aria-label="Matrices, linear systems, and determinants">
+        <span class="nav-page-text">Matrices, linear systems, and determinants</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 
 

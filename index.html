@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Fermat’s Last Theorem — From Scratch</title>
+<title>Introduction – Fermat’s Last Theorem — From Scratch</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -36,6 +36,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./chapter-2/linear-algebra.html" rel="next">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -471,28 +472,42 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a>
+  <li><a href="#fermats-last-theorem-from-scratch" id="toc-fermats-last-theorem-from-scratch" class="nav-link active" data-scroll-target="#fermats-last-theorem-from-scratch">Fermat’s Last Theorem — From Scratch</a>
   <ul class="collapse">
   <li><a href="#is-fermats-last-theorem-actually-interesting" id="toc-is-fermats-last-theorem-actually-interesting" class="nav-link" data-scroll-target="#is-fermats-last-theorem-actually-interesting">Is Fermat’s Last Theorem actually interesting?</a></li>
-  <li><a href="#from-a-simple-equation-to-modern-mathematics" id="toc-from-a-simple-equation-to-modern-mathematics" class="nav-link" data-scroll-target="#from-a-simple-equation-to-modern-mathematics">From a simple equation to modern mathematics</a></li>
   <li><a href="#what-does-from-scratch-mean" id="toc-what-does-from-scratch-mean" class="nav-link" data-scroll-target="#what-does-from-scratch-mean">What does “from scratch” mean?</a></li>
+  <li><a href="#from-a-simple-equation-to-modern-mathematics" id="toc-from-a-simple-equation-to-modern-mathematics" class="nav-link" data-scroll-target="#from-a-simple-equation-to-modern-mathematics">From a simple equation to modern mathematics</a></li>
+  <li><a href="#my-motivation" id="toc-my-motivation" class="nav-link" data-scroll-target="#my-motivation">My motivation</a></li>
   <li><a href="#a-journey-rather-than-a-shortcut" id="toc-a-journey-rather-than-a-shortcut" class="nav-link" data-scroll-target="#a-journey-rather-than-a-shortcut">A journey rather than a shortcut</a></li>
-  <li><a href="#so-is-fermats-last-theorem-interesting" id="toc-so-is-fermats-last-theorem-interesting" class="nav-link" data-scroll-target="#so-is-fermats-last-theorem-interesting">So, is Fermat’s Last Theorem interesting?</a></li>
   </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Introduction</h1>
+</div>
 
 
 
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
 
 
-<section id="introduction" class="level1">
-<h1>Introduction</h1>
-<section id="fermats-last-theorem-from-scratch" class="level4">
-<h4 class="anchored" data-anchor-id="fermats-last-theorem-from-scratch">Fermat’s Last Theorem — From Scratch</h4>
+</header>
+
+
+<section id="fermats-last-theorem-from-scratch" class="level1">
+<h1>Fermat’s Last Theorem — From Scratch</h1>
 <hr>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -505,21 +520,26 @@ Note
 </div>
 <div class="callout-body-container callout-body">
 <p><strong>Video:</strong> <a href="https://www.youtube.com/watch?v=9f-hGSh8lF0">Proof of Fermat Last Theorem FROM SCRATCH</a></p>
-<p>This project and its contents are inspired by and based on the video <em>Proof of Fermat Last Theorem FROM SCRATCH</em>.</p>
+<p>This project and its contents are for a large part inspired by and based on the video <em>Proof of Fermat Last Theorem FROM SCRATCH</em>.</p>
 </div>
 </div>
-</section>
 <section id="is-fermats-last-theorem-actually-interesting" class="level2">
 <h2 class="anchored" data-anchor-id="is-fermats-last-theorem-actually-interesting">Is Fermat’s Last Theorem actually interesting?</h2>
 <p>Many of us can remember the Pythagorean theorem from high school. It is a simple and elegant statement about right triangles:</p>
 <p><span class="math display">\[
 x^2 + y^2 = z^2
 \]</span></p>
-<p>In mathematics, we often try to generalize concepts, theorems or equations like this. One natural generalization here would be to replace the exponent value of two with any arbitrary natural number <span class="math inline">\(n\)</span>:</p>
+<blockquote class="blockquote">
+<p><strong>In mathematics, we often try to generalize concepts, theorems and/or equations</strong></p>
+</blockquote>
+<p>One natural generalization here would be to replace the exponent value of two with any arbitrary natural number <span class="math inline">\(n\)</span>:</p>
 <p><span class="math display">\[
 x^n + y^n = z^n
 \]</span></p>
-<p>Fermat’s Last Theorem makes a remarkably simple claim: if <span class="math inline">\(n &gt; 2\)</span>, there are no positive integers <span class="math inline">\(x\)</span>, <span class="math inline">\(y\)</span>, and <span class="math inline">\(z\)</span> that satisfy it. This may come as a surprise. After all, we known that we can easily find infinitely many positive integers that satisfy the equation for <span class="math inline">\(n=2\)</span>, for example <span class="math inline">\(3^2 + 4^2 = 5^2\)</span>.</p>
+<p>Fermat’s Last Theorem (FLT) makes a remarkably simple claim: if <span class="math inline">\(n &gt; 2\)</span>, there are no positive integers <span class="math inline">\(x\)</span>, <span class="math inline">\(y\)</span>, and <span class="math inline">\(z\)</span> that satisfy it. This may come as a surprise. After all, we known that we can easily find infinitely many positive integers that satisfy the equation for <span class="math inline">\(n=2\)</span>, for example:</p>
+<p><span class="math display">\[
+3^2 + 4^2 = 5^2
+\]</span></p>
 <p>So why should the case <span class="math inline">\(n&gt;2\)</span> be so special? And why did it take more than three centuries to prove?</p>
 <p>Usually the story starts with that fact that in 1637 Pierre de Fermat wrote in the margin of a book that he had discovered a “truly marvelous” proof, but that the margin was too small to contain it. The problem remained unsolved for centuries, attracting some of the greatest mathematicians in history, until Andrew Wiles finally announced a proof in 1993.</p>
 <p>I vividly remember my excitement when I read on <a href="https://slashdot.org">slashdot.org</a> that Wiles’ finally managed to provide a proof.</p>
@@ -529,70 +549,52 @@ x^n + y^n = z^n
 </blockquote>
 <p>This project is an attempt to investigate this question.</p>
 </section>
-<section id="from-a-simple-equation-to-modern-mathematics" class="level2">
-<h2 class="anchored" data-anchor-id="from-a-simple-equation-to-modern-mathematics">From a simple equation to modern mathematics</h2>
-<p>The surprising part of Fermat’s Last Theorem is not simply that the equation has no solutions. The surprising part is <strong>what was eventually needed to prove that it has no solutions</strong>.</p>
-<p>//TODO: Story here from book love of mathematics that high school mathematics is not representative of modern mathematics.</p>
-<p>The road from Fermat to Wiles is a journey through modern mathematics that, at first sight, seems almost completely unrelated to the original problem:</p>
-<ul>
-<li><a href="chapter-1/basic_calculus_and_complex_analysis.qmd">Basic calculus and complex analysis</a>,</li>
-<li><a href="./chapter-2/linear-algebra.html">Linear algebra</a>,</li>
-<li>abstract algebra,</li>
-<li>elliptic curves,</li>
-<li>modular forms,</li>
-<li>Galois theory,</li>
-<li>Galois representations,</li>
-<li>and deformation theory.</li>
-</ul>
-<p>The eventual proof does not attack the equation</p>
-<p><span class="math display">\[
-x^n+y^n=z^n
-\]</span></p>
-<p>by an increasingly elaborate search for integers.</p>
-<p>Instead, it establishes deep connections between seemingly different mathematical objects. Fermat’s Last Theorem then emerges as a consequence of these connections.</p>
-<p>This raises a fascinating possibility.</p>
-<p>Perhaps the real mathematical content of Fermat’s Last Theorem is not the statement itself, but the <strong>mathematics that the problem led us to discover and understand</strong>.</p>
-</section>
 <section id="what-does-from-scratch-mean" class="level2">
 <h2 class="anchored" data-anchor-id="what-does-from-scratch-mean">What does “from scratch” mean?</h2>
-<p>The purpose of this website is to follow that journey as carefully as possible.</p>
-<p>The goal is not merely to state Wiles’ proof, or to give a high-level description such as</p>
+<p>The purpose of this website is to follow that journey as carefully as possible. The goal is not merely to state Wiles’ proof, or to give a high-level description such as</p>
 <blockquote class="blockquote">
 <p>“Frey constructed an elliptic curve, Ribet proved a theorem, and Wiles proved modularity.”</p>
 </blockquote>
-<p>That tells us <em>what happened</em>, but not necessarily <em>why</em>.</p>
-<p>Instead, we will try to build the necessary mathematics step by step.</p>
-<p>We will start with concepts that are familiar from undergraduate mathematics and gradually introduce the more advanced ideas that eventually become necessary.</p>
-<p>The intention is to keep asking the same question:</p>
+<p>That tells us <em>what happened</em>, but not necessarily <em>why</em>. Instead, we will try to build the necessary mathematics step by step.</p>
+<p>We will start with concepts that are familiar from undergraduate mathematics and gradually introduce the more advanced ideas that eventually become necessary. The intention is to keep asking the same question:</p>
 <blockquote class="blockquote">
 <p><strong>Why do we need this?</strong></p>
 </blockquote>
-<p>If a new mathematical object appears, we should understand what problem it solves.</p>
-<p>If a theorem is introduced, we should understand why it is relevant.</p>
-<p>And when the argument becomes abstract, we should try to keep sight of the remarkably simple equation with which we started.</p>
+<p>If a new mathematical object appears, we should understand what problem it solves. If a theorem is introduced, we should understand why it is relevant. And when the argument becomes abstract, we should try to keep sight of the remarkably simple equation with which we started.</p>
+</section>
+<section id="from-a-simple-equation-to-modern-mathematics" class="level2">
+<h2 class="anchored" data-anchor-id="from-a-simple-equation-to-modern-mathematics">From a simple equation to modern mathematics</h2>
+<p>The surprising part of Fermat’s Last Theorem is not simply that the equation has no solutions. The surprising part is <strong>what lies behind that simple statement</strong>.</p>
+<p>At first, FLT may seem to be a problem just about integers. We might therefore expect the proof to involve clever manipulations of integers, perhaps together with some increasingly sophisticated number theory. And indeed, that is how the story begins.</p>
+<p>But in mathematics, we often encounter a problem in one field and eventually discover that its real structure is much easier to understand in another. As mathematicians tried to understand FLT more deeply, this happened as well. Not only did the problem itself turn out to be connected to different fields of mathematics, it also made use of some connections/bridges between those different fields:</p>
+<ul>
+<li><a href="./chapter-2/linear-algebra.html">Linear algebra</a>,</li>
+<li>abstract algebra (groups and Galois theory),</li>
+<li>elliptic curves,</li>
+<li>modular forms</li>
+</ul>
+<p>So the topics discussed here are not simply a collection of increasingly complicated tools that happen to be useful for proving the theorem, but constitute a means for the unification of the different fields in mathematics as well (Langlands program). As such, it is very similar to the standard model in physics, one of the greatest achievements of unification of the four different physical forces (except gravity).</p>
+</section>
+<section id="my-motivation" class="level2">
+<h2 class="anchored" data-anchor-id="my-motivation">My motivation</h2>
+<p>Fermat’s Last Theorem is a particularly beautiful example of a recurring phenomenon in both physics and mathematics:</p>
+<blockquote class="blockquote">
+<p><strong>A simple question can lead us to a much deeper structure than we could have anticipated.</strong></p>
+</blockquote>
+<p>For me, the history of Fermat’s Last Theorem is therefore not merely the story of finding a proof. It is also the story of discovering connections between different fields of mathematics.</p>
+<p>That is primarily what makes the theorem interesting to me.</p>
+<ul>
+<li>Not the hype.</li>
+<li>Not the legend of the margin.</li>
+<li>Not even the fact that it took more than three centuries to prove.</li>
+</ul>
+<p>The interesting part is what structures are hiding underneath.</p>
 </section>
 <section id="a-journey-rather-than-a-shortcut" class="level2">
 <h2 class="anchored" data-anchor-id="a-journey-rather-than-a-shortcut">A journey rather than a shortcut</h2>
 <p>This is not intended to be a reproduction of Wiles’ original papers. Those papers are highly technical, and understanding every detail of the complete proof requires a substantial amount of modern mathematics.</p>
 <p>Instead, this project aims to construct a coherent path toward the proof.</p>
-<p>Some parts will be elementary. Others will become very abstract. Some arguments may be simplified, while others will require us to slow down and develop considerable theory.</p>
-<p>Where a complete proof is beyond the intended scope, that should be made explicit.</p>
-<p>The distinction between</p>
-<p><strong>“we have proved this”</strong></p>
-<p>and</p>
-<p><strong>“we are using this as a theorem”</strong></p>
-<p>will be important throughout the project.</p>
 <p>The hope is that, by the time we reach Wiles’ proof, the reader will not necessarily be able to reproduce every technical argument from memory, but will understand the architecture of the proof and, more importantly, why the architecture looks the way it does.</p>
-</section>
-<section id="so-is-fermats-last-theorem-interesting" class="level2">
-<h2 class="anchored" data-anchor-id="so-is-fermats-last-theorem-interesting">So, is Fermat’s Last Theorem interesting?</h2>
-<p>We will postpone the answer.</p>
-<p>For now, we have only an equation:</p>
-<p><span class="math display">\[
-x^n+y^n=z^n.
-\]</span></p>
-<p>It looks innocent.</p>
-<p>The rest of this project is an attempt to find out just how much mathematics is hiding inside it.</p>
 
 
 </section>
@@ -685,7 +687,7 @@ x^n+y^n=z^n.
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/zhendrikse\.github\.io\/fermat-last-theorem\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -1012,6 +1014,15 @@ x^n+y^n=z^n.
     }
   });
   </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./chapter-2/linear-algebra.html" class="pagination-link" aria-label="Linear algebra">
+        <span class="nav-page-text">Linear algebra</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 
 
