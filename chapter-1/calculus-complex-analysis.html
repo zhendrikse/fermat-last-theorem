@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Hello, Quarto – Fermat’s Last Theorem — From Scratch</title>
+<title>Basic calculus &amp; complex analysis – Fermat's Last Theorem — From Scratch</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -29,25 +29,27 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-f9576fd48472fd5cf4ef5011d33b3d99.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-d700665feb99415b95902130766537d1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../chapter-2/linear-algebra.html" rel="next">
+<link href="../chapter-1/basic-set-number-theory.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-f9576fd48472fd5cf4ef5011d33b3d99.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-d700665feb99415b95902130766537d1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -277,9 +279,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
-      Fermat's Last Theorem — From Scratch
-      </li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapter-1/introduction.html">Chapter 1 — Basics</a></li><li class="breadcrumb-item"><a href="../chapter-1/calculus-complex-analysis.html">Basic calculus &amp; complex analysis</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -294,7 +294,7 @@ window.Quarto = {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Fermat’s Last Theorem — From Scratch</a> 
+      <a href="../">Fermat’s Last Theorem — From Scratch</a> 
         <div class="sidebar-tools-main">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
@@ -309,7 +309,7 @@ window.Quarto = {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Fermat’s Last Theorem — From Scratch</span></a>
   </div>
 </li>
@@ -324,19 +324,19 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./chapter-1/introduction.html" class="sidebar-item-text sidebar-link">
+  <a href="../chapter-1/introduction.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./chapter-1/basic-set-number-theory.html" class="sidebar-item-text sidebar-link">
+  <a href="../chapter-1/basic-set-number-theory.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Basic set &amp; number theory</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./chapter-1/calculus-complex-analysis.html" class="sidebar-item-text sidebar-link">
+  <a href="../chapter-1/calculus-complex-analysis.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Basic calculus &amp; complex analysis</span></a>
   </div>
 </li>
@@ -353,25 +353,25 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./chapter-2/linear-algebra.html" class="sidebar-item-text sidebar-link">
+  <a href="../chapter-2/linear-algebra.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Linear algebra</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./chapter-2/matrices.html" class="sidebar-item-text sidebar-link">
+  <a href="../chapter-2/matrices.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Matrices, linear systems, and determinants</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./chapter-2/vector-spaces.html" class="sidebar-item-text sidebar-link">
+  <a href="../chapter-2/vector-spaces.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Vector spaces, basis, and dimension</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./chapter-2/linear-transformations.html" class="sidebar-item-text sidebar-link">
+  <a href="../chapter-2/linear-transformations.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Linear transformations, eigenvalues, inner products, and the spectral theorem</span></a>
   </div>
 </li>
@@ -488,9 +488,7 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#markdown" id="toc-markdown" class="nav-link active" data-scroll-target="#markdown">Markdown</a></li>
-  <li><a href="#code-cell" id="toc-code-cell" class="nav-link" data-scroll-target="#code-cell">Code Cell</a></li>
-  <li><a href="#equations" id="toc-equations" class="nav-link" data-scroll-target="#equations">Equations</a></li>
+  <li><a href="#multivariable-function" id="toc-multivariable-function" class="nav-link active" data-scroll-target="#multivariable-function">Multivariable function</a></li>
   </ul>
 </nav>
     </div>
@@ -498,9 +496,9 @@ window.Quarto = {
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapter-1/introduction.html">Chapter 1 — Basics</a></li><li class="breadcrumb-item"><a href="../chapter-1/calculus-complex-analysis.html">Basic calculus &amp; complex analysis</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Hello, Quarto</h1>
+<h1 class="title">Basic calculus &amp; complex analysis</h1>
 </div>
 
 
@@ -517,33 +515,11 @@ window.Quarto = {
 </header>
 
 
-<section id="markdown" class="level2">
-<h2 class="anchored" data-anchor-id="markdown">Markdown</h2>
-<p>Markdown is an easy to read and write text format:</p>
-<ul>
-<li>It’s <em>plain text</em> so works well with version control</li>
-<li>It can be <strong>rendered</strong> into HTML, PDF, and more</li>
-<li>Learn more at: <a href="https://quarto.org/docs/authoring/" class="uri">https://quarto.org/docs/authoring/</a></li>
-</ul>
-</section>
-<section id="code-cell" class="level2">
-<h2 class="anchored" data-anchor-id="code-cell">Code Cell</h2>
-<p>Here is a JavaScript code cell:</p>
-<button id="knop">
-Klik mij
-</button>
-<script>
-    console.log("!!!!Hello, Quarto!");
-document.querySelector("#knop").onclick = () => {
-  alert("Hallo!");
-};
-</script>
-</section>
-<section id="equations" class="level2">
-<h2 class="anchored" data-anchor-id="equations">Equations</h2>
-<p>Use LaTeX to write equations:</p>
+<section id="multivariable-function" class="level2">
+<h2 class="anchored" data-anchor-id="multivariable-function">Multivariable function</h2>
+<p>A multivariable function is a map</p>
 <p><span class="math display">\[
-\chi' = \sum_{i=1}^n k_i s_i^2
+f: \mathbb{R}^n \rightarrow \mathbb{R}
 \]</span></p>
 
 
@@ -963,6 +939,18 @@ document.querySelector("#knop").onclick = () => {
     }
   });
   </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../chapter-1/basic-set-number-theory.html" class="pagination-link" aria-label="Basic set &amp;amp; number theory">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Basic set &amp; number theory</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../chapter-2/linear-algebra.html" class="pagination-link" aria-label="Linear algebra">
+        <span class="nav-page-text">Linear algebra</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 
 

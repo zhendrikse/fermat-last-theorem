@@ -310,7 +310,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Introduction</span></a>
+ <span class="menu-text">Fermat’s Last Theorem — From Scratch</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -323,8 +323,23 @@ window.Quarto = {
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
- <span class="menu-text">chapter-1/calculus-complex-analysis.qmd</span>
-  </li>
+  <div class="sidebar-item-container"> 
+  <a href="../chapter-1/introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapter-1/basic-set-number-theory.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Basic set &amp; number theory</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapter-1/calculus-complex-analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Basic calculus &amp; complex analysis</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -503,7 +518,6 @@ window.Quarto = {
   <li><a href="#example-1-invertible-2-times-2-matrix" id="toc-example-1-invertible-2-times-2-matrix" class="nav-link" data-scroll-target="#example-1-invertible-2-times-2-matrix">Example 1: invertible <span class="math inline">\(2 \times 2\)</span> matrix</a></li>
   <li><a href="#example-2-invertible-3-times-3-matrix" id="toc-example-2-invertible-3-times-3-matrix" class="nav-link" data-scroll-target="#example-2-invertible-3-times-3-matrix">Example 2: invertible <span class="math inline">\(3 \times 3\)</span> matrix</a></li>
   <li><a href="#example-3-a-non-invertible-matrix" id="toc-example-3-a-non-invertible-matrix" class="nav-link" data-scroll-target="#example-3-a-non-invertible-matrix">Example 3: a non-invertible matrix</a></li>
-  <li><a href="#example-1" id="toc-example-1" class="nav-link" data-scroll-target="#example-1">Example 1</a></li>
   </ul></li>
   <li><a href="#the-determinant" id="toc-the-determinant" class="nav-link" data-scroll-target="#the-determinant">The Determinant</a></li>
   <li><a href="#matrix-groups-notation" id="toc-matrix-groups-notation" class="nav-link" data-scroll-target="#matrix-groups-notation">Matrix Groups: Notation</a>
@@ -1024,14 +1038,8 @@ c &amp;&amp; d
 0 &amp;&amp; 0
 \end{pmatrix}\neq I_2
 \]</span></p>
-<p>So not every matrix as an inverse!</p>
-<p>A square matrix <span class="math inline">\(A\)</span> is <strong>invertible</strong> if an <strong>inverse</strong> matrix <span class="math inline">\(_{-1}\)</span> exists that satisfies:</p>
-<p><span class="math display">\[
-AA_{-1} = A_{-1}A = I_n
-\]</span></p>
-</section>
-<section id="example-1" class="level3">
-<h3 class="anchored" data-anchor-id="example-1">Example 1</h3>
+<p>So not every matrix as an inverse! Some matrices have inverses, others don’t.</p>
+<p>Using this, we can actually solve the above system of linear equations.</p>
 <p><span class="math display">\[
 \begin{cases}
 2x + 3y = 13 \\
@@ -1083,7 +1091,7 @@ y
 3
 \end{pmatrix}
 \]</span></p>
-<p>Now that we learned about inverse matrices, we would like to find the inverse of</p>
+<p>Now that we learned about inverse matrices, we would like to find the inverse of a general matrix</p>
 <p><span class="math display">\[
 \begin{pmatrix}
 a &amp;&amp; b \\
