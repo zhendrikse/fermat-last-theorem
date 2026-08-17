@@ -3,8 +3,6 @@ title: "Matrices, linear systems, and determinants"
 format: html
 ---
 
-### Copyright notice
-
 ::: {.callout-note}
 **Video:** [Matrices, Linear Systems, and Determinants — 1:07:03](https://www.youtube.com/watch?v=9f-hGSh8lF0&t=4023s)
 

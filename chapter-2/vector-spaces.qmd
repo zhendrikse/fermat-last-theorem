@@ -3,8 +3,6 @@ title: "Vector spaces, basis, and dimension"
 format: html
 ---
 
-### Copyright notice
-
 ::: {.callout-note}
 **Video:** [Matrices, Linear Systems, and Determinants — 1:40:28](https://www.youtube.com/watch?v=9f-hGSh8lF0&t=6028s)
 

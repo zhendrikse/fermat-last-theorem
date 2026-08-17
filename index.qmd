@@ -1,36 +1,45 @@
-# Introduction
+---
+title: "Introduction"
+format: html
+---
 
-#### Fermat's Last Theorem — From Scratch
+# Fermat's Last Theorem — From Scratch
 
 ---
 
 ::: {.callout-note}
 **Video:** [Proof of Fermat Last Theorem FROM SCRATCH](https://www.youtube.com/watch?v=9f-hGSh8lF0)
 
-This project and its contents are inspired by and based on the video *Proof of Fermat Last Theorem FROM SCRATCH*.
+This project and its contents are for a large part inspired by and based on the video *Proof of Fermat Last Theorem FROM SCRATCH*.
 :::
 
 ## Is Fermat's Last Theorem actually interesting?
 
-Many of us can remember the Pythagorean theorem from high school. It is a simple and elegant statement about right triangles:
+Many of us can remember the 
+[Pythagorean theorem](https://en.wikipedia.org/wiki/Pythagorean_theorem) from high school. It is a simple and elegant statement about right triangles:
 
 $$
 x^2 + y^2 = z^2
 $$
 
-In mathematics, we often try to generalize concepts, theorems or equations like this. One natural generalization here would be to replace the exponent value of two with any arbitrary natural number $n$:
+> **In mathematics, we often try to generalize concepts, theorems and/or equations**
+
+One natural generalization here would be to replace the exponent value of two with any arbitrary natural number $n$:
 
 $$
 x^n + y^n = z^n
 $$
 
-Fermat's Last Theorem makes a remarkably simple claim: if $n > 2$, there are no positive integers $x$, $y$, and $z$ that satisfy it. This may come as a surprise. After all, we known that we can easily find infinitely many positive integers that satisfy the equation for $n=2$,
-for example $3^2 + 4^2 = 5^2$.
+Fermat's Last Theorem (FLT) makes a remarkably simple claim: if $n > 2$, there are no positive integers $x$, $y$, and $z$ that satisfy it. This may come as a surprise. After all, we known that we can easily find infinitely many positive integers that satisfy the equation for $n=2$, for example:
+
+$$
+3^2 + 4^2 = 5^2
+$$
 
 So why should the case $n>2$ be so special?
 And why did it take more than three centuries to prove?
 
-Usually the story starts with that fact that in 1637 Pierre de Fermat wrote in the margin of a book that he had discovered a "truly marvelous" proof, but that the margin was too small to contain it. The problem remained unsolved for centuries, attracting some of the greatest mathematicians in history, until Andrew Wiles finally announced a proof in 1993.
+Usually the story starts with that fact that in 1637 [Pierre de Fermat](https://en.wikipedia.org/wiki/Pierre_de_Fermat) wrote in the margin of a book that he had discovered a "truly marvelous" proof, but that the margin was too small to contain it. The problem remained unsolved for centuries, attracting some of the greatest mathematicians in history, until [Andrew Wiles](https://en.wikipedia.org/wiki/Andrew_Wiles) finally announced a proof in 1993.
 
 I vividly remember my excitement when I read on [slashdot.org](https://slashdot.org) that Wiles' finally managed to provide a proof. 
 
@@ -40,62 +49,52 @@ But this story leaves open a more interesting question:
 
 This project is an attempt to investigate this question.
 
-## From a simple equation to modern mathematics
-
-The surprising part of Fermat's Last Theorem is not simply that the equation has no solutions.
-The surprising part is **what was eventually needed to prove that it has no solutions**.
-
-//TODO: Story here from book love of mathematics that high school mathematics is not representative 
-of modern mathematics.
-
-The road from Fermat to Wiles is a journey through modern mathematics that, at first sight, seems almost completely unrelated to the original problem:
-
-* [Basic calculus and complex analysis](chapter-1/basic_calculus_and_complex_analysis.qmd),
-* [Linear algebra](chapter-2/linear-algebra.qmd),
-* abstract algebra,
-* elliptic curves,
-* modular forms,
-* Galois theory,
-* Galois representations,
-* and deformation theory.
-
-The eventual proof does not attack the equation
-
-$$
-x^n+y^n=z^n
-$$
-
-by an increasingly elaborate search for integers.
-
-Instead, it establishes deep connections between seemingly different mathematical objects. Fermat's Last Theorem then emerges as a consequence of these connections.
-
-This raises a fascinating possibility.
-
-Perhaps the real mathematical content of Fermat's Last Theorem is not the statement itself, but the **mathematics that the problem led us to discover and understand**.
-
 ## What does "from scratch" mean?
 
-The purpose of this website is to follow that journey as carefully as possible.
-
-The goal is not merely to state Wiles' proof, or to give a high-level description such as
+The purpose of this website is to follow that journey as carefully as possible. The goal is not merely to state Wiles' proof, or to give a high-level description such as
 
 > "Frey constructed an elliptic curve, Ribet proved a theorem, and Wiles proved modularity."
 
-That tells us *what happened*, but not necessarily *why*.
-
-Instead, we will try to build the necessary mathematics step by step.
-
-We will start with concepts that are familiar from undergraduate mathematics and gradually introduce the more advanced ideas that eventually become necessary.
-
-The intention is to keep asking the same question:
+That tells us *what happened*, but not necessarily *why*. Our approach is different in precisely this aspect: apart from introducing the necessary (fields of) mathematics, the intention is to keep asking the same question:
 
 > **Why do we need this?**
 
-If a new mathematical object appears, we should understand what problem it solves.
+If a new mathematical object appears, we should understand what problem it solves. If a theorem is introduced, we should understand why it is relevant. And when the argument becomes abstract, we should try to keep sight of the remarkably simple equation with which we started.
 
-If a theorem is introduced, we should understand why it is relevant.
+We will start with concepts that are familiar from undergraduate mathematics and gradually introduce the more advanced ideas that eventually become necessary. 
 
-And when the argument becomes abstract, we should try to keep sight of the remarkably simple equation with which we started.
+## From a simple equation to modern mathematics
+
+The surprising part of Fermat's Last Theorem is not simply that the equation has no solutions. The surprising part is **what lies behind that simple statement**.
+
+At first, FLT may seem to be a problem just about integers. We might therefore expect the proof to involve clever manipulations of integers, perhaps together with some increasingly sophisticated number theory. And indeed, that is how the story begins.
+
+But in mathematics, we often encounter a problem in one field and eventually discover that its real structure is much easier to understand in another. As mathematicians tried to understand FLT more deeply, this happened as well. Not only did the problem itself turn out to be connected to different fields of mathematics, it also made use of some connections/bridges between those different fields:
+
+* [Linear algebra](chapter-2/linear-algebra.qmd),
+* abstract algebra (groups and Galois theory),
+* elliptic curves,
+* modular forms
+
+So the topics discussed here are not simply a collection of increasingly complicated tools that happen to be useful for proving the theorem, but
+constitute a means for the unification of the different fields in
+mathematics as well ([Langlands program](https://en.wikipedia.org/wiki/Langlands_program)). As such, it is very similar to the [standard model](https://en.wikipedia.org/wiki/Standard_Model) in physics, one of the greatest achievements in unifying the four different physical forces (except gravity).
+
+## My motivation
+
+Fermat's Last Theorem is a particularly beautiful example of a recurring phenomenon in both physics and mathematics:
+
+> **A simple question can lead us to a much deeper structure than we could have anticipated.**
+
+For me, the history of Fermat's Last Theorem is therefore not merely the story of finding a proof. It is also the story of discovering connections between different fields of mathematics.
+
+That is primarily what makes the theorem interesting to me.
+
+* Not the hype.
+* Not the legend of the margin.
+* Not even the fact that it took more than three centuries to prove.
+
+The interesting part is what structures are hiding underneath.
 
 ## A journey rather than a shortcut
 
@@ -103,32 +102,4 @@ This is not intended to be a reproduction of Wiles' original papers. Those paper
 
 Instead, this project aims to construct a coherent path toward the proof.
 
-Some parts will be elementary. Others will become very abstract. Some arguments may be simplified, while others will require us to slow down and develop considerable theory.
-
-Where a complete proof is beyond the intended scope, that should be made explicit.
-
-The distinction between
-
-**"we have proved this"**
-
-and
-
-**"we are using this as a theorem"**
-
-will be important throughout the project.
-
 The hope is that, by the time we reach Wiles' proof, the reader will not necessarily be able to reproduce every technical argument from memory, but will understand the architecture of the proof and, more importantly, why the architecture looks the way it does.
-
-## So, is Fermat's Last Theorem interesting?
-
-We will postpone the answer.
-
-For now, we have only an equation:
-
-$$
-x^n+y^n=z^n.
-$$
-
-It looks innocent.
-
-The rest of this project is an attempt to find out just how much mathematics is hiding inside it.

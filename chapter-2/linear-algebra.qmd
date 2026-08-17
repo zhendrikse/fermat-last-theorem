@@ -3,11 +3,34 @@ title: "Linear algebra"
 format: html
 ---
 
-# Linear algebra
-
-Mathematics is not only about numbers, it is also about structure. 
-A lot of mathematics is about structures.
-Linear algebra is where we build the
-foundation of that structure.
-
 The content of this chapter is designed to be self-contained, so you do not need any prior knowledge of linear algebra to follow along. However, some familiarity with basic algebra and calculus will be helpful.
+
+## Why do we need this?
+
+Mathematics is not only about numbers. It is also about **structure**. A large part of modern mathematics is concerned with understanding structures: what their essential properties are, how they relate to one another, and what can be learned from the transformations that preserve those properties.
+
+Linear algebra gives us some of the first and most useful tools for thinking in this way. At first, the subject may seem to be mainly about solving systems of equations, manipulating matrices, and calculating determinants. However, this misses the main point.
+
+Remember that in the introduction we said:
+
+> **In mathematics, we often try to generalize concepts, theorems, and equations.**
+
+Here, the deeper idea is that seemingly unrelated mathematical problems can often be described using the same underlying structure.
+
+A striking example of this is the **Fourier transform**. Fourier analysis may seem to belong to a completely different part of mathematics. Yet from the perspective of linear algebra, we can think of a function as an element of a vector space. This allows us to ask:
+
+> **What are the right basis vectors, and what are the coordinates of our object in that basis?**
+
+Just as an ordinary vector can be written as a linear combination of basis vectors, a function can be written as a linear combination of basis functions. The familiar sine and cosine waves play the role of such basis functions, forming an **orthonormal basis** with respect to a suitable inner product. The Fourier transform then gives us the coordinates of our function with respect to this basis.
+
+This gives us a completely different way of looking at a problem. Instead of asking what a complicated function does directly, we can ask how much of each basic frequency it contains.
+
+What is striking is that problems involving waves, sound, differential equations, or signal processing can all lead to essentially the same mathematical question:
+
+> **What is the right basis, and what are the coordinates of our object with respect to that basis?**
+
+This is one of the reasons linear algebra is so powerful. It gives us a common language in which very different mathematical problems can reveal the same underlying structure.
+
+The ideas developed in this chapter will reappear in increasingly sophisticated forms. In particular, the language of vector spaces and linear transformations will eventually lead us toward **representations** of groups and, ultimately, **Galois representations**.
+
+> **The goal of linear algebra is not simply to learn how to calculate with matrices. The goal is to learn how to recognize structure.**

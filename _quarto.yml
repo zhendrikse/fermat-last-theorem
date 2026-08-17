@@ -3,11 +3,11 @@ project:
 
 website:
   title: "Fermat's Last Theorem — From Scratch"
+  page-navigation: true
 
   sidebar:
     style: "docked"
     search: true
-    page-navigation: true
     collapse-level: 2
 
     contents:
