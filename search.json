@@ -22,14 +22,173 @@
     ]
   },
   {
-    "objectID": "chapter-2/linear-transformations.html",
-    "href": "chapter-2/linear-transformations.html",
-    "title": "Linear transformations, eigenvalues, inner products, and the spectral theorem",
+    "objectID": "chapter-2/linear-algebra.html",
+    "href": "chapter-2/linear-algebra.html",
+    "title": "Linear algebra",
     "section": "",
-    "text": "Copyright notice\n\n\n\n\n\n\nNote\n\n\n\nVideo: Matrices, Linear Systems, and Determinants — 1:07:03\nThis section corresponds to 1:07:03 in Proof of Fermat Last Theorem FROM SCRATCH.\n\n\n\n\nLinear transformations\nSo far, we have mostly talked about a single vector space. Now we move on to functions defined between distinct vector spaces.\nWe start with the following transformation in \\(\\mathbb{R}^2\\):\n\\[\n👉\\ \\begin{pmatrix}\nx' \\\\\ny'\n\\end{pmatrix}=\n\\begin{pmatrix}\na && b \\\\\nc && d\n\\end{pmatrix}\n\\begin{pmatrix}\nx \\\\\ny\n\\end{pmatrix},\\ \\text{with}\\ \\begin{pmatrix}\na && b \\\\\nc && d\n\\end{pmatrix}=\n\\begin{pmatrix}\n2 && 1 \\\\\n0 && 1\n\\end{pmatrix}\n\\]",
+    "text": "The content of this chapter is designed to be self-contained, so you do not need any prior knowledge of linear algebra to follow along. However, some familiarity with basic algebra and calculus will be helpful.",
     "crumbs": [
       "Chapter 2 — Linear Algebra",
-      "Linear transformations, eigenvalues, inner products, and the spectral theorem"
+      "Linear algebra"
+    ]
+  },
+  {
+    "objectID": "chapter-2/linear-algebra.html#why-do-we-need-this",
+    "href": "chapter-2/linear-algebra.html#why-do-we-need-this",
+    "title": "Linear algebra",
+    "section": "Why do we need this?",
+    "text": "Why do we need this?\nMathematics is not only about numbers. It is also about structure. A large part of modern mathematics is concerned with understanding structures: what their essential properties are, how they relate to one another, and what can be learned from the transformations that preserve those properties.\nLinear algebra gives us some of the first and most useful tools for thinking in this way. At first, the subject may seem to be mainly about solving systems of equations, manipulating matrices, and calculating determinants. However, this misses the main point.\nRemember that in the introduction we said:\n\nIn mathematics, we often try to generalize concepts, theorems, and equations.\n\nHere, the deeper idea is that seemingly unrelated mathematical problems can often be described using the same underlying structure.\nA striking example of this is the Fourier transform.\n\n\n\n\nFourier analysis may seem to belong to a completely different part of mathematics. Yet from the perspective of linear algebra, we can think of a function as an element of a vector space. This allows us to ask:\n\nWhat are the right basis vectors, and what are the coordinates of our object in that basis?\n\nJust as an ordinary vector can be written as a linear combination of basis vectors, a function can be written as a linear combination of basis functions. The familiar sine and cosine waves play the role of such basis functions, forming an orthonormal basis with respect to a suitable inner product. The Fourier transform then gives us the coordinates of our function with respect to this basis.\nThis gives us a completely different way of looking at a problem. Instead of asking what a complicated function does directly, we can ask how much of each basic frequency it contains.\nWhat is striking is that problems involving waves, sound, differential equations, or signal processing can all lead to essentially the same mathematical question:\n\nWhat is the right basis, and what are the coordinates of our object with respect to that basis?\n\nThis is one of the reasons linear algebra is so powerful. It gives us a common language in which very different mathematical problems can reveal the same underlying structure.\nThe ideas developed in this chapter will reappear in increasingly sophisticated forms. In particular, the language of vector spaces and linear transformations will eventually lead us toward representations of groups and, ultimately, Galois representations.\n\nThe goal of linear algebra is not simply to learn how to calculate with matrices. The goal is to learn how to recognize structure.",
+    "crumbs": [
+      "Chapter 2 — Linear Algebra",
+      "Linear algebra"
+    ]
+  },
+  {
+    "objectID": "chapter-2/matrices.html",
+    "href": "chapter-2/matrices.html",
+    "title": "Matrices, linear systems, and determinants",
+    "section": "",
+    "text": "Note\n\n\n\nVideo: Matrices, Linear Systems, and Determinants — 1:07:03\nThis section corresponds to 1:07:03 in Proof of Fermat Last Theorem FROM SCRATCH.",
+    "crumbs": [
+      "Chapter 2 — Linear Algebra",
+      "Matrices, linear systems, and determinants"
+    ]
+  },
+  {
+    "objectID": "chapter-2/matrices.html#matrices",
+    "href": "chapter-2/matrices.html#matrices",
+    "title": "Matrices, linear systems, and determinants",
+    "section": "Matrices",
+    "text": "Matrices\n\nMatrix: Definition\n📌 A matrix is a rectangular array of scalars from a field \\(F\\). 📌 An \\(m \\times n\\) matrix a has \\(m\\) rows and \\(n\\) columns. The entry in the \\(i\\)-th row and \\(j\\)-th column is noted \\(A_{ij}\\).\n\\[\nA = \\begin{pmatrix}\nA_{11} && A_{12} && \\dots && A_{1n} \\\\\n\\vdots && \\vdots && \\ddots && \\vdots \\\\\nA_{m1} && A_{m2} && \\dots && \\ A_{mn}\n\\end{pmatrix}\n\\]\nFor now, scalars we can just think of numbers and the field \\(F\\) a number set, where we take the scalars from. More strictly, it is an algebraic structure where addition, subtraction, multiplication, and division (for non-zero elements) are defined.\nGoing forward, \\(F\\) will mostly consider matrices were \\(F\\) is either \\(\\mathbb{R}\\) or \\(\\mathbb{C}\\).\n👉 Example 1: a \\(2\\) by \\(2\\) matrix\nExample of a \\(2\\) by \\(2\\) matrix, also denoted as \\(2 \\times 2\\) matrix, which has \\(2\\) rows and \\(2\\) columns\n\\[\n\\begin{pmatrix}\n1 && 2 \\\\\n3 && 4\n\\end{pmatrix}\n\\]\n👉 Example 2: a \\(3\\) by \\(2\\) matrix\n\\[\nA = \\begin{pmatrix}\n1 && 2 && 4 \\\\\n7 && -7 && -6\n\\end{pmatrix}\n\\]\nSo \\(A_{12} = 2\\), \\(A_{23} = -6\\), \\(A_{13} = 4\\). Note that for example \\(A_{32}\\) does not exist!\n👉 Example 3: a matrix over \\(\\mathbf{C}\\)\n\\[\nA = \\begin{pmatrix}\n1 + i && -2i \\\\\ni\\sqrt{3} && -7\n\\end{pmatrix}\n\\]",
+    "crumbs": [
+      "Chapter 2 — Linear Algebra",
+      "Matrices, linear systems, and determinants"
+    ]
+  },
+  {
+    "objectID": "chapter-2/matrices.html#matrix-operations",
+    "href": "chapter-2/matrices.html#matrix-operations",
+    "title": "Matrices, linear systems, and determinants",
+    "section": "Matrix: Operations",
+    "text": "Matrix: Operations\n📌 Addition: \\[\n(A + B)_{ij} = A_{ij} + B_{ij}\n\\]\n📌 Scalar multiplication:\n\\[(cA)_{ij} = c \\cdot A_{ij}\\]\n📌 Matrix multiplication: If \\(A\\) is \\(m \\times n\\) and B is \\(n \\times p\\), their product \\(AB\\) is an \\(m \\times p\\) matrix with entries:\n\\[(AB)_{ij} = \\sum^n_{k=1}A_{ik}B_{kj}\\]\n📌 It is associative, \\((AB)C = A(BC)\\), but not commutative in general, \\(AB\\neq BA\\)\n👉 Example 1: addition\n\\[\n\\begin{pmatrix}\n2 && 3 \\\\\n4 && 1\n\\end{pmatrix}\n+\n\\begin{pmatrix}\n1 && 2 \\\\\n3 && 4\n\\end{pmatrix}\n=\n\\begin{pmatrix}\n3 && 7 \\\\\n5 && 7\n\\end{pmatrix}\n\\]\n👉 Example 2: subtraction\n\\[\n\\begin{pmatrix}\n1 && 3 \\\\\n7 && 4\n\\end{pmatrix}\n-\n\\begin{pmatrix}\n-3 && 2 \\\\\n0 && 7\n\\end{pmatrix}\n=\n\\begin{pmatrix}\n4 && 1 \\\\\n7 && -3\n\\end{pmatrix}\n\\]\n👉 Example 3: scalar multiplication\n\\[\n(-3) \\cdot\n\\begin{pmatrix}\n1 && 2 && 3 \\\\\n4 && 5 && 8\n\\end{pmatrix}\n=\n\\begin{pmatrix}\n-3 && -6 && -9 \\\\\n-12 && -15 && -24\n\\end{pmatrix}\n\\]\n👉 Example 4: scalar multiplication\n\\[\n(7) \\cdot\n\\begin{pmatrix}\n1 && 7 \\\\\n9 && -8\n\\end{pmatrix}\n=\n\\begin{pmatrix}\n7 && 49 \\\\\n63 && -56\n\\end{pmatrix}\n\\]\n👉 Example 5: matrix multiplication\nWe take the \\(i\\)-th row of \\(A\\) and the \\(j\\)-th column of \\(B\\), multiply the corresponding terms and add them:\n\\[\n\\begin{pmatrix}\n1 && 2 \\\\\n3 && 4\n\\end{pmatrix}\n\\begin{pmatrix}\n2 && 4 \\\\\n0 && 3\n\\end{pmatrix}\n=\n\\begin{pmatrix}\n2 && 10 \\\\\n6 && 24\n\\end{pmatrix}\n\\]\n👉 Example 6: matrix multiplication\n\\[\n\\begin{pmatrix}\n1 && 2 && 3 \\\\\n4 && 5 && 6\\end{pmatrix}\n\\begin{pmatrix}\n3 && 2 \\\\\n4 && -4 \\\\\n-1 && 0\n\\end{pmatrix}\n=\n\\begin{pmatrix}\n8 && -6 \\\\\n26 && -12\n\\end{pmatrix}\n\\]\n👉 Example 7: associativity of matrix multiplication\n\\[\n\\left[\n\\begin{pmatrix}\n1 && 2 \\\\\n3 && 4\n\\end{pmatrix}\n\\begin{pmatrix}\n0 && 1 \\\\\n-2 && 3\n\\end{pmatrix}\n\\right]\n\\begin{pmatrix}\n-1 && 1 \\\\\n2 && -2\n\\end{pmatrix}\n=\n\\begin{pmatrix}\n-4 && 7 \\\\\n-8 && 15\n\\end{pmatrix}\n\\begin{pmatrix}\n-1 && 1 \\\\\n2 && -2\n\\end{pmatrix}\n=\n\\begin{pmatrix}\n-18 && 18 \\\\\n38 && -38\n\\end{pmatrix}\n\\]\n\\[\n\\begin{pmatrix}\n1 && 2 \\\\\n3 && 4\n\\end{pmatrix}\n\\left[\n\\begin{pmatrix}\n0 && 1 \\\\\n-2 && 3\n\\end{pmatrix}\n\\begin{pmatrix}\n-1 && 1 \\\\\n2 && -2\n\\end{pmatrix}\n\\right]\n=\n\\begin{pmatrix}\n1 && 2 \\\\\n2 && -2\n\\end{pmatrix}\n\\begin{pmatrix}\n2 && -2 \\\\\n8 && -8\n\\end{pmatrix}\n=\n\\begin{pmatrix}\n-18 && 18 \\\\\n38 && -38\n\\end{pmatrix}\n\\]",
+    "crumbs": [
+      "Chapter 2 — Linear Algebra",
+      "Matrices, linear systems, and determinants"
+    ]
+  },
+  {
+    "objectID": "chapter-2/matrices.html#matrix-types",
+    "href": "chapter-2/matrices.html#matrix-types",
+    "title": "Matrices, linear systems, and determinants",
+    "section": "Matrix: Types",
+    "text": "Matrix: Types\n📌 Square Matrix: A matrix where the number of rows equals the number of columns \\(m=n\\).\n📌 Zero Matrix (\\(O\\)): A matrix where all entries are zero. It acts as the additive identity: \\(A + O = A\\).\n📌 Diagonal Matrix: A square matrix where all non-diagonal entries are zero.\n📌 Identity Matrix (\\(I_n\\)): The \\(n \\times n\\) diagoonal matrix with 1s on the diagonal. It acts as a multiplicative identidy: \\(AI_n = I_n A = A\\)\n👉 Example 1: square matrices\n\\[\nn \\times n,\n\\begin{pmatrix}\n1 && 2 \\\\\n3 && 7\n\\end{pmatrix},\n\\begin{pmatrix}\n1 && 2 && 0 \\\\\n-7 && 6 && 27 \\\\\n0 && -6 && 1\n\\end{pmatrix}\n\\]\n👉 Example 2: \\(2 \\times 3\\) zero matrix\n\\[\n\\begin{pmatrix}\n1 && 5 && -6 \\\\\n0 && 1 && 2\n\\end{pmatrix}\n\\begin{pmatrix}\n0 && 0 && 0 \\\\\n0 && 0 && 0\n\\end{pmatrix}\n=\n\\begin{pmatrix}\n1 && 5 && -6 \\\\\n0 && 1 && 2\n\\end{pmatrix}\n\\]\n👉 Example 3: diagonal matrices\n\\[\n\\begin{pmatrix}\n1 && 0 \\\\\n0 && 3\n\\end{pmatrix},\n\\begin{pmatrix}\n1 && 0 && 0 \\\\\n0 && 2 && 0 \\\\\n0 && 0 && 4\n\\end{pmatrix}\n\\]\n👉 Example 4: identity matrix\n\\[\nI_2 =\n\\begin{pmatrix}\n1 && 0 \\\\\n0 && 1\n\\end{pmatrix}\n\\]\n\\[\n\\begin{pmatrix}\n1 && 0 \\\\\n0 && 1\n\\end{pmatrix}\n\\begin{pmatrix}\na && b \\\\\nc && d\n\\end{pmatrix}\n=\n\\begin{pmatrix}\na && b \\\\\nc && d\n\\end{pmatrix}\n=\n\\begin{pmatrix}\na && b \\\\\nc && d\n\\end{pmatrix}\n\\begin{pmatrix}\n1 && 0 \\\\\n0 && 1\n\\end{pmatrix},\n\\]",
+    "crumbs": [
+      "Chapter 2 — Linear Algebra",
+      "Matrices, linear systems, and determinants"
+    ]
+  },
+  {
+    "objectID": "chapter-2/matrices.html#matrices-and-systems-of-linear-equations",
+    "href": "chapter-2/matrices.html#matrices-and-systems-of-linear-equations",
+    "title": "Matrices, linear systems, and determinants",
+    "section": "Matrices and Systems of Linear Equations",
+    "text": "Matrices and Systems of Linear Equations\nA system of linear equations can be written as a single matrix equation\n\\[\n\\begin{cases}\na_{11}x_1 + \\cdots +A_{1n}x_1 = b_1 \\\\\n\\vdots                              \\\\\na_{m1}x_1 + \\cdots +A_{mn}x_n = b_m\n\\end{cases}\n\\Longleftrightarrow\n\\begin{pmatrix}\na_{11} && \\cdots && a_{1n} \\\\\n\\vdots && \\ddots && \\vdots \\\\\na_{m1} && \\cdots && a_{mn}\n\\end{pmatrix}\n\\begin{pmatrix}\nx_1 \\\\\n\\vdots \\\\\nx_n\n\\end{pmatrix} =\n\\begin{pmatrix}\nb_1 \\\\\n\\vdots \\\\\nb_m\n\\end{pmatrix}\n\\]\nThat is, \\(A\\bf{x} = \\bf{b}\\)\n👉 Example 1: how it works\n\\[\n\\begin{cases}\n2x+3y+5z=7 \\\\\nx+4y+8z=-3 \\\\\nx+5y+9z=8\n\\end{cases}\n\\Longleftrightarrow\n\\begin{pmatrix}\n2 && 3 && 5 \\\\\n1 && 4 && 8 \\\\\n1 && 5 && -9\n\\end{pmatrix}\n\\begin{pmatrix}\nx \\\\\ny \\\\\nz\n\\end{pmatrix} =\n\\begin{pmatrix}\n2x+3y+5z \\\\\nx+4y+8z \\\\\nx+5y+9z\n\\end{pmatrix}=\n\\begin{pmatrix}\n7 \\\\\n-3 \\\\\n8\n\\end{pmatrix}\n\\]\nThis can be written as:\n\\[\nA\\vec{x}=\\vec{b}\n\\]\nSo the natural question is, how do we solve \\(x\\), \\(y\\), and \\(z\\)?\nIf \\(\\vec{x}\\) and \\(\\vec{b}\\) were just ordinary numbers \\(x\\) and \\(b\\), we would multiply both left and right with reciprocal \\(\\dfrac{1}{a}\\):\n\\[\n\\dfrac{1}{a}ax = \\dfrac{1}{a}b \\Rightarrow x = \\dfrac{b}{a}\n\\]\nSo the key value here is \\(\\dfrac{1}{A}\\), which gives the identity when multiplied by \\(A\\). Now the identity for matrices is \\(I_n\\), so we are looking for a matrix \\(B\\) for which\n\\[\nAB=BA=I_n\n\\]",
+    "crumbs": [
+      "Chapter 2 — Linear Algebra",
+      "Matrices, linear systems, and determinants"
+    ]
+  },
+  {
+    "objectID": "chapter-2/matrices.html#invertible-matrices",
+    "href": "chapter-2/matrices.html#invertible-matrices",
+    "title": "Matrices, linear systems, and determinants",
+    "section": "Invertible Matrices",
+    "text": "Invertible Matrices\nA square matrix \\(A\\) is invertible if an inverse matrix \\(A^{-1}\\) exists that satisfies\n\\[\nA A^{-1} = A^{-1} A = I_n\n\\]\n👉 Example 1: invertible \\(2 \\times 2\\) matrix\n\\[\n\\text{Let}\\ A=\n\\begin{pmatrix}\n2 && 3 \\\\\n1 && 2\n\\end{pmatrix},\\ \\text{then }\\ A^{-1}=\n\\begin{pmatrix}\n2 && -3 \\\\\n-1 && 2\n\\end{pmatrix}\n\\]\nThis can easily be verified as follows:\n\\[\nAA^{-1} =\n\\begin{pmatrix}\n2 && 3 \\\\\n1 && 2\n\\end{pmatrix}\n\\begin{pmatrix}\n2 && -3 \\\\\n-1 && 2\n\\end{pmatrix}\n=\n\\begin{pmatrix}\n1 && 0 \\\\\n0 && 1\n\\end{pmatrix}\n\\]\n👉 Example 2: invertible \\(3 \\times 3\\) matrix\n\\[\nB = \\begin{pmatrix}\n1 && 1 && 1 \\\\\n0 && 1 && 1 \\\\\n1 && 0 && 1\n\\end{pmatrix},\\ B^{-1}=\n\\begin{pmatrix}\n1 && -1 && 0 \\\\\n1 && 0 && -1 \\\\\n-1 && 1 && 1\n\\end{pmatrix}\n\\Rightarrow\nBB^{-1}=B^{-1}B=I_3\n\\]\nHowever, not every matrix as an inverse matrix.\n👉 Example 3: a non-invertible matrix\n\\[\nA =\n\\begin{pmatrix}\n0 && 0 \\\\\n0 && 0\n\\end{pmatrix}\n\\Rightarrow\n\\begin{pmatrix}\n0 && 0 \\\\\n0 && 0\n\\end{pmatrix}\n\\begin{pmatrix}\na && b \\\\\nc && d\n\\end{pmatrix}=\n\\begin{pmatrix}\n0 && 0 \\\\\n0 && 0\n\\end{pmatrix}\\neq I_2\n\\]\nSo not every matrix as an inverse! Some matrices have inverses, others don’t.\nUsing this, we can actually solve the above system of linear equations.\n\\[\n\\begin{cases}\n2x + 3y = 13 \\\\\nx+2y = 8\n\\end{cases}\n\\Longleftrightarrow\n\\begin{pmatrix}\n2 && 3 \\\\\n1 && 2\n\\end{pmatrix}\n\\begin{pmatrix}\nx \\\\\ny\n\\end{pmatrix}=\n\\begin{pmatrix}\n13 \\\\\n8\n\\end{pmatrix}\n\\]\nMultiplication by the inverse matrix on both sides gives (for the inverse matrix, see the first example listed under Invertible Matrices):\n\\[\n\\begin{pmatrix}\n2 && -3 \\\\\n-1 && 2\n\\end{pmatrix}\n\\begin{pmatrix}\n2 && 3 \\\\\n1 && 2\n\\end{pmatrix}\n\\begin{pmatrix}\nx \\\\\ny\n\\end{pmatrix}=\n\\begin{pmatrix}\n2 && -3 \\\\\n-1 && 2\n\\end{pmatrix}\n\\begin{pmatrix}\n13 \\\\\n8\n\\end{pmatrix}\n\\Rightarrow\n\\begin{pmatrix}\nx \\\\\ny\n\\end{pmatrix}=\n\\begin{pmatrix}\n2 \\\\\n3\n\\end{pmatrix}\n\\]\nNow that we learned about inverse matrices, we would like to find the inverse of a general matrix\n\\[\n\\begin{pmatrix}\na && b \\\\\nc && d\n\\end{pmatrix}\n\\]\nNote that at this point, we don’t even know if this matrix has an inverse.\nWe are looking for an inverse matrix, so we have\n\\[\n\\begin{pmatrix}\na && b \\\\\nc && d\n\\end{pmatrix}\n\\begin{pmatrix}\nx && y \\\\\nz && w\n\\end{pmatrix}=\n\\begin{pmatrix}\n1 && 0 \\\\\n0 && 1\n\\end{pmatrix}=\n\\begin{pmatrix}\nax+bz && ay+bw \\\\\ncx+dz && cy+dw\n\\end{pmatrix}\n\\]\nFrom this we infer that\n\\[\n\\begin{cases}\nax+bz = 1 \\\\\nay+bw = 0 \\\\\ncx+dz = 0 \\\\\ncy+dw = 1\n\\end{cases} \\Rightarrow\n\\begin{cases}\nadx+bdz = d \\\\\nady+bdw = 0 \\\\\nbcx+bdz = 0 \\\\\nbcy+bdw = b\n\\end{cases}\n\\]\nSubtraction of the first and the third equations and the second and last respectively results in:\n\\[\n\\begin{cases}\nx = \\dfrac{d}{ad-bc} \\\\\ny = \\dfrac{-b}{ad-bc} \\\\\nz = \\dfrac{-c}{ad-bc} \\\\\nw = \\dfrac{a}{ad-bc}\n\\end{cases}, ad-bc\\neq 0 \\Rightarrow\n\\begin{pmatrix}\nx && y \\\\\nz && w\n\\end{pmatrix}=\n\\dfrac{1}{ad-bc}\n\\begin{pmatrix}\nd && -b \\\\\n-c && a\n\\end{pmatrix}\n\\]\n🚨 So the matrix has an inverse if and only if \\(ad-bc\\neq 0\\). So the \\(ad-bc\\) quantity is key here, as it determines if the matrix is invertible or not! This quantity is called the determinant❗\nThe definition of a determinant can be generalized to any \\(n \\times n\\) matrix, but we will refrain from doing so here. Instead, we will focus on the \\(2 \\times 2\\) case, which is sufficient for our purposes.",
+    "crumbs": [
+      "Chapter 2 — Linear Algebra",
+      "Matrices, linear systems, and determinants"
+    ]
+  },
+  {
+    "objectID": "chapter-2/matrices.html#the-determinant",
+    "href": "chapter-2/matrices.html#the-determinant",
+    "title": "Matrices, linear systems, and determinants",
+    "section": "The Determinant",
+    "text": "The Determinant\nA determinant is a function \\[\n\\det: M_{n \\times n}(F) \\rightarrow F\n\\] that assigns a scalar to each square matrix.\n📌 \\[\nA\\ \\text{is invertible} \\Longleftrightarrow \\det(A)\\neq 0\n\\]\n📌 \\[\n\\det(AB)=\\det(BA)\n\\]\n📌 For a \\(2\\times2\\) matrix, \\[\n\\det\\begin{pmatrix} a && b \\\\ c && d\\end{pmatrix}=ad-bc\n\\]",
+    "crumbs": [
+      "Chapter 2 — Linear Algebra",
+      "Matrices, linear systems, and determinants"
+    ]
+  },
+  {
+    "objectID": "chapter-2/matrices.html#matrix-groups-notation",
+    "href": "chapter-2/matrices.html#matrix-groups-notation",
+    "title": "Matrices, linear systems, and determinants",
+    "section": "Matrix Groups: Notation",
+    "text": "Matrix Groups: Notation\nFor a field \\(F\\) and a positive integer \\(n\\):\n📌 \\(Mat_n(F)\\): the set of all \\(n\\times n\\) matrices with entries in F.\n📌 \\(GL_n(F)\\): the general linear group is the group of all invertible matrices in \\(Mat_n(F)\\).\n\\[\nGL_n(F) = \\{A\\in Mat_n(F)\\ |\\ \\det(A)\\neq 0\\}.\n\\]\n📌 \\(SL_n(F)\\): the special linear group is a subgroup of \\(GL_n(F)\\), consisting of matrices with determinant 1.\n\\[\nSL_n(F) = \\{A\\in GL_n(F)\\ |\\ \\det(A)=1\\}.\n\\]\n👉 Example 1: members of \\(Mat_n(F)\\)\n\\[\nMat_2(\\mathbb{R}):\\ \\begin{pmatrix} 2 && 3 \\\\ -1 && \\sqrt{7}\\end{pmatrix},\\ \\begin{pmatrix} \\pi && 3+\\sqrt{2} \\\\ -7 && \\dfrac{3}{4}\\end{pmatrix}\n\\]\n👉 Example 2: members of \\(GL_n(F)\\)\n\\[\nGL_2(\\mathbb{R}):\\ \\begin{pmatrix} 1 && 2 \\\\ 3 && 4\\end{pmatrix} \\Rightarrow \\text{det}=-2\n\\]\nHowever, the following matrix is not a member of \\(GL_2(\\mathbb{R})\\), as it is a non-invertible matrix:\n\\[\n\\begin{pmatrix} 2 && 4 \\\\ 5 && 10\\end{pmatrix} \\Rightarrow \\text{det}=-0\n\\]\n👉 Example 3: members of \\(SL_n(F)\\)\n\\[\n\\begin{pmatrix} 3 && 2 \\\\ 7 && 5\\end{pmatrix} \\in SL_2(\\mathbb{R})\n\\]\nBut\n\\[\n\\begin{pmatrix} 4 && 6 \\\\ 0 && 1\\end{pmatrix} \\notin SL_2(\\mathbb{R})\n\\]",
+    "crumbs": [
+      "Chapter 2 — Linear Algebra",
+      "Matrices, linear systems, and determinants"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Fermat’s Last Theorem",
+    "section": "",
+    "text": "Note\n\n\n\nThis project and its contents are for a large part inspired by and based on the video Proof of Fermat Last Theorem FROM SCRATCH.\nVideo: Proof of Fermat Last Theorem FROM SCRATCH",
+    "crumbs": [
+      "Fermat's Last Theorem"
+    ]
+  },
+  {
+    "objectID": "index.html#is-fermats-last-theorem-actually-interesting",
+    "href": "index.html#is-fermats-last-theorem-actually-interesting",
+    "title": "Fermat’s Last Theorem",
+    "section": "Is Fermat’s Last Theorem actually interesting?",
+    "text": "Is Fermat’s Last Theorem actually interesting?\nMany of us can remember the Pythagorean theorem from high school. It is a simple and elegant statement about right triangles:\n\\[\n👉\\ x^2 + y^2 = z^2\n\\]\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nVisualizations in this project are created using the Helion library.\n\n\n\nGoing forward, we will frequently notice that\n\nIn mathematics, we often try to generalize concepts, theorems and/or equations\n\nOne natural generalization here would be to replace the exponent value of two with any arbitrary natural number \\(n\\):\n\\[\nx^n + y^n = z^n\n\\]\nFermat’s Last Theorem (FLT) makes a remarkably simple claim: if \\(n &gt; 2\\), there are no positive integers \\(x\\), \\(y\\), and \\(z\\) that satisfy it. This may come as a surprise. After all, we known that we can easily find infinitely many positive integers that satisfy the equation for \\(n=2\\), for example:\n\\[\n3^2 + 4^2 = 5^2\n\\]\nSo why should the case \\(n&gt;2\\) be so special? And why did it take more than three centuries to prove?\nUsually the story starts with that fact that in 1637 Pierre de Fermat wrote in the margin of a book that he had discovered a “truly marvelous” proof, but that the margin was too small to contain it. The problem remained unsolved for centuries, attracting some of the greatest mathematicians in history, until Andrew Wiles finally announced a proof in 1993.\nI vividly remember my excitement when I read on slashdot.org that Wiles’ finally managed to provide a proof.\nBut this story leaves open a more interesting question:\n\nIs Fermat’s Last Theorem genuinely mathematically interesting, or is it famous just because of the hype and the extraordinary story surrounding it?\n\nThis project is an attempt to investigate this question.",
+    "crumbs": [
+      "Fermat's Last Theorem"
+    ]
+  },
+  {
+    "objectID": "index.html#what-does-from-scratch-mean",
+    "href": "index.html#what-does-from-scratch-mean",
+    "title": "Fermat’s Last Theorem",
+    "section": "What does “from scratch” mean?",
+    "text": "What does “from scratch” mean?\nThe purpose of this website is to follow that journey as carefully as possible. The goal is not merely to state Wiles’ proof, or to give a high-level description such as\n\n“Frey constructed an elliptic curve, Ribet proved a theorem, and Wiles proved modularity.”\n\nThat tells us what happened, but not necessarily why. Our approach is different in precisely this aspect: apart from introducing the necessary (fields of) mathematics, the intention is to keep asking the same question:\n\nWhy do we need this?\n\nIf a new mathematical object appears, we should understand what problem it solves. If a theorem is introduced, we should understand why it is relevant. And when the argument becomes abstract, we should try to keep sight of the remarkably simple equation with which we started.\nWe will start with concepts that are familiar from undergraduate mathematics and gradually introduce the more advanced ideas that eventually become necessary.",
+    "crumbs": [
+      "Fermat's Last Theorem"
+    ]
+  },
+  {
+    "objectID": "index.html#from-a-simple-equation-to-modern-mathematics",
+    "href": "index.html#from-a-simple-equation-to-modern-mathematics",
+    "title": "Fermat’s Last Theorem",
+    "section": "From a simple equation to modern mathematics",
+    "text": "From a simple equation to modern mathematics\nThe surprising part of Fermat’s Last Theorem is not simply that the equation has no solutions. The surprising part is what lies behind that simple statement.\nAt first, FLT may seem to be a problem just about integers. We might therefore expect the proof to involve clever manipulations of integers, perhaps together with some increasingly sophisticated number theory. And indeed, that is how the story begins.\nBut in mathematics, we often encounter a problem in one field and eventually discover that its real structure is much easier to understand in another. As mathematicians tried to understand FLT more deeply, this happened as well. Not only did the problem itself turn out to be connected to different fields of mathematics, it also made use of some connections/bridges between those different fields:\n\nLinear algebra,\nabstract algebra (groups and Galois theory),\nelliptic curves,\nmodular forms\n\nSo the topics discussed here are not simply a collection of increasingly complicated tools that happen to be useful for proving the theorem, but constitute a means for the unification of the different fields in mathematics as well (Langlands program). As such, it is very similar to the standard model in physics, one of the greatest achievements in unifying the four different physical forces (except gravity).",
+    "crumbs": [
+      "Fermat's Last Theorem"
+    ]
+  },
+  {
+    "objectID": "index.html#my-motivation",
+    "href": "index.html#my-motivation",
+    "title": "Fermat’s Last Theorem",
+    "section": "My motivation",
+    "text": "My motivation\nFermat’s Last Theorem is a particularly beautiful example of a recurring phenomenon in both physics and mathematics:\n\nA simple question can lead us to a much deeper structure than we could have anticipated.\n\nFor me, the history of Fermat’s Last Theorem is therefore not merely the story of finding a proof. It is also the story of discovering connections between different fields of mathematics.\nThat is primarily what makes the theorem interesting to me.\n\nNot the hype.\nNot the legend of the margin.\nNot even the fact that it took more than three centuries to prove.\n\nThe interesting part is what structures are hiding underneath.",
+    "crumbs": [
+      "Fermat's Last Theorem"
+    ]
+  },
+  {
+    "objectID": "index.html#a-journey-rather-than-a-shortcut",
+    "href": "index.html#a-journey-rather-than-a-shortcut",
+    "title": "Fermat’s Last Theorem",
+    "section": "A journey rather than a shortcut",
+    "text": "A journey rather than a shortcut\nThis is not intended to be a reproduction of Wiles’ original papers. Those papers are highly technical, and understanding every detail of the complete proof requires a substantial amount of modern mathematics.\nInstead, this project aims to construct a coherent path toward the proof.\nThe hope is that, by the time we reach Wiles’ proof, the reader will not necessarily be able to reproduce every technical argument from memory, but will understand the architecture of the proof and, more importantly, why the architecture looks the way it does.",
+    "crumbs": [
+      "Fermat's Last Theorem"
     ]
   },
   {
@@ -110,173 +269,25 @@
     ]
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Fermat’s Last Theorem",
+    "objectID": "chapter-2/linear-transformations.html",
+    "href": "chapter-2/linear-transformations.html",
+    "title": "Linear transformations, eigenvalues, inner products, and the spectral theorem",
     "section": "",
-    "text": "Note\n\n\n\nVideo: Proof of Fermat Last Theorem FROM SCRATCH\nThis project and its contents are for a large part inspired by and based on the video Proof of Fermat Last Theorem FROM SCRATCH.",
+    "text": "Copyright notice\n\n\n\n\n\n\nNote\n\n\n\nVideo: Matrices, Linear Systems, and Determinants — 1:07:03\nThis section corresponds to 1:07:03 in Proof of Fermat Last Theorem FROM SCRATCH.\n\n\n\n\nLinear transformations\nSo far, we have mostly talked about a single vector space. Now we move on to functions defined between distinct vector spaces.",
     "crumbs": [
-      "Fermat's Last Theorem"
+      "Chapter 2 — Linear Algebra",
+      "Linear transformations, eigenvalues, inner products, and the spectral theorem"
     ]
   },
   {
-    "objectID": "index.html#is-fermats-last-theorem-actually-interesting",
-    "href": "index.html#is-fermats-last-theorem-actually-interesting",
-    "title": "Fermat’s Last Theorem",
-    "section": "Is Fermat’s Last Theorem actually interesting?",
-    "text": "Is Fermat’s Last Theorem actually interesting?\nMany of us can remember the Pythagorean theorem from high school. It is a simple and elegant statement about right triangles:\n\\[\n👉\\ x^2 + y^2 = z^2\n\\]\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nVisualizations in this project are created using the Helion library.\n\n\n\nGoing forward, we will frequently notice that\n\nIn mathematics, we often try to generalize concepts, theorems and/or equations\n\nOne natural generalization here would be to replace the exponent value of two with any arbitrary natural number \\(n\\):\n\\[\nx^n + y^n = z^n\n\\]\nFermat’s Last Theorem (FLT) makes a remarkably simple claim: if \\(n &gt; 2\\), there are no positive integers \\(x\\), \\(y\\), and \\(z\\) that satisfy it. This may come as a surprise. After all, we known that we can easily find infinitely many positive integers that satisfy the equation for \\(n=2\\), for example:\n\\[\n3^2 + 4^2 = 5^2\n\\]\nSo why should the case \\(n&gt;2\\) be so special? And why did it take more than three centuries to prove?\nUsually the story starts with that fact that in 1637 Pierre de Fermat wrote in the margin of a book that he had discovered a “truly marvelous” proof, but that the margin was too small to contain it. The problem remained unsolved for centuries, attracting some of the greatest mathematicians in history, until Andrew Wiles finally announced a proof in 1993.\nI vividly remember my excitement when I read on slashdot.org that Wiles’ finally managed to provide a proof.\nBut this story leaves open a more interesting question:\n\nIs Fermat’s Last Theorem genuinely mathematically interesting, or is it famous just because of the hype and the extraordinary story surrounding it?\n\nThis project is an attempt to investigate this question.",
-    "crumbs": [
-      "Fermat's Last Theorem"
-    ]
-  },
-  {
-    "objectID": "index.html#what-does-from-scratch-mean",
-    "href": "index.html#what-does-from-scratch-mean",
-    "title": "Fermat’s Last Theorem",
-    "section": "What does “from scratch” mean?",
-    "text": "What does “from scratch” mean?\nThe purpose of this website is to follow that journey as carefully as possible. The goal is not merely to state Wiles’ proof, or to give a high-level description such as\n\n“Frey constructed an elliptic curve, Ribet proved a theorem, and Wiles proved modularity.”\n\nThat tells us what happened, but not necessarily why. Our approach is different in precisely this aspect: apart from introducing the necessary (fields of) mathematics, the intention is to keep asking the same question:\n\nWhy do we need this?\n\nIf a new mathematical object appears, we should understand what problem it solves. If a theorem is introduced, we should understand why it is relevant. And when the argument becomes abstract, we should try to keep sight of the remarkably simple equation with which we started.\nWe will start with concepts that are familiar from undergraduate mathematics and gradually introduce the more advanced ideas that eventually become necessary.",
-    "crumbs": [
-      "Fermat's Last Theorem"
-    ]
-  },
-  {
-    "objectID": "index.html#from-a-simple-equation-to-modern-mathematics",
-    "href": "index.html#from-a-simple-equation-to-modern-mathematics",
-    "title": "Fermat’s Last Theorem",
-    "section": "From a simple equation to modern mathematics",
-    "text": "From a simple equation to modern mathematics\nThe surprising part of Fermat’s Last Theorem is not simply that the equation has no solutions. The surprising part is what lies behind that simple statement.\nAt first, FLT may seem to be a problem just about integers. We might therefore expect the proof to involve clever manipulations of integers, perhaps together with some increasingly sophisticated number theory. And indeed, that is how the story begins.\nBut in mathematics, we often encounter a problem in one field and eventually discover that its real structure is much easier to understand in another. As mathematicians tried to understand FLT more deeply, this happened as well. Not only did the problem itself turn out to be connected to different fields of mathematics, it also made use of some connections/bridges between those different fields:\n\nLinear algebra,\nabstract algebra (groups and Galois theory),\nelliptic curves,\nmodular forms\n\nSo the topics discussed here are not simply a collection of increasingly complicated tools that happen to be useful for proving the theorem, but constitute a means for the unification of the different fields in mathematics as well (Langlands program). As such, it is very similar to the standard model in physics, one of the greatest achievements in unifying the four different physical forces (except gravity).",
-    "crumbs": [
-      "Fermat's Last Theorem"
-    ]
-  },
-  {
-    "objectID": "index.html#my-motivation",
-    "href": "index.html#my-motivation",
-    "title": "Fermat’s Last Theorem",
-    "section": "My motivation",
-    "text": "My motivation\nFermat’s Last Theorem is a particularly beautiful example of a recurring phenomenon in both physics and mathematics:\n\nA simple question can lead us to a much deeper structure than we could have anticipated.\n\nFor me, the history of Fermat’s Last Theorem is therefore not merely the story of finding a proof. It is also the story of discovering connections between different fields of mathematics.\nThat is primarily what makes the theorem interesting to me.\n\nNot the hype.\nNot the legend of the margin.\nNot even the fact that it took more than three centuries to prove.\n\nThe interesting part is what structures are hiding underneath.",
-    "crumbs": [
-      "Fermat's Last Theorem"
-    ]
-  },
-  {
-    "objectID": "index.html#a-journey-rather-than-a-shortcut",
-    "href": "index.html#a-journey-rather-than-a-shortcut",
-    "title": "Fermat’s Last Theorem",
-    "section": "A journey rather than a shortcut",
-    "text": "A journey rather than a shortcut\nThis is not intended to be a reproduction of Wiles’ original papers. Those papers are highly technical, and understanding every detail of the complete proof requires a substantial amount of modern mathematics.\nInstead, this project aims to construct a coherent path toward the proof.\nThe hope is that, by the time we reach Wiles’ proof, the reader will not necessarily be able to reproduce every technical argument from memory, but will understand the architecture of the proof and, more importantly, why the architecture looks the way it does.",
-    "crumbs": [
-      "Fermat's Last Theorem"
-    ]
-  },
-  {
-    "objectID": "chapter-2/matrices.html",
-    "href": "chapter-2/matrices.html",
-    "title": "Matrices, linear systems, and determinants",
+    "objectID": "chapter-2/summary.html",
+    "href": "chapter-2/summary.html",
+    "title": "Summary & lab",
     "section": "",
-    "text": "Note\n\n\n\nVideo: Matrices, Linear Systems, and Determinants — 1:07:03\nThis section corresponds to 1:07:03 in Proof of Fermat Last Theorem FROM SCRATCH.",
+    "text": "Linear algebra lab\nWe start with the following transformation in \\(\\mathbb{R}^2\\):\n\\[\n👉\\ \\begin{pmatrix}\nx' \\\\\ny'\n\\end{pmatrix}=\n\\begin{pmatrix}\na && b \\\\\nc && d\n\\end{pmatrix}\n\\begin{pmatrix}\nx \\\\\ny\n\\end{pmatrix},\\ \\text{with}\\ \\begin{pmatrix}\na && b \\\\\nc && d\n\\end{pmatrix}=\n\\begin{pmatrix}\n2 && 1 \\\\\n0 && 1\n\\end{pmatrix}\n\\]\n\n\n\n\n\n\nSummary\n\\[\n👉\\ \\text{Matrix}:\\ A=\n\\begin{pmatrix}\na&b\\\\\nb&d\n\\end{pmatrix}\n\\]\n\\[\\Downarrow\\]\n\\[\n👉\\ \\text{Eigen values/eigen vectors}:\\ Ae_i=\\lambda_i e_i\n\\]\n\\[\\Downarrow\\]\n\\[\n👉\\ \\text{Spectral theorem}:\\ e_1\\perp e_2\n\\]\n\\[\\Downarrow\\]\n\\[\n👉\\ \\text{Orthonormal matrix}:\\ Q=(e_1\\ e_2)\n\\]\n\\[\\Downarrow\\]\n\\[\n👉\\ \\text{Diagonale matrix}:\\ \\Lambda=\n\\begin{pmatrix}\n\\lambda_1&0\\\\\n0&\\lambda_2\n\\end{pmatrix}\n\\]\n\\[\\Downarrow\\]\n\\[\n👉\\ \\text{Spectral decomposition}:\\ \\boxed{A=Q\\Lambda Q^T}\n\\]",
     "crumbs": [
       "Chapter 2 — Linear Algebra",
-      "Matrices, linear systems, and determinants"
-    ]
-  },
-  {
-    "objectID": "chapter-2/matrices.html#matrices",
-    "href": "chapter-2/matrices.html#matrices",
-    "title": "Matrices, linear systems, and determinants",
-    "section": "Matrices",
-    "text": "Matrices\n\nMatrix: Definition\n📌 A matrix is a rectangular array of scalars from a field \\(F\\). 📌 An \\(m \\times n\\) matrix a has \\(m\\) rows and \\(n\\) columns. The entry in the \\(i\\)-th row and \\(j\\)-th column is noted \\(A_{ij}\\).\n\\[\nA = \\begin{pmatrix}\nA_{11} && A_{12} && \\dots && A_{1n} \\\\\n\\vdots && \\vdots && \\ddots && \\vdots \\\\\nA_{m1} && A_{m2} && \\dots && \\ A_{mn}\n\\end{pmatrix}\n\\]\nFor now, scalars we can just think of numbers and the field \\(F\\) a number set, where we take the scalars from. More strictly, it is an algebraic structure where addition, subtraction, multiplication, and division (for non-zero elements) are defined.\nGoing forward, \\(F\\) will mostly consider matrices were \\(F\\) is either \\(\\mathbb{R}\\) or \\(\\mathbb{C}\\).\n👉 Example 1: a \\(2\\) by \\(2\\) matrix\nExample of a \\(2\\) by \\(2\\) matrix, also denoted as \\(2 \\times 2\\) matrix, which has \\(2\\) rows and \\(2\\) columns\n\\[\n\\begin{pmatrix}\n1 && 2 \\\\\n3 && 4\n\\end{pmatrix}\n\\]\n👉 Example 2: a \\(3\\) by \\(2\\) matrix\n\\[\nA = \\begin{pmatrix}\n1 && 2 && 4 \\\\\n7 && -7 && -6\n\\end{pmatrix}\n\\]\nSo \\(A_{12} = 2\\), \\(A_{23} = -6\\), \\(A_{13} = 4\\). Note that for example \\(A_{32}\\) does not exist!\n👉 Example 3: a matrix over \\(\\mathbf{C}\\)\n\\[\nA = \\begin{pmatrix}\n1 + i && -2i \\\\\ni\\sqrt{3} && -7\n\\end{pmatrix}\n\\]",
-    "crumbs": [
-      "Chapter 2 — Linear Algebra",
-      "Matrices, linear systems, and determinants"
-    ]
-  },
-  {
-    "objectID": "chapter-2/matrices.html#matrix-operations",
-    "href": "chapter-2/matrices.html#matrix-operations",
-    "title": "Matrices, linear systems, and determinants",
-    "section": "Matrix: Operations",
-    "text": "Matrix: Operations\n📌 Addition: \\[\n(A + B)_{ij} = A_{ij} + B_{ij}\n\\]\n📌 Scalar multiplication:\n\\[(cA)_{ij} = c \\cdot A_{ij}\\]\n📌 Matrix multiplication: If \\(A\\) is \\(m \\times n\\) and B is \\(n \\times p\\), their product \\(AB\\) is an \\(m \\times p\\) matrix with entries:\n\\[(AB)_{ij} = \\sum^n_{k=1}A_{ik}B_{kj}\\]\n📌 It is associative, \\((AB)C = A(BC)\\), but not commutative in general, \\(AB\\neq BA\\)\n👉 Example 1: addition\n\\[\n\\begin{pmatrix}\n2 && 3 \\\\\n4 && 1\n\\end{pmatrix}\n+\n\\begin{pmatrix}\n1 && 2 \\\\\n3 && 4\n\\end{pmatrix}\n=\n\\begin{pmatrix}\n3 && 7 \\\\\n5 && 7\n\\end{pmatrix}\n\\]\n👉 Example 2: subtraction\n\\[\n\\begin{pmatrix}\n1 && 3 \\\\\n7 && 4\n\\end{pmatrix}\n-\n\\begin{pmatrix}\n-3 && 2 \\\\\n0 && 7\n\\end{pmatrix}\n=\n\\begin{pmatrix}\n4 && 1 \\\\\n7 && -3\n\\end{pmatrix}\n\\]\n👉 Example 3: scalar multiplication\n\\[\n(-3) \\cdot\n\\begin{pmatrix}\n1 && 2 && 3 \\\\\n4 && 5 && 8\n\\end{pmatrix}\n=\n\\begin{pmatrix}\n-3 && -6 && -9 \\\\\n-12 && -15 && -24\n\\end{pmatrix}\n\\]\n👉 Example 4: scalar multiplication\n\\[\n(7) \\cdot\n\\begin{pmatrix}\n1 && 7 \\\\\n9 && -8\n\\end{pmatrix}\n=\n\\begin{pmatrix}\n7 && 49 \\\\\n63 && -56\n\\end{pmatrix}\n\\]\n👉 Example 5: matrix multiplication\nWe take the \\(i\\)-th row of \\(A\\) and the \\(j\\)-th column of \\(B\\), multiply the corresponding terms and add them:\n\\[\n\\begin{pmatrix}\n1 && 2 \\\\\n3 && 4\n\\end{pmatrix}\n\\begin{pmatrix}\n2 && 4 \\\\\n0 && 3\n\\end{pmatrix}\n=\n\\begin{pmatrix}\n2 && 10 \\\\\n6 && 24\n\\end{pmatrix}\n\\]\n👉 Example 6: matrix multiplication\n\\[\n\\begin{pmatrix}\n1 && 2 && 3 \\\\\n4 && 5 && 6\\end{pmatrix}\n\\begin{pmatrix}\n3 && 2 \\\\\n4 && -4 \\\\\n-1 && 0\n\\end{pmatrix}\n=\n\\begin{pmatrix}\n8 && -6 \\\\\n26 && -12\n\\end{pmatrix}\n\\]\n👉 Example 7: associativity of matrix multiplication\n\\[\n\\left[\n\\begin{pmatrix}\n1 && 2 \\\\\n3 && 4\n\\end{pmatrix}\n\\begin{pmatrix}\n0 && 1 \\\\\n-2 && 3\n\\end{pmatrix}\n\\right]\n\\begin{pmatrix}\n-1 && 1 \\\\\n2 && -2\n\\end{pmatrix}\n=\n\\begin{pmatrix}\n-4 && 7 \\\\\n-8 && 15\n\\end{pmatrix}\n\\begin{pmatrix}\n-1 && 1 \\\\\n2 && -2\n\\end{pmatrix}\n=\n\\begin{pmatrix}\n-18 && 18 \\\\\n38 && -38\n\\end{pmatrix}\n\\]\n\\[\n\\begin{pmatrix}\n1 && 2 \\\\\n3 && 4\n\\end{pmatrix}\n\\left[\n\\begin{pmatrix}\n0 && 1 \\\\\n-2 && 3\n\\end{pmatrix}\n\\begin{pmatrix}\n-1 && 1 \\\\\n2 && -2\n\\end{pmatrix}\n\\right]\n=\n\\begin{pmatrix}\n1 && 2 \\\\\n2 && -2\n\\end{pmatrix}\n\\begin{pmatrix}\n2 && -2 \\\\\n8 && -8\n\\end{pmatrix}\n=\n\\begin{pmatrix}\n-18 && 18 \\\\\n38 && -38\n\\end{pmatrix}\n\\]",
-    "crumbs": [
-      "Chapter 2 — Linear Algebra",
-      "Matrices, linear systems, and determinants"
-    ]
-  },
-  {
-    "objectID": "chapter-2/matrices.html#matrix-types",
-    "href": "chapter-2/matrices.html#matrix-types",
-    "title": "Matrices, linear systems, and determinants",
-    "section": "Matrix: Types",
-    "text": "Matrix: Types\n📌 Square Matrix: A matrix where the number of rows equals the number of columns \\(m=n\\).\n📌 Zero Matrix (\\(O\\)): A matrix where all entries are zero. It acts as the additive identity: \\(A + O = A\\).\n📌 Diagonal Matrix: A square matrix where all non-diagonal entries are zero.\n📌 Identity Matrix (\\(I_n\\)): The \\(n \\times n\\) diagoonal matrix with 1s on the diagonal. It acts as a multiplicative identidy: \\(AI_n = I_n A = A\\)\n👉 **Example 1: square matrices\n\\[\nn \\times n,\n\\begin{pmatrix}\n1 && 2 \\\\\n3 && 7\n\\end{pmatrix},\n\\begin{pmatrix}\n1 && 2 && 0 \\\\\n-7 && 6 && 27 \\\\\n0 && -6 && 1\n\\end{pmatrix}\n\\]\n👉 Example 2: \\(2 \\times 3\\) zero matrix\n\\[\n\\begin{pmatrix}\n1 && 5 && -6 \\\\\n0 && 1 && 2\n\\end{pmatrix}\n\\begin{pmatrix}\n0 && 0 && 0 \\\\\n0 && 0 && 0\n\\end{pmatrix}\n=\n\\begin{pmatrix}\n1 && 5 && -6 \\\\\n0 && 1 && 2\n\\end{pmatrix}\n\\]\n👉 Example 3: diagonal matrices\n\\[\n\\begin{pmatrix}\n1 && 0 \\\\\n0 && 3\n\\end{pmatrix},\n\\begin{pmatrix}\n1 && 0 && 0 \\\\\n0 && 2 && 0 \\\\\n0 && 0 && 4\n\\end{pmatrix}\n\\]\n👉 Example 4: identity matrix\n\\[\nI_2 =\n\\begin{pmatrix}\n1 && 0 \\\\\n0 && 1\n\\end{pmatrix}\n\\]\n\\[\n\\begin{pmatrix}\n1 && 0 \\\\\n0 && 1\n\\end{pmatrix}\n\\begin{pmatrix}\na && b \\\\\nc && d\n\\end{pmatrix}\n=\n\\begin{pmatrix}\na && b \\\\\nc && d\n\\end{pmatrix}\n=\n\\begin{pmatrix}\na && b \\\\\nc && d\n\\end{pmatrix}\n\\begin{pmatrix}\n1 && 0 \\\\\n0 && 1\n\\end{pmatrix},\n\\]",
-    "crumbs": [
-      "Chapter 2 — Linear Algebra",
-      "Matrices, linear systems, and determinants"
-    ]
-  },
-  {
-    "objectID": "chapter-2/matrices.html#matrices-and-systems-of-linear-equations",
-    "href": "chapter-2/matrices.html#matrices-and-systems-of-linear-equations",
-    "title": "Matrices, linear systems, and determinants",
-    "section": "Matrices and Systems of Linear Equations",
-    "text": "Matrices and Systems of Linear Equations\nA system of linear equations can be written as a single matrix equation\n\\[\n\\begin{cases}\na_{11}x_1 + \\cdots +A_{1n}x_1 = b_1 \\\\\n\\vdots                              \\\\\na_{m1}x_1 + \\cdots +A_{mn}x_n = b_m\n\\end{cases}\n\\Longleftrightarrow\n\\begin{pmatrix}\na_{11} && \\cdots && a_{1n} \\\\\n\\vdots && \\ddots && \\vdots \\\\\na_{m1} && \\cdots && a_{mn}\n\\end{pmatrix}\n\\begin{pmatrix}\nx_1 \\\\\n\\vdots \\\\\nx_n\n\\end{pmatrix} =\n\\begin{pmatrix}\nb_1 \\\\\n\\vdots \\\\\nb_m\n\\end{pmatrix}\n\\]\nThat is, \\(A\\bf{x} = \\bf{b}\\)\n👉 Example 1: how it works\n\\[\n\\begin{cases}\n2x+3y+5z=7 \\\\\nx+4y+8z=-3 \\\\\nx+5y+9z=8\n\\end{cases}\n\\Longleftrightarrow\n\\begin{pmatrix}\n2 && 3 && 5 \\\\\n1 && 4 && 8 \\\\\n1 && 5 && -9\n\\end{pmatrix}\n\\begin{pmatrix}\nx \\\\\ny \\\\\nz\n\\end{pmatrix} =\n\\begin{pmatrix}\n2x+3y+5z \\\\\nx+4y+8z \\\\\nx+5y+9z\n\\end{pmatrix}=\n\\begin{pmatrix}\n7 \\\\\n-3 \\\\\n8\n\\end{pmatrix}\n\\]\nThis can be written as:\n\\[\nA\\vec{x}=\\vec{b}\n\\]\nSo the natural question is, how do we solve \\(x\\), \\(y\\), and \\(z\\)?\nIf \\(\\vec{x}\\) and \\(\\vec{b}\\) were just ordinary numbers \\(x\\) and \\(b\\), we would multiply both left and right with reciprocal \\(\\dfrac{1}{a}\\):\n\\[\n\\dfrac{1}{a}ax = \\dfrac{1}{a}b \\Rightarrow x = \\dfrac{b}{a}\n\\]\nSo the key value here is \\(\\dfrac{1}{A}\\), which gives the identity when multiplied by \\(A\\). Now the identity for matrices is \\(I_n\\), so we are looking for a matrix \\(B\\) for which\n\\[\nAB=BA=I_n\n\\]",
-    "crumbs": [
-      "Chapter 2 — Linear Algebra",
-      "Matrices, linear systems, and determinants"
-    ]
-  },
-  {
-    "objectID": "chapter-2/matrices.html#invertible-matrices",
-    "href": "chapter-2/matrices.html#invertible-matrices",
-    "title": "Matrices, linear systems, and determinants",
-    "section": "Invertible Matrices",
-    "text": "Invertible Matrices\nA square matrix \\(A\\) is invertible if an inverse matrix \\(A^{-1}\\) exists that satisfies\n\\[\nA A^{-1} = A^{-1} A = I_n\n\\]\n👉 Example 1: invertible \\(2 \\times 2\\) matrix\n\\[\n\\text{Let}\\ A=\n\\begin{pmatrix}\n2 && 3 \\\\\n1 && 2\n\\end{pmatrix},\\ \\text{then }\\ A^{-1}=\n\\begin{pmatrix}\n2 && -3 \\\\\n-1 && 2\n\\end{pmatrix}\n\\]\nThis can easily be verified as follows:\n\\[\nAA^{-1} =\n\\begin{pmatrix}\n2 && 3 \\\\\n1 && 2\n\\end{pmatrix}\n\\begin{pmatrix}\n2 && -3 \\\\\n-1 && 2\n\\end{pmatrix}\n=\n\\begin{pmatrix}\n1 && 0 \\\\\n0 && 1\n\\end{pmatrix}\n\\]\n👉 Example 2: invertible \\(3 \\times 3\\) matrix\n\\[\nB = \\begin{pmatrix}\n1 && 1 && 1 \\\\\n0 && 1 && 1 \\\\\n1 && 0 && 1\n\\end{pmatrix},\\ B^{-1}=\n\\begin{pmatrix}\n1 && -1 && 0 \\\\\n1 && 0 && -1 \\\\\n-1 && 1 && 1\n\\end{pmatrix}\n\\Rightarrow\nBB^{-1}=B^{-1}B=I_3\n\\]\nHowever, not every matrix as an inverse matrix.\n👉 Example 3: a non-invertible matrix\n\\[\nA =\n\\begin{pmatrix}\n0 && 0 \\\\\n0 && 0\n\\end{pmatrix}\n\\Rightarrow\n\\begin{pmatrix}\n0 && 0 \\\\\n0 && 0\n\\end{pmatrix}\n\\begin{pmatrix}\na && b \\\\\nc && d\n\\end{pmatrix}=\n\\begin{pmatrix}\n0 && 0 \\\\\n0 && 0\n\\end{pmatrix}\\neq I_2\n\\]\nSo not every matrix as an inverse! Some matrices have inverses, others don’t.\nUsing this, we can actually solve the above system of linear equations.\n\\[\n\\begin{cases}\n2x + 3y = 13 \\\\\nx+2y = 8\n\\end{cases}\n\\Longleftrightarrow\n\\begin{pmatrix}\n2 && 3 \\\\\n1 && 2\n\\end{pmatrix}\n\\begin{pmatrix}\nx \\\\\ny\n\\end{pmatrix}=\n\\begin{pmatrix}\n13 \\\\\n8\n\\end{pmatrix}\n\\]\nMultiplication by the inverse matrix on both sides gives (for the inverse matrix, see the first example listed under Invertible Matrices):\n\\[\n\\begin{pmatrix}\n2 && -3 \\\\\n-1 && 2\n\\end{pmatrix}\n\\begin{pmatrix}\n2 && 3 \\\\\n1 && 2\n\\end{pmatrix}\n\\begin{pmatrix}\nx \\\\\ny\n\\end{pmatrix}=\n\\begin{pmatrix}\n2 && -3 \\\\\n-1 && 2\n\\end{pmatrix}\n\\begin{pmatrix}\n13 \\\\\n8\n\\end{pmatrix}\n\\Rightarrow\n\\begin{pmatrix}\nx \\\\\ny\n\\end{pmatrix}=\n\\begin{pmatrix}\n2 \\\\\n3\n\\end{pmatrix}\n\\]\nNow that we learned about inverse matrices, we would like to find the inverse of a general matrix\n\\[\n\\begin{pmatrix}\na && b \\\\\nc && d\n\\end{pmatrix}\n\\]\nNote that at this point, we don’t even know if this matrix has an inverse.\nWe are looking for an inverse matrix, so we have\n\\[\n\\begin{pmatrix}\na && b \\\\\nc && d\n\\end{pmatrix}\n\\begin{pmatrix}\nx && y \\\\\nz && w\n\\end{pmatrix}=\n\\begin{pmatrix}\n1 && 0 \\\\\n0 && 1\n\\end{pmatrix}=\n\\begin{pmatrix}\nax+bz && ay+bw \\\\\ncx+dz && cy+dw\n\\end{pmatrix}\n\\]\nFrom this we infer that\n\\[\n\\begin{cases}\nax+bz = 1 \\\\\nay+bw = 0 \\\\\ncx+dz = 0 \\\\\ncy+dw = 1\n\\end{cases} \\Rightarrow\n\\begin{cases}\nadx+bdz = d \\\\\nady+bdw = 0 \\\\\nbcx+bdz = 0 \\\\\nbcy+bdw = b\n\\end{cases}\n\\]\nSubtraction of the first and the third equations and the second and last respectively results in:\n\\[\n\\begin{cases}\nx = \\dfrac{d}{ad-bc} \\\\\ny = \\dfrac{-b}{ad-bc} \\\\\nz = \\dfrac{-c}{ad-bc} \\\\\nw = \\dfrac{a}{ad-bc}\n\\end{cases}, ad-bc\\neq 0 \\Rightarrow\n\\begin{pmatrix}\nx && y \\\\\nz && w\n\\end{pmatrix}=\n\\dfrac{1}{ad-bc}\n\\begin{pmatrix}\nd && -b \\\\\n-c && a\n\\end{pmatrix}\n\\]\n🚨 So the matrix has an inverse if and only if \\(ad-bc\\neq 0\\). So the \\(ad-bc\\) quantity is key here, as it determines if the matrix is invertible or not! This quantity is called the determinant❗\nThe definition of a determinant can be generalized to any \\(n \\times n\\) matrix, but we will refrain from doing so here. Instead, we will focus on the \\(2 \\times 2\\) case, which is sufficient for our purposes.",
-    "crumbs": [
-      "Chapter 2 — Linear Algebra",
-      "Matrices, linear systems, and determinants"
-    ]
-  },
-  {
-    "objectID": "chapter-2/matrices.html#the-determinant",
-    "href": "chapter-2/matrices.html#the-determinant",
-    "title": "Matrices, linear systems, and determinants",
-    "section": "The Determinant",
-    "text": "The Determinant\nA determinant is a function \\[\n\\text{det:} M_{n \\times n}(F) \\rightarrow F\n\\] that assigns a scalar to each square matrix.\n📌 \\[\nA\\ \\text{is invertible} \\Longleftrightarrow {\\text det}(A)\\neq 0\n\\]\n\n\\[\n{\\text det}(AB)={\\text det}(BA)\n\\]\n\n📌 For a \\(2\\times2\\) matrix, \\[\n{\\text det}\\begin{pmatrix} a && b \\\\ c && d\\end{pmatrix}=ad-bc\n\\]",
-    "crumbs": [
-      "Chapter 2 — Linear Algebra",
-      "Matrices, linear systems, and determinants"
-    ]
-  },
-  {
-    "objectID": "chapter-2/matrices.html#matrix-groups-notation",
-    "href": "chapter-2/matrices.html#matrix-groups-notation",
-    "title": "Matrices, linear systems, and determinants",
-    "section": "Matrix Groups: Notation",
-    "text": "Matrix Groups: Notation\nFor a field \\(F\\) and a positive integer \\(n\\): 📌 \\(Mat_n(F)\\): the set of all \\(n\\times n\\) matrices with entries in F.\n📌 \\(GL_n(F)\\): the general linear group is the group of all invertible matrices in \\(Mat_n(F)\\).\n\\[\nGL_n(F) = \\{A\\in Mat_n(F)\\ |\\ \\text{det}(A)\\neq 0\\}.\n\\]\n\n\\(SL_n(F)\\): the special linear group is a subgroup of \\(GL_n(F)\\), consisting of matrices with determinant 1.\n\n\\[\nSL_n(F) = \\{A\\in GL_n(F)\\ |\\ \\text{det}(A)=1\\}.\n\\]\n👉 Example 1: members of \\(Mat_n(F)\\)\n\\[\nMat_2(\\mathbb{R}):\\ \\begin{pmatrix} 2 && 3 \\\\ -1 && \\sqrt{7}\\end{pmatrix},\\ \\begin{pmatrix} \\pi && 3+\\sqrt{2} \\\\ -7 && \\dfrac{3}{4}\\end{pmatrix}\n\\]\n👉 Example 2: members of \\(GL_n(F)\\)\n\\[\nGL_2(\\mathbb{R}):\\ \\begin{pmatrix} 1 && 2 \\\\ 3 && 4\\end{pmatrix} \\Rightarrow \\text{det}=-2\n\\]\nHowever, the following matrix is not a member of \\(GL_2(\\mathbb{R})\\), as it is a non-invertible matrix:\n\\[\n\\begin{pmatrix} 2 && 4 \\\\ 5 && 10\\end{pmatrix} \\Rightarrow \\text{det}=-0\n\\]\n👉 Example 3: members of \\(SL_n(F)\\)\n\\[\n\\begin{pmatrix} 3 && 2 \\\\ 7 && 5\\end{pmatrix} \\in SL_2(\\mathbb{R})\n\\]\nBut\n\\[\n\\begin{pmatrix} 4 && 6 \\\\ 0 && 1\\end{pmatrix} \\notin SL_2(\\mathbb{R})\n\\]",
-    "crumbs": [
-      "Chapter 2 — Linear Algebra",
-      "Matrices, linear systems, and determinants"
-    ]
-  },
-  {
-    "objectID": "chapter-2/linear-algebra.html",
-    "href": "chapter-2/linear-algebra.html",
-    "title": "Linear algebra",
-    "section": "",
-    "text": "The content of this chapter is designed to be self-contained, so you do not need any prior knowledge of linear algebra to follow along. However, some familiarity with basic algebra and calculus will be helpful.",
-    "crumbs": [
-      "Chapter 2 — Linear Algebra",
-      "Linear algebra"
-    ]
-  },
-  {
-    "objectID": "chapter-2/linear-algebra.html#why-do-we-need-this",
-    "href": "chapter-2/linear-algebra.html#why-do-we-need-this",
-    "title": "Linear algebra",
-    "section": "Why do we need this?",
-    "text": "Why do we need this?\nMathematics is not only about numbers. It is also about structure. A large part of modern mathematics is concerned with understanding structures: what their essential properties are, how they relate to one another, and what can be learned from the transformations that preserve those properties.\nLinear algebra gives us some of the first and most useful tools for thinking in this way. At first, the subject may seem to be mainly about solving systems of equations, manipulating matrices, and calculating determinants. However, this misses the main point.\nRemember that in the introduction we said:\n\nIn mathematics, we often try to generalize concepts, theorems, and equations.\n\nHere, the deeper idea is that seemingly unrelated mathematical problems can often be described using the same underlying structure.\nA striking example of this is the Fourier transform.\n\n\n\n\nFourier analysis may seem to belong to a completely different part of mathematics. Yet from the perspective of linear algebra, we can think of a function as an element of a vector space. This allows us to ask:\n\nWhat are the right basis vectors, and what are the coordinates of our object in that basis?\n\nJust as an ordinary vector can be written as a linear combination of basis vectors, a function can be written as a linear combination of basis functions. The familiar sine and cosine waves play the role of such basis functions, forming an orthonormal basis with respect to a suitable inner product. The Fourier transform then gives us the coordinates of our function with respect to this basis.\nThis gives us a completely different way of looking at a problem. Instead of asking what a complicated function does directly, we can ask how much of each basic frequency it contains.\nWhat is striking is that problems involving waves, sound, differential equations, or signal processing can all lead to essentially the same mathematical question:\n\nWhat is the right basis, and what are the coordinates of our object with respect to that basis?\n\nThis is one of the reasons linear algebra is so powerful. It gives us a common language in which very different mathematical problems can reveal the same underlying structure.\nThe ideas developed in this chapter will reappear in increasingly sophisticated forms. In particular, the language of vector spaces and linear transformations will eventually lead us toward representations of groups and, ultimately, Galois representations.\n\nThe goal of linear algebra is not simply to learn how to calculate with matrices. The goal is to learn how to recognize structure.",
-    "crumbs": [
-      "Chapter 2 — Linear Algebra",
-      "Linear algebra"
+      "Summary & lab"
     ]
   },
   {

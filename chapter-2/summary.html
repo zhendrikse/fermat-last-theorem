@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Basic calculus &amp; complex analysis – Fermat's Last Theorem — From Scratch</title>
+<title>Summary &amp; lab – Fermat’s Last Theorem — From Scratch</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -36,8 +36,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../chapter-2/linear-algebra.html" rel="next">
-<link href="../chapter-1/basic-set-number-theory.html" rel="prev">
+<link href="../chapter-2/linear-transformations.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -279,7 +278,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapter-1/introduction.html">Chapter 1 — Basics</a></li><li class="breadcrumb-item"><a href="../chapter-1/calculus-complex-analysis.html">Basic calculus &amp; complex analysis</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapter-2/linear-algebra.html">Chapter 2 — Linear Algebra</a></li><li class="breadcrumb-item"><a href="../chapter-2/summary.html">Summary &amp; lab</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -336,7 +335,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapter-1/calculus-complex-analysis.html" class="sidebar-item-text sidebar-link active">
+  <a href="../chapter-1/calculus-complex-analysis.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Basic calculus &amp; complex analysis</span></a>
   </div>
 </li>
@@ -377,7 +376,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapter-2/summary.html" class="sidebar-item-text sidebar-link">
+  <a href="../chapter-2/summary.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Summary &amp; lab</span></a>
   </div>
 </li>
@@ -494,7 +493,8 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#multivariable-function" id="toc-multivariable-function" class="nav-link active" data-scroll-target="#multivariable-function">Multivariable function</a></li>
+  <li><a href="#linear-algebra-lab" id="toc-linear-algebra-lab" class="nav-link active" data-scroll-target="#linear-algebra-lab">Linear algebra lab</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
   </ul>
 </nav>
     </div>
@@ -502,9 +502,9 @@ window.Quarto = {
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapter-1/introduction.html">Chapter 1 — Basics</a></li><li class="breadcrumb-item"><a href="../chapter-1/calculus-complex-analysis.html">Basic calculus &amp; complex analysis</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapter-2/linear-algebra.html">Chapter 2 — Linear Algebra</a></li><li class="breadcrumb-item"><a href="../chapter-2/summary.html">Summary &amp; lab</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Basic calculus &amp; complex analysis</h1>
+<h1 class="title">Summary &amp; lab</h1>
 </div>
 
 
@@ -521,15 +521,68 @@ window.Quarto = {
 </header>
 
 
-<section id="multivariable-function" class="level2">
-<h2 class="anchored" data-anchor-id="multivariable-function">Multivariable function</h2>
-<p>A multivariable function is a map</p>
+<section id="linear-algebra-lab" class="level1">
+<h1>Linear algebra lab</h1>
+<p>We start with the following transformation in <span class="math inline">\(\mathbb{R}^2\)</span>:</p>
 <p><span class="math display">\[
-f: \mathbb{R}^n \rightarrow \mathbb{R}
+👉\ \begin{pmatrix}
+x' \\
+y'
+\end{pmatrix}=
+\begin{pmatrix}
+a &amp;&amp; b \\
+c &amp;&amp; d
+\end{pmatrix}
+\begin{pmatrix}
+x \\
+y
+\end{pmatrix},\ \text{with}\ \begin{pmatrix}
+a &amp;&amp; b \\
+c &amp;&amp; d
+\end{pmatrix}=
+\begin{pmatrix}
+2 &amp;&amp; 1 \\
+0 &amp;&amp; 1
+\end{pmatrix}
 \]</span></p>
-<p><a href="https://github.com/zhendrikse/helion/blob/main/examples/mathematics/scenes/real_surfaces.js"> <img alt="Source" src="https://img.shields.io/badge/github-repo-green?logo=github&amp;label=real_surfaces.js"> </a></p>
-<div id="realSurfacesContainer"></div>
-<script type="module" src="https://www.hendrikse.name/helion/examples/real_surfaces.js"></script>
+<div id="matrixTransformationContainer"></div>
+<script type="module" src="https://www.hendrikse.name/helion/examples/matrix_transformation.js"></script>
+<p style="clear: both;">
+</p>
+</section>
+<section id="summary" class="level1">
+<h1>Summary</h1>
+<p><span class="math display">\[
+👉\ \text{Matrix}:\ A=
+\begin{pmatrix}
+a&amp;b\\
+b&amp;d
+\end{pmatrix}
+\]</span></p>
+<p><span class="math display">\[\Downarrow\]</span></p>
+<p><span class="math display">\[
+👉\ \text{Eigen values/eigen vectors}:\ Ae_i=\lambda_i e_i
+\]</span></p>
+<p><span class="math display">\[\Downarrow\]</span></p>
+<p><span class="math display">\[
+👉\ \text{Spectral theorem}:\ e_1\perp e_2
+\]</span></p>
+<p><span class="math display">\[\Downarrow\]</span></p>
+<p><span class="math display">\[
+👉\ \text{Orthonormal matrix}:\ Q=(e_1\ e_2)
+\]</span></p>
+<p><span class="math display">\[\Downarrow\]</span></p>
+<p><span class="math display">\[
+👉\ \text{Diagonale matrix}:\ \Lambda=
+\begin{pmatrix}
+\lambda_1&amp;0\\
+0&amp;\lambda_2
+\end{pmatrix}
+\]</span></p>
+<p><span class="math display">\[\Downarrow\]</span></p>
+<p><span class="math display">\[
+👉\ \text{Spectral decomposition}:\ \boxed{A=Q\Lambda Q^T}
+\]</span></p>
 
 
 </section>
@@ -950,14 +1003,11 @@ f: \mathbb{R}^n \rightarrow \mathbb{R}
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../chapter-1/basic-set-number-theory.html" class="pagination-link" aria-label="Basic set &amp;amp; number theory">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Basic set &amp; number theory</span>
+      <a href="../chapter-2/linear-transformations.html" class="pagination-link" aria-label="Linear transformations, eigenvalues, inner products, and the spectral theorem">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Linear transformations, eigenvalues, inner products, and the spectral theorem</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../chapter-2/linear-algebra.html" class="pagination-link" aria-label="Linear algebra">
-        <span class="nav-page-text">Linear algebra</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
