@@ -15,6 +15,8 @@ website:
 
       - section: "Chapter 1 — Basics"
         contents:
+          - chapter-1/introduction.qmd
+          - chapter-1/basic-set-number-theory.qmd
           - chapter-1/calculus-complex-analysis.qmd
 
       - section: "Chapter 2 — Linear Algebra"

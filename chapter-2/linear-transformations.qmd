@@ -13,3 +13,35 @@ This section corresponds to **1:07:03** in *Proof of Fermat Last Theorem FROM SC
 
 # Linear transformations
 
+So far, we have mostly talked about a single vector space. 
+Now we move on to functions defined between distinct vector spaces.
+
+We start with the following transformation in $\mathbb{R}^2$:
+
+$$
+👉\ \begin{pmatrix}
+x' \\
+y'
+\end{pmatrix}=
+\begin{pmatrix}
+a && b \\
+c && d
+\end{pmatrix}
+\begin{pmatrix}
+x \\
+y
+\end{pmatrix},\ \text{with}\ \begin{pmatrix}
+a && b \\
+c && d
+\end{pmatrix}=
+\begin{pmatrix}
+2 && 1 \\
+0 && 1
+\end{pmatrix}
+$$
+
+```{=html}
+<div id="matrixTransformationContainer" style="aspect-ratio: 19/12"></div>
+<script type="module" src="https://www.hendrikse.name/helion/examples/matrix_transformation.js"></script>
+```
+<p style="clear: both;"></p>

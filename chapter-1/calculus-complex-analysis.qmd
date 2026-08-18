@@ -1,0 +1,23 @@
+---
+title: "Basic calculus &amp; complex analysis"
+format: html
+---
+
+## Multivariable function
+
+A multivariable function is a map 
+
+$$
+f: \mathbb{R}^n \rightarrow \mathbb{R}
+$$
+
+
+<a href="https://github.com/zhendrikse/helion/blob/main/examples/mathematics/scenes/real_surfaces.js">
+    <img alt="Source" src="https://img.shields.io/badge/github-repo-green?logo=github&label=real_surfaces.js"/>
+</a>
+
+```{=html}
+<div id="realSurfacesContainer"></div>
+<script type="module" src="https://www.hendrikse.name/helion/examples/real_surfaces.js"></script>
+```
+

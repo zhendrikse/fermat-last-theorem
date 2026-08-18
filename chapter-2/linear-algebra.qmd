@@ -17,7 +17,15 @@ Remember that in the introduction we said:
 
 Here, the deeper idea is that seemingly unrelated mathematical problems can often be described using the same underlying structure.
 
-A striking example of this is the **Fourier transform**. Fourier analysis may seem to belong to a completely different part of mathematics. Yet from the perspective of linear algebra, we can think of a function as an element of a vector space. This allows us to ask:
+A striking example of this is the **Fourier transform**. 
+
+```{=html}
+<div id="fourierTransformContainer"></div>
+<script type="module" src="https://www.hendrikse.name/helion/examples/fourier_transform.js"></script>
+```
+<p style="clear: both;"></p>
+
+Fourier analysis may seem to belong to a completely different part of mathematics. Yet from the perspective of linear algebra, we can think of a function as an element of a vector space. This allows us to ask:
 
 > **What are the right basis vectors, and what are the coordinates of our object in that basis?**
 

@@ -1,10 +1,6 @@
 ---
-title: "Introduction"
+title: "Fermat's Last Theorem"
 format: html
----
-
-# Fermat's Last Theorem — From Scratch
-
 ---
 
 ::: {.callout-note}
@@ -19,8 +15,24 @@ Many of us can remember the
 [Pythagorean theorem](https://en.wikipedia.org/wiki/Pythagorean_theorem) from high school. It is a simple and elegant statement about right triangles:
 
 $$
-x^2 + y^2 = z^2
+👉\ x^2 + y^2 = z^2
 $$
+
+```{=html}
+<div id="pythagorasContainer"></div>
+<script type="module" src="https://www.hendrikse.name/helion/examples/pythagoras.js"></script>
+```
+<p style="clear: both;"></p>
+
+---
+
+::: {.callout-note}
+Visualizations in this project are created using the [Helion library](https://www.hendrikse.name/helion/).
+:::
+
+---
+
+Going forward, we will frequently notice that
 
 > **In mathematics, we often try to generalize concepts, theorems and/or equations**
 

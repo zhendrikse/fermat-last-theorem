@@ -23,21 +23,21 @@ satisfying these axioms for all $x,y,z\in V$ and $a, b\in F$:
 
 Here we intentionally want to generalize the concept of a vector!
 
-**VS 1**: $x + y = y + x$ (addition: commutativity)
+📌 **VS 1**: $x + y = y + x$ (addition: commutativity)
 
-**VS 2**: $(x + y) + z = x + (y + z)$ (addition: associativity)
+📌 **VS 2**: $(x + y) + z = x + (y + z)$ (addition: associativity)
 
-**VS 3**: $\exists {\bf 0} \in V\ \text{s.t.}\ x + {\bf 0}= x$ (addition: zero vector)
+📌 **VS 3**: $\exists {\bf 0} \in V\ \text{s.t.}\ x + {\bf 0}= x$ (addition: zero vector)
 
-**VS 4**: $\forall x\in V, \exists(-x) \in V\ \text{s.t.}\ x + (-x) = {\bf 0}$ (addition: inverse)
+📌 **VS 4**: $\forall x\in V, \exists(-x) \in V\ \text{s.t.}\ x + (-x) = {\bf 0}$ (addition: inverse)
 
-**VS 5**: $1 \cdot x = x$ (scalar multiplication: identity)
+📌 **VS 5**: $1 \cdot x = x$ (scalar multiplication: identity)
 
-**VS 6**: $1 (ab)\cdot x = a\cdot(b\cdot x)$ (scalar multiplication: associativity)
+📌 **VS 6**: $1 (ab)\cdot x = a\cdot(b\cdot x)$ (scalar multiplication: associativity)
 
-**VS 7**: $a\cdot(x + y) = a\cdot x + a\cdot y$ (scalar multiplication: distributive law)
+📌 **VS 7**: $a\cdot(x + y) = a\cdot x + a\cdot y$ (scalar multiplication: distributive law)
 
-**VS 8**: $(a + b)\cdot x = a\cdot x + b\cdot x$ (scalar multiplication: distributive law)
+📌 **VS 8**: $(a + b)\cdot x = a\cdot x + b\cdot x$ (scalar multiplication: distributive law)
 
 Note that addition is also a generalized concept here, an operation which name
 happens to be addition, hence we cannot
@@ -81,7 +81,7 @@ the negative is _not_ in the set.
 
 ## Subspace
 
-A **subspace** of a vector space $V$ is a non-empty subset $W$ of $$ that is itself a vector
+A **subspace** of a vector space $V$ is a non-empty subset $W$ of $V$ that is itself a vector
 space under the operations inherited from $V$.
 
 For example, $\mathbb{R}$ is a subspace of $\mathbb{C}$, $\mathbb{R}\subset \mathbb{C}$.
@@ -133,4 +133,237 @@ $$
 
 where $a_1, a_2, \dots, a_k$ are scalars in the field $F$.
 
-For example, 
+👉 **Example 1**: a linear combination in $\mathbb{R}^2$?
+
+Let's take the subset of vectors
+
+$$
+S=\left\{ 
+\begin{pmatrix}
+1 \\ 2
+\end{pmatrix},
+\begin{pmatrix}
+3 \\ 4
+\end{pmatrix}
+\right\}
+$$
+
+Then the linear combinations of $S$ would be something like
+
+$$
+S= 
+a\begin{pmatrix}
+1 \\ 2
+\end{pmatrix}
++b
+\begin{pmatrix}
+3 \\ 4
+\end{pmatrix}
+$$
+
+Now we can ask if $\begin{pmatrix} 5 \\ 8\end{pmatrix}$ is a linear combination of $S$. To this extent, we check if there exists an $a$ and $b$, such that 
+
+$$
+a\begin{pmatrix}
+1 \\ 2
+\end{pmatrix}
++b
+\begin{pmatrix}
+3 \\ 4
+\end{pmatrix} =
+\begin{pmatrix} 5 \\ 8\end{pmatrix} 
+$$
+
+And indeed, this holds true for $a=2$ and $b=1$, so $\begin{pmatrix} 5 \\ 8\end{pmatrix}$ _is_ a linear combination of $S$!
+
+👉 **Example 2**: a linear combination in $\mathbb{R}^3$?
+
+Let's take the subset of vectors
+
+$$
+S=\left\{ 
+\begin{pmatrix}
+1 \\ 2 \\ 0
+\end{pmatrix},
+\begin{pmatrix}
+4 \\ 7 \\ 0
+\end{pmatrix}
+\right\}
+$$
+
+We can ask if $\begin{pmatrix} 3 \\ 4 \\ 5 \end{pmatrix}$ is a linear combination of $S$:
+
+$$
+a\begin{pmatrix}
+1 \\ 2 \\0
+\end{pmatrix}
++b
+\begin{pmatrix}
+4 \\ 7 \\ 0
+\end{pmatrix} =
+\begin{pmatrix} 3 \\ 4 \\ 5\end{pmatrix} 
+$$
+
+The answer is no, as the third coordinate will always remain zero. So $\begin{pmatrix} 3 \\ 4 \\ 5 \end{pmatrix}$ is _not_ a linear combination of $S$.
+
+## Span
+
+Let $S$ be a non-empty subset of a vector space $V$. 
+The **span** of $S$, denoted by $\text{span}(S)$, is the
+smallest subset of $V$ containing $S$. In practice, it is the 
+set of all linear combinations of elements of $S=\{ v_1, v_2, \cdots, v_n\}$:
+
+$$
+\text{span}(S) = 
+\{
+a_1v_1+\cdots+a_n v_n | n \geq 1, v_i\in S, a_i \in F
+\}
+$$
+
+## Linear independence and dependence
+
+A set of vectors $S=\{ v_1, v_2, \cdots, v_k\}$ is 
+**linearly independent** if the only solution to the equation 
+
+$$
+a_1v_1+a_2v_2+\cdots+a_k v_k = {\bf 0}
+$$
+
+is the trivial solution $a_1=a_2=\cdots=a_k=0$. If a set is
+not linearly independent, it is called **linearly dependent**.
+
+👉 **Example 1**: linear dependence in $\mathbb{R}^2$
+
+In $\mathbb{R}^2$, are $\{(1, 2), (1, 0)\}$ linearly independent? 
+
+To answer this quesiton, we check if the only solution to the following equation is the trivial solution:
+
+$$
+a_1(1, 2) + a_2(1, 0) = (a_1 + a_2, 2a_1) = (0, 0) \Rightarrow a_1=0 \Rightarrow a_2 = 0
+$$
+
+So these vectors are linearly independent.
+
+👉 **Example 2**: linear dependence in $\mathbb{R}^3$
+
+In $\mathbb{R}^3$, are $\{(1, 2, 3), (1, 3, 5), (2, 5, 8)\}$ linearly independent? 
+
+To answer this quesiton, we check if the only solution to the following equation is the trivial solution:
+
+$$
+a_1(1, 2, 3) + a_2(1, 3, 5) + a_3(2, 5, 8) = (0, 0, 0) \Rightarrow a_1=0 \Rightarrow a_2 = 0
+$$
+
+Now we find a solution for $a1 = 1, a2 = 1, a3= -1$, so these vectors are linearly dependent.
+
+👉 **Example 3**: linear dependence in $\mathbb{R}_{[x]}$
+
+In $\mathbb{R}_{[x]}$, the collection of all real coefficient polynomials, is $1 + x, x^2 + x, 2 + 3x +x^2$ linearly dependent or independent?
+
+It is linearly dependent, because there is a solution:
+
+$$
+2\cdot(1 + x) + 1\cdot(x^2 + x) -1\cdot(3x + x^2) = 0
+$$
+
+Now finally we can define the concepts of basis and dimension.
+
+## Basis and dimension
+
+📌 A **basis** for a vector space $V$ is a linearly independent subset of $V$ that spans $V$
+
+📌 The **dimension** of $V$, $\text{dim}(V)$, is the number of vectors in a basis
+
+👉 **Example 1**: $\mathbb{R}^2$
+
+Basis:
+
+$$
+\left\{
+\begin{pmatrix}
+1 \\ 0
+\end{pmatrix},
+\begin{pmatrix}
+0 \\ 1
+\end{pmatrix} 
+\right\}
+\Rightarrow
+\begin{pmatrix}
+a \\ b
+\end{pmatrix}=
+a\begin{pmatrix}
+1 \\ 0
+\end{pmatrix}+
+b\begin{pmatrix}
+0 \\ 1
+\end{pmatrix}
+$$
+
+Note that we want to have a set that is large enough to span the whole space, but at the same time is small enough to contain only the necessary information.
+
+👉 **Example 2**: $\mathbb{R}^3$
+
+Most of the time, we take as basis:
+
+$$
+\left\{
+\begin{pmatrix}
+1 \\ 0 \\ 0
+\end{pmatrix},
+\begin{pmatrix}
+0 \\ 1 \\ 0
+\end{pmatrix},
+\begin{pmatrix}
+0 \\ 0 \\ 1
+\end{pmatrix} 
+\right\}
+$$
+
+Since the number of elements in this basis is three, the dimension of $\mathbb{R}^3$ is three.
+
+Note that we could have taken any other set of three linearly independent basis vectors, such as
+
+$$
+\left\{
+\begin{pmatrix}
+1 \\ 1 \\ 0
+\end{pmatrix},
+\begin{pmatrix}
+0 \\ 1 \\ 1
+\end{pmatrix},
+\begin{pmatrix}
+1 \\ 0 \\ 1
+\end{pmatrix} 
+\right\}
+$$
+
+👉 **Example 3**: $P_2(\mathbb{R})$
+
+Possible basis are $\{1, x, x^2\}$ and $\{7, x + x^2, -x\}$. Since there are three vectors in the basis, the dimension of $P_2(\mathbb{R})$ is three.
+
+👉 **Example 4**: $Mat_2(\mathbb{R})$
+
+The most easy basis would be
+
+$$
+\left\{
+\begin{pmatrix}
+1 && 0 \\ 
+0 && 0
+\end{pmatrix},
+\begin{pmatrix}
+0 && 1 \\ 
+0 && 0
+\end{pmatrix},
+\begin{pmatrix}
+0 && 0 \\ 
+1 && 0
+\end{pmatrix}, 
+\begin{pmatrix}
+0 && 0 \\ 
+0 && 1
+\end{pmatrix} 
+\right\}
+$$
+
+So the dimension of this vector space is four.
