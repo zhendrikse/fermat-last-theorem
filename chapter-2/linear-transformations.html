@@ -77,6 +77,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -506,6 +535,32 @@ Note
 <section id="linear-transformations" class="level1">
 <h1>Linear transformations</h1>
 <p>So far, we have mostly talked about a single vector space. Now we move on to functions defined between distinct vector spaces.</p>
+<p>We start with the following transformation in <span class="math inline">\(\mathbb{R}^2\)</span>:</p>
+<p><span class="math display">\[
+👉\ \begin{pmatrix}
+x' \\
+y'
+\end{pmatrix}=
+\begin{pmatrix}
+a &amp;&amp; b \\
+c &amp;&amp; d
+\end{pmatrix}
+\begin{pmatrix}
+x \\
+y
+\end{pmatrix},\ \text{with}\ \begin{pmatrix}
+a &amp;&amp; b \\
+c &amp;&amp; d
+\end{pmatrix}=
+\begin{pmatrix}
+2 &amp;&amp; 1 \\
+0 &amp;&amp; 1
+\end{pmatrix}
+\]</span></p>
+<div id="matrixTransformationContainer" style="aspect-ratio: 19/12"></div>
+<script type="module" src="https://www.hendrikse.name/helion/examples/matrix_transformation.js"></script>
+<p style="clear: both;">
+</p>
 
 
 </section>
