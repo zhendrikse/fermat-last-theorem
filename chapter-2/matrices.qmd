@@ -262,7 +262,7 @@ $$
 
 📌 **Identity Matrix ($I_n$)**: The $n \times n$ diagoonal matrix with 1s on the diagonal. It acts as a multiplicative identidy: $AI_n = I_n A = A$
 
-👉 **Example 1: square matrices
+👉 **Example 1**: square matrices
 
 $$
 n \times n,
@@ -647,40 +647,41 @@ The definition of a determinant can be generalized to any $n \times n$ matrix, b
 
 A **determinant** is a function
 $$
-\text{det:} M_{n \times n}(F) \rightarrow F
+\det: M_{n \times n}(F) \rightarrow F
 $$
 that assigns a scalar to each square matrix.
 
 📌
 $$
-A\ \text{is invertible} \Longleftrightarrow {\text det}(A)\neq 0
+A\ \text{is invertible} \Longleftrightarrow \det(A)\neq 0
 $$
 
--
+📌
 $$
-{\text det}(AB)={\text det}(BA)
+\det(AB)=\det(BA)
 $$
 
 📌 For a $2\times2$ matrix,
 $$
-{\text det}\begin{pmatrix} a && b \\ c && d\end{pmatrix}=ad-bc
+\det\begin{pmatrix} a && b \\ c && d\end{pmatrix}=ad-bc
 $$
 
 ## Matrix Groups: Notation
 
 For a field $F$ and a positive integer $n$:
+
 📌 $Mat_n(F)$: the set of all $n\times n$ matrices with entries in F.
 
 📌 $GL_n(F)$: the general linear group is the group of all invertible matrices in $Mat_n(F)$.
 
 $$
-GL_n(F) = \{A\in Mat_n(F)\ |\ \text{det}(A)\neq 0\}.
+GL_n(F) = \{A\in Mat_n(F)\ |\ \det(A)\neq 0\}.
 $$
 
-- $SL_n(F)$: the special linear group is a subgroup of $GL_n(F)$, consisting of matrices with determinant 1.
+📌 $SL_n(F)$: the special linear group is a subgroup of $GL_n(F)$, consisting of matrices with determinant 1.
 
 $$
-SL_n(F) = \{A\in GL_n(F)\ |\ \text{det}(A)=1\}.
+SL_n(F) = \{A\in GL_n(F)\ |\ \det(A)=1\}.
 $$
 
 👉 **Example 1**: members of $Mat_n(F)$

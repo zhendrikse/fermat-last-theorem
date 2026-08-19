@@ -4,9 +4,9 @@ format: html
 ---
 
 ::: {.callout-note}
-**Video:** [Proof of Fermat Last Theorem FROM SCRATCH](https://www.youtube.com/watch?v=9f-hGSh8lF0)
-
 This project and its contents are for a large part inspired by and based on the video *Proof of Fermat Last Theorem FROM SCRATCH*.
+
+**Video:** [Proof of Fermat Last Theorem FROM SCRATCH](https://www.youtube.com/watch?v=9f-hGSh8lF0)
 :::
 
 ## Is Fermat's Last Theorem actually interesting?
@@ -15,7 +15,7 @@ Many of us can remember the
 [Pythagorean theorem](https://en.wikipedia.org/wiki/Pythagorean_theorem) from high school. It is a simple and elegant statement about right triangles:
 
 $$
-👉\ x^2 + y^2 = z^2
+👉\quad a^2 + b^2 = c^2
 $$
 
 ```{=html}
@@ -39,10 +39,10 @@ Going forward, we will frequently notice that
 One natural generalization here would be to replace the exponent value of two with any arbitrary natural number $n$:
 
 $$
-x^n + y^n = z^n
+a^n + b^n = c^n
 $$
 
-Fermat's Last Theorem (FLT) makes a remarkably simple claim: if $n > 2$, there are no positive integers $x$, $y$, and $z$ that satisfy it. This may come as a surprise. After all, we known that we can easily find infinitely many positive integers that satisfy the equation for $n=2$, for example:
+Fermat's Last Theorem (FLT) makes a remarkably simple claim: if $n > 2$, there are no positive integers $a$, $b$, and $c$ that satisfy it. This may come as a surprise. After all, we known that we can easily find infinitely many positive integers that satisfy the equation for $n=2$, for example:
 
 $$
 3^2 + 4^2 = 5^2

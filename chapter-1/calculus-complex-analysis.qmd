@@ -11,13 +11,91 @@ $$
 f: \mathbb{R}^n \rightarrow \mathbb{R}
 $$
 
+We are already familiar with functions of a single variable, which can be visualized as a curve in the plane, such as $f(x) = x^2$. A multivariable function can be visualized as a surface in three-dimensional space, for example:
 
 <a href="https://github.com/zhendrikse/helion/blob/main/examples/mathematics/scenes/real_surfaces.js">
     <img alt="Source" src="https://img.shields.io/badge/github-repo-green?logo=github&label=real_surfaces.js"/>
 </a>
 
+$$
+👉\quad f(x, y) = \sin(x^2 + y^2)
+$$
+
 ```{=html}
 <div id="realSurfacesContainer"></div>
 <script type="module" src="https://www.hendrikse.name/helion/examples/real_surfaces.js"></script>
 ```
+
+<p style="clear: all"></p>
+
+Another example would be the distance of a point to the origin in three-dimensional space, $f(x,y,z) = \sqrt{x^2+y^2+z^2}$.
+
+## Partical derivative
+
+For functions of several variables, we can also define a derivative. We do this by choosing just one of the many variables to be the actual variable and treating all the other variables as constants. 
+
+Let $f:\mathbb{R}^2\rightarrow\mathbb{R}$ be a function. The partial derivative with respect to $x_i$ is defined as
+
+$$
+\dfrac{\partial f}{\partial x_i} :=
+\lim_{h\rightarrow 0}
+\dfrac{f(x_1,\cdots,x_i+h,\cdots,x_n) - f(x_1,\cdots,x_n)}{h}
+$$
+
+Note that this is very similar to the way in which the derivative is defined for a function of one variable:
+
+$$
+f'(x) =
+\lim_{h\rightarrow 0}
+\dfrac{f(x+h) - f(x)}{h}
+$$
+
+::: {.callout-note}
+So why do we need this? 
+
+Later these partial derivatives will show up when we talk about singlar points and elliptic curves.
+:::
+
+👉 **Example**
+
+Let
+
+$$
+f(x,y) = x^3+y^3+xy+\sin x\cos y
+$$
+
+then
+
+$$
+\begin{array}{ll}
+\dfrac{\partial f}{\partial x} &=
+3x^2 + y + \cos x\cos y \\
+\dfrac{\partial f}{\partial y} &=
+3y^2 + x - \sin x\sin y \\
+\end{array}
+$$
+
+## Taylor series {#taylor-series}
+
+📌 A Taylor series represents a function as an infinite polynomial. With infinitely many terms, it equals the original function within its interval of convergence.
+
+👉 **Examples**
+
+$$
+\begin{array}{rl}
+e^x &= 1 + x + \dfrac{x^2}{2!} + \dfrac{x^3}{3!} + \cdots \\
+\sin x &= x - \dfrac{x^3}{3!} + \dfrac{x^5}{5!} - \dfrac{x^7}{7!}+\cdots\\
+\cos x &= 1 - \dfrac{x^2}{2!} + \dfrac{x^4}{4!}-\dfrac{x^6}{6!}+\cdots \\
+\ln(1 + x) &= x - \dfrac{x^2}{2}+\dfrac{x^3}{3}-\dfrac{x^4}{4}+\cdots \qquad (-1 < x \leq 1)
+\end{array}
+$$
+
+
+::: {.callout-note}
+So why do we need this? 
+
+Although this won't be used frequently in the forthccoming chapters, it appears a few times later.
+:::
+
+🎯 The tailer series is a way to represent a given function as an infinite polynomial.
 

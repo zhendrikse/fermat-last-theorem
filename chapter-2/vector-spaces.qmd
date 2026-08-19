@@ -15,7 +15,7 @@ We stated earlier that mathematics is not only about numbers,
 it is also about structure. A vector space is one of the most important
 examples of such a structure.
 
-## Vector Space: Axioms
+## Vector Space: Axioms {#vector-spaces}
 
 A **vector space** $V$ over a field $F$ is a set with addition ($+, V\times V \rightarrow V$) 
 and scalar multiplication ($\cdot, V\times F \rightarrow V$)
@@ -268,7 +268,7 @@ $$
 
 Now finally we can define the concepts of basis and dimension.
 
-## Basis and dimension
+## Basis and dimension {#basis-dimension}
 
 📌 A **basis** for a vector space $V$ is a linearly independent subset of $V$ that spans $V$
 

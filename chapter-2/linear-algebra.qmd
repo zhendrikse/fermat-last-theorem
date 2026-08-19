@@ -5,20 +5,113 @@ format: html
 
 The content of this chapter is designed to be self-contained, so you do not need any prior knowledge of linear algebra to follow along. However, some familiarity with basic algebra and calculus will be helpful.
 
-## Why do we need this?
+::: {.callout-note}
+🚨 So why do we need this? 
 
-Mathematics is not only about numbers. It is also about **structure**. A large part of modern mathematics is concerned with understanding structures: what their essential properties are, how they relate to one another, and what can be learned from the transformations that preserve those properties.
+Mathematics is not only about numbers. It is also about **structure**. A large part of modern mathematics is concerned with understanding structures: what their essential properties are, how they relate to one another, and what can be learned from the transformations that preserve those properties. Linear algebra gives us some of the first and most useful tools for thinking in this way.
 
-Linear algebra gives us some of the first and most useful tools for thinking in this way. At first, the subject may seem to be mainly about solving systems of equations, manipulating matrices, and calculating determinants. However, this misses the main point.
+**The goal of linear algebra is not simply to learn how to calculate with matrices. The goal is to learn how to recognize structure.**
+:::
 
 Remember that in the introduction we said:
 
 > **In mathematics, we often try to generalize concepts, theorems, and equations.**
 
-Here, the deeper idea is that seemingly unrelated mathematical problems can often be described using the same underlying structure.
+At first, the linear algebra may seem to be mainly concerned with solving systems of equations, manipulating matrices, and calculating determinants. However, this misses the main point. Here, the deeper idea is that seemingly unrelated mathematical problems can often be described using the same underlying structure.
 
-A striking example of this is the **Fourier transform**. 
+## **Example 1**: Taylor expansion
 
+We can conceptualize the [Taylor expansion](../chapter-1/calculus-complex-analysis.qmd#taylor-series) as a kind of **coordinate representation of a function with respect to a basis of polynomials**.
+
+
+::: {.callout-note}
+🚨 All concepts below will be properly addressed and explained in this very chapter on linear algebra.
+:::
+
+Take for example a function $f(x)$. Around $x=0$ we can write
+
+$$
+f(x)=a_0+a_1x+a_2x^2+a_3x^3+\cdots
+$$
+
+We can think of the objects
+
+$$
+1,\quad x,\quad x^2,\quad x^3,\ldots
+$$
+
+as [basis vectors](vector-spaces.qmd/#basis-dimension) of a [vector space](vector-spaces.qmd#vector-spaces) of polynomials, exactly those notions that are defined in this chapter on linear algebra! 
+The scalars $a_0,a_1,a_2,a_3,\ldots$ are exactly the **coordinates van $f(x)$ with respect to that basis**.
+
+Note that a Taylor series is not just an arbitrary representation of $f(x)$ in the basis $\{1,x,x^2,x^3,\ldots\}$ as the coordinates are specifically determined by the derivatives of $f(x)$ around the expansion point:
+
+$$
+a_n=\frac{f^{(n)}(0)}{n!}.
+$$
+
+For example,
+
+$$
+e^x=1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+\cdots
+$$
+
+can be interpreted in the context of linear algebra as:
+
+$$
+[e^x]_{\{1,x,x^2,x^3,\ldots\}}
+=
+\left(1,1,\dfrac{1}{2!},d\frac{1}{3!},\ldots\right).
+$$
+
+👉 **Taylor provides a different basis**
+
+We can look at it in an even more abstract way. Around a point $a$ we have the basis
+
+$$
+1,\quad (x-a),\quad (x-a)^2,\quad (x-a)^3,\ldots
+$$
+
+with which $f(x)$ becomes
+
+$$
+f(x)
+=
+f(a)
++f'(a)(x-a)
++\frac{f''(a)}{2!}(x-a)^2+\cdots.
+$$
+
+Therefore, the coordinates with respect to that polynomial basis vectors are
+
+$$
+\boxed{
+\left(
+f(a),,
+f'(a),,
+\frac{f''(a)}{2!},,
+\frac{f^{(3)}(a)}{3!},\ldots
+\right)
+}
+$$
+
+So we observe the following analogy in lineaire algebra:
+
+| Linear algebra               | Taylor analysis                         |
+| ------------------------------ | ------------------------------------- |
+| vector $v$                     | function $f$                           |
+| basis vectors $e_1,e_2,\ldots$ | $1,(x-a),(x-a)^2,\ldots$              |
+| coordinates $c_1,c_2,\ldots$   | $f(a),f'(a),f''(a)/2!,\ldots$         |
+| $v=\sum c_i e_i$               | $f=\sum \frac{f^{(n)}(a)}{n!}(x-a)^n$ |
+
+👉 We can look at the Taylor expansion as expressing a function in coordinates along the directions $1,(x-a),(x-a)^2,\ldots$.
+
+There exists an even deeper connection: **differentiation can be seen as a linear operator that works on these coordinates**. This directly leads to a connection between Taylor series, vector spaces, and matrices/operators.
+
+## **Example 2**: Fourier transform
+
+Here the connection with linear algebra becomes even more apparent, since the Fourier expansion amounts to a representation of a function in orthogonal directions.
+
+<p style="clear: both;"></p>
 ```{=html}
 <div id="fourierTransformContainer"></div>
 <script type="module" src="https://www.hendrikse.name/helion/examples/fourier_transform.js"></script>
@@ -41,4 +134,3 @@ This is one of the reasons linear algebra is so powerful. It gives us a common l
 
 The ideas developed in this chapter will reappear in increasingly sophisticated forms. In particular, the language of vector spaces and linear transformations will eventually lead us toward **representations** of groups and, ultimately, **Galois representations**.
 
-> **The goal of linear algebra is not simply to learn how to calculate with matrices. The goal is to learn how to recognize structure.**
