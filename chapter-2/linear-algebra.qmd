@@ -8,21 +8,50 @@ The content of this chapter is designed to be self-contained, so you do not need
 ::: {.callout-note}
 🚨 So why do we need this? 
 
-Mathematics is not only about numbers. It is also about **structure**. A large part of modern mathematics is concerned with understanding structures: what their essential properties are, how they relate to one another, and what can be learned from the transformations that preserve those properties. Linear algebra gives us some of the first and most useful tools for thinking in this way.
+Mathematics is not only about numbers. It is also about **structure**. A large part of modern mathematics is concerned with understanding structures: what their essential properties are, how they relate to one another, and what can be learned from the transformations that preserve those properties. 
 
-**The goal of linear algebra is not simply to learn how to calculate with matrices. The goal is to learn how to recognize structure.**
+**The goal of linear algebra is not simply to learn how to calculate with matrices. The goal is to learn how to recognize generic structures.**
+
+The ideas developed in this chapter will reappear in increasingly sophisticated forms. In particular, the language of vector spaces and linear transformations will eventually lead us toward **representations** of groups and, ultimately, **Galois representations**.
 :::
 
 Remember that in the introduction we said:
 
 > **In mathematics, we often try to generalize concepts, theorems, and equations.**
 
-At first, the linear algebra may seem to be mainly concerned with solving systems of equations, manipulating matrices, and calculating determinants. However, this misses the main point. Here, the deeper idea is that seemingly unrelated mathematical problems can often be described using the same underlying structure.
+Here, the deeper idea is that seemingly unrelated mathematical problems can often be described using the same underlying structure. As we will see, we can use these shared concepts to look at certain problems from a new, often more convenient perspective.
+
+For example, in linear algebra, we can write any vector with respect to its basis vectors:
+
+$$
+\overrightarrow{v}=c_1\overrightarrow{e_1}+c_2\overrightarrow{e_2}+c_3\overrightarrow{e_3} = \begin{pmatrix}c_1 \\ c_3 \\ c_3\end{pmatrix}
+$$
+
+In the following two examples, we will do the same in the **vector space of functions**.
+
+```text
+            Linear algebra
+                    |                
+            Vector spaces
+                    |                
+            Function spaces
+                    |                
+                Expansion
+              /          \
+        Taylor          Fourier
+          |                |
+    polynomial basis   trigonometric basis
+```
+
+Although Fourier analysis and Taylor expansion may seem to belong to a completely different part of mathematics, from the perspective of linear algebra, we can think of a function as an element of a vector space. This allows us to ask:
+
+> **What are the right basis vectors, and what are the coordinates of our object in that basis?**
+
+Just as an ordinary vector can be written as a linear combination of basis vectors, a function can be written as a linear combination of basis functions.
 
 ## **Example 1**: Taylor expansion
 
 We can conceptualize the [Taylor expansion](../chapter-1/calculus-complex-analysis.qmd#taylor-series) as a kind of **coordinate representation of a function with respect to a basis of polynomials**.
-
 
 ::: {.callout-note}
 🚨 All concepts below will be properly addressed and explained in this very chapter on linear algebra.
@@ -64,6 +93,11 @@ $$
 $$
 
 👉 **Taylor provides a different basis**
+
+```{=html}
+<div id="taylorSeriesContainer"></div>
+<script type="module" src="https://www.hendrikse.name/helion/examples/taylor_expansion.js"></script>
+```
 
 We can look at it in an even more abstract way. Around a point $a$ we have the basis
 
@@ -109,7 +143,23 @@ There exists an even deeper connection: **differentiation can be seen as a linea
 
 ## **Example 2**: Fourier transform
 
-Here the connection with linear algebra becomes even more apparent, since the Fourier expansion amounts to a representation of a function in orthogonal directions.
+Here the connection with linear algebra becomes even more apparent, since the Fourier expansion amounts to a representation of a function in the following **orthogonal** directions:
+
+$$
+1,\quad \cos x,\quad \sin x,\quad \cos 2x,\quad \sin 2x,\quad\ldots
+$$
+
+Any function $f$ can thus be built using this basis:
+
+$$
+f(x)
+=
+\frac{a_0}{2}
++\sum_{n=1}^{\infty}
+\left(a_n\cos(nx)+b_n\sin(nx)\right).
+$$
+
+The Fourier-coefficiens $a_0,a_1,b_1,a_2,b_2,\ldots$ are the **coordinats of the function $f$ in this basis**.
 
 <p style="clear: both;"></p>
 ```{=html}
@@ -118,19 +168,123 @@ Here the connection with linear algebra becomes even more apparent, since the Fo
 ```
 <p style="clear: both;"></p>
 
-Fourier analysis may seem to belong to a completely different part of mathematics. Yet from the perspective of linear algebra, we can think of a function as an element of a vector space. This allows us to ask:
+## Comparision between Taylor and Fourier series
 
-> **What are the right basis vectors, and what are the coordinates of our object in that basis?**
+### Orthogonality
 
-Just as an ordinary vector can be written as a linear combination of basis vectors, a function can be written as a linear combination of basis functions. The familiar sine and cosine waves play the role of such basis functions, forming an **orthonormal basis** with respect to a suitable inner product. The Fourier transform then gives us the coordinates of our function with respect to this basis.
+We have seen that
+$$
+\text{Taylor}=\text{coordinates in a polynomial basis}
+$$
 
-This gives us a completely different way of looking at a problem. Instead of asking what a complicated function does directly, we can ask how much of each basic frequency it contains.
+and
 
-What is striking is that problems involving waves, sound, differential equations, or signal processing can all lead to essentially the same mathematical question:
+$$
+\text{Fourier}=\text{coordinates in a trigonometric basis}.
+$$
 
-> **What is the right basis, and what are the coordinates of our object with respect to that basis?**
+However, in the case of Fourier, we have seen yet another concept from linear algebra, namely **orthogonality**. 
 
-This is one of the reasons linear algebra is so powerful. It gives us a common language in which very different mathematical problems can reveal the same underlying structure.
+Two vectors are orthogonal when $u\cdot v=0$. For functions this can be defined analogously:
 
-The ideas developed in this chapter will reappear in increasingly sophisticated forms. In particular, the language of vector spaces and linear transformations will eventually lead us toward **representations** of groups and, ultimately, **Galois representations**.
+$$
+\langle f,g\rangle
+=
+\int_{-\pi}^{\pi}f(x)g(x),dx.
+$$
+
+With this definition $\cos x$ and $\sin x$ turn out to be perpendicular to one another:
+
+$$
+\langle\cos x,\sin x\rangle
+=
+\int_{-\pi}^{\pi}\cos x\sin x,dx
+=0.
+$$
+
+The same holds for the different frequencies $\langle\cos x,\cos2x\rangle=0$ and $\langle\sin3x,\cos7x\rangle=0$. In fact, we have an **infinite-dimensional Euclidean space** where the Fourier basis vectors are perpendicular to each other.
+
+This orthogonality is then used to find the (frequency) coordinates. Suppose in "ordinary" lineaire algebra we have:
+
+$$
+\overrightarrow{v}=3\overrightarrow{e_1}+5\overrightarrow{e_2}.
+$$
+
+When $\overrightarrow{e_1}$ and $\overrightarrow{e_2}$ are prependicular, we can find $3$ by projecting $\overrightarrow{v}$ onto $\overrightarrow{e_1}$.
+
+Analogously we can find the Fourier coefficients $a_n$ by projecting $f$ onto $\cos(nx)$. So conceptually:
+
+$$
+a_n
+\sim
+\langle f,\cos(nx)\rangle,
+\quad
+b_n
+\sim
+\langle f,\sin(nx)\rangle.
+$$
+
+With exact normalisation this results in
+
+$$
+a_n=\frac1\pi
+\int_{-\pi}^{\pi}f(x)\cos(nx)dx,
+\quad
+b_n=\frac1\pi
+\int_{-\pi}^{\pi}f(x)\sin(nx),dx.
+$$
+
+### Geometric interpretation
+
+We have just established that Fourier coefficients are literally **projections of the function vector onto orthogonal basis vectors**. 
+
+👉 This makes a **direct geoemtric interpretation** of the Fourier transform possible.
+
+For a vector in 3D this geometric interpretation is trivial. For example, 
+
+$$
+\overrightarrow{v}=
+\begin{pmatrix} 3 \\ 2 \\ 5 \end{pmatrix}.
+$$
+
+tells us that $\overrightarrow{v}$ consists of 3 units in the $x$-direction, 2 in the $y$-direction and 5 in the $z$-direction. Fourier tells us something similar: this function consists so much of frequencies $1$, that much of frequencies $2$, etc. 
+
+For example, we could have $f(x)= 2\cos x +0.7\sin x +3\cos2x -1.2\sin3x$. 
+
+The two examples may be summarized in a table.
+
+|                            | Taylor                   | Fourier                                |
+| -------------------------- | ------------------------ | -------------------------------------- |
+| Vector                     | function $f$              | function $f$                            |
+| Vector space               | functions/polynomials       | functions                               |
+| Basis                      | $1,(x-a),(x-a)^2,\ldots$ | $1,\cos x,\sin x,\cos2x,\sin2x,\ldots$ |
+| Coördinaten                | derivatives of $f$       | projections/integrals                  |
+| Idea                       | local behaviour            | frequenty-contents                      |
+| Basis orthogonal?         | no                      | **yes**                                 |
+| Geometric interpretation | less direct            | **very direct**                        |
+
+
+## Conclusion
+
+👉 The choice of basis determines **which properties of a function become apparent.**
+
+* With Taylor local properties become apparent via the derivatives: 
+    - Decomposition of $f$ in **polynomial directions**
+    - How does $f$ behave locally around a point $a$?
+
+* With Fourier frequencies become visible via projection onto the basis vectors: 
+    - Decomposition of $f$ in **frequency directions**
+    - From which frequencies can $f$ be built up?
+
+👉 This is why linear algebra can be so powerful: 
+
+* It gives us a common language in which very different mathematical problems can reveal the same underlying structure.
+
+* We can do a basis transformation to look at a certain problem from a new, more convenient perspective.
+
+
+
+
+
+
 

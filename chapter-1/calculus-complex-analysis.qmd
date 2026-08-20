@@ -11,15 +11,7 @@ $$
 f: \mathbb{R}^n \rightarrow \mathbb{R}
 $$
 
-We are already familiar with functions of a single variable, which can be visualized as a curve in the plane, such as $f(x) = x^2$. A multivariable function can be visualized as a surface in three-dimensional space, for example:
-
-<a href="https://github.com/zhendrikse/helion/blob/main/examples/mathematics/scenes/real_surfaces.js">
-    <img alt="Source" src="https://img.shields.io/badge/github-repo-green?logo=github&label=real_surfaces.js"/>
-</a>
-
-$$
-👉\quad f(x, y) = \sin(x^2 + y^2)
-$$
+We are already familiar with functions of a single variable, which can be visualized as a curve in the plane, such as $f(x) = x^2$. A multivariable function can be visualized as a surface in three-dimensional space:
 
 ```{=html}
 <div id="realSurfacesContainer"></div>
@@ -90,7 +82,6 @@ e^x &= 1 + x + \dfrac{x^2}{2!} + \dfrac{x^3}{3!} + \cdots \\
 \end{array}
 $$
 
-
 ::: {.callout-note}
 So why do we need this? 
 
@@ -98,4 +89,9 @@ Although this won't be used frequently in the forthccoming chapters, it appears 
 :::
 
 🎯 The tailer series is a way to represent a given function as an infinite polynomial.
+
+```{=html}
+<div id="taylorSeriesContainer"></div>
+<script type="module" src="https://www.hendrikse.name/helion/examples/taylor_expansion.js"></script>
+```
 
