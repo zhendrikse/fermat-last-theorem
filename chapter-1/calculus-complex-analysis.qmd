@@ -3,6 +3,13 @@ title: "Basic calculus &amp; complex analysis"
 format: html
 ---
 
+::: {.callout-note}
+**Video:** [Basic Calculus and Complex Analysis — 38:59](https://www.youtube.com/watch?v=9f-hGSh8lF0&t=2339s)
+
+This section corresponds to **38:59** in *Proof of Fermat Last Theorem FROM SCRATCH*.
+:::
+
+
 ## Multivariable function
 
 A multivariable function is a map 
@@ -95,3 +102,95 @@ Although this won't be used frequently in the forthccoming chapters, it appears 
 <script type="module" src="https://www.hendrikse.name/helion/examples/taylor_expansion.js"></script>
 ```
 
+## Eurler's formula and $e^{i\theta}$
+
+For any real number $\theta$,
+
+$$
+e^{i\theta} = \cos\theta + i\sin\theta.
+$$
+
+
+::: {.callout-note}
+Why do we need this?
+
+This formula tells us concretely what to do/what to think of, whenever we encounter $i$ in an exponent.
+:::
+
+The special case where $\theta = \pi$ then gives us one of them most beautiful formulas in mathematics.
+
+$$
+e^{i\pi} + 1 = 0.
+$$
+
+The reason is that it contains so many important constants in one tiny equation:
+
+- Euler's constant or natural constant $e$
+- The irrational number $pi$ as the ratio between the circumverence and diameter of a circle
+- The square root of negative one, $i$
+- The identity with respect to addition, $0$
+- The identity with respect to multiplication, $1$
+
+This formula also matches very well with the aforementioned Taylor series.
+
+$$
+\begin{array}{ll}
+e^x &= 1 + x + \dfrac{x^2}{2!} + \dfrac{x^3}{3!} + \cdots \\
+e^{i\theta} &= 1 + i\theta - \dfrac{\theta^2}{2!} - \dfrac{\theta^3}{3!}i + \dfrac{\theta^4}{4!} + \dfrac{\theta^5}{5!}i - \dfrac{\theta^6}{6!} + \cdots \\
+\quad &= \left(1 - \dfrac{\theta^2}{2!} + \dfrac{\theta^4}{4!} - \dfrac{\theta^6}{6!} + \cdots \right) +i\left(\theta - \dfrac{\theta^3}{3!}i + \dfrac{\theta^5}{5!} + \cdots\right) \\
+\quad &= \cos\theta \qquad + \qquad i\sin\theta
+\end{array} 
+$$
+
+### Some special values
+
+$$
+e^{2\pi i} = 1,\quad e^{\pi i} = -1, \quad e^{\frac{\pi}{6}i} = \dfrac{\sqrt{3}}{2} +\dfrac{1}{2}i
+$$
+
+And more generally
+$$
+e^{i\theta} =
+e^{i(\theta + 2n\pi)},\quad n\in\mathbb{N}.
+$$
+
+## The $n$-th roots of unity
+
+The $n$-th roots of unity  are the complex numbers $z$ that satisfy the equation:
+
+$$ z^n =1\quad \text{or equivalently}\quad z^n -1 = 0
+$$
+
+using Euler's formula, we can find all $n$ distinct roots. They are given by: 
+
+$$
+z_k=e^{i\dfrac{2\pi k}{n}}=\cos\left(\dfrac{2\pi k}{n}\right) + i\sin\left(\dfrac{2\pi k}{n}\right), \quad k=0, 1, 2,\cdots,n-1.
+$$
+
+So how does this work? We are looking for
+
+$$
+z^n = 1 = e^{2\pi k} \Rightarrow z = e^{\dfrac{2\pi ik}{n}},\quad k \in \mathbb{Z} 
+$$
+
+Filling in the values of $k$, we get
+
+$$
+\underbrace{
+1, e^{\dfrac{2\pi i}{n}}, e^{\dfrac{4\pi i}{n}}, \cdots,e^{\dfrac{2\pi i(n-1)}{n}}
+},
+\underbrace{e^{2\pi i}, e^{\dfrac{2\pi i(n+1)}{n}}, \cdots
+}
+$$
+
+Because of the periodicity, we can limit the values of $k$ to $n-1$.
+
+👉 **Example 1**: $n=2$
+
+$$z_k = e^{i\dfrac{2\pi k}{2}} = e^{\pi ik} \Rightarrow \begin{cases} k=0: 1 \\ k=1: -1\end{cases}
+$$
+
+👉 **Example 2**: $n=3$
+
+$$z_k = e^{\dfrac{2\pi ik}{3}} \Rightarrow \begin{cases} k=0: 1 \\ k=1: e^{\dfrac{2\pi}{3}}= +\dfrac{\sqrt{3}}{2}i-\dfrac{1}{2} \\ k=2: e^{\dfrac{4\pi}{3}} = -\dfrac{\sqrt{3}}{2}i+\dfrac{1}{2}\end{cases}
+$$
