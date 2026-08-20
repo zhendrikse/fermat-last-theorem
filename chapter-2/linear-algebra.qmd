@@ -89,10 +89,10 @@ can be interpreted in the context of linear algebra as:
 $$
 [e^x]_{\{1,x,x^2,x^3,\ldots\}}
 =
-\left(1,1,\dfrac{1}{2!},d\frac{1}{3!},\ldots\right).
+\left(1,1,\dfrac{1}{2!},\dfrac{1}{3!},\ldots\right).
 $$
 
-👉 **Taylor provides a different basis**
+👉 **The Taylor series expansion provides a different basis**
 
 ```{=html}
 <div id="taylorSeriesContainer"></div>
@@ -120,9 +120,9 @@ Therefore, the coordinates with respect to that polynomial basis vectors are
 $$
 \boxed{
 \left(
-f(a),,
-f'(a),,
-\frac{f''(a)}{2!},,
+f(a),
+f'(a),
+\frac{f''(a)}{2!},
 \frac{f^{(3)}(a)}{3!},\ldots
 \right)
 }
