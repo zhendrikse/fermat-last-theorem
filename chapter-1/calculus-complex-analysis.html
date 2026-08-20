@@ -497,6 +497,11 @@ window.Quarto = {
   <li><a href="#multivariable-function" id="toc-multivariable-function" class="nav-link active" data-scroll-target="#multivariable-function">Multivariable function</a></li>
   <li><a href="#partical-derivative" id="toc-partical-derivative" class="nav-link" data-scroll-target="#partical-derivative">Partical derivative</a></li>
   <li><a href="#taylor-series" id="toc-taylor-series" class="nav-link" data-scroll-target="#taylor-series">Taylor series</a></li>
+  <li><a href="#eurlers-formula-and-eitheta" id="toc-eurlers-formula-and-eitheta" class="nav-link" data-scroll-target="#eurlers-formula-and-eitheta">Eurler’s formula and <span class="math inline">\(e^{i\theta}\)</span></a>
+  <ul class="collapse">
+  <li><a href="#some-special-values" id="toc-some-special-values" class="nav-link" data-scroll-target="#some-special-values">Some special values</a></li>
+  </ul></li>
+  <li><a href="#the-n-th-roots-of-unity" id="toc-the-n-th-roots-of-unity" class="nav-link" data-scroll-target="#the-n-th-roots-of-unity">The <span class="math inline">\(n\)</span>-th roots of unity</a></li>
   </ul>
 </nav>
     </div>
@@ -523,6 +528,20 @@ window.Quarto = {
 </header>
 
 
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Video:</strong> <a href="https://www.youtube.com/watch?v=9f-hGSh8lF0&amp;t=2339s">Basic Calculus and Complex Analysis — 38:59</a></p>
+<p>This section corresponds to <strong>38:59</strong> in <em>Proof of Fermat Last Theorem FROM SCRATCH</em>.</p>
+</div>
+</div>
 <section id="multivariable-function" class="level2">
 <h2 class="anchored" data-anchor-id="multivariable-function">Multivariable function</h2>
 <p>A multivariable function is a map</p>
@@ -609,6 +628,87 @@ Note
 <p>🎯 The tailer series is a way to represent a given function as an infinite polynomial.</p>
 <div id="taylorSeriesContainer"></div>
 <script type="module" src="https://www.hendrikse.name/helion/examples/taylor_expansion.js"></script>
+</section>
+<section id="eurlers-formula-and-eitheta" class="level2">
+<h2 class="anchored" data-anchor-id="eurlers-formula-and-eitheta">Eurler’s formula and <span class="math inline">\(e^{i\theta}\)</span></h2>
+<p>For any real number <span class="math inline">\(\theta\)</span>,</p>
+<p><span class="math display">\[
+e^{i\theta} = \cos\theta + i\sin\theta.
+\]</span></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Why do we need this?</p>
+<p>This formula tells us concretely what to do/what to think of, whenever we encounter <span class="math inline">\(i\)</span> in an exponent.</p>
+</div>
+</div>
+<p>The special case where <span class="math inline">\(\theta = \pi\)</span> then gives us one of them most beautiful formulas in mathematics.</p>
+<p><span class="math display">\[
+e^{i\pi} + 1 = 0.
+\]</span></p>
+<p>The reason is that it contains so many important constants in one tiny equation:</p>
+<ul>
+<li>Euler’s constant or natural constant <span class="math inline">\(e\)</span></li>
+<li>The irrational number <span class="math inline">\(pi\)</span> as the ratio between the circumverence and diameter of a circle</li>
+<li>The square root of negative one, <span class="math inline">\(i\)</span></li>
+<li>The identity with respect to addition, <span class="math inline">\(0\)</span></li>
+<li>The identity with respect to multiplication, <span class="math inline">\(1\)</span></li>
+</ul>
+<p>This formula also matches very well with the aforementioned Taylor series.</p>
+<p><span class="math display">\[
+\begin{array}{ll}
+e^x &amp;= 1 + x + \dfrac{x^2}{2!} + \dfrac{x^3}{3!} + \cdots \\
+e^{i\theta} &amp;= 1 + i\theta - \dfrac{\theta^2}{2!} - \dfrac{\theta^3}{3!}i + \dfrac{\theta^4}{4!} + \dfrac{\theta^5}{5!}i - \dfrac{\theta^6}{6!} + \cdots \\
+\quad &amp;= \left(1 - \dfrac{\theta^2}{2!} + \dfrac{\theta^4}{4!} - \dfrac{\theta^6}{6!} + \cdots \right) +i\left(\theta - \dfrac{\theta^3}{3!}i + \dfrac{\theta^5}{5!} + \cdots\right) \\
+\quad &amp;= \cos\theta \qquad + \qquad i\sin\theta
+\end{array}
+\]</span></p>
+<section id="some-special-values" class="level3">
+<h3 class="anchored" data-anchor-id="some-special-values">Some special values</h3>
+<p><span class="math display">\[
+e^{2\pi i} = 1,\quad e^{\pi i} = -1, \quad e^{\frac{\pi}{6}i} = \dfrac{\sqrt{3}}{2} +\dfrac{1}{2}i
+\]</span></p>
+<p>And more generally <span class="math display">\[
+e^{i\theta} =
+e^{i(\theta + 2n\pi)},\quad n\in\mathbb{N}.
+\]</span></p>
+</section>
+</section>
+<section id="the-n-th-roots-of-unity" class="level2">
+<h2 class="anchored" data-anchor-id="the-n-th-roots-of-unity">The <span class="math inline">\(n\)</span>-th roots of unity</h2>
+<p>The <span class="math inline">\(n\)</span>-th roots of unity are the complex numbers <span class="math inline">\(z\)</span> that satisfy the equation:</p>
+<p><span class="math display">\[ z^n =1\quad \text{or equivalently}\quad z^n -1 = 0
+\]</span></p>
+<p>using Euler’s formula, we can find all <span class="math inline">\(n\)</span> distinct roots. They are given by:</p>
+<p><span class="math display">\[
+z_k=e^{i\dfrac{2\pi k}{n}}=\cos\left(\dfrac{2\pi k}{n}\right) + i\sin\left(\dfrac{2\pi k}{n}\right), \quad k=0, 1, 2,\cdots,n-1.
+\]</span></p>
+<p>So how does this work? We are looking for</p>
+<p><span class="math display">\[
+z^n = 1 = e^{2\pi k} \Rightarrow z = e^{\dfrac{2\pi ik}{n}},\quad k \in \mathbb{Z}
+\]</span></p>
+<p>Filling in the values of <span class="math inline">\(k\)</span>, we get</p>
+<p><span class="math display">\[
+\underbrace{
+1, e^{\dfrac{2\pi i}{n}}, e^{\dfrac{4\pi i}{n}}, \cdots,e^{\dfrac{2\pi i(n-1)}{n}}
+},
+\underbrace{e^{2\pi i}, e^{\dfrac{2\pi i(n+1)}{n}}, \cdots
+}
+\]</span></p>
+<p>Because of the periodicity, we can limit the values of <span class="math inline">\(k\)</span> to <span class="math inline">\(n-1\)</span>.</p>
+<p>👉 <strong>Example 1</strong>: <span class="math inline">\(n=2\)</span></p>
+<p><span class="math display">\[z_k = e^{i\dfrac{2\pi k}{2}} = e^{\pi ik} \Rightarrow \begin{cases} k=0: 1 \\ k=1: -1\end{cases}
+\]</span></p>
+<p>👉 <strong>Example 2</strong>: <span class="math inline">\(n=3\)</span></p>
+<p><span class="math display">\[z_k = e^{\dfrac{2\pi ik}{3}} \Rightarrow \begin{cases} k=0: 1 \\ k=1: e^{\dfrac{2\pi}{3}}= +\dfrac{\sqrt{3}}{2}i-\dfrac{1}{2} \\ k=2: e^{\dfrac{4\pi}{3}} = -\dfrac{\sqrt{3}}{2}i+\dfrac{1}{2}\end{cases}
+\]</span></p>
 
 
 </section>

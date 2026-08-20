@@ -1,10 +1,21 @@
 [
   {
+    "objectID": "chapter-1/basic-set-number-theory.html",
+    "href": "chapter-1/basic-set-number-theory.html",
+    "title": "Basic set & number theory",
+    "section": "",
+    "text": "TODO",
+    "crumbs": [
+      "Chapter 1 — Basics",
+      "Basic set &amp; number theory"
+    ]
+  },
+  {
     "objectID": "chapter-1/calculus-complex-analysis.html",
     "href": "chapter-1/calculus-complex-analysis.html",
     "title": "Basic calculus & complex analysis",
     "section": "",
-    "text": "A multivariable function is a map\n\\[\nf: \\mathbb{R}^n \\rightarrow \\mathbb{R}\n\\]\nWe are already familiar with functions of a single variable, which can be visualized as a curve in the plane, such as \\(f(x) = x^2\\). A multivariable function can be visualized as a surface in three-dimensional space:\n\n\n\n\nAnother example would be the distance of a point to the origin in three-dimensional space, \\(f(x,y,z) = \\sqrt{x^2+y^2+z^2}\\).",
+    "text": "Note\n\n\n\nVideo: Basic Calculus and Complex Analysis — 38:59\nThis section corresponds to 38:59 in Proof of Fermat Last Theorem FROM SCRATCH.",
     "crumbs": [
       "Chapter 1 — Basics",
       "Basic calculus &amp; complex analysis"
@@ -14,8 +25,8 @@
     "objectID": "chapter-1/calculus-complex-analysis.html#multivariable-function",
     "href": "chapter-1/calculus-complex-analysis.html#multivariable-function",
     "title": "Basic calculus & complex analysis",
-    "section": "",
-    "text": "A multivariable function is a map\n\\[\nf: \\mathbb{R}^n \\rightarrow \\mathbb{R}\n\\]\nWe are already familiar with functions of a single variable, which can be visualized as a curve in the plane, such as \\(f(x) = x^2\\). A multivariable function can be visualized as a surface in three-dimensional space:\n\n\n\n\nAnother example would be the distance of a point to the origin in three-dimensional space, \\(f(x,y,z) = \\sqrt{x^2+y^2+z^2}\\).",
+    "section": "Multivariable function",
+    "text": "Multivariable function\nA multivariable function is a map\n\\[\nf: \\mathbb{R}^n \\rightarrow \\mathbb{R}\n\\]\nWe are already familiar with functions of a single variable, which can be visualized as a curve in the plane, such as \\(f(x) = x^2\\). A multivariable function can be visualized as a surface in three-dimensional space:\n\n\n\n\nAnother example would be the distance of a point to the origin in three-dimensional space, \\(f(x,y,z) = \\sqrt{x^2+y^2+z^2}\\).",
     "crumbs": [
       "Chapter 1 — Basics",
       "Basic calculus &amp; complex analysis"
@@ -38,6 +49,28 @@
     "title": "Basic calculus & complex analysis",
     "section": "Taylor series",
     "text": "Taylor series\n📌 A Taylor series represents a function as an infinite polynomial. With infinitely many terms, it equals the original function within its interval of convergence.\n👉 Examples\n\\[\n\\begin{array}{rl}\ne^x &= 1 + x + \\dfrac{x^2}{2!} + \\dfrac{x^3}{3!} + \\cdots \\\\\n\\sin x &= x - \\dfrac{x^3}{3!} + \\dfrac{x^5}{5!} - \\dfrac{x^7}{7!}+\\cdots\\\\\n\\cos x &= 1 - \\dfrac{x^2}{2!} + \\dfrac{x^4}{4!}-\\dfrac{x^6}{6!}+\\cdots \\\\\n\\ln(1 + x) &= x - \\dfrac{x^2}{2}+\\dfrac{x^3}{3}-\\dfrac{x^4}{4}+\\cdots \\qquad (-1 &lt; x \\leq 1)\n\\end{array}\n\\]\n\n\n\n\n\n\nNote\n\n\n\nSo why do we need this?\nAlthough this won’t be used frequently in the forthccoming chapters, it appears a few times later.\n\n\n🎯 The tailer series is a way to represent a given function as an infinite polynomial.",
+    "crumbs": [
+      "Chapter 1 — Basics",
+      "Basic calculus &amp; complex analysis"
+    ]
+  },
+  {
+    "objectID": "chapter-1/calculus-complex-analysis.html#eurlers-formula-and-eitheta",
+    "href": "chapter-1/calculus-complex-analysis.html#eurlers-formula-and-eitheta",
+    "title": "Basic calculus & complex analysis",
+    "section": "Eurler’s formula and \\(e^{i\\theta}\\)",
+    "text": "Eurler’s formula and \\(e^{i\\theta}\\)\nFor any real number \\(\\theta\\),\n\\[\ne^{i\\theta} = \\cos\\theta + i\\sin\\theta.\n\\]\n\n\n\n\n\n\nNote\n\n\n\nWhy do we need this?\nThis formula tells us concretely what to do/what to think of, whenever we encounter \\(i\\) in an exponent.\n\n\nThe special case where \\(\\theta = \\pi\\) then gives us one of them most beautiful formulas in mathematics.\n\\[\ne^{i\\pi} + 1 = 0.\n\\]\nThe reason is that it contains so many important constants in one tiny equation:\n\nEuler’s constant or natural constant \\(e\\)\nThe irrational number \\(pi\\) as the ratio between the circumverence and diameter of a circle\nThe square root of negative one, \\(i\\)\nThe identity with respect to addition, \\(0\\)\nThe identity with respect to multiplication, \\(1\\)\n\nThis formula also matches very well with the aforementioned Taylor series.\n\\[\n\\begin{array}{ll}\ne^x &= 1 + x + \\dfrac{x^2}{2!} + \\dfrac{x^3}{3!} + \\cdots \\\\\ne^{i\\theta} &= 1 + i\\theta - \\dfrac{\\theta^2}{2!} - \\dfrac{\\theta^3}{3!}i + \\dfrac{\\theta^4}{4!} + \\dfrac{\\theta^5}{5!}i - \\dfrac{\\theta^6}{6!} + \\cdots \\\\\n\\quad &= \\left(1 - \\dfrac{\\theta^2}{2!} + \\dfrac{\\theta^4}{4!} - \\dfrac{\\theta^6}{6!} + \\cdots \\right) +i\\left(\\theta - \\dfrac{\\theta^3}{3!}i + \\dfrac{\\theta^5}{5!} + \\cdots\\right) \\\\\n\\quad &= \\cos\\theta \\qquad + \\qquad i\\sin\\theta\n\\end{array}\n\\]\n\nSome special values\n\\[\ne^{2\\pi i} = 1,\\quad e^{\\pi i} = -1, \\quad e^{\\frac{\\pi}{6}i} = \\dfrac{\\sqrt{3}}{2} +\\dfrac{1}{2}i\n\\]\nAnd more generally \\[\ne^{i\\theta} =\ne^{i(\\theta + 2n\\pi)},\\quad n\\in\\mathbb{N}.\n\\]",
+    "crumbs": [
+      "Chapter 1 — Basics",
+      "Basic calculus &amp; complex analysis"
+    ]
+  },
+  {
+    "objectID": "chapter-1/calculus-complex-analysis.html#the-n-th-roots-of-unity",
+    "href": "chapter-1/calculus-complex-analysis.html#the-n-th-roots-of-unity",
+    "title": "Basic calculus & complex analysis",
+    "section": "The \\(n\\)-th roots of unity",
+    "text": "The \\(n\\)-th roots of unity\nThe \\(n\\)-th roots of unity are the complex numbers \\(z\\) that satisfy the equation:\n\\[ z^n =1\\quad \\text{or equivalently}\\quad z^n -1 = 0\n\\]\nusing Euler’s formula, we can find all \\(n\\) distinct roots. They are given by:\n\\[\nz_k=e^{i\\dfrac{2\\pi k}{n}}=\\cos\\left(\\dfrac{2\\pi k}{n}\\right) + i\\sin\\left(\\dfrac{2\\pi k}{n}\\right), \\quad k=0, 1, 2,\\cdots,n-1.\n\\]\nSo how does this work? We are looking for\n\\[\nz^n = 1 = e^{2\\pi k} \\Rightarrow z = e^{\\dfrac{2\\pi ik}{n}},\\quad k \\in \\mathbb{Z}\n\\]\nFilling in the values of \\(k\\), we get\n\\[\n\\underbrace{\n1, e^{\\dfrac{2\\pi i}{n}}, e^{\\dfrac{4\\pi i}{n}}, \\cdots,e^{\\dfrac{2\\pi i(n-1)}{n}}\n},\n\\underbrace{e^{2\\pi i}, e^{\\dfrac{2\\pi i(n+1)}{n}}, \\cdots\n}\n\\]\nBecause of the periodicity, we can limit the values of \\(k\\) to \\(n-1\\).\n👉 Example 1: \\(n=2\\)\n\\[z_k = e^{i\\dfrac{2\\pi k}{2}} = e^{\\pi ik} \\Rightarrow \\begin{cases} k=0: 1 \\\\ k=1: -1\\end{cases}\n\\]\n👉 Example 2: \\(n=3\\)\n\\[z_k = e^{\\dfrac{2\\pi ik}{3}} \\Rightarrow \\begin{cases} k=0: 1 \\\\ k=1: e^{\\dfrac{2\\pi}{3}}= +\\dfrac{\\sqrt{3}}{2}i-\\dfrac{1}{2} \\\\ k=2: e^{\\dfrac{4\\pi}{3}} = -\\dfrac{\\sqrt{3}}{2}i+\\dfrac{1}{2}\\end{cases}\n\\]",
     "crumbs": [
       "Chapter 1 — Basics",
       "Basic calculus &amp; complex analysis"
@@ -201,7 +234,7 @@
     "href": "index.html#is-fermats-last-theorem-actually-interesting",
     "title": "Fermat’s Last Theorem",
     "section": "Is Fermat’s Last Theorem actually interesting?",
-    "text": "Is Fermat’s Last Theorem actually interesting?\nMany of us can remember the Pythagorean theorem from high school. It is a simple and elegant statement about right triangles:\n\\[\n👉\\quad a^2 + b^2 = c^2\n\\]\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nVisualizations in this project are created using the Helion library.\n\n\n\nGoing forward, we will frequently notice that\n\nIn mathematics, we often try to generalize concepts, theorems and/or equations\n\nOne natural generalization here would be to replace the exponent value of two with any arbitrary natural number \\(n\\):\n\\[\na^n + b^n = c^n\n\\]\nFermat’s Last Theorem (FLT) makes a remarkably simple claim: if \\(n &gt; 2\\), there are no positive integers \\(a\\), \\(b\\), and \\(c\\) that satisfy it. This may come as a surprise. After all, we known that we can easily find infinitely many positive integers that satisfy the equation for \\(n=2\\), for example:\n\\[\n3^2 + 4^2 = 5^2\n\\]\nSo why should the case \\(n&gt;2\\) be so special? And why did it take more than three centuries to prove?\nUsually the story starts with that fact that in 1637 Pierre de Fermat wrote in the margin of a book that he had discovered a “truly marvelous” proof, but that the margin was too small to contain it. The problem remained unsolved for centuries, attracting some of the greatest mathematicians in history, until Andrew Wiles finally announced a proof in 1993.\nI vividly remember my excitement when I read on slashdot.org that Wiles’ finally managed to provide a proof.\nBut this story leaves open a more interesting question:\n\nIs Fermat’s Last Theorem genuinely mathematically interesting, or is it famous just because of the hype and the extraordinary story surrounding it?\n\nThis project is an attempt to investigate this question.",
+    "text": "Is Fermat’s Last Theorem actually interesting?\nMany of us can remember the Pythagorean theorem from high school. It is a simple and elegant statement about right triangles:\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nVisualizations in this project are created using the Helion library.\n\n\n\nGoing forward, we will frequently notice that\n\nIn mathematics, we often try to generalize concepts, theorems and/or equations\n\nOne natural generalization here would be to replace the exponent value of two with any arbitrary natural number \\(n\\):\n\\[\na^n + b^n = c^n\n\\]\nFermat’s Last Theorem (FLT) makes a remarkably simple claim: if \\(n &gt; 2\\), there are no positive integers \\(a\\), \\(b\\), and \\(c\\) that satisfy it. This may come as a surprise. After all, we known that we can easily find infinitely many positive integers that satisfy the equation for \\(n=2\\), for example:\n\\[\n3^2 + 4^2 = 5^2\n\\]\nSo why should the case \\(n&gt;2\\) be so special? And why did it take more than three centuries to prove?\nUsually the story starts with that fact that in 1637 Pierre de Fermat wrote in the margin of a book that he had discovered a “truly marvelous” proof, but that the margin was too small to contain it. The problem remained unsolved for centuries, attracting some of the greatest mathematicians in history, until Andrew Wiles finally announced a proof in 1993.\nI vividly remember my excitement when I read on slashdot.org that Wiles’ finally managed to provide a proof.\nBut this story leaves open a more interesting question:\n\nIs Fermat’s Last Theorem genuinely mathematically interesting, or is it famous just because of the hype and the extraordinary story surrounding it?\n\nThis project is an attempt to investigate this question.",
     "crumbs": [
       "Fermat's Last Theorem"
     ]
