@@ -495,6 +495,8 @@ window.Quarto = {
    
   <ul>
   <li><a href="#multivariable-function" id="toc-multivariable-function" class="nav-link active" data-scroll-target="#multivariable-function">Multivariable function</a></li>
+  <li><a href="#partical-derivative" id="toc-partical-derivative" class="nav-link" data-scroll-target="#partical-derivative">Partical derivative</a></li>
+  <li><a href="#taylor-series" id="toc-taylor-series" class="nav-link" data-scroll-target="#taylor-series">Taylor series</a></li>
   </ul>
 </nav>
     </div>
@@ -527,9 +529,86 @@ window.Quarto = {
 <p><span class="math display">\[
 f: \mathbb{R}^n \rightarrow \mathbb{R}
 \]</span></p>
-<p><a href="https://github.com/zhendrikse/helion/blob/main/examples/mathematics/scenes/real_surfaces.js"> <img alt="Source" src="https://img.shields.io/badge/github-repo-green?logo=github&amp;label=real_surfaces.js"> </a></p>
+<p>We are already familiar with functions of a single variable, which can be visualized as a curve in the plane, such as <span class="math inline">\(f(x) = x^2\)</span>. A multivariable function can be visualized as a surface in three-dimensional space:</p>
 <div id="realSurfacesContainer"></div>
 <script type="module" src="https://www.hendrikse.name/helion/examples/real_surfaces.js"></script>
+<p style="clear: all">
+</p>
+<p>Another example would be the distance of a point to the origin in three-dimensional space, <span class="math inline">\(f(x,y,z) = \sqrt{x^2+y^2+z^2}\)</span>.</p>
+</section>
+<section id="partical-derivative" class="level2">
+<h2 class="anchored" data-anchor-id="partical-derivative">Partical derivative</h2>
+<p>For functions of several variables, we can also define a derivative. We do this by choosing just one of the many variables to be the actual variable and treating all the other variables as constants.</p>
+<p>Let <span class="math inline">\(f:\mathbb{R}^2\rightarrow\mathbb{R}\)</span> be a function. The partial derivative with respect to <span class="math inline">\(x_i\)</span> is defined as</p>
+<p><span class="math display">\[
+\dfrac{\partial f}{\partial x_i} :=
+\lim_{h\rightarrow 0}
+\dfrac{f(x_1,\cdots,x_i+h,\cdots,x_n) - f(x_1,\cdots,x_n)}{h}
+\]</span></p>
+<p>Note that this is very similar to the way in which the derivative is defined for a function of one variable:</p>
+<p><span class="math display">\[
+f'(x) =
+\lim_{h\rightarrow 0}
+\dfrac{f(x+h) - f(x)}{h}
+\]</span></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>So why do we need this?</p>
+<p>Later these partial derivatives will show up when we talk about singlar points and elliptic curves.</p>
+</div>
+</div>
+<p>👉 <strong>Example</strong></p>
+<p>Let</p>
+<p><span class="math display">\[
+f(x,y) = x^3+y^3+xy+\sin x\cos y
+\]</span></p>
+<p>then</p>
+<p><span class="math display">\[
+\begin{array}{ll}
+\dfrac{\partial f}{\partial x} &amp;=
+3x^2 + y + \cos x\cos y \\
+\dfrac{\partial f}{\partial y} &amp;=
+3y^2 + x - \sin x\sin y \\
+\end{array}
+\]</span></p>
+</section>
+<section id="taylor-series" class="level2">
+<h2 class="anchored" data-anchor-id="taylor-series">Taylor series</h2>
+<p>📌 A Taylor series represents a function as an infinite polynomial. With infinitely many terms, it equals the original function within its interval of convergence.</p>
+<p>👉 <strong>Examples</strong></p>
+<p><span class="math display">\[
+\begin{array}{rl}
+e^x &amp;= 1 + x + \dfrac{x^2}{2!} + \dfrac{x^3}{3!} + \cdots \\
+\sin x &amp;= x - \dfrac{x^3}{3!} + \dfrac{x^5}{5!} - \dfrac{x^7}{7!}+\cdots\\
+\cos x &amp;= 1 - \dfrac{x^2}{2!} + \dfrac{x^4}{4!}-\dfrac{x^6}{6!}+\cdots \\
+\ln(1 + x) &amp;= x - \dfrac{x^2}{2}+\dfrac{x^3}{3}-\dfrac{x^4}{4}+\cdots \qquad (-1 &lt; x \leq 1)
+\end{array}
+\]</span></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>So why do we need this?</p>
+<p>Although this won’t be used frequently in the forthccoming chapters, it appears a few times later.</p>
+</div>
+</div>
+<p>🎯 The tailer series is a way to represent a given function as an infinite polynomial.</p>
+<div id="taylorSeriesContainer"></div>
+<script type="module" src="https://www.hendrikse.name/helion/examples/taylor_expansion.js"></script>
 
 
 </section>
