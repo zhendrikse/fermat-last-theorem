@@ -70,7 +70,18 @@
     "href": "chapter-1/calculus-complex-analysis.html#the-n-th-roots-of-unity",
     "title": "Basic calculus & complex analysis",
     "section": "The \\(n\\)-th roots of unity",
-    "text": "The \\(n\\)-th roots of unity\nThe \\(n\\)-th roots of unity are the complex numbers \\(z\\) that satisfy the equation:\n\\[ z^n =1\\quad \\text{or equivalently}\\quad z^n -1 = 0\n\\]\nusing Euler’s formula, we can find all \\(n\\) distinct roots. They are given by:\n\\[\nz_k=e^{i\\dfrac{2\\pi k}{n}}=\\cos\\left(\\dfrac{2\\pi k}{n}\\right) + i\\sin\\left(\\dfrac{2\\pi k}{n}\\right), \\quad k=0, 1, 2,\\cdots,n-1.\n\\]\nSo how does this work? We are looking for\n\\[\nz^n = 1 = e^{2\\pi k} \\Rightarrow z = e^{\\dfrac{2\\pi ik}{n}},\\quad k \\in \\mathbb{Z}\n\\]\nFilling in the values of \\(k\\), we get\n\\[\n\\underbrace{\n1, e^{\\dfrac{2\\pi i}{n}}, e^{\\dfrac{4\\pi i}{n}}, \\cdots,e^{\\dfrac{2\\pi i(n-1)}{n}}\n},\n\\underbrace{e^{2\\pi i}, e^{\\dfrac{2\\pi i(n+1)}{n}}, \\cdots\n}\n\\]\nBecause of the periodicity, we can limit the values of \\(k\\) to \\(n-1\\).\n👉 Example 1: \\(n=2\\)\n\\[z_k = e^{i\\dfrac{2\\pi k}{2}} = e^{\\pi ik} \\Rightarrow \\begin{cases} k=0: 1 \\\\ k=1: -1\\end{cases}\n\\]\n👉 Example 2: \\(n=3\\)\n\\[z_k = e^{\\dfrac{2\\pi ik}{3}} \\Rightarrow \\begin{cases} k=0: 1 \\\\ k=1: e^{\\dfrac{2\\pi}{3}}= +\\dfrac{\\sqrt{3}}{2}i-\\dfrac{1}{2} \\\\ k=2: e^{\\dfrac{4\\pi}{3}} = -\\dfrac{\\sqrt{3}}{2}i+\\dfrac{1}{2}\\end{cases}\n\\]",
+    "text": "The \\(n\\)-th roots of unity\nThe \\(n\\)-th roots of unity are the complex numbers \\(z\\) that satisfy the equation:\n\\[\nz^n =1\\quad \\text{or equivalently}\\quad z^n -1 = 0\n\\]\nusing Euler’s formula, we can find all \\(n\\) distinct roots. They are given by:\n\\[\nz_k=e^{i\\dfrac{2\\pi k}{n}}=\\cos\\left(\\dfrac{2\\pi k}{n}\\right) + i\\sin\\left(\\dfrac{2\\pi k}{n}\\right), \\quad k=0, 1, 2,\\cdots,n-1.\n\\]\nSo how does this work? We are looking for\n\\[\nz^n = 1 = e^{2\\pi k} \\Rightarrow z = e^{\\dfrac{2\\pi ik}{n}},\\quad k \\in \\mathbb{Z}\n\\]\nFilling in the values of \\(k\\), we get\n\\[\n\\underbrace{\n1, e^{\\dfrac{2\\pi i}{n}}, e^{\\dfrac{4\\pi i}{n}}, \\cdots,e^{\\dfrac{2\\pi i(n-1)}{n}}\n},\n\\underbrace{e^{2\\pi i}, e^{\\dfrac{2\\pi i(n+1)}{n}}, \\cdots\n}\n\\]\nBecause of the periodicity, we can limit the values of \\(k\\) to \\(n-1\\).\n👉 Example 1: \\(n=2\\)\n\\[z_k = e^{i\\dfrac{2\\pi k}{2}} = e^{\\pi ik} \\Rightarrow \\begin{cases} k=0: 1 \\\\ k=1: -1\\end{cases}\n\\]\n👉 Example 2: \\(n=3\\)\n\\[z_k = e^{\\dfrac{2\\pi ik}{3}} \\Rightarrow \\begin{cases} k=0: 1 \\\\ k=1: e^{\\dfrac{2\\pi}{3}}= +\\dfrac{\\sqrt{3}}{2}i-\\dfrac{1}{2} \\\\ k=2: e^{\\dfrac{4\\pi}{3}} = -\\dfrac{\\sqrt{3}}{2}i+\\dfrac{1}{2}\\end{cases}\n\\]\nGeometrically, the roots of unity constitute the vertices of a regular \\(n\\)-gon sitting on a unit circle in the complex plane.",
+    "crumbs": [
+      "Chapter 1 — Basics",
+      "Basic calculus &amp; complex analysis"
+    ]
+  },
+  {
+    "objectID": "chapter-1/calculus-complex-analysis.html#complex-functions-and-holomorphy",
+    "href": "chapter-1/calculus-complex-analysis.html#complex-functions-and-holomorphy",
+    "title": "Basic calculus & complex analysis",
+    "section": "Complex functions and holomorphy",
+    "text": "Complex functions and holomorphy\nA complex function is a map \\[\nf:\\mathbb{C}\\rightarrow\\mathbb{C}\n\\]\n\\(f\\) is complex differentiable at \\(z_0\\) if the limit below exists for \\(h\\in\\mathbb{C}\\).",
     "crumbs": [
       "Chapter 1 — Basics",
       "Basic calculus &amp; complex analysis"
