@@ -4,7 +4,51 @@
     "href": "chapter-1/basic-set-number-theory.html",
     "title": "Basic set & number theory",
     "section": "",
-    "text": "TODO",
+    "text": "We will use the following standard number systems:\n📌 \\(\\mathbb{N}\\): the set of natural numbers\n\\[\n\\mathbb{N} = \\{1, 2, 3,\\cdots\\}\n\\]\n📌 \\(\\mathbb{Z}\\): the set of integers (the letter “Z” comes from the German word for numbers, namely “Zahle”)\n\\[\n\\mathbb{Z} = \\{\\cdots, -2, -1, 0,1, 2, 3,\\cdots\\}\n\\]\n📌 \\(\\mathbb{Q}\\): the set of rational numbers\n\\[\n\\mathbb{Q} = \\{\\frac{a}{b}\\ \\big|\\ a, b \\in \\mathbb{Z}, b \\neq 0\\}\n\\]\n📌 \\(\\mathbb{R}\\): the set of real numbers\n📌 \\(\\mathbb{C}\\): the set of complex numbers\n\\[\n\\mathbb{C} = \\{x +iy\\ |\\ x, y \\in \\mathbb{R}\\}\n\\]",
+    "crumbs": [
+      "Chapter 1 — Basics",
+      "Basic set &amp; number theory"
+    ]
+  },
+  {
+    "objectID": "chapter-1/basic-set-number-theory.html#common-number-sets",
+    "href": "chapter-1/basic-set-number-theory.html#common-number-sets",
+    "title": "Basic set & number theory",
+    "section": "",
+    "text": "We will use the following standard number systems:\n📌 \\(\\mathbb{N}\\): the set of natural numbers\n\\[\n\\mathbb{N} = \\{1, 2, 3,\\cdots\\}\n\\]\n📌 \\(\\mathbb{Z}\\): the set of integers (the letter “Z” comes from the German word for numbers, namely “Zahle”)\n\\[\n\\mathbb{Z} = \\{\\cdots, -2, -1, 0,1, 2, 3,\\cdots\\}\n\\]\n📌 \\(\\mathbb{Q}\\): the set of rational numbers\n\\[\n\\mathbb{Q} = \\{\\frac{a}{b}\\ \\big|\\ a, b \\in \\mathbb{Z}, b \\neq 0\\}\n\\]\n📌 \\(\\mathbb{R}\\): the set of real numbers\n📌 \\(\\mathbb{C}\\): the set of complex numbers\n\\[\n\\mathbb{C} = \\{x +iy\\ |\\ x, y \\in \\mathbb{R}\\}\n\\]",
+    "crumbs": [
+      "Chapter 1 — Basics",
+      "Basic set &amp; number theory"
+    ]
+  },
+  {
+    "objectID": "chapter-1/basic-set-number-theory.html#carthensian-product",
+    "href": "chapter-1/basic-set-number-theory.html#carthensian-product",
+    "title": "Basic set & number theory",
+    "section": "Carthensian product",
+    "text": "Carthensian product\n📌 For sets \\(A\\) and \\(B\\), the Cartesian product is defined as\n\\[\nA \\times B := \\{(a,b)\\ |\\ a \\in A, b\\in B \\}\n\\]\nHere, the multiplaction sign “\\(\\times\\)” defines the way in which the new set is be formed from two other sets.\n👉 Example 1: \\(A=\\{ 1, 2\\},\\ B=\\{3, 4, 5\\}\\)\n\\[\nA \\times B = \\{(1,3), (1,4), (1,5), (2,3), (2,4), (2,5) \\}\n\\]\n👉 Example 2: \\(A=\\{ 1, 2\\}\\)\n\\[\nA \\times A = A^2 = \\{(1,1), (1,2), (2,1), (2,2) \\}\n\\]\n👉 Example 3: \\(\\mathbb{R}^2\\)\n\\[\n\\mathbb{R}^2= \\{(x,y)\\ |\\ x,y \\in \\mathbb{R}^2 \\}\n\\]",
+    "crumbs": [
+      "Chapter 1 — Basics",
+      "Basic set &amp; number theory"
+    ]
+  },
+  {
+    "objectID": "chapter-1/basic-set-number-theory.html#symbols-and-abbreviations",
+    "href": "chapter-1/basic-set-number-theory.html#symbols-and-abbreviations",
+    "title": "Basic set & number theory",
+    "section": "Symbols and abbreviations",
+    "text": "Symbols and abbreviations\n📌 \\(\\forall\\): for all 📌 \\(\\exists\\): there exists 📌 \\(:=\\): is defined as 📌 \\(w.l.o.g\\): without loss of generality 📌 \\(s.t.\\): such that 📌 \\(WTS\\): want to show 📌 \\(ETS\\): enough to show",
+    "crumbs": [
+      "Chapter 1 — Basics",
+      "Basic set &amp; number theory"
+    ]
+  },
+  {
+    "objectID": "chapter-1/basic-set-number-theory.html#divisibility-and-congruence",
+    "href": "chapter-1/basic-set-number-theory.html#divisibility-and-congruence",
+    "title": "Basic set & number theory",
+    "section": "Divisibility and congruence",
+    "text": "Divisibility and congruence",
     "crumbs": [
       "Chapter 1 — Basics",
       "Basic set &amp; number theory"
@@ -81,7 +125,7 @@
     "href": "chapter-1/calculus-complex-analysis.html#complex-functions-and-holomorphy",
     "title": "Basic calculus & complex analysis",
     "section": "Complex functions and holomorphy",
-    "text": "Complex functions and holomorphy\nA complex function is a map \\[\nf:\\mathbb{C}\\rightarrow\\mathbb{C}\n\\]\n\\(f\\) is complex differentiable at \\(z_0\\) if the limit below exists for \\(h\\in\\mathbb{C}\\).",
+    "text": "Complex functions and holomorphy\nA complex function is a map \\[\nf:\\mathbb{C}\\rightarrow\\mathbb{C}\n\\]\n\\(f\\) is complex differentiable at \\(z_0\\) if the limit below exists for \\(h\\in\\mathbb{C}\\).\n\\[\nf'(z_0) := \\lim_{h\\rightarrow 0}\\dfrac{f(z_0+h) - f(z)}{h}\n\\]\nIf \\(f\\) is complex differentiable on an open set, it is called holomorphic.",
     "crumbs": [
       "Chapter 1 — Basics",
       "Basic calculus &amp; complex analysis"
@@ -288,6 +332,17 @@
     "text": "A journey rather than a shortcut\nThis is not intended to be a reproduction of Wiles’ original papers. Those papers are highly technical, and understanding every detail of the complete proof requires a substantial amount of modern mathematics.\nInstead, this project aims to construct a coherent path toward the proof.\nThe hope is that, by the time we reach Wiles’ proof, the reader will not necessarily be able to reproduce every technical argument from memory, but will understand the architecture of the proof and, more importantly, why the architecture looks the way it does.",
     "crumbs": [
       "Fermat's Last Theorem"
+    ]
+  },
+  {
+    "objectID": "chapter-3/abstract-algebra.html",
+    "href": "chapter-3/abstract-algebra.html",
+    "title": "Abstract algebra",
+    "section": "",
+    "text": "Note\n\n\n\nVideo: Basic Calculus and Complex Analysis — 38:59\nThis section corresponds to 38:59 in Proof of Fermat Last Theorem FROM SCRATCH.",
+    "crumbs": [
+      "Chapter 3 — Abstract Algebra",
+      "Abstract algebra"
     ]
   },
   {

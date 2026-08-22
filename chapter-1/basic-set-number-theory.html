@@ -78,6 +78,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -364,8 +393,11 @@ ul.task-list li input[type="checkbox"] {
       </div>
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
- <span class="menu-text">chapter-3/abstract-algebra.qmd</span>
-  </li>
+  <div class="sidebar-item-container"> 
+  <a href="../chapter-3/abstract-algebra.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Abstract algebra</span></a>
+  </div>
+</li>
           <li class="sidebar-item">
  <span class="menu-text">chapter-3/groups.qmd</span>
   </li>
@@ -460,8 +492,17 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#common-number-sets" id="toc-common-number-sets" class="nav-link active" data-scroll-target="#common-number-sets">Common number sets</a></li>
+  <li><a href="#carthensian-product" id="toc-carthensian-product" class="nav-link" data-scroll-target="#carthensian-product">Carthensian product</a></li>
+  <li><a href="#symbols-and-abbreviations" id="toc-symbols-and-abbreviations" class="nav-link" data-scroll-target="#symbols-and-abbreviations">Symbols and abbreviations</a></li>
+  <li><a href="#divisibility-and-congruence" id="toc-divisibility-and-congruence" class="nav-link" data-scroll-target="#divisibility-and-congruence">Divisibility and congruence</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -486,9 +527,56 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>TODO</p>
+<section id="common-number-sets" class="level2">
+<h2 class="anchored" data-anchor-id="common-number-sets">Common number sets</h2>
+<p>We will use the following standard number systems:</p>
+<p>📌 <span class="math inline">\(\mathbb{N}\)</span>: the set of natural numbers</p>
+<p><span class="math display">\[
+\mathbb{N} = \{1, 2, 3,\cdots\}
+\]</span></p>
+<p>📌 <span class="math inline">\(\mathbb{Z}\)</span>: the set of integers (the letter “Z” comes from the German word for numbers, namely “Zahle”)</p>
+<p><span class="math display">\[
+\mathbb{Z} = \{\cdots, -2, -1, 0,1, 2, 3,\cdots\}
+\]</span></p>
+<p>📌 <span class="math inline">\(\mathbb{Q}\)</span>: the set of rational numbers</p>
+<p><span class="math display">\[
+\mathbb{Q} = \{\frac{a}{b}\ \big|\ a, b \in \mathbb{Z}, b \neq 0\}
+\]</span></p>
+<p>📌 <span class="math inline">\(\mathbb{R}\)</span>: the set of real numbers</p>
+<p>📌 <span class="math inline">\(\mathbb{C}\)</span>: the set of complex numbers</p>
+<p><span class="math display">\[
+\mathbb{C} = \{x +iy\ |\ x, y \in \mathbb{R}\}
+\]</span></p>
+</section>
+<section id="carthensian-product" class="level2">
+<h2 class="anchored" data-anchor-id="carthensian-product">Carthensian product</h2>
+<p>📌 For sets <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>, the Cartesian product is defined as</p>
+<p><span class="math display">\[
+A \times B := \{(a,b)\ |\ a \in A, b\in B \}
+\]</span></p>
+<p>Here, the multiplaction sign “<span class="math inline">\(\times\)</span>” defines the way in which the new set is be formed from two other sets.</p>
+<p>👉 <strong>Example 1</strong>: <span class="math inline">\(A=\{ 1, 2\},\ B=\{3, 4, 5\}\)</span></p>
+<p><span class="math display">\[
+A \times B = \{(1,3), (1,4), (1,5), (2,3), (2,4), (2,5) \}
+\]</span></p>
+<p>👉 <strong>Example 2</strong>: <span class="math inline">\(A=\{ 1, 2\}\)</span></p>
+<p><span class="math display">\[
+A \times A = A^2 = \{(1,1), (1,2), (2,1), (2,2) \}
+\]</span></p>
+<p>👉 <strong>Example 3</strong>: <span class="math inline">\(\mathbb{R}^2\)</span></p>
+<p><span class="math display">\[
+\mathbb{R}^2= \{(x,y)\ |\ x,y \in \mathbb{R}^2 \}
+\]</span></p>
+</section>
+<section id="symbols-and-abbreviations" class="level2">
+<h2 class="anchored" data-anchor-id="symbols-and-abbreviations">Symbols and abbreviations</h2>
+<p>📌 <span class="math inline">\(\forall\)</span>: for all<br> 📌 <span class="math inline">\(\exists\)</span>: there exists<br> 📌 <span class="math inline">\(:=\)</span>: is defined as<br> 📌 <span class="math inline">\(w.l.o.g\)</span>: without loss of generality<br> 📌 <span class="math inline">\(s.t.\)</span>: such that<br> 📌 <span class="math inline">\(WTS\)</span>: want to show<br> 📌 <span class="math inline">\(ETS\)</span>: enough to show<br></p>
+</section>
+<section id="divisibility-and-congruence" class="level2">
+<h2 class="anchored" data-anchor-id="divisibility-and-congruence">Divisibility and congruence</h2>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

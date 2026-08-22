@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Linear algebra – Fermat’s Last Theorem — From Scratch</title>
+<title>Abstract algebra – Fermat’s Last Theorem — From Scratch</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -36,8 +36,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../chapter-2/matrices.html" rel="next">
-<link href="../chapter-1/calculus-complex-analysis.html" rel="prev">
+<link href="../chapter-2/summary.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -78,35 +77,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 </head>
 
@@ -279,7 +249,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapter-2/linear-algebra.html">Chapter 2 — Linear Algebra</a></li><li class="breadcrumb-item"><a href="../chapter-2/linear-algebra.html">Linear algebra</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapter-3/abstract-algebra.html">Chapter 3 — Abstract Algebra</a></li><li class="breadcrumb-item"><a href="../chapter-3/abstract-algebra.html">Abstract algebra</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -353,7 +323,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapter-2/linear-algebra.html" class="sidebar-item-text sidebar-link active">
+  <a href="../chapter-2/linear-algebra.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Linear algebra</span></a>
   </div>
 </li>
@@ -394,7 +364,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapter-3/abstract-algebra.html" class="sidebar-item-text sidebar-link">
+  <a href="../chapter-3/abstract-algebra.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Abstract algebra</span></a>
   </div>
 </li>
@@ -492,29 +462,16 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#example-1-taylor-expansion" id="toc-example-1-taylor-expansion" class="nav-link active" data-scroll-target="#example-1-taylor-expansion"><strong>Example 1</strong>: Taylor expansion</a></li>
-  <li><a href="#example-2-fourier-transform" id="toc-example-2-fourier-transform" class="nav-link" data-scroll-target="#example-2-fourier-transform"><strong>Example 2</strong>: Fourier transform</a></li>
-  <li><a href="#comparision-between-taylor-and-fourier-series" id="toc-comparision-between-taylor-and-fourier-series" class="nav-link" data-scroll-target="#comparision-between-taylor-and-fourier-series">Comparision between Taylor and Fourier series</a>
-  <ul class="collapse">
-  <li><a href="#orthogonality" id="toc-orthogonality" class="nav-link" data-scroll-target="#orthogonality">Orthogonality</a></li>
-  <li><a href="#geometric-interpretation" id="toc-geometric-interpretation" class="nav-link" data-scroll-target="#geometric-interpretation">Geometric interpretation</a></li>
-  </ul></li>
-  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapter-2/linear-algebra.html">Chapter 2 — Linear Algebra</a></li><li class="breadcrumb-item"><a href="../chapter-2/linear-algebra.html">Linear algebra</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapter-3/abstract-algebra.html">Chapter 3 — Abstract Algebra</a></li><li class="breadcrumb-item"><a href="../chapter-3/abstract-algebra.html">Abstract algebra</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Linear algebra</h1>
+<h1 class="title">Abstract algebra</h1>
 </div>
 
 
@@ -531,7 +488,6 @@ window.Quarto = {
 </header>
 
 
-<p>The content of this chapter is designed to be self-contained, so you do not need any prior knowledge of linear algebra to follow along. However, some familiarity with basic algebra and calculus will be helpful.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -542,297 +498,12 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>🚨 So why do we need this?</p>
-<p>Mathematics is not only about numbers. It is also about <strong>structure</strong>. A large part of modern mathematics is concerned with understanding structures: what their essential properties are, how they relate to one another, and what can be learned from the transformations that preserve those properties.</p>
-<p><strong>The goal of linear algebra is not simply to learn how to calculate with matrices. The goal is to learn how to recognize generic structures.</strong></p>
-<p>The ideas developed in this chapter will reappear in increasingly sophisticated forms. In particular, the language of vector spaces and linear transformations will eventually lead us toward <strong>representations</strong> of groups and, ultimately, <strong>Galois representations</strong>.</p>
+<p><strong>Video:</strong> <a href="https://www.youtube.com/watch?v=9f-hGSh8lF0&amp;t=2339s">Basic Calculus and Complex Analysis — 38:59</a></p>
+<p>This section corresponds to <strong>38:59</strong> in <em>Proof of Fermat Last Theorem FROM SCRATCH</em>.</p>
 </div>
 </div>
-<p>Remember that in the introduction we said:</p>
-<blockquote class="blockquote">
-<p><strong>In mathematics, we often try to generalize concepts, theorems, and equations.</strong></p>
-</blockquote>
-<p>Here, the deeper idea is that seemingly unrelated mathematical problems can often be described using the same underlying structure. As we will see, we can use these shared concepts to look at certain problems from a new, often more convenient perspective.</p>
-<p>For example, in linear algebra, we can write any vector with respect to its basis vectors:</p>
-<p><span class="math display">\[
-\overrightarrow{v}=c_1\overrightarrow{e_1}+c_2\overrightarrow{e_2}+c_3\overrightarrow{e_3} = \begin{pmatrix}c_1 \\ c_3 \\ c_3\end{pmatrix}
-\]</span></p>
-<p>In the following two examples, we will do the same in the <strong>vector space of functions</strong>.</p>
-<pre class="text"><code>            Linear algebra
-                    |                
-            Vector spaces
-                    |                
-            Function spaces
-                    |                
-                Expansion
-              /          \
-        Taylor          Fourier
-          |                |
-    polynomial basis   trigonometric basis</code></pre>
-<p>Although Fourier analysis and Taylor expansion may seem to belong to a completely different part of mathematics, from the perspective of linear algebra, we can think of a function as an element of a vector space. This allows us to ask:</p>
-<blockquote class="blockquote">
-<p><strong>What are the right basis vectors, and what are the coordinates of our object in that basis?</strong></p>
-</blockquote>
-<p>Just as an ordinary vector can be written as a linear combination of basis vectors, a function can be written as a linear combination of basis functions.</p>
-<section id="example-1-taylor-expansion" class="level2">
-<h2 class="anchored" data-anchor-id="example-1-taylor-expansion"><strong>Example 1</strong>: Taylor expansion</h2>
-<p>We can conceptualize the <a href="../chapter-1/calculus-complex-analysis.html#taylor-series">Taylor expansion</a> as a kind of <strong>coordinate representation of a function with respect to a basis of polynomials</strong>.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>🚨 All concepts below will be properly addressed and explained in this very chapter on linear algebra.</p>
-</div>
-</div>
-<p>Take for example a function <span class="math inline">\(f(x)\)</span>. Around <span class="math inline">\(x=0\)</span> we can write</p>
-<p><span class="math display">\[
-f(x)=a_0+a_1x+a_2x^2+a_3x^3+\cdots
-\]</span></p>
-<p>We can think of the objects</p>
-<p><span class="math display">\[
-1,\quad x,\quad x^2,\quad x^3,\ldots
-\]</span></p>
-<p>as <a href="vector-spaces.qmd/#basis-dimension">basis vectors</a> of a <a href="../chapter-2/vector-spaces.html#vector-spaces">vector space</a> of polynomials, exactly those notions that are defined in this chapter on linear algebra! The scalars <span class="math inline">\(a_0,a_1,a_2,a_3,\ldots\)</span> are exactly the <strong>coordinates van <span class="math inline">\(f(x)\)</span> with respect to that basis</strong>.</p>
-<p>Note that a Taylor series is not just an arbitrary representation of <span class="math inline">\(f(x)\)</span> in the basis <span class="math inline">\(\{1,x,x^2,x^3,\ldots\}\)</span> as the coordinates are specifically determined by the derivatives of <span class="math inline">\(f(x)\)</span> around the expansion point:</p>
-<p><span class="math display">\[
-a_n=\frac{f^{(n)}(0)}{n!}.
-\]</span></p>
-<p>For example,</p>
-<p><span class="math display">\[
-e^x=1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+\cdots
-\]</span></p>
-<p>can be interpreted in the context of linear algebra as:</p>
-<p><span class="math display">\[
-[e^x]_{\{1,x,x^2,x^3,\ldots\}}
-=
-\left(1,1,\dfrac{1}{2!},\dfrac{1}{3!},\ldots\right).
-\]</span></p>
-<p>👉 <strong>The Taylor series expansion provides a different basis</strong></p>
-<div id="taylorSeriesContainer"></div>
-<script type="module" src="https://www.hendrikse.name/helion/examples/taylor_expansion.js"></script>
-<p>We can look at it in an even more abstract way. Around a point <span class="math inline">\(a\)</span> we have the basis</p>
-<p><span class="math display">\[
-1,\quad (x-a),\quad (x-a)^2,\quad (x-a)^3,\ldots
-\]</span></p>
-<p>with which <span class="math inline">\(f(x)\)</span> becomes</p>
-<p><span class="math display">\[
-f(x)
-=
-f(a)
-+f'(a)(x-a)
-+\frac{f''(a)}{2!}(x-a)^2+\cdots.
-\]</span></p>
-<p>Therefore, the coordinates with respect to that polynomial basis vectors are</p>
-<p><span class="math display">\[
-\boxed{
-\left(
-f(a),
-f'(a),
-\frac{f''(a)}{2!},
-\frac{f^{(3)}(a)}{3!},\ldots
-\right)
-}
-\]</span></p>
-<p>So we observe the following analogy in lineaire algebra:</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 44%">
-<col style="width: 55%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Linear algebra</th>
-<th>Taylor analysis</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>vector <span class="math inline">\(v\)</span></td>
-<td>function <span class="math inline">\(f\)</span></td>
-</tr>
-<tr class="even">
-<td>basis vectors <span class="math inline">\(e_1,e_2,\ldots\)</span></td>
-<td><span class="math inline">\(1,(x-a),(x-a)^2,\ldots\)</span></td>
-</tr>
-<tr class="odd">
-<td>coordinates <span class="math inline">\(c_1,c_2,\ldots\)</span></td>
-<td><span class="math inline">\(f(a),f'(a),f''(a)/2!,\ldots\)</span></td>
-</tr>
-<tr class="even">
-<td><span class="math inline">\(v=\sum c_i e_i\)</span></td>
-<td><span class="math inline">\(f=\sum \frac{f^{(n)}(a)}{n!}(x-a)^n\)</span></td>
-</tr>
-</tbody>
-</table>
-<p>👉 We can look at the Taylor expansion as expressing a function in coordinates along the directions <span class="math inline">\(1,(x-a),(x-a)^2,\ldots\)</span>.</p>
-<p>There exists an even deeper connection: <strong>differentiation can be seen as a linear operator that works on these coordinates</strong>. This directly leads to a connection between Taylor series, vector spaces, and matrices/operators.</p>
-</section>
-<section id="example-2-fourier-transform" class="level2">
-<h2 class="anchored" data-anchor-id="example-2-fourier-transform"><strong>Example 2</strong>: Fourier transform</h2>
-<p>Here the connection with linear algebra becomes even more apparent, since the Fourier expansion amounts to a representation of a function in the following <strong>orthogonal</strong> directions:</p>
-<p><span class="math display">\[
-1,\quad \cos x,\quad \sin x,\quad \cos 2x,\quad \sin 2x,\quad\ldots
-\]</span></p>
-<p>Any function <span class="math inline">\(f\)</span> can thus be built using this basis:</p>
-<p><span class="math display">\[
-f(x)
-=
-\frac{a_0}{2}
-+\sum_{n=1}^{\infty}
-\left(a_n\cos(nx)+b_n\sin(nx)\right).
-\]</span></p>
-<p>The Fourier-coefficiens <span class="math inline">\(a_0,a_1,b_1,a_2,b_2,\ldots\)</span> are the <strong>coordinats of the function <span class="math inline">\(f\)</span> in this basis</strong>.</p>
-<p style="clear: both;">
-</p>
-<div id="fourierTransformContainer"></div>
-<script type="module" src="https://www.hendrikse.name/helion/examples/fourier_transform.js"></script>
-<p style="clear: both;">
-</p>
-</section>
-<section id="comparision-between-taylor-and-fourier-series" class="level2">
-<h2 class="anchored" data-anchor-id="comparision-between-taylor-and-fourier-series">Comparision between Taylor and Fourier series</h2>
-<section id="orthogonality" class="level3">
-<h3 class="anchored" data-anchor-id="orthogonality">Orthogonality</h3>
-<p>We have seen that <span class="math display">\[
-\text{Taylor}=\text{coordinates in a polynomial basis}
-\]</span></p>
-<p>and</p>
-<p><span class="math display">\[
-\text{Fourier}=\text{coordinates in a trigonometric basis}.
-\]</span></p>
-<p>However, in the case of Fourier, we have seen yet another concept from linear algebra, namely <strong>orthogonality</strong>.</p>
-<p>Two vectors are orthogonal when <span class="math inline">\(u\cdot v=0\)</span>. For functions this can be defined analogously:</p>
-<p><span class="math display">\[
-\langle f,g\rangle
-=
-\int_{-\pi}^{\pi}f(x)g(x),dx.
-\]</span></p>
-<p>With this definition <span class="math inline">\(\cos x\)</span> and <span class="math inline">\(\sin x\)</span> turn out to be perpendicular to one another:</p>
-<p><span class="math display">\[
-\langle\cos x,\sin x\rangle
-=
-\int_{-\pi}^{\pi}\cos x\sin x,dx
-=0.
-\]</span></p>
-<p>The same holds for the different frequencies <span class="math inline">\(\langle\cos x,\cos2x\rangle=0\)</span> and <span class="math inline">\(\langle\sin3x,\cos7x\rangle=0\)</span>. In fact, we have an <strong>infinite-dimensional Euclidean space</strong> where the Fourier basis vectors are perpendicular to each other.</p>
-<p>This orthogonality is then used to find the (frequency) coordinates. Suppose in “ordinary” lineaire algebra we have:</p>
-<p><span class="math display">\[
-\overrightarrow{v}=3\overrightarrow{e_1}+5\overrightarrow{e_2}.
-\]</span></p>
-<p>When <span class="math inline">\(\overrightarrow{e_1}\)</span> and <span class="math inline">\(\overrightarrow{e_2}\)</span> are prependicular, we can find <span class="math inline">\(3\)</span> by projecting <span class="math inline">\(\overrightarrow{v}\)</span> onto <span class="math inline">\(\overrightarrow{e_1}\)</span>.</p>
-<p>Analogously we can find the Fourier coefficients <span class="math inline">\(a_n\)</span> by projecting <span class="math inline">\(f\)</span> onto <span class="math inline">\(\cos(nx)\)</span>. So conceptually:</p>
-<p><span class="math display">\[
-a_n
-\sim
-\langle f,\cos(nx)\rangle,
-\quad
-b_n
-\sim
-\langle f,\sin(nx)\rangle.
-\]</span></p>
-<p>With exact normalisation this results in</p>
-<p><span class="math display">\[
-a_n=\frac1\pi
-\int_{-\pi}^{\pi}f(x)\cos(nx)dx,
-\quad
-b_n=\frac1\pi
-\int_{-\pi}^{\pi}f(x)\sin(nx),dx.
-\]</span></p>
-</section>
-<section id="geometric-interpretation" class="level3">
-<h3 class="anchored" data-anchor-id="geometric-interpretation">Geometric interpretation</h3>
-<p>We have just established that Fourier coefficients are literally <strong>projections of the function vector onto orthogonal basis vectors</strong>.</p>
-<p>👉 This makes a <strong>direct geoemtric interpretation</strong> of the Fourier transform possible.</p>
-<p>For a vector in 3D this geometric interpretation is trivial. For example,</p>
-<p><span class="math display">\[
-\overrightarrow{v}=
-\begin{pmatrix} 3 \\ 2 \\ 5 \end{pmatrix}.
-\]</span></p>
-<p>tells us that <span class="math inline">\(\overrightarrow{v}\)</span> consists of 3 units in the <span class="math inline">\(x\)</span>-direction, 2 in the <span class="math inline">\(y\)</span>-direction and 5 in the <span class="math inline">\(z\)</span>-direction. Fourier tells us something similar: this function consists so much of frequencies <span class="math inline">\(1\)</span>, that much of frequencies <span class="math inline">\(2\)</span>, etc.</p>
-<p>For example, we could have <span class="math inline">\(f(x)= 2\cos x +0.7\sin x +3\cos2x -1.2\sin3x\)</span>.</p>
-<p>The two examples may be summarized in a table.</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 29%">
-<col style="width: 27%">
-<col style="width: 43%">
-</colgroup>
-<thead>
-<tr class="header">
-<th></th>
-<th>Taylor</th>
-<th>Fourier</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Vector</td>
-<td>function <span class="math inline">\(f\)</span></td>
-<td>function <span class="math inline">\(f\)</span></td>
-</tr>
-<tr class="even">
-<td>Vector space</td>
-<td>functions/polynomials</td>
-<td>functions</td>
-</tr>
-<tr class="odd">
-<td>Basis</td>
-<td><span class="math inline">\(1,(x-a),(x-a)^2,\ldots\)</span></td>
-<td><span class="math inline">\(1,\cos x,\sin x,\cos2x,\sin2x,\ldots\)</span></td>
-</tr>
-<tr class="even">
-<td>Coördinaten</td>
-<td>derivatives of <span class="math inline">\(f\)</span></td>
-<td>projections/integrals</td>
-</tr>
-<tr class="odd">
-<td>Idea</td>
-<td>local behaviour</td>
-<td>frequenty-contents</td>
-</tr>
-<tr class="even">
-<td>Basis orthogonal?</td>
-<td>no</td>
-<td><strong>yes</strong></td>
-</tr>
-<tr class="odd">
-<td>Geometric interpretation</td>
-<td>less direct</td>
-<td><strong>very direct</strong></td>
-</tr>
-</tbody>
-</table>
-</section>
-</section>
-<section id="conclusion" class="level2">
-<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
-<p>👉 The choice of basis determines <strong>which properties of a function become apparent.</strong></p>
-<ul>
-<li>With Taylor local properties become apparent via the derivatives:
-<ul>
-<li>Decomposition of <span class="math inline">\(f\)</span> in <strong>polynomial directions</strong></li>
-<li>How does <span class="math inline">\(f\)</span> behave locally around a point <span class="math inline">\(a\)</span>?</li>
-</ul></li>
-<li>With Fourier frequencies become visible via projection onto the basis vectors:
-<ul>
-<li>Decomposition of <span class="math inline">\(f\)</span> in <strong>frequency directions</strong></li>
-<li>From which frequencies can <span class="math inline">\(f\)</span> be built up?</li>
-</ul></li>
-</ul>
-<p>👉 This is why linear algebra can be so powerful:</p>
-<ul>
-<li><p>It gives us a common language in which very different mathematical problems can reveal the same underlying structure.</p></li>
-<li><p>We can do a basis transformation to look at a certain problem from a new, more convenient perspective.</p></li>
-</ul>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1250,14 +921,11 @@ b_n=\frac1\pi
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../chapter-1/calculus-complex-analysis.html" class="pagination-link" aria-label="Basic calculus &amp;amp; complex analysis">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Basic calculus &amp; complex analysis</span>
+      <a href="../chapter-2/summary.html" class="pagination-link" aria-label="Summary &amp; lab">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Summary &amp; lab</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../chapter-2/matrices.html" class="pagination-link" aria-label="Matrices, linear systems, and determinants">
-        <span class="nav-page-text">Matrices, linear systems, and determinants</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->

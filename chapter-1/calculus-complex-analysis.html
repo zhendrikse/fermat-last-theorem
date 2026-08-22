@@ -393,8 +393,11 @@ window.Quarto = {
       </div>
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
- <span class="menu-text">chapter-3/abstract-algebra.qmd</span>
-  </li>
+  <div class="sidebar-item-container"> 
+  <a href="../chapter-3/abstract-algebra.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Abstract algebra</span></a>
+  </div>
+</li>
           <li class="sidebar-item">
  <span class="menu-text">chapter-3/groups.qmd</span>
   </li>
@@ -723,6 +726,10 @@ z^n = 1 = e^{2\pi k} \Rightarrow z = e^{\dfrac{2\pi ik}{n}},\quad k \in \mathbb{
 f:\mathbb{C}\rightarrow\mathbb{C}
 \]</span></p>
 <p><span class="math inline">\(f\)</span> is <strong>complex differentiable</strong> at <span class="math inline">\(z_0\)</span> if the limit below exists for <span class="math inline">\(h\in\mathbb{C}\)</span>.</p>
+<p><span class="math display">\[
+f'(z_0) := \lim_{h\rightarrow 0}\dfrac{f(z_0+h) - f(z)}{h}
+\]</span></p>
+<p>If <span class="math inline">\(f\)</span> is complex differentiable on an open set, it is called <strong>holomorphic</strong>.</p>
 
 
 </section>
