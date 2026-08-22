@@ -399,8 +399,11 @@ window.Quarto = {
   </div>
 </li>
           <li class="sidebar-item">
- <span class="menu-text">chapter-3/groups.qmd</span>
-  </li>
+  <div class="sidebar-item-container"> 
+  <a href="../chapter-3/groups.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Groups, Homomorphisms, and Group Actions</span></a>
+  </div>
+</li>
           <li class="sidebar-item">
  <span class="menu-text">chapter-3/rings.qmd</span>
   </li>
@@ -501,6 +504,7 @@ window.Quarto = {
   <li><a href="#carthensian-product" id="toc-carthensian-product" class="nav-link" data-scroll-target="#carthensian-product">Carthensian product</a></li>
   <li><a href="#symbols-and-abbreviations" id="toc-symbols-and-abbreviations" class="nav-link" data-scroll-target="#symbols-and-abbreviations">Symbols and abbreviations</a></li>
   <li><a href="#divisibility-and-congruence" id="toc-divisibility-and-congruence" class="nav-link" data-scroll-target="#divisibility-and-congruence">Divisibility and congruence</a></li>
+  <li><a href="#greatest-common-divisor" id="toc-greatest-common-divisor" class="nav-link" data-scroll-target="#greatest-common-divisor">Greatest common divisor</a></li>
   </ul>
 </nav>
     </div>
@@ -527,6 +531,20 @@ window.Quarto = {
 </header>
 
 
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Video:</strong> <a href="https://www.youtube.com/watch?v=9f-hGSh8lF0&amp;t=319s">Basic set/number theory — 5:19</a></p>
+<p>This section corresponds to <strong>5:19</strong> in <em>Proof of Fermat Last Theorem FROM SCRATCH</em>.</p>
+</div>
+</div>
 <section id="common-number-sets" class="level2">
 <h2 class="anchored" data-anchor-id="common-number-sets">Common number sets</h2>
 <p>We will use the following standard number systems:</p>
@@ -574,6 +592,44 @@ A \times A = A^2 = \{(1,1), (1,2), (2,1), (2,2) \}
 </section>
 <section id="divisibility-and-congruence" class="level2">
 <h2 class="anchored" data-anchor-id="divisibility-and-congruence">Divisibility and congruence</h2>
+<p>📌 <span class="math inline">\(a|b\)</span> means <span class="math inline">\(a\)</span> divides <span class="math inline">\(b\)</span>, i.e., there exists <span class="math inline">\(k\)</span> such that <span class="math inline">\(b=ak\)</span>.<br> 📌 <span class="math inline">\(a\nmid b\)</span> means <span class="math inline">\(a\)</span> does not divide <span class="math inline">\(b\)</span>.<br> 📌 For integers <span class="math inline">\(a, b\)</span>, and <span class="math inline">\(n\geq 1\)</span>,</p>
+<p><span class="math display">\[
+a \equiv b\quad (\text{mod}\ {n})
+\]</span></p>
+<p>means <span class="math inline">\(n\ |\ (a-b)\)</span>.</p>
+<p>👉 <strong>Examples</strong></p>
+<p><span class="math display">\[
+17 \equiv 32\quad (\text{mod}\ 5), 15 \equiv 29\quad (\text{mod}\ 7)
+\]</span></p>
+</section>
+<section id="greatest-common-divisor" class="level2">
+<h2 class="anchored" data-anchor-id="greatest-common-divisor">Greatest common divisor</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>🚨 Why do we need this?</p>
+<p>The material below is used to proof Fermat’s last theorem for the cases <span class="math inline">\(n=3\)</span> and <span class="math inline">\(n=4\)</span>. Since these cases won’t be included on this site, we will skip the proofs and details.</p>
+</div>
+</div>
+<p>For integers <span class="math inline">\(a,b\)</span> the <strong>greatest common divisor</strong> of <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> is denoted by <span class="math inline">\(\gcd(a,b)\)</span>, and is sometimes written as <span class="math inline">\((a,b)\)</span>.</p>
+<ul>
+<li>If <span class="math inline">\((a,c) = 1\)</span>, then <span class="math inline">\((ab,c)=(b,c)\)</span></li>
+<li>For any integer <span class="math inline">\(k\)</span>, <span class="math inline">\((a,b)=(a,b-ak)\)</span></li>
+<li>If <span class="math inline">\((a,b) = 1\)</span> and <span class="math inline">\(a\ |\ bc\)</span>, then <span class="math inline">\(a\ |\ c\)</span></li>
+</ul>
+<p>👉 <strong>Examples</strong></p>
+<ul>
+<li><span class="math inline">\(\gcd(24, 36)=12\)</span></li>
+<li><span class="math inline">\(\gcd(28, 49)=7\)</span></li>
+<li><span class="math inline">\(\gcd(17, 32)=1\)</span> (co-primes)</li>
+</ul>
 
 
 </section>

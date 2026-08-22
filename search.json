@@ -4,7 +4,7 @@
     "href": "chapter-1/basic-set-number-theory.html",
     "title": "Basic set & number theory",
     "section": "",
-    "text": "We will use the following standard number systems:\n📌 \\(\\mathbb{N}\\): the set of natural numbers\n\\[\n\\mathbb{N} = \\{1, 2, 3,\\cdots\\}\n\\]\n📌 \\(\\mathbb{Z}\\): the set of integers (the letter “Z” comes from the German word for numbers, namely “Zahle”)\n\\[\n\\mathbb{Z} = \\{\\cdots, -2, -1, 0,1, 2, 3,\\cdots\\}\n\\]\n📌 \\(\\mathbb{Q}\\): the set of rational numbers\n\\[\n\\mathbb{Q} = \\{\\frac{a}{b}\\ \\big|\\ a, b \\in \\mathbb{Z}, b \\neq 0\\}\n\\]\n📌 \\(\\mathbb{R}\\): the set of real numbers\n📌 \\(\\mathbb{C}\\): the set of complex numbers\n\\[\n\\mathbb{C} = \\{x +iy\\ |\\ x, y \\in \\mathbb{R}\\}\n\\]",
+    "text": "Note\n\n\n\nVideo: Basic set/number theory — 5:19\nThis section corresponds to 5:19 in Proof of Fermat Last Theorem FROM SCRATCH.",
     "crumbs": [
       "Chapter 1 — Basics",
       "Basic set &amp; number theory"
@@ -14,8 +14,8 @@
     "objectID": "chapter-1/basic-set-number-theory.html#common-number-sets",
     "href": "chapter-1/basic-set-number-theory.html#common-number-sets",
     "title": "Basic set & number theory",
-    "section": "",
-    "text": "We will use the following standard number systems:\n📌 \\(\\mathbb{N}\\): the set of natural numbers\n\\[\n\\mathbb{N} = \\{1, 2, 3,\\cdots\\}\n\\]\n📌 \\(\\mathbb{Z}\\): the set of integers (the letter “Z” comes from the German word for numbers, namely “Zahle”)\n\\[\n\\mathbb{Z} = \\{\\cdots, -2, -1, 0,1, 2, 3,\\cdots\\}\n\\]\n📌 \\(\\mathbb{Q}\\): the set of rational numbers\n\\[\n\\mathbb{Q} = \\{\\frac{a}{b}\\ \\big|\\ a, b \\in \\mathbb{Z}, b \\neq 0\\}\n\\]\n📌 \\(\\mathbb{R}\\): the set of real numbers\n📌 \\(\\mathbb{C}\\): the set of complex numbers\n\\[\n\\mathbb{C} = \\{x +iy\\ |\\ x, y \\in \\mathbb{R}\\}\n\\]",
+    "section": "Common number sets",
+    "text": "Common number sets\nWe will use the following standard number systems:\n📌 \\(\\mathbb{N}\\): the set of natural numbers\n\\[\n\\mathbb{N} = \\{1, 2, 3,\\cdots\\}\n\\]\n📌 \\(\\mathbb{Z}\\): the set of integers (the letter “Z” comes from the German word for numbers, namely “Zahle”)\n\\[\n\\mathbb{Z} = \\{\\cdots, -2, -1, 0,1, 2, 3,\\cdots\\}\n\\]\n📌 \\(\\mathbb{Q}\\): the set of rational numbers\n\\[\n\\mathbb{Q} = \\{\\frac{a}{b}\\ \\big|\\ a, b \\in \\mathbb{Z}, b \\neq 0\\}\n\\]\n📌 \\(\\mathbb{R}\\): the set of real numbers\n📌 \\(\\mathbb{C}\\): the set of complex numbers\n\\[\n\\mathbb{C} = \\{x +iy\\ |\\ x, y \\in \\mathbb{R}\\}\n\\]",
     "crumbs": [
       "Chapter 1 — Basics",
       "Basic set &amp; number theory"
@@ -48,7 +48,18 @@
     "href": "chapter-1/basic-set-number-theory.html#divisibility-and-congruence",
     "title": "Basic set & number theory",
     "section": "Divisibility and congruence",
-    "text": "Divisibility and congruence",
+    "text": "Divisibility and congruence\n📌 \\(a|b\\) means \\(a\\) divides \\(b\\), i.e., there exists \\(k\\) such that \\(b=ak\\). 📌 \\(a\\nmid b\\) means \\(a\\) does not divide \\(b\\). 📌 For integers \\(a, b\\), and \\(n\\geq 1\\),\n\\[\na \\equiv b\\quad (\\text{mod}\\ {n})\n\\]\nmeans \\(n\\ |\\ (a-b)\\).\n👉 Examples\n\\[\n17 \\equiv 32\\quad (\\text{mod}\\ 5), 15 \\equiv 29\\quad (\\text{mod}\\ 7)\n\\]",
+    "crumbs": [
+      "Chapter 1 — Basics",
+      "Basic set &amp; number theory"
+    ]
+  },
+  {
+    "objectID": "chapter-1/basic-set-number-theory.html#greatest-common-divisor",
+    "href": "chapter-1/basic-set-number-theory.html#greatest-common-divisor",
+    "title": "Basic set & number theory",
+    "section": "Greatest common divisor",
+    "text": "Greatest common divisor\n\n\n\n\n\n\nNote\n\n\n\n🚨 Why do we need this?\nThe material below is used to proof Fermat’s last theorem for the cases \\(n=3\\) and \\(n=4\\). Since these cases won’t be included on this site, we will skip the proofs and details.\n\n\nFor integers \\(a,b\\) the greatest common divisor of \\(a\\) and \\(b\\) is denoted by \\(\\gcd(a,b)\\), and is sometimes written as \\((a,b)\\).\n\nIf \\((a,c) = 1\\), then \\((ab,c)=(b,c)\\)\nFor any integer \\(k\\), \\((a,b)=(a,b-ak)\\)\nIf \\((a,b) = 1\\) and \\(a\\ |\\ bc\\), then \\(a\\ |\\ c\\)\n\n👉 Examples\n\n\\(\\gcd(24, 36)=12\\)\n\\(\\gcd(28, 49)=7\\)\n\\(\\gcd(17, 32)=1\\) (co-primes)",
     "crumbs": [
       "Chapter 1 — Basics",
       "Basic set &amp; number theory"
@@ -339,10 +350,43 @@
     "href": "chapter-3/abstract-algebra.html",
     "title": "Abstract algebra",
     "section": "",
-    "text": "Note\n\n\n\nVideo: Basic Calculus and Complex Analysis — 38:59\nThis section corresponds to 38:59 in Proof of Fermat Last Theorem FROM SCRATCH.",
+    "text": "Note\n\n\n\nVideo: Groups, Homomorphisms, and Group Actions — 2:44:50\nThis section corresponds to 2:44:50 in Proof of Fermat Last Theorem FROM SCRATCH.\n\n\n\nAbstract algebra\n\n\n\n\n\n\nNote\n\n\n\n🚨 Why do we need this?\nThe main topics for proving Fermat’s last theorem will be elliptic curves and modular forms. One of the most important facts about elliptic curves is the fact that their points form a group. It is the reason why we can view elliptic curves as algebraic objects.\n\n\nWe start with groups, then we move on to rings and fields. These are the algebraic structrures we need before elliptic curves start making sense.\nAt the end, we will also take a glimpse at Galois theory. This will become extremely important later, because Galois representations are one of the most important objects that establish a connection between elliptic curves and modular forms.",
     "crumbs": [
       "Chapter 3 — Abstract Algebra",
       "Abstract algebra"
+    ]
+  },
+  {
+    "objectID": "chapter-3/groups.html",
+    "href": "chapter-3/groups.html",
+    "title": "Groups, Homomorphisms, and Group Actions",
+    "section": "",
+    "text": "Note\n\n\n\nVideo: Groups, Homomorphisms, and Group Actions — 2:44:50\nThis section corresponds to 2:44:50 in Proof of Fermat Last Theorem FROM SCRATCH.",
+    "crumbs": [
+      "Chapter 3 — Abstract Algebra",
+      "Groups, Homomorphisms, and Group Actions"
+    ]
+  },
+  {
+    "objectID": "chapter-3/groups.html#binary-operation",
+    "href": "chapter-3/groups.html#binary-operation",
+    "title": "Groups, Homomorphisms, and Group Actions",
+    "section": "Binary operation",
+    "text": "Binary operation\nA binary operation \\(*\\) on a set \\(S\\) is a function that assigns to each ordered pair \\((a,b)\\) of elements of \\(S\\) some element of \\(S\\).\n\nAssociativity: \\((a*b)*c = a * (b* c)\\)\nCommutativity: \\(a*b = b*a\\)\n\nThe most familiar binary operations we already know would definitely be addition and multiplication. For example, addition can be viewed as an operation that assigns the value 7 to the pair \\((3, 4)\\). Likewise, multiplication can be seen as an operation that assigns the value of 20 to the pair \\((4, 5)\\).\nHowever, we may want to define more unusual operations as well.",
+    "crumbs": [
+      "Chapter 3 — Abstract Algebra",
+      "Groups, Homomorphisms, and Group Actions"
+    ]
+  },
+  {
+    "objectID": "chapter-3/groups.html#group",
+    "href": "chapter-3/groups.html#group",
+    "title": "Groups, Homomorphisms, and Group Actions",
+    "section": "Group",
+    "text": "Group\nA group",
+    "crumbs": [
+      "Chapter 3 — Abstract Algebra",
+      "Groups, Homomorphisms, and Group Actions"
     ]
   },
   {
@@ -350,7 +394,7 @@
     "href": "chapter-2/vector-spaces.html",
     "title": "Vector spaces, basis, and dimension",
     "section": "",
-    "text": "Note\n\n\n\nVideo: Matrices, Linear Systems, and Determinants — 1:40:28\nThis section corresponds to 1:40:28 in Proof of Fermat Last Theorem FROM SCRATCH.",
+    "text": "Note\n\n\n\nVideo: Vector Spaces, Basis, and Dimension — 1:40:28\nThis section corresponds to 1:40:28 in Proof of Fermat Last Theorem FROM SCRATCH.",
     "crumbs": [
       "Chapter 2 — Linear Algebra",
       "Vector spaces, basis, and dimension"
@@ -427,7 +471,7 @@
     "href": "chapter-2/linear-transformations.html",
     "title": "Linear transformations, eigenvalues, inner products, and the spectral theorem",
     "section": "",
-    "text": "Copyright notice\n\n\n\n\n\n\nNote\n\n\n\nVideo: Matrices, Linear Systems, and Determinants — 1:07:03\nThis section corresponds to 1:07:03 in Proof of Fermat Last Theorem FROM SCRATCH.\n\n\n\n\nLinear transformations\nSo far, we have mostly talked about a single vector space. Now we move on to functions defined between distinct vector spaces.",
+    "text": "Copyright notice\n\n\n\n\n\n\nNote\n\n\n\nVideo: Linear Transformations, Eigenvalues, Inner Products, and the Spectral Theorem — 2:02:27\nThis section corresponds to 1:07:03 in Proof of Fermat Last Theorem FROM SCRATCH.\n\n\n\n\nLinear transformations\nSo far, we have mostly talked about a single vector space. Now we move on to functions defined between distinct vector spaces.",
     "crumbs": [
       "Chapter 2 — Linear Algebra",
       "Linear transformations, eigenvalues, inner products, and the spectral theorem"

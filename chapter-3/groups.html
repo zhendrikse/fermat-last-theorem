@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Introduction – Fermat’s Last Theorem — From Scratch</title>
+<title>Groups, Homomorphisms, and Group Actions – Fermat’s Last Theorem — From Scratch</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -36,8 +36,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../chapter-1/basic-set-number-theory.html" rel="next">
-<link href="../index.html" rel="prev">
+<link href="../chapter-3/abstract-algebra.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -279,7 +278,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapter-1/introduction.html">Chapter 1 — Basics</a></li><li class="breadcrumb-item"><a href="../chapter-1/introduction.html">Introduction</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapter-3/abstract-algebra.html">Chapter 3 — Abstract Algebra</a></li><li class="breadcrumb-item"><a href="../chapter-3/groups.html">Groups, Homomorphisms, and Group Actions</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -324,7 +323,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapter-1/introduction.html" class="sidebar-item-text sidebar-link active">
+  <a href="../chapter-1/introduction.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction</span></a>
   </div>
 </li>
@@ -400,7 +399,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapter-3/groups.html" class="sidebar-item-text sidebar-link">
+  <a href="../chapter-3/groups.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Groups, Homomorphisms, and Group Actions</span></a>
   </div>
 </li>
@@ -495,16 +494,26 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#groups" id="toc-groups" class="nav-link active" data-scroll-target="#groups">Groups</a>
+  <ul class="collapse">
+  <li><a href="#binary-operation" id="toc-binary-operation" class="nav-link" data-scroll-target="#binary-operation">Binary operation</a></li>
+  <li><a href="#group" id="toc-group" class="nav-link" data-scroll-target="#group">Group</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapter-1/introduction.html">Chapter 1 — Basics</a></li><li class="breadcrumb-item"><a href="../chapter-1/introduction.html">Introduction</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapter-3/abstract-algebra.html">Chapter 3 — Abstract Algebra</a></li><li class="breadcrumb-item"><a href="../chapter-3/groups.html">Groups, Homomorphisms, and Group Actions</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Introduction</h1>
+<h1 class="title">Groups, Homomorphisms, and Group Actions</h1>
 </div>
 
 
@@ -521,17 +530,40 @@ window.Quarto = {
 </header>
 
 
-<p>Before embarking on our journey to understand Fermat’s Last Theorem, it is important to establish a common ground for some mathematical concepts that will be used throughout this project, such as multivariate functions, differentiation and integration, and complex numbers.</p>
-<p>Just as an illustration, the simulation below demonstrates the (numeric) integration of a multivariate function using polar coordinates:</p>
-<p><span class="math display">\[
-f(\theta, \phi) = \theta^2 (\phi - \pi)^2
-\]</span></p>
-<div id="polarCoordinatesIntegration"></div>
-<script type="module" src="https://www.hendrikse.name/helion/examples/polar_coordinates_integration.js"></script>
-<p style="clear: both;">
-</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Video:</strong> <a href="https://www.youtube.com/watch?v=9f-hGSh8lF0&amp;t=9890s">Groups, Homomorphisms, and Group Actions — 2:44:50</a></p>
+<p>This section corresponds to <strong>2:44:50</strong> in <em>Proof of Fermat Last Theorem FROM SCRATCH</em>.</p>
+</div>
+</div>
+<section id="groups" class="level1">
+<h1>Groups</h1>
+<p>Before defining a group, we first need to clarify one basic concept first.</p>
+<section id="binary-operation" class="level2">
+<h2 class="anchored" data-anchor-id="binary-operation">Binary operation</h2>
+<p>A <strong>binary operation</strong> <span class="math inline">\(*\)</span> on a set <span class="math inline">\(S\)</span> is a function that assigns to each ordered pair <span class="math inline">\((a,b)\)</span> of elements of <span class="math inline">\(S\)</span> some element of <span class="math inline">\(S\)</span>.</p>
+<ul>
+<li><strong>Associativity</strong>: <span class="math inline">\((a*b)*c = a * (b* c)\)</span></li>
+<li><strong>Commutativity:</strong> <span class="math inline">\(a*b = b*a\)</span></li>
+</ul>
+<p>The most familiar binary operations we already know would definitely be addition and multiplication. For example, addition can be viewed as an operation that assigns the value 7 to the pair <span class="math inline">\((3, 4)\)</span>. Likewise, multiplication can be seen as an operation that assigns the value of 20 to the pair <span class="math inline">\((4, 5)\)</span>.</p>
+<p>However, we may want to define more unusual operations as well.</p>
+</section>
+<section id="group" class="level2">
+<h2 class="anchored" data-anchor-id="group">Group</h2>
+<p>A <strong>group</strong></p>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -949,14 +981,11 @@ f(\theta, \phi) = \theta^2 (\phi - \pi)^2
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../index.html" class="pagination-link" aria-label="Fermat's Last Theorem">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Fermat’s Last Theorem</span>
+      <a href="../chapter-3/abstract-algebra.html" class="pagination-link" aria-label="Abstract algebra">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Abstract algebra</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../chapter-1/basic-set-number-theory.html" class="pagination-link" aria-label="Basic set &amp;amp; number theory">
-        <span class="nav-page-text">Basic set &amp; number theory</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
