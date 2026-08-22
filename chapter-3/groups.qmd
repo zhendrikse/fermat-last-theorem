@@ -1,0 +1,29 @@
+---
+title: "Groups, Homomorphisms, and Group Actions"
+format: html
+---
+
+::: {.callout-note}
+**Video:** [Groups, Homomorphisms, and Group Actions — 2:44:50](https://www.youtube.com/watch?v=9f-hGSh8lF0&t=9890s)
+
+This section corresponds to **2:44:50** in *Proof of Fermat Last Theorem FROM SCRATCH*.
+:::
+
+# Groups
+
+Before defining a group, we first need to clarify one basic concept first.
+
+## Binary operation
+
+A **binary operation** $*$ on a set $S$ is a function that assigns to each ordered pair $(a,b)$ of elements of $S$ some element of $S$.
+
+- **Associativity**: $(a*b)*c = a * (b* c)$
+- **Commutativity:** $a*b = b*a$
+
+The most familiar binary operations we already know would definitely be addition and multiplication. For example, addition can be viewed as an operation that assigns the value 7 to the pair $(3, 4)$. Likewise, multiplication can be seen as an operation that assigns the value of 20 to the pair $(4, 5)$. 
+
+However, we may want to define more unusual operations as well.
+
+## Group
+
+A **group** 

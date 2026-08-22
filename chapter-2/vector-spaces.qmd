@@ -4,7 +4,7 @@ format: html
 ---
 
 ::: {.callout-note}
-**Video:** [Matrices, Linear Systems, and Determinants — 1:40:28](https://www.youtube.com/watch?v=9f-hGSh8lF0&t=6028s)
+**Video:** [Vector Spaces, Basis, and Dimension — 1:40:28](https://www.youtube.com/watch?v=9f-hGSh8lF0&t=6028s)
 
 This section corresponds to **1:40:28** in *Proof of Fermat Last Theorem FROM SCRATCH*.
 :::

@@ -1,0 +1,25 @@
+---
+title: "Abstract algebra"
+format: html
+---
+
+::: {.callout-note}
+**Video:** [Groups, Homomorphisms, and Group Actions — 2:44:50](https://www.youtube.com/watch?v=9f-hGSh8lF0&t=9890s)
+
+This section corresponds to **2:44:50** in *Proof of Fermat Last Theorem FROM SCRATCH*.
+:::
+
+# Abstract algebra
+
+::: {.callout-note}
+🚨 Why do we need this? 
+
+The main topics for proving Fermat's last theorem will be elliptic curves and modular forms. One of the most important facts about elliptic curves is the fact that their points form a group. It is the reason why we can view elliptic curves as algebraic objects.
+:::
+
+We start with groups, then we move on to rings and fields. These are the algebraic structrures we need before elliptic curves start making sense. 
+
+At the end, we will also take a glimpse at Galois theory. This will become extremely important later, because Galois representations are one of the most important objects that establish a connection between elliptic curves and modular forms.
+
+
+

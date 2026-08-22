@@ -80,7 +80,7 @@ At first, FLT may seem to be a problem just about integers. We might therefore e
 But in mathematics, we often encounter a problem in one field and eventually discover that its real structure is much easier to understand in another. As mathematicians tried to understand FLT more deeply, this happened as well. Not only did the problem itself turn out to be connected to different fields of mathematics, it also made use of some connections/bridges between those different fields:
 
 * [Linear algebra](chapter-2/linear-algebra.qmd),
-* abstract algebra (groups and Galois theory),
+* [abstract algebra](chapter-3/abstract-algebra.qmd) (groups and Galois theory),
 * elliptic curves,
 * modular forms
 

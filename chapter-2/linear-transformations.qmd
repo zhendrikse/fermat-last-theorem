@@ -6,13 +6,12 @@ format: html
 ### Copyright notice
 
 ::: {.callout-note}
-**Video:** [Matrices, Linear Systems, and Determinants — 1:07:03](https://www.youtube.com/watch?v=9f-hGSh8lF0&t=4023s)
+**Video:** [Linear Transformations, Eigenvalues, Inner Products, and the Spectral Theorem — 2:02:27](https://www.youtube.com/watch?v=9f-hGSh8lF0&t=7347s)
 
 This section corresponds to **1:07:03** in *Proof of Fermat Last Theorem FROM SCRATCH*.
 :::
 
 # Linear transformations
 
-So far, we have mostly talked about a single vector space. 
-Now we move on to functions defined between distinct vector spaces.
+So far, we have mostly talked about a single vector space. Now we move on to functions defined between distinct vector spaces.
 
