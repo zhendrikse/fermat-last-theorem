@@ -6,16 +6,4 @@ format: html
 Before embarking on our journey to understand Fermat's Last Theorem, it is important to establish a common ground for some mathematical concepts that will be used throughout this project, such
 as multivariate functions, differentiation and integration, and complex numbers.
 
-Just as an illustration, the simulation below demonstrates the (numeric) integration of a multivariate function using polar coordinates:
-
-$$
-f(\theta, \phi) = \theta^2 (\phi - \pi)^2
-$$
-
-
-```{=html}
-<div id="polarCoordinatesIntegration"></div>
-<script type="module" src="https://www.hendrikse.name/helion/examples/polar_coordinates_integration.js"></script>
-```
-<p style="clear: both;"></p>
 

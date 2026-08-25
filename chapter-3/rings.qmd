@@ -1,0 +1,10 @@
+---
+title: "Rings, Fields, Ideals, and Unique Factorization"
+format: html
+---
+
+::: {.callout-note}
+**Video:** [Rings, Fields, Ideals, and Unique Factorization — 3:36:07](https://www.youtube.com/watch?v=9f-hGSh8lF0&t=12967s)
+
+This section corresponds to **3:36:07** in *Proof of Fermat Last Theorem FROM SCRATCH*.
+:::
