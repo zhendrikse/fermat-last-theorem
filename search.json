@@ -427,7 +427,7 @@
     "href": "chapter-3/groups.html#isomorphic-groups",
     "title": "Groups, Homomorphisms, and Group Actions",
     "section": "Isomorphic groups",
-    "text": "Isomorphic groups\nSo, to understand the group, we need to understand how the elements interact under that operation. One way to do that is to make an operation table.\nFor example, let’s look at \\(\\mathbb{Z}_3\\).",
+    "text": "Isomorphic groups\nSo, to understand the group, we need to understand how the elements interact under that operation. One way to do that is to make an operation table.\nFor example, let’s look at the operation tables of both \\(\\mathbb{Z}_3\\)\n\\[\\begin{array}{|c|c|c|c|}\n+ & 0 & 1 & 2\\\\\n\\hline\n0 & 0 & 1 & 2\\\\\n\\hline\n1 & 1 & 2 & 0\\\\\n\\hline\n2 & 2 & 0 & 1\n\\end{array}\\]\nand \\(\\mu_3\\):\n\\[\n\\begin{array}{|c|c|c|c|}\n+ & 1 & e^{\\frac{2\\pi i}{3}} & e^{\\frac{4\\pi i}{3}}\\\\\n\\hline\n1 & 1 & e^{\\frac{2\\pi i}{3}} & e^{\\frac{4\\pi i}{3}}\\\\\n\\hline\ne^{\\frac{2\\pi i}{3}} & e^{\\frac{2\\pi i}{3}} & e^{\\frac{4\\pi i}{3}} & 1\\\\\n\\hline\ne^{\\frac{4\\pi i}{3}} & e^{\\frac{4\\pi i}{3}} & 1 & e^{\\frac{2\\pi i}{3}}\n\\end{array}\n\\]\nUpon closer inspection, we notice that these operation tables have exactly the same structure, as there turns out to be an obvious one-to-one correspondence between the elements of each group.",
     "crumbs": [
       "Chapter 3 — Abstract Algebra",
       "Groups, Homomorphisms, and Group Actions"

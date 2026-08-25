@@ -724,7 +724,29 @@ a * a * a * a \\
 <section id="isomorphic-groups" class="level2">
 <h2 class="anchored" data-anchor-id="isomorphic-groups">Isomorphic groups</h2>
 <p>So, to understand the group, we need to understand how the elements interact under that operation. One way to do that is to make an operation table.</p>
-<p>For example, let’s look at <span class="math inline">\(\mathbb{Z}_3\)</span>.</p>
+<p>For example, let’s look at the operation tables of both <span class="math inline">\(\mathbb{Z}_3\)</span></p>
+<span class="math display">\[\begin{array}{|c|c|c|c|}
++ &amp; 0 &amp; 1 &amp; 2\\
+\hline
+0 &amp; 0 &amp; 1 &amp; 2\\
+\hline
+1 &amp; 1 &amp; 2 &amp; 0\\
+\hline
+2 &amp; 2 &amp; 0 &amp; 1
+\end{array}\]</span>
+<p>and <span class="math inline">\(\mu_3\)</span>:</p>
+<p><span class="math display">\[
+\begin{array}{|c|c|c|c|}
++ &amp; 1 &amp; e^{\frac{2\pi i}{3}} &amp; e^{\frac{4\pi i}{3}}\\
+\hline
+1 &amp; 1 &amp; e^{\frac{2\pi i}{3}} &amp; e^{\frac{4\pi i}{3}}\\
+\hline
+e^{\frac{2\pi i}{3}} &amp; e^{\frac{2\pi i}{3}} &amp; e^{\frac{4\pi i}{3}} &amp; 1\\
+\hline
+e^{\frac{4\pi i}{3}} &amp; e^{\frac{4\pi i}{3}} &amp; 1 &amp; e^{\frac{2\pi i}{3}}
+\end{array}
+\]</span></p>
+<p>Upon closer inspection, we notice that these operation tables have exactly the same structure, as there turns out to be an obvious one-to-one correspondence between the elements of each group.</p>
 
 
 </section>
