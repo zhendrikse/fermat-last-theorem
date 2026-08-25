@@ -30,17 +30,17 @@ $$
 In the following two examples, we will do the same in the **vector space of functions**.
 
 ```text
-            Linear algebra
-                    |                
-            Vector spaces
-                    |                
-            Function spaces
-                    |                
-                Expansion
-              /          \
-        Taylor          Fourier
-          |                |
-    polynomial basis   trigonometric basis
+        Linear algebra
+                |                
+        Vector spaces
+                |                
+        Function spaces
+                |                
+            Expansion
+            /          \
+    Taylor          Fourier
+        |                |
+polynomial basis   trigonometric basis
 ```
 
 Although Fourier analysis and Taylor expansion may seem to belong to a completely different part of mathematics, from the perspective of linear algebra, we can think of a function as an element of a vector space. This allows us to ask:
@@ -49,7 +49,7 @@ Although Fourier analysis and Taylor expansion may seem to belong to a completel
 
 Just as an ordinary vector can be written as a linear combination of basis vectors, a function can be written as a linear combination of basis functions.
 
-## **Example 1**: Taylor expansion
+## 🏷️ **Example 1**: Taylor expansion
 
 We can conceptualize the [Taylor expansion](../chapter-1/calculus-complex-analysis.qmd#taylor-series) as a kind of **coordinate representation of a function with respect to a basis of polynomials**.
 
@@ -93,6 +93,8 @@ $$
 $$
 
 👉 **The Taylor series expansion provides a different basis**
+
+### 🧪 Taylor expansion demo
 
 ```{=html}
 <div id="taylorSeriesContainer"></div>
@@ -141,7 +143,7 @@ So we observe the following analogy in lineaire algebra:
 
 There exists an even deeper connection: **differentiation can be seen as a linear operator that works on these coordinates**. This directly leads to a connection between Taylor series, vector spaces, and matrices/operators.
 
-## **Example 2**: Fourier transform
+## 🏷️ **Example 2**: Fourier transform
 
 Here the connection with linear algebra becomes even more apparent, since the Fourier expansion amounts to a representation of a function in the following **orthogonal** directions:
 
@@ -160,6 +162,8 @@ f(x)
 $$
 
 The Fourier-coefficiens $a_0,a_1,b_1,a_2,b_2,\ldots$ are the **coordinats of the function $f$ in this basis**.
+
+### 🧪 Fourier transform demo
 
 <p style="clear: both;"></p>
 ```{=html}
@@ -264,7 +268,7 @@ The two examples may be summarized in a table.
 | Geometric interpretation | less direct            | **very direct**                        |
 
 
-## Conclusion
+## 🧠 Conclusion
 
 👉 The choice of basis determines **which properties of a function become apparent.**
 

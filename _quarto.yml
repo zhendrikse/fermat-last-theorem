@@ -12,6 +12,7 @@ website:
 
     contents:
       - index.qmd
+      - demo-index.qmd
 
       - section: "Chapter 1 — Basics"
         contents:
@@ -60,6 +61,7 @@ website:
 
 format:
   html:
+    css: styles.css
     theme:
       dark: darkly
       light: flatly

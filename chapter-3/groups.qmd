@@ -11,9 +11,27 @@ This section corresponds to **2:44:50** in *Proof of Fermat Last Theorem FROM SC
 
 # Groups
 
+::: {.callout-note}
+Why do we need this?
+
+In [fermatically.com](https://fermatically.com/werkzeuge/gruppen/), it is stated that:
+
+For Fermat's Last Theorem, groups play a key role through Galois theory: the symmetries of the roots of a polynomial form a group – the Galois group. This group controls the algebraic structure of the associated field extension.
+
+[...]
+
+Without groups, Wiles' proof would not even be formulable.
+:::
+
+### Introduction
+
+> A square can be rotated (by 90°, 180°, 270°) and reflected (across four axes) – that makes a total of **eight symmetries**. Each individual symmetry maps the square onto itself, and two symmetries performed in succession yield another symmetry.
+
+> This observation can be generalised: wherever there are symmetries – in geometry, in physics, in number theory – there is a mathematical structure behind them that always obeys the same rules. This structure is called a **group**. &mdash; [fermatically.com](https://fermatically.com/werkzeuge/gruppen/)
+
 Before defining a group, we first need to clarify one basic concept first.
 
-## Binary operation
+## 📌 Binary operation
 
 A **binary operation** $*$ on a set $S$ is a function that assigns to each ordered pair $(a,b)$ of elements of $S$ some element of $S$.
 
@@ -24,38 +42,39 @@ The most familiar binary operations we already know would definitely be addition
 
 However, we may want to define more unusual operations as well.
 
-## Group
+## 📌 Group
 
-A **group** $(G, *)$ is a set $Gf$ with a binary operation $*$ satisfying three axioms:
+A **group** $(G, *)$ is a set $Gf$ with a binary operation $*$ satisfying four axioms:
 
-- The operation $*$ is associative: $\forall a,b,c \in G:\ (a*b)*c=a*(b*c)$
-- There is an element $e\in G$ such that $e*x = a * e = a$ for all $a \in G$. This is called the identity element.
-- For each $a\in G$, there is an element $a^{-1}\in G$, such that $a*a^{-1}=a^{-1}* a=e$. This is called an inverse element.
+- **Closure**: For all $a, b\in G,\ a * b \in G$. 
+- **Associativity**: The operation $*$ is associative: $\forall a,b,c \in G:\ (a*b)*c=a*(b*c)$
+- **Identity element**: There is an element $e\in G$ such that $e*x = a * e = a$ for all $a \in G$. 
+- **Inverses**: For each $a\in G$, there is an element $a^{-1}\in G$, such that $a*a^{-1}=a^{-1}* a=e$. This is called an inverse element.
 
-A group is **abelian** if its operation is also commutative.
+A group is **abelian** (or commutative) if its operation is also commutative &mdash; named after Niels Henrik Abel.
 
-The number of elements in a gorup $G$ is called its **order**, denoted by $|G|$.
+The number of elements in a group $G$ is called its **order**, denoted by $|G|$.
 
-👉 **Examples**
+### 🏷️ Examples
 
 The set of integers with addition is a group:
 
-- The addition operation is clearly an operation on $\mathbb{Z}$, as it always returns another integer.
-- Addition is associative.
-- The identity element is zero.
-- Each element $a\in\mathbb{Z}$ has an inverse, namely $-a$.
+- The addition operation is clearly an operation on $\mathbb{Z}$, as it always returns another integer ✔️
+- Addition is associative ✔️
+- The identity element is zero ✔️
+- Each element $a\in\mathbb{Z}$ has an inverse, namely $-a$ ✔️
 
 It is also an abelian group, since addition is commutative.
 
 Similarly, $(\mathbb{Q}, +)$, $(\mathbb{R}, +)$, and $(\mathbb{C}, +)$ are also groups.
 
-👉 **Counter example**: $(\mathbb{Q}, *)$
+### 🏷️ Counter example: $(\mathbb{Q}, *)$
 
-This is _not_ a group, as there is no inverse element for zero: there is no such element for which we can write $0*b=b*0=1$.
+This is _not_ a group, as there is no inverse element for zero: there is no such element for which we can write $0*b=b*0=1$ ❌
 
 So the same set can behave very differently, depending on what operations we put on it!
 
-👉 **Example**: $(\mathbb{Z}_n, +)$
+### 🏷️ Example: $(\mathbb{Z}_n, +)$
 
 The group $(\mathbb{Z}_n, +)$. Remember that $\mathbb{Z}_n$ is a subset $\mathbb{Z}_n=\{0,1,2\cdots, n-1\}$. 
 
@@ -73,9 +92,9 @@ $$
 
 Let's verify that $(\mathbb{Z}_5, +)$ is a group:
 
-- The $+$-operation is associative
-- There is a zero element: $0 + a = a + 0 =a$
-- Every element has an inverse: 
+- The $+$-operation is associative ✔️
+- There is a zero element: $0 + a = a + 0 =a$ ✔️
+- Every element has an inverse ✔️ 
 
 $$
 \begin{array}{l}
@@ -87,7 +106,7 @@ $$
 
 Similarly, $(\mathbb{Z}_n, +)$ is a group.
 
-👉 **Example**: $(\mathbb{Z}_n \times \mathbb{Z}_m, +)$
+### 🏷️ Example: $(\mathbb{Z}_n \times \mathbb{Z}_m, +)$
 
 The addition operation is defined as
 
@@ -97,19 +116,19 @@ $$
 
 With this operation, it forms a group. Let's check this for $(\mathbb{Z}_3 \times \mathbb{Z}_4, +)$:
 
-- With the above addition operation, we always get another element in the group:
+- With the above addition operation, we always get another element in the group ✔️
 $$
 \begin{array}{l}
 1 + 2 = 1 + 3 = (2, 1) \in \mathbb{Z}_3 \times \mathbb{Z}_4 \\
 2 + 3 = 3 + 2 = (1, 1) \in \mathbb{Z}_3 \times \mathbb{Z}_4
 \end{array}
 $$
-- The zero element is $(0, 0)$
-- For every element, there is an inverse, for example $(2, 2) + (1, 2) = (0, 0)$.
+- The zero element is $(0, 0)$ ✔️
+- For every element, there is an inverse, for example $(2, 2) + (1, 2) = (0, 0)$ ✔️
 
 So indeed, $(\mathbb{Z}_n \times \mathbb{Z}_m, +)$ is a group. 
 
-More generally, we have that
+❗ More generally, we have that
 
 $$
 (\mathbb{Z}_{n_1} \times \mathbb{Z}_{n_2} \times \mathbb{Z}_{n_3}\cdots, +)
@@ -117,30 +136,30 @@ $$
 
 forms a group.
 
-👉 **Example**: $(GL_n(\mathbb{R}), *)$
+### 🏷️ Example: $(GL_n(\mathbb{R}), *)$
 
 The collection of invertible matrices $GL_n(\mathbb{R})$ with matrix multiplication froms a group:
 
-- $\forall A, B\in GL_n(\mathbb{R}): A*B \in GL_n(\mathbb{R})$ as $\det(AB)=\det(A)\det(B)\neq0$.
-- Matrix multiplication is associative
-- Obvisouly, $GL_n(\mathbb{R})$ contains a zero element.
-- As the determinant is non-zero by definition, every matrix has an inverse matrix.
+- $\forall A, B\in GL_n(\mathbb{R}): A*B \in GL_n(\mathbb{R})$ as $\det(AB)=\det(A)\det(B)\neq0$ ✔️
+- Matrix multiplication is associative ✔️
+- Obvisouly, $GL_n(\mathbb{R})$ contains a zero element ✔️
+- As the determinant is non-zero by definition, every matrix has an inverse matrix ✔️
 
-👉 **Example**: $n$-th roots of unity
+### 🏷️ Example: $n$-th roots of unity
 
 If we define $\mu_n = \{z\in\mathbb{C}\ |\ z^n=1 \}$ with multiplication, $(\mu_n, *)$ forms a group.
 
--  $\forall z_1, z_2 \in \mu_n: (z_1z_2)^n = z_1^nz_2^n =1$
-- Multiplication is associative
-- There is one identiy element, namely $1^n = 1$
-- Every element has an inverse, as $1 / z^n$ is also in the group.
+-  $\forall z_1, z_2 \in \mu_n: (z_1z_2)^n = z_1^nz_2^n =1$ ✔️
+- Multiplication is associative ✔️
+- There is one identiy element, namely $1^n = 1$ ✔️
+- Every element has an inverse, as $1 / z^n$ is also in the group ✔️
 
 
 ::: {.callout-note}
 🚨 When the operation is obvious, we usually just state the set without explicitly mentioning its operation! 
 :::
 
-### **Example**: Rubik's cube
+### 🧪 Rubik's cube
 
 The moves for the Rubik's cube form a group as well: $[R, L, F, B, U, D]$.
 
@@ -149,13 +168,13 @@ The moves for the Rubik's cube form a group as well: $[R, L, F, B, U, D]$.
 <script type="module" src="https://www.hendrikse.name/helion/examples/rubiks_cube.js"></script>
 ```
 
-## Subgroup
+## 📌 Subgroup
 
 A subset of $H$ of a group $G$ is a **subgroup** ($H\leq G$) if $H$ is itself a group under the operations of $G$.
 
 It is a concept that is very similar to a subspace or subset, so it is basically a smaller group sitting inside a larger group.
 
-👉 **Examples**
+### 🏷️ Examples
 
 $$
 (\mathbb{Z}, +) \leq (\mathbb{Q}_n, +)
@@ -169,7 +188,7 @@ $$
 
 Another example would be $(\mu_2, *) \leq (\mu_4, *)$.
 
-## Cyclic groups
+## 📌 Cyclic groups
 
 A group $G$ is **cyclic** if it can be generated by a single element. We write $G=\langle a \rangle = \{a^n\ |\ n \in \mathbb{Z}\}$. The element $a$ is a generator of $G$.
 
@@ -185,7 +204,7 @@ a * a * a * a \\
 \end{array}
 $$
 
-👉 **Examples**
+### 🏷️ Examples
 
 $$
 \mathbb{Z} = \langle 1 \rangle = \langle -1 \rangle
@@ -215,9 +234,63 @@ $$
 \mu_n=\langle e^{\frac{2\pi i}{n}}\rangle
 $$
 
-## Isomorphic groups
+## 📌 Isomorphic groups
 
 So, to understand the group, we need to understand how the elements interact under that operation. One way to do that is to make an operation table. 
 
-For example, let's look at $\mathbb{Z}_3$.
+For example, let's look at the operation tables of both $\mathbb{Z}_3$ 
+
+\begin{array}{|c|c|c|c|}
++ & 0 & 1 & 2\\
+\hline
+0 & 0 & 1 & 2\\
+\hline
+1 & 1 & 2 & 0\\
+\hline
+2 & 2 & 0 & 1
+\end{array}
+
+and $\mu_3$: 
+
+$$
+\begin{array}{|c|c|c|c|}
++ & 1 & e^{\frac{2\pi i}{3}} & e^{\frac{4\pi i}{3}}\\
+\hline
+1 & 1 & e^{\frac{2\pi i}{3}} & e^{\frac{4\pi i}{3}}\\
+\hline
+e^{\frac{2\pi i}{3}} & e^{\frac{2\pi i}{3}} & e^{\frac{4\pi i}{3}} & 1\\
+\hline
+e^{\frac{4\pi i}{3}} & e^{\frac{4\pi i}{3}} & 1 & e^{\frac{2\pi i}{3}}
+\end{array}
+$$
+
+Upon closer inspection, we notice that these operation tables have exactly the same structure, as there turns out to be an obvious one-to-one correspondence between the elements of each group:
+
+$$
+\begin{array}{c}
+0 \longleftrightarrow 1 \\
+1 \longleftrightarrow e^{\frac{2\pi i}{3}} \\  
+2 \longleftrightarrow e^{\frac{4\pi i}{3}} \\  
+\end{array}
+$$
+
+👉 Two groups $(G, *)$ and $(G', *')$ are **isomorphic** if their elements can be paired up in a way that preserves the group's structural properties. We write $G\cong G'$. 
+
+❗ The two groups have very little in common. One group consists of integers, the other contains exponents with even imaginary numbers. Also, the first group is a group under addition, whereas the second group is a group under multiplication. However, although the two groups are very different, they have exactly _the same structure_!
+
+🧠 What matters is how the elements interact with each other. If two groups have the same operation structure after relabelling the elements, they are called **isomorphic**.
+
+👉 $\mathbb{Z}_3 \cong \mu_3$
+
+## 📌 Isomorphism: the map
+
+An Isomorphism $\phi$ from a group $(G, *)$ to a group $(G', *')$ is a function $\phi: G\rightarrow G'$ that satisfies two conditions:
+
+1. $\phi$ is a **bijection** (one-to-one and onto).
+2. $\phi$ **preserves the operation**: For all $a,b\in G$,
+$$
+\phi(A*B)=\phi(a)*'\phi(b)
+$$
+
+An **automorphism** is an isomorphism from a group $G$ to itself.
 

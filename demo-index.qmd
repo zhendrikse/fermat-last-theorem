@@ -1,0 +1,17 @@
+---
+title: Index of Helion demos
+format: html
+---
+
+| Demo | Link to page |
+|------|--------------|
+[Eigen vectors & eigen values](https://www.hendrikse.name/helion/mathematics/matrix_transformation/#eigen-vectors-and-eigen-values) | [Linear transformations](todo)
+[Fourier transform](https://www.hendrikse.name/helion/mathematics/fourier_transform/) | [Linear algebra](http://localhost:3559/chapter-2/linear-algebra.html#fourier-transform-demo) |
+|[Pythagoras theorem](https://www.hendrikse.name/helion/mathematics/pythagoras/) | [Is Fermat’s Last Theorem actually interesting?](https://www.hendrikse.name/fermat-last-theorem/#pythagorean-theorem) |
+| [Real surfaces](https://www.hendrikse.name/helion/mathematics/real_surfaces/) | [Multivariable functions](https://www.hendrikse.name/fermat-last-theorem/chapter-1/calculus-complex-analysis.html#multivariable-functions-demo) | 
+[Roots of unity](https://www.hendrikse.name/helion/mathematics/roots_of_unity/) | [Calculus](https://www.hendrikse.name/fermat-last-theorem/chapter-1/calculus-complex-analysis.html#roots-of-unity-demo) |
+[Rubik's cube](https://www.hendrikse.name/helion/mathematics/rubikscube/) | [Groups](https://www.hendrikse.name/fermat-last-theorem/chapter-3/groups.html#example-rubiks-cube) |
+[Taylor expansion](https://www.hendrikse.name/helion/mathematics/taylor_expansion/) | [Linear algebra](https://www.hendrikse.name/fermat-last-theorem/chapter-1/calculus-complex-analysis.html#taylor-expansion-demo) |
+[Spectral theorem]() | [Linear transformations](todo) |
+
+

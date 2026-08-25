@@ -9,17 +9,6 @@ This project and its contents are for a large part inspired by and based on the 
 **Video:** [Proof of Fermat Last Theorem FROM SCRATCH](https://www.youtube.com/watch?v=9f-hGSh8lF0)
 :::
 
-## Is Fermat's Last Theorem actually interesting?
-
-Many of us can remember the 
-[Pythagorean theorem](https://en.wikipedia.org/wiki/Pythagorean_theorem) from high school. It is a simple and elegant statement about right triangles:
-
-```{=html}
-<div id="pythagorasContainer"></div>
-<script type="module" src="https://www.hendrikse.name/helion/examples/pythagoras.js"></script>
-```
-<p style="clear: both;"></p>
-
 ---
 
 ::: {.callout-note}
@@ -27,6 +16,18 @@ Visualizations in this project are created using the [Helion library](https://ww
 :::
 
 ---
+
+## Is Fermat's Last Theorem actually interesting?
+
+Many of us can remember the 
+[Pythagorean theorem](https://en.wikipedia.org/wiki/Pythagorean_theorem) from high school. It is a simple and elegant statement about right triangles.
+
+### 🧪 Pythagorean theorem
+
+```{=html}
+<div id="pythagorasContainer"></div>
+<script type="module" src="https://www.hendrikse.name/helion/examples/pythagoras.js"></script>
+```
 
 Going forward, we will frequently notice that
 
