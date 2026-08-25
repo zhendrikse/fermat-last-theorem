@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Basic set &amp; number theory – Fermat's Last Theorem — From Scratch</title>
+<title>Index of Helion demos – Fermat’s Last Theorem — From Scratch</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -29,27 +29,27 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<link href="../chapter-1/calculus-complex-analysis.html" rel="next">
-<link href="../chapter-1/introduction.html" rel="prev">
-<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-f9576fd48472fd5cf4ef5011d33b3d99.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-d700665feb99415b95902130766537d1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./chapter-1/introduction.html" rel="next">
+<link href="./index.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-f9576fd48472fd5cf4ef5011d33b3d99.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-d700665feb99415b95902130766537d1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -78,37 +78,8 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
 
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="styles.css">
 </head>
 
 <body class="nav-sidebar docked quarto-dark"><script id="quarto-html-before-body" type="application/javascript">
@@ -280,7 +251,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapter-1/introduction.html">Chapter 1 — Basics</a></li><li class="breadcrumb-item"><a href="../chapter-1/basic-set-number-theory.html">Basic set &amp; number theory</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./demo-index.html">Index of Helion demos</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -295,7 +266,7 @@ window.Quarto = {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="../">Fermat’s Last Theorem — From Scratch</a> 
+      <a href="./">Fermat’s Last Theorem — From Scratch</a> 
         <div class="sidebar-tools-main">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
@@ -310,13 +281,13 @@ window.Quarto = {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../index.html" class="sidebar-item-text sidebar-link">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Fermat’s Last Theorem</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../demo-index.html" class="sidebar-item-text sidebar-link">
+  <a href="./demo-index.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Index of Helion demos</span></a>
   </div>
 </li>
@@ -331,19 +302,19 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapter-1/introduction.html" class="sidebar-item-text sidebar-link">
+  <a href="./chapter-1/introduction.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapter-1/basic-set-number-theory.html" class="sidebar-item-text sidebar-link active">
+  <a href="./chapter-1/basic-set-number-theory.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Basic set &amp; number theory</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapter-1/calculus-complex-analysis.html" class="sidebar-item-text sidebar-link">
+  <a href="./chapter-1/calculus-complex-analysis.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Basic calculus &amp; complex analysis</span></a>
   </div>
 </li>
@@ -360,31 +331,31 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapter-2/linear-algebra.html" class="sidebar-item-text sidebar-link">
+  <a href="./chapter-2/linear-algebra.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Linear algebra</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapter-2/matrices.html" class="sidebar-item-text sidebar-link">
+  <a href="./chapter-2/matrices.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Matrices, linear systems, and determinants</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapter-2/vector-spaces.html" class="sidebar-item-text sidebar-link">
+  <a href="./chapter-2/vector-spaces.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Vector spaces, basis, and dimension</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapter-2/linear-transformations.html" class="sidebar-item-text sidebar-link">
+  <a href="./chapter-2/linear-transformations.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Linear transformations, eigenvalues, inner products, and the spectral theorem</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapter-2/summary.html" class="sidebar-item-text sidebar-link">
+  <a href="./chapter-2/summary.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Summary &amp; lab</span></a>
   </div>
 </li>
@@ -401,19 +372,19 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapter-3/abstract-algebra.html" class="sidebar-item-text sidebar-link">
+  <a href="./chapter-3/abstract-algebra.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Abstract algebra</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapter-3/groups.html" class="sidebar-item-text sidebar-link">
+  <a href="./chapter-3/groups.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Groups, Homomorphisms, and Group Actions</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapter-3/rings.html" class="sidebar-item-text sidebar-link">
+  <a href="./chapter-3/rings.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Rings, Fields, Ideals, and Unique Factorization</span></a>
   </div>
 </li>
@@ -505,37 +476,16 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#common-number-sets" id="toc-common-number-sets" class="nav-link active" data-scroll-target="#common-number-sets">📌 Common number sets</a></li>
-  <li><a href="#carthensian-product" id="toc-carthensian-product" class="nav-link" data-scroll-target="#carthensian-product">📌 Carthensian product</a>
-  <ul class="collapse">
-  <li><a href="#example-1" id="toc-example-1" class="nav-link" data-scroll-target="#example-1">🏷️ Example 1</a></li>
-  <li><a href="#example-2" id="toc-example-2" class="nav-link" data-scroll-target="#example-2">🏷️ Example 2</a></li>
-  <li><a href="#example-3-mathbbr2" id="toc-example-3-mathbbr2" class="nav-link" data-scroll-target="#example-3-mathbbr2">🏷️ Example 3: <span class="math inline">\(\mathbb{R}^2\)</span></a></li>
-  </ul></li>
-  <li><a href="#symbols-and-abbreviations" id="toc-symbols-and-abbreviations" class="nav-link" data-scroll-target="#symbols-and-abbreviations">📌 Symbols and abbreviations</a></li>
-  <li><a href="#divisibility-and-congruence" id="toc-divisibility-and-congruence" class="nav-link" data-scroll-target="#divisibility-and-congruence">📌 Divisibility and congruence</a>
-  <ul class="collapse">
-  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples">🏷️ Examples</a></li>
-  </ul></li>
-  <li><a href="#greatest-common-divisor" id="toc-greatest-common-divisor" class="nav-link" data-scroll-target="#greatest-common-divisor">📌 Greatest common divisor</a>
-  <ul class="collapse">
-  <li><a href="#examples-1" id="toc-examples-1" class="nav-link" data-scroll-target="#examples-1">🏷️ Examples</a></li>
-  </ul></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapter-1/introduction.html">Chapter 1 — Basics</a></li><li class="breadcrumb-item"><a href="../chapter-1/basic-set-number-theory.html">Basic set &amp; number theory</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Basic set &amp; number theory</h1>
+<h1 class="title">Index of Helion demos</h1>
 </div>
 
 
@@ -552,130 +502,50 @@ window.Quarto = {
 </header>
 
 
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><strong>Video:</strong> <a href="https://www.youtube.com/watch?v=9f-hGSh8lF0&amp;t=319s">Basic set/number theory — 5:19</a></p>
-<p>This section corresponds to <strong>5:19</strong> in <em>Proof of Fermat Last Theorem FROM SCRATCH</em>.</p>
-</div>
-</div>
-<section id="common-number-sets" class="level2">
-<h2 class="anchored" data-anchor-id="common-number-sets">📌 Common number sets</h2>
-<p>We will use the following standard number systems:</p>
-<p>👉 <span class="math inline">\(\mathbb{N}\)</span>: the set of natural numbers</p>
-<p><span class="math display">\[
-\mathbb{N} = \{1, 2, 3,\cdots\}
-\]</span></p>
-<p>👉 <span class="math inline">\(\mathbb{Z}\)</span>: the set of integers (the letter “Z” comes from the German word for numbers, namely “Zahle”)</p>
-<p><span class="math display">\[
-\mathbb{Z} = \{\cdots, -2, -1, 0,1, 2, 3,\cdots\}
-\]</span></p>
-<p>👉 <span class="math inline">\(\mathbb{Q}\)</span>: the set of rational numbers</p>
-<p><span class="math display">\[
-\mathbb{Q} = \{\frac{a}{b}\ \big|\ a, b \in \mathbb{Z}, b \neq 0\}
-\]</span> 👉 <span class="math inline">\(\mathbb{R}\)</span>: the set of real numbers</p>
-<p>👉 <span class="math inline">\(\mathbb{C}\)</span>: the set of complex numbers</p>
-<p><span class="math display">\[
-\mathbb{C} = \{x +iy\ |\ x, y \in \mathbb{R}\}
-\]</span></p>
-</section>
-<section id="carthensian-product" class="level2">
-<h2 class="anchored" data-anchor-id="carthensian-product">📌 Carthensian product</h2>
-<p>For sets <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>, the Cartesian product is defined as</p>
-<p><span class="math display">\[
-A \times B := \{(a,b)\ |\ a \in A, b\in B \}
-\]</span></p>
-<p>Here, the multiplaction sign “<span class="math inline">\(\times\)</span>” defines the way in which the new set is be formed from two other sets.</p>
-<section id="example-1" class="level3">
-<h3 class="anchored" data-anchor-id="example-1">🏷️ Example 1</h3>
-<p>Let <span class="math inline">\(A=\{ 1, 2\}\)</span> and <span class="math inline">\(B=\{3, 4, 5\}\)</span>, then</p>
-<p><span class="math display">\[
-A \times B = \{(1,3), (1,4), (1,5), (2,3), (2,4), (2,5) \}
-\]</span></p>
-</section>
-<section id="example-2" class="level3">
-<h3 class="anchored" data-anchor-id="example-2">🏷️ Example 2</h3>
-<p>Let <span class="math inline">\(A=\{ 1, 2\}\)</span>, then</p>
-<p><span class="math display">\[
-A \times A = A^2 = \{(1,1), (1,2), (2,1), (2,2) \}
-\]</span></p>
-</section>
-<section id="example-3-mathbbr2" class="level3">
-<h3 class="anchored" data-anchor-id="example-3-mathbbr2">🏷️ Example 3: <span class="math inline">\(\mathbb{R}^2\)</span></h3>
-<p><span class="math display">\[
-\mathbb{R}^2= \{(x,y)\ |\ x,y \in \mathbb{R}^2 \}
-\]</span></p>
-</section>
-</section>
-<section id="symbols-and-abbreviations" class="level2">
-<h2 class="anchored" data-anchor-id="symbols-and-abbreviations">📌 Symbols and abbreviations</h2>
-<ul>
-<li><span class="math inline">\(\forall\)</span>: for all<br></li>
-<li><span class="math inline">\(\exists\)</span>: there exists<br></li>
-<li><span class="math inline">\(:=\)</span>: is defined as<br></li>
-<li><span class="math inline">\(w.l.o.g\)</span>: without loss of generality<br></li>
-<li><span class="math inline">\(s.t.\)</span>: such that<br></li>
-<li><span class="math inline">\(WTS\)</span>: want to show<br></li>
-<li><span class="math inline">\(ETS\)</span>: enough to show<br></li>
-</ul>
-</section>
-<section id="divisibility-and-congruence" class="level2">
-<h2 class="anchored" data-anchor-id="divisibility-and-congruence">📌 Divisibility and congruence</h2>
-<ul>
-<li><span class="math inline">\(a|b\)</span> means <span class="math inline">\(a\)</span> divides <span class="math inline">\(b\)</span>, i.e., there exists <span class="math inline">\(k\)</span> such that <span class="math inline">\(b=ak\)</span>.<br></li>
-<li><span class="math inline">\(a\nmid b\)</span> means <span class="math inline">\(a\)</span> does not divide <span class="math inline">\(b\)</span>.<br></li>
-<li>For integers <span class="math inline">\(a, b\)</span>, and <span class="math inline">\(n\geq 1\)</span>,</li>
-</ul>
-<p><span class="math display">\[
-a \equiv b\quad (\text{mod}\ {n})\quad \text{means}\ n\ |\ (a-b).
-\]</span></p>
-<section id="examples" class="level3">
-<h3 class="anchored" data-anchor-id="examples">🏷️ Examples</h3>
-<p><span class="math display">\[
-17 \equiv 32\quad (\text{mod}\ 5), 15 \equiv 29\quad (\text{mod}\ 7)
-\]</span></p>
-</section>
-</section>
-<section id="greatest-common-divisor" class="level2">
-<h2 class="anchored" data-anchor-id="greatest-common-divisor">📌 Greatest common divisor</h2>
-<p>For integers <span class="math inline">\(a,b\)</span> the <strong>greatest common divisor</strong> of <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> is denoted by <span class="math inline">\(\gcd(a,b)\)</span>, and is sometimes written as <span class="math inline">\((a,b)\)</span>.</p>
-<ul>
-<li>If <span class="math inline">\((a,c) = 1\)</span>, then <span class="math inline">\((ab,c)=(b,c)\)</span></li>
-<li>For any integer <span class="math inline">\(k\)</span>, <span class="math inline">\((a,b)=(a,b-ak)\)</span></li>
-<li>If <span class="math inline">\((a,b) = 1\)</span> and <span class="math inline">\(a\ |\ bc\)</span>, then <span class="math inline">\(a\ |\ c\)</span></li>
-</ul>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>🚨 Why do we need this?</p>
-<p>The material below is used to proof Fermat’s last theorem for the cases <span class="math inline">\(n=3\)</span> and <span class="math inline">\(n=4\)</span>. Since these cases won’t be included on this site, we will skip the proofs and details.</p>
-</div>
-</div>
-<section id="examples-1" class="level3">
-<h3 class="anchored" data-anchor-id="examples-1">🏷️ Examples</h3>
-<ul>
-<li><span class="math inline">\(\gcd(24, 36)=12\)</span></li>
-<li><span class="math inline">\(\gcd(28, 49)=7\)</span></li>
-<li><span class="math inline">\(\gcd(17, 32)=1\)</span> (co-primes)</li>
-</ul>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Demo</th>
+<th>Link to page</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="https://www.hendrikse.name/helion/mathematics/matrix_transformation/#eigen-vectors-and-eigen-values">Eigen vectors &amp; eigen values</a></td>
+<td><a href="todo">Linear transformations</a></td>
+</tr>
+<tr class="even">
+<td><a href="https://www.hendrikse.name/helion/mathematics/fourier_transform/">Fourier transform</a></td>
+<td><a href="http://localhost:3559/chapter-2/linear-algebra.html#fourier-transform-demo">Linear algebra</a></td>
+</tr>
+<tr class="odd">
+<td><a href="https://www.hendrikse.name/helion/mathematics/pythagoras/">Pythagoras theorem</a></td>
+<td><a href="https://www.hendrikse.name/fermat-last-theorem/#pythagorean-theorem">Is Fermat’s Last Theorem actually interesting?</a></td>
+</tr>
+<tr class="even">
+<td><a href="https://www.hendrikse.name/helion/mathematics/real_surfaces/">Real surfaces</a></td>
+<td><a href="http://localhost:5386/chapter-1/calculus-complex-analysis.html#multivariable-functions-demo">Multivariable functions</a></td>
+</tr>
+<tr class="odd">
+<td><a href="https://www.hendrikse.name/helion/mathematics/roots_of_unity/">Roots of unity</a></td>
+<td><a href="http://localhost:5386/chapter-1/calculus-complex-analysis.html#roots-of-unity-demo">Calculus</a></td>
+</tr>
+<tr class="even">
+<td><a href="https://www.hendrikse.name/helion/mathematics/rubikscube/">Rubik’s cube</a></td>
+<td><a href="https://www.hendrikse.name/fermat-last-theorem/chapter-3/groups.html#example-rubiks-cube">Groups</a></td>
+</tr>
+<tr class="odd">
+<td><a href="https://www.hendrikse.name/helion/mathematics/taylor_expansion/">Taylor expansion</a></td>
+<td><a href="http://localhost:5386/chapter-1/calculus-complex-analysis.html#taylor-expansion-demo">Linear algebra</a></td>
+</tr>
+<tr class="even">
+<td><a href="">Spectral theorem</a></td>
+<td><a href="todo">Linear transformations</a></td>
+</tr>
+</tbody>
+</table>
 
 
-</section>
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1093,13 +963,13 @@ Note
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../chapter-1/introduction.html" class="pagination-link" aria-label="Introduction">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Introduction</span>
+      <a href="./index.html" class="pagination-link" aria-label="Fermat's Last Theorem">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Fermat’s Last Theorem</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../chapter-1/calculus-complex-analysis.html" class="pagination-link" aria-label="Basic calculus &amp;amp; complex analysis">
-        <span class="nav-page-text">Basic calculus &amp; complex analysis</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./chapter-1/introduction.html" class="pagination-link" aria-label="Introduction">
+        <span class="nav-page-text">Introduction</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

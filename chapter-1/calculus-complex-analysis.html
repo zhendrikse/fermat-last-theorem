@@ -108,6 +108,7 @@ window.Quarto = {
 };
 </script>
 
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="nav-sidebar docked quarto-dark"><script id="quarto-html-before-body" type="application/javascript">
@@ -313,6 +314,12 @@ window.Quarto = {
  <span class="menu-text">Fermat’s Last Theorem</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../demo-index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Index of Helion demos</span></a>
+  </div>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
@@ -503,15 +510,30 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#multivariable-function" id="toc-multivariable-function" class="nav-link active" data-scroll-target="#multivariable-function">Multivariable function</a></li>
-  <li><a href="#partical-derivative" id="toc-partical-derivative" class="nav-link" data-scroll-target="#partical-derivative">Partical derivative</a></li>
-  <li><a href="#taylor-series" id="toc-taylor-series" class="nav-link" data-scroll-target="#taylor-series">Taylor series</a></li>
-  <li><a href="#eurlers-formula-and-eitheta" id="toc-eurlers-formula-and-eitheta" class="nav-link" data-scroll-target="#eurlers-formula-and-eitheta">Eurler’s formula and <span class="math inline">\(e^{i\theta}\)</span></a>
+  <li><a href="#multivariable-functions" id="toc-multivariable-functions" class="nav-link active" data-scroll-target="#multivariable-functions">📌 Multivariable functions</a>
+  <ul class="collapse">
+  <li><a href="#multivariable-functions-demo" id="toc-multivariable-functions-demo" class="nav-link" data-scroll-target="#multivariable-functions-demo">🧪 Multivariable functions demo</a></li>
+  </ul></li>
+  <li><a href="#partial-derivative" id="toc-partial-derivative" class="nav-link" data-scroll-target="#partial-derivative">📌 Partial derivative</a>
+  <ul class="collapse">
+  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example">🏷️ Example</a></li>
+  </ul></li>
+  <li><a href="#taylor-series" id="toc-taylor-series" class="nav-link" data-scroll-target="#taylor-series">📌 Taylor series</a>
+  <ul class="collapse">
+  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples">🏷️ Examples</a></li>
+  <li><a href="#taylor-expansion-demo" id="toc-taylor-expansion-demo" class="nav-link" data-scroll-target="#taylor-expansion-demo">🧪 Taylor expansion demo</a></li>
+  </ul></li>
+  <li><a href="#eurlers-formula-and-eitheta" id="toc-eurlers-formula-and-eitheta" class="nav-link" data-scroll-target="#eurlers-formula-and-eitheta">📌 Eurler’s formula and <span class="math inline">\(e^{i\theta}\)</span></a>
   <ul class="collapse">
   <li><a href="#some-special-values" id="toc-some-special-values" class="nav-link" data-scroll-target="#some-special-values">Some special values</a></li>
   </ul></li>
-  <li><a href="#the-n-th-roots-of-unity" id="toc-the-n-th-roots-of-unity" class="nav-link" data-scroll-target="#the-n-th-roots-of-unity">The <span class="math inline">\(n\)</span>-th roots of unity</a></li>
-  <li><a href="#complex-functions-and-holomorphy" id="toc-complex-functions-and-holomorphy" class="nav-link" data-scroll-target="#complex-functions-and-holomorphy">Complex functions and holomorphy</a></li>
+  <li><a href="#the-n-th-roots-of-unity" id="toc-the-n-th-roots-of-unity" class="nav-link" data-scroll-target="#the-n-th-roots-of-unity">📌 The <span class="math inline">\(n\)</span>-th roots of unity</a>
+  <ul class="collapse">
+  <li><a href="#example-1-n2" id="toc-example-1-n2" class="nav-link" data-scroll-target="#example-1-n2">🏷️ Example 1: <span class="math inline">\(n=2\)</span></a></li>
+  <li><a href="#example-2-n3" id="toc-example-2-n3" class="nav-link" data-scroll-target="#example-2-n3">🏷️ Example 2: <span class="math inline">\(n=3\)</span></a></li>
+  <li><a href="#roots-of-unity-demo" id="toc-roots-of-unity-demo" class="nav-link" data-scroll-target="#roots-of-unity-demo">🧪 Roots of unity demo</a></li>
+  </ul></li>
+  <li><a href="#complex-functions-and-holomorphy" id="toc-complex-functions-and-holomorphy" class="nav-link" data-scroll-target="#complex-functions-and-holomorphy">📌 Complex functions and holomorphy</a></li>
   </ul>
 </nav>
     </div>
@@ -552,21 +574,24 @@ Note
 <p>This section corresponds to <strong>38:59</strong> in <em>Proof of Fermat Last Theorem FROM SCRATCH</em>.</p>
 </div>
 </div>
-<section id="multivariable-function" class="level2">
-<h2 class="anchored" data-anchor-id="multivariable-function">Multivariable function</h2>
+<section id="multivariable-functions" class="level2">
+<h2 class="anchored" data-anchor-id="multivariable-functions">📌 Multivariable functions</h2>
 <p>A multivariable function is a map</p>
 <p><span class="math display">\[
 f: \mathbb{R}^n \rightarrow \mathbb{R}
 \]</span></p>
-<p>We are already familiar with functions of a single variable, which can be visualized as a curve in the plane, such as <span class="math inline">\(f(x) = x^2\)</span>. A multivariable function can be visualized as a surface in three-dimensional space:</p>
+<p>We are already familiar with functions of a single variable, which can be visualized as a curve in the plane, such as <span class="math inline">\(f(x) = x^2\)</span>. A multivariable function can be visualized as a surface in three-dimensional space.</p>
+<section id="multivariable-functions-demo" class="level3">
+<h3 class="anchored" data-anchor-id="multivariable-functions-demo">🧪 Multivariable functions demo</h3>
 <div id="realSurfacesContainer"></div>
 <script type="module" src="https://www.hendrikse.name/helion/examples/real_surfaces.js"></script>
 <p style="clear: all">
 </p>
 <p>Another example would be the distance of a point to the origin in three-dimensional space, <span class="math inline">\(f(x,y,z) = \sqrt{x^2+y^2+z^2}\)</span>.</p>
 </section>
-<section id="partical-derivative" class="level2">
-<h2 class="anchored" data-anchor-id="partical-derivative">Partical derivative</h2>
+</section>
+<section id="partial-derivative" class="level2">
+<h2 class="anchored" data-anchor-id="partial-derivative">📌 Partial derivative</h2>
 <p>For functions of several variables, we can also define a derivative. We do this by choosing just one of the many variables to be the actual variable and treating all the other variables as constants.</p>
 <p>Let <span class="math inline">\(f:\mathbb{R}^2\rightarrow\mathbb{R}\)</span> be a function. The partial derivative with respect to <span class="math inline">\(x_i\)</span> is defined as</p>
 <p><span class="math display">\[
@@ -594,7 +619,8 @@ Note
 <p>Later these partial derivatives will show up when we talk about singlar points and elliptic curves.</p>
 </div>
 </div>
-<p>👉 <strong>Example</strong></p>
+<section id="example" class="level3">
+<h3 class="anchored" data-anchor-id="example">🏷️ Example</h3>
 <p>Let</p>
 <p><span class="math display">\[
 f(x,y) = x^3+y^3+xy+\sin x\cos y
@@ -609,10 +635,12 @@ f(x,y) = x^3+y^3+xy+\sin x\cos y
 \end{array}
 \]</span></p>
 </section>
+</section>
 <section id="taylor-series" class="level2">
-<h2 class="anchored" data-anchor-id="taylor-series">Taylor series</h2>
-<p>📌 A Taylor series represents a function as an infinite polynomial. With infinitely many terms, it equals the original function within its interval of convergence.</p>
-<p>👉 <strong>Examples</strong></p>
+<h2 class="anchored" data-anchor-id="taylor-series">📌 Taylor series</h2>
+<p>A Taylor series represents a function as an infinite polynomial. With infinitely many terms, it equals the original function within its interval of convergence.</p>
+<section id="examples" class="level3">
+<h3 class="anchored" data-anchor-id="examples">🏷️ Examples</h3>
 <p><span class="math display">\[
 \begin{array}{rl}
 e^x &amp;= 1 + x + \dfrac{x^2}{2!} + \dfrac{x^3}{3!} + \cdots \\
@@ -636,11 +664,15 @@ Note
 </div>
 </div>
 <p>🎯 The tailer series is a way to represent a given function as an infinite polynomial.</p>
+</section>
+<section id="taylor-expansion-demo" class="level3">
+<h3 class="anchored" data-anchor-id="taylor-expansion-demo">🧪 Taylor expansion demo</h3>
 <div id="taylorSeriesContainer"></div>
 <script type="module" src="https://www.hendrikse.name/helion/examples/taylor_expansion.js"></script>
 </section>
+</section>
 <section id="eurlers-formula-and-eitheta" class="level2">
-<h2 class="anchored" data-anchor-id="eurlers-formula-and-eitheta">Eurler’s formula and <span class="math inline">\(e^{i\theta}\)</span></h2>
+<h2 class="anchored" data-anchor-id="eurlers-formula-and-eitheta">📌 Eurler’s formula and <span class="math inline">\(e^{i\theta}\)</span></h2>
 <p>For any real number <span class="math inline">\(\theta\)</span>,</p>
 <p><span class="math display">\[
 e^{i\theta} = \cos\theta + i\sin\theta.
@@ -692,7 +724,7 @@ e^{i(\theta + 2n\pi)},\quad n\in\mathbb{N}.
 </section>
 </section>
 <section id="the-n-th-roots-of-unity" class="level2">
-<h2 class="anchored" data-anchor-id="the-n-th-roots-of-unity">The <span class="math inline">\(n\)</span>-th roots of unity</h2>
+<h2 class="anchored" data-anchor-id="the-n-th-roots-of-unity">📌 The <span class="math inline">\(n\)</span>-th roots of unity</h2>
 <p>The <span class="math inline">\(n\)</span>-th roots of unity are the complex numbers <span class="math inline">\(z\)</span> that satisfy the equation:</p>
 <p><span class="math display">\[
 z^n =1\quad \text{or equivalently}\quad z^n -1 = 0
@@ -714,20 +746,25 @@ z^n = 1 = e^{2\pi k} \Rightarrow z = e^{\dfrac{2\pi ik}{n}},\quad k \in \mathbb{
 }
 \]</span></p>
 <p>Because of the periodicity, we can limit the values of <span class="math inline">\(k\)</span> to <span class="math inline">\(n-1\)</span>.</p>
-<p>👉 <strong>Example 1</strong>: <span class="math inline">\(n=2\)</span></p>
+<section id="example-1-n2" class="level3">
+<h3 class="anchored" data-anchor-id="example-1-n2">🏷️ Example 1: <span class="math inline">\(n=2\)</span></h3>
 <p><span class="math display">\[z_k = e^{i\dfrac{2\pi k}{2}} = e^{\pi ik} \Rightarrow \begin{cases} k=0: 1 \\ k=1: -1\end{cases}
 \]</span></p>
-<p>👉 <strong>Example 2</strong>: <span class="math inline">\(n=3\)</span></p>
+</section>
+<section id="example-2-n3" class="level3">
+<h3 class="anchored" data-anchor-id="example-2-n3">🏷️ Example 2: <span class="math inline">\(n=3\)</span></h3>
 <p><span class="math display">\[z_k = e^{\dfrac{2\pi ik}{3}} \Rightarrow \begin{cases} k=0: 1 \\ k=1: e^{\dfrac{2\pi}{3}}= +\dfrac{\sqrt{3}}{2}i-\dfrac{1}{2} \\ k=2: e^{\dfrac{4\pi}{3}} = -\dfrac{\sqrt{3}}{2}i+\dfrac{1}{2}\end{cases}
 \]</span></p>
 <p>Geometrically, the roots of unity constitute the vertices of a regular <span class="math inline">\(n\)</span>-gon sitting on a unit circle in the complex plane.</p>
+</section>
+<section id="roots-of-unity-demo" class="level3">
+<h3 class="anchored" data-anchor-id="roots-of-unity-demo">🧪 Roots of unity demo</h3>
 <div id="rootsOfUnityContainer"></div>
 <script type="module" src="https://www.hendrikse.name/helion/examples/roots_of_unity.js"></script>
-<p style="clear: both;">
-</p>
+</section>
 </section>
 <section id="complex-functions-and-holomorphy" class="level2">
-<h2 class="anchored" data-anchor-id="complex-functions-and-holomorphy">Complex functions and holomorphy</h2>
+<h2 class="anchored" data-anchor-id="complex-functions-and-holomorphy">📌 Complex functions and holomorphy</h2>
 <p>A complex function is a map <span class="math display">\[
 f:\mathbb{C}\rightarrow\mathbb{C}
 \]</span></p>

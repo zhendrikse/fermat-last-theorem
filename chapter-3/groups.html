@@ -108,6 +108,7 @@ window.Quarto = {
 };
 </script>
 
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="nav-sidebar docked quarto-dark"><script id="quarto-html-before-body" type="application/javascript">
@@ -313,6 +314,12 @@ window.Quarto = {
  <span class="menu-text">Fermat’s Last Theorem</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../demo-index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Index of Helion demos</span></a>
+  </div>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
@@ -505,14 +512,27 @@ window.Quarto = {
   <ul>
   <li><a href="#groups" id="toc-groups" class="nav-link active" data-scroll-target="#groups">Groups</a>
   <ul class="collapse">
-  <li><a href="#binary-operation" id="toc-binary-operation" class="nav-link" data-scroll-target="#binary-operation">Binary operation</a></li>
-  <li><a href="#group" id="toc-group" class="nav-link" data-scroll-target="#group">Group</a>
+  <li><a href="#binary-operation" id="toc-binary-operation" class="nav-link" data-scroll-target="#binary-operation">📌 Binary operation</a></li>
+  <li><a href="#group" id="toc-group" class="nav-link" data-scroll-target="#group">📌 Group</a>
   <ul class="collapse">
-  <li><a href="#example-rubiks-cube" id="toc-example-rubiks-cube" class="nav-link" data-scroll-target="#example-rubiks-cube"><strong>Example</strong>: Rubik’s cube</a></li>
+  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples">🏷️ Examples</a></li>
+  <li><a href="#counter-example-mathbbq" id="toc-counter-example-mathbbq" class="nav-link" data-scroll-target="#counter-example-mathbbq">🏷️ Counter example: <span class="math inline">\((\mathbb{Q}, *)\)</span></a></li>
+  <li><a href="#example-mathbbz_n" id="toc-example-mathbbz_n" class="nav-link" data-scroll-target="#example-mathbbz_n">🏷️ Example: <span class="math inline">\((\mathbb{Z}_n, +)\)</span></a></li>
+  <li><a href="#example-mathbbz_n-times-mathbbz_m" id="toc-example-mathbbz_n-times-mathbbz_m" class="nav-link" data-scroll-target="#example-mathbbz_n-times-mathbbz_m">🏷️ Example: <span class="math inline">\((\mathbb{Z}_n \times \mathbb{Z}_m, +)\)</span></a></li>
+  <li><a href="#example-gl_nmathbbr" id="toc-example-gl_nmathbbr" class="nav-link" data-scroll-target="#example-gl_nmathbbr">🏷️ Example: <span class="math inline">\((GL_n(\mathbb{R}), *)\)</span></a></li>
+  <li><a href="#example-n-th-roots-of-unity" id="toc-example-n-th-roots-of-unity" class="nav-link" data-scroll-target="#example-n-th-roots-of-unity">🏷️ Example: <span class="math inline">\(n\)</span>-th roots of unity</a></li>
+  <li><a href="#rubiks-cube" id="toc-rubiks-cube" class="nav-link" data-scroll-target="#rubiks-cube">🧪 Rubik’s cube</a></li>
   </ul></li>
-  <li><a href="#subgroup" id="toc-subgroup" class="nav-link" data-scroll-target="#subgroup">Subgroup</a></li>
-  <li><a href="#cyclic-groups" id="toc-cyclic-groups" class="nav-link" data-scroll-target="#cyclic-groups">Cyclic groups</a></li>
-  <li><a href="#isomorphic-groups" id="toc-isomorphic-groups" class="nav-link" data-scroll-target="#isomorphic-groups">Isomorphic groups</a></li>
+  <li><a href="#subgroup" id="toc-subgroup" class="nav-link" data-scroll-target="#subgroup">📌 Subgroup</a>
+  <ul class="collapse">
+  <li><a href="#examples-1" id="toc-examples-1" class="nav-link" data-scroll-target="#examples-1">🏷️ Examples</a></li>
+  </ul></li>
+  <li><a href="#cyclic-groups" id="toc-cyclic-groups" class="nav-link" data-scroll-target="#cyclic-groups">📌 Cyclic groups</a>
+  <ul class="collapse">
+  <li><a href="#examples-2" id="toc-examples-2" class="nav-link" data-scroll-target="#examples-2">🏷️ Examples</a></li>
+  </ul></li>
+  <li><a href="#isomorphic-groups" id="toc-isomorphic-groups" class="nav-link" data-scroll-target="#isomorphic-groups">📌 Isomorphic groups</a></li>
+  <li><a href="#isomorphism-the-map" id="toc-isomorphism-the-map" class="nav-link" data-scroll-target="#isomorphism-the-map">📌 Isomorphism: the map</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -558,7 +578,7 @@ Note
 <h1>Groups</h1>
 <p>Before defining a group, we first need to clarify one basic concept first.</p>
 <section id="binary-operation" class="level2">
-<h2 class="anchored" data-anchor-id="binary-operation">Binary operation</h2>
+<h2 class="anchored" data-anchor-id="binary-operation">📌 Binary operation</h2>
 <p>A <strong>binary operation</strong> <span class="math inline">\(*\)</span> on a set <span class="math inline">\(S\)</span> is a function that assigns to each ordered pair <span class="math inline">\((a,b)\)</span> of elements of <span class="math inline">\(S\)</span> some element of <span class="math inline">\(S\)</span>.</p>
 <ul>
 <li><strong>Associativity</strong>: <span class="math inline">\((a*b)*c = a * (b* c)\)</span></li>
@@ -568,7 +588,7 @@ Note
 <p>However, we may want to define more unusual operations as well.</p>
 </section>
 <section id="group" class="level2">
-<h2 class="anchored" data-anchor-id="group">Group</h2>
+<h2 class="anchored" data-anchor-id="group">📌 Group</h2>
 <p>A <strong>group</strong> <span class="math inline">\((G, *)\)</span> is a set <span class="math inline">\(Gf\)</span> with a binary operation <span class="math inline">\(*\)</span> satisfying three axioms:</p>
 <ul>
 <li>The operation <span class="math inline">\(*\)</span> is associative: <span class="math inline">\(\forall a,b,c \in G:\ (a*b)*c=a*(b*c)\)</span></li>
@@ -577,7 +597,8 @@ Note
 </ul>
 <p>A group is <strong>abelian</strong> if its operation is also commutative.</p>
 <p>The number of elements in a gorup <span class="math inline">\(G\)</span> is called its <strong>order</strong>, denoted by <span class="math inline">\(|G|\)</span>.</p>
-<p>👉 <strong>Examples</strong></p>
+<section id="examples" class="level3">
+<h3 class="anchored" data-anchor-id="examples">🏷️ Examples</h3>
 <p>The set of integers with addition is a group:</p>
 <ul>
 <li>The addition operation is clearly an operation on <span class="math inline">\(\mathbb{Z}\)</span>, as it always returns another integer.</li>
@@ -587,10 +608,14 @@ Note
 </ul>
 <p>It is also an abelian group, since addition is commutative.</p>
 <p>Similarly, <span class="math inline">\((\mathbb{Q}, +)\)</span>, <span class="math inline">\((\mathbb{R}, +)\)</span>, and <span class="math inline">\((\mathbb{C}, +)\)</span> are also groups.</p>
-<p>👉 <strong>Counter example</strong>: <span class="math inline">\((\mathbb{Q}, *)\)</span></p>
+</section>
+<section id="counter-example-mathbbq" class="level3">
+<h3 class="anchored" data-anchor-id="counter-example-mathbbq">🏷️ Counter example: <span class="math inline">\((\mathbb{Q}, *)\)</span></h3>
 <p>This is <em>not</em> a group, as there is no inverse element for zero: there is no such element for which we can write <span class="math inline">\(0*b=b*0=1\)</span>.</p>
 <p>So the same set can behave very differently, depending on what operations we put on it!</p>
-<p>👉 <strong>Example</strong>: <span class="math inline">\((\mathbb{Z}_n, +)\)</span></p>
+</section>
+<section id="example-mathbbz_n" class="level3">
+<h3 class="anchored" data-anchor-id="example-mathbbz_n">🏷️ Example: <span class="math inline">\((\mathbb{Z}_n, +)\)</span></h3>
 <p>The group <span class="math inline">\((\mathbb{Z}_n, +)\)</span>. Remember that <span class="math inline">\(\mathbb{Z}_n\)</span> is a subset <span class="math inline">\(\mathbb{Z}_n=\{0,1,2\cdots, n-1\}\)</span>.</p>
 <p>Note that the addition operation is defined differently here: <span class="math inline">\(a + b\ (\text{mod}\ n)\)</span></p>
 <p>Take for example <span class="math inline">\((\mathbb{Z}_3, +)\)</span></p>
@@ -615,7 +640,9 @@ Note
 \end{array}
 \]</span></p>
 <p>Similarly, <span class="math inline">\((\mathbb{Z}_n, +)\)</span> is a group.</p>
-<p>👉 <strong>Example</strong>: <span class="math inline">\((\mathbb{Z}_n \times \mathbb{Z}_m, +)\)</span></p>
+</section>
+<section id="example-mathbbz_n-times-mathbbz_m" class="level3">
+<h3 class="anchored" data-anchor-id="example-mathbbz_n-times-mathbbz_m">🏷️ Example: <span class="math inline">\((\mathbb{Z}_n \times \mathbb{Z}_m, +)\)</span></h3>
 <p>The addition operation is defined as</p>
 <p><span class="math display">\[
 (a_1, b_1) + (a_2, b_2) := ((a_1 +b_1)\ \text{mod}\ n, (a_2 + b_2) \ \text{mod}\ m)
@@ -632,12 +659,14 @@ Note
 <li>For every element, there is an inverse, for example <span class="math inline">\((2, 2) + (1, 2) = (0, 0)\)</span>.</li>
 </ul>
 <p>So indeed, <span class="math inline">\((\mathbb{Z}_n \times \mathbb{Z}_m, +)\)</span> is a group.</p>
-<p>More generally, we have that</p>
+<p>❗ More generally, we have that</p>
 <p><span class="math display">\[
 (\mathbb{Z}_{n_1} \times \mathbb{Z}_{n_2} \times \mathbb{Z}_{n_3}\cdots, +)
 \]</span></p>
 <p>forms a group.</p>
-<p>👉 <strong>Example</strong>: <span class="math inline">\((GL_n(\mathbb{R}), *)\)</span></p>
+</section>
+<section id="example-gl_nmathbbr" class="level3">
+<h3 class="anchored" data-anchor-id="example-gl_nmathbbr">🏷️ Example: <span class="math inline">\((GL_n(\mathbb{R}), *)\)</span></h3>
 <p>The collection of invertible matrices <span class="math inline">\(GL_n(\mathbb{R})\)</span> with matrix multiplication froms a group:</p>
 <ul>
 <li><span class="math inline">\(\forall A, B\in GL_n(\mathbb{R}): A*B \in GL_n(\mathbb{R})\)</span> as <span class="math inline">\(\det(AB)=\det(A)\det(B)\neq0\)</span>.</li>
@@ -645,7 +674,9 @@ Note
 <li>Obvisouly, <span class="math inline">\(GL_n(\mathbb{R})\)</span> contains a zero element.</li>
 <li>As the determinant is non-zero by definition, every matrix has an inverse matrix.</li>
 </ul>
-<p>👉 <strong>Example</strong>: <span class="math inline">\(n\)</span>-th roots of unity</p>
+</section>
+<section id="example-n-th-roots-of-unity" class="level3">
+<h3 class="anchored" data-anchor-id="example-n-th-roots-of-unity">🏷️ Example: <span class="math inline">\(n\)</span>-th roots of unity</h3>
 <p>If we define <span class="math inline">\(\mu_n = \{z\in\mathbb{C}\ |\ z^n=1 \}\)</span> with multiplication, <span class="math inline">\((\mu_n, *)\)</span> forms a group.</p>
 <ul>
 <li><span class="math inline">\(\forall z_1, z_2 \in \mu_n: (z_1z_2)^n = z_1^nz_2^n =1\)</span></li>
@@ -666,18 +697,20 @@ Note
 <p>🚨 When the operation is obvious, we usually just state the set without explicitly mentioning its operation!</p>
 </div>
 </div>
-<section id="example-rubiks-cube" class="level3">
-<h3 class="anchored" data-anchor-id="example-rubiks-cube"><strong>Example</strong>: Rubik’s cube</h3>
+</section>
+<section id="rubiks-cube" class="level3">
+<h3 class="anchored" data-anchor-id="rubiks-cube">🧪 Rubik’s cube</h3>
 <p>The moves for the Rubik’s cube form a group as well: <span class="math inline">\([R, L, F, B, U, D]\)</span>.</p>
 <div id="rubiksCubeContainer"></div>
 <script type="module" src="https://www.hendrikse.name/helion/examples/rubiks_cube.js"></script>
 </section>
 </section>
 <section id="subgroup" class="level2">
-<h2 class="anchored" data-anchor-id="subgroup">Subgroup</h2>
+<h2 class="anchored" data-anchor-id="subgroup">📌 Subgroup</h2>
 <p>A subset of <span class="math inline">\(H\)</span> of a group <span class="math inline">\(G\)</span> is a <strong>subgroup</strong> (<span class="math inline">\(H\leq G\)</span>) if <span class="math inline">\(H\)</span> is itself a group under the operations of <span class="math inline">\(G\)</span>.</p>
 <p>It is a concept that is very similar to a subspace or subset, so it is basically a smaller group sitting inside a larger group.</p>
-<p>👉 <strong>Examples</strong></p>
+<section id="examples-1" class="level3">
+<h3 class="anchored" data-anchor-id="examples-1">🏷️ Examples</h3>
 <p><span class="math display">\[
 (\mathbb{Z}, +) \leq (\mathbb{Q}_n, +)
 \]</span></p>
@@ -687,8 +720,9 @@ Note
 \]</span></p>
 <p>Another example would be <span class="math inline">\((\mu_2, *) \leq (\mu_4, *)\)</span>.</p>
 </section>
+</section>
 <section id="cyclic-groups" class="level2">
-<h2 class="anchored" data-anchor-id="cyclic-groups">Cyclic groups</h2>
+<h2 class="anchored" data-anchor-id="cyclic-groups">📌 Cyclic groups</h2>
 <p>A group <span class="math inline">\(G\)</span> is <strong>cyclic</strong> if it can be generated by a single element. We write <span class="math inline">\(G=\langle a \rangle = \{a^n\ |\ n \in \mathbb{Z}\}\)</span>. The element <span class="math inline">\(a\)</span> is a generator of <span class="math inline">\(G\)</span>.</p>
 <p>So the whole group can be built by applying the generator multiple times on itself:</p>
 <p><span class="math display">\[
@@ -700,7 +734,8 @@ a * a * a * a \\
 \vdots
 \end{array}
 \]</span></p>
-<p>👉 <strong>Examples</strong></p>
+<section id="examples-2" class="level3">
+<h3 class="anchored" data-anchor-id="examples-2">🏷️ Examples</h3>
 <p><span class="math display">\[
 \mathbb{Z} = \langle 1 \rangle = \langle -1 \rangle
 \]</span></p>
@@ -721,8 +756,9 @@ a * a * a * a \\
 \mu_n=\langle e^{\frac{2\pi i}{n}}\rangle
 \]</span></p>
 </section>
+</section>
 <section id="isomorphic-groups" class="level2">
-<h2 class="anchored" data-anchor-id="isomorphic-groups">Isomorphic groups</h2>
+<h2 class="anchored" data-anchor-id="isomorphic-groups">📌 Isomorphic groups</h2>
 <p>So, to understand the group, we need to understand how the elements interact under that operation. One way to do that is to make an operation table.</p>
 <p>For example, let’s look at the operation tables of both <span class="math inline">\(\mathbb{Z}_3\)</span></p>
 <span class="math display">\[\begin{array}{|c|c|c|c|}
@@ -746,7 +782,29 @@ e^{\frac{2\pi i}{3}} &amp; e^{\frac{2\pi i}{3}} &amp; e^{\frac{4\pi i}{3}} &amp;
 e^{\frac{4\pi i}{3}} &amp; e^{\frac{4\pi i}{3}} &amp; 1 &amp; e^{\frac{2\pi i}{3}}
 \end{array}
 \]</span></p>
-<p>Upon closer inspection, we notice that these operation tables have exactly the same structure, as there turns out to be an obvious one-to-one correspondence between the elements of each group.</p>
+<p>Upon closer inspection, we notice that these operation tables have exactly the same structure, as there turns out to be an obvious one-to-one correspondence between the elements of each group:</p>
+<p><span class="math display">\[
+\begin{array}{c}
+0 \longleftrightarrow 1 \\
+1 \longleftrightarrow e^{\frac{2\pi i}{3}} \\  
+2 \longleftrightarrow e^{\frac{4\pi i}{3}} \\  
+\end{array}
+\]</span></p>
+<p>👉 Two groups <span class="math inline">\((G, *)\)</span> and <span class="math inline">\((G', *')\)</span> are <strong>isomorphic</strong> if their elements can be paired up in a way that preserves the group’s structural properties. We write <span class="math inline">\(G\cong G'\)</span>.</p>
+<p>❗ The two groups have very little in common. One group consists of integers, the other contains exponents with even imaginary numbers. Also, the first group is a group under addition, whereas the second group is a group under multiplication. However, although the two groups are very different, they have exactly <em>the same structure</em>!</p>
+<p>🧠 What matters is how the elements interact with each other. If two groups have the same operation structure after relabelling the elements, they are called <strong>isomorphic</strong>.</p>
+<p>👉 <span class="math inline">\(\mathbb{Z}_3 \cong \mu_3\)</span></p>
+</section>
+<section id="isomorphism-the-map" class="level2">
+<h2 class="anchored" data-anchor-id="isomorphism-the-map">📌 Isomorphism: the map</h2>
+<p>An Isomorphism <span class="math inline">\(\phi\)</span> from a group <span class="math inline">\((G, *)\)</span> to a group <span class="math inline">\((G', *')\)</span> is a function <span class="math inline">\(\phi: G\rightarrow G'\)</span> that satisfies two conditions:</p>
+<ol type="1">
+<li><span class="math inline">\(\phi\)</span> is a <strong>bijection</strong> (one-to-one and onto).</li>
+<li><span class="math inline">\(\phi\)</span> <strong>preserves the operation</strong>: For all <span class="math inline">\(a,b\in G\)</span>, <span class="math display">\[
+\phi(A*B)=\phi(a)*'\phi(b)
+\]</span></li>
+</ol>
+<p>An <strong>automorphism</strong> is an isomorphism from a group <span class="math inline">\(G\)</span> to itself.</p>
 
 
 </section>
