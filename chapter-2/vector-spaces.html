@@ -512,15 +512,12 @@ window.Quarto = {
   <ul>
   <li><a href="#vector-spaces" id="toc-vector-spaces" class="nav-link active" data-scroll-target="#vector-spaces">Vector spaces</a>
   <ul class="collapse">
-  <li><a href="#vector-spaces" id="toc-vector-spaces" class="nav-link" data-scroll-target="#vector-spaces">Vector Space: Axioms</a>
-  <ul class="collapse">
-  <li><a href="#example-vector-spaces" id="toc-example-vector-spaces" class="nav-link" data-scroll-target="#example-vector-spaces">Example vector spaces</a></li>
-  </ul></li>
-  <li><a href="#subspace" id="toc-subspace" class="nav-link" data-scroll-target="#subspace">Subspace</a></li>
-  <li><a href="#linear-combination" id="toc-linear-combination" class="nav-link" data-scroll-target="#linear-combination">Linear combination</a></li>
-  <li><a href="#span" id="toc-span" class="nav-link" data-scroll-target="#span">Span</a></li>
-  <li><a href="#linear-independence-and-dependence" id="toc-linear-independence-and-dependence" class="nav-link" data-scroll-target="#linear-independence-and-dependence">Linear independence and dependence</a></li>
-  <li><a href="#basis-dimension" id="toc-basis-dimension" class="nav-link" data-scroll-target="#basis-dimension">Basis and dimension</a></li>
+  <li><a href="#vector-spaces" id="toc-vector-spaces" class="nav-link" data-scroll-target="#vector-spaces">📌 Vector Space: Axioms</a></li>
+  <li><a href="#subspace" id="toc-subspace" class="nav-link" data-scroll-target="#subspace">📌 Subspace</a></li>
+  <li><a href="#linear-combination" id="toc-linear-combination" class="nav-link" data-scroll-target="#linear-combination">📌 Linear combination</a></li>
+  <li><a href="#span" id="toc-span" class="nav-link" data-scroll-target="#span">📌 Span</a></li>
+  <li><a href="#linear-independence-and-dependence" id="toc-linear-independence-and-dependence" class="nav-link" data-scroll-target="#linear-independence-and-dependence">📌 Linear independence and dependence</a></li>
+  <li><a href="#basis-dimension" id="toc-basis-dimension" class="nav-link" data-scroll-target="#basis-dimension">📌 Basis and dimension</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -566,21 +563,23 @@ Note
 <h1>Vector spaces</h1>
 <p>We stated earlier that mathematics is not only about numbers, it is also about structure. A vector space is one of the most important examples of such a structure.</p>
 <section id="vector-spaces" class="level2">
-<h2 class="anchored" data-anchor-id="vector-spaces">Vector Space: Axioms</h2>
+<h2 class="anchored" data-anchor-id="vector-spaces">📌 Vector Space: Axioms</h2>
 <p>A <strong>vector space</strong> <span class="math inline">\(V\)</span> over a field <span class="math inline">\(F\)</span> is a set with addition (<span class="math inline">\(+, V\times V \rightarrow V\)</span>) and scalar multiplication (<span class="math inline">\(\cdot, V\times F \rightarrow V\)</span>) satisfying these axioms for all <span class="math inline">\(x,y,z\in V\)</span> and <span class="math inline">\(a, b\in F\)</span>:</p>
 <p>Here we intentionally want to generalize the concept of a vector!</p>
-<p>📌 <strong>VS 1</strong>: <span class="math inline">\(x + y = y + x\)</span> (addition: commutativity)</p>
-<p>📌 <strong>VS 2</strong>: <span class="math inline">\((x + y) + z = x + (y + z)\)</span> (addition: associativity)</p>
-<p>📌 <strong>VS 3</strong>: <span class="math inline">\(\exists {\bf 0} \in V\ \text{s.t.}\ x + {\bf 0}= x\)</span> (addition: zero vector)</p>
-<p>📌 <strong>VS 4</strong>: <span class="math inline">\(\forall x\in V, \exists(-x) \in V\ \text{s.t.}\ x + (-x) = {\bf 0}\)</span> (addition: inverse)</p>
-<p>📌 <strong>VS 5</strong>: <span class="math inline">\(1 \cdot x = x\)</span> (scalar multiplication: identity)</p>
-<p>📌 <strong>VS 6</strong>: <span class="math inline">\(1 (ab)\cdot x = a\cdot(b\cdot x)\)</span> (scalar multiplication: associativity)</p>
-<p>📌 <strong>VS 7</strong>: <span class="math inline">\(a\cdot(x + y) = a\cdot x + a\cdot y\)</span> (scalar multiplication: distributive law)</p>
-<p>📌 <strong>VS 8</strong>: <span class="math inline">\((a + b)\cdot x = a\cdot x + b\cdot x\)</span> (scalar multiplication: distributive law)</p>
+<ul>
+<li><p><strong>VS 1</strong>: <span class="math inline">\(x + y = y + x\)</span> (addition: commutativity)</p></li>
+<li><p><strong>VS 2</strong>: <span class="math inline">\((x + y) + z = x + (y + z)\)</span> (addition: associativity)</p></li>
+<li><p><strong>VS 3</strong>: <span class="math inline">\(\exists {\bf 0} \in V\ \text{s.t.}\ x + {\bf 0}= x\)</span> (addition: zero vector)</p></li>
+<li><p><strong>VS 4</strong>: <span class="math inline">\(\forall x\in V, \exists(-x) \in V\ \text{s.t.}\ x + (-x) = {\bf 0}\)</span> (addition: inverse)</p></li>
+<li><p><strong>VS 5</strong>: <span class="math inline">\(1 \cdot x = x\)</span> (scalar multiplication: identity)</p></li>
+<li><p><strong>VS 6</strong>: <span class="math inline">\(1 (ab)\cdot x = a\cdot(b\cdot x)\)</span> (scalar multiplication: associativity)</p></li>
+<li><p><strong>VS 7</strong>: <span class="math inline">\(a\cdot(x + y) = a\cdot x + a\cdot y\)</span> (scalar multiplication: distributive law)</p></li>
+<li><p><strong>VS 8</strong>: <span class="math inline">\((a + b)\cdot x = a\cdot x + b\cdot x\)</span> (scalar multiplication: distributive law)</p></li>
+</ul>
 <p>Note that addition is also a generalized concept here, an operation which name happens to be addition, hence we cannot automatically assume that <span class="math inline">\(x + y = y + x\)</span> always holds.</p>
 <p>For example, assume <span class="math inline">\(V=\mathbb{R}\)</span> and we define <span class="math inline">\(a + b := a^b + e^ab^{72}\in \mathbb{R}\)</span>. This definition of addition does <em>not</em> statisfy <strong>VS 1</strong> and <strong>VS 2</strong>!</p>
-<section id="example-vector-spaces" class="level3">
-<h3 class="anchored" data-anchor-id="example-vector-spaces">Example vector spaces</h3>
+<section id="example-vector-spaces" class="level4">
+<h4 class="anchored" data-anchor-id="example-vector-spaces">🏷️ Example vector spaces</h4>
 <p><span class="math inline">\(\mathbb{R}\)</span>, <span class="math inline">\(\mathbb{C}\)</span>, and the cartesian product <span class="math inline">\(\mathbb{R}^n\)</span> are all examples of vector spaces.</p>
 <p>For the first two, we define addition and multiplication in the familiar way. For the last one, we define addition as follows:</p>
 <p><span class="math display">\[
@@ -600,7 +599,7 @@ a (x_1, x_2, \dots, x_n) = (ax_1, ax_2, \dots, ax_n)
 </section>
 </section>
 <section id="subspace" class="level2">
-<h2 class="anchored" data-anchor-id="subspace">Subspace</h2>
+<h2 class="anchored" data-anchor-id="subspace">📌 Subspace</h2>
 <p>A <strong>subspace</strong> of a vector space <span class="math inline">\(V\)</span> is a non-empty subset <span class="math inline">\(W\)</span> of <span class="math inline">\(V\)</span> that is itself a vector space under the operations inherited from <span class="math inline">\(V\)</span>.</p>
 <p>For example, <span class="math inline">\(\mathbb{R}\)</span> is a subspace of <span class="math inline">\(\mathbb{C}\)</span>, <span class="math inline">\(\mathbb{R}\subset \mathbb{C}\)</span>.</p>
 <p>Another example is</p>
@@ -615,7 +614,7 @@ W' = \{(x,y)\in\mathbb{R} |\ y = x + 1\} \subset \mathbb{R}^2
 <p>Another example is the set of all real coefficient polynomials with maximum degree two, <span class="math inline">\(P_2[\mathbb{R}]\)</span>. This is a vector space as well as a subspace of all real coefficient polynomials.</p>
 </section>
 <section id="linear-combination" class="level2">
-<h2 class="anchored" data-anchor-id="linear-combination">Linear combination</h2>
+<h2 class="anchored" data-anchor-id="linear-combination">📌 Linear combination</h2>
 <p>We are slowly moving towards the concept of a basis. So what is a basis? A basis is one of the most important ideas in linear algebra. Roughly speaking, a basis is a minimal set of building blocks for a vector space.</p>
 <p>For example, if we look at <span class="math inline">\(\mathbb{R}^2\)</span>, a basis may be <span class="math inline">\(\{(1, 0), (0, 1)\}\)</span>. This constitutes a valid basis, as we can pick any vector <span class="math inline">\((a,b)\in\mathbb{R}^2\)</span> and write it as a linear combination of the basis vectors:</p>
 <p><span class="math display">\[
@@ -628,7 +627,8 @@ W' = \{(x,y)\in\mathbb{R} |\ y = x + 1\} \subset \mathbb{R}^2
 {\bf u} = a_1v_1 + a_2v_2 + \dots + a_kv_k
 \]</span></p>
 <p>where <span class="math inline">\(a_1, a_2, \dots, a_k\)</span> are scalars in the field <span class="math inline">\(F\)</span>.</p>
-<p>👉 <strong>Example 1</strong>: a linear combination in <span class="math inline">\(\mathbb{R}^2\)</span>?</p>
+<section id="example-1-a-linear-combination-in-mathbbr2" class="level4">
+<h4 class="anchored" data-anchor-id="example-1-a-linear-combination-in-mathbbr2">🏷️ <strong>Example 1</strong>: a linear combination in <span class="math inline">\(\mathbb{R}^2\)</span>?</h4>
 <p>Let’s take the subset of vectors</p>
 <p><span class="math display">\[
 S=\left\{
@@ -663,7 +663,9 @@ a\begin{pmatrix}
 \begin{pmatrix} 5 \\ 8\end{pmatrix}
 \]</span></p>
 <p>And indeed, this holds true for <span class="math inline">\(a=2\)</span> and <span class="math inline">\(b=1\)</span>, so <span class="math inline">\(\begin{pmatrix} 5 \\ 8\end{pmatrix}\)</span> <em>is</em> a linear combination of <span class="math inline">\(S\)</span>!</p>
-<p>👉 <strong>Example 2</strong>: a linear combination in <span class="math inline">\(\mathbb{R}^3\)</span>?</p>
+</section>
+<section id="example-2-a-linear-combination-in-mathbbr3" class="level4">
+<h4 class="anchored" data-anchor-id="example-2-a-linear-combination-in-mathbbr3">🏷️ <strong>Example 2</strong>: a linear combination in <span class="math inline">\(\mathbb{R}^3\)</span>?</h4>
 <p>Let’s take the subset of vectors</p>
 <p><span class="math display">\[
 S=\left\{
@@ -688,38 +690,44 @@ a\begin{pmatrix}
 \]</span></p>
 <p>The answer is no, as the third coordinate will always remain zero. So <span class="math inline">\(\begin{pmatrix} 3 \\ 4 \\ 5 \end{pmatrix}\)</span> is <em>not</em> a linear combination of <span class="math inline">\(S\)</span>.</p>
 </section>
+</section>
 <section id="span" class="level2">
-<h2 class="anchored" data-anchor-id="span">Span</h2>
+<h2 class="anchored" data-anchor-id="span">📌 Span</h2>
 <p>Let <span class="math inline">\(S\)</span> be a non-empty subset of a vector space <span class="math inline">\(V\)</span>. The <strong>span</strong> of <span class="math inline">\(S\)</span>, denoted by <span class="math inline">\(\text{span}(S)\)</span>, is the smallest subset of <span class="math inline">\(V\)</span> containing <span class="math inline">\(S\)</span>. In practice, it is the set of all linear combinations of elements of <span class="math inline">\(S=\{ v_1, v_2, \cdots, v_n\}\)</span>:</p>
 <p><span class="math display">\[
 \text{span}(S) =
 \{
-a_1v_1+\cdots+a_n v_n | n \geq 1, v_i\in S, a_i \in F
+a_1v_1+\cdots+a_n v_n\ |\ n \geq 1,\ v_i\in S,\ a_i \in F
 \}
 \]</span></p>
 </section>
 <section id="linear-independence-and-dependence" class="level2">
-<h2 class="anchored" data-anchor-id="linear-independence-and-dependence">Linear independence and dependence</h2>
-<p>A set of vectors <span class="math inline">\(S=\{ v_1, v_2, \cdots, v_k\}\)</span> is <strong>linearly independent</strong> if the only solution to the equation</p>
+<h2 class="anchored" data-anchor-id="linear-independence-and-dependence">📌 Linear independence and dependence</h2>
+<p>A set of vectors <span class="math inline">\(S=\{ v_1, v_2,\ \cdots,\ v_k\}\)</span> is <strong>linearly independent</strong> if the only solution to the equation</p>
 <p><span class="math display">\[
 a_1v_1+a_2v_2+\cdots+a_k v_k = {\bf 0}
 \]</span></p>
 <p>is the trivial solution <span class="math inline">\(a_1=a_2=\cdots=a_k=0\)</span>. If a set is not linearly independent, it is called <strong>linearly dependent</strong>.</p>
-<p>👉 <strong>Example 1</strong>: linear dependence in <span class="math inline">\(\mathbb{R}^2\)</span></p>
+<section id="example-1-linear-dependence-in-mathbbr2" class="level4">
+<h4 class="anchored" data-anchor-id="example-1-linear-dependence-in-mathbbr2">🏷️ <strong>Example 1</strong>: linear dependence in <span class="math inline">\(\mathbb{R}^2\)</span></h4>
 <p>In <span class="math inline">\(\mathbb{R}^2\)</span>, are <span class="math inline">\(\{(1, 2), (1, 0)\}\)</span> linearly independent?</p>
 <p>To answer this quesiton, we check if the only solution to the following equation is the trivial solution:</p>
 <p><span class="math display">\[
 a_1(1, 2) + a_2(1, 0) = (a_1 + a_2, 2a_1) = (0, 0) \Rightarrow a_1=0 \Rightarrow a_2 = 0
 \]</span></p>
 <p>So these vectors are linearly independent.</p>
-<p>👉 <strong>Example 2</strong>: linear dependence in <span class="math inline">\(\mathbb{R}^3\)</span></p>
+</section>
+<section id="example-2-linear-dependence-in-mathbbr3" class="level4">
+<h4 class="anchored" data-anchor-id="example-2-linear-dependence-in-mathbbr3">🏷️ <strong>Example 2</strong>: linear dependence in <span class="math inline">\(\mathbb{R}^3\)</span></h4>
 <p>In <span class="math inline">\(\mathbb{R}^3\)</span>, are <span class="math inline">\(\{(1, 2, 3), (1, 3, 5), (2, 5, 8)\}\)</span> linearly independent?</p>
 <p>To answer this quesiton, we check if the only solution to the following equation is the trivial solution:</p>
 <p><span class="math display">\[
 a_1(1, 2, 3) + a_2(1, 3, 5) + a_3(2, 5, 8) = (0, 0, 0) \Rightarrow a_1=0 \Rightarrow a_2 = 0
 \]</span></p>
-<p>Now we find a solution for <span class="math inline">\(a1 = 1, a2 = 1, a3= -1\)</span>, so these vectors are linearly dependent.</p>
-<p>👉 <strong>Example 3</strong>: linear dependence in <span class="math inline">\(\mathbb{R}_{[x]}\)</span></p>
+<p>Now we find a solution for <span class="math inline">\(a1 = 1,\ a2 = 1,\ a3= -1\)</span>, so these vectors are linearly dependent.</p>
+</section>
+<section id="example-3-linear-dependence-in-mathbbr_x" class="level4">
+<h4 class="anchored" data-anchor-id="example-3-linear-dependence-in-mathbbr_x">🏷️ <strong>Example 3</strong>: linear dependence in <span class="math inline">\(\mathbb{R}_{[x]}\)</span></h4>
 <p>In <span class="math inline">\(\mathbb{R}_{[x]}\)</span>, the collection of all real coefficient polynomials, is <span class="math inline">\(1 + x, x^2 + x, 2 + 3x +x^2\)</span> linearly dependent or independent?</p>
 <p>It is linearly dependent, because there is a solution:</p>
 <p><span class="math display">\[
@@ -727,11 +735,15 @@ a_1(1, 2, 3) + a_2(1, 3, 5) + a_3(2, 5, 8) = (0, 0, 0) \Rightarrow a_1=0 \Righta
 \]</span></p>
 <p>Now finally we can define the concepts of basis and dimension.</p>
 </section>
+</section>
 <section id="basis-dimension" class="level2">
-<h2 class="anchored" data-anchor-id="basis-dimension">Basis and dimension</h2>
-<p>📌 A <strong>basis</strong> for a vector space <span class="math inline">\(V\)</span> is a linearly independent subset of <span class="math inline">\(V\)</span> that spans <span class="math inline">\(V\)</span></p>
-<p>📌 The <strong>dimension</strong> of <span class="math inline">\(V\)</span>, <span class="math inline">\(\text{dim}(V)\)</span>, is the number of vectors in a basis</p>
-<p>👉 <strong>Example 1</strong>: <span class="math inline">\(\mathbb{R}^2\)</span></p>
+<h2 class="anchored" data-anchor-id="basis-dimension">📌 Basis and dimension</h2>
+<ul>
+<li><p>A <strong>basis</strong> for a vector space <span class="math inline">\(V\)</span> is a linearly independent subset of <span class="math inline">\(V\)</span> that spans <span class="math inline">\(V\)</span></p></li>
+<li><p>The <strong>dimension</strong> of <span class="math inline">\(V\)</span>, <span class="math inline">\(\text{dim}(V)\)</span>, is the number of vectors in a basis</p></li>
+</ul>
+<section id="example-1-mathbbr2" class="level4">
+<h4 class="anchored" data-anchor-id="example-1-mathbbr2">🏷️ <strong>Example 1</strong>: <span class="math inline">\(\mathbb{R}^2\)</span></h4>
 <p>Basis:</p>
 <p><span class="math display">\[
 \left\{
@@ -754,7 +766,9 @@ b\begin{pmatrix}
 \end{pmatrix}
 \]</span></p>
 <p>Note that we want to have a set that is large enough to span the whole space, but at the same time is small enough to contain only the necessary information.</p>
-<p>👉 <strong>Example 2</strong>: <span class="math inline">\(\mathbb{R}^3\)</span></p>
+</section>
+<section id="example-2-mathbbr3" class="level4">
+<h4 class="anchored" data-anchor-id="example-2-mathbbr3">🏷️ <strong>Example 2</strong>: <span class="math inline">\(\mathbb{R}^3\)</span></h4>
 <p>Most of the time, we take as basis:</p>
 <p><span class="math display">\[
 \left\{
@@ -784,9 +798,13 @@ b\begin{pmatrix}
 \end{pmatrix}
 \right\}
 \]</span></p>
-<p>👉 <strong>Example 3</strong>: <span class="math inline">\(P_2(\mathbb{R})\)</span></p>
+</section>
+<section id="example-3-p_2mathbbr" class="level4">
+<h4 class="anchored" data-anchor-id="example-3-p_2mathbbr">🏷️ <strong>Example 3</strong>: <span class="math inline">\(P_2(\mathbb{R})\)</span></h4>
 <p>Possible basis are <span class="math inline">\(\{1, x, x^2\}\)</span> and <span class="math inline">\(\{7, x + x^2, -x\}\)</span>. Since there are three vectors in the basis, the dimension of <span class="math inline">\(P_2(\mathbb{R})\)</span> is three.</p>
-<p>👉 <strong>Example 4</strong>: <span class="math inline">\(Mat_2(\mathbb{R})\)</span></p>
+</section>
+<section id="example-4-mat_2mathbbr" class="level4">
+<h4 class="anchored" data-anchor-id="example-4-mat_2mathbbr">🏷️ <strong>Example 4</strong>: <span class="math inline">\(Mat_2(\mathbb{R})\)</span></h4>
 <p>The most easy basis would be</p>
 <p><span class="math display">\[
 \left\{
@@ -811,6 +829,7 @@ b\begin{pmatrix}
 <p>So the dimension of this vector space is four.</p>
 
 
+</section>
 </section>
 </section>
 

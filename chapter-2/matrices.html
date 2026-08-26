@@ -512,14 +512,14 @@ window.Quarto = {
   <ul>
   <li><a href="#matrices" id="toc-matrices" class="nav-link active" data-scroll-target="#matrices">Matrices</a>
   <ul class="collapse">
-  <li><a href="#matrix-definition" id="toc-matrix-definition" class="nav-link" data-scroll-target="#matrix-definition">Matrix: Definition</a></li>
+  <li><a href="#matrix-definition" id="toc-matrix-definition" class="nav-link" data-scroll-target="#matrix-definition">📌 Matrix: Definition</a></li>
   </ul></li>
   <li><a href="#matrix-operations" id="toc-matrix-operations" class="nav-link" data-scroll-target="#matrix-operations">Matrix: Operations</a></li>
-  <li><a href="#matrix-types" id="toc-matrix-types" class="nav-link" data-scroll-target="#matrix-types">Matrix: Types</a></li>
-  <li><a href="#matrices-and-systems-of-linear-equations" id="toc-matrices-and-systems-of-linear-equations" class="nav-link" data-scroll-target="#matrices-and-systems-of-linear-equations">Matrices and Systems of Linear Equations</a></li>
-  <li><a href="#invertible-matrices" id="toc-invertible-matrices" class="nav-link" data-scroll-target="#invertible-matrices">Invertible Matrices</a></li>
-  <li><a href="#the-determinant" id="toc-the-determinant" class="nav-link" data-scroll-target="#the-determinant">The Determinant</a></li>
-  <li><a href="#matrix-groups-notation" id="toc-matrix-groups-notation" class="nav-link" data-scroll-target="#matrix-groups-notation">Matrix Groups: Notation</a></li>
+  <li><a href="#matrix-types" id="toc-matrix-types" class="nav-link" data-scroll-target="#matrix-types">📌 Matrix: Types</a></li>
+  <li><a href="#matrices-and-systems-of-linear-equations" id="toc-matrices-and-systems-of-linear-equations" class="nav-link" data-scroll-target="#matrices-and-systems-of-linear-equations">📌 Matrices and Systems of Linear Equations</a></li>
+  <li><a href="#invertible-matrices" id="toc-invertible-matrices" class="nav-link" data-scroll-target="#invertible-matrices">📌 Invertible Matrices</a></li>
+  <li><a href="#the-determinant" id="toc-the-determinant" class="nav-link" data-scroll-target="#the-determinant">📌 The Determinant</a></li>
+  <li><a href="#matrix-groups-notation" id="toc-matrix-groups-notation" class="nav-link" data-scroll-target="#matrix-groups-notation">📌 Matrix Groups: Notation</a></li>
   </ul>
 </nav>
     </div>
@@ -563,8 +563,11 @@ Note
 <section id="matrices" class="level2">
 <h2 class="anchored" data-anchor-id="matrices">Matrices</h2>
 <section id="matrix-definition" class="level3">
-<h3 class="anchored" data-anchor-id="matrix-definition">Matrix: Definition</h3>
-<p>📌 A <strong>matrix</strong> is a rectangular array of scalars from a field <span class="math inline">\(F\)</span>.<br> 📌 An <span class="math inline">\(m \times n\)</span> matrix a has <span class="math inline">\(m\)</span> rows and <span class="math inline">\(n\)</span> columns. The entry in the <span class="math inline">\(i\)</span>-th row and <span class="math inline">\(j\)</span>-th column is noted <span class="math inline">\(A_{ij}\)</span>.</p>
+<h3 class="anchored" data-anchor-id="matrix-definition">📌 Matrix: Definition</h3>
+<ul>
+<li>A <strong>matrix</strong> is a rectangular array of scalars from a field <span class="math inline">\(F\)</span>.</li>
+<li>An <span class="math inline">\(m \times n\)</span> matrix a has <span class="math inline">\(m\)</span> rows and <span class="math inline">\(n\)</span> columns. The entry in the <span class="math inline">\(i\)</span>-th row and <span class="math inline">\(j\)</span>-th column is noted <span class="math inline">\(A_{ij}\)</span>.</li>
+</ul>
 <p><span class="math display">\[
 A = \begin{pmatrix}
 A_{11} &amp;&amp; A_{12} &amp;&amp; \dots &amp;&amp; A_{1n} \\
@@ -574,7 +577,8 @@ A_{m1} &amp;&amp; A_{m2} &amp;&amp; \dots &amp;&amp; \ A_{mn}
 \]</span></p>
 <p>For now, scalars we can just think of numbers and the field <span class="math inline">\(F\)</span> a number set, where we take the scalars from. More strictly, it is an algebraic structure where addition, subtraction, multiplication, and division (for non-zero elements) are defined.</p>
 <p>Going forward, <span class="math inline">\(F\)</span> will mostly consider matrices were <span class="math inline">\(F\)</span> is either <span class="math inline">\(\mathbb{R}\)</span> or <span class="math inline">\(\mathbb{C}\)</span>.</p>
-<p>👉 <strong>Example 1</strong>: a <span class="math inline">\(2\)</span> by <span class="math inline">\(2\)</span> matrix</p>
+<section id="example-1-a-2-by-2-matrix" class="level4">
+<h4 class="anchored" data-anchor-id="example-1-a-2-by-2-matrix">🏷️ <strong>Example 1</strong>: a <span class="math inline">\(2\)</span> by <span class="math inline">\(2\)</span> matrix</h4>
 <p>Example of a <span class="math inline">\(2\)</span> by <span class="math inline">\(2\)</span> matrix, also denoted as <span class="math inline">\(2 \times 2\)</span> matrix, which has <span class="math inline">\(2\)</span> rows and <span class="math inline">\(2\)</span> columns</p>
 <p><span class="math display">\[
 \begin{pmatrix}
@@ -582,7 +586,9 @@ A_{m1} &amp;&amp; A_{m2} &amp;&amp; \dots &amp;&amp; \ A_{mn}
 3 &amp;&amp; 4
 \end{pmatrix}
 \]</span></p>
-<p>👉 <strong>Example 2</strong>: a <span class="math inline">\(3\)</span> by <span class="math inline">\(2\)</span> matrix</p>
+</section>
+<section id="example-2-a-3-by-2-matrix" class="level4">
+<h4 class="anchored" data-anchor-id="example-2-a-3-by-2-matrix">🏷️ <strong>Example 2</strong>: a <span class="math inline">\(3\)</span> by <span class="math inline">\(2\)</span> matrix</h4>
 <p><span class="math display">\[
 A = \begin{pmatrix}
 1 &amp;&amp; 2 &amp;&amp; 4 \\
@@ -590,7 +596,9 @@ A = \begin{pmatrix}
 \end{pmatrix}
 \]</span></p>
 <p>So <span class="math inline">\(A_{12} = 2\)</span>, <span class="math inline">\(A_{23} = -6\)</span>, <span class="math inline">\(A_{13} = 4\)</span>. Note that for example <span class="math inline">\(A_{32}\)</span> does not exist!</p>
-<p>👉 <strong>Example 3</strong>: a matrix over <span class="math inline">\(\mathbf{C}\)</span></p>
+</section>
+<section id="example-3-a-matrix-over-mathbfc" class="level4">
+<h4 class="anchored" data-anchor-id="example-3-a-matrix-over-mathbfc">🏷️ <strong>Example 3</strong>: a matrix over <span class="math inline">\(\mathbf{C}\)</span></h4>
 <p><span class="math display">\[
 A = \begin{pmatrix}
 1 + i &amp;&amp; -2i \\
@@ -599,17 +607,25 @@ i\sqrt{3} &amp;&amp; -7
 \]</span></p>
 </section>
 </section>
+</section>
 <section id="matrix-operations" class="level2">
 <h2 class="anchored" data-anchor-id="matrix-operations">Matrix: Operations</h2>
-<p>📌 <strong>Addition</strong>: <span class="math display">\[
+<ul>
+<li><p><strong>Addition</strong>: <span class="math display">\[
 (A + B)_{ij} = A_{ij} + B_{ij}
-\]</span></p>
-<p>📌 <strong>Scalar multiplication</strong>:</p>
+\]</span></p></li>
+<li><p><strong>Scalar multiplication</strong>:</p></li>
+</ul>
 <p><span class="math display">\[(cA)_{ij} = c \cdot A_{ij}\]</span></p>
-<p>📌 <strong>Matrix multiplication</strong>: If <span class="math inline">\(A\)</span> is <span class="math inline">\(m \times n\)</span> and B is <span class="math inline">\(n \times p\)</span>, their product <span class="math inline">\(AB\)</span> is an <span class="math inline">\(m \times p\)</span> matrix with entries:</p>
+<ul>
+<li><strong>Matrix multiplication</strong>: If <span class="math inline">\(A\)</span> is <span class="math inline">\(m \times n\)</span> and B is <span class="math inline">\(n \times p\)</span>, their product <span class="math inline">\(AB\)</span> is an <span class="math inline">\(m \times p\)</span> matrix with entries:</li>
+</ul>
 <p><span class="math display">\[(AB)_{ij} = \sum^n_{k=1}A_{ik}B_{kj}\]</span></p>
-<p>📌 It is <strong>associative</strong>, <span class="math inline">\((AB)C = A(BC)\)</span>, but not <strong>commutative</strong> in general, <span class="math inline">\(AB\neq BA\)</span></p>
-<p>👉 <strong>Example 1</strong>: addition</p>
+<ul>
+<li><strong>Associativity</strong>, <span class="math inline">\((AB)C = A(BC)\)</span>, but not <strong>commutative</strong> in general, <span class="math inline">\(AB\neq BA\)</span></li>
+</ul>
+<section id="example-1-addition" class="level4">
+<h4 class="anchored" data-anchor-id="example-1-addition">🏷️ <strong>Example 1</strong>: addition</h4>
 <p><span class="math display">\[
 \begin{pmatrix}
 2 &amp;&amp; 3 \\
@@ -626,7 +642,9 @@ i\sqrt{3} &amp;&amp; -7
 5 &amp;&amp; 7
 \end{pmatrix}
 \]</span></p>
-<p>👉 <strong>Example 2</strong>: subtraction</p>
+</section>
+<section id="example-2-subtraction" class="level4">
+<h4 class="anchored" data-anchor-id="example-2-subtraction">🏷️ <strong>Example 2</strong>: subtraction</h4>
 <p><span class="math display">\[
 \begin{pmatrix}
 1 &amp;&amp; 3 \\
@@ -643,7 +661,9 @@ i\sqrt{3} &amp;&amp; -7
 7 &amp;&amp; -3
 \end{pmatrix}
 \]</span></p>
-<p>👉 <strong>Example 3</strong>: scalar multiplication</p>
+</section>
+<section id="example-3-scalar-multiplication" class="level4">
+<h4 class="anchored" data-anchor-id="example-3-scalar-multiplication">🏷️ <strong>Example 3</strong>: scalar multiplication</h4>
 <p><span class="math display">\[
 (-3) \cdot
 \begin{pmatrix}
@@ -656,7 +676,9 @@ i\sqrt{3} &amp;&amp; -7
 -12 &amp;&amp; -15 &amp;&amp; -24
 \end{pmatrix}
 \]</span></p>
-<p>👉 <strong>Example 4</strong>: scalar multiplication</p>
+</section>
+<section id="example-4-scalar-multiplication" class="level4">
+<h4 class="anchored" data-anchor-id="example-4-scalar-multiplication">🏷️ <strong>Example 4</strong>: scalar multiplication</h4>
 <p><span class="math display">\[
 (7) \cdot
 \begin{pmatrix}
@@ -669,7 +691,9 @@ i\sqrt{3} &amp;&amp; -7
 63 &amp;&amp; -56
 \end{pmatrix}
 \]</span></p>
-<p>👉 <strong>Example 5</strong>: matrix multiplication</p>
+</section>
+<section id="example-5-matrix-multiplication" class="level4">
+<h4 class="anchored" data-anchor-id="example-5-matrix-multiplication">🏷️ <strong>Example 5</strong>: matrix multiplication</h4>
 <p>We take the <span class="math inline">\(i\)</span>-th row of <span class="math inline">\(A\)</span> and the <span class="math inline">\(j\)</span>-th column of <span class="math inline">\(B\)</span>, multiply the corresponding terms and add them:</p>
 <p><span class="math display">\[
 \begin{pmatrix}
@@ -686,7 +710,9 @@ i\sqrt{3} &amp;&amp; -7
 6 &amp;&amp; 24
 \end{pmatrix}
 \]</span></p>
-<p>👉 <strong>Example 6</strong>: matrix multiplication</p>
+</section>
+<section id="example-6-matrix-multiplication" class="level4">
+<h4 class="anchored" data-anchor-id="example-6-matrix-multiplication">🏷️ <strong>Example 6</strong>: matrix multiplication</h4>
 <p><span class="math display">\[
 \begin{pmatrix}
 1 &amp;&amp; 2 &amp;&amp; 3 \\
@@ -702,7 +728,9 @@ i\sqrt{3} &amp;&amp; -7
 26 &amp;&amp; -12
 \end{pmatrix}
 \]</span></p>
-<p>👉 <strong>Example 7</strong>: associativity of matrix multiplication</p>
+</section>
+<section id="example-7-associativity-of-matrix-multiplication" class="level4">
+<h4 class="anchored" data-anchor-id="example-7-associativity-of-matrix-multiplication">🏷️ <strong>Example 7</strong>: associativity of matrix multiplication</h4>
 <p><span class="math display">\[
 \left[
 \begin{pmatrix}
@@ -764,13 +792,17 @@ i\sqrt{3} &amp;&amp; -7
 \end{pmatrix}
 \]</span></p>
 </section>
+</section>
 <section id="matrix-types" class="level2">
-<h2 class="anchored" data-anchor-id="matrix-types">Matrix: Types</h2>
-<p>📌 <strong>Square Matrix</strong>: A matrix where the number of rows equals the number of columns <span class="math inline">\(m=n\)</span>.</p>
-<p>📌 <strong>Zero Matrix (<span class="math inline">\(O\)</span>)</strong>: A matrix where all entries are zero. It acts as the additive identity: <span class="math inline">\(A + O = A\)</span>.</p>
-<p>📌 <strong>Diagonal Matrix</strong>: A square matrix where all non-diagonal entries are zero.</p>
-<p>📌 <strong>Identity Matrix (<span class="math inline">\(I_n\)</span>)</strong>: The <span class="math inline">\(n \times n\)</span> diagoonal matrix with 1s on the diagonal. It acts as a multiplicative identidy: <span class="math inline">\(AI_n = I_n A = A\)</span></p>
-<p>👉 <strong>Example 1</strong>: square matrices</p>
+<h2 class="anchored" data-anchor-id="matrix-types">📌 Matrix: Types</h2>
+<ul>
+<li><p><strong>Square Matrix</strong>: A matrix where the number of rows equals the number of columns <span class="math inline">\(m=n\)</span>.</p></li>
+<li><p><strong>Zero Matrix (<span class="math inline">\(O\)</span>)</strong>: A matrix where all entries are zero. It acts as the additive identity: <span class="math inline">\(A + O = A\)</span>.</p></li>
+<li><p><strong>Diagonal Matrix</strong>: A square matrix where all non-diagonal entries are zero.</p></li>
+<li><p><strong>Identity Matrix (<span class="math inline">\(I_n\)</span>)</strong>: The <span class="math inline">\(n \times n\)</span> diagoonal matrix with 1s on the diagonal. It acts as a multiplicative identidy: <span class="math inline">\(AI_n = I_n A = A\)</span></p></li>
+</ul>
+<section id="example-1-square-matrices" class="level4">
+<h4 class="anchored" data-anchor-id="example-1-square-matrices">🏷️ <strong>Example 1</strong>: square matrices</h4>
 <p><span class="math display">\[
 n \times n,
 \begin{pmatrix}
@@ -783,7 +815,9 @@ n \times n,
 0 &amp;&amp; -6 &amp;&amp; 1
 \end{pmatrix}
 \]</span></p>
-<p>👉 <strong>Example 2</strong>: <span class="math inline">\(2 \times 3\)</span> zero matrix</p>
+</section>
+<section id="example-2-2-times-3-zero-matrix" class="level4">
+<h4 class="anchored" data-anchor-id="example-2-2-times-3-zero-matrix">🏷️ <strong>Example 2</strong> : <span class="math inline">\(2 \times 3\)</span> zero matrix</h4>
 <p><span class="math display">\[
 \begin{pmatrix}
 1 &amp;&amp; 5 &amp;&amp; -6 \\
@@ -799,7 +833,9 @@ n \times n,
 0 &amp;&amp; 1 &amp;&amp; 2
 \end{pmatrix}
 \]</span></p>
-<p>👉 <strong>Example 3</strong>: diagonal matrices</p>
+</section>
+<section id="example-3-diagonal-matrices" class="level4">
+<h4 class="anchored" data-anchor-id="example-3-diagonal-matrices">🏷️ <strong>Example 3</strong>: diagonal matrices</h4>
 <p><span class="math display">\[
 \begin{pmatrix}
 1 &amp;&amp; 0 \\
@@ -811,7 +847,9 @@ n \times n,
 0 &amp;&amp; 0 &amp;&amp; 4
 \end{pmatrix}
 \]</span></p>
-<p>👉 <strong>Example 4</strong>: identity matrix</p>
+</section>
+<section id="example-4-identity-matrix" class="level4">
+<h4 class="anchored" data-anchor-id="example-4-identity-matrix">🏷️ <strong>Example 4</strong>: identity matrix</h4>
 <p><span class="math display">\[
 I_2 =
 \begin{pmatrix}
@@ -844,8 +882,9 @@ c &amp;&amp; d
 \end{pmatrix},
 \]</span></p>
 </section>
+</section>
 <section id="matrices-and-systems-of-linear-equations" class="level2">
-<h2 class="anchored" data-anchor-id="matrices-and-systems-of-linear-equations">Matrices and Systems of Linear Equations</h2>
+<h2 class="anchored" data-anchor-id="matrices-and-systems-of-linear-equations">📌 Matrices and Systems of Linear Equations</h2>
 <p>A system of linear equations can be written as a single matrix equation</p>
 <p><span class="math display">\[
 \begin{cases}
@@ -871,7 +910,8 @@ b_m
 \end{pmatrix}
 \]</span></p>
 <p>That is, <span class="math inline">\(A\bf{x} = \bf{b}\)</span></p>
-<p>👉 <strong>Example 1</strong>: how it works</p>
+<section id="example-1-how-it-works" class="level4">
+<h4 class="anchored" data-anchor-id="example-1-how-it-works">🏷️ <strong>Example 1</strong>: how it works</h4>
 <p><span class="math display">\[
 \begin{cases}
 2x+3y+5z=7 \\
@@ -914,13 +954,15 @@ A\vec{x}=\vec{b}
 AB=BA=I_n
 \]</span></p>
 </section>
+</section>
 <section id="invertible-matrices" class="level2">
-<h2 class="anchored" data-anchor-id="invertible-matrices">Invertible Matrices</h2>
+<h2 class="anchored" data-anchor-id="invertible-matrices">📌 Invertible Matrices</h2>
 <p>A square matrix <span class="math inline">\(A\)</span> is <strong>invertible</strong> if an <strong>inverse</strong> matrix <span class="math inline">\(A^{-1}\)</span> exists that satisfies</p>
 <p><span class="math display">\[
 A A^{-1} = A^{-1} A = I_n
 \]</span></p>
-<p>👉 <strong>Example 1</strong>: invertible <span class="math inline">\(2 \times 2\)</span> matrix</p>
+<section id="example-1-invertible-2-times-2-matrix" class="level4">
+<h4 class="anchored" data-anchor-id="example-1-invertible-2-times-2-matrix">🏷️ <strong>Example 1</strong>: invertible <span class="math inline">\(2 \times 2\)</span> matrix</h4>
 <p><span class="math display">\[
 \text{Let}\ A=
 \begin{pmatrix}
@@ -949,7 +991,9 @@ AA^{-1} =
 0 &amp;&amp; 1
 \end{pmatrix}
 \]</span></p>
-<p>👉 <strong>Example 2</strong>: invertible <span class="math inline">\(3 \times 3\)</span> matrix</p>
+</section>
+<section id="example-2-invertible-3-times-3-matrix" class="level4">
+<h4 class="anchored" data-anchor-id="example-2-invertible-3-times-3-matrix">🏷️ <strong>Example 2</strong>: invertible <span class="math inline">\(3 \times 3\)</span> matrix</h4>
 <p><span class="math display">\[
 B = \begin{pmatrix}
 1 &amp;&amp; 1 &amp;&amp; 1 \\
@@ -965,7 +1009,9 @@ B = \begin{pmatrix}
 BB^{-1}=B^{-1}B=I_3
 \]</span></p>
 <p>However, not every matrix as an inverse matrix.</p>
-<p>👉 <strong>Example 3</strong>: a non-invertible matrix</p>
+</section>
+<section id="example-3-a-non-invertible-matrix" class="level4">
+<h4 class="anchored" data-anchor-id="example-3-a-non-invertible-matrix">🏷️ <strong>Example 3</strong>: a non-invertible matrix</h4>
 <p><span class="math display">\[
 A =
 \begin{pmatrix}
@@ -1102,38 +1148,46 @@ d &amp;&amp; -b \\
 <p>🚨 So the matrix has an inverse if and only if <span class="math inline">\(ad-bc\neq 0\)</span>. So the <span class="math inline">\(ad-bc\)</span> quantity is key here, as it determines if the matrix is invertible or not! This quantity is called the determinant❗</p>
 <p>The definition of a determinant can be generalized to any <span class="math inline">\(n \times n\)</span> matrix, but we will refrain from doing so here. Instead, we will focus on the <span class="math inline">\(2 \times 2\)</span> case, which is sufficient for our purposes.</p>
 </section>
+</section>
 <section id="the-determinant" class="level2">
-<h2 class="anchored" data-anchor-id="the-determinant">The Determinant</h2>
+<h2 class="anchored" data-anchor-id="the-determinant">📌 The Determinant</h2>
 <p>A <strong>determinant</strong> is a function <span class="math display">\[
 \det: M_{n \times n}(F) \rightarrow F
 \]</span> that assigns a scalar to each square matrix.</p>
-<p>📌 <span class="math display">\[
-A\ \text{is invertible} \Longleftrightarrow \det(A)\neq 0
+<p><span class="math display">\[
+👉\ A\ \text{is invertible} \Longleftrightarrow \det(A)\neq 0
 \]</span></p>
-<p>📌 <span class="math display">\[
-\det(AB)=\det(BA)
+<p><span class="math display">\[
+👉\ \det(AB)=\det(BA)
 \]</span></p>
-<p>📌 For a <span class="math inline">\(2\times2\)</span> matrix, <span class="math display">\[
-\det\begin{pmatrix} a &amp;&amp; b \\ c &amp;&amp; d\end{pmatrix}=ad-bc
+<p>For a <span class="math inline">\(2\times2\)</span> matrix, <span class="math display">\[
+👉\ \det\begin{pmatrix} a &amp;&amp; b \\ c &amp;&amp; d\end{pmatrix}=ad-bc
 \]</span></p>
 </section>
 <section id="matrix-groups-notation" class="level2">
-<h2 class="anchored" data-anchor-id="matrix-groups-notation">Matrix Groups: Notation</h2>
+<h2 class="anchored" data-anchor-id="matrix-groups-notation">📌 Matrix Groups: Notation</h2>
 <p>For a field <span class="math inline">\(F\)</span> and a positive integer <span class="math inline">\(n\)</span>:</p>
-<p>📌 <span class="math inline">\(Mat_n(F)\)</span>: the set of all <span class="math inline">\(n\times n\)</span> matrices with entries in F.</p>
-<p>📌 <span class="math inline">\(GL_n(F)\)</span>: the general linear group is the group of all invertible matrices in <span class="math inline">\(Mat_n(F)\)</span>.</p>
+<ul>
+<li><p><span class="math inline">\(Mat_n(F)\)</span>: the set of all <span class="math inline">\(n\times n\)</span> matrices with entries in F.</p></li>
+<li><p><span class="math inline">\(GL_n(F)\)</span>: the general linear group is the group of all invertible matrices in <span class="math inline">\(Mat_n(F)\)</span>.</p></li>
+</ul>
 <p><span class="math display">\[
 GL_n(F) = \{A\in Mat_n(F)\ |\ \det(A)\neq 0\}.
 \]</span></p>
-<p>📌 <span class="math inline">\(SL_n(F)\)</span>: the special linear group is a subgroup of <span class="math inline">\(GL_n(F)\)</span>, consisting of matrices with determinant 1.</p>
+<ul>
+<li><span class="math inline">\(SL_n(F)\)</span>: the special linear group is a subgroup of <span class="math inline">\(GL_n(F)\)</span>, consisting of matrices with determinant 1.</li>
+</ul>
 <p><span class="math display">\[
 SL_n(F) = \{A\in GL_n(F)\ |\ \det(A)=1\}.
 \]</span></p>
-<p>👉 <strong>Example 1</strong>: members of <span class="math inline">\(Mat_n(F)\)</span></p>
+<section id="example-1-members-of-mat_nf" class="level4">
+<h4 class="anchored" data-anchor-id="example-1-members-of-mat_nf">🏷️ <strong>Example 1</strong>: members of <span class="math inline">\(Mat_n(F)\)</span></h4>
 <p><span class="math display">\[
 Mat_2(\mathbb{R}):\ \begin{pmatrix} 2 &amp;&amp; 3 \\ -1 &amp;&amp; \sqrt{7}\end{pmatrix},\ \begin{pmatrix} \pi &amp;&amp; 3+\sqrt{2} \\ -7 &amp;&amp; \dfrac{3}{4}\end{pmatrix}
 \]</span></p>
-<p>👉 <strong>Example 2</strong>: members of <span class="math inline">\(GL_n(F)\)</span></p>
+</section>
+<section id="example-2-members-of-gl_nf" class="level4">
+<h4 class="anchored" data-anchor-id="example-2-members-of-gl_nf">🏷️ <strong>Example 2 </strong>: members of <span class="math inline">\(GL_n(F)\)</span></h4>
 <p><span class="math display">\[
 GL_2(\mathbb{R}):\ \begin{pmatrix} 1 &amp;&amp; 2 \\ 3 &amp;&amp; 4\end{pmatrix} \Rightarrow \text{det}=-2
 \]</span></p>
@@ -1141,7 +1195,9 @@ GL_2(\mathbb{R}):\ \begin{pmatrix} 1 &amp;&amp; 2 \\ 3 &amp;&amp; 4\end{pmatrix}
 <p><span class="math display">\[
 \begin{pmatrix} 2 &amp;&amp; 4 \\ 5 &amp;&amp; 10\end{pmatrix} \Rightarrow \text{det}=-0
 \]</span></p>
-<p>👉 <strong>Example 3</strong>: members of <span class="math inline">\(SL_n(F)\)</span></p>
+</section>
+<section id="example-3-members-of-sl_nf" class="level4">
+<h4 class="anchored" data-anchor-id="example-3-members-of-sl_nf">🏷️ <strong>Example 3</strong>: members of <span class="math inline">\(SL_n(F)\)</span></h4>
 <p><span class="math display">\[
 \begin{pmatrix} 3 &amp;&amp; 2 \\ 7 &amp;&amp; 5\end{pmatrix} \in SL_2(\mathbb{R})
 \]</span></p>
@@ -1151,6 +1207,7 @@ GL_2(\mathbb{R}):\ \begin{pmatrix} 1 &amp;&amp; 2 \\ 3 &amp;&amp; 4\end{pmatrix}
 \]</span></p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
