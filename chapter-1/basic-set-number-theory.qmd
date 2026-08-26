@@ -48,7 +48,7 @@ $$
 
 Here, the multiplaction sign "$\times$" defines the way in which the new set is be formed from two other sets.
 
-### 🏷️ Example 1 
+#### 🏷️ **Example** 1 
 
 Let $A=\{ 1, 2\}$ and $B=\{3, 4, 5\}$, then
 
@@ -56,7 +56,7 @@ $$
 A \times B = \{(1,3), (1,4), (1,5), (2,3), (2,4), (2,5) \}
 $$
 
-### 🏷️ Example 2 
+#### 🏷️ **Example** 2 
 
 Let $A=\{ 1, 2\}$, then
 
@@ -64,7 +64,7 @@ $$
 A \times A = A^2 = \{(1,1), (1,2), (2,1), (2,2) \}
 $$
 
-### 🏷️ Example 3: $\mathbb{R}^2$
+#### 🏷️ **Example** 3: $\mathbb{R}^2$
 
 $$
 \mathbb{R}^2= \{(x,y)\ |\ x,y \in \mathbb{R}^2 \}
@@ -92,7 +92,7 @@ $$
 
 
 
-### 🏷️ Examples 
+#### 🏷️ **Example**s 
 
 $$
 17 \equiv 32\quad (\text{mod}\ 5), 15 \equiv 29\quad (\text{mod}\ 7) 
@@ -112,7 +112,7 @@ For integers $a,b$ the **greatest common divisor** of $a$ and $b$ is denoted by 
 The material below is used to proof Fermat's last theorem for the cases $n=3$ and $n=4$. Since these cases won't be included on this site, we will skip the proofs and details.
 :::
 
-### 🏷️ Examples 
+#### 🏷️ **Example**s 
 
 - $\gcd(24, 36)=12$
 - $\gcd(28, 49)=7$

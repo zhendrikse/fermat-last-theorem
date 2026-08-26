@@ -22,7 +22,7 @@ Visualizations in this project are created using the [Helion library](https://ww
 Many of us can remember the 
 [Pythagorean theorem](https://en.wikipedia.org/wiki/Pythagorean_theorem) from high school. It is a simple and elegant statement about right triangles.
 
-### 🧪 Pythagorean theorem
+### 👨‍💻 Pythagorean theorem 
 
 ```{=html}
 <div id="pythagorasContainer"></div>

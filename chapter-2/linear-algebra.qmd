@@ -94,7 +94,7 @@ $$
 
 👉 **The Taylor series expansion provides a different basis**
 
-### 🧪 Taylor expansion demo
+### 👨‍💻 Taylor expansion demo
 
 ```{=html}
 <div id="taylorSeriesContainer"></div>
@@ -163,7 +163,7 @@ $$
 
 The Fourier-coefficiens $a_0,a_1,b_1,a_2,b_2,\ldots$ are the **coordinats of the function $f$ in this basis**.
 
-### 🧪 Fourier transform demo
+### 👨‍💻 Fourier transform demo
 
 <p style="clear: both;"></p>
 ```{=html}

@@ -3,6 +3,10 @@ title: Index of Helion demos
 format: html
 ---
 
+::: {.callout-note}
+Visualizations in this project are created using the [Helion library](https://www.hendrikse.name/helion/).
+:::
+
 | Demo | Link to page |
 |------|--------------|
 [Eigen vectors & eigen values](https://www.hendrikse.name/helion/mathematics/matrix_transformation/#eigen-vectors-and-eigen-values) | [Linear transformations](todo)

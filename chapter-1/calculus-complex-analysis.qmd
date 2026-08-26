@@ -19,7 +19,7 @@ $$
 
 We are already familiar with functions of a single variable, which can be visualized as a curve in the plane, such as $f(x) = x^2$. A multivariable function can be visualized as a surface in three-dimensional space.
 
-### 🧪 Multivariable functions demo
+### 👨‍💻 Multivariable functions demo
 
 ```{=html}
 <div id="realSurfacesContainer"></div>
@@ -56,7 +56,7 @@ So why do we need this?
 Later these partial derivatives will show up when we talk about singlar points and elliptic curves.
 :::
 
-### 🏷️ Example
+#### 🏷️ **Example**
 
 Let
 
@@ -79,7 +79,7 @@ $$
 
 A Taylor series represents a function as an infinite polynomial. With infinitely many terms, it equals the original function within its interval of convergence.
 
-### 🏷️ Examples
+#### 🏷️ **Examples**
 
 $$
 \begin{array}{rl}
@@ -98,7 +98,7 @@ Although this won't be used frequently in the forthccoming chapters, it appears 
 
 🎯 The tailer series is a way to represent a given function as an infinite polynomial.
 
-### 🧪 Taylor expansion demo
+### 👨‍💻 Taylor expansion demo
 
 ```{=html}
 <div id="taylorSeriesContainer"></div>
@@ -188,19 +188,19 @@ $$
 
 Because of the periodicity, we can limit the values of $k$ to $n-1$.
 
-### 🏷️ Example 1: $n=2$
+#### 🏷️ **Example** 1: $n=2$
 
 $$z_k = e^{i\dfrac{2\pi k}{2}} = e^{\pi ik} \Rightarrow \begin{cases} k=0: 1 \\ k=1: -1\end{cases}
 $$
 
-### 🏷️ Example 2: $n=3$
+#### 🏷️ **Example** 2: $n=3$
 
 $$z_k = e^{\dfrac{2\pi ik}{3}} \Rightarrow \begin{cases} k=0: 1 \\ k=1: e^{\dfrac{2\pi}{3}}= +\dfrac{\sqrt{3}}{2}i-\dfrac{1}{2} \\ k=2: e^{\dfrac{4\pi}{3}} = -\dfrac{\sqrt{3}}{2}i+\dfrac{1}{2}\end{cases}
 $$
 
 Geometrically, the roots of unity constitute the vertices of a regular $n$-gon sitting on a unit circle in the complex plane.
 
-### 🧪 Roots of unity demo
+### 👨‍💻 Roots of unity demo
 
 ```{=html}
 <div id="rootsOfUnityContainer"></div>

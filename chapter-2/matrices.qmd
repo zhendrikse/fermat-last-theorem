@@ -11,10 +11,10 @@ This section corresponds to **1:07:03** in *Proof of Fermat Last Theorem FROM SC
 
 ## Matrices
 
-### Matrix: Definition
+### 📌 Matrix: Definition
 
-📌 A **matrix** is a rectangular array of scalars from a field $F$.<br/>
-📌 An $m \times n$ matrix a has $m$ rows and $n$ columns. The entry in the $i$-th row and $j$-th column is noted $A_{ij}$.
+- A **matrix** is a rectangular array of scalars from a field $F$.
+- An $m \times n$ matrix a has $m$ rows and $n$ columns. The entry in the $i$-th row and $j$-th column is noted $A_{ij}$.
 
 $$
 A = \begin{pmatrix}
@@ -31,7 +31,7 @@ addition, subtraction, multiplication, and division (for non-zero elements) are 
 Going forward, $F$ will mostly consider matrices were $F$ is either
 $\mathbb{R}$ or $\mathbb{C}$.
 
-👉 **Example 1**: a $2$ by $2$ matrix
+#### 🏷️ **Example 1**: a $2$ by $2$ matrix
 
 Example of a $2$ by $2$ matrix, also denoted as $2 \times 2$ matrix,
 which has $2$ rows and $2$ columns
@@ -43,7 +43,7 @@ $$
 \end{pmatrix}
 $$
 
-👉 **Example 2**: a $3$ by $2$ matrix
+#### 🏷️ **Example 2**: a $3$ by $2$ matrix
 
 $$
 A = \begin{pmatrix}
@@ -54,7 +54,7 @@ $$
 
 So $A_{12} = 2$, $A_{23} = -6$, $A_{13} = 4$. Note that for example $A_{32}$ does not exist!
 
-👉 **Example 3**: a matrix over $\mathbf{C}$
+#### 🏷️ **Example 3**: a matrix over $\mathbf{C}$
 
 $$
 A = \begin{pmatrix}
@@ -65,23 +65,23 @@ $$
 
 ## Matrix: Operations
 
-📌 **Addition**: 
+- **Addition**: 
 $$
 (A + B)_{ij} = A_{ij} + B_{ij}
 $$
 
-📌 **Scalar multiplication**: 
+- **Scalar multiplication**: 
   
 $$(cA)_{ij} = c \cdot A_{ij}$$
 
-📌 **Matrix multiplication**: If $A$ is $m \times n$ and B is $n \times p$,
+- **Matrix multiplication**: If $A$ is $m \times n$ and B is $n \times p$,
   their product $AB$ is an $m \times p$ matrix with entries: 
 
 $$(AB)_{ij} = \sum^n_{k=1}A_{ik}B_{kj}$$
 
-📌 It is **associative**, $(AB)C = A(BC)$, but not **commutative** in general, $AB\neq BA$
+- **Associativity**, $(AB)C = A(BC)$, but not **commutative** in general, $AB\neq BA$
 
-👉 **Example 1**: addition
+#### 🏷️ **Example 1**: addition
 
 $$
 \begin{pmatrix}
@@ -100,7 +100,7 @@ $$
 \end{pmatrix}
 $$ 
 
-👉 **Example 2**: subtraction
+#### 🏷️ **Example 2**: subtraction
 
 $$
 \begin{pmatrix}
@@ -119,7 +119,7 @@ $$
 \end{pmatrix}
 $$ 
 
-👉 **Example 3**: scalar multiplication
+#### 🏷️ **Example 3**: scalar multiplication
 
 $$
 (-3) \cdot
@@ -134,7 +134,7 @@ $$
 \end{pmatrix}
 $$ 
 
-👉 **Example 4**: scalar multiplication
+#### 🏷️ **Example 4**: scalar multiplication
 
 $$
 (7) \cdot
@@ -149,7 +149,7 @@ $$
 \end{pmatrix}
 $$ 
 
-👉 **Example 5**: matrix multiplication
+#### 🏷️ **Example 5**: matrix multiplication
 
 We take the $i$-th row of $A$ and the $j$-th column of $B$, multiply
 the corresponding terms and add them:
@@ -170,7 +170,7 @@ $$
 \end{pmatrix}
 $$ 
 
-👉 **Example 6**: matrix multiplication
+#### 🏷️ **Example 6**: matrix multiplication
 
 $$
 \begin{pmatrix}
@@ -188,7 +188,7 @@ $$
 \end{pmatrix}
 $$ 
 
-👉 **Example 7**: associativity of matrix multiplication
+#### 🏷️ **Example 7**: associativity of matrix multiplication
 
 $$
 \left[
@@ -252,17 +252,17 @@ $$
 \end{pmatrix}
 $$ 
 
-## Matrix: Types
+## 📌 Matrix: Types
 
-📌 **Square Matrix**: A matrix where the number of rows equals the number of columns $m=n$.
+- **Square Matrix**: A matrix where the number of rows equals the number of columns $m=n$.
 
-📌 **Zero Matrix ($O$)**: A matrix where all entries are zero. It acts as the additive identity: $A + O = A$.
+- **Zero Matrix ($O$)**: A matrix where all entries are zero. It acts as the additive identity: $A + O = A$.
 
-📌 **Diagonal Matrix**: A square matrix where all non-diagonal entries are zero.
+- **Diagonal Matrix**: A square matrix where all non-diagonal entries are zero.
 
-📌 **Identity Matrix ($I_n$)**: The $n \times n$ diagoonal matrix with 1s on the diagonal. It acts as a multiplicative identidy: $AI_n = I_n A = A$
+- **Identity Matrix ($I_n$)**: The $n \times n$ diagoonal matrix with 1s on the diagonal. It acts as a multiplicative identidy: $AI_n = I_n A = A$
 
-👉 **Example 1**: square matrices
+#### 🏷️ **Example 1**: square matrices
 
 $$
 n \times n,
@@ -277,7 +277,7 @@ n \times n,
 \end{pmatrix}
 $$
 
-👉 **Example 2**: $2 \times 3$ zero matrix
+#### 🏷️ **Example 2** : $2 \times 3$ zero matrix
 
 $$
 \begin{pmatrix}
@@ -295,7 +295,7 @@ $$
 \end{pmatrix}
 $$
 
-👉 **Example 3**: diagonal matrices
+#### 🏷️ **Example 3**: diagonal matrices
 
 $$
 \begin{pmatrix}
@@ -309,7 +309,7 @@ $$
 \end{pmatrix}
 $$
 
-👉 **Example 4**: identity matrix
+#### 🏷️ **Example 4**: identity matrix
 
 $$
 I_2 = 
@@ -344,7 +344,7 @@ c && d
 \end{pmatrix},
 $$
 
-## Matrices and Systems of Linear Equations
+## 📌 Matrices and Systems of Linear Equations
 
 A system of linear equations can be written as a single matrix equation
 
@@ -374,7 +374,7 @@ $$
 
 That is, $A\bf{x} = \bf{b}$
 
-👉 **Example 1**: how it works
+#### 🏷️ **Example 1**: how it works
 
 $$
 \begin{cases}
@@ -427,7 +427,7 @@ $$
 AB=BA=I_n
 $$
 
-## Invertible Matrices
+## 📌 Invertible Matrices
 
 A square matrix $A$ is **invertible** if an **inverse** matrix $A^{-1}$ exists that satisfies
 
@@ -435,7 +435,7 @@ $$
 A A^{-1} = A^{-1} A = I_n
 $$
 
-👉 **Example 1**: invertible $2 \times 2$ matrix
+#### 🏷️ **Example 1**: invertible $2 \times 2$ matrix
 
 $$
 \text{Let}\ A=
@@ -468,7 +468,7 @@ AA^{-1} =
 \end{pmatrix}
 $$
 
-👉 **Example 2**: invertible $3 \times 3$ matrix
+#### 🏷️ **Example 2**: invertible $3 \times 3$ matrix
 
 $$
 B = \begin{pmatrix}
@@ -487,7 +487,7 @@ $$
 
 However, not every matrix as an inverse matrix. 
 
-👉 **Example 3**: a non-invertible matrix
+#### 🏷️ **Example 3**: a non-invertible matrix
 
 $$
 A =
@@ -643,7 +643,7 @@ This quantity is called the determinant❗
 
 The definition of a determinant can be generalized to any $n \times n$ matrix, but we will refrain from doing so here. Instead, we will focus on the $2 \times 2$ case, which is sufficient for our purposes.
 
-## The Determinant
+## 📌 The Determinant
 
 A **determinant** is a function
 $$
@@ -651,46 +651,44 @@ $$
 $$
 that assigns a scalar to each square matrix.
 
-📌
 $$
-A\ \text{is invertible} \Longleftrightarrow \det(A)\neq 0
-$$
-
-📌
-$$
-\det(AB)=\det(BA)
+👉\ A\ \text{is invertible} \Longleftrightarrow \det(A)\neq 0
 $$
 
-📌 For a $2\times2$ matrix,
 $$
-\det\begin{pmatrix} a && b \\ c && d\end{pmatrix}=ad-bc
+👉\ \det(AB)=\det(BA)
 $$
 
-## Matrix Groups: Notation
+For a $2\times2$ matrix,
+$$
+👉\ \det\begin{pmatrix} a && b \\ c && d\end{pmatrix}=ad-bc
+$$
+
+## 📌 Matrix Groups: Notation
 
 For a field $F$ and a positive integer $n$:
 
-📌 $Mat_n(F)$: the set of all $n\times n$ matrices with entries in F.
+- $Mat_n(F)$: the set of all $n\times n$ matrices with entries in F.
 
-📌 $GL_n(F)$: the general linear group is the group of all invertible matrices in $Mat_n(F)$.
+- $GL_n(F)$: the general linear group is the group of all invertible matrices in $Mat_n(F)$.
 
 $$
 GL_n(F) = \{A\in Mat_n(F)\ |\ \det(A)\neq 0\}.
 $$
 
-📌 $SL_n(F)$: the special linear group is a subgroup of $GL_n(F)$, consisting of matrices with determinant 1.
+- $SL_n(F)$: the special linear group is a subgroup of $GL_n(F)$, consisting of matrices with determinant 1.
 
 $$
 SL_n(F) = \{A\in GL_n(F)\ |\ \det(A)=1\}.
 $$
 
-👉 **Example 1**: members of $Mat_n(F)$
+#### 🏷️ **Example 1**: members of $Mat_n(F)$
 
 $$
 Mat_2(\mathbb{R}):\ \begin{pmatrix} 2 && 3 \\ -1 && \sqrt{7}\end{pmatrix},\ \begin{pmatrix} \pi && 3+\sqrt{2} \\ -7 && \dfrac{3}{4}\end{pmatrix}
 $$
 
-👉 **Example 2**: members of $GL_n(F)$
+#### 🏷️ **Example 2 **: members of $GL_n(F)$
 
 $$
 GL_2(\mathbb{R}):\ \begin{pmatrix} 1 && 2 \\ 3 && 4\end{pmatrix} \Rightarrow \text{det}=-2
@@ -702,7 +700,7 @@ $$
 \begin{pmatrix} 2 && 4 \\ 5 && 10\end{pmatrix} \Rightarrow \text{det}=-0
 $$
 
-👉 **Example 3**: members of $SL_n(F)$
+#### 🏷️ **Example 3**: members of $SL_n(F)$
 
 $$
 \begin{pmatrix} 3 && 2 \\ 7 && 5\end{pmatrix} \in SL_2(\mathbb{R})
