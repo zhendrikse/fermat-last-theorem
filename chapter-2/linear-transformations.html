@@ -36,7 +36,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../chapter-2/summary.html" rel="next">
+<link href="../chapter-3/abstract-algebra.html" rel="next">
 <link href="../chapter-2/vector-spaces.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -78,6 +78,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -353,12 +382,6 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Linear transformations, eigenvalues, inner products, and the spectral theorem</span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapter-2/summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Summary &amp; lab</span></a>
-  </div>
-</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -482,7 +505,16 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#copyright-notice" id="toc-copyright-notice" class="nav-link active" data-scroll-target="#copyright-notice">Copyright notice</a></li>
-  <li><a href="#linear-transformations" id="toc-linear-transformations" class="nav-link" data-scroll-target="#linear-transformations">Linear transformations</a></li>
+  <li><a href="#linear-transformations" id="toc-linear-transformations" class="nav-link" data-scroll-target="#linear-transformations">Linear transformations</a>
+  <ul class="collapse">
+  <li><a href="#linear-transformations-1" id="toc-linear-transformations-1" class="nav-link" data-scroll-target="#linear-transformations-1">📌 Linear Transformations</a></li>
+  <li><a href="#kernel-and-image" id="toc-kernel-and-image" class="nav-link" data-scroll-target="#kernel-and-image">📌 Kernel and image</a>
+  <ul class="collapse">
+  <li><a href="#eigen-vectors-and-eigen-values" id="toc-eigen-vectors-and-eigen-values" class="nav-link" data-scroll-target="#eigen-vectors-and-eigen-values">👨‍💻 Eigen vectors and eigen values</a></li>
+  <li><a href="#spectral-theorem" id="toc-spectral-theorem" class="nav-link" data-scroll-target="#spectral-theorem">👨‍💻 Spectral theorem</a></li>
+  </ul></li>
+  <li><a href="#summary-linear-algebra" id="toc-summary-linear-algebra" class="nav-link" data-scroll-target="#summary-linear-algebra">Summary linear algebra</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -528,9 +560,118 @@ Note
 </section>
 <section id="linear-transformations" class="level1">
 <h1>Linear transformations</h1>
-<p>So far, we have mostly talked about a single vector space. Now we move on to functions defined between distinct vector spaces.</p>
+<p>So far, we have mostly talked about a single vector space. Now we move on to functions defined between distinct vector spaces. Of all functions possible between two vector spaces, some functions are especially nice, and these are called linear transformations.</p>
+<section id="linear-transformations-1" class="level2">
+<h2 class="anchored" data-anchor-id="linear-transformations-1">📌 Linear Transformations</h2>
+<p>A <strong>linear transformation</strong> is a function <span class="math inline">\(T:\ V\rightarrow W\)</span> that preserves vector space operations:</p>
+<p><span class="math display">\[
+T(cx + y) = cT(x) + T(y)
+\]</span></p>
+<p>We can understand this requirement a bit better by looking at the following concrete values for <span class="math inline">\(x, y\)</span>, and <span class="math inline">\(c\)</span>:</p>
+<p><span class="math display">\[
+\begin{array}{ll}
+x = y = 0, c=1 &amp;:&amp; T(0) = T(0) + T(0) = 0\quad T(0) = 0\quad\text{(zero element)} \\
+c=1 &amp;:&amp; T(x + y) = T(x) + T(y)\quad\text{(addition)} \\
+y=0 &amp;:&amp; T(cx) = cT(x)\quad\text{(scalar multiplication)}
+\end{array}
+\]</span></p>
+<section id="example-1-tmathbbr2-rightarrow-mathbbr2" class="level4">
+<h4 class="anchored" data-anchor-id="example-1-tmathbbr2-rightarrow-mathbbr2">🏷️ <strong>Example 1</strong>: <span class="math inline">\(T:\mathbb{R}^2 \rightarrow \mathbb{R}^2\)</span></h4>
+<p>Is the transformation is defined as <span class="math inline">\(T(x, y)=(2x, 3y)\)</span> also a linear transformation?</p>
+<p><span class="math display">\[
+\begin{array}{ll}
+T\left(c\begin{pmatrix}x_1\\ x_2\end{pmatrix} + \begin{pmatrix}y_1\\ y_2\end{pmatrix}\right) &amp;=&amp; T\begin{pmatrix}cx_1+y_1\\ cx_2+y_2\end{pmatrix} \\
+&amp;=&amp; \begin{pmatrix}2cx_1+2cy_1\\3cx_2+3cy_2\end{pmatrix} \\
+&amp;=&amp; c\begin{pmatrix}2x_1\\3x_2\end{pmatrix} + \begin{pmatrix}2y_1\\ 3y_2\end{pmatrix}\\
+&amp;=&amp;
+T\begin{pmatrix}x_1\\x_2\end{pmatrix} + T\begin{pmatrix}y_1\\y_2\end{pmatrix}\quad  ꪜ
+\end{array}
+\]</span></p>
+</section>
+<section id="other-examples" class="level4">
+<h4 class="anchored" data-anchor-id="other-examples">🏷️ <strong>Other Examples</strong></h4>
+<p><span class="math display">\[
+T:\mathbb{R}^2 \rightarrow \mathbb{R}\qquad T\begin{pmatrix}x\\ y\end{pmatrix}=:y\quad ꪜ
+\]</span></p>
+<p><span class="math display">\[
+T:P_2(\mathbb{R}) \rightarrow \mathbb{R}\qquad T(f(x)):=f(0)\quad ꪜ
+\]</span></p>
+<p><span class="math display">\[
+T:Mat_2(\mathbb{R}) \rightarrow \mathbb{R}\qquad T\begin{pmatrix} a &amp;&amp; b \\ c &amp;&amp; d\end{pmatrix}:=a + d\quad ꪜ
+\]</span></p>
+<p><span class="math display">\[
+T:\mathbb{R}^2 \rightarrow \mathbb{R}^2\qquad T\begin{pmatrix}x\\ y\end{pmatrix}:=\begin{pmatrix}x+1\\y\end{pmatrix}\quad ✗
+\]</span></p>
+<p>This is not a linear transformation, since</p>
+<p><span class="math display">\[
+T\begin{pmatrix}1\\1\end{pmatrix} =\begin{pmatrix}2\\1\end{pmatrix} \\
+T\begin{pmatrix}0\\1\end{pmatrix} =\begin{pmatrix}1\\1\end{pmatrix} \\
+T\begin{pmatrix}1\\2\end{pmatrix} =\begin{pmatrix}2\\2\end{pmatrix} \neq \begin{pmatrix}3\\2\end{pmatrix} = T\begin{pmatrix}1\\1\end{pmatrix} + T\begin{pmatrix}0\\1\end{pmatrix}\\
+\]</span></p>
+<p>Similarly,</p>
+<p><span class="math display">\[
+T:\mathbb{R}^2 \rightarrow \mathbb{R}\qquad T\begin{pmatrix}x\\ y\end{pmatrix}:=xy\quad ✗
+\]</span></p>
+<p>is not a linear transformation.</p>
+</section>
+</section>
+<section id="kernel-and-image" class="level2">
+<h2 class="anchored" data-anchor-id="kernel-and-image">📌 Kernel and image</h2>
+<ul>
+<li>The <strong>kernel</strong> of <span class="math inline">\(T:V\rightarrow W\)</span> is the subspace <span class="math inline">\(\ker(T)=\{v\in V\ |\ T(v) = {\bf 0}_W\}\)</span></li>
+<li>The <strong>iamge</strong> of <span class="math inline">\(T:V\rightarrow W\)</span> is the subspace <span class="math inline">\(\text{im}(T)=\{v\in V\ |\ T(v)\}\)</span></li>
+</ul>
+<section id="examples" class="level4">
+<h4 class="anchored" data-anchor-id="examples">🏷️ <strong>Examples</strong></h4>
+</section>
+<section id="eigen-vectors-and-eigen-values" class="level3">
+<h3 class="anchored" data-anchor-id="eigen-vectors-and-eigen-values">👨‍💻 Eigen vectors and eigen values</h3>
+<p>The interactive demo below illustrates the effects of a transformation matrix by applying the transformation on a two-dimensional grid. It also shows the eigen vectors.</p>
+<div id="matrixTransformationContainer"></div>
+<script type="module" src="https://www.hendrikse.name/helion/examples/matrix_transformation.js"></script>
+</section>
+<section id="spectral-theorem" class="level3">
+<h3 class="anchored" data-anchor-id="spectral-theorem">👨‍💻 Spectral theorem</h3>
+<div id="spectralTheoremContainer"></div>
+<script type="module" src="https://www.hendrikse.name/helion/examples/spectral_theorem.js"></script>
+</section>
+</section>
+<section id="summary-linear-algebra" class="level2">
+<h2 class="anchored" data-anchor-id="summary-linear-algebra">Summary linear algebra</h2>
+<p><span class="math display">\[
+👉\ \text{Matrix}:\ A=
+\begin{pmatrix}
+a&amp;b\\
+b&amp;d
+\end{pmatrix}
+\]</span></p>
+<p><span class="math display">\[\Downarrow\]</span></p>
+<p><span class="math display">\[
+👉\ \text{Eigen values/eigen vectors}:\ Ae_i=\lambda_i e_i
+\]</span></p>
+<p><span class="math display">\[\Downarrow\]</span></p>
+<p><span class="math display">\[
+👉\ \text{Spectral theorem}:\ e_1\perp e_2
+\]</span></p>
+<p><span class="math display">\[\Downarrow\]</span></p>
+<p><span class="math display">\[
+👉\ \text{Orthonormal matrix}:\ Q=(e_1\ e_2)
+\]</span></p>
+<p><span class="math display">\[\Downarrow\]</span></p>
+<p><span class="math display">\[
+👉\ \text{Diagonale matrix}:\ \Lambda=
+\begin{pmatrix}
+\lambda_1&amp;0\\
+0&amp;\lambda_2
+\end{pmatrix}
+\]</span></p>
+<p><span class="math display">\[\Downarrow\]</span></p>
+<p><span class="math display">\[
+👉\ \text{Spectral decomposition}:\ \boxed{A=Q\Lambda Q^T}
+\]</span></p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -954,8 +1095,8 @@ Note
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../chapter-2/summary.html" class="pagination-link" aria-label="Summary &amp; lab">
-        <span class="nav-page-text">Summary &amp; lab</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../chapter-3/abstract-algebra.html" class="pagination-link" aria-label="Abstract algebra">
+        <span class="nav-page-text">Abstract algebra</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

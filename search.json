@@ -136,268 +136,65 @@
     "href": "chapter-1/calculus-complex-analysis.html#complex-functions-and-holomorphy",
     "title": "Basic calculus & complex analysis",
     "section": "📌 Complex functions and holomorphy",
-    "text": "📌 Complex functions and holomorphy\nA complex function is a map \\[\nf:\\mathbb{C}\\rightarrow\\mathbb{C}\n\\]\n\\(f\\) is complex differentiable at \\(z_0\\) if the limit below exists for \\(h\\in\\mathbb{C}\\).\n\\[\nf'(z_0) := \\lim_{h\\rightarrow 0}\\dfrac{f(z_0+h) - f(z)}{h}\n\\]\nIf \\(f\\) is complex differentiable on an open set, it is called holomorphic.",
+    "text": "📌 Complex functions and holomorphy\nA complex function is a map \\[\nf:\\mathbb{C}\\rightarrow\\mathbb{C}\n\\]\n\\(f\\) is complex differentiable at \\(z_0\\) if the limit below exists for \\(h\\in\\mathbb{C}\\).\n\\[\nf'(z_0) := \\lim_{h\\rightarrow 0}\\dfrac{f(z_0+h) - f(z)}{h}\n\\]\nIf \\(f\\) is complex differentiable on an open set, it is called holomorphic.\n\n👨‍💻 Complex functions",
     "crumbs": [
       "Chapter 1 — Basics",
       "Basic calculus &amp; complex analysis"
     ]
   },
   {
-    "objectID": "chapter-2/summary.html",
-    "href": "chapter-2/summary.html",
-    "title": "Summary & lab",
+    "objectID": "chapter-2/linear-algebra.html",
+    "href": "chapter-2/linear-algebra.html",
+    "title": "Linear algebra",
     "section": "",
-    "text": "Linear algebra lab\nThe interactive demo below illustrates the effects of a transformation matrix by applying the transformation on a two-dimensional grid. It also shows the eigen vectors.\n\n\n\n\nSummary linear algebra\n\\[\n👉\\ \\text{Matrix}:\\ A=\n\\begin{pmatrix}\na&b\\\\\nb&d\n\\end{pmatrix}\n\\]\n\\[\\Downarrow\\]\n\\[\n👉\\ \\text{Eigen values/eigen vectors}:\\ Ae_i=\\lambda_i e_i\n\\]\n\\[\\Downarrow\\]\n\\[\n👉\\ \\text{Spectral theorem}:\\ e_1\\perp e_2\n\\]\n\\[\\Downarrow\\]\n\\[\n👉\\ \\text{Orthonormal matrix}:\\ Q=(e_1\\ e_2)\n\\]\n\\[\\Downarrow\\]\n\\[\n👉\\ \\text{Diagonale matrix}:\\ \\Lambda=\n\\begin{pmatrix}\n\\lambda_1&0\\\\\n0&\\lambda_2\n\\end{pmatrix}\n\\]\n\\[\\Downarrow\\]\n\\[\n👉\\ \\text{Spectral decomposition}:\\ \\boxed{A=Q\\Lambda Q^T}\n\\]",
+    "text": "The content of this chapter is designed to be self-contained, so you do not need any prior knowledge of linear algebra to follow along. However, some familiarity with basic algebra and calculus will be helpful.\nRemember that in the introduction we said:\nHere, the deeper idea is that seemingly unrelated mathematical problems can often be described using the same underlying structure. As we will see, we can use these shared concepts to look at certain problems from a new, often more convenient perspective.\nFor example, in linear algebra, we can write any vector with respect to its basis vectors:\n\\[\n\\overrightarrow{v}=c_1\\overrightarrow{e_1}+c_2\\overrightarrow{e_2}+c_3\\overrightarrow{e_3} = \\begin{pmatrix}c_1 \\\\ c_3 \\\\ c_3\\end{pmatrix}\n\\]\nIn the following two examples, we will do the same in the vector space of functions.\nAlthough Fourier analysis and Taylor expansion may seem to belong to a completely different part of mathematics, from the perspective of linear algebra, we can think of a function as an element of a vector space. This allows us to ask:\nJust as an ordinary vector can be written as a linear combination of basis vectors, a function can be written as a linear combination of basis functions.",
     "crumbs": [
       "Chapter 2 — Linear Algebra",
-      "Summary & lab"
+      "Linear algebra"
     ]
   },
   {
-    "objectID": "chapter-2/linear-transformations.html",
-    "href": "chapter-2/linear-transformations.html",
-    "title": "Linear transformations, eigenvalues, inner products, and the spectral theorem",
-    "section": "",
-    "text": "Copyright notice\n\n\n\n\n\n\nNote\n\n\n\nVideo: Linear Transformations, Eigenvalues, Inner Products, and the Spectral Theorem — 2:02:27\nThis section corresponds to 1:07:03 in Proof of Fermat Last Theorem FROM SCRATCH.\n\n\n\n\nLinear transformations\nSo far, we have mostly talked about a single vector space. Now we move on to functions defined between distinct vector spaces.",
+    "objectID": "chapter-2/linear-algebra.html#example-1-taylor-expansion",
+    "href": "chapter-2/linear-algebra.html#example-1-taylor-expansion",
+    "title": "Linear algebra",
+    "section": "🏷️ Example 1: Taylor expansion",
+    "text": "🏷️ Example 1: Taylor expansion\nWe can conceptualize the Taylor expansion as a kind of coordinate representation of a function with respect to a basis of polynomials.\n\n\n\n\n\n\nNote\n\n\n\n🚨 All concepts below will be properly addressed and explained in this very chapter on linear algebra.\n\n\nTake for example a function \\(f(x)\\). Around \\(x=0\\) we can write\n\\[\nf(x)=a_0+a_1x+a_2x^2+a_3x^3+\\cdots\n\\]\nWe can think of the objects\n\\[\n1,\\quad x,\\quad x^2,\\quad x^3,\\ldots\n\\]\nas basis vectors of a vector space of polynomials, exactly those notions that are defined in this chapter on linear algebra! The scalars \\(a_0,a_1,a_2,a_3,\\ldots\\) are exactly the coordinates van \\(f(x)\\) with respect to that basis.\nNote that a Taylor series is not just an arbitrary representation of \\(f(x)\\) in the basis \\(\\{1,x,x^2,x^3,\\ldots\\}\\) as the coordinates are specifically determined by the derivatives of \\(f(x)\\) around the expansion point:\n\\[\na_n=\\frac{f^{(n)}(0)}{n!}.\n\\]\nFor example,\n\\[\ne^x=1+x+\\frac{x^2}{2!}+\\frac{x^3}{3!}+\\cdots\n\\]\ncan be interpreted in the context of linear algebra as:\n\\[\n[e^x]_{\\{1,x,x^2,x^3,\\ldots\\}}\n=\n\\left(1,1,\\dfrac{1}{2!},\\dfrac{1}{3!},\\ldots\\right).\n\\]\n👉 The Taylor series expansion provides a different basis\n\n👨‍💻 Taylor expansion demo\n\n\nWe can look at it in an even more abstract way. Around a point \\(a\\) we have the basis\n\\[\n1,\\quad (x-a),\\quad (x-a)^2,\\quad (x-a)^3,\\ldots\n\\]\nwith which \\(f(x)\\) becomes\n\\[\nf(x)\n=\nf(a)\n+f'(a)(x-a)\n+\\frac{f''(a)}{2!}(x-a)^2+\\cdots.\n\\]\nTherefore, the coordinates with respect to that polynomial basis vectors are\n\\[\n\\boxed{\n\\left(\nf(a),\nf'(a),\n\\frac{f''(a)}{2!},\n\\frac{f^{(3)}(a)}{3!},\\ldots\n\\right)\n}\n\\]\nSo we observe the following analogy in lineaire algebra:\n\n\n\n\n\n\n\nLinear algebra\nTaylor analysis\n\n\n\n\nvector \\(v\\)\nfunction \\(f\\)\n\n\nbasis vectors \\(e_1,e_2,\\ldots\\)\n\\(1,(x-a),(x-a)^2,\\ldots\\)\n\n\ncoordinates \\(c_1,c_2,\\ldots\\)\n\\(f(a),f'(a),f''(a)/2!,\\ldots\\)\n\n\n\\(v=\\sum c_i e_i\\)\n\\(f=\\sum \\frac{f^{(n)}(a)}{n!}(x-a)^n\\)\n\n\n\n👉 We can look at the Taylor expansion as expressing a function in coordinates along the directions \\(1,(x-a),(x-a)^2,\\ldots\\).\nThere exists an even deeper connection: differentiation can be seen as a linear operator that works on these coordinates. This directly leads to a connection between Taylor series, vector spaces, and matrices/operators.",
     "crumbs": [
       "Chapter 2 — Linear Algebra",
-      "Linear transformations, eigenvalues, inner products, and the spectral theorem"
+      "Linear algebra"
     ]
   },
   {
-    "objectID": "chapter-2/vector-spaces.html",
-    "href": "chapter-2/vector-spaces.html",
-    "title": "Vector spaces, basis, and dimension",
-    "section": "",
-    "text": "Note\n\n\n\nVideo: Vector Spaces, Basis, and Dimension — 1:40:28\nThis section corresponds to 1:40:28 in Proof of Fermat Last Theorem FROM SCRATCH.",
+    "objectID": "chapter-2/linear-algebra.html#example-2-fourier-transform",
+    "href": "chapter-2/linear-algebra.html#example-2-fourier-transform",
+    "title": "Linear algebra",
+    "section": "🏷️ Example 2: Fourier transform",
+    "text": "🏷️ Example 2: Fourier transform\nHere the connection with linear algebra becomes even more apparent, since the Fourier expansion amounts to a representation of a function in the following orthogonal directions:\n\\[\n1,\\quad \\cos x,\\quad \\sin x,\\quad \\cos 2x,\\quad \\sin 2x,\\quad\\ldots\n\\]\nAny function \\(f\\) can thus be built using this basis:\n\\[\nf(x)\n=\n\\frac{a_0}{2}\n+\\sum_{n=1}^{\\infty}\n\\left(a_n\\cos(nx)+b_n\\sin(nx)\\right).\n\\]\nThe Fourier-coefficiens \\(a_0,a_1,b_1,a_2,b_2,\\ldots\\) are the coordinats of the function \\(f\\) in this basis.\n\n👨‍💻 Fourier transform demo",
     "crumbs": [
       "Chapter 2 — Linear Algebra",
-      "Vector spaces, basis, and dimension"
+      "Linear algebra"
     ]
   },
   {
-    "objectID": "chapter-2/vector-spaces.html#vector-spaces",
-    "href": "chapter-2/vector-spaces.html#vector-spaces",
-    "title": "Vector spaces, basis, and dimension",
-    "section": "📌 Vector Space: Axioms",
-    "text": "📌 Vector Space: Axioms\nA vector space \\(V\\) over a field \\(F\\) is a set with addition (\\(+, V\\times V \\rightarrow V\\)) and scalar multiplication (\\(\\cdot, V\\times F \\rightarrow V\\)) satisfying these axioms for all \\(x,y,z\\in V\\) and \\(a, b\\in F\\):\nHere we intentionally want to generalize the concept of a vector!\n\nVS 1: \\(x + y = y + x\\) (addition: commutativity)\nVS 2: \\((x + y) + z = x + (y + z)\\) (addition: associativity)\nVS 3: \\(\\exists {\\bf 0} \\in V\\ \\text{s.t.}\\ x + {\\bf 0}= x\\) (addition: zero vector)\nVS 4: \\(\\forall x\\in V, \\exists(-x) \\in V\\ \\text{s.t.}\\ x + (-x) = {\\bf 0}\\) (addition: inverse)\nVS 5: \\(1 \\cdot x = x\\) (scalar multiplication: identity)\nVS 6: \\(1 (ab)\\cdot x = a\\cdot(b\\cdot x)\\) (scalar multiplication: associativity)\nVS 7: \\(a\\cdot(x + y) = a\\cdot x + a\\cdot y\\) (scalar multiplication: distributive law)\nVS 8: \\((a + b)\\cdot x = a\\cdot x + b\\cdot x\\) (scalar multiplication: distributive law)\n\nNote that addition is also a generalized concept here, an operation which name happens to be addition, hence we cannot automatically assume that \\(x + y = y + x\\) always holds.\nFor example, assume \\(V=\\mathbb{R}\\) and we define \\(a + b := a^b + e^ab^{72}\\in \\mathbb{R}\\). This definition of addition does not statisfy VS 1 and VS 2!\n\n🏷️ Example vector spaces\n\\(\\mathbb{R}\\), \\(\\mathbb{C}\\), and the cartesian product \\(\\mathbb{R}^n\\) are all examples of vector spaces.\nFor the first two, we define addition and multiplication in the familiar way. For the last one, we define addition as follows:\n\\[\n(x_1, x_2, \\dots, x_n) + (y_1, y_2, \\dots, y_n) = (x_1+y_1, x_2+y_2, \\dots, x_n+y_n)\n\\]\nand scalar multiplication\n\\[\na (x_1, x_2, \\dots, x_n) = (ax_1, ax_2, \\dots, ax_n)\n\\]\nAnother example is \\(\\mathbb{R}[x]\\), the set of all polynomials with real coefficients. So how do we know that \\(\\mathbb{R}[x]\\) is a vector space? We check if all axioms hold! For example, if we add two polynomials and change the order under addition, do we get the same result back? Yes, we do!\n\\[\n(1 + x) + (3 + x^2) = (3 + x^2) + (1 + x)\n\\]\nSimilarly, we can check that all other axioms hold.\nAlso, the set of al continuous functions \\(C_0(\\mathbb{R})\\) is a vector space, as is \\(Mat_2(\\mathbb{R})\\).\nHowever, \\(\\mathbb{N}\\) is not a vector space, as 0 is not in the set. Also, if we pick any natural number, the negative is not in the set.",
+    "objectID": "chapter-2/linear-algebra.html#comparision-between-taylor-and-fourier-series",
+    "href": "chapter-2/linear-algebra.html#comparision-between-taylor-and-fourier-series",
+    "title": "Linear algebra",
+    "section": "Comparision between Taylor and Fourier series",
+    "text": "Comparision between Taylor and Fourier series\n\nOrthogonality\nWe have seen that \\[\n\\text{Taylor}=\\text{coordinates in a polynomial basis}\n\\]\nand\n\\[\n\\text{Fourier}=\\text{coordinates in a trigonometric basis}.\n\\]\nHowever, in the case of Fourier, we have seen yet another concept from linear algebra, namely orthogonality.\nTwo vectors are orthogonal when \\(u\\cdot v=0\\). For functions this can be defined analogously:\n\\[\n\\langle f,g\\rangle\n=\n\\int_{-\\pi}^{\\pi}f(x)g(x),dx.\n\\]\nWith this definition \\(\\cos x\\) and \\(\\sin x\\) turn out to be perpendicular to one another:\n\\[\n\\langle\\cos x,\\sin x\\rangle\n=\n\\int_{-\\pi}^{\\pi}\\cos x\\sin x,dx\n=0.\n\\]\nThe same holds for the different frequencies \\(\\langle\\cos x,\\cos2x\\rangle=0\\) and \\(\\langle\\sin3x,\\cos7x\\rangle=0\\). In fact, we have an infinite-dimensional Euclidean space where the Fourier basis vectors are perpendicular to each other.\nThis orthogonality is then used to find the (frequency) coordinates. Suppose in “ordinary” lineaire algebra we have:\n\\[\n\\overrightarrow{v}=3\\overrightarrow{e_1}+5\\overrightarrow{e_2}.\n\\]\nWhen \\(\\overrightarrow{e_1}\\) and \\(\\overrightarrow{e_2}\\) are prependicular, we can find \\(3\\) by projecting \\(\\overrightarrow{v}\\) onto \\(\\overrightarrow{e_1}\\).\nAnalogously we can find the Fourier coefficients \\(a_n\\) by projecting \\(f\\) onto \\(\\cos(nx)\\). So conceptually:\n\\[\na_n\n\\sim\n\\langle f,\\cos(nx)\\rangle,\n\\quad\nb_n\n\\sim\n\\langle f,\\sin(nx)\\rangle.\n\\]\nWith exact normalisation this results in\n\\[\na_n=\\frac1\\pi\n\\int_{-\\pi}^{\\pi}f(x)\\cos(nx)dx,\n\\quad\nb_n=\\frac1\\pi\n\\int_{-\\pi}^{\\pi}f(x)\\sin(nx),dx.\n\\]\n\n\nGeometric interpretation\nWe have just established that Fourier coefficients are literally projections of the function vector onto orthogonal basis vectors.\n👉 This makes a direct geoemtric interpretation of the Fourier transform possible.\nFor a vector in 3D this geometric interpretation is trivial. For example,\n\\[\n\\overrightarrow{v}=\n\\begin{pmatrix} 3 \\\\ 2 \\\\ 5 \\end{pmatrix}.\n\\]\ntells us that \\(\\overrightarrow{v}\\) consists of 3 units in the \\(x\\)-direction, 2 in the \\(y\\)-direction and 5 in the \\(z\\)-direction. Fourier tells us something similar: this function consists so much of frequencies \\(1\\), that much of frequencies \\(2\\), etc.\nFor example, we could have \\(f(x)= 2\\cos x +0.7\\sin x +3\\cos2x -1.2\\sin3x\\).\nThe two examples may be summarized in a table.\n\n\n\n\n\n\n\n\n\nTaylor\nFourier\n\n\n\n\nVector\nfunction \\(f\\)\nfunction \\(f\\)\n\n\nVector space\nfunctions/polynomials\nfunctions\n\n\nBasis\n\\(1,(x-a),(x-a)^2,\\ldots\\)\n\\(1,\\cos x,\\sin x,\\cos2x,\\sin2x,\\ldots\\)\n\n\nCoördinaten\nderivatives of \\(f\\)\nprojections/integrals\n\n\nIdea\nlocal behaviour\nfrequenty-contents\n\n\nBasis orthogonal?\nno\nyes\n\n\nGeometric interpretation\nless direct\nvery direct",
     "crumbs": [
       "Chapter 2 — Linear Algebra",
-      "Vector spaces, basis, and dimension"
+      "Linear algebra"
     ]
   },
   {
-    "objectID": "chapter-2/vector-spaces.html#subspace",
-    "href": "chapter-2/vector-spaces.html#subspace",
-    "title": "Vector spaces, basis, and dimension",
-    "section": "📌 Subspace",
-    "text": "📌 Subspace\nA subspace of a vector space \\(V\\) is a non-empty subset \\(W\\) of \\(V\\) that is itself a vector space under the operations inherited from \\(V\\).\nFor example, \\(\\mathbb{R}\\) is a subspace of \\(\\mathbb{C}\\), \\(\\mathbb{R}\\subset \\mathbb{C}\\).\nAnother example is\n\\[\nW = \\{(x,y)\\in\\mathbb{R} |\\ y = 2x\\} \\subset \\mathbb{R}^2\n\\]\nWe can check that \\(W\\) is both a vector space and a subspace of \\(\\mathbb{R}^2\\). However, \\(W'\\)\n\\[\nW' = \\{(x,y)\\in\\mathbb{R} |\\ y = x + 1\\} \\subset \\mathbb{R}^2\n\\]\nis not a vector space, as it does not have a zero vector in it \\((0, 0) \\notin W'\\). Consequently, we cannot call it a subspace of \\(\\mathbb{R}^2\\) either!\nAnother example is the set of all real coefficient polynomials with maximum degree two, \\(P_2[\\mathbb{R}]\\). This is a vector space as well as a subspace of all real coefficient polynomials.",
+    "objectID": "chapter-2/linear-algebra.html#conclusion",
+    "href": "chapter-2/linear-algebra.html#conclusion",
+    "title": "Linear algebra",
+    "section": "🧠 Conclusion",
+    "text": "🧠 Conclusion\n👉 The choice of basis determines which properties of a function become apparent.\n\nWith Taylor local properties become apparent via the derivatives:\n\nDecomposition of \\(f\\) in polynomial directions\nHow does \\(f\\) behave locally around a point \\(a\\)?\n\nWith Fourier frequencies become visible via projection onto the basis vectors:\n\nDecomposition of \\(f\\) in frequency directions\nFrom which frequencies can \\(f\\) be built up?\n\n\n👉 This is why linear algebra can be so powerful:\n\nIt gives us a common language in which very different mathematical problems can reveal the same underlying structure.\nWe can do a basis transformation to look at a certain problem from a new, more convenient perspective.",
     "crumbs": [
       "Chapter 2 — Linear Algebra",
-      "Vector spaces, basis, and dimension"
-    ]
-  },
-  {
-    "objectID": "chapter-2/vector-spaces.html#linear-combination",
-    "href": "chapter-2/vector-spaces.html#linear-combination",
-    "title": "Vector spaces, basis, and dimension",
-    "section": "📌 Linear combination",
-    "text": "📌 Linear combination\nWe are slowly moving towards the concept of a basis. So what is a basis? A basis is one of the most important ideas in linear algebra. Roughly speaking, a basis is a minimal set of building blocks for a vector space.\nFor example, if we look at \\(\\mathbb{R}^2\\), a basis may be \\(\\{(1, 0), (0, 1)\\}\\). This constitutes a valid basis, as we can pick any vector \\((a,b)\\in\\mathbb{R}^2\\) and write it as a linear combination of the basis vectors:\n\\[\n(a, b) = a(1, 0) + b(0, 1)\n\\]\nSo if we know the basis, we can build every vector in the space from those basis vectors in a unique way.\nBut before we can define a basis properly, we need to define a few smaller concepts first.\nA linear combination of vectors in a set \\(S=\\{v1, v2, \\dots, v_k\\}\\) is any vector \\({\\bf u}\\) of the form\n\\[\n{\\bf u} = a_1v_1 + a_2v_2 + \\dots + a_kv_k\n\\]\nwhere \\(a_1, a_2, \\dots, a_k\\) are scalars in the field \\(F\\).\n\n🏷️ Example 1: a linear combination in \\(\\mathbb{R}^2\\)?\nLet’s take the subset of vectors\n\\[\nS=\\left\\{\n\\begin{pmatrix}\n1 \\\\ 2\n\\end{pmatrix},\n\\begin{pmatrix}\n3 \\\\ 4\n\\end{pmatrix}\n\\right\\}\n\\]\nThen the linear combinations of \\(S\\) would be something like\n\\[\nS=\na\\begin{pmatrix}\n1 \\\\ 2\n\\end{pmatrix}\n+b\n\\begin{pmatrix}\n3 \\\\ 4\n\\end{pmatrix}\n\\]\nNow we can ask if \\(\\begin{pmatrix} 5 \\\\ 8\\end{pmatrix}\\) is a linear combination of \\(S\\). To this extent, we check if there exists an \\(a\\) and \\(b\\), such that\n\\[\na\\begin{pmatrix}\n1 \\\\ 2\n\\end{pmatrix}\n+b\n\\begin{pmatrix}\n3 \\\\ 4\n\\end{pmatrix} =\n\\begin{pmatrix} 5 \\\\ 8\\end{pmatrix}\n\\]\nAnd indeed, this holds true for \\(a=2\\) and \\(b=1\\), so \\(\\begin{pmatrix} 5 \\\\ 8\\end{pmatrix}\\) is a linear combination of \\(S\\)!\n\n\n🏷️ Example 2: a linear combination in \\(\\mathbb{R}^3\\)?\nLet’s take the subset of vectors\n\\[\nS=\\left\\{\n\\begin{pmatrix}\n1 \\\\ 2 \\\\ 0\n\\end{pmatrix},\n\\begin{pmatrix}\n4 \\\\ 7 \\\\ 0\n\\end{pmatrix}\n\\right\\}\n\\]\nWe can ask if \\(\\begin{pmatrix} 3 \\\\ 4 \\\\ 5 \\end{pmatrix}\\) is a linear combination of \\(S\\):\n\\[\na\\begin{pmatrix}\n1 \\\\ 2 \\\\0\n\\end{pmatrix}\n+b\n\\begin{pmatrix}\n4 \\\\ 7 \\\\ 0\n\\end{pmatrix} =\n\\begin{pmatrix} 3 \\\\ 4 \\\\ 5\\end{pmatrix}\n\\]\nThe answer is no, as the third coordinate will always remain zero. So \\(\\begin{pmatrix} 3 \\\\ 4 \\\\ 5 \\end{pmatrix}\\) is not a linear combination of \\(S\\).",
-    "crumbs": [
-      "Chapter 2 — Linear Algebra",
-      "Vector spaces, basis, and dimension"
-    ]
-  },
-  {
-    "objectID": "chapter-2/vector-spaces.html#span",
-    "href": "chapter-2/vector-spaces.html#span",
-    "title": "Vector spaces, basis, and dimension",
-    "section": "📌 Span",
-    "text": "📌 Span\nLet \\(S\\) be a non-empty subset of a vector space \\(V\\). The span of \\(S\\), denoted by \\(\\text{span}(S)\\), is the smallest subset of \\(V\\) containing \\(S\\). In practice, it is the set of all linear combinations of elements of \\(S=\\{ v_1, v_2, \\cdots, v_n\\}\\):\n\\[\n\\text{span}(S) =\n\\{\na_1v_1+\\cdots+a_n v_n\\ |\\ n \\geq 1,\\ v_i\\in S,\\ a_i \\in F\n\\}\n\\]",
-    "crumbs": [
-      "Chapter 2 — Linear Algebra",
-      "Vector spaces, basis, and dimension"
-    ]
-  },
-  {
-    "objectID": "chapter-2/vector-spaces.html#linear-independence-and-dependence",
-    "href": "chapter-2/vector-spaces.html#linear-independence-and-dependence",
-    "title": "Vector spaces, basis, and dimension",
-    "section": "📌 Linear independence and dependence",
-    "text": "📌 Linear independence and dependence\nA set of vectors \\(S=\\{ v_1, v_2,\\ \\cdots,\\ v_k\\}\\) is linearly independent if the only solution to the equation\n\\[\na_1v_1+a_2v_2+\\cdots+a_k v_k = {\\bf 0}\n\\]\nis the trivial solution \\(a_1=a_2=\\cdots=a_k=0\\). If a set is not linearly independent, it is called linearly dependent.\n\n🏷️ Example 1: linear dependence in \\(\\mathbb{R}^2\\)\nIn \\(\\mathbb{R}^2\\), are \\(\\{(1, 2), (1, 0)\\}\\) linearly independent?\nTo answer this quesiton, we check if the only solution to the following equation is the trivial solution:\n\\[\na_1(1, 2) + a_2(1, 0) = (a_1 + a_2, 2a_1) = (0, 0) \\Rightarrow a_1=0 \\Rightarrow a_2 = 0\n\\]\nSo these vectors are linearly independent.\n\n\n🏷️ Example 2: linear dependence in \\(\\mathbb{R}^3\\)\nIn \\(\\mathbb{R}^3\\), are \\(\\{(1, 2, 3), (1, 3, 5), (2, 5, 8)\\}\\) linearly independent?\nTo answer this quesiton, we check if the only solution to the following equation is the trivial solution:\n\\[\na_1(1, 2, 3) + a_2(1, 3, 5) + a_3(2, 5, 8) = (0, 0, 0) \\Rightarrow a_1=0 \\Rightarrow a_2 = 0\n\\]\nNow we find a solution for \\(a1 = 1,\\ a2 = 1,\\ a3= -1\\), so these vectors are linearly dependent.\n\n\n🏷️ Example 3: linear dependence in \\(\\mathbb{R}_{[x]}\\)\nIn \\(\\mathbb{R}_{[x]}\\), the collection of all real coefficient polynomials, is \\(1 + x, x^2 + x, 2 + 3x +x^2\\) linearly dependent or independent?\nIt is linearly dependent, because there is a solution:\n\\[\n2\\cdot(1 + x) + 1\\cdot(x^2 + x) -1\\cdot(3x + x^2) = 0\n\\]\nNow finally we can define the concepts of basis and dimension.",
-    "crumbs": [
-      "Chapter 2 — Linear Algebra",
-      "Vector spaces, basis, and dimension"
-    ]
-  },
-  {
-    "objectID": "chapter-2/vector-spaces.html#basis-dimension",
-    "href": "chapter-2/vector-spaces.html#basis-dimension",
-    "title": "Vector spaces, basis, and dimension",
-    "section": "📌 Basis and dimension",
-    "text": "📌 Basis and dimension\n\nA basis for a vector space \\(V\\) is a linearly independent subset of \\(V\\) that spans \\(V\\)\nThe dimension of \\(V\\), \\(\\text{dim}(V)\\), is the number of vectors in a basis\n\n\n🏷️ Example 1: \\(\\mathbb{R}^2\\)\nBasis:\n\\[\n\\left\\{\n\\begin{pmatrix}\n1 \\\\ 0\n\\end{pmatrix},\n\\begin{pmatrix}\n0 \\\\ 1\n\\end{pmatrix}\n\\right\\}\n\\Rightarrow\n\\begin{pmatrix}\na \\\\ b\n\\end{pmatrix}=\na\\begin{pmatrix}\n1 \\\\ 0\n\\end{pmatrix}+\nb\\begin{pmatrix}\n0 \\\\ 1\n\\end{pmatrix}\n\\]\nNote that we want to have a set that is large enough to span the whole space, but at the same time is small enough to contain only the necessary information.\n\n\n🏷️ Example 2: \\(\\mathbb{R}^3\\)\nMost of the time, we take as basis:\n\\[\n\\left\\{\n\\begin{pmatrix}\n1 \\\\ 0 \\\\ 0\n\\end{pmatrix},\n\\begin{pmatrix}\n0 \\\\ 1 \\\\ 0\n\\end{pmatrix},\n\\begin{pmatrix}\n0 \\\\ 0 \\\\ 1\n\\end{pmatrix}\n\\right\\}\n\\]\nSince the number of elements in this basis is three, the dimension of \\(\\mathbb{R}^3\\) is three.\nNote that we could have taken any other set of three linearly independent basis vectors, such as\n\\[\n\\left\\{\n\\begin{pmatrix}\n1 \\\\ 1 \\\\ 0\n\\end{pmatrix},\n\\begin{pmatrix}\n0 \\\\ 1 \\\\ 1\n\\end{pmatrix},\n\\begin{pmatrix}\n1 \\\\ 0 \\\\ 1\n\\end{pmatrix}\n\\right\\}\n\\]\n\n\n🏷️ Example 3: \\(P_2(\\mathbb{R})\\)\nPossible basis are \\(\\{1, x, x^2\\}\\) and \\(\\{7, x + x^2, -x\\}\\). Since there are three vectors in the basis, the dimension of \\(P_2(\\mathbb{R})\\) is three.\n\n\n🏷️ Example 4: \\(Mat_2(\\mathbb{R})\\)\nThe most easy basis would be\n\\[\n\\left\\{\n\\begin{pmatrix}\n1 && 0 \\\\\n0 && 0\n\\end{pmatrix},\n\\begin{pmatrix}\n0 && 1 \\\\\n0 && 0\n\\end{pmatrix},\n\\begin{pmatrix}\n0 && 0 \\\\\n1 && 0\n\\end{pmatrix},\n\\begin{pmatrix}\n0 && 0 \\\\\n0 && 1\n\\end{pmatrix}\n\\right\\}\n\\]\nSo the dimension of this vector space is four.",
-    "crumbs": [
-      "Chapter 2 — Linear Algebra",
-      "Vector spaces, basis, and dimension"
-    ]
-  },
-  {
-    "objectID": "chapter-3/groups.html",
-    "href": "chapter-3/groups.html",
-    "title": "Groups, Homomorphisms, and Group Actions",
-    "section": "",
-    "text": "Note\n\n\n\nVideo: Groups, Homomorphisms, and Group Actions — 2:44:50\nThis section corresponds to 2:44:50 in Proof of Fermat Last Theorem FROM SCRATCH.",
-    "crumbs": [
-      "Chapter 3 — Abstract Algebra",
-      "Groups, Homomorphisms, and Group Actions"
-    ]
-  },
-  {
-    "objectID": "chapter-3/groups.html#binary-operation",
-    "href": "chapter-3/groups.html#binary-operation",
-    "title": "Groups, Homomorphisms, and Group Actions",
-    "section": "📌 Binary operation",
-    "text": "📌 Binary operation\nA binary operation \\(*\\) on a set \\(S\\) is a function that assigns to each ordered pair \\((a,b)\\) of elements of \\(S\\) some element of \\(S\\).\n\nAssociativity: \\((a*b)*c = a * (b* c)\\)\nCommutativity: \\(a*b = b*a\\)\n\nThe most familiar binary operations we already know would definitely be addition and multiplication. For example, addition can be viewed as an operation that assigns the value 7 to the pair \\((3, 4)\\). Likewise, multiplication can be seen as an operation that assigns the value of 20 to the pair \\((4, 5)\\).\nHowever, we may want to define more unusual operations as well.",
-    "crumbs": [
-      "Chapter 3 — Abstract Algebra",
-      "Groups, Homomorphisms, and Group Actions"
-    ]
-  },
-  {
-    "objectID": "chapter-3/groups.html#group",
-    "href": "chapter-3/groups.html#group",
-    "title": "Groups, Homomorphisms, and Group Actions",
-    "section": "📌 Group",
-    "text": "📌 Group\nA group \\((G, *)\\) is a set \\(Gf\\) with a binary operation \\(*\\) satisfying four axioms:\n\nClosure: For all \\(a, b\\in G,\\ a * b \\in G\\).\nAssociativity: The operation \\(*\\) is associative: \\(\\forall a,b,c \\in G:\\ (a*b)*c=a*(b*c)\\)\nIdentity element: There is an element \\(e\\in G\\) such that \\(e*x = a * e = a\\) for all \\(a \\in G\\).\nInverses: For each \\(a\\in G\\), there is an element \\(a^{-1}\\in G\\), such that \\(a*a^{-1}=a^{-1}* a=e\\). This is called an inverse element.\n\nA group is abelian (or commutative) if its operation is also commutative — named after Niels Henrik Abel.\nThe number of elements in a group \\(G\\) is called its order, denoted by \\(|G|\\).\n\n🏷️ Examples\nThe set of integers with addition is a group:\n\nThe addition operation is clearly an operation on \\(\\mathbb{Z}\\), as it always returns another integer ꪜ\nAddition is associative ꪜ\nThe identity element is zero ꪜ\nEach element \\(a\\in\\mathbb{Z}\\) has an inverse, namely \\(-a\\) ꪜ\n\nIt is also an abelian group, since addition is commutative.\nSimilarly, \\((\\mathbb{Q}, +)\\), \\((\\mathbb{R}, +)\\), and \\((\\mathbb{C}, +)\\) are also groups.\n\n\n🏷️ Counter example: \\((\\mathbb{Q}, *)\\)\nThis is not a group, as there is no inverse element for zero: there is no such element for which we can write \\(0*b=b*0=1\\) ❌\nSo the same set can behave very differently, depending on what operations we put on it!\n\n\n🏷️ Example: \\((\\mathbb{Z}_n, +)\\)\nThe group \\((\\mathbb{Z}_n, +)\\). Remember that \\(\\mathbb{Z}_n\\) is a subset \\(\\mathbb{Z}_n=\\{0,1,2\\cdots, n-1\\}\\).\nNote that the addition operation is defined differently here: \\(a + b\\ (\\text{mod}\\ n)\\)\nTake for example \\((\\mathbb{Z}_3, +)\\)\n\\[\n\\begin{array}{l}\n1 + 0 = 1 \\\\\n1 + 1 = 2 \\\\\n1 + 2 = 0\n\\end{array}\n\\]\nLet’s verify that \\((\\mathbb{Z}_5, +)\\) is a group:\n\nThe \\(+\\)-operation is associative ꪜ\nThere is a zero element: \\(0 + a = a + 0 =a\\) ꪜ\nEvery element has an inverse ꪜ\n\n\\[\n\\begin{array}{l}\n1 + 4 = 4 + 1 = 0\\ (\\text{mod}\\ 5)  \\\\\n2 + 3 = 3 + 2 = 0\\ (\\text{mod}\\ 5)  \\\\\n\\vdots\n\\end{array}\n\\]\nSimilarly, \\((\\mathbb{Z}_n, +)\\) is a group.\n\n\n🏷️ Example: \\((\\mathbb{Z}_n \\times \\mathbb{Z}_m, +)\\)\nThe addition operation is defined as\n\\[\n(a_1, b_1) + (a_2, b_2) := ((a_1 +b_1)\\ \\text{mod}\\ n, (a_2 + b_2) \\ \\text{mod}\\ m)\n\\]\nWith this operation, it forms a group. Let’s check this for \\((\\mathbb{Z}_3 \\times \\mathbb{Z}_4, +)\\):\n\nWith the above addition operation, we always get another element in the group ✔️ \\[\n\\begin{array}{l}\n1 + 2 = 1 + 3 = (2, 1) \\in \\mathbb{Z}_3 \\times \\mathbb{Z}_4 \\\\\n2 + 3 = 3 + 2 = (1, 1) \\in \\mathbb{Z}_3 \\times \\mathbb{Z}_4\n\\end{array}\n\\]\nThe zero element is \\((0, 0)\\) ꪜ\nFor every element, there is an inverse, for example \\((2, 2) + (1, 2) = (0, 0)\\) ꪜ\n\nSo indeed, \\((\\mathbb{Z}_n \\times \\mathbb{Z}_m, +)\\) is a group.\n❗ More generally, we have that\n\\[\n(\\mathbb{Z}_{n_1} \\times \\mathbb{Z}_{n_2} \\times \\mathbb{Z}_{n_3}\\cdots, +)\n\\]\nforms a group.\n\n\n🏷️ Example: \\((GL_n(\\mathbb{R}), *)\\)\nThe collection of invertible matrices \\(GL_n(\\mathbb{R})\\) with matrix multiplication froms a group:\n\n\\(\\forall A, B\\in GL_n(\\mathbb{R}): A*B \\in GL_n(\\mathbb{R})\\) as \\(\\det(AB)=\\det(A)\\det(B)\\neq0\\) ꪜ\nMatrix multiplication is associative ꪜ\nObvisouly, \\(GL_n(\\mathbb{R})\\) contains a zero element ꪜ\nAs the determinant is non-zero by definition, every matrix has an inverse matrix ꪜ\n\n\n\n🏷️ Example: \\(n\\)-th roots of unity\nIf we define \\(\\mu_n = \\{z\\in\\mathbb{C}\\ |\\ z^n=1 \\}\\) with multiplication, \\((\\mu_n, *)\\) forms a group.\n\n\\(\\forall z_1, z_2 \\in \\mu_n: (z_1z_2)^n = z_1^nz_2^n =1\\) ꪜ\nMultiplication is associative ꪜ\nThere is one identiy element, namely \\(1^n = 1\\) ꪜ\nEvery element has an inverse, as \\(1 / z^n\\) is also in the group ꪜ\n\n\n\n\n\n\n\nNote\n\n\n\n🚨 When the operation is obvious, we usually just state the set without explicitly mentioning its operation!\n\n\n\n\n👨‍💻 Rubik’s cube\nThe moves for the Rubik’s cube form a group as well: \\([R, L, F, B, U, D]\\).",
-    "crumbs": [
-      "Chapter 3 — Abstract Algebra",
-      "Groups, Homomorphisms, and Group Actions"
-    ]
-  },
-  {
-    "objectID": "chapter-3/groups.html#subgroup",
-    "href": "chapter-3/groups.html#subgroup",
-    "title": "Groups, Homomorphisms, and Group Actions",
-    "section": "📌 Subgroup",
-    "text": "📌 Subgroup\nA subset of \\(H\\) of a group \\(G\\) is a subgroup (\\(H\\leq G\\)) if \\(H\\) is itself a group under the operations of \\(G\\).\nIt is a concept that is very similar to a subspace or subset, so it is basically a smaller group sitting inside a larger group.\n\n🏷️ Examples\n\\[\n(\\mathbb{Z}, +) \\leq (\\mathbb{Q}_n, +)\n\\]\nAlso,\n\\[\n(SL_n(\\mathbb{R}), *) \\leq (GL_n(\\mathbb{R}), *)\n\\]\nAnother example would be \\((\\mu_2, *) \\leq (\\mu_4, *)\\).",
-    "crumbs": [
-      "Chapter 3 — Abstract Algebra",
-      "Groups, Homomorphisms, and Group Actions"
-    ]
-  },
-  {
-    "objectID": "chapter-3/groups.html#cyclic-groups",
-    "href": "chapter-3/groups.html#cyclic-groups",
-    "title": "Groups, Homomorphisms, and Group Actions",
-    "section": "📌 Cyclic groups",
-    "text": "📌 Cyclic groups\nA group \\(G\\) is cyclic if it can be generated by a single element. We write \\(G=\\langle a \\rangle = \\{a^n\\ |\\ n \\in \\mathbb{Z}\\}\\). The element \\(a\\) is a generator of \\(G\\).\nSo the whole group can be built by applying the generator multiple times on itself:\n\\[\n\\begin{array}{c}\na \\\\\na * a \\\\\na * a * a \\\\\na * a * a * a \\\\\n\\vdots\n\\end{array}\n\\]\n\n🏷️ Examples\n\\[\n\\mathbb{Z} = \\langle 1 \\rangle = \\langle -1 \\rangle\n\\]\nAlso\n\\[\n\\mathbb{Z}_n = \\langle 1 \\rangle = \\langle -1 \\rangle\n\\]\nNote that we also have\n\\[\n\\mathbb{Z}_7 = \\langle 1 \\rangle = \\langle -1 \\rangle = \\langle 3 \\rangle\n\\]\nas by adding 3, we get\n\\[\n\\{3, 6, 2, 5, 1, 4, 0\\} = \\mathbb{Z}_7\n\\]\nAnother example of a cyclic group is\n\\[\n\\mu_n=\\langle e^{\\frac{2\\pi i}{n}}\\rangle\n\\]",
-    "crumbs": [
-      "Chapter 3 — Abstract Algebra",
-      "Groups, Homomorphisms, and Group Actions"
-    ]
-  },
-  {
-    "objectID": "chapter-3/groups.html#isomorphic-groups",
-    "href": "chapter-3/groups.html#isomorphic-groups",
-    "title": "Groups, Homomorphisms, and Group Actions",
-    "section": "📌 Isomorphic groups",
-    "text": "📌 Isomorphic groups\nSo, to understand the group, we need to understand how the elements interact under that operation. One way to do that is to make an operation table.\nFor example, let’s look at the operation tables of both \\(\\mathbb{Z}_3\\)\n\\[\\begin{array}{|c|c|c|c|}\n+ & 0 & 1 & 2\\\\\n\\hline\n0 & 0 & 1 & 2\\\\\n\\hline\n1 & 1 & 2 & 0\\\\\n\\hline\n2 & 2 & 0 & 1\n\\end{array}\\]\nand \\(\\mu_3\\):\n\\[\n\\begin{array}{|c|c|c|c|}\n+ & 1 & e^{\\frac{2\\pi i}{3}} & e^{\\frac{4\\pi i}{3}}\\\\\n\\hline\n1 & 1 & e^{\\frac{2\\pi i}{3}} & e^{\\frac{4\\pi i}{3}}\\\\\n\\hline\ne^{\\frac{2\\pi i}{3}} & e^{\\frac{2\\pi i}{3}} & e^{\\frac{4\\pi i}{3}} & 1\\\\\n\\hline\ne^{\\frac{4\\pi i}{3}} & e^{\\frac{4\\pi i}{3}} & 1 & e^{\\frac{2\\pi i}{3}}\n\\end{array}\n\\]\nUpon closer inspection, we notice that these operation tables have exactly the same structure, as there turns out to be an obvious one-to-one correspondence between the elements of each group:\n\\[\n\\begin{array}{c}\n0 \\longleftrightarrow 1 \\\\\n1 \\longleftrightarrow e^{\\frac{2\\pi i}{3}} \\\\  \n2 \\longleftrightarrow e^{\\frac{4\\pi i}{3}} \\\\  \n\\end{array}\n\\]\n👉 Two groups \\((G, *)\\) and \\((G', *')\\) are isomorphic if their elements can be paired up in a way that preserves the group’s structural properties. We write \\(G\\cong G'\\).\n❗ The two groups have very little in common. One group consists of integers, the other contains exponents with even imaginary numbers. Also, the first group is a group under addition, whereas the second group is a group under multiplication. However, although the two groups are very different, they have exactly the same structure❗\n🧠 What matters is how the elements interact with each other. If two groups have the same operation structure after relabelling the elements, they are called isomorphic.\n👉 \\(\\mathbb{Z}_3 \\cong \\mu_3\\)",
-    "crumbs": [
-      "Chapter 3 — Abstract Algebra",
-      "Groups, Homomorphisms, and Group Actions"
-    ]
-  },
-  {
-    "objectID": "chapter-3/groups.html#isomorphism-the-map",
-    "href": "chapter-3/groups.html#isomorphism-the-map",
-    "title": "Groups, Homomorphisms, and Group Actions",
-    "section": "📌 Isomorphism: the map",
-    "text": "📌 Isomorphism: the map\nThe function(s) that can be used to check whether two groups are isomorphic or not is called an isomorphism. So what conditions should this function generally satisfy?\nAn Isomorphism \\(\\phi\\) from a group \\((G, *)\\) to a group \\((G', *')\\) is a function \\(\\phi: G\\rightarrow G'\\) that satisfies two conditions:\n\n\\(\\phi\\) is a bijection (one-to-one and onto).\n\\(\\phi\\) preserves the operation: For all \\(a,b\\in G\\), \\[\n\\phi(A*B)=\\phi(a)*'\\phi(b)\n\\]\n\nAn automorphism is an isomorphism from a group \\(G\\) to itself.\nSo the function, the isomorphism does not just match elements, it mathes them in a way that respects the operations of both groups.\n❗ An isomorphism is a structure-preserving bijection between groups. If such an isomorphism exists between two groups, we say the two groups are isomorphic❗\n\n🏷️ Example 1: \\(\\mathbb{C}\\cong\\mathbb{R}^2\\)\nWith \\(\\phi(a + bi) := (a, b)\\) we can check that:\n\nThe function clearly is a bijection ꪜ\nPreserves the operations:\n\n\\[\n\\begin{array}{ll}\n\\phi\\left((a_1+b_1i)+(a_2+b_2i)\\right) &=& \\phi\\left((a_1+a_2)+(b_1i+b_2i)\\right) \\\\\n&=& (a_1 + a_2, b_1+b_2) \\\\\n&=& (a_1, b1) + (a_2, b_2) \\\\\n&=& \\phi(a_1, b_1) + \\phi(a_2, b_2)\\quad ꪜ\n\\end{array}\n\\]\n\n\n🏷️ Example 2: \\((\\mathbb{R}, +)\\cong(\\mathbb{R}_+, *)\\)\nWith \\(\\phi(x) := e^x\\) we can check that:\n\nThe function clearly is a bijection ꪜ\nPreserves the operations:\n\n\\[\n\\phi(x_1+x_2) = e^{x_1+x_2} = e^{x_1}e^{x_2} = \\phi(x_1)\\phi(x_2)\\quad  ꪜ\n\\]\n\n\n🏷️ Example 3: \\(\\mathbb{Z}_4\\cong\\mu_4\\)",
-    "crumbs": [
-      "Chapter 3 — Abstract Algebra",
-      "Groups, Homomorphisms, and Group Actions"
-    ]
-  },
-  {
-    "objectID": "chapter-3/rings.html",
-    "href": "chapter-3/rings.html",
-    "title": "Rings, Fields, Ideals, and Unique Factorization",
-    "section": "",
-    "text": "Note\n\n\n\nVideo: Rings, Fields, Ideals, and Unique Factorization — 3:36:07\nThis section corresponds to 3:36:07 in Proof of Fermat Last Theorem FROM SCRATCH.",
-    "crumbs": [
-      "Chapter 3 — Abstract Algebra",
-      "Rings, Fields, Ideals, and Unique Factorization"
-    ]
-  },
-  {
-    "objectID": "chapter-3/abstract-algebra.html",
-    "href": "chapter-3/abstract-algebra.html",
-    "title": "Abstract algebra",
-    "section": "",
-    "text": "Note\n\n\n\nVideo: Groups, Homomorphisms, and Group Actions — 2:44:50\nThis section corresponds to 2:44:50 in Proof of Fermat Last Theorem FROM SCRATCH.\n\n\n\nAbstract algebra\n\n\n\n\n\n\nNote\n\n\n\n🚨 Why do we need this?\nThe main topics for proving Fermat’s last theorem will be elliptic curves and modular forms. One of the most important facts about elliptic curves is the fact that their points form a group. It is the reason why we can view elliptic curves as algebraic objects.\n\n\nWe start with groups, then we move on to rings and fields. These are the algebraic structrures we need before elliptic curves start making sense.\nAt the end, we will also take a glimpse at Galois theory. This will become extremely important later, because Galois representations are one of the most important objects that establish a connection between elliptic curves and modular forms.",
-    "crumbs": [
-      "Chapter 3 — Abstract Algebra",
-      "Abstract algebra"
-    ]
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Fermat’s Last Theorem",
-    "section": "",
-    "text": "Note\n\n\n\nThis project and its contents are for a large part inspired by and based on the video Proof of Fermat Last Theorem FROM SCRATCH.\nVideo: Proof of Fermat Last Theorem FROM SCRATCH",
-    "crumbs": [
-      "Fermat's Last Theorem"
-    ]
-  },
-  {
-    "objectID": "index.html#is-fermats-last-theorem-actually-interesting",
-    "href": "index.html#is-fermats-last-theorem-actually-interesting",
-    "title": "Fermat’s Last Theorem",
-    "section": "Is Fermat’s Last Theorem actually interesting?",
-    "text": "Is Fermat’s Last Theorem actually interesting?\nMany of us can remember the Pythagorean theorem from high school. It is a simple and elegant statement about right triangles.\n\n👨‍💻 Pythagorean theorem\n\n\nGoing forward, we will frequently notice that\n\nIn mathematics, we often try to generalize concepts, theorems and/or equations\n\nOne natural generalization here would be to replace the exponent value of two with any arbitrary natural number \\(n\\):\n\\[\na^n + b^n = c^n\n\\]\nFermat’s Last Theorem (FLT) makes a remarkably simple claim: if \\(n &gt; 2\\), there are no positive integers \\(a\\), \\(b\\), and \\(c\\) that satisfy it. This may come as a surprise. After all, we known that we can easily find infinitely many positive integers that satisfy the equation for \\(n=2\\), for example:\n\\[\n3^2 + 4^2 = 5^2\n\\]\nSo why should the case \\(n&gt;2\\) be so special? And why did it take more than three centuries to prove?\nUsually the story starts with that fact that in 1637 Pierre de Fermat wrote in the margin of a book that he had discovered a “truly marvelous” proof, but that the margin was too small to contain it. The problem remained unsolved for centuries, attracting some of the greatest mathematicians in history, until Andrew Wiles finally announced a proof in 1993.\nI vividly remember my excitement when I read on slashdot.org that Wiles’ finally managed to provide a proof.\nBut this story leaves open a more interesting question:\n\nIs Fermat’s Last Theorem genuinely mathematically interesting, or is it famous just because of the hype and the extraordinary story surrounding it?\n\nThis project is an attempt to investigate this question.",
-    "crumbs": [
-      "Fermat's Last Theorem"
-    ]
-  },
-  {
-    "objectID": "index.html#what-does-from-scratch-mean",
-    "href": "index.html#what-does-from-scratch-mean",
-    "title": "Fermat’s Last Theorem",
-    "section": "What does “from scratch” mean?",
-    "text": "What does “from scratch” mean?\nThe purpose of this website is to follow that journey as carefully as possible. The goal is not merely to state Wiles’ proof, or to give a high-level description such as\n\n“Frey constructed an elliptic curve, Ribet proved a theorem, and Wiles proved modularity.”\n\nThat tells us what happened, but not necessarily why. Our approach is different in precisely this aspect: apart from introducing the necessary (fields of) mathematics, the intention is to keep asking the same question:\n\nWhy do we need this?\n\nIf a new mathematical object appears, we should understand what problem it solves. If a theorem is introduced, we should understand why it is relevant. And when the argument becomes abstract, we should try to keep sight of the remarkably simple equation with which we started.\nWe will start with concepts that are familiar from undergraduate mathematics and gradually introduce the more advanced ideas that eventually become necessary.",
-    "crumbs": [
-      "Fermat's Last Theorem"
-    ]
-  },
-  {
-    "objectID": "index.html#from-a-simple-equation-to-modern-mathematics",
-    "href": "index.html#from-a-simple-equation-to-modern-mathematics",
-    "title": "Fermat’s Last Theorem",
-    "section": "From a simple equation to modern mathematics",
-    "text": "From a simple equation to modern mathematics\nThe surprising part of Fermat’s Last Theorem is not simply that the equation has no solutions. The surprising part is what lies behind that simple statement.\nAt first, FLT may seem to be a problem just about integers. We might therefore expect the proof to involve clever manipulations of integers, perhaps together with some increasingly sophisticated number theory. And indeed, that is how the story begins.\nBut in mathematics, we often encounter a problem in one field and eventually discover that its real structure is much easier to understand in another. As mathematicians tried to understand FLT more deeply, this happened as well. Not only did the problem itself turn out to be connected to different fields of mathematics, it also made use of some connections/bridges between those different fields:\n\nLinear algebra,\nabstract algebra (groups and Galois theory),\nelliptic curves,\nmodular forms\n\nSo the topics discussed here are not simply a collection of increasingly complicated tools that happen to be useful for proving the theorem, but constitute a means for the unification of the different fields in mathematics as well (Langlands program). As such, it is very similar to the standard model in physics, one of the greatest achievements in unifying the four different physical forces (except gravity).",
-    "crumbs": [
-      "Fermat's Last Theorem"
-    ]
-  },
-  {
-    "objectID": "index.html#my-motivation",
-    "href": "index.html#my-motivation",
-    "title": "Fermat’s Last Theorem",
-    "section": "My motivation",
-    "text": "My motivation\nFermat’s Last Theorem is a particularly beautiful example of a recurring phenomenon in both physics and mathematics:\n\nA simple question can lead us to a much deeper structure than we could have anticipated.\n\nFor me, the history of Fermat’s Last Theorem is therefore not merely the story of finding a proof. It is also the story of discovering connections between different fields of mathematics.\nThat is primarily what makes the theorem interesting to me.\n\nNot the hype.\nNot the legend of the margin.\nNot even the fact that it took more than three centuries to prove.\n\nThe interesting part is what structures are hiding underneath.",
-    "crumbs": [
-      "Fermat's Last Theorem"
-    ]
-  },
-  {
-    "objectID": "index.html#a-journey-rather-than-a-shortcut",
-    "href": "index.html#a-journey-rather-than-a-shortcut",
-    "title": "Fermat’s Last Theorem",
-    "section": "A journey rather than a shortcut",
-    "text": "A journey rather than a shortcut\nThis is not intended to be a reproduction of Wiles’ original papers. Those papers are highly technical, and understanding every detail of the complete proof requires a substantial amount of modern mathematics.\nInstead, this project aims to construct a coherent path toward the proof.\nThe hope is that, by the time we reach Wiles’ proof, the reader will not necessarily be able to reproduce every technical argument from memory, but will understand the architecture of the proof and, more importantly, why the architecture looks the way it does.",
-    "crumbs": [
-      "Fermat's Last Theorem"
+      "Linear algebra"
     ]
   },
   {
@@ -489,58 +286,305 @@
     ]
   },
   {
-    "objectID": "chapter-2/linear-algebra.html",
-    "href": "chapter-2/linear-algebra.html",
-    "title": "Linear algebra",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Fermat’s Last Theorem",
     "section": "",
-    "text": "The content of this chapter is designed to be self-contained, so you do not need any prior knowledge of linear algebra to follow along. However, some familiarity with basic algebra and calculus will be helpful.\nRemember that in the introduction we said:\nHere, the deeper idea is that seemingly unrelated mathematical problems can often be described using the same underlying structure. As we will see, we can use these shared concepts to look at certain problems from a new, often more convenient perspective.\nFor example, in linear algebra, we can write any vector with respect to its basis vectors:\n\\[\n\\overrightarrow{v}=c_1\\overrightarrow{e_1}+c_2\\overrightarrow{e_2}+c_3\\overrightarrow{e_3} = \\begin{pmatrix}c_1 \\\\ c_3 \\\\ c_3\\end{pmatrix}\n\\]\nIn the following two examples, we will do the same in the vector space of functions.\nAlthough Fourier analysis and Taylor expansion may seem to belong to a completely different part of mathematics, from the perspective of linear algebra, we can think of a function as an element of a vector space. This allows us to ask:\nJust as an ordinary vector can be written as a linear combination of basis vectors, a function can be written as a linear combination of basis functions.",
+    "text": "Note\n\n\n\nThis project and its contents are for a large part inspired by and based on the video Proof of Fermat Last Theorem FROM SCRATCH.\nVideo: Proof of Fermat Last Theorem FROM SCRATCH",
     "crumbs": [
-      "Chapter 2 — Linear Algebra",
-      "Linear algebra"
+      "Fermat's Last Theorem"
     ]
   },
   {
-    "objectID": "chapter-2/linear-algebra.html#example-1-taylor-expansion",
-    "href": "chapter-2/linear-algebra.html#example-1-taylor-expansion",
-    "title": "Linear algebra",
-    "section": "🏷️ Example 1: Taylor expansion",
-    "text": "🏷️ Example 1: Taylor expansion\nWe can conceptualize the Taylor expansion as a kind of coordinate representation of a function with respect to a basis of polynomials.\n\n\n\n\n\n\nNote\n\n\n\n🚨 All concepts below will be properly addressed and explained in this very chapter on linear algebra.\n\n\nTake for example a function \\(f(x)\\). Around \\(x=0\\) we can write\n\\[\nf(x)=a_0+a_1x+a_2x^2+a_3x^3+\\cdots\n\\]\nWe can think of the objects\n\\[\n1,\\quad x,\\quad x^2,\\quad x^3,\\ldots\n\\]\nas basis vectors of a vector space of polynomials, exactly those notions that are defined in this chapter on linear algebra! The scalars \\(a_0,a_1,a_2,a_3,\\ldots\\) are exactly the coordinates van \\(f(x)\\) with respect to that basis.\nNote that a Taylor series is not just an arbitrary representation of \\(f(x)\\) in the basis \\(\\{1,x,x^2,x^3,\\ldots\\}\\) as the coordinates are specifically determined by the derivatives of \\(f(x)\\) around the expansion point:\n\\[\na_n=\\frac{f^{(n)}(0)}{n!}.\n\\]\nFor example,\n\\[\ne^x=1+x+\\frac{x^2}{2!}+\\frac{x^3}{3!}+\\cdots\n\\]\ncan be interpreted in the context of linear algebra as:\n\\[\n[e^x]_{\\{1,x,x^2,x^3,\\ldots\\}}\n=\n\\left(1,1,\\dfrac{1}{2!},\\dfrac{1}{3!},\\ldots\\right).\n\\]\n👉 The Taylor series expansion provides a different basis\n\n👨‍💻 Taylor expansion demo\n\n\nWe can look at it in an even more abstract way. Around a point \\(a\\) we have the basis\n\\[\n1,\\quad (x-a),\\quad (x-a)^2,\\quad (x-a)^3,\\ldots\n\\]\nwith which \\(f(x)\\) becomes\n\\[\nf(x)\n=\nf(a)\n+f'(a)(x-a)\n+\\frac{f''(a)}{2!}(x-a)^2+\\cdots.\n\\]\nTherefore, the coordinates with respect to that polynomial basis vectors are\n\\[\n\\boxed{\n\\left(\nf(a),\nf'(a),\n\\frac{f''(a)}{2!},\n\\frac{f^{(3)}(a)}{3!},\\ldots\n\\right)\n}\n\\]\nSo we observe the following analogy in lineaire algebra:\n\n\n\n\n\n\n\nLinear algebra\nTaylor analysis\n\n\n\n\nvector \\(v\\)\nfunction \\(f\\)\n\n\nbasis vectors \\(e_1,e_2,\\ldots\\)\n\\(1,(x-a),(x-a)^2,\\ldots\\)\n\n\ncoordinates \\(c_1,c_2,\\ldots\\)\n\\(f(a),f'(a),f''(a)/2!,\\ldots\\)\n\n\n\\(v=\\sum c_i e_i\\)\n\\(f=\\sum \\frac{f^{(n)}(a)}{n!}(x-a)^n\\)\n\n\n\n👉 We can look at the Taylor expansion as expressing a function in coordinates along the directions \\(1,(x-a),(x-a)^2,\\ldots\\).\nThere exists an even deeper connection: differentiation can be seen as a linear operator that works on these coordinates. This directly leads to a connection between Taylor series, vector spaces, and matrices/operators.",
+    "objectID": "index.html#is-fermats-last-theorem-actually-interesting",
+    "href": "index.html#is-fermats-last-theorem-actually-interesting",
+    "title": "Fermat’s Last Theorem",
+    "section": "Is Fermat’s Last Theorem actually interesting?",
+    "text": "Is Fermat’s Last Theorem actually interesting?\nMany of us can remember the Pythagorean theorem from high school. It is a simple and elegant statement about right triangles.\n\n👨‍💻 Pythagorean theorem\n\n\nGoing forward, we will frequently notice that\n\nIn mathematics, we often try to generalize concepts, theorems and/or equations\n\nOne natural generalization here would be to replace the exponent value of two with any arbitrary natural number \\(n\\):\n\\[\na^n + b^n = c^n\n\\]\nFermat’s Last Theorem (FLT) makes a remarkably simple claim: if \\(n &gt; 2\\), there are no positive integers \\(a\\), \\(b\\), and \\(c\\) that satisfy it. This may come as a surprise. After all, we known that we can easily find infinitely many positive integers that satisfy the equation for \\(n=2\\), for example:\n\\[\n3^2 + 4^2 = 5^2\n\\]\nSo why should the case \\(n&gt;2\\) be so special? And why did it take more than three centuries to prove?\nUsually the story starts with that fact that in 1637 Pierre de Fermat wrote in the margin of a book that he had discovered a “truly marvelous” proof, but that the margin was too small to contain it. The problem remained unsolved for centuries, attracting some of the greatest mathematicians in history, until Andrew Wiles finally announced a proof in 1993.\nI vividly remember my excitement when I read on slashdot.org that Wiles’ finally managed to provide a proof.\nBut this story leaves open a more interesting question:\n\nIs Fermat’s Last Theorem genuinely mathematically interesting, or is it famous just because of the hype and the extraordinary story surrounding it?\n\nThis project is an attempt to investigate this question.",
     "crumbs": [
-      "Chapter 2 — Linear Algebra",
-      "Linear algebra"
+      "Fermat's Last Theorem"
     ]
   },
   {
-    "objectID": "chapter-2/linear-algebra.html#example-2-fourier-transform",
-    "href": "chapter-2/linear-algebra.html#example-2-fourier-transform",
-    "title": "Linear algebra",
-    "section": "🏷️ Example 2: Fourier transform",
-    "text": "🏷️ Example 2: Fourier transform\nHere the connection with linear algebra becomes even more apparent, since the Fourier expansion amounts to a representation of a function in the following orthogonal directions:\n\\[\n1,\\quad \\cos x,\\quad \\sin x,\\quad \\cos 2x,\\quad \\sin 2x,\\quad\\ldots\n\\]\nAny function \\(f\\) can thus be built using this basis:\n\\[\nf(x)\n=\n\\frac{a_0}{2}\n+\\sum_{n=1}^{\\infty}\n\\left(a_n\\cos(nx)+b_n\\sin(nx)\\right).\n\\]\nThe Fourier-coefficiens \\(a_0,a_1,b_1,a_2,b_2,\\ldots\\) are the coordinats of the function \\(f\\) in this basis.\n\n👨‍💻 Fourier transform demo",
+    "objectID": "index.html#what-does-from-scratch-mean",
+    "href": "index.html#what-does-from-scratch-mean",
+    "title": "Fermat’s Last Theorem",
+    "section": "What does “from scratch” mean?",
+    "text": "What does “from scratch” mean?\nThe purpose of this website is to follow that journey as carefully as possible. The goal is not merely to state Wiles’ proof, or to give a high-level description such as\n\n“Frey constructed an elliptic curve, Ribet proved a theorem, and Wiles proved modularity.”\n\nThat tells us what happened, but not necessarily why. Our approach is different in precisely this aspect: apart from introducing the necessary (fields of) mathematics, the intention is to keep asking the same question:\n\nWhy do we need this?\n\nIf a new mathematical object appears, we should understand what problem it solves. If a theorem is introduced, we should understand why it is relevant. And when the argument becomes abstract, we should try to keep sight of the remarkably simple equation with which we started.\nWe will start with concepts that are familiar from undergraduate mathematics and gradually introduce the more advanced ideas that eventually become necessary.",
     "crumbs": [
-      "Chapter 2 — Linear Algebra",
-      "Linear algebra"
+      "Fermat's Last Theorem"
     ]
   },
   {
-    "objectID": "chapter-2/linear-algebra.html#comparision-between-taylor-and-fourier-series",
-    "href": "chapter-2/linear-algebra.html#comparision-between-taylor-and-fourier-series",
-    "title": "Linear algebra",
-    "section": "Comparision between Taylor and Fourier series",
-    "text": "Comparision between Taylor and Fourier series\n\nOrthogonality\nWe have seen that \\[\n\\text{Taylor}=\\text{coordinates in a polynomial basis}\n\\]\nand\n\\[\n\\text{Fourier}=\\text{coordinates in a trigonometric basis}.\n\\]\nHowever, in the case of Fourier, we have seen yet another concept from linear algebra, namely orthogonality.\nTwo vectors are orthogonal when \\(u\\cdot v=0\\). For functions this can be defined analogously:\n\\[\n\\langle f,g\\rangle\n=\n\\int_{-\\pi}^{\\pi}f(x)g(x),dx.\n\\]\nWith this definition \\(\\cos x\\) and \\(\\sin x\\) turn out to be perpendicular to one another:\n\\[\n\\langle\\cos x,\\sin x\\rangle\n=\n\\int_{-\\pi}^{\\pi}\\cos x\\sin x,dx\n=0.\n\\]\nThe same holds for the different frequencies \\(\\langle\\cos x,\\cos2x\\rangle=0\\) and \\(\\langle\\sin3x,\\cos7x\\rangle=0\\). In fact, we have an infinite-dimensional Euclidean space where the Fourier basis vectors are perpendicular to each other.\nThis orthogonality is then used to find the (frequency) coordinates. Suppose in “ordinary” lineaire algebra we have:\n\\[\n\\overrightarrow{v}=3\\overrightarrow{e_1}+5\\overrightarrow{e_2}.\n\\]\nWhen \\(\\overrightarrow{e_1}\\) and \\(\\overrightarrow{e_2}\\) are prependicular, we can find \\(3\\) by projecting \\(\\overrightarrow{v}\\) onto \\(\\overrightarrow{e_1}\\).\nAnalogously we can find the Fourier coefficients \\(a_n\\) by projecting \\(f\\) onto \\(\\cos(nx)\\). So conceptually:\n\\[\na_n\n\\sim\n\\langle f,\\cos(nx)\\rangle,\n\\quad\nb_n\n\\sim\n\\langle f,\\sin(nx)\\rangle.\n\\]\nWith exact normalisation this results in\n\\[\na_n=\\frac1\\pi\n\\int_{-\\pi}^{\\pi}f(x)\\cos(nx)dx,\n\\quad\nb_n=\\frac1\\pi\n\\int_{-\\pi}^{\\pi}f(x)\\sin(nx),dx.\n\\]\n\n\nGeometric interpretation\nWe have just established that Fourier coefficients are literally projections of the function vector onto orthogonal basis vectors.\n👉 This makes a direct geoemtric interpretation of the Fourier transform possible.\nFor a vector in 3D this geometric interpretation is trivial. For example,\n\\[\n\\overrightarrow{v}=\n\\begin{pmatrix} 3 \\\\ 2 \\\\ 5 \\end{pmatrix}.\n\\]\ntells us that \\(\\overrightarrow{v}\\) consists of 3 units in the \\(x\\)-direction, 2 in the \\(y\\)-direction and 5 in the \\(z\\)-direction. Fourier tells us something similar: this function consists so much of frequencies \\(1\\), that much of frequencies \\(2\\), etc.\nFor example, we could have \\(f(x)= 2\\cos x +0.7\\sin x +3\\cos2x -1.2\\sin3x\\).\nThe two examples may be summarized in a table.\n\n\n\n\n\n\n\n\n\nTaylor\nFourier\n\n\n\n\nVector\nfunction \\(f\\)\nfunction \\(f\\)\n\n\nVector space\nfunctions/polynomials\nfunctions\n\n\nBasis\n\\(1,(x-a),(x-a)^2,\\ldots\\)\n\\(1,\\cos x,\\sin x,\\cos2x,\\sin2x,\\ldots\\)\n\n\nCoördinaten\nderivatives of \\(f\\)\nprojections/integrals\n\n\nIdea\nlocal behaviour\nfrequenty-contents\n\n\nBasis orthogonal?\nno\nyes\n\n\nGeometric interpretation\nless direct\nvery direct",
+    "objectID": "index.html#from-a-simple-equation-to-modern-mathematics",
+    "href": "index.html#from-a-simple-equation-to-modern-mathematics",
+    "title": "Fermat’s Last Theorem",
+    "section": "From a simple equation to modern mathematics",
+    "text": "From a simple equation to modern mathematics\nThe surprising part of Fermat’s Last Theorem is not simply that the equation has no solutions. The surprising part is what lies behind that simple statement.\nAt first, FLT may seem to be a problem just about integers. We might therefore expect the proof to involve clever manipulations of integers, perhaps together with some increasingly sophisticated number theory. And indeed, that is how the story begins.\nBut in mathematics, we often encounter a problem in one field and eventually discover that its real structure is much easier to understand in another. As mathematicians tried to understand FLT more deeply, this happened as well. Not only did the problem itself turn out to be connected to different fields of mathematics, it also made use of some connections/bridges between those different fields:\n\nLinear algebra,\nabstract algebra (groups and Galois theory),\nelliptic curves,\nmodular forms\n\nSo the topics discussed here are not simply a collection of increasingly complicated tools that happen to be useful for proving the theorem, but constitute a means for the unification of the different fields in mathematics as well (Langlands program). As such, it is very similar to the standard model in physics, one of the greatest achievements in unifying the four different physical forces (except gravity).",
     "crumbs": [
-      "Chapter 2 — Linear Algebra",
-      "Linear algebra"
+      "Fermat's Last Theorem"
     ]
   },
   {
-    "objectID": "chapter-2/linear-algebra.html#conclusion",
-    "href": "chapter-2/linear-algebra.html#conclusion",
-    "title": "Linear algebra",
-    "section": "🧠 Conclusion",
-    "text": "🧠 Conclusion\n👉 The choice of basis determines which properties of a function become apparent.\n\nWith Taylor local properties become apparent via the derivatives:\n\nDecomposition of \\(f\\) in polynomial directions\nHow does \\(f\\) behave locally around a point \\(a\\)?\n\nWith Fourier frequencies become visible via projection onto the basis vectors:\n\nDecomposition of \\(f\\) in frequency directions\nFrom which frequencies can \\(f\\) be built up?\n\n\n👉 This is why linear algebra can be so powerful:\n\nIt gives us a common language in which very different mathematical problems can reveal the same underlying structure.\nWe can do a basis transformation to look at a certain problem from a new, more convenient perspective.",
+    "objectID": "index.html#my-motivation",
+    "href": "index.html#my-motivation",
+    "title": "Fermat’s Last Theorem",
+    "section": "My motivation",
+    "text": "My motivation\nFermat’s Last Theorem is a particularly beautiful example of a recurring phenomenon in both physics and mathematics:\n\nA simple question can lead us to a much deeper structure than we could have anticipated.\n\nFor me, the history of Fermat’s Last Theorem is therefore not merely the story of finding a proof. It is also the story of discovering connections between different fields of mathematics.\nThat is primarily what makes the theorem interesting to me.\n\nNot the hype.\nNot the legend of the margin.\nNot even the fact that it took more than three centuries to prove.\n\nThe interesting part is what structures are hiding underneath.",
+    "crumbs": [
+      "Fermat's Last Theorem"
+    ]
+  },
+  {
+    "objectID": "index.html#a-journey-rather-than-a-shortcut",
+    "href": "index.html#a-journey-rather-than-a-shortcut",
+    "title": "Fermat’s Last Theorem",
+    "section": "A journey rather than a shortcut",
+    "text": "A journey rather than a shortcut\nThis is not intended to be a reproduction of Wiles’ original papers. Those papers are highly technical, and understanding every detail of the complete proof requires a substantial amount of modern mathematics.\nInstead, this project aims to construct a coherent path toward the proof.\nThe hope is that, by the time we reach Wiles’ proof, the reader will not necessarily be able to reproduce every technical argument from memory, but will understand the architecture of the proof and, more importantly, why the architecture looks the way it does.",
+    "crumbs": [
+      "Fermat's Last Theorem"
+    ]
+  },
+  {
+    "objectID": "chapter-3/abstract-algebra.html",
+    "href": "chapter-3/abstract-algebra.html",
+    "title": "Abstract algebra",
+    "section": "",
+    "text": "Note\n\n\n\nVideo: Groups, Homomorphisms, and Group Actions — 2:44:50\nThis section corresponds to 2:44:50 in Proof of Fermat Last Theorem FROM SCRATCH.\n\n\n\nAbstract algebra\n\n\n\n\n\n\nNote\n\n\n\n🚨 Why do we need this?\nThe main topics for proving Fermat’s last theorem will be elliptic curves and modular forms. One of the most important facts about elliptic curves is the fact that their points form a group. It is the reason why we can view elliptic curves as algebraic objects.\n\n\nWe start with groups, then we move on to rings and fields. These are the algebraic structrures we need before elliptic curves start making sense.\nAt the end, we will also take a glimpse at Galois theory. This will become extremely important later, because Galois representations are one of the most important objects that establish a connection between elliptic curves and modular forms.",
+    "crumbs": [
+      "Chapter 3 — Abstract Algebra",
+      "Abstract algebra"
+    ]
+  },
+  {
+    "objectID": "chapter-3/rings.html",
+    "href": "chapter-3/rings.html",
+    "title": "Rings, Fields, Ideals, and Unique Factorization",
+    "section": "",
+    "text": "Note\n\n\n\nVideo: Rings, Fields, Ideals, and Unique Factorization — 3:36:07\nThis section corresponds to 3:36:07 in Proof of Fermat Last Theorem FROM SCRATCH.",
+    "crumbs": [
+      "Chapter 3 — Abstract Algebra",
+      "Rings, Fields, Ideals, and Unique Factorization"
+    ]
+  },
+  {
+    "objectID": "chapter-3/groups.html",
+    "href": "chapter-3/groups.html",
+    "title": "Groups, Homomorphisms, and Group Actions",
+    "section": "",
+    "text": "Note\n\n\n\nVideo: Groups, Homomorphisms, and Group Actions — 2:44:50\nThis section corresponds to 2:44:50 in Proof of Fermat Last Theorem FROM SCRATCH.",
+    "crumbs": [
+      "Chapter 3 — Abstract Algebra",
+      "Groups, Homomorphisms, and Group Actions"
+    ]
+  },
+  {
+    "objectID": "chapter-3/groups.html#binary-operation",
+    "href": "chapter-3/groups.html#binary-operation",
+    "title": "Groups, Homomorphisms, and Group Actions",
+    "section": "📌 Binary operation",
+    "text": "📌 Binary operation\nA binary operation \\(*\\) on a set \\(S\\) is a function that assigns to each ordered pair \\((a,b)\\) of elements of \\(S\\) some element of \\(S\\).\n\nAssociativity: \\((a*b)*c = a * (b* c)\\)\nCommutativity: \\(a*b = b*a\\)\n\nThe most familiar binary operations we already know would definitely be addition and multiplication. For example, addition can be viewed as an operation that assigns the value 7 to the pair \\((3, 4)\\). Likewise, multiplication can be seen as an operation that assigns the value of 20 to the pair \\((4, 5)\\).\nHowever, we may want to define more unusual operations as well.",
+    "crumbs": [
+      "Chapter 3 — Abstract Algebra",
+      "Groups, Homomorphisms, and Group Actions"
+    ]
+  },
+  {
+    "objectID": "chapter-3/groups.html#group",
+    "href": "chapter-3/groups.html#group",
+    "title": "Groups, Homomorphisms, and Group Actions",
+    "section": "📌 Group",
+    "text": "📌 Group\nA group \\((G, *)\\) is a set \\(Gf\\) with a binary operation \\(*\\) satisfying four axioms:\n\nClosure: For all \\(a, b\\in G,\\ a * b \\in G\\).\nAssociativity: The operation \\(*\\) is associative: \\(\\forall a,b,c \\in G:\\ (a*b)*c=a*(b*c)\\)\nIdentity element: There is an element \\(e\\in G\\) such that \\(e*x = a * e = a\\) for all \\(a \\in G\\).\nInverses: For each \\(a\\in G\\), there is an element \\(a^{-1}\\in G\\), such that \\(a*a^{-1}=a^{-1}* a=e\\). This is called an inverse element.\n\nA group is abelian (or commutative) if its operation is also commutative — named after Niels Henrik Abel.\nThe number of elements in a group \\(G\\) is called its order, denoted by \\(|G|\\).\n\n🏷️ Examples\nThe set of integers with addition is a group:\n\nThe addition operation is clearly an operation on \\(\\mathbb{Z}\\), as it always returns another integer ꪜ\nAddition is associative ꪜ\nThe identity element is zero ꪜ\nEach element \\(a\\in\\mathbb{Z}\\) has an inverse, namely \\(-a\\) ꪜ\n\nIt is also an abelian group, since addition is commutative.\nSimilarly, \\((\\mathbb{Q}, +)\\), \\((\\mathbb{R}, +)\\), and \\((\\mathbb{C}, +)\\) are also groups.\n\n\n🏷️ Counter example: \\((\\mathbb{Q}, *)\\)\nThis is not a group, as there is no inverse element for zero: there is no such element for which we can write \\(0*b=b*0=1\\) ✗\nSo the same set can behave very differently, depending on what operations we put on it!\n\n\n🏷️ Example: \\((\\mathbb{Z}_n, +)\\)\nThe group \\((\\mathbb{Z}_n, +)\\). Remember that \\(\\mathbb{Z}_n\\) is a subset \\(\\mathbb{Z}_n=\\{0,1,2\\cdots, n-1\\}\\).\nNote that the addition operation is defined differently here: \\(a + b\\ (\\text{mod}\\ n)\\)\nTake for example \\((\\mathbb{Z}_3, +)\\)\n\\[\n\\begin{array}{l}\n1 + 0 = 1 \\\\\n1 + 1 = 2 \\\\\n1 + 2 = 0\n\\end{array}\n\\]\nLet’s verify that \\((\\mathbb{Z}_5, +)\\) is a group:\n\nThe \\(+\\)-operation is associative ꪜ\nThere is a zero element: \\(0 + a = a + 0 =a\\) ꪜ\nEvery element has an inverse ꪜ\n\n\\[\n\\begin{array}{l}\n1 + 4 = 4 + 1 = 0\\ (\\text{mod}\\ 5)  \\\\\n2 + 3 = 3 + 2 = 0\\ (\\text{mod}\\ 5)  \\\\\n\\vdots\n\\end{array}\n\\]\nSimilarly, \\((\\mathbb{Z}_n, +)\\) is a group.\n\n\n🏷️ Example: \\((\\mathbb{Z}_n \\times \\mathbb{Z}_m, +)\\)\nThe addition operation is defined as\n\\[\n(a_1, b_1) + (a_2, b_2) := ((a_1 +b_1)\\ \\text{mod}\\ n, (a_2 + b_2) \\ \\text{mod}\\ m)\n\\]\nWith this operation, it forms a group. Let’s check this for \\((\\mathbb{Z}_3 \\times \\mathbb{Z}_4, +)\\):\n\nWith the above addition operation, we always get another element in the group ✔️ \\[\n\\begin{array}{l}\n1 + 2 = 1 + 3 = (2, 1) \\in \\mathbb{Z}_3 \\times \\mathbb{Z}_4 \\\\\n2 + 3 = 3 + 2 = (1, 1) \\in \\mathbb{Z}_3 \\times \\mathbb{Z}_4\n\\end{array}\n\\]\nThe zero element is \\((0, 0)\\) ꪜ\nFor every element, there is an inverse, for example \\((2, 2) + (1, 2) = (0, 0)\\) ꪜ\n\nSo indeed, \\((\\mathbb{Z}_n \\times \\mathbb{Z}_m, +)\\) is a group.\n❗ More generally, we have that\n\\[\n(\\mathbb{Z}_{n_1} \\times \\mathbb{Z}_{n_2} \\times \\mathbb{Z}_{n_3}\\cdots, +)\n\\]\nforms a group.\n\n\n🏷️ Example: \\((GL_n(\\mathbb{R}), *)\\)\nThe collection of invertible matrices \\(GL_n(\\mathbb{R})\\) with matrix multiplication froms a group:\n\n\\(\\forall A, B\\in GL_n(\\mathbb{R}): A*B \\in GL_n(\\mathbb{R})\\) as \\(\\det(AB)=\\det(A)\\det(B)\\neq0\\) ꪜ\nMatrix multiplication is associative ꪜ\nObvisouly, \\(GL_n(\\mathbb{R})\\) contains a zero element ꪜ\nAs the determinant is non-zero by definition, every matrix has an inverse matrix ꪜ\n\n\n\n🏷️ Example: \\(n\\)-th roots of unity\nIf we define \\(\\mu_n = \\{z\\in\\mathbb{C}\\ |\\ z^n=1 \\}\\) with multiplication, \\((\\mu_n, *)\\) forms a group.\n\n\\(\\forall z_1, z_2 \\in \\mu_n: (z_1z_2)^n = z_1^nz_2^n =1\\) ꪜ\nMultiplication is associative ꪜ\nThere is one identiy element, namely \\(1^n = 1\\) ꪜ\nEvery element has an inverse, as \\(1 / z^n\\) is also in the group ꪜ\n\n\n\n\n\n\n\nNote\n\n\n\n🚨 When the operation is obvious, we usually just state the set without explicitly mentioning its operation!\n\n\n\n\n👨‍💻 Rubik’s cube\nThe moves for the Rubik’s cube form a group as well: \\([R, L, F, B, U, D]\\).",
+    "crumbs": [
+      "Chapter 3 — Abstract Algebra",
+      "Groups, Homomorphisms, and Group Actions"
+    ]
+  },
+  {
+    "objectID": "chapter-3/groups.html#subgroup",
+    "href": "chapter-3/groups.html#subgroup",
+    "title": "Groups, Homomorphisms, and Group Actions",
+    "section": "📌 Subgroup",
+    "text": "📌 Subgroup\nA subset of \\(H\\) of a group \\(G\\) is a subgroup (\\(H\\leq G\\)) if \\(H\\) is itself a group under the operations of \\(G\\).\nIt is a concept that is very similar to a subspace or subset, so it is basically a smaller group sitting inside a larger group.\n\n🏷️ Examples\n\\[\n(\\mathbb{Z}, +) \\leq (\\mathbb{Q}_n, +)\n\\]\nAlso,\n\\[\n(SL_n(\\mathbb{R}), *) \\leq (GL_n(\\mathbb{R}), *)\n\\]\nAnother example would be \\((\\mu_2, *) \\leq (\\mu_4, *)\\).",
+    "crumbs": [
+      "Chapter 3 — Abstract Algebra",
+      "Groups, Homomorphisms, and Group Actions"
+    ]
+  },
+  {
+    "objectID": "chapter-3/groups.html#cyclic-groups",
+    "href": "chapter-3/groups.html#cyclic-groups",
+    "title": "Groups, Homomorphisms, and Group Actions",
+    "section": "📌 Cyclic groups",
+    "text": "📌 Cyclic groups\nA group \\(G\\) is cyclic if it can be generated by a single element. We write \\(G=\\langle a \\rangle = \\{a^n\\ |\\ n \\in \\mathbb{Z}\\}\\). The element \\(a\\) is a generator of \\(G\\).\nSo the whole group can be built by applying the generator multiple times on itself:\n\\[\n\\begin{array}{c}\na \\\\\na * a \\\\\na * a * a \\\\\na * a * a * a \\\\\n\\vdots\n\\end{array}\n\\]\n\n🏷️ Examples\n\\[\n\\mathbb{Z} = \\langle 1 \\rangle = \\langle -1 \\rangle\n\\]\nAlso\n\\[\n\\mathbb{Z}_n = \\langle 1 \\rangle = \\langle -1 \\rangle\n\\]\nNote that we also have\n\\[\n\\mathbb{Z}_7 = \\langle 1 \\rangle = \\langle -1 \\rangle = \\langle 3 \\rangle\n\\]\nas by adding 3, we get\n\\[\n\\{3, 6, 2, 5, 1, 4, 0\\} = \\mathbb{Z}_7\n\\]\nAnother example of a cyclic group is\n\\[\n\\mu_n=\\langle e^{\\frac{2\\pi i}{n}}\\rangle\n\\]",
+    "crumbs": [
+      "Chapter 3 — Abstract Algebra",
+      "Groups, Homomorphisms, and Group Actions"
+    ]
+  },
+  {
+    "objectID": "chapter-3/groups.html#isomorphic-groups",
+    "href": "chapter-3/groups.html#isomorphic-groups",
+    "title": "Groups, Homomorphisms, and Group Actions",
+    "section": "📌 Isomorphic groups",
+    "text": "📌 Isomorphic groups\nSo, to understand the group, we need to understand how the elements interact under that operation. One way to do that is to make an operation table.\nFor example, let’s look at the operation tables of both \\(\\mathbb{Z}_3\\)\n\\[\\begin{array}{|c|c|c|c|}\n+ & 0 & 1 & 2\\\\\n\\hline\n0 & 0 & 1 & 2\\\\\n\\hline\n1 & 1 & 2 & 0\\\\\n\\hline\n2 & 2 & 0 & 1\n\\end{array}\\]\nand \\(\\mu_3\\):\n\\[\n\\begin{array}{|c|c|c|c|}\n+ & 1 & e^{\\frac{2\\pi i}{3}} & e^{\\frac{4\\pi i}{3}}\\\\\n\\hline\n1 & 1 & e^{\\frac{2\\pi i}{3}} & e^{\\frac{4\\pi i}{3}}\\\\\n\\hline\ne^{\\frac{2\\pi i}{3}} & e^{\\frac{2\\pi i}{3}} & e^{\\frac{4\\pi i}{3}} & 1\\\\\n\\hline\ne^{\\frac{4\\pi i}{3}} & e^{\\frac{4\\pi i}{3}} & 1 & e^{\\frac{2\\pi i}{3}}\n\\end{array}\n\\]\nUpon closer inspection, we notice that these operation tables have exactly the same structure, as there turns out to be an obvious one-to-one correspondence between the elements of each group:\n\\[\n\\begin{array}{c}\n0 \\longleftrightarrow 1 \\\\\n1 \\longleftrightarrow e^{\\frac{2\\pi i}{3}} \\\\  \n2 \\longleftrightarrow e^{\\frac{4\\pi i}{3}} \\\\  \n\\end{array}\n\\]\n👉 Two groups \\((G, *)\\) and \\((G', *')\\) are isomorphic if their elements can be paired up in a way that preserves the group’s structural properties. We write \\(G\\cong G'\\).\n❗ The two groups have very little in common. One group consists of integers, the other contains exponents with even imaginary numbers. Also, the first group is a group under addition, whereas the second group is a group under multiplication. However, although the two groups are very different, they have exactly the same structure❗\n🧠 What matters is how the elements interact with each other. If two groups have the same operation structure after relabelling the elements, they are called isomorphic.\n👉 \\(\\mathbb{Z}_3 \\cong \\mu_3\\)",
+    "crumbs": [
+      "Chapter 3 — Abstract Algebra",
+      "Groups, Homomorphisms, and Group Actions"
+    ]
+  },
+  {
+    "objectID": "chapter-3/groups.html#isomorphism-the-map",
+    "href": "chapter-3/groups.html#isomorphism-the-map",
+    "title": "Groups, Homomorphisms, and Group Actions",
+    "section": "📌 Isomorphism: the map",
+    "text": "📌 Isomorphism: the map\nThe function(s) that can be used to check whether two groups are isomorphic or not is called an isomorphism. So what conditions should this function generally satisfy?\nAn Isomorphism \\(\\phi\\) from a group \\((G, *)\\) to a group \\((G', *')\\) is a function \\(\\phi: G\\rightarrow G'\\) that satisfies two conditions:\n\n\\(\\phi\\) is a bijection (one-to-one and onto).\n\\(\\phi\\) preserves the operation: For all \\(a,b\\in G\\), \\[\n\\phi(A*B)=\\phi(a)*'\\phi(b)\n\\]\n\nAn automorphism is an isomorphism from a group \\(G\\) to itself.\nSo the function, the isomorphism does not just match elements, it mathes them in a way that respects the operations of both groups.\n❗ An isomorphism is a structure-preserving bijection between groups. If such an isomorphism exists between two groups, we say the two groups are isomorphic❗\n\n🏷️ Example 1: \\(\\mathbb{C}\\cong\\mathbb{R}^2\\)\nWith \\(\\phi(a + bi) := (a, b)\\) we can check that:\n\nThe function clearly is a bijection ꪜ\nPreserves the operations:\n\n\\[\n\\begin{array}{ll}\n\\phi\\left((a_1+b_1i)+(a_2+b_2i)\\right) &=& \\phi\\left((a_1+a_2)+(b_1i+b_2i)\\right) \\\\\n&=& (a_1 + a_2, b_1+b_2) \\\\\n&=& (a_1, b1) + (a_2, b_2) \\\\\n&=& \\phi(a_1, b_1) + \\phi(a_2, b_2)\\quad ꪜ\n\\end{array}\n\\]\n\n\n🏷️ Example 2: \\((\\mathbb{R}, +)\\cong(\\mathbb{R}_+, *)\\)\nWith \\(\\phi(x) := e^x\\) we can check that:\n\nThe function clearly is a bijection ꪜ\nPreserves the operations:\n\n\\[\n\\phi(x_1+x_2) = e^{x_1+x_2} = e^{x_1}e^{x_2} = \\phi(x_1)\\phi(x_2)\\quad  ꪜ\n\\]\n\n\n🏷️ Example 3\n\\[\\mathbb{Z}_4\\cong\\mu_4\\quad\\text{with}\\ \\phi(k) = i^k\n\\]\nGenerally we have:\n\\[\n\\mathbb{Z}_n\\cong\\mu_n.\n\\]\nWith the concept of isomorphism, we can start thinking about groups in a way that puts focus on their structure: when two groups are isomorphic, they are structurally the same, independent of how their symbols, elements, and binary operations are defined.\nAs a consequence, the following question make sense: “can we classify groups using isomorphisms”? Stated differently, can we make a list of possible group structures where we don’t distinguish between groups that are esentially the same.\nAlthough this turns out to be extremely difficult, except for finite Abelian groups. This is called the fundamental theorem of finitely generated abelian groups.",
+    "crumbs": [
+      "Chapter 3 — Abstract Algebra",
+      "Groups, Homomorphisms, and Group Actions"
+    ]
+  },
+  {
+    "objectID": "chapter-3/groups.html#the-fundamental-theorem-of-finitely-generated-abelian-groups",
+    "href": "chapter-3/groups.html#the-fundamental-theorem-of-finitely-generated-abelian-groups",
+    "title": "Groups, Homomorphisms, and Group Actions",
+    "section": "📌 The fundamental theorem of finitely generated abelian groups",
+    "text": "📌 The fundamental theorem of finitely generated abelian groups\nEvery finitely generated abelian group \\(G\\) is isomorphic to a direct product of cyclic groups of the form\n\\[\n\\mathbb{Z}_{p_1} r_1 \\times \\mathbb{Z}_{p_2} r_2 \\times \\cdots \\times \\mathbb{Z}_{p_n} r_n \\times \\mathbb{Z}\\times \\cdots\\times \\mathbb{Z}\n\\]\nwhere the \\(p_i\\) are primes (not necessarily distinct).\nFor example, we suppose we know nothing about a group \\(G\\) except that it is abelinan and the order is \\(|G|=12\\). The theorem now states that\n\\[\nG \\cong \\mathbb{Z}_4 \\times \\mathbb{Z}_3,\\ \\text{or}\\ \\mathbb{Z} \\times \\mathbb{Z}_2 \\times \\mathbb{Z}_2\n\\]",
+    "crumbs": [
+      "Chapter 3 — Abstract Algebra",
+      "Groups, Homomorphisms, and Group Actions"
+    ]
+  },
+  {
+    "objectID": "chapter-3/groups.html#cosets",
+    "href": "chapter-3/groups.html#cosets",
+    "title": "Groups, Homomorphisms, and Group Actions",
+    "section": "📌 Cosets",
+    "text": "📌 Cosets\nLet \\(H\\) be a subgroup of \\(G\\), and let \\(a\\in G\\).\n\nThe left coset of \\(H\\) containing \\(a\\) is the set \\(aH=\\{ah\\ |\\ h\\in H\\}\\).\nThe set of all left cosets of \\(H\\) forms a partition of the group \\(G\\).\nAll cosets of \\(H\\) have the same size as \\(H\\).\n\n\n🏷️ Example 1: \\(5\\mathbb{Z} \\leq \\mathbb{Z}\\)\nSo what are some cosets of \\(5\\mathbb{Z}\\) (all multiples of 5)?",
+    "crumbs": [
+      "Chapter 3 — Abstract Algebra",
+      "Groups, Homomorphisms, and Group Actions"
+    ]
+  },
+  {
+    "objectID": "chapter-2/vector-spaces.html",
+    "href": "chapter-2/vector-spaces.html",
+    "title": "Vector spaces, basis, and dimension",
+    "section": "",
+    "text": "Note\n\n\n\nVideo: Vector Spaces, Basis, and Dimension — 1:40:28\nThis section corresponds to 1:40:28 in Proof of Fermat Last Theorem FROM SCRATCH.",
     "crumbs": [
       "Chapter 2 — Linear Algebra",
-      "Linear algebra"
+      "Vector spaces, basis, and dimension"
+    ]
+  },
+  {
+    "objectID": "chapter-2/vector-spaces.html#vector-space-axioms",
+    "href": "chapter-2/vector-spaces.html#vector-space-axioms",
+    "title": "Vector spaces, basis, and dimension",
+    "section": "📌 Vector Space: Axioms",
+    "text": "📌 Vector Space: Axioms\nA vector space \\(V\\) over a field \\(F\\) is a set with addition (\\(+, V\\times V \\rightarrow V\\)) and scalar multiplication (\\(\\cdot, V\\times F \\rightarrow V\\)) satisfying these axioms for all \\(x,y,z\\in V\\) and \\(a, b\\in F\\):\nHere we intentionally want to generalize the concept of a vector!\n\nVS 1: \\(x + y = y + x\\) (addition: commutativity)\nVS 2: \\((x + y) + z = x + (y + z)\\) (addition: associativity)\nVS 3: \\(\\exists {\\bf 0} \\in V\\ \\text{s.t.}\\ x + {\\bf 0}= x\\) (addition: zero vector)\nVS 4: \\(\\forall x\\in V, \\exists(-x) \\in V\\ \\text{s.t.}\\ x + (-x) = {\\bf 0}\\) (addition: inverse)\nVS 5: \\(1 \\cdot x = x\\) (scalar multiplication: identity)\nVS 6: \\(1 (ab)\\cdot x = a\\cdot(b\\cdot x)\\) (scalar multiplication: associativity)\nVS 7: \\(a\\cdot(x + y) = a\\cdot x + a\\cdot y\\) (scalar multiplication: distributive law)\nVS 8: \\((a + b)\\cdot x = a\\cdot x + b\\cdot x\\) (scalar multiplication: distributive law)\n\nNote that addition is also a generalized concept here, an operation which name happens to be addition, hence we cannot automatically assume that \\(x + y = y + x\\) always holds.\nFor example, assume \\(V=\\mathbb{R}\\) and we define \\(a + b := a^b + e^ab^{72}\\in \\mathbb{R}\\). This definition of addition does not statisfy VS 1 and VS 2!\n\n🏷️ Example vector spaces\n\\(\\mathbb{R}\\), \\(\\mathbb{C}\\), and the cartesian product \\(\\mathbb{R}^n\\) are all examples of vector spaces.\nFor the first two, we define addition and multiplication in the familiar way. For the last one, we define addition as follows:\n\\[\n(x_1, x_2, \\dots, x_n) + (y_1, y_2, \\dots, y_n) = (x_1+y_1, x_2+y_2, \\dots, x_n+y_n)\n\\]\nand scalar multiplication\n\\[\na (x_1, x_2, \\dots, x_n) = (ax_1, ax_2, \\dots, ax_n)\n\\]\nAnother example is \\(\\mathbb{R}[x]\\), the set of all polynomials with real coefficients. So how do we know that \\(\\mathbb{R}[x]\\) is a vector space? We check if all axioms hold! For example, if we add two polynomials and change the order under addition, do we get the same result back? Yes, we do!\n\\[\n(1 + x) + (3 + x^2) = (3 + x^2) + (1 + x)\n\\]\nSimilarly, we can check that all other axioms hold.\nAlso, the set of al continuous functions \\(C_0(\\mathbb{R})\\) is a vector space, as is \\(Mat_2(\\mathbb{R})\\).\nHowever, \\(\\mathbb{N}\\) is not a vector space, as 0 is not in the set. Also, if we pick any natural number, the negative is not in the set.",
+    "crumbs": [
+      "Chapter 2 — Linear Algebra",
+      "Vector spaces, basis, and dimension"
+    ]
+  },
+  {
+    "objectID": "chapter-2/vector-spaces.html#subspace",
+    "href": "chapter-2/vector-spaces.html#subspace",
+    "title": "Vector spaces, basis, and dimension",
+    "section": "📌 Subspace",
+    "text": "📌 Subspace\nA subspace of a vector space \\(V\\) is a non-empty subset \\(W\\) of \\(V\\) that is itself a vector space under the operations inherited from \\(V\\).\nFor example, \\(\\mathbb{R}\\) is a subspace of \\(\\mathbb{C}\\), \\(\\mathbb{R}\\subset \\mathbb{C}\\).\nAnother example is\n\\[\nW = \\{(x,y)\\in\\mathbb{R} |\\ y = 2x\\} \\subset \\mathbb{R}^2\n\\]\nWe can check that \\(W\\) is both a vector space and a subspace of \\(\\mathbb{R}^2\\). However, \\(W'\\)\n\\[\nW' = \\{(x,y)\\in\\mathbb{R} |\\ y = x + 1\\} \\subset \\mathbb{R}^2\n\\]\nis not a vector space, as it does not have a zero vector in it \\((0, 0) \\notin W'\\). Consequently, we cannot call it a subspace of \\(\\mathbb{R}^2\\) either!\nAnother example is the set of all real coefficient polynomials with maximum degree two, \\(P_2[\\mathbb{R}]\\). This is a vector space as well as a subspace of all real coefficient polynomials.",
+    "crumbs": [
+      "Chapter 2 — Linear Algebra",
+      "Vector spaces, basis, and dimension"
+    ]
+  },
+  {
+    "objectID": "chapter-2/vector-spaces.html#linear-combination",
+    "href": "chapter-2/vector-spaces.html#linear-combination",
+    "title": "Vector spaces, basis, and dimension",
+    "section": "📌 Linear combination",
+    "text": "📌 Linear combination\nWe are slowly moving towards the concept of a basis. So what is a basis? A basis is one of the most important ideas in linear algebra. Roughly speaking, a basis is a minimal set of building blocks for a vector space.\nFor example, if we look at \\(\\mathbb{R}^2\\), a basis may be \\(\\{(1, 0), (0, 1)\\}\\). This constitutes a valid basis, as we can pick any vector \\((a,b)\\in\\mathbb{R}^2\\) and write it as a linear combination of the basis vectors:\n\\[\n(a, b) = a(1, 0) + b(0, 1)\n\\]\nSo if we know the basis, we can build every vector in the space from those basis vectors in a unique way.\nBut before we can define a basis properly, we need to define a few smaller concepts first.\nA linear combination of vectors in a set \\(S=\\{v1, v2, \\dots, v_k\\}\\) is any vector \\({\\bf u}\\) of the form\n\\[\n{\\bf u} = a_1v_1 + a_2v_2 + \\dots + a_kv_k\n\\]\nwhere \\(a_1, a_2, \\dots, a_k\\) are scalars in the field \\(F\\).\n\n🏷️ Example 1: a linear combination in \\(\\mathbb{R}^2\\)?\nLet’s take the subset of vectors\n\\[\nS=\\left\\{\n\\begin{pmatrix}\n1 \\\\ 2\n\\end{pmatrix},\n\\begin{pmatrix}\n3 \\\\ 4\n\\end{pmatrix}\n\\right\\}\n\\]\nThen the linear combinations of \\(S\\) would be something like\n\\[\nS=\na\\begin{pmatrix}\n1 \\\\ 2\n\\end{pmatrix}\n+b\n\\begin{pmatrix}\n3 \\\\ 4\n\\end{pmatrix}\n\\]\nNow we can ask if \\(\\begin{pmatrix} 5 \\\\ 8\\end{pmatrix}\\) is a linear combination of \\(S\\). To this extent, we check if there exists an \\(a\\) and \\(b\\), such that\n\\[\na\\begin{pmatrix}\n1 \\\\ 2\n\\end{pmatrix}\n+b\n\\begin{pmatrix}\n3 \\\\ 4\n\\end{pmatrix} =\n\\begin{pmatrix} 5 \\\\ 8\\end{pmatrix}\n\\]\nAnd indeed, this holds true for \\(a=2\\) and \\(b=1\\), so \\(\\begin{pmatrix} 5 \\\\ 8\\end{pmatrix}\\) is a linear combination of \\(S\\)!\n\n\n🏷️ Example 2: a linear combination in \\(\\mathbb{R}^3\\)?\nLet’s take the subset of vectors\n\\[\nS=\\left\\{\n\\begin{pmatrix}\n1 \\\\ 2 \\\\ 0\n\\end{pmatrix},\n\\begin{pmatrix}\n4 \\\\ 7 \\\\ 0\n\\end{pmatrix}\n\\right\\}\n\\]\nWe can ask if \\(\\begin{pmatrix} 3 \\\\ 4 \\\\ 5 \\end{pmatrix}\\) is a linear combination of \\(S\\):\n\\[\na\\begin{pmatrix}\n1 \\\\ 2 \\\\0\n\\end{pmatrix}\n+b\n\\begin{pmatrix}\n4 \\\\ 7 \\\\ 0\n\\end{pmatrix} =\n\\begin{pmatrix} 3 \\\\ 4 \\\\ 5\\end{pmatrix}\n\\]\nThe answer is no, as the third coordinate will always remain zero. So \\(\\begin{pmatrix} 3 \\\\ 4 \\\\ 5 \\end{pmatrix}\\) is not a linear combination of \\(S\\).",
+    "crumbs": [
+      "Chapter 2 — Linear Algebra",
+      "Vector spaces, basis, and dimension"
+    ]
+  },
+  {
+    "objectID": "chapter-2/vector-spaces.html#span",
+    "href": "chapter-2/vector-spaces.html#span",
+    "title": "Vector spaces, basis, and dimension",
+    "section": "📌 Span",
+    "text": "📌 Span\nLet \\(S\\) be a non-empty subset of a vector space \\(V\\). The span of \\(S\\), denoted by \\(\\text{span}(S)\\), is the smallest subset of \\(V\\) containing \\(S\\). In practice, it is the set of all linear combinations of elements of \\(S=\\{ v_1, v_2, \\cdots, v_n\\}\\):\n\\[\n\\text{span}(S) =\n\\{\na_1v_1+\\cdots+a_n v_n\\ |\\ n \\geq 1,\\ v_i\\in S,\\ a_i \\in F\n\\}\n\\]",
+    "crumbs": [
+      "Chapter 2 — Linear Algebra",
+      "Vector spaces, basis, and dimension"
+    ]
+  },
+  {
+    "objectID": "chapter-2/vector-spaces.html#linear-independence-and-dependence",
+    "href": "chapter-2/vector-spaces.html#linear-independence-and-dependence",
+    "title": "Vector spaces, basis, and dimension",
+    "section": "📌 Linear independence and dependence",
+    "text": "📌 Linear independence and dependence\nA set of vectors \\(S=\\{ v_1, v_2,\\ \\cdots,\\ v_k\\}\\) is linearly independent if the only solution to the equation\n\\[\na_1v_1+a_2v_2+\\cdots+a_k v_k = {\\bf 0}\n\\]\nis the trivial solution \\(a_1=a_2=\\cdots=a_k=0\\). If a set is not linearly independent, it is called linearly dependent.\n\n🏷️ Example 1: linear dependence in \\(\\mathbb{R}^2\\)\nIn \\(\\mathbb{R}^2\\), are \\(\\{(1, 2), (1, 0)\\}\\) linearly independent?\nTo answer this quesiton, we check if the only solution to the following equation is the trivial solution:\n\\[\na_1(1, 2) + a_2(1, 0) = (a_1 + a_2, 2a_1) = (0, 0) \\Rightarrow a_1=0 \\Rightarrow a_2 = 0\n\\]\nSo these vectors are linearly independent.\n\n\n🏷️ Example 2: linear dependence in \\(\\mathbb{R}^3\\)\nIn \\(\\mathbb{R}^3\\), are \\(\\{(1, 2, 3), (1, 3, 5), (2, 5, 8)\\}\\) linearly independent?\nTo answer this quesiton, we check if the only solution to the following equation is the trivial solution:\n\\[\na_1(1, 2, 3) + a_2(1, 3, 5) + a_3(2, 5, 8) = (0, 0, 0) \\Rightarrow a_1=0 \\Rightarrow a_2 = 0\n\\]\nNow we find a solution for \\(a1 = 1,\\ a2 = 1,\\ a3= -1\\), so these vectors are linearly dependent.\n\n\n🏷️ Example 3: linear dependence in \\(\\mathbb{R}_{[x]}\\)\nIn \\(\\mathbb{R}_{[x]}\\), the collection of all real coefficient polynomials, is \\(1 + x, x^2 + x, 2 + 3x +x^2\\) linearly dependent or independent?\nIt is linearly dependent, because there is a solution:\n\\[\n2\\cdot(1 + x) + 1\\cdot(x^2 + x) -1\\cdot(3x + x^2) = 0\n\\]\nNow finally we can define the concepts of basis and dimension.",
+    "crumbs": [
+      "Chapter 2 — Linear Algebra",
+      "Vector spaces, basis, and dimension"
+    ]
+  },
+  {
+    "objectID": "chapter-2/vector-spaces.html#basis-dimension",
+    "href": "chapter-2/vector-spaces.html#basis-dimension",
+    "title": "Vector spaces, basis, and dimension",
+    "section": "📌 Basis and dimension",
+    "text": "📌 Basis and dimension\n\nA basis for a vector space \\(V\\) is a linearly independent subset of \\(V\\) that spans \\(V\\)\nThe dimension of \\(V\\), \\(\\text{dim}(V)\\), is the number of vectors in a basis\n\n\n🏷️ Example 1: \\(\\mathbb{R}^2\\)\nBasis:\n\\[\n\\left\\{\n\\begin{pmatrix}\n1 \\\\ 0\n\\end{pmatrix},\n\\begin{pmatrix}\n0 \\\\ 1\n\\end{pmatrix}\n\\right\\}\n\\Rightarrow\n\\begin{pmatrix}\na \\\\ b\n\\end{pmatrix}=\na\\begin{pmatrix}\n1 \\\\ 0\n\\end{pmatrix}+\nb\\begin{pmatrix}\n0 \\\\ 1\n\\end{pmatrix}\n\\]\nNote that we want to have a set that is large enough to span the whole space, but at the same time is small enough to contain only the necessary information.\n\n\n🏷️ Example 2: \\(\\mathbb{R}^3\\)\nMost of the time, we take as basis:\n\\[\n\\left\\{\n\\begin{pmatrix}\n1 \\\\ 0 \\\\ 0\n\\end{pmatrix},\n\\begin{pmatrix}\n0 \\\\ 1 \\\\ 0\n\\end{pmatrix},\n\\begin{pmatrix}\n0 \\\\ 0 \\\\ 1\n\\end{pmatrix}\n\\right\\}\n\\]\nSince the number of elements in this basis is three, the dimension of \\(\\mathbb{R}^3\\) is three.\nNote that we could have taken any other set of three linearly independent basis vectors, such as\n\\[\n\\left\\{\n\\begin{pmatrix}\n1 \\\\ 1 \\\\ 0\n\\end{pmatrix},\n\\begin{pmatrix}\n0 \\\\ 1 \\\\ 1\n\\end{pmatrix},\n\\begin{pmatrix}\n1 \\\\ 0 \\\\ 1\n\\end{pmatrix}\n\\right\\}\n\\]\n\n\n🏷️ Example 3: \\(P_2(\\mathbb{R})\\)\nPossible basis are \\(\\{1, x, x^2\\}\\) and \\(\\{7, x + x^2, -x\\}\\). Since there are three vectors in the basis, the dimension of \\(P_2(\\mathbb{R})\\) is three.\n\n\n🏷️ Example 4: \\(Mat_2(\\mathbb{R})\\)\nThe most easy basis would be\n\\[\n\\left\\{\n\\begin{pmatrix}\n1 && 0 \\\\\n0 && 0\n\\end{pmatrix},\n\\begin{pmatrix}\n0 && 1 \\\\\n0 && 0\n\\end{pmatrix},\n\\begin{pmatrix}\n0 && 0 \\\\\n1 && 0\n\\end{pmatrix},\n\\begin{pmatrix}\n0 && 0 \\\\\n0 && 1\n\\end{pmatrix}\n\\right\\}\n\\]\nSo the dimension of this vector space is four.",
+    "crumbs": [
+      "Chapter 2 — Linear Algebra",
+      "Vector spaces, basis, and dimension"
+    ]
+  },
+  {
+    "objectID": "chapter-2/linear-transformations.html",
+    "href": "chapter-2/linear-transformations.html",
+    "title": "Linear transformations, eigenvalues, inner products, and the spectral theorem",
+    "section": "",
+    "text": "Note\n\n\n\nVideo: Linear Transformations, Eigenvalues, Inner Products, and the Spectral Theorem — 2:02:27\nThis section corresponds to 1:07:03 in Proof of Fermat Last Theorem FROM SCRATCH.",
+    "crumbs": [
+      "Chapter 2 — Linear Algebra",
+      "Linear transformations, eigenvalues, inner products, and the spectral theorem"
+    ]
+  },
+  {
+    "objectID": "chapter-2/linear-transformations.html#linear-transformations-1",
+    "href": "chapter-2/linear-transformations.html#linear-transformations-1",
+    "title": "Linear transformations, eigenvalues, inner products, and the spectral theorem",
+    "section": "📌 Linear Transformations",
+    "text": "📌 Linear Transformations\nA linear transformation is a function \\(T:\\ V\\rightarrow W\\) that preserves vector space operations:\n\\[\nT(cx + y) = cT(x) + T(y)\n\\]\nWe can understand this requirement a bit better by looking at the following concrete values for \\(x, y\\), and \\(c\\):\n\\[\n\\begin{array}{ll}\nx = y = 0, c=1 &:& T(0) = T(0) + T(0) = 0\\quad T(0) = 0\\quad\\text{(zero element)} \\\\\nc=1 &:& T(x + y) = T(x) + T(y)\\quad\\text{(addition)} \\\\\ny=0 &:& T(cx) = cT(x)\\quad\\text{(scalar multiplication)}\n\\end{array}\n\\]\n\n🏷️ Example 1: \\(T:\\mathbb{R}^2 \\rightarrow \\mathbb{R}^2\\)\nIs the transformation is defined as \\(T(x, y)=(2x, 3y)\\) also a linear transformation?\n\\[\n\\begin{array}{ll}\nT\\left(c\\begin{pmatrix}x_1\\\\ x_2\\end{pmatrix} + \\begin{pmatrix}y_1\\\\ y_2\\end{pmatrix}\\right) &=& T\\begin{pmatrix}cx_1+y_1\\\\ cx_2+y_2\\end{pmatrix} \\\\\n&=& \\begin{pmatrix}2cx_1+2cy_1\\\\3cx_2+3cy_2\\end{pmatrix} \\\\\n&=& c\\begin{pmatrix}2x_1\\\\3x_2\\end{pmatrix} + \\begin{pmatrix}2y_1\\\\ 3y_2\\end{pmatrix}\\\\\n&=&\nT\\begin{pmatrix}x_1\\\\x_2\\end{pmatrix} + T\\begin{pmatrix}y_1\\\\y_2\\end{pmatrix}\\quad  ꪜ\n\\end{array}\n\\]\n\n\n🏷️ Other Examples\n\\[\nT:\\mathbb{R}^2 \\rightarrow \\mathbb{R}\\qquad T\\begin{pmatrix}x\\\\ y\\end{pmatrix}=:y\\quad ꪜ\n\\]\n\\[\nT:P_2(\\mathbb{R}) \\rightarrow \\mathbb{R}\\qquad T(f(x)):=f(0)\\quad ꪜ\n\\]\n\\[\nT:Mat_2(\\mathbb{R}) \\rightarrow \\mathbb{R}\\qquad T\\begin{pmatrix} a && b \\\\ c && d\\end{pmatrix}:=a + d\\quad ꪜ\n\\]\n\\[\nT:\\mathbb{R}^2 \\rightarrow \\mathbb{R}^2\\qquad T\\begin{pmatrix}x\\\\ y\\end{pmatrix}:=\\begin{pmatrix}x+1\\\\y\\end{pmatrix}\\quad ✗\n\\]\nThis is not a linear transformation, since\n\\[\nT\\begin{pmatrix}1\\\\1\\end{pmatrix} =\\begin{pmatrix}2\\\\1\\end{pmatrix} \\\\\nT\\begin{pmatrix}0\\\\1\\end{pmatrix} =\\begin{pmatrix}1\\\\1\\end{pmatrix} \\\\\nT\\begin{pmatrix}1\\\\2\\end{pmatrix} =\\begin{pmatrix}2\\\\2\\end{pmatrix} \\neq \\begin{pmatrix}3\\\\2\\end{pmatrix} = T\\begin{pmatrix}1\\\\1\\end{pmatrix} + T\\begin{pmatrix}0\\\\1\\end{pmatrix}\\\\\n\\]\nSimilarly,\n\\[\nT:\\mathbb{R}^2 \\rightarrow \\mathbb{R}\\qquad T\\begin{pmatrix}x\\\\ y\\end{pmatrix}:=xy\\quad ✗\n\\]\nis not a linear transformation.",
+    "crumbs": [
+      "Chapter 2 — Linear Algebra",
+      "Linear transformations, eigenvalues, inner products, and the spectral theorem"
+    ]
+  },
+  {
+    "objectID": "chapter-2/linear-transformations.html#kernel-and-image",
+    "href": "chapter-2/linear-transformations.html#kernel-and-image",
+    "title": "Linear transformations, eigenvalues, inner products, and the spectral theorem",
+    "section": "📌 Kernel and image",
+    "text": "📌 Kernel and image\n\nThe kernel of \\(T:V\\rightarrow W\\) is the subspace \\(\\ker(T)=\\{v\\in V\\ |\\ T(v) = {\\bf 0}_W\\}\\)\nThe iamge of \\(T:V\\rightarrow W\\) is the subspace \\(\\text{im}(T)=\\{v\\in V\\ |\\ T(v)\\}\\)\n\n\n🏷️ Examples\n\n\n👨‍💻 Eigen vectors and eigen values\nThe interactive demo below illustrates the effects of a transformation matrix by applying the transformation on a two-dimensional grid. It also shows the eigen vectors.\n\n\n\n\n👨‍💻 Spectral theorem",
+    "crumbs": [
+      "Chapter 2 — Linear Algebra",
+      "Linear transformations, eigenvalues, inner products, and the spectral theorem"
+    ]
+  },
+  {
+    "objectID": "chapter-2/linear-transformations.html#summary-linear-algebra",
+    "href": "chapter-2/linear-transformations.html#summary-linear-algebra",
+    "title": "Linear transformations, eigenvalues, inner products, and the spectral theorem",
+    "section": "Summary linear algebra",
+    "text": "Summary linear algebra\n\\[\n👉\\ \\text{Matrix}:\\ A=\n\\begin{pmatrix}\na&b\\\\\nb&d\n\\end{pmatrix}\n\\]\n\\[\\Downarrow\\]\n\\[\n👉\\ \\text{Eigen values/eigen vectors}:\\ Ae_i=\\lambda_i e_i\n\\]\n\\[\\Downarrow\\]\n\\[\n👉\\ \\text{Spectral theorem}:\\ e_1\\perp e_2\n\\]\n\\[\\Downarrow\\]\n\\[\n👉\\ \\text{Orthonormal matrix}:\\ Q=(e_1\\ e_2)\n\\]\n\\[\\Downarrow\\]\n\\[\n👉\\ \\text{Diagonale matrix}:\\ \\Lambda=\n\\begin{pmatrix}\n\\lambda_1&0\\\\\n0&\\lambda_2\n\\end{pmatrix}\n\\]\n\\[\\Downarrow\\]\n\\[\n👉\\ \\text{Spectral decomposition}:\\ \\boxed{A=Q\\Lambda Q^T}\n\\]",
+    "crumbs": [
+      "Chapter 2 — Linear Algebra",
+      "Linear transformations, eigenvalues, inner products, and the spectral theorem"
     ]
   },
   {
@@ -548,7 +592,7 @@
     "href": "demo-index.html",
     "title": "Index of Helion demos",
     "section": "",
-    "text": "Note\n\n\n\nVisualizations in this project are created using the Helion library.\n\n\n\n\n\nDemo\nLink to page\n\n\n\n\nEigen vectors & eigen values\nLinear transformations\n\n\nFourier transform\nLinear algebra\n\n\nPythagoras theorem\nIs Fermat’s Last Theorem actually interesting?\n\n\nReal surfaces\nMultivariable functions\n\n\nRoots of unity\nCalculus\n\n\nRubik’s cube\nGroups\n\n\nTaylor expansion\nLinear algebra\n\n\nSpectral theorem\nLinear transformations",
+    "text": "Note\n\n\n\nVisualizations in this project are created using the Helion library.\n\n\n\n\n\nDemo\nLink to page\n\n\n\n\nComplex functions\nBasic calculus & complex analysis\n\n\nEigen vectors & eigen values\nLinear transformations\n\n\nFourier transform\nLinear algebra\n\n\nPythagoras theorem\nIs Fermat’s Last Theorem actually interesting?\n\n\nReal surfaces\nMultivariable functions\n\n\nRoots of unity\nCalculus\n\n\nRubik’s cube\nGroups\n\n\nTaylor expansion\nLinear algebra\n\n\nSpectral theorem\nLinear transformations",
     "crumbs": [
       "Index of Helion demos"
     ]

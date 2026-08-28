@@ -382,12 +382,6 @@ window.Quarto = {
  <span class="menu-text">Linear transformations, eigenvalues, inner products, and the spectral theorem</span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapter-2/summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Summary &amp; lab</span></a>
-  </div>
-</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -522,6 +516,8 @@ window.Quarto = {
   <li><a href="#cyclic-groups" id="toc-cyclic-groups" class="nav-link" data-scroll-target="#cyclic-groups">📌 Cyclic groups</a></li>
   <li><a href="#isomorphic-groups" id="toc-isomorphic-groups" class="nav-link" data-scroll-target="#isomorphic-groups">📌 Isomorphic groups</a></li>
   <li><a href="#isomorphism-the-map" id="toc-isomorphism-the-map" class="nav-link" data-scroll-target="#isomorphism-the-map">📌 Isomorphism: the map</a></li>
+  <li><a href="#the-fundamental-theorem-of-finitely-generated-abelian-groups" id="toc-the-fundamental-theorem-of-finitely-generated-abelian-groups" class="nav-link" data-scroll-target="#the-fundamental-theorem-of-finitely-generated-abelian-groups">📌 The fundamental theorem of finitely generated abelian groups</a></li>
+  <li><a href="#cosets" id="toc-cosets" class="nav-link" data-scroll-target="#cosets">📌 Cosets</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -627,7 +623,7 @@ Note
 </section>
 <section id="counter-example-mathbbq" class="level4">
 <h4 class="anchored" data-anchor-id="counter-example-mathbbq">🏷️ <strong>Counter example</strong>: <span class="math inline">\((\mathbb{Q}, *)\)</span></h4>
-<p>This is <em>not</em> a group, as there is no inverse element for zero: there is no such element for which we can write <span class="math inline">\(0*b=b*0=1\)</span> ❌</p>
+<p>This is <em>not</em> a group, as there is no inverse element for zero: there is no such element for which we can write <span class="math inline">\(0*b=b*0=1\)</span> ✗</p>
 <p>So the same set can behave very differently, depending on what operations we put on it!</p>
 </section>
 <section id="example-mathbbz_n" class="level4">
@@ -851,8 +847,42 @@ e^{\frac{4\pi i}{3}} &amp; e^{\frac{4\pi i}{3}} &amp; 1 &amp; e^{\frac{2\pi i}{3
 \phi(x_1+x_2) = e^{x_1+x_2} = e^{x_1}e^{x_2} = \phi(x_1)\phi(x_2)\quad  ꪜ
 \]</span></p>
 </section>
-<section id="example-3-mathbbz_4congmu_4" class="level4">
-<h4 class="anchored" data-anchor-id="example-3-mathbbz_4congmu_4">🏷️ <strong>Example 3</strong>: <span class="math inline">\(\mathbb{Z}_4\cong\mu_4\)</span></h4>
+<section id="example-3" class="level4">
+<h4 class="anchored" data-anchor-id="example-3">🏷️ <strong>Example 3</strong></h4>
+<p><span class="math display">\[\mathbb{Z}_4\cong\mu_4\quad\text{with}\ \phi(k) = i^k
+\]</span></p>
+<p>Generally we have:</p>
+<p><span class="math display">\[
+\mathbb{Z}_n\cong\mu_n.
+\]</span></p>
+<p>With the concept of isomorphism, we can start thinking about groups in a way that puts focus on their <em>structure</em>: when two groups are isomorphic, they are structurally the same, independent of how their symbols, elements, and binary operations are defined.</p>
+<p>As a consequence, the following question make sense: “can we classify groups using isomorphisms”? Stated differently, can we make a list of possible group structures where we don’t distinguish between groups that are esentially the same.</p>
+<p>Although this turns out to be extremely difficult, except for finite Abelian groups. This is called <strong>the fundamental theorem of finitely generated abelian groups</strong>.</p>
+</section>
+</section>
+<section id="the-fundamental-theorem-of-finitely-generated-abelian-groups" class="level2">
+<h2 class="anchored" data-anchor-id="the-fundamental-theorem-of-finitely-generated-abelian-groups">📌 The fundamental theorem of finitely generated abelian groups</h2>
+<p>Every finitely generated abelian group <span class="math inline">\(G\)</span> is isomorphic to a direct product of cyclic groups of the form</p>
+<p><span class="math display">\[
+\mathbb{Z}_{p_1} r_1 \times \mathbb{Z}_{p_2} r_2 \times \cdots \times \mathbb{Z}_{p_n} r_n \times \mathbb{Z}\times \cdots\times \mathbb{Z}
+\]</span></p>
+<p>where the <span class="math inline">\(p_i\)</span> are primes (not necessarily distinct).</p>
+<p>For example, we suppose we know nothing about a group <span class="math inline">\(G\)</span> except that it is abelinan and the order is <span class="math inline">\(|G|=12\)</span>. The theorem now states that</p>
+<p><span class="math display">\[
+G \cong \mathbb{Z}_4 \times \mathbb{Z}_3,\ \text{or}\ \mathbb{Z} \times \mathbb{Z}_2 \times \mathbb{Z}_2
+\]</span></p>
+</section>
+<section id="cosets" class="level2">
+<h2 class="anchored" data-anchor-id="cosets">📌 Cosets</h2>
+<p>Let <span class="math inline">\(H\)</span> be a subgroup of <span class="math inline">\(G\)</span>, and let <span class="math inline">\(a\in G\)</span>.</p>
+<ul>
+<li>The <strong>left coset</strong> of <span class="math inline">\(H\)</span> containing <span class="math inline">\(a\)</span> is the set <span class="math inline">\(aH=\{ah\ |\ h\in H\}\)</span>.</li>
+<li>The set of all left cosets of <span class="math inline">\(H\)</span> forms a <strong>partition</strong> of the group <span class="math inline">\(G\)</span>.</li>
+<li>All cosets of <span class="math inline">\(H\)</span> have the same size as <span class="math inline">\(H\)</span>.</li>
+</ul>
+<section id="example-1-5mathbbz-leq-mathbbz" class="level4">
+<h4 class="anchored" data-anchor-id="example-1-5mathbbz-leq-mathbbz">🏷️ <strong>Example 1</strong>: <span class="math inline">\(5\mathbb{Z} \leq \mathbb{Z}\)</span></h4>
+<p>So what are some cosets of <span class="math inline">\(5\mathbb{Z}\)</span> (all multiples of 5)?</p>
 
 
 </section>
