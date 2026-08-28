@@ -9,6 +9,7 @@ Visualizations in this project are created using the [Helion library](https://ww
 
 | Demo | Link to page |
 |------|--------------|
+[Complex functions](https://www.hendrikse.name/helion/mathematics/complex_surfaces) | [Basic calculus &amp; complex analysis](https://www.hendrikse.name/fermat-last-theorem/chapter-1/calculus-complex-analysis.html#complex-functions)
 [Eigen vectors & eigen values](https://www.hendrikse.name/helion/mathematics/matrix_transformation/#eigen-vectors-and-eigen-values) | [Linear transformations](todo)
 [Fourier transform](https://www.hendrikse.name/helion/mathematics/fourier_transform/) | [Linear algebra](http://localhost:3559/chapter-2/linear-algebra.html#fourier-transform-demo) |
 |[Pythagoras theorem](https://www.hendrikse.name/helion/mathematics/pythagoras/) | [Is Fermat’s Last Theorem actually interesting?](https://www.hendrikse.name/fermat-last-theorem/#pythagorean-theorem) |

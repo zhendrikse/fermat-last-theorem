@@ -70,7 +70,7 @@ Similarly, $(\mathbb{Q}, +)$, $(\mathbb{R}, +)$, and $(\mathbb{C}, +)$ are also 
 
 #### 🏷️ **Counter example**: $(\mathbb{Q}, *)$
 
-This is _not_ a group, as there is no inverse element for zero: there is no such element for which we can write $0*b=b*0=1$ ❌
+This is _not_ a group, as there is no inverse element for zero: there is no such element for which we can write $0*b=b*0=1$ ✗
 
 So the same set can behave very differently, depending on what operations we put on it!
 
@@ -329,6 +329,52 @@ $$
 $$
 
 
-#### 🏷️ **Example 3**: $\mathbb{Z}_4\cong\mu_4$
+#### 🏷️ **Example 3** 
+
+$$\mathbb{Z}_4\cong\mu_4\quad\text{with}\ \phi(k) = i^k
+$$
+
+Generally we have:
+
+$$
+\mathbb{Z}_n\cong\mu_n.
+$$
+
+With the concept of isomorphism, we can start thinking about groups in a way that puts focus on their _structure_: when two groups are isomorphic, they are structurally the same, independent of how their symbols, elements, and binary operations are defined.
+
+As a consequence, the following question make sense: "can we classify groups using isomorphisms"? Stated differently, can we make a list of possible group structures where we don't distinguish between groups that are esentially the same.
+
+Although this turns out to be extremely difficult, except for finite Abelian groups. This is called **the fundamental theorem of finitely generated abelian groups**.
+
+## 📌 The fundamental theorem of finitely generated abelian groups
+
+Every finitely generated abelian group $G$ is isomorphic to a direct product of cyclic groups of the form
+
+$$
+\mathbb{Z}_{p_1} r_1 \times \mathbb{Z}_{p_2} r_2 \times \cdots \times \mathbb{Z}_{p_n} r_n \times \mathbb{Z}\times \cdots\times \mathbb{Z} 
+$$
+
+where the $p_i$ are primes (not necessarily distinct).
+
+For example, we suppose we know nothing about a group $G$ except that it is abelinan and the order is $|G|=12$. The theorem now states that
+
+$$
+G \cong \mathbb{Z}_4 \times \mathbb{Z}_3,\ \text{or}\ \mathbb{Z} \times \mathbb{Z}_2 \times \mathbb{Z}_2
+$$
+
+## 📌 Cosets
+
+Let $H$ be a subgroup of $G$, and let $a\in G$.
+
+- The **left coset** of $H$ containing $a$ is the set $aH=\{ah\ |\ h\in H\}$.
+- The set of all left cosets of $H$ forms a **partition** of the group $G$.
+- All cosets of $H$ have the same size as $H$.
+
+#### 🏷️ **Example 1**: $5\mathbb{Z} \leq \mathbb{Z}$
+
+So what are some cosets of $5\mathbb{Z}$ (all multiples of 5)?
+
+
+
 
 

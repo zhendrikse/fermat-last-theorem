@@ -26,7 +26,6 @@ website:
           - chapter-2/matrices.qmd
           - chapter-2/vector-spaces.qmd
           - chapter-2/linear-transformations.qmd
-          - chapter-2/summary.qmd
 
       - section: "Chapter 3 — Abstract Algebra"
         contents:

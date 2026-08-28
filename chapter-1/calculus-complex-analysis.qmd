@@ -221,3 +221,10 @@ f'(z_0) := \lim_{h\rightarrow 0}\dfrac{f(z_0+h) - f(z)}{h}
 $$
 
 If $f$ is complex differentiable on an open set, it is called **holomorphic**.
+
+### 👨‍💻 Complex functions
+
+```{=html}
+<div id="complexSurfacesContainer"></div>
+<script type="module" src="https://www.hendrikse.name/helion/examples/complex_surfaces.js"></script>
+```

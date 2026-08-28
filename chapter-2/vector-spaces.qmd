@@ -15,7 +15,7 @@ We stated earlier that mathematics is not only about numbers,
 it is also about structure. A vector space is one of the most important
 examples of such a structure.
 
-## 📌 Vector Space: Axioms {#vector-spaces}
+## 📌 Vector Space: Axioms
 
 A **vector space** $V$ over a field $F$ is a set with addition ($+, V\times V \rightarrow V$) 
 and scalar multiplication ($\cdot, V\times F \rightarrow V$)

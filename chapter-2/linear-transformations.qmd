@@ -13,5 +13,145 @@ This section corresponds to **1:07:03** in *Proof of Fermat Last Theorem FROM SC
 
 # Linear transformations
 
-So far, we have mostly talked about a single vector space. Now we move on to functions defined between distinct vector spaces.
+So far, we have mostly talked about a single vector space. Now we move on to functions defined between distinct vector spaces. Of all functions possible between two vector spaces, some functions are especially nice, and these are called linear transformations.
 
+## 📌 Linear Transformations
+
+A **linear transformation** is a function $T:\ V\rightarrow W$ that preserves vector space operations:
+
+$$
+T(cx + y) = cT(x) + T(y)
+$$
+
+We can understand this requirement a bit better by looking at the following concrete values for $x, y$, and $c$:
+
+$$
+\begin{array}{ll}
+x = y = 0, c=1 &:& T(0) = T(0) + T(0) = 0\quad T(0) = 0\quad\text{(zero element)} \\
+c=1 &:& T(x + y) = T(x) + T(y)\quad\text{(addition)} \\ 
+y=0 &:& T(cx) = cT(x)\quad\text{(scalar multiplication)}
+\end{array}
+$$
+
+
+#### 🏷️ **Example 1**: $T:\mathbb{R}^2 \rightarrow \mathbb{R}^2$
+
+Is the transformation is defined as $T(x, y)=(2x, 3y)$ also a linear transformation?
+
+$$
+\begin{array}{ll}
+T\left(c\begin{pmatrix}x_1\\ x_2\end{pmatrix} + \begin{pmatrix}y_1\\ y_2\end{pmatrix}\right) &=& T\begin{pmatrix}cx_1+y_1\\ cx_2+y_2\end{pmatrix} \\
+&=& \begin{pmatrix}2cx_1+2cy_1\\3cx_2+3cy_2\end{pmatrix} \\
+&=& c\begin{pmatrix}2x_1\\3x_2\end{pmatrix} + \begin{pmatrix}2y_1\\ 3y_2\end{pmatrix}\\
+&=&
+T\begin{pmatrix}x_1\\x_2\end{pmatrix} + T\begin{pmatrix}y_1\\y_2\end{pmatrix}\quad  ꪜ
+\end{array}
+$$
+
+#### 🏷️ **Other Examples**
+
+$$
+T:\mathbb{R}^2 \rightarrow \mathbb{R}\qquad T\begin{pmatrix}x\\ y\end{pmatrix}=:y\quad ꪜ
+$$
+
+$$
+T:P_2(\mathbb{R}) \rightarrow \mathbb{R}\qquad T(f(x)):=f(0)\quad ꪜ
+$$
+
+$$
+T:Mat_2(\mathbb{R}) \rightarrow \mathbb{R}\qquad T\begin{pmatrix} a && b \\ c && d\end{pmatrix}:=a + d\quad ꪜ
+$$
+
+$$
+T:\mathbb{R}^2 \rightarrow \mathbb{R}^2\qquad T\begin{pmatrix}x\\ y\end{pmatrix}:=\begin{pmatrix}x+1\\y\end{pmatrix}\quad ✗
+$$
+ 
+This is not a linear transformation, since
+
+$$
+T\begin{pmatrix}1\\1\end{pmatrix} =\begin{pmatrix}2\\1\end{pmatrix} \\
+T\begin{pmatrix}0\\1\end{pmatrix} =\begin{pmatrix}1\\1\end{pmatrix} \\
+T\begin{pmatrix}1\\2\end{pmatrix} =\begin{pmatrix}2\\2\end{pmatrix} \neq \begin{pmatrix}3\\2\end{pmatrix} = T\begin{pmatrix}1\\1\end{pmatrix} + T\begin{pmatrix}0\\1\end{pmatrix}\\
+$$
+
+Similarly,
+
+$$
+T:\mathbb{R}^2 \rightarrow \mathbb{R}\qquad T\begin{pmatrix}x\\ y\end{pmatrix}:=xy\quad ✗
+$$
+
+is not a linear transformation.
+
+
+## 📌 Kernel and image
+
+- The **kernel** of $T:V\rightarrow W$ is the subspace $\ker(T)=\{v\in V\ |\ T(v) = {\bf 0}_W\}$
+- The **iamge** of $T:V\rightarrow W$ is the subspace $\text{im}(T)=\{v\in V\ |\ T(v)\}$
+
+
+#### 🏷️ **Examples**
+
+
+
+### 👨‍💻 Eigen vectors and eigen values 
+
+The interactive demo below illustrates the effects of a transformation matrix by applying the transformation on a two-dimensional grid. It also shows the eigen vectors. 
+
+```{=html}
+<div id="matrixTransformationContainer"></div>
+<script type="module" src="https://www.hendrikse.name/helion/examples/matrix_transformation.js"></script>
+```
+
+
+### 👨‍💻 Spectral theorem 
+
+```{=html}
+<div id="spectralTheoremContainer"></div>
+<script type="module" src="https://www.hendrikse.name/helion/examples/spectral_theorem.js"></script>
+```
+
+
+
+## Summary linear algebra
+
+$$
+👉\ \text{Matrix}:\ A=
+\begin{pmatrix}
+a&b\\
+b&d
+\end{pmatrix}
+$$
+
+$$\Downarrow$$
+
+$$
+👉\ \text{Eigen values/eigen vectors}:\ Ae_i=\lambda_i e_i
+$$
+
+$$\Downarrow$$
+
+$$
+👉\ \text{Spectral theorem}:\ e_1\perp e_2
+$$
+
+$$\Downarrow$$
+
+$$
+👉\ \text{Orthonormal matrix}:\ Q=(e_1\ e_2)
+$$
+
+$$\Downarrow$$
+
+$$
+👉\ \text{Diagonale matrix}:\ \Lambda=
+\begin{pmatrix}
+\lambda_1&0\\
+0&\lambda_2
+\end{pmatrix}
+$$
+
+$$\Downarrow$$
+
+$$
+👉\ \text{Spectral decomposition}:\ \boxed{A=Q\Lambda Q^T}
+$$
