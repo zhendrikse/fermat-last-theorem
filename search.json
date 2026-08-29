@@ -4,7 +4,7 @@
     "href": "chapter-1/basic-set-number-theory.html",
     "title": "Basic set & number theory",
     "section": "",
-    "text": "Note\n\n\n\nVideo: Basic set/number theory — 5:19\nThis section corresponds to 5:19 in Proof of Fermat Last Theorem FROM SCRATCH.",
+    "text": "Note\n\n\n\nThis section corresponds to Basic set/number theory — 5:19 in the video Proof of Fermat Last Theorem FROM SCRATCH. Noah Jang is the original creator of the exposition and examples referenced here. The interactive implementations, animations, additional explanations, and contextual material are my own work.",
     "crumbs": [
       "Chapter 1 — Basics",
       "Basic set &amp; number theory"
@@ -66,305 +66,134 @@
     ]
   },
   {
-    "objectID": "chapter-1/calculus-complex-analysis.html",
-    "href": "chapter-1/calculus-complex-analysis.html",
-    "title": "Basic calculus & complex analysis",
+    "objectID": "demo-index.html",
+    "href": "demo-index.html",
+    "title": "Index of Helion demos",
     "section": "",
-    "text": "Note\n\n\n\nVideo: Basic Calculus and Complex Analysis — 38:59\nThis section corresponds to 38:59 in Proof of Fermat Last Theorem FROM SCRATCH.",
+    "text": "Note\n\n\n\nVisualizations in this project are created using the Helion library.\n\n\n\n\n\nDemo\nLink to page\n\n\n\n\nComplex functions\nBasic calculus & complex analysis\n\n\nEigen vectors & eigen values\nLinear transformations\n\n\nFourier transform\nLinear algebra\n\n\nPythagoras theorem\nIs Fermat’s Last Theorem actually interesting?\n\n\nReal surfaces\nMultivariable functions\n\n\nRoots of unity\nCalculus\n\n\nRubik’s cube\nGroups\n\n\nTaylor expansion\nLinear algebra\n\n\nSpectral theorem\nLinear transformations",
     "crumbs": [
-      "Chapter 1 — Basics",
-      "Basic calculus &amp; complex analysis"
+      "Index of Helion demos"
     ]
   },
   {
-    "objectID": "chapter-1/calculus-complex-analysis.html#taylor-series",
-    "href": "chapter-1/calculus-complex-analysis.html#taylor-series",
-    "title": "Basic calculus & complex analysis",
-    "section": "📌 Taylor series",
-    "text": "📌 Taylor series\nA Taylor series represents a function as an infinite polynomial. With infinitely many terms, it equals the original function within its interval of convergence.\n\n🏷️ Examples\n\\[\n\\begin{array}{rl}\ne^x &= 1 + x + \\dfrac{x^2}{2!} + \\dfrac{x^3}{3!} + \\cdots \\\\\n\\sin x &= x - \\dfrac{x^3}{3!} + \\dfrac{x^5}{5!} - \\dfrac{x^7}{7!}+\\cdots\\\\\n\\cos x &= 1 - \\dfrac{x^2}{2!} + \\dfrac{x^4}{4!}-\\dfrac{x^6}{6!}+\\cdots \\\\\n\\ln(1 + x) &= x - \\dfrac{x^2}{2}+\\dfrac{x^3}{3}-\\dfrac{x^4}{4}+\\cdots \\qquad (-1 &lt; x \\leq 1)\n\\end{array}\n\\]\n\n\n\n\n\n\nNote\n\n\n\nSo why do we need this?\nAlthough this won’t be used frequently in the forthccoming chapters, it appears a few times later.\n\n\n🎯 The Taylor series is a way to represent a given function as an infinite polynomial.\n👉 We will look at the Taylor expansion again from the perspective of linear algebra in chapter two.\n\n\n👨‍💻 Taylor expansion demo",
-    "crumbs": [
-      "Chapter 1 — Basics",
-      "Basic calculus &amp; complex analysis"
-    ]
-  },
-  {
-    "objectID": "chapter-1/calculus-complex-analysis.html#multivariable-functions",
-    "href": "chapter-1/calculus-complex-analysis.html#multivariable-functions",
-    "title": "Basic calculus & complex analysis",
-    "section": "📌 Multivariable functions",
-    "text": "📌 Multivariable functions\nA multivariable function is a map\n\\[\nf: \\mathbb{R}^n \\rightarrow \\mathbb{R}\n\\]\nIn the section above, we have discussed (the Taylor expansion for) functions that depend on one variable only, such as \\(f(x) = e^x\\). In this section, we’ll shortly look at functions that depend on two or even more variables.\nA multivariable function that depends on two variables can naturally be visualized as a surface in three-dimensional space.\n\n👨‍💻 Multivariable functions demo\n\n\n\n\nAnother examples may be choosen from the drop-down menu. The formula of the selected function can be seen in the title.",
-    "crumbs": [
-      "Chapter 1 — Basics",
-      "Basic calculus &amp; complex analysis"
-    ]
-  },
-  {
-    "objectID": "chapter-1/calculus-complex-analysis.html#partial-derivative",
-    "href": "chapter-1/calculus-complex-analysis.html#partial-derivative",
-    "title": "Basic calculus & complex analysis",
-    "section": "📌 Partial derivative",
-    "text": "📌 Partial derivative\nFor functions that depend on more than one variable, we would like to be able to analyse the rate of change in a similar way to that of functions that depend on one variable only. As multivariate functions have several variables, each direction generally has its own rate of change. As a consequence, each direction has its own derivative. When looking for the rate of change in a particular direction, we leave the other variables intentionally unchanged. This means that all the other variables but the one we are interested in can then be treated as constants.\nLet \\(f:\\mathbb{R}^2\\rightarrow\\mathbb{R}\\) be a function. The partial derivative with respect to \\(x_i\\) is defined as\n\\[\n\\dfrac{\\partial f}{\\partial x_i} :=\n\\lim_{h\\rightarrow 0}\n\\dfrac{f(x_1,\\cdots,x_i+h,\\cdots,x_n) - f(x_1,\\cdots,x_n)}{h}\n\\]\nNote that this is very similar to the way in which the derivative is defined for a function of one variable:\n\\[\nf'(x) =\n\\lim_{h\\rightarrow 0}\n\\dfrac{f(x+h) - f(x)}{h}\n\\]\n\n\n\n\n\n\nNote\n\n\n\nSo why do we need this?\nLater these partial derivatives will show up when we talk about singlar points and elliptic curves.\n\n\n\n🏷️ Example\nLet\n\\[\nf(x,y) = x^3+y^3+xy+\\sin x\\cos y\n\\]\nthen\n\\[\n\\begin{array}{ll}\n\\dfrac{\\partial f}{\\partial x} &=\n3x^2 + y + \\cos x\\cos y \\\\\n\\dfrac{\\partial f}{\\partial y} &=\n3y^2 + x - \\sin x\\sin y \\\\\n\\end{array}\n\\]",
-    "crumbs": [
-      "Chapter 1 — Basics",
-      "Basic calculus &amp; complex analysis"
-    ]
-  },
-  {
-    "objectID": "chapter-1/calculus-complex-analysis.html#eurlers-formula-and-eitheta",
-    "href": "chapter-1/calculus-complex-analysis.html#eurlers-formula-and-eitheta",
-    "title": "Basic calculus & complex analysis",
-    "section": "📌 Eurler’s formula and \\(e^{i\\theta}\\)",
-    "text": "📌 Eurler’s formula and \\(e^{i\\theta}\\)\nFor any real number \\(\\theta\\),\n\\[\ne^{i\\theta} = \\cos\\theta + i\\sin\\theta.\n\\]\n\n\n\n\n\n\nNote\n\n\n\nWhy do we need this?\nThis formula tells us concretely what to do/what to think of, whenever we encounter \\(i\\) in an exponent.\n\n\nThe special case where \\(\\theta = \\pi\\) then gives us one of the well-known formulas in mathematics, similar to the \\(E=mc^2\\) equation in physics:\n\\[\ne^{i\\pi} + 1 = 0.\n\\]\nThe reason is that it contains so many important constants in one tiny equation:\n\nEuler’s constant or natural constant \\(e\\)\nThe irrational number \\(pi\\) as the ratio between the circumverence and diameter of a circle\nThe square root of negative one, \\(i\\)\nThe identity with respect to addition, \\(0\\)\nThe identity with respect to multiplication, \\(1\\)\n\nThis formula also matches very well with the aforementioned Taylor series.\n\\[\n\\begin{array}{ll}\ne^x &= 1 + x + \\dfrac{x^2}{2!} + \\dfrac{x^3}{3!} + \\cdots \\\\\ne^{i\\theta} &= 1 + i\\theta - \\dfrac{\\theta^2}{2!} - \\dfrac{\\theta^3}{3!}i + \\dfrac{\\theta^4}{4!} + \\dfrac{\\theta^5}{5!}i - \\dfrac{\\theta^6}{6!} + \\cdots \\\\\n\\quad &= \\left(1 - \\dfrac{\\theta^2}{2!} + \\dfrac{\\theta^4}{4!} - \\dfrac{\\theta^6}{6!} + \\cdots \\right) +i\\left(\\theta - \\dfrac{\\theta^3}{3!}i + \\dfrac{\\theta^5}{5!} + \\cdots\\right) \\\\\n\\quad &= \\cos\\theta \\qquad + \\qquad i\\sin\\theta\n\\end{array}\n\\]\nAs a consequence we have \\(e^{2\\pi i} = 1\\), \\(e^{\\pi i} = -1\\), and \\(e^{\\frac{\\pi}{6}i} = \\dfrac{\\sqrt{3}}{2} +\\dfrac{1}{2}i\\).\nAnd more generally \\[\ne^{i\\theta} =\ne^{i(\\theta + 2n\\pi)},\\quad n\\in\\mathbb{N}.\n\\]",
-    "crumbs": [
-      "Chapter 1 — Basics",
-      "Basic calculus &amp; complex analysis"
-    ]
-  },
-  {
-    "objectID": "chapter-1/calculus-complex-analysis.html#the-n-th-roots-of-unity",
-    "href": "chapter-1/calculus-complex-analysis.html#the-n-th-roots-of-unity",
-    "title": "Basic calculus & complex analysis",
-    "section": "📌 The \\(n\\)-th roots of unity",
-    "text": "📌 The \\(n\\)-th roots of unity\n\n\n\n\n\n\nNote\n\n\n\n🚨 So why do we need this?\nRoots of unity are used in many branches of mathematics, and are especially important in number theory, the theory of group characters, and the discrete Fourier transform. — Wikipedia\n\n\nThe \\(n\\)-th roots of unity are the complex numbers \\(z\\) that satisfy the equation:\n\\[\nz^n =1\\quad \\text{or equivalently}\\quad z^n -1 = 0\n\\]\nusing Euler’s formula, we can find all \\(n\\) distinct roots. They are given by:\n\\[\nz_k=e^{i\\dfrac{2\\pi k}{n}}=\\cos\\left(\\dfrac{2\\pi k}{n}\\right) + i\\sin\\left(\\dfrac{2\\pi k}{n}\\right), \\quad k=0, 1, 2,\\cdots,n-1.\n\\]\nSo how does this work? We are looking for\n\\[\nz^n = 1 = e^{2\\pi k} \\Rightarrow z = e^{\\dfrac{2\\pi ik}{n}},\\quad k \\in \\mathbb{Z}\n\\]\nFilling in the values of \\(k\\), we get\n\\[\n\\underbrace{\n1, e^{\\dfrac{2\\pi i}{n}}, e^{\\dfrac{4\\pi i}{n}}, \\cdots,e^{\\dfrac{2\\pi i(n-1)}{n}}\n},\n\\underbrace{e^{2\\pi i}, e^{\\dfrac{2\\pi i(n+1)}{n}}, \\cdots\n}\n\\]\nBecause of the periodicity, we can limit the values of \\(k\\) to \\(n-1\\).\n\n🏷️ Example 1: \\(n=2\\)\n\\[z_k = e^{i\\dfrac{2\\pi k}{2}} = e^{\\pi ik} \\Rightarrow \\begin{cases} k=0: 1 \\\\ k=1: -1\\end{cases}\n\\]\n\n\n🏷️ Example 2: \\(n=3\\)\n\\[z_k = e^{\\dfrac{2\\pi ik}{3}} \\Rightarrow \\begin{cases} k=0: 1 \\\\ k=1: e^{\\dfrac{2\\pi}{3}}= +\\dfrac{\\sqrt{3}}{2}i-\\dfrac{1}{2} \\\\ k=2: e^{\\dfrac{4\\pi}{3}} = -\\dfrac{\\sqrt{3}}{2}i+\\dfrac{1}{2}\\end{cases}\n\\]\nGeometrically, the roots of unity constitute the vertices of a regular \\(n\\)-gon sitting on a unit circle in the complex plane.\n\n\n👨‍💻 Roots of unity demo",
-    "crumbs": [
-      "Chapter 1 — Basics",
-      "Basic calculus &amp; complex analysis"
-    ]
-  },
-  {
-    "objectID": "chapter-1/calculus-complex-analysis.html#complex-functions-and-holomorphy",
-    "href": "chapter-1/calculus-complex-analysis.html#complex-functions-and-holomorphy",
-    "title": "Basic calculus & complex analysis",
-    "section": "📌 Complex functions and holomorphy",
-    "text": "📌 Complex functions and holomorphy\nA complex function is a map \\[\nf:\\mathbb{C}\\rightarrow\\mathbb{C}\n\\]\n\\(f\\) is complex differentiable at \\(z_0\\) if the limit below exists for \\(h\\in\\mathbb{C}\\).\n\\[\nf'(z_0) := \\lim_{h\\rightarrow 0}\\dfrac{f(z_0+h) - f(z)}{h}\n\\]\nIf \\(f\\) is complex differentiable on an open set, it is called holomorphic.\n\n👨‍💻 Complex functions",
-    "crumbs": [
-      "Chapter 1 — Basics",
-      "Basic calculus &amp; complex analysis"
-    ]
-  },
-  {
-    "objectID": "chapter-2/linear-algebra.html",
-    "href": "chapter-2/linear-algebra.html",
-    "title": "Linear algebra",
+    "objectID": "chapter-2/linear-transformations.html",
+    "href": "chapter-2/linear-transformations.html",
+    "title": "Linear transformations, eigenvalues, inner products, and the spectral theorem",
     "section": "",
-    "text": "The content of this chapter is designed to be self-contained, so you do not need any prior knowledge of linear algebra to follow along. However, some familiarity with basic algebra and calculus will be helpful.\nRemember that in the introduction we said:\nHere, the deeper idea is that seemingly unrelated mathematical problems can often be described using the same underlying structure. As we will see, we can use these shared concepts to look at certain problems from a new, often more convenient perspective.\nFor example, in linear algebra, we can write any vector with respect to its basis vectors:\n\\[\n\\overrightarrow{v}=c_1\\overrightarrow{e_1}+c_2\\overrightarrow{e_2}+c_3\\overrightarrow{e_3} = \\begin{pmatrix}c_1 \\\\ c_3 \\\\ c_3\\end{pmatrix}\n\\]\nIn the following two examples, we will do the same in the vector space of functions.\nAlthough Fourier analysis and Taylor expansion may seem to belong to a completely different part of mathematics, from the perspective of linear algebra, we can think of a function as an element of a vector space. This allows us to ask:\nJust as an ordinary vector can be written as a linear combination of basis vectors, a function can be written as a linear combination of basis functions.",
+    "text": "Note\n\n\n\nThis section corresponds to Linear Transformations, Eigenvalues, Inner Products, and the Spectral Theorem — 2:02:27 in the video Proof of Fermat Last Theorem FROM SCRATCH. Noah Jang is the original creator of the exposition and examples referenced here. The interactive implementations, animations, additional explanations, and contextual material are my own work.",
     "crumbs": [
       "Chapter 2 — Linear Algebra",
-      "Linear algebra"
+      "Linear transformations, eigenvalues, inner products, and the spectral theorem"
     ]
   },
   {
-    "objectID": "chapter-2/linear-algebra.html#example-1-taylor-expansion",
-    "href": "chapter-2/linear-algebra.html#example-1-taylor-expansion",
-    "title": "Linear algebra",
-    "section": "🏷️ Example 1: Taylor expansion",
-    "text": "🏷️ Example 1: Taylor expansion\nWe can conceptualize the Taylor expansion as a kind of coordinate representation of a function with respect to a basis of polynomials.\n\n\n\n\n\n\nNote\n\n\n\n🚨 All concepts below will be properly addressed and explained in this very chapter on linear algebra.\n\n\nTake for example a function \\(f(x)\\). Around \\(x=0\\) we can write\n\\[\nf(x)=a_0+a_1x+a_2x^2+a_3x^3+\\cdots\n\\]\nWe can think of the objects\n\\[\n1,\\quad x,\\quad x^2,\\quad x^3,\\ldots\n\\]\nas basis vectors of a vector space of polynomials, exactly those notions that are defined in this chapter on linear algebra! The scalars \\(a_0,a_1,a_2,a_3,\\ldots\\) are exactly the coordinates van \\(f(x)\\) with respect to that basis.\nNote that a Taylor series is not just an arbitrary representation of \\(f(x)\\) in the basis \\(\\{1,x,x^2,x^3,\\ldots\\}\\) as the coordinates are specifically determined by the derivatives of \\(f(x)\\) around the expansion point:\n\\[\na_n=\\frac{f^{(n)}(0)}{n!}.\n\\]\nFor example,\n\\[\ne^x=1+x+\\frac{x^2}{2!}+\\frac{x^3}{3!}+\\cdots\n\\]\ncan be interpreted in the context of linear algebra as:\n\\[\n[e^x]_{\\{1,x,x^2,x^3,\\ldots\\}}\n=\n\\left(1,1,\\dfrac{1}{2!},\\dfrac{1}{3!},\\ldots\\right).\n\\]\n👉 The Taylor series expansion provides a different basis\n\n👨‍💻 Taylor expansion demo\n\n\nWe can look at it in an even more abstract way. Around a point \\(a\\) we have the basis\n\\[\n1,\\quad (x-a),\\quad (x-a)^2,\\quad (x-a)^3,\\ldots\n\\]\nwith which \\(f(x)\\) becomes\n\\[\nf(x)\n=\nf(a)\n+f'(a)(x-a)\n+\\frac{f''(a)}{2!}(x-a)^2+\\cdots.\n\\]\nTherefore, the coordinates with respect to that polynomial basis vectors are\n\\[\n\\boxed{\n\\left(\nf(a),\nf'(a),\n\\frac{f''(a)}{2!},\n\\frac{f^{(3)}(a)}{3!},\\ldots\n\\right)\n}\n\\]\nSo we observe the following analogy in lineaire algebra:\n\n\n\n\n\n\n\nLinear algebra\nTaylor analysis\n\n\n\n\nvector \\(v\\)\nfunction \\(f\\)\n\n\nbasis vectors \\(e_1,e_2,\\ldots\\)\n\\(1,(x-a),(x-a)^2,\\ldots\\)\n\n\ncoordinates \\(c_1,c_2,\\ldots\\)\n\\(f(a),f'(a),f''(a)/2!,\\ldots\\)\n\n\n\\(v=\\sum c_i e_i\\)\n\\(f=\\sum \\frac{f^{(n)}(a)}{n!}(x-a)^n\\)\n\n\n\n👉 We can look at the Taylor expansion as expressing a function in coordinates along the directions \\(1,(x-a),(x-a)^2,\\ldots\\).\nThere exists an even deeper connection: differentiation can be seen as a linear operator that works on these coordinates. This directly leads to a connection between Taylor series, vector spaces, and matrices/operators.",
+    "objectID": "chapter-2/linear-transformations.html#linear-transformations-1",
+    "href": "chapter-2/linear-transformations.html#linear-transformations-1",
+    "title": "Linear transformations, eigenvalues, inner products, and the spectral theorem",
+    "section": "📌 Linear Transformations",
+    "text": "📌 Linear Transformations\nA linear transformation is a function \\(T:\\ V\\rightarrow W\\) that preserves vector space operations:\n\\[\nT(cx + y) = cT(x) + T(y)\n\\]\nWe can understand this requirement a bit better by looking at the following concrete values for \\(x, y\\), and \\(c\\):\n\\[\n\\begin{array}{ll}\nx = y = 0, c=1 &:& T(0) = T(0) + T(0) = 0\\quad T(0) = 0\\quad\\text{(zero element)} \\\\\nc=1 &:& T(x + y) = T(x) + T(y)\\quad\\text{(addition)} \\\\\ny=0 &:& T(cx) = cT(x)\\quad\\text{(scalar multiplication)}\n\\end{array}\n\\]\n\n🏷️ Example 1: \\(T:\\mathbb{R}^2 \\rightarrow \\mathbb{R}^2\\)\nIs the transformation is defined as \\(T(x, y)=(2x, 3y)\\) also a linear transformation?\n\\[\n\\begin{array}{ll}\nT\\left(c\\begin{pmatrix}x_1\\\\ x_2\\end{pmatrix} + \\begin{pmatrix}y_1\\\\ y_2\\end{pmatrix}\\right) &=& T\\begin{pmatrix}cx_1+y_1\\\\ cx_2+y_2\\end{pmatrix} \\\\\n&=& \\begin{pmatrix}2cx_1+2cy_1\\\\3cx_2+3cy_2\\end{pmatrix} \\\\\n&=& c\\begin{pmatrix}2x_1\\\\3x_2\\end{pmatrix} + \\begin{pmatrix}2y_1\\\\ 3y_2\\end{pmatrix}\\\\\n&=&\nT\\begin{pmatrix}x_1\\\\x_2\\end{pmatrix} + T\\begin{pmatrix}y_1\\\\y_2\\end{pmatrix}\\quad  ꪜ\n\\end{array}\n\\]\n\n\n🏷️ Other Examples\n\\[\nT:\\mathbb{R}^2 \\rightarrow \\mathbb{R}\\qquad T\\begin{pmatrix}x\\\\ y\\end{pmatrix}=:y\\quad ꪜ\n\\]\n\\[\nT:P_2(\\mathbb{R}) \\rightarrow \\mathbb{R}\\qquad T(f(x)):=f(0)\\quad ꪜ\n\\]\n\\[\nT:Mat_2(\\mathbb{R}) \\rightarrow \\mathbb{R}\\qquad T\\begin{pmatrix} a && b \\\\ c && d\\end{pmatrix}:=a + d\\quad ꪜ\n\\]\n\\[\nT:\\mathbb{R}^2 \\rightarrow \\mathbb{R}^2\\qquad T\\begin{pmatrix}x\\\\ y\\end{pmatrix}:=\\begin{pmatrix}x+1\\\\y\\end{pmatrix}\\quad ✗\n\\]\nThis is not a linear transformation, since\n\\[\nT\\begin{pmatrix}1\\\\1\\end{pmatrix} =\\begin{pmatrix}2\\\\1\\end{pmatrix} \\\\\nT\\begin{pmatrix}0\\\\1\\end{pmatrix} =\\begin{pmatrix}1\\\\1\\end{pmatrix} \\\\\nT\\begin{pmatrix}1\\\\2\\end{pmatrix} =\\begin{pmatrix}2\\\\2\\end{pmatrix} \\neq \\begin{pmatrix}3\\\\2\\end{pmatrix} = T\\begin{pmatrix}1\\\\1\\end{pmatrix} + T\\begin{pmatrix}0\\\\1\\end{pmatrix}\\\\\n\\]\nSimilarly,\n\\[\nT:\\mathbb{R}^2 \\rightarrow \\mathbb{R}\\qquad T\\begin{pmatrix}x\\\\ y\\end{pmatrix}:=xy\\quad ✗\n\\]\nis not a linear transformation.",
     "crumbs": [
       "Chapter 2 — Linear Algebra",
-      "Linear algebra"
+      "Linear transformations, eigenvalues, inner products, and the spectral theorem"
     ]
   },
   {
-    "objectID": "chapter-2/linear-algebra.html#example-2-fourier-transform",
-    "href": "chapter-2/linear-algebra.html#example-2-fourier-transform",
-    "title": "Linear algebra",
-    "section": "🏷️ Example 2: Fourier transform",
-    "text": "🏷️ Example 2: Fourier transform\nHere the connection with linear algebra becomes even more apparent, since the Fourier expansion amounts to a representation of a function in the following orthogonal directions:\n\\[\n1,\\quad \\cos x,\\quad \\sin x,\\quad \\cos 2x,\\quad \\sin 2x,\\quad\\ldots\n\\]\nAny function \\(f\\) can thus be built using this basis:\n\\[\nf(x)\n=\n\\frac{a_0}{2}\n+\\sum_{n=1}^{\\infty}\n\\left(a_n\\cos(nx)+b_n\\sin(nx)\\right).\n\\]\nThe Fourier-coefficiens \\(a_0,a_1,b_1,a_2,b_2,\\ldots\\) are the coordinats of the function \\(f\\) in this basis.\n\n👨‍💻 Fourier transform demo",
+    "objectID": "chapter-2/linear-transformations.html#kernel-and-image",
+    "href": "chapter-2/linear-transformations.html#kernel-and-image",
+    "title": "Linear transformations, eigenvalues, inner products, and the spectral theorem",
+    "section": "📌 Kernel and image",
+    "text": "📌 Kernel and image\n\nThe kernel of \\(T:V\\rightarrow W\\) is the subspace \\(\\ker(T)=\\{v\\in V\\ |\\ T(v) = {\\bf 0}_W\\}\\)\nThe iamge of \\(T:V\\rightarrow W\\) is the subspace \\(\\text{im}(T)=\\{v\\in V\\ |\\ T(v)\\}\\)\n\n\n🏷️ Examples\n\n\n👨‍💻 Eigen vectors and eigen values\nThe interactive demo below illustrates the effects of a transformation matrix by applying the transformation on a two-dimensional grid. It also shows the eigen vectors.\n\n\n\n\n👨‍💻 Spectral theorem",
     "crumbs": [
       "Chapter 2 — Linear Algebra",
-      "Linear algebra"
+      "Linear transformations, eigenvalues, inner products, and the spectral theorem"
     ]
   },
   {
-    "objectID": "chapter-2/linear-algebra.html#comparision-between-taylor-and-fourier-series",
-    "href": "chapter-2/linear-algebra.html#comparision-between-taylor-and-fourier-series",
-    "title": "Linear algebra",
-    "section": "Comparision between Taylor and Fourier series",
-    "text": "Comparision between Taylor and Fourier series\n\nOrthogonality\nWe have seen that \\[\n\\text{Taylor}=\\text{coordinates in a polynomial basis}\n\\]\nand\n\\[\n\\text{Fourier}=\\text{coordinates in a trigonometric basis}.\n\\]\nHowever, in the case of Fourier, we have seen yet another concept from linear algebra, namely orthogonality.\nTwo vectors are orthogonal when \\(u\\cdot v=0\\). For functions this can be defined analogously:\n\\[\n\\langle f,g\\rangle\n=\n\\int_{-\\pi}^{\\pi}f(x)g(x),dx.\n\\]\nWith this definition \\(\\cos x\\) and \\(\\sin x\\) turn out to be perpendicular to one another:\n\\[\n\\langle\\cos x,\\sin x\\rangle\n=\n\\int_{-\\pi}^{\\pi}\\cos x\\sin x,dx\n=0.\n\\]\nThe same holds for the different frequencies \\(\\langle\\cos x,\\cos2x\\rangle=0\\) and \\(\\langle\\sin3x,\\cos7x\\rangle=0\\). In fact, we have an infinite-dimensional Euclidean space where the Fourier basis vectors are perpendicular to each other.\nThis orthogonality is then used to find the (frequency) coordinates. Suppose in “ordinary” lineaire algebra we have:\n\\[\n\\overrightarrow{v}=3\\overrightarrow{e_1}+5\\overrightarrow{e_2}.\n\\]\nWhen \\(\\overrightarrow{e_1}\\) and \\(\\overrightarrow{e_2}\\) are prependicular, we can find \\(3\\) by projecting \\(\\overrightarrow{v}\\) onto \\(\\overrightarrow{e_1}\\).\nAnalogously we can find the Fourier coefficients \\(a_n\\) by projecting \\(f\\) onto \\(\\cos(nx)\\). So conceptually:\n\\[\na_n\n\\sim\n\\langle f,\\cos(nx)\\rangle,\n\\quad\nb_n\n\\sim\n\\langle f,\\sin(nx)\\rangle.\n\\]\nWith exact normalisation this results in\n\\[\na_n=\\frac1\\pi\n\\int_{-\\pi}^{\\pi}f(x)\\cos(nx)dx,\n\\quad\nb_n=\\frac1\\pi\n\\int_{-\\pi}^{\\pi}f(x)\\sin(nx),dx.\n\\]\n\n\nGeometric interpretation\nWe have just established that Fourier coefficients are literally projections of the function vector onto orthogonal basis vectors.\n👉 This makes a direct geoemtric interpretation of the Fourier transform possible.\nFor a vector in 3D this geometric interpretation is trivial. For example,\n\\[\n\\overrightarrow{v}=\n\\begin{pmatrix} 3 \\\\ 2 \\\\ 5 \\end{pmatrix}.\n\\]\ntells us that \\(\\overrightarrow{v}\\) consists of 3 units in the \\(x\\)-direction, 2 in the \\(y\\)-direction and 5 in the \\(z\\)-direction. Fourier tells us something similar: this function consists so much of frequencies \\(1\\), that much of frequencies \\(2\\), etc.\nFor example, we could have \\(f(x)= 2\\cos x +0.7\\sin x +3\\cos2x -1.2\\sin3x\\).\nThe two examples may be summarized in a table.\n\n\n\n\n\n\n\n\n\nTaylor\nFourier\n\n\n\n\nVector\nfunction \\(f\\)\nfunction \\(f\\)\n\n\nVector space\nfunctions/polynomials\nfunctions\n\n\nBasis\n\\(1,(x-a),(x-a)^2,\\ldots\\)\n\\(1,\\cos x,\\sin x,\\cos2x,\\sin2x,\\ldots\\)\n\n\nCoördinaten\nderivatives of \\(f\\)\nprojections/integrals\n\n\nIdea\nlocal behaviour\nfrequenty-contents\n\n\nBasis orthogonal?\nno\nyes\n\n\nGeometric interpretation\nless direct\nvery direct",
+    "objectID": "chapter-2/linear-transformations.html#summary-linear-algebra",
+    "href": "chapter-2/linear-transformations.html#summary-linear-algebra",
+    "title": "Linear transformations, eigenvalues, inner products, and the spectral theorem",
+    "section": "Summary linear algebra",
+    "text": "Summary linear algebra\n\\[\n👉\\ \\text{Matrix}:\\ A=\n\\begin{pmatrix}\na&b\\\\\nb&d\n\\end{pmatrix}\n\\]\n\\[\\Downarrow\\]\n\\[\n👉\\ \\text{Eigen values/eigen vectors}:\\ Ae_i=\\lambda_i e_i\n\\]\n\\[\\Downarrow\\]\n\\[\n👉\\ \\text{Spectral theorem}:\\ e_1\\perp e_2\n\\]\n\\[\\Downarrow\\]\n\\[\n👉\\ \\text{Orthonormal matrix}:\\ Q=(e_1\\ e_2)\n\\]\n\\[\\Downarrow\\]\n\\[\n👉\\ \\text{Diagonale matrix}:\\ \\Lambda=\n\\begin{pmatrix}\n\\lambda_1&0\\\\\n0&\\lambda_2\n\\end{pmatrix}\n\\]\n\\[\\Downarrow\\]\n\\[\n👉\\ \\text{Spectral decomposition}:\\ \\boxed{A=Q\\Lambda Q^T}\n\\]",
     "crumbs": [
       "Chapter 2 — Linear Algebra",
-      "Linear algebra"
+      "Linear transformations, eigenvalues, inner products, and the spectral theorem"
     ]
   },
   {
-    "objectID": "chapter-2/linear-algebra.html#conclusion",
-    "href": "chapter-2/linear-algebra.html#conclusion",
-    "title": "Linear algebra",
-    "section": "🧠 Conclusion",
-    "text": "🧠 Conclusion\n👉 The choice of basis determines which properties of a function become apparent.\n\nWith Taylor local properties become apparent via the derivatives:\n\nDecomposition of \\(f\\) in polynomial directions\nHow does \\(f\\) behave locally around a point \\(a\\)?\n\nWith Fourier frequencies become visible via projection onto the basis vectors:\n\nDecomposition of \\(f\\) in frequency directions\nFrom which frequencies can \\(f\\) be built up?\n\n\n👉 This is why linear algebra can be so powerful:\n\nIt gives us a common language in which very different mathematical problems can reveal the same underlying structure.\nWe can do a basis transformation to look at a certain problem from a new, more convenient perspective.",
-    "crumbs": [
-      "Chapter 2 — Linear Algebra",
-      "Linear algebra"
-    ]
-  },
-  {
-    "objectID": "chapter-2/matrices.html",
-    "href": "chapter-2/matrices.html",
-    "title": "Matrices, linear systems, and determinants",
+    "objectID": "chapter-2/vector-spaces.html",
+    "href": "chapter-2/vector-spaces.html",
+    "title": "Vector spaces, basis, and dimension",
     "section": "",
-    "text": "Note\n\n\n\nVideo: Matrices, Linear Systems, and Determinants — 1:07:03\nThis section corresponds to 1:07:03 in Proof of Fermat Last Theorem FROM SCRATCH.",
+    "text": "Note\n\n\n\nThis section corresponds to Vector Spaces, Basis, and Dimension — 1:40:28 in the video Proof of Fermat Last Theorem FROM SCRATCH. Noah Jang is the original creator of the exposition and examples referenced here. The interactive implementations, animations, additional explanations, and contextual material are my own work.",
     "crumbs": [
       "Chapter 2 — Linear Algebra",
-      "Matrices, linear systems, and determinants"
+      "Vector spaces, basis, and dimension"
     ]
   },
   {
-    "objectID": "chapter-2/matrices.html#matrices",
-    "href": "chapter-2/matrices.html#matrices",
-    "title": "Matrices, linear systems, and determinants",
-    "section": "Matrices",
-    "text": "Matrices\n\n📌 Matrix: Definition\n\nA matrix is a rectangular array of scalars from a field \\(F\\).\nAn \\(m \\times n\\) matrix a has \\(m\\) rows and \\(n\\) columns. The entry in the \\(i\\)-th row and \\(j\\)-th column is noted \\(A_{ij}\\).\n\n\\[\nA = \\begin{pmatrix}\nA_{11} && A_{12} && \\dots && A_{1n} \\\\\n\\vdots && \\vdots && \\ddots && \\vdots \\\\\nA_{m1} && A_{m2} && \\dots && \\ A_{mn}\n\\end{pmatrix}\n\\]\nFor now, scalars we can just think of numbers and the field \\(F\\) a number set, where we take the scalars from. More strictly, it is an algebraic structure where addition, subtraction, multiplication, and division (for non-zero elements) are defined.\nGoing forward, \\(F\\) will mostly consider matrices were \\(F\\) is either \\(\\mathbb{R}\\) or \\(\\mathbb{C}\\).\n\n🏷️ Example 1: a \\(2\\) by \\(2\\) matrix\nExample of a \\(2\\) by \\(2\\) matrix, also denoted as \\(2 \\times 2\\) matrix, which has \\(2\\) rows and \\(2\\) columns\n\\[\n\\begin{pmatrix}\n1 && 2 \\\\\n3 && 4\n\\end{pmatrix}\n\\]\n\n\n🏷️ Example 2: a \\(3\\) by \\(2\\) matrix\n\\[\nA = \\begin{pmatrix}\n1 && 2 && 4 \\\\\n7 && -7 && -6\n\\end{pmatrix}\n\\]\nSo \\(A_{12} = 2\\), \\(A_{23} = -6\\), \\(A_{13} = 4\\). Note that for example \\(A_{32}\\) does not exist!\n\n\n🏷️ Example 3: a matrix over \\(\\mathbf{C}\\)\n\\[\nA = \\begin{pmatrix}\n1 + i && -2i \\\\\ni\\sqrt{3} && -7\n\\end{pmatrix}\n\\]",
+    "objectID": "chapter-2/vector-spaces.html#vector-space-axioms",
+    "href": "chapter-2/vector-spaces.html#vector-space-axioms",
+    "title": "Vector spaces, basis, and dimension",
+    "section": "📌 Vector Space: Axioms",
+    "text": "📌 Vector Space: Axioms\nA vector space \\(V\\) over a field \\(F\\) is a set with addition (\\(+, V\\times V \\rightarrow V\\)) and scalar multiplication (\\(\\cdot, V\\times F \\rightarrow V\\)) satisfying these axioms for all \\(x,y,z\\in V\\) and \\(a, b\\in F\\):\nHere we intentionally want to generalize the concept of a vector!\n\nVS 1: \\(x + y = y + x\\) (addition: commutativity)\nVS 2: \\((x + y) + z = x + (y + z)\\) (addition: associativity)\nVS 3: \\(\\exists {\\bf 0} \\in V\\ \\text{s.t.}\\ x + {\\bf 0}= x\\) (addition: zero vector)\nVS 4: \\(\\forall x\\in V, \\exists(-x) \\in V\\ \\text{s.t.}\\ x + (-x) = {\\bf 0}\\) (addition: inverse)\nVS 5: \\(1 \\cdot x = x\\) (scalar multiplication: identity)\nVS 6: \\(1 (ab)\\cdot x = a\\cdot(b\\cdot x)\\) (scalar multiplication: associativity)\nVS 7: \\(a\\cdot(x + y) = a\\cdot x + a\\cdot y\\) (scalar multiplication: distributive law)\nVS 8: \\((a + b)\\cdot x = a\\cdot x + b\\cdot x\\) (scalar multiplication: distributive law)\n\nNote that addition is also a generalized concept here, an operation which name happens to be addition, hence we cannot automatically assume that \\(x + y = y + x\\) always holds.\nFor example, assume \\(V=\\mathbb{R}\\) and we define \\(a + b := a^b + e^ab^{72}\\in \\mathbb{R}\\). This definition of addition does not statisfy VS 1 and VS 2!\n\n🏷️ Example vector spaces\n\\(\\mathbb{R}\\), \\(\\mathbb{C}\\), and the cartesian product \\(\\mathbb{R}^n\\) are all examples of vector spaces.\nFor the first two, we define addition and multiplication in the familiar way. For the last one, we define addition as follows:\n\\[\n(x_1, x_2, \\dots, x_n) + (y_1, y_2, \\dots, y_n) = (x_1+y_1, x_2+y_2, \\dots, x_n+y_n)\n\\]\nand scalar multiplication\n\\[\na (x_1, x_2, \\dots, x_n) = (ax_1, ax_2, \\dots, ax_n)\n\\]\nAnother example is \\(\\mathbb{R}[x]\\), the set of all polynomials with real coefficients. So how do we know that \\(\\mathbb{R}[x]\\) is a vector space? We check if all axioms hold! For example, if we add two polynomials and change the order under addition, do we get the same result back? Yes, we do!\n\\[\n(1 + x) + (3 + x^2) = (3 + x^2) + (1 + x)\n\\]\nSimilarly, we can check that all other axioms hold.\nAlso, the set of al continuous functions \\(C_0(\\mathbb{R})\\) is a vector space, as is \\(Mat_2(\\mathbb{R})\\).\nHowever, \\(\\mathbb{N}\\) is not a vector space, as 0 is not in the set. Also, if we pick any natural number, the negative is not in the set.",
     "crumbs": [
       "Chapter 2 — Linear Algebra",
-      "Matrices, linear systems, and determinants"
+      "Vector spaces, basis, and dimension"
     ]
   },
   {
-    "objectID": "chapter-2/matrices.html#matrix-operations",
-    "href": "chapter-2/matrices.html#matrix-operations",
-    "title": "Matrices, linear systems, and determinants",
-    "section": "Matrix: Operations",
-    "text": "Matrix: Operations\n\nAddition: \\[\n(A + B)_{ij} = A_{ij} + B_{ij}\n\\]\nScalar multiplication:\n\n\\[(cA)_{ij} = c \\cdot A_{ij}\\]\n\nMatrix multiplication: If \\(A\\) is \\(m \\times n\\) and B is \\(n \\times p\\), their product \\(AB\\) is an \\(m \\times p\\) matrix with entries:\n\n\\[(AB)_{ij} = \\sum^n_{k=1}A_{ik}B_{kj}\\]\n\nAssociativity, \\((AB)C = A(BC)\\), but not commutative in general, \\(AB\\neq BA\\)\n\n\n🏷️ Example 1: addition\n\\[\n\\begin{pmatrix}\n2 && 3 \\\\\n4 && 1\n\\end{pmatrix}\n+\n\\begin{pmatrix}\n1 && 2 \\\\\n3 && 4\n\\end{pmatrix}\n=\n\\begin{pmatrix}\n3 && 7 \\\\\n5 && 7\n\\end{pmatrix}\n\\]\n\n\n🏷️ Example 2: subtraction\n\\[\n\\begin{pmatrix}\n1 && 3 \\\\\n7 && 4\n\\end{pmatrix}\n-\n\\begin{pmatrix}\n-3 && 2 \\\\\n0 && 7\n\\end{pmatrix}\n=\n\\begin{pmatrix}\n4 && 1 \\\\\n7 && -3\n\\end{pmatrix}\n\\]\n\n\n🏷️ Example 3: scalar multiplication\n\\[\n(-3) \\cdot\n\\begin{pmatrix}\n1 && 2 && 3 \\\\\n4 && 5 && 8\n\\end{pmatrix}\n=\n\\begin{pmatrix}\n-3 && -6 && -9 \\\\\n-12 && -15 && -24\n\\end{pmatrix}\n\\]\n\n\n🏷️ Example 4: scalar multiplication\n\\[\n(7) \\cdot\n\\begin{pmatrix}\n1 && 7 \\\\\n9 && -8\n\\end{pmatrix}\n=\n\\begin{pmatrix}\n7 && 49 \\\\\n63 && -56\n\\end{pmatrix}\n\\]\n\n\n🏷️ Example 5: matrix multiplication\nWe take the \\(i\\)-th row of \\(A\\) and the \\(j\\)-th column of \\(B\\), multiply the corresponding terms and add them:\n\\[\n\\begin{pmatrix}\n1 && 2 \\\\\n3 && 4\n\\end{pmatrix}\n\\begin{pmatrix}\n2 && 4 \\\\\n0 && 3\n\\end{pmatrix}\n=\n\\begin{pmatrix}\n2 && 10 \\\\\n6 && 24\n\\end{pmatrix}\n\\]\n\n\n🏷️ Example 6: matrix multiplication\n\\[\n\\begin{pmatrix}\n1 && 2 && 3 \\\\\n4 && 5 && 6\\end{pmatrix}\n\\begin{pmatrix}\n3 && 2 \\\\\n4 && -4 \\\\\n-1 && 0\n\\end{pmatrix}\n=\n\\begin{pmatrix}\n8 && -6 \\\\\n26 && -12\n\\end{pmatrix}\n\\]\n\n\n🏷️ Example 7: associativity of matrix multiplication\n\\[\n\\left[\n\\begin{pmatrix}\n1 && 2 \\\\\n3 && 4\n\\end{pmatrix}\n\\begin{pmatrix}\n0 && 1 \\\\\n-2 && 3\n\\end{pmatrix}\n\\right]\n\\begin{pmatrix}\n-1 && 1 \\\\\n2 && -2\n\\end{pmatrix}\n=\n\\begin{pmatrix}\n-4 && 7 \\\\\n-8 && 15\n\\end{pmatrix}\n\\begin{pmatrix}\n-1 && 1 \\\\\n2 && -2\n\\end{pmatrix}\n=\n\\begin{pmatrix}\n-18 && 18 \\\\\n38 && -38\n\\end{pmatrix}\n\\]\n\\[\n\\begin{pmatrix}\n1 && 2 \\\\\n3 && 4\n\\end{pmatrix}\n\\left[\n\\begin{pmatrix}\n0 && 1 \\\\\n-2 && 3\n\\end{pmatrix}\n\\begin{pmatrix}\n-1 && 1 \\\\\n2 && -2\n\\end{pmatrix}\n\\right]\n=\n\\begin{pmatrix}\n1 && 2 \\\\\n2 && -2\n\\end{pmatrix}\n\\begin{pmatrix}\n2 && -2 \\\\\n8 && -8\n\\end{pmatrix}\n=\n\\begin{pmatrix}\n-18 && 18 \\\\\n38 && -38\n\\end{pmatrix}\n\\]",
+    "objectID": "chapter-2/vector-spaces.html#subspace",
+    "href": "chapter-2/vector-spaces.html#subspace",
+    "title": "Vector spaces, basis, and dimension",
+    "section": "📌 Subspace",
+    "text": "📌 Subspace\nA subspace of a vector space \\(V\\) is a non-empty subset \\(W\\) of \\(V\\) that is itself a vector space under the operations inherited from \\(V\\).\nFor example, \\(\\mathbb{R}\\) is a subspace of \\(\\mathbb{C}\\), \\(\\mathbb{R}\\subset \\mathbb{C}\\).\nAnother example is\n\\[\nW = \\{(x,y)\\in\\mathbb{R} |\\ y = 2x\\} \\subset \\mathbb{R}^2\n\\]\nWe can check that \\(W\\) is both a vector space and a subspace of \\(\\mathbb{R}^2\\). However, \\(W'\\)\n\\[\nW' = \\{(x,y)\\in\\mathbb{R} |\\ y = x + 1\\} \\subset \\mathbb{R}^2\n\\]\nis not a vector space, as it does not have a zero vector in it \\((0, 0) \\notin W'\\). Consequently, we cannot call it a subspace of \\(\\mathbb{R}^2\\) either!\nAnother example is the set of all real coefficient polynomials with maximum degree two, \\(P_2[\\mathbb{R}]\\). This is a vector space as well as a subspace of all real coefficient polynomials.",
     "crumbs": [
       "Chapter 2 — Linear Algebra",
-      "Matrices, linear systems, and determinants"
+      "Vector spaces, basis, and dimension"
     ]
   },
   {
-    "objectID": "chapter-2/matrices.html#matrix-types",
-    "href": "chapter-2/matrices.html#matrix-types",
-    "title": "Matrices, linear systems, and determinants",
-    "section": "📌 Matrix: Types",
-    "text": "📌 Matrix: Types\n\nSquare Matrix: A matrix where the number of rows equals the number of columns \\(m=n\\).\nZero Matrix (\\(O\\)): A matrix where all entries are zero. It acts as the additive identity: \\(A + O = A\\).\nDiagonal Matrix: A square matrix where all non-diagonal entries are zero.\nIdentity Matrix (\\(I_n\\)): The \\(n \\times n\\) diagoonal matrix with 1s on the diagonal. It acts as a multiplicative identidy: \\(AI_n = I_n A = A\\)\n\n\n🏷️ Example 1: square matrices\n\\[\nn \\times n,\n\\begin{pmatrix}\n1 && 2 \\\\\n3 && 7\n\\end{pmatrix},\n\\begin{pmatrix}\n1 && 2 && 0 \\\\\n-7 && 6 && 27 \\\\\n0 && -6 && 1\n\\end{pmatrix}\n\\]\n\n\n🏷️ Example 2 : \\(2 \\times 3\\) zero matrix\n\\[\n\\begin{pmatrix}\n1 && 5 && -6 \\\\\n0 && 1 && 2\n\\end{pmatrix}\n\\begin{pmatrix}\n0 && 0 && 0 \\\\\n0 && 0 && 0\n\\end{pmatrix}\n=\n\\begin{pmatrix}\n1 && 5 && -6 \\\\\n0 && 1 && 2\n\\end{pmatrix}\n\\]\n\n\n🏷️ Example 3: diagonal matrices\n\\[\n\\begin{pmatrix}\n1 && 0 \\\\\n0 && 3\n\\end{pmatrix},\n\\begin{pmatrix}\n1 && 0 && 0 \\\\\n0 && 2 && 0 \\\\\n0 && 0 && 4\n\\end{pmatrix}\n\\]\n\n\n🏷️ Example 4: identity matrix\n\\[\nI_2 =\n\\begin{pmatrix}\n1 && 0 \\\\\n0 && 1\n\\end{pmatrix}\n\\]\n\\[\n\\begin{pmatrix}\n1 && 0 \\\\\n0 && 1\n\\end{pmatrix}\n\\begin{pmatrix}\na && b \\\\\nc && d\n\\end{pmatrix}\n=\n\\begin{pmatrix}\na && b \\\\\nc && d\n\\end{pmatrix}\n=\n\\begin{pmatrix}\na && b \\\\\nc && d\n\\end{pmatrix}\n\\begin{pmatrix}\n1 && 0 \\\\\n0 && 1\n\\end{pmatrix},\n\\]",
+    "objectID": "chapter-2/vector-spaces.html#linear-combination",
+    "href": "chapter-2/vector-spaces.html#linear-combination",
+    "title": "Vector spaces, basis, and dimension",
+    "section": "📌 Linear combination",
+    "text": "📌 Linear combination\nWe are slowly moving towards the concept of a basis. So what is a basis? A basis is one of the most important ideas in linear algebra. Roughly speaking, a basis is a minimal set of building blocks for a vector space.\nFor example, if we look at \\(\\mathbb{R}^2\\), a basis may be \\(\\{(1, 0), (0, 1)\\}\\). This constitutes a valid basis, as we can pick any vector \\((a,b)\\in\\mathbb{R}^2\\) and write it as a linear combination of the basis vectors:\n\\[\n(a, b) = a(1, 0) + b(0, 1)\n\\]\nSo if we know the basis, we can build every vector in the space from those basis vectors in a unique way.\nBut before we can define a basis properly, we need to define a few smaller concepts first.\nA linear combination of vectors in a set \\(S=\\{v1, v2, \\dots, v_k\\}\\) is any vector \\({\\bf u}\\) of the form\n\\[\n{\\bf u} = a_1v_1 + a_2v_2 + \\dots + a_kv_k\n\\]\nwhere \\(a_1, a_2, \\dots, a_k\\) are scalars in the field \\(F\\).\n\n🏷️ Example 1: a linear combination in \\(\\mathbb{R}^2\\)?\nLet’s take the subset of vectors\n\\[\nS=\\left\\{\n\\begin{pmatrix}\n1 \\\\ 2\n\\end{pmatrix},\n\\begin{pmatrix}\n3 \\\\ 4\n\\end{pmatrix}\n\\right\\}\n\\]\nThen the linear combinations of \\(S\\) would be something like\n\\[\nS=\na\\begin{pmatrix}\n1 \\\\ 2\n\\end{pmatrix}\n+b\n\\begin{pmatrix}\n3 \\\\ 4\n\\end{pmatrix}\n\\]\nNow we can ask if \\(\\begin{pmatrix} 5 \\\\ 8\\end{pmatrix}\\) is a linear combination of \\(S\\). To this extent, we check if there exists an \\(a\\) and \\(b\\), such that\n\\[\na\\begin{pmatrix}\n1 \\\\ 2\n\\end{pmatrix}\n+b\n\\begin{pmatrix}\n3 \\\\ 4\n\\end{pmatrix} =\n\\begin{pmatrix} 5 \\\\ 8\\end{pmatrix}\n\\]\nAnd indeed, this holds true for \\(a=2\\) and \\(b=1\\), so \\(\\begin{pmatrix} 5 \\\\ 8\\end{pmatrix}\\) is a linear combination of \\(S\\)!\n\n\n🏷️ Example 2: a linear combination in \\(\\mathbb{R}^3\\)?\nLet’s take the subset of vectors\n\\[\nS=\\left\\{\n\\begin{pmatrix}\n1 \\\\ 2 \\\\ 0\n\\end{pmatrix},\n\\begin{pmatrix}\n4 \\\\ 7 \\\\ 0\n\\end{pmatrix}\n\\right\\}\n\\]\nWe can ask if \\(\\begin{pmatrix} 3 \\\\ 4 \\\\ 5 \\end{pmatrix}\\) is a linear combination of \\(S\\):\n\\[\na\\begin{pmatrix}\n1 \\\\ 2 \\\\0\n\\end{pmatrix}\n+b\n\\begin{pmatrix}\n4 \\\\ 7 \\\\ 0\n\\end{pmatrix} =\n\\begin{pmatrix} 3 \\\\ 4 \\\\ 5\\end{pmatrix}\n\\]\nThe answer is no, as the third coordinate will always remain zero. So \\(\\begin{pmatrix} 3 \\\\ 4 \\\\ 5 \\end{pmatrix}\\) is not a linear combination of \\(S\\).",
     "crumbs": [
       "Chapter 2 — Linear Algebra",
-      "Matrices, linear systems, and determinants"
+      "Vector spaces, basis, and dimension"
     ]
   },
   {
-    "objectID": "chapter-2/matrices.html#matrices-and-systems-of-linear-equations",
-    "href": "chapter-2/matrices.html#matrices-and-systems-of-linear-equations",
-    "title": "Matrices, linear systems, and determinants",
-    "section": "📌 Matrices and Systems of Linear Equations",
-    "text": "📌 Matrices and Systems of Linear Equations\nA system of linear equations can be written as a single matrix equation\n\\[\n\\begin{cases}\na_{11}x_1 + \\cdots +A_{1n}x_1 = b_1 \\\\\n\\vdots                              \\\\\na_{m1}x_1 + \\cdots +A_{mn}x_n = b_m\n\\end{cases}\n\\Longleftrightarrow\n\\begin{pmatrix}\na_{11} && \\cdots && a_{1n} \\\\\n\\vdots && \\ddots && \\vdots \\\\\na_{m1} && \\cdots && a_{mn}\n\\end{pmatrix}\n\\begin{pmatrix}\nx_1 \\\\\n\\vdots \\\\\nx_n\n\\end{pmatrix} =\n\\begin{pmatrix}\nb_1 \\\\\n\\vdots \\\\\nb_m\n\\end{pmatrix}\n\\]\nThat is, \\(A\\bf{x} = \\bf{b}\\)\n\n🏷️ Example 1: how it works\n\\[\n\\begin{cases}\n2x+3y+5z=7 \\\\\nx+4y+8z=-3 \\\\\nx+5y+9z=8\n\\end{cases}\n\\Longleftrightarrow\n\\begin{pmatrix}\n2 && 3 && 5 \\\\\n1 && 4 && 8 \\\\\n1 && 5 && -9\n\\end{pmatrix}\n\\begin{pmatrix}\nx \\\\\ny \\\\\nz\n\\end{pmatrix} =\n\\begin{pmatrix}\n2x+3y+5z \\\\\nx+4y+8z \\\\\nx+5y+9z\n\\end{pmatrix}=\n\\begin{pmatrix}\n7 \\\\\n-3 \\\\\n8\n\\end{pmatrix}\n\\]\nThis can be written as:\n\\[\nA\\vec{x}=\\vec{b}\n\\]\nSo the natural question is, how do we solve \\(x\\), \\(y\\), and \\(z\\)?\nIf \\(\\vec{x}\\) and \\(\\vec{b}\\) were just ordinary numbers \\(x\\) and \\(b\\), we would multiply both left and right with reciprocal \\(\\dfrac{1}{a}\\):\n\\[\n\\dfrac{1}{a}ax = \\dfrac{1}{a}b \\Rightarrow x = \\dfrac{b}{a}\n\\]\nSo the key value here is \\(\\dfrac{1}{A}\\), which gives the identity when multiplied by \\(A\\). Now the identity for matrices is \\(I_n\\), so we are looking for a matrix \\(B\\) for which\n\\[\nAB=BA=I_n\n\\]",
+    "objectID": "chapter-2/vector-spaces.html#span",
+    "href": "chapter-2/vector-spaces.html#span",
+    "title": "Vector spaces, basis, and dimension",
+    "section": "📌 Span",
+    "text": "📌 Span\nLet \\(S\\) be a non-empty subset of a vector space \\(V\\). The span of \\(S\\), denoted by \\(\\text{span}(S)\\), is the smallest subset of \\(V\\) containing \\(S\\). In practice, it is the set of all linear combinations of elements of \\(S=\\{ v_1, v_2, \\cdots, v_n\\}\\):\n\\[\n\\text{span}(S) =\n\\{\na_1v_1+\\cdots+a_n v_n\\ |\\ n \\geq 1,\\ v_i\\in S,\\ a_i \\in F\n\\}\n\\]",
     "crumbs": [
       "Chapter 2 — Linear Algebra",
-      "Matrices, linear systems, and determinants"
+      "Vector spaces, basis, and dimension"
     ]
   },
   {
-    "objectID": "chapter-2/matrices.html#invertible-matrices",
-    "href": "chapter-2/matrices.html#invertible-matrices",
-    "title": "Matrices, linear systems, and determinants",
-    "section": "📌 Invertible Matrices",
-    "text": "📌 Invertible Matrices\nA square matrix \\(A\\) is invertible if an inverse matrix \\(A^{-1}\\) exists that satisfies\n\\[\nA A^{-1} = A^{-1} A = I_n\n\\]\n\n🏷️ Example 1: invertible \\(2 \\times 2\\) matrix\n\\[\n\\text{Let}\\ A=\n\\begin{pmatrix}\n2 && 3 \\\\\n1 && 2\n\\end{pmatrix},\\ \\text{then }\\ A^{-1}=\n\\begin{pmatrix}\n2 && -3 \\\\\n-1 && 2\n\\end{pmatrix}\n\\]\nThis can easily be verified as follows:\n\\[\nAA^{-1} =\n\\begin{pmatrix}\n2 && 3 \\\\\n1 && 2\n\\end{pmatrix}\n\\begin{pmatrix}\n2 && -3 \\\\\n-1 && 2\n\\end{pmatrix}\n=\n\\begin{pmatrix}\n1 && 0 \\\\\n0 && 1\n\\end{pmatrix}\n\\]\n\n\n🏷️ Example 2: invertible \\(3 \\times 3\\) matrix\n\\[\nB = \\begin{pmatrix}\n1 && 1 && 1 \\\\\n0 && 1 && 1 \\\\\n1 && 0 && 1\n\\end{pmatrix},\\ B^{-1}=\n\\begin{pmatrix}\n1 && -1 && 0 \\\\\n1 && 0 && -1 \\\\\n-1 && 1 && 1\n\\end{pmatrix}\n\\Rightarrow\nBB^{-1}=B^{-1}B=I_3\n\\]\nHowever, not every matrix as an inverse matrix.\n\n\n🏷️ Example 3: a non-invertible matrix\n\\[\nA =\n\\begin{pmatrix}\n0 && 0 \\\\\n0 && 0\n\\end{pmatrix}\n\\Rightarrow\n\\begin{pmatrix}\n0 && 0 \\\\\n0 && 0\n\\end{pmatrix}\n\\begin{pmatrix}\na && b \\\\\nc && d\n\\end{pmatrix}=\n\\begin{pmatrix}\n0 && 0 \\\\\n0 && 0\n\\end{pmatrix}\\neq I_2\n\\]\nSo not every matrix as an inverse! Some matrices have inverses, others don’t.\nUsing this, we can actually solve the above system of linear equations.\n\\[\n\\begin{cases}\n2x + 3y = 13 \\\\\nx+2y = 8\n\\end{cases}\n\\Longleftrightarrow\n\\begin{pmatrix}\n2 && 3 \\\\\n1 && 2\n\\end{pmatrix}\n\\begin{pmatrix}\nx \\\\\ny\n\\end{pmatrix}=\n\\begin{pmatrix}\n13 \\\\\n8\n\\end{pmatrix}\n\\]\nMultiplication by the inverse matrix on both sides gives (for the inverse matrix, see the first example listed under Invertible Matrices):\n\\[\n\\begin{pmatrix}\n2 && -3 \\\\\n-1 && 2\n\\end{pmatrix}\n\\begin{pmatrix}\n2 && 3 \\\\\n1 && 2\n\\end{pmatrix}\n\\begin{pmatrix}\nx \\\\\ny\n\\end{pmatrix}=\n\\begin{pmatrix}\n2 && -3 \\\\\n-1 && 2\n\\end{pmatrix}\n\\begin{pmatrix}\n13 \\\\\n8\n\\end{pmatrix}\n\\Rightarrow\n\\begin{pmatrix}\nx \\\\\ny\n\\end{pmatrix}=\n\\begin{pmatrix}\n2 \\\\\n3\n\\end{pmatrix}\n\\]\nNow that we learned about inverse matrices, we would like to find the inverse of a general matrix\n\\[\n\\begin{pmatrix}\na && b \\\\\nc && d\n\\end{pmatrix}\n\\]\nNote that at this point, we don’t even know if this matrix has an inverse.\nWe are looking for an inverse matrix, so we have\n\\[\n\\begin{pmatrix}\na && b \\\\\nc && d\n\\end{pmatrix}\n\\begin{pmatrix}\nx && y \\\\\nz && w\n\\end{pmatrix}=\n\\begin{pmatrix}\n1 && 0 \\\\\n0 && 1\n\\end{pmatrix}=\n\\begin{pmatrix}\nax+bz && ay+bw \\\\\ncx+dz && cy+dw\n\\end{pmatrix}\n\\]\nFrom this we infer that\n\\[\n\\begin{cases}\nax+bz = 1 \\\\\nay+bw = 0 \\\\\ncx+dz = 0 \\\\\ncy+dw = 1\n\\end{cases} \\Rightarrow\n\\begin{cases}\nadx+bdz = d \\\\\nady+bdw = 0 \\\\\nbcx+bdz = 0 \\\\\nbcy+bdw = b\n\\end{cases}\n\\]\nSubtraction of the first and the third equations and the second and last respectively results in:\n\\[\n\\begin{cases}\nx = \\dfrac{d}{ad-bc} \\\\\ny = \\dfrac{-b}{ad-bc} \\\\\nz = \\dfrac{-c}{ad-bc} \\\\\nw = \\dfrac{a}{ad-bc}\n\\end{cases}, ad-bc\\neq 0 \\Rightarrow\n\\begin{pmatrix}\nx && y \\\\\nz && w\n\\end{pmatrix}=\n\\dfrac{1}{ad-bc}\n\\begin{pmatrix}\nd && -b \\\\\n-c && a\n\\end{pmatrix}\n\\]\n🚨 So the matrix has an inverse if and only if \\(ad-bc\\neq 0\\). So the \\(ad-bc\\) quantity is key here, as it determines if the matrix is invertible or not! This quantity is called the determinant❗\nThe definition of a determinant can be generalized to any \\(n \\times n\\) matrix, but we will refrain from doing so here. Instead, we will focus on the \\(2 \\times 2\\) case, which is sufficient for our purposes.",
+    "objectID": "chapter-2/vector-spaces.html#linear-independence-and-dependence",
+    "href": "chapter-2/vector-spaces.html#linear-independence-and-dependence",
+    "title": "Vector spaces, basis, and dimension",
+    "section": "📌 Linear independence and dependence",
+    "text": "📌 Linear independence and dependence\nA set of vectors \\(S=\\{ v_1, v_2,\\ \\cdots,\\ v_k\\}\\) is linearly independent if the only solution to the equation\n\\[\na_1v_1+a_2v_2+\\cdots+a_k v_k = {\\bf 0}\n\\]\nis the trivial solution \\(a_1=a_2=\\cdots=a_k=0\\). If a set is not linearly independent, it is called linearly dependent.\n\n🏷️ Example 1: linear dependence in \\(\\mathbb{R}^2\\)\nIn \\(\\mathbb{R}^2\\), are \\(\\{(1, 2), (1, 0)\\}\\) linearly independent?\nTo answer this quesiton, we check if the only solution to the following equation is the trivial solution:\n\\[\na_1(1, 2) + a_2(1, 0) = (a_1 + a_2, 2a_1) = (0, 0) \\Rightarrow a_1=0 \\Rightarrow a_2 = 0\n\\]\nSo these vectors are linearly independent.\n\n\n🏷️ Example 2: linear dependence in \\(\\mathbb{R}^3\\)\nIn \\(\\mathbb{R}^3\\), are \\(\\{(1, 2, 3), (1, 3, 5), (2, 5, 8)\\}\\) linearly independent?\nTo answer this quesiton, we check if the only solution to the following equation is the trivial solution:\n\\[\na_1(1, 2, 3) + a_2(1, 3, 5) + a_3(2, 5, 8) = (0, 0, 0) \\Rightarrow a_1=0 \\Rightarrow a_2 = 0\n\\]\nNow we find a solution for \\(a1 = 1,\\ a2 = 1,\\ a3= -1\\), so these vectors are linearly dependent.\n\n\n🏷️ Example 3: linear dependence in \\(\\mathbb{R}_{[x]}\\)\nIn \\(\\mathbb{R}_{[x]}\\), the collection of all real coefficient polynomials, is \\(1 + x, x^2 + x, 2 + 3x +x^2\\) linearly dependent or independent?\nIt is linearly dependent, because there is a solution:\n\\[\n2\\cdot(1 + x) + 1\\cdot(x^2 + x) -1\\cdot(3x + x^2) = 0\n\\]\nNow finally we can define the concepts of basis and dimension.",
     "crumbs": [
       "Chapter 2 — Linear Algebra",
-      "Matrices, linear systems, and determinants"
+      "Vector spaces, basis, and dimension"
     ]
   },
   {
-    "objectID": "chapter-2/matrices.html#the-determinant",
-    "href": "chapter-2/matrices.html#the-determinant",
-    "title": "Matrices, linear systems, and determinants",
-    "section": "📌 The Determinant",
-    "text": "📌 The Determinant\nA determinant is a function \\[\n\\det: M_{n \\times n}(F) \\rightarrow F\n\\] that assigns a scalar to each square matrix.\n\\[\n👉\\ A\\ \\text{is invertible} \\Longleftrightarrow \\det(A)\\neq 0\n\\]\n\\[\n👉\\ \\det(AB)=\\det(BA)\n\\]\nFor a \\(2\\times2\\) matrix, \\[\n👉\\ \\det\\begin{pmatrix} a && b \\\\ c && d\\end{pmatrix}=ad-bc\n\\]",
+    "objectID": "chapter-2/vector-spaces.html#basis-dimension",
+    "href": "chapter-2/vector-spaces.html#basis-dimension",
+    "title": "Vector spaces, basis, and dimension",
+    "section": "📌 Basis and dimension",
+    "text": "📌 Basis and dimension\n\nA basis for a vector space \\(V\\) is a linearly independent subset of \\(V\\) that spans \\(V\\)\nThe dimension of \\(V\\), \\(\\text{dim}(V)\\), is the number of vectors in a basis\n\n\n🏷️ Example 1: \\(\\mathbb{R}^2\\)\nBasis:\n\\[\n\\left\\{\n\\begin{pmatrix}\n1 \\\\ 0\n\\end{pmatrix},\n\\begin{pmatrix}\n0 \\\\ 1\n\\end{pmatrix}\n\\right\\}\n\\Rightarrow\n\\begin{pmatrix}\na \\\\ b\n\\end{pmatrix}=\na\\begin{pmatrix}\n1 \\\\ 0\n\\end{pmatrix}+\nb\\begin{pmatrix}\n0 \\\\ 1\n\\end{pmatrix}\n\\]\nNote that we want to have a set that is large enough to span the whole space, but at the same time is small enough to contain only the necessary information.\n\n\n🏷️ Example 2: \\(\\mathbb{R}^3\\)\nMost of the time, we take as basis:\n\\[\n\\left\\{\n\\begin{pmatrix}\n1 \\\\ 0 \\\\ 0\n\\end{pmatrix},\n\\begin{pmatrix}\n0 \\\\ 1 \\\\ 0\n\\end{pmatrix},\n\\begin{pmatrix}\n0 \\\\ 0 \\\\ 1\n\\end{pmatrix}\n\\right\\}\n\\]\nSince the number of elements in this basis is three, the dimension of \\(\\mathbb{R}^3\\) is three.\nNote that we could have taken any other set of three linearly independent basis vectors, such as\n\\[\n\\left\\{\n\\begin{pmatrix}\n1 \\\\ 1 \\\\ 0\n\\end{pmatrix},\n\\begin{pmatrix}\n0 \\\\ 1 \\\\ 1\n\\end{pmatrix},\n\\begin{pmatrix}\n1 \\\\ 0 \\\\ 1\n\\end{pmatrix}\n\\right\\}\n\\]\n\n\n🏷️ Example 3: \\(P_2(\\mathbb{R})\\)\nPossible basis are \\(\\{1, x, x^2\\}\\) and \\(\\{7, x + x^2, -x\\}\\). Since there are three vectors in the basis, the dimension of \\(P_2(\\mathbb{R})\\) is three.\n\n\n🏷️ Example 4: \\(Mat_2(\\mathbb{R})\\)\nThe most easy basis would be\n\\[\n\\left\\{\n\\begin{pmatrix}\n1 && 0 \\\\\n0 && 0\n\\end{pmatrix},\n\\begin{pmatrix}\n0 && 1 \\\\\n0 && 0\n\\end{pmatrix},\n\\begin{pmatrix}\n0 && 0 \\\\\n1 && 0\n\\end{pmatrix},\n\\begin{pmatrix}\n0 && 0 \\\\\n0 && 1\n\\end{pmatrix}\n\\right\\}\n\\]\nSo the dimension of this vector space is four.",
     "crumbs": [
       "Chapter 2 — Linear Algebra",
-      "Matrices, linear systems, and determinants"
-    ]
-  },
-  {
-    "objectID": "chapter-2/matrices.html#matrix-groups-notation",
-    "href": "chapter-2/matrices.html#matrix-groups-notation",
-    "title": "Matrices, linear systems, and determinants",
-    "section": "📌 Matrix Groups: Notation",
-    "text": "📌 Matrix Groups: Notation\nFor a field \\(F\\) and a positive integer \\(n\\):\n\n\\(Mat_n(F)\\): the set of all \\(n\\times n\\) matrices with entries in F.\n\\(GL_n(F)\\): the general linear group is the group of all invertible matrices in \\(Mat_n(F)\\).\n\n\\[\nGL_n(F) = \\{A\\in Mat_n(F)\\ |\\ \\det(A)\\neq 0\\}.\n\\]\n\n\\(SL_n(F)\\): the special linear group is a subgroup of \\(GL_n(F)\\), consisting of matrices with determinant 1.\n\n\\[\nSL_n(F) = \\{A\\in GL_n(F)\\ |\\ \\det(A)=1\\}.\n\\]\n\n🏷️ Example 1: members of \\(Mat_n(F)\\)\n\\[\nMat_2(\\mathbb{R}):\\ \\begin{pmatrix} 2 && 3 \\\\ -1 && \\sqrt{7}\\end{pmatrix},\\ \\begin{pmatrix} \\pi && 3+\\sqrt{2} \\\\ -7 && \\dfrac{3}{4}\\end{pmatrix}\n\\]\n\n\n🏷️ Example 2 : members of \\(GL_n(F)\\)\n\\[\nGL_2(\\mathbb{R}):\\ \\begin{pmatrix} 1 && 2 \\\\ 3 && 4\\end{pmatrix} \\Rightarrow \\text{det}=-2\n\\]\nHowever, the following matrix is not a member of \\(GL_2(\\mathbb{R})\\), as it is a non-invertible matrix:\n\\[\n\\begin{pmatrix} 2 && 4 \\\\ 5 && 10\\end{pmatrix} \\Rightarrow \\text{det}=-0\n\\]\n\n\n🏷️ Example 3: members of \\(SL_n(F)\\)\n\\[\n\\begin{pmatrix} 3 && 2 \\\\ 7 && 5\\end{pmatrix} \\in SL_2(\\mathbb{R})\n\\]\nBut\n\\[\n\\begin{pmatrix} 4 && 6 \\\\ 0 && 1\\end{pmatrix} \\notin SL_2(\\mathbb{R})\n\\]",
-    "crumbs": [
-      "Chapter 2 — Linear Algebra",
-      "Matrices, linear systems, and determinants"
-    ]
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Fermat’s Last Theorem",
-    "section": "",
-    "text": "Note\n\n\n\nThis site is heavily based on the exposition and examples in Noah Jang’s video Proof of Fermat Last Theorem FROM SCRATCH.\nThis website is an independent interactive/visual companion, with additional explanations, context, and JavaScript demonstrations.\nVideo: Proof of Fermat Last Theorem FROM SCRATCH",
-    "crumbs": [
-      "Fermat's Last Theorem"
-    ]
-  },
-  {
-    "objectID": "index.html#is-fermats-last-theorem-actually-interesting",
-    "href": "index.html#is-fermats-last-theorem-actually-interesting",
-    "title": "Fermat’s Last Theorem",
-    "section": "Is Fermat’s Last Theorem actually interesting?",
-    "text": "Is Fermat’s Last Theorem actually interesting?\nMany of us can remember the Pythagorean theorem from high school. It is a simple and elegant statement about right triangles.\n\n👨‍💻 Pythagorean theorem\n\n\nGoing forward, we will frequently notice that\n\nIn mathematics, we often try to generalize concepts, theorems and/or equations\n\nOne natural generalization here would be to replace the exponent value of two with any arbitrary natural number \\(n\\):\n\\[\na^n + b^n = c^n\n\\]\nFermat’s Last Theorem (FLT) makes a remarkably simple claim: if \\(n &gt; 2\\), there are no positive integers \\(a\\), \\(b\\), and \\(c\\) that satisfy it. This may come as a surprise. After all, we known that we can easily find infinitely many positive integers that satisfy the equation for \\(n=2\\), for example:\n\\[\n3^2 + 4^2 = 5^2\n\\]\nSo why should the case \\(n&gt;2\\) be so special? And why did it take more than three centuries to prove?\nUsually the story starts with that fact that in 1637 Pierre de Fermat wrote in the margin of a book that he had discovered a “truly marvelous” proof, but that the margin was too small to contain it. The problem remained unsolved for centuries, attracting some of the greatest mathematicians in history, until Andrew Wiles finally announced a proof in 1993.\nI vividly remember my excitement when I read on slashdot.org that Wiles’ finally managed to provide a proof.\nBut this story leaves open a more interesting question:\n\nIs Fermat’s Last Theorem genuinely mathematically interesting, or is it famous just because of the hype and the extraordinary story surrounding it?\n\nThis project is an attempt to investigate this question.",
-    "crumbs": [
-      "Fermat's Last Theorem"
-    ]
-  },
-  {
-    "objectID": "index.html#what-does-from-scratch-mean",
-    "href": "index.html#what-does-from-scratch-mean",
-    "title": "Fermat’s Last Theorem",
-    "section": "What does “from scratch” mean?",
-    "text": "What does “from scratch” mean?\nThe purpose of this website is to follow that journey as carefully as possible. The goal is not merely to state Wiles’ proof, or to give a high-level description such as\n\n“Frey constructed an elliptic curve, Ribet proved a theorem, and Wiles proved modularity.”\n\nThat tells us what happened, but not necessarily why. Our approach is different in precisely this aspect: apart from introducing the necessary (fields of) mathematics, the intention is to keep asking the same question:\n\nWhy do we need this?\n\nIf a new mathematical object appears, we should understand what problem it solves. If a theorem is introduced, we should understand why it is relevant. And when the argument becomes abstract, we should try to keep sight of the remarkably simple equation with which we started.\nWe will start with concepts that are familiar from undergraduate mathematics and gradually introduce the more advanced ideas that eventually become necessary.",
-    "crumbs": [
-      "Fermat's Last Theorem"
-    ]
-  },
-  {
-    "objectID": "index.html#from-a-simple-equation-to-modern-mathematics",
-    "href": "index.html#from-a-simple-equation-to-modern-mathematics",
-    "title": "Fermat’s Last Theorem",
-    "section": "From a simple equation to modern mathematics",
-    "text": "From a simple equation to modern mathematics\nThe surprising part of Fermat’s Last Theorem is not simply that the equation has no solutions. The surprising part is what lies behind that simple statement.\nAt first, FLT may seem to be a problem just about integers. We might therefore expect the proof to involve clever manipulations of integers, perhaps together with some increasingly sophisticated number theory. And indeed, that is how the story begins.\nBut in mathematics, we often encounter a problem in one field and eventually discover that its real structure is much easier to understand in another. As mathematicians tried to understand FLT more deeply, this happened as well. Not only did the problem itself turn out to be connected to different fields of mathematics, it also made use of some connections/bridges between those different fields:\n\nLinear algebra,\nabstract algebra (groups and Galois theory),\nelliptic curves,\nmodular forms\n\nSo the topics discussed here are not simply a collection of increasingly complicated tools that happen to be useful for proving the theorem, but constitute a means for the unification of the different fields in mathematics as well (Langlands program). As such, it is very similar to the standard model in physics, one of the greatest achievements in unifying the four different physical forces (except gravity).",
-    "crumbs": [
-      "Fermat's Last Theorem"
-    ]
-  },
-  {
-    "objectID": "index.html#my-motivation",
-    "href": "index.html#my-motivation",
-    "title": "Fermat’s Last Theorem",
-    "section": "My motivation",
-    "text": "My motivation\nFermat’s Last Theorem is a particularly beautiful example of a recurring phenomenon in both physics and mathematics:\n\nA simple question can lead us to a much deeper structure than we could have anticipated.\n\nFor me, the history of Fermat’s Last Theorem is therefore not merely the story of finding a proof. It is also the story of discovering connections between different fields of mathematics.\nThat is primarily what makes the theorem interesting to me.\n\nNot the hype.\nNot the legend of the margin.\nNot even the fact that it took more than three centuries to prove.\n\nThe interesting part is what structures are hiding underneath.",
-    "crumbs": [
-      "Fermat's Last Theorem"
-    ]
-  },
-  {
-    "objectID": "index.html#a-journey-rather-than-a-shortcut",
-    "href": "index.html#a-journey-rather-than-a-shortcut",
-    "title": "Fermat’s Last Theorem",
-    "section": "A journey rather than a shortcut",
-    "text": "A journey rather than a shortcut\nThis is not intended to be a reproduction of Wiles’ original papers. Those papers are highly technical, and understanding every detail of the complete proof requires a substantial amount of modern mathematics.\nInstead, this project aims to construct a coherent path toward the proof.\nThe hope is that, by the time we reach Wiles’ proof, the reader will not necessarily be able to reproduce every technical argument from memory, but will understand the architecture of the proof and, more importantly, why the architecture looks the way it does.",
-    "crumbs": [
-      "Fermat's Last Theorem"
-    ]
-  },
-  {
-    "objectID": "chapter-3/abstract-algebra.html",
-    "href": "chapter-3/abstract-algebra.html",
-    "title": "Abstract algebra",
-    "section": "",
-    "text": "Note\n\n\n\nVideo: Groups, Homomorphisms, and Group Actions — 2:44:50\nThis section corresponds to 2:44:50 in Proof of Fermat Last Theorem FROM SCRATCH.\n\n\n\nAbstract algebra\n\n\n\n\n\n\nNote\n\n\n\n🚨 Why do we need this?\nThe main topics for proving Fermat’s last theorem will be elliptic curves and modular forms. One of the most important facts about elliptic curves is the fact that their points form a group. It is the reason why we can view elliptic curves as algebraic objects.\n\n\nWe start with groups, then we move on to rings and fields. These are the algebraic structrures we need before elliptic curves start making sense.\nAt the end, we will also take a glimpse at Galois theory. This will become extremely important later, because Galois representations are one of the most important objects that establish a connection between elliptic curves and modular forms.",
-    "crumbs": [
-      "Chapter 3 — Abstract Algebra",
-      "Abstract algebra"
-    ]
-  },
-  {
-    "objectID": "chapter-3/rings.html",
-    "href": "chapter-3/rings.html",
-    "title": "Rings, Fields, Ideals, and Unique Factorization",
-    "section": "",
-    "text": "Note\n\n\n\nVideo: Rings, Fields, Ideals, and Unique Factorization — 3:36:07\nThis section corresponds to 3:36:07 in Proof of Fermat Last Theorem FROM SCRATCH.",
-    "crumbs": [
-      "Chapter 3 — Abstract Algebra",
-      "Rings, Fields, Ideals, and Unique Factorization"
+      "Vector spaces, basis, and dimension"
     ]
   },
   {
@@ -372,7 +201,7 @@
     "href": "chapter-3/groups.html",
     "title": "Groups, Homomorphisms, and Group Actions",
     "section": "",
-    "text": "Note\n\n\n\nVideo: Groups, Homomorphisms, and Group Actions — 2:44:50\nThis section corresponds to 2:44:50 in Proof of Fermat Last Theorem FROM SCRATCH.",
+    "text": "Note\n\n\n\nThis section corresponds to Groups, Homomorphisms, and Group Actions — 2:44:50 in the video Proof of Fermat Last Theorem FROM SCRATCH. Noah Jang is the original creator of the exposition and examples referenced here. The interactive implementations, animations, additional explanations, and contextual material are my own work.",
     "crumbs": [
       "Chapter 3 — Abstract Algebra",
       "Groups, Homomorphisms, and Group Actions"
@@ -467,145 +296,305 @@
     ]
   },
   {
-    "objectID": "chapter-2/vector-spaces.html",
-    "href": "chapter-2/vector-spaces.html",
-    "title": "Vector spaces, basis, and dimension",
+    "objectID": "chapter-3/rings.html",
+    "href": "chapter-3/rings.html",
+    "title": "Rings, Fields, Ideals, and Unique Factorization",
     "section": "",
-    "text": "Note\n\n\n\nVideo: Vector Spaces, Basis, and Dimension — 1:40:28\nThis section corresponds to 1:40:28 in Proof of Fermat Last Theorem FROM SCRATCH.",
+    "text": "Note\n\n\n\nThis section corresponds to Rings, Fields, Ideals, and Unique Factorization — 3:36:07 in the video Proof of Fermat Last Theorem FROM SCRATCH. Noah Jang is the original creator of the exposition and examples referenced here. The interactive implementations, animations, additional explanations, and contextual material are my own work.",
     "crumbs": [
-      "Chapter 2 — Linear Algebra",
-      "Vector spaces, basis, and dimension"
+      "Chapter 3 — Abstract Algebra",
+      "Rings, Fields, Ideals, and Unique Factorization"
     ]
   },
   {
-    "objectID": "chapter-2/vector-spaces.html#vector-space-axioms",
-    "href": "chapter-2/vector-spaces.html#vector-space-axioms",
-    "title": "Vector spaces, basis, and dimension",
-    "section": "📌 Vector Space: Axioms",
-    "text": "📌 Vector Space: Axioms\nA vector space \\(V\\) over a field \\(F\\) is a set with addition (\\(+, V\\times V \\rightarrow V\\)) and scalar multiplication (\\(\\cdot, V\\times F \\rightarrow V\\)) satisfying these axioms for all \\(x,y,z\\in V\\) and \\(a, b\\in F\\):\nHere we intentionally want to generalize the concept of a vector!\n\nVS 1: \\(x + y = y + x\\) (addition: commutativity)\nVS 2: \\((x + y) + z = x + (y + z)\\) (addition: associativity)\nVS 3: \\(\\exists {\\bf 0} \\in V\\ \\text{s.t.}\\ x + {\\bf 0}= x\\) (addition: zero vector)\nVS 4: \\(\\forall x\\in V, \\exists(-x) \\in V\\ \\text{s.t.}\\ x + (-x) = {\\bf 0}\\) (addition: inverse)\nVS 5: \\(1 \\cdot x = x\\) (scalar multiplication: identity)\nVS 6: \\(1 (ab)\\cdot x = a\\cdot(b\\cdot x)\\) (scalar multiplication: associativity)\nVS 7: \\(a\\cdot(x + y) = a\\cdot x + a\\cdot y\\) (scalar multiplication: distributive law)\nVS 8: \\((a + b)\\cdot x = a\\cdot x + b\\cdot x\\) (scalar multiplication: distributive law)\n\nNote that addition is also a generalized concept here, an operation which name happens to be addition, hence we cannot automatically assume that \\(x + y = y + x\\) always holds.\nFor example, assume \\(V=\\mathbb{R}\\) and we define \\(a + b := a^b + e^ab^{72}\\in \\mathbb{R}\\). This definition of addition does not statisfy VS 1 and VS 2!\n\n🏷️ Example vector spaces\n\\(\\mathbb{R}\\), \\(\\mathbb{C}\\), and the cartesian product \\(\\mathbb{R}^n\\) are all examples of vector spaces.\nFor the first two, we define addition and multiplication in the familiar way. For the last one, we define addition as follows:\n\\[\n(x_1, x_2, \\dots, x_n) + (y_1, y_2, \\dots, y_n) = (x_1+y_1, x_2+y_2, \\dots, x_n+y_n)\n\\]\nand scalar multiplication\n\\[\na (x_1, x_2, \\dots, x_n) = (ax_1, ax_2, \\dots, ax_n)\n\\]\nAnother example is \\(\\mathbb{R}[x]\\), the set of all polynomials with real coefficients. So how do we know that \\(\\mathbb{R}[x]\\) is a vector space? We check if all axioms hold! For example, if we add two polynomials and change the order under addition, do we get the same result back? Yes, we do!\n\\[\n(1 + x) + (3 + x^2) = (3 + x^2) + (1 + x)\n\\]\nSimilarly, we can check that all other axioms hold.\nAlso, the set of al continuous functions \\(C_0(\\mathbb{R})\\) is a vector space, as is \\(Mat_2(\\mathbb{R})\\).\nHowever, \\(\\mathbb{N}\\) is not a vector space, as 0 is not in the set. Also, if we pick any natural number, the negative is not in the set.",
-    "crumbs": [
-      "Chapter 2 — Linear Algebra",
-      "Vector spaces, basis, and dimension"
-    ]
-  },
-  {
-    "objectID": "chapter-2/vector-spaces.html#subspace",
-    "href": "chapter-2/vector-spaces.html#subspace",
-    "title": "Vector spaces, basis, and dimension",
-    "section": "📌 Subspace",
-    "text": "📌 Subspace\nA subspace of a vector space \\(V\\) is a non-empty subset \\(W\\) of \\(V\\) that is itself a vector space under the operations inherited from \\(V\\).\nFor example, \\(\\mathbb{R}\\) is a subspace of \\(\\mathbb{C}\\), \\(\\mathbb{R}\\subset \\mathbb{C}\\).\nAnother example is\n\\[\nW = \\{(x,y)\\in\\mathbb{R} |\\ y = 2x\\} \\subset \\mathbb{R}^2\n\\]\nWe can check that \\(W\\) is both a vector space and a subspace of \\(\\mathbb{R}^2\\). However, \\(W'\\)\n\\[\nW' = \\{(x,y)\\in\\mathbb{R} |\\ y = x + 1\\} \\subset \\mathbb{R}^2\n\\]\nis not a vector space, as it does not have a zero vector in it \\((0, 0) \\notin W'\\). Consequently, we cannot call it a subspace of \\(\\mathbb{R}^2\\) either!\nAnother example is the set of all real coefficient polynomials with maximum degree two, \\(P_2[\\mathbb{R}]\\). This is a vector space as well as a subspace of all real coefficient polynomials.",
-    "crumbs": [
-      "Chapter 2 — Linear Algebra",
-      "Vector spaces, basis, and dimension"
-    ]
-  },
-  {
-    "objectID": "chapter-2/vector-spaces.html#linear-combination",
-    "href": "chapter-2/vector-spaces.html#linear-combination",
-    "title": "Vector spaces, basis, and dimension",
-    "section": "📌 Linear combination",
-    "text": "📌 Linear combination\nWe are slowly moving towards the concept of a basis. So what is a basis? A basis is one of the most important ideas in linear algebra. Roughly speaking, a basis is a minimal set of building blocks for a vector space.\nFor example, if we look at \\(\\mathbb{R}^2\\), a basis may be \\(\\{(1, 0), (0, 1)\\}\\). This constitutes a valid basis, as we can pick any vector \\((a,b)\\in\\mathbb{R}^2\\) and write it as a linear combination of the basis vectors:\n\\[\n(a, b) = a(1, 0) + b(0, 1)\n\\]\nSo if we know the basis, we can build every vector in the space from those basis vectors in a unique way.\nBut before we can define a basis properly, we need to define a few smaller concepts first.\nA linear combination of vectors in a set \\(S=\\{v1, v2, \\dots, v_k\\}\\) is any vector \\({\\bf u}\\) of the form\n\\[\n{\\bf u} = a_1v_1 + a_2v_2 + \\dots + a_kv_k\n\\]\nwhere \\(a_1, a_2, \\dots, a_k\\) are scalars in the field \\(F\\).\n\n🏷️ Example 1: a linear combination in \\(\\mathbb{R}^2\\)?\nLet’s take the subset of vectors\n\\[\nS=\\left\\{\n\\begin{pmatrix}\n1 \\\\ 2\n\\end{pmatrix},\n\\begin{pmatrix}\n3 \\\\ 4\n\\end{pmatrix}\n\\right\\}\n\\]\nThen the linear combinations of \\(S\\) would be something like\n\\[\nS=\na\\begin{pmatrix}\n1 \\\\ 2\n\\end{pmatrix}\n+b\n\\begin{pmatrix}\n3 \\\\ 4\n\\end{pmatrix}\n\\]\nNow we can ask if \\(\\begin{pmatrix} 5 \\\\ 8\\end{pmatrix}\\) is a linear combination of \\(S\\). To this extent, we check if there exists an \\(a\\) and \\(b\\), such that\n\\[\na\\begin{pmatrix}\n1 \\\\ 2\n\\end{pmatrix}\n+b\n\\begin{pmatrix}\n3 \\\\ 4\n\\end{pmatrix} =\n\\begin{pmatrix} 5 \\\\ 8\\end{pmatrix}\n\\]\nAnd indeed, this holds true for \\(a=2\\) and \\(b=1\\), so \\(\\begin{pmatrix} 5 \\\\ 8\\end{pmatrix}\\) is a linear combination of \\(S\\)!\n\n\n🏷️ Example 2: a linear combination in \\(\\mathbb{R}^3\\)?\nLet’s take the subset of vectors\n\\[\nS=\\left\\{\n\\begin{pmatrix}\n1 \\\\ 2 \\\\ 0\n\\end{pmatrix},\n\\begin{pmatrix}\n4 \\\\ 7 \\\\ 0\n\\end{pmatrix}\n\\right\\}\n\\]\nWe can ask if \\(\\begin{pmatrix} 3 \\\\ 4 \\\\ 5 \\end{pmatrix}\\) is a linear combination of \\(S\\):\n\\[\na\\begin{pmatrix}\n1 \\\\ 2 \\\\0\n\\end{pmatrix}\n+b\n\\begin{pmatrix}\n4 \\\\ 7 \\\\ 0\n\\end{pmatrix} =\n\\begin{pmatrix} 3 \\\\ 4 \\\\ 5\\end{pmatrix}\n\\]\nThe answer is no, as the third coordinate will always remain zero. So \\(\\begin{pmatrix} 3 \\\\ 4 \\\\ 5 \\end{pmatrix}\\) is not a linear combination of \\(S\\).",
-    "crumbs": [
-      "Chapter 2 — Linear Algebra",
-      "Vector spaces, basis, and dimension"
-    ]
-  },
-  {
-    "objectID": "chapter-2/vector-spaces.html#span",
-    "href": "chapter-2/vector-spaces.html#span",
-    "title": "Vector spaces, basis, and dimension",
-    "section": "📌 Span",
-    "text": "📌 Span\nLet \\(S\\) be a non-empty subset of a vector space \\(V\\). The span of \\(S\\), denoted by \\(\\text{span}(S)\\), is the smallest subset of \\(V\\) containing \\(S\\). In practice, it is the set of all linear combinations of elements of \\(S=\\{ v_1, v_2, \\cdots, v_n\\}\\):\n\\[\n\\text{span}(S) =\n\\{\na_1v_1+\\cdots+a_n v_n\\ |\\ n \\geq 1,\\ v_i\\in S,\\ a_i \\in F\n\\}\n\\]",
-    "crumbs": [
-      "Chapter 2 — Linear Algebra",
-      "Vector spaces, basis, and dimension"
-    ]
-  },
-  {
-    "objectID": "chapter-2/vector-spaces.html#linear-independence-and-dependence",
-    "href": "chapter-2/vector-spaces.html#linear-independence-and-dependence",
-    "title": "Vector spaces, basis, and dimension",
-    "section": "📌 Linear independence and dependence",
-    "text": "📌 Linear independence and dependence\nA set of vectors \\(S=\\{ v_1, v_2,\\ \\cdots,\\ v_k\\}\\) is linearly independent if the only solution to the equation\n\\[\na_1v_1+a_2v_2+\\cdots+a_k v_k = {\\bf 0}\n\\]\nis the trivial solution \\(a_1=a_2=\\cdots=a_k=0\\). If a set is not linearly independent, it is called linearly dependent.\n\n🏷️ Example 1: linear dependence in \\(\\mathbb{R}^2\\)\nIn \\(\\mathbb{R}^2\\), are \\(\\{(1, 2), (1, 0)\\}\\) linearly independent?\nTo answer this quesiton, we check if the only solution to the following equation is the trivial solution:\n\\[\na_1(1, 2) + a_2(1, 0) = (a_1 + a_2, 2a_1) = (0, 0) \\Rightarrow a_1=0 \\Rightarrow a_2 = 0\n\\]\nSo these vectors are linearly independent.\n\n\n🏷️ Example 2: linear dependence in \\(\\mathbb{R}^3\\)\nIn \\(\\mathbb{R}^3\\), are \\(\\{(1, 2, 3), (1, 3, 5), (2, 5, 8)\\}\\) linearly independent?\nTo answer this quesiton, we check if the only solution to the following equation is the trivial solution:\n\\[\na_1(1, 2, 3) + a_2(1, 3, 5) + a_3(2, 5, 8) = (0, 0, 0) \\Rightarrow a_1=0 \\Rightarrow a_2 = 0\n\\]\nNow we find a solution for \\(a1 = 1,\\ a2 = 1,\\ a3= -1\\), so these vectors are linearly dependent.\n\n\n🏷️ Example 3: linear dependence in \\(\\mathbb{R}_{[x]}\\)\nIn \\(\\mathbb{R}_{[x]}\\), the collection of all real coefficient polynomials, is \\(1 + x, x^2 + x, 2 + 3x +x^2\\) linearly dependent or independent?\nIt is linearly dependent, because there is a solution:\n\\[\n2\\cdot(1 + x) + 1\\cdot(x^2 + x) -1\\cdot(3x + x^2) = 0\n\\]\nNow finally we can define the concepts of basis and dimension.",
-    "crumbs": [
-      "Chapter 2 — Linear Algebra",
-      "Vector spaces, basis, and dimension"
-    ]
-  },
-  {
-    "objectID": "chapter-2/vector-spaces.html#basis-dimension",
-    "href": "chapter-2/vector-spaces.html#basis-dimension",
-    "title": "Vector spaces, basis, and dimension",
-    "section": "📌 Basis and dimension",
-    "text": "📌 Basis and dimension\n\nA basis for a vector space \\(V\\) is a linearly independent subset of \\(V\\) that spans \\(V\\)\nThe dimension of \\(V\\), \\(\\text{dim}(V)\\), is the number of vectors in a basis\n\n\n🏷️ Example 1: \\(\\mathbb{R}^2\\)\nBasis:\n\\[\n\\left\\{\n\\begin{pmatrix}\n1 \\\\ 0\n\\end{pmatrix},\n\\begin{pmatrix}\n0 \\\\ 1\n\\end{pmatrix}\n\\right\\}\n\\Rightarrow\n\\begin{pmatrix}\na \\\\ b\n\\end{pmatrix}=\na\\begin{pmatrix}\n1 \\\\ 0\n\\end{pmatrix}+\nb\\begin{pmatrix}\n0 \\\\ 1\n\\end{pmatrix}\n\\]\nNote that we want to have a set that is large enough to span the whole space, but at the same time is small enough to contain only the necessary information.\n\n\n🏷️ Example 2: \\(\\mathbb{R}^3\\)\nMost of the time, we take as basis:\n\\[\n\\left\\{\n\\begin{pmatrix}\n1 \\\\ 0 \\\\ 0\n\\end{pmatrix},\n\\begin{pmatrix}\n0 \\\\ 1 \\\\ 0\n\\end{pmatrix},\n\\begin{pmatrix}\n0 \\\\ 0 \\\\ 1\n\\end{pmatrix}\n\\right\\}\n\\]\nSince the number of elements in this basis is three, the dimension of \\(\\mathbb{R}^3\\) is three.\nNote that we could have taken any other set of three linearly independent basis vectors, such as\n\\[\n\\left\\{\n\\begin{pmatrix}\n1 \\\\ 1 \\\\ 0\n\\end{pmatrix},\n\\begin{pmatrix}\n0 \\\\ 1 \\\\ 1\n\\end{pmatrix},\n\\begin{pmatrix}\n1 \\\\ 0 \\\\ 1\n\\end{pmatrix}\n\\right\\}\n\\]\n\n\n🏷️ Example 3: \\(P_2(\\mathbb{R})\\)\nPossible basis are \\(\\{1, x, x^2\\}\\) and \\(\\{7, x + x^2, -x\\}\\). Since there are three vectors in the basis, the dimension of \\(P_2(\\mathbb{R})\\) is three.\n\n\n🏷️ Example 4: \\(Mat_2(\\mathbb{R})\\)\nThe most easy basis would be\n\\[\n\\left\\{\n\\begin{pmatrix}\n1 && 0 \\\\\n0 && 0\n\\end{pmatrix},\n\\begin{pmatrix}\n0 && 1 \\\\\n0 && 0\n\\end{pmatrix},\n\\begin{pmatrix}\n0 && 0 \\\\\n1 && 0\n\\end{pmatrix},\n\\begin{pmatrix}\n0 && 0 \\\\\n0 && 1\n\\end{pmatrix}\n\\right\\}\n\\]\nSo the dimension of this vector space is four.",
-    "crumbs": [
-      "Chapter 2 — Linear Algebra",
-      "Vector spaces, basis, and dimension"
-    ]
-  },
-  {
-    "objectID": "chapter-2/linear-transformations.html",
-    "href": "chapter-2/linear-transformations.html",
-    "title": "Linear transformations, eigenvalues, inner products, and the spectral theorem",
+    "objectID": "chapter-3/abstract-algebra.html",
+    "href": "chapter-3/abstract-algebra.html",
+    "title": "Abstract algebra",
     "section": "",
-    "text": "Note\n\n\n\nVideo: Linear Transformations, Eigenvalues, Inner Products, and the Spectral Theorem — 2:02:27\nThis section corresponds to 1:07:03 in Proof of Fermat Last Theorem FROM SCRATCH.",
+    "text": "Note\n\n\n\nThis section corresponds to Groups, Homomorphisms, and Group Actions — 2:44:50 in the video Proof of Fermat Last Theorem FROM SCRATCH. Noah Jang is the original creator of the exposition and examples referenced here. The interactive implementations, animations, additional explanations, and contextual material are my own work.\n\n\n\nAbstract algebra\n\n\n\n\n\n\nNote\n\n\n\n🚨 Why do we need this?\nThe main topics for proving Fermat’s last theorem will be elliptic curves and modular forms. One of the most important facts about elliptic curves is the fact that their points form a group. It is the reason why we can view elliptic curves as algebraic objects.\n\n\nWe start with groups, then we move on to rings and fields. These are the algebraic structrures we need before elliptic curves start making sense.\nAt the end, we will also take a glimpse at Galois theory. This will become extremely important later, because Galois representations are one of the most important objects that establish a connection between elliptic curves and modular forms.",
     "crumbs": [
-      "Chapter 2 — Linear Algebra",
-      "Linear transformations, eigenvalues, inner products, and the spectral theorem"
+      "Chapter 3 — Abstract Algebra",
+      "Abstract algebra"
     ]
   },
   {
-    "objectID": "chapter-2/linear-transformations.html#linear-transformations-1",
-    "href": "chapter-2/linear-transformations.html#linear-transformations-1",
-    "title": "Linear transformations, eigenvalues, inner products, and the spectral theorem",
-    "section": "📌 Linear Transformations",
-    "text": "📌 Linear Transformations\nA linear transformation is a function \\(T:\\ V\\rightarrow W\\) that preserves vector space operations:\n\\[\nT(cx + y) = cT(x) + T(y)\n\\]\nWe can understand this requirement a bit better by looking at the following concrete values for \\(x, y\\), and \\(c\\):\n\\[\n\\begin{array}{ll}\nx = y = 0, c=1 &:& T(0) = T(0) + T(0) = 0\\quad T(0) = 0\\quad\\text{(zero element)} \\\\\nc=1 &:& T(x + y) = T(x) + T(y)\\quad\\text{(addition)} \\\\\ny=0 &:& T(cx) = cT(x)\\quad\\text{(scalar multiplication)}\n\\end{array}\n\\]\n\n🏷️ Example 1: \\(T:\\mathbb{R}^2 \\rightarrow \\mathbb{R}^2\\)\nIs the transformation is defined as \\(T(x, y)=(2x, 3y)\\) also a linear transformation?\n\\[\n\\begin{array}{ll}\nT\\left(c\\begin{pmatrix}x_1\\\\ x_2\\end{pmatrix} + \\begin{pmatrix}y_1\\\\ y_2\\end{pmatrix}\\right) &=& T\\begin{pmatrix}cx_1+y_1\\\\ cx_2+y_2\\end{pmatrix} \\\\\n&=& \\begin{pmatrix}2cx_1+2cy_1\\\\3cx_2+3cy_2\\end{pmatrix} \\\\\n&=& c\\begin{pmatrix}2x_1\\\\3x_2\\end{pmatrix} + \\begin{pmatrix}2y_1\\\\ 3y_2\\end{pmatrix}\\\\\n&=&\nT\\begin{pmatrix}x_1\\\\x_2\\end{pmatrix} + T\\begin{pmatrix}y_1\\\\y_2\\end{pmatrix}\\quad  ꪜ\n\\end{array}\n\\]\n\n\n🏷️ Other Examples\n\\[\nT:\\mathbb{R}^2 \\rightarrow \\mathbb{R}\\qquad T\\begin{pmatrix}x\\\\ y\\end{pmatrix}=:y\\quad ꪜ\n\\]\n\\[\nT:P_2(\\mathbb{R}) \\rightarrow \\mathbb{R}\\qquad T(f(x)):=f(0)\\quad ꪜ\n\\]\n\\[\nT:Mat_2(\\mathbb{R}) \\rightarrow \\mathbb{R}\\qquad T\\begin{pmatrix} a && b \\\\ c && d\\end{pmatrix}:=a + d\\quad ꪜ\n\\]\n\\[\nT:\\mathbb{R}^2 \\rightarrow \\mathbb{R}^2\\qquad T\\begin{pmatrix}x\\\\ y\\end{pmatrix}:=\\begin{pmatrix}x+1\\\\y\\end{pmatrix}\\quad ✗\n\\]\nThis is not a linear transformation, since\n\\[\nT\\begin{pmatrix}1\\\\1\\end{pmatrix} =\\begin{pmatrix}2\\\\1\\end{pmatrix} \\\\\nT\\begin{pmatrix}0\\\\1\\end{pmatrix} =\\begin{pmatrix}1\\\\1\\end{pmatrix} \\\\\nT\\begin{pmatrix}1\\\\2\\end{pmatrix} =\\begin{pmatrix}2\\\\2\\end{pmatrix} \\neq \\begin{pmatrix}3\\\\2\\end{pmatrix} = T\\begin{pmatrix}1\\\\1\\end{pmatrix} + T\\begin{pmatrix}0\\\\1\\end{pmatrix}\\\\\n\\]\nSimilarly,\n\\[\nT:\\mathbb{R}^2 \\rightarrow \\mathbb{R}\\qquad T\\begin{pmatrix}x\\\\ y\\end{pmatrix}:=xy\\quad ✗\n\\]\nis not a linear transformation.",
-    "crumbs": [
-      "Chapter 2 — Linear Algebra",
-      "Linear transformations, eigenvalues, inner products, and the spectral theorem"
-    ]
-  },
-  {
-    "objectID": "chapter-2/linear-transformations.html#kernel-and-image",
-    "href": "chapter-2/linear-transformations.html#kernel-and-image",
-    "title": "Linear transformations, eigenvalues, inner products, and the spectral theorem",
-    "section": "📌 Kernel and image",
-    "text": "📌 Kernel and image\n\nThe kernel of \\(T:V\\rightarrow W\\) is the subspace \\(\\ker(T)=\\{v\\in V\\ |\\ T(v) = {\\bf 0}_W\\}\\)\nThe iamge of \\(T:V\\rightarrow W\\) is the subspace \\(\\text{im}(T)=\\{v\\in V\\ |\\ T(v)\\}\\)\n\n\n🏷️ Examples\n\n\n👨‍💻 Eigen vectors and eigen values\nThe interactive demo below illustrates the effects of a transformation matrix by applying the transformation on a two-dimensional grid. It also shows the eigen vectors.\n\n\n\n\n👨‍💻 Spectral theorem",
-    "crumbs": [
-      "Chapter 2 — Linear Algebra",
-      "Linear transformations, eigenvalues, inner products, and the spectral theorem"
-    ]
-  },
-  {
-    "objectID": "chapter-2/linear-transformations.html#summary-linear-algebra",
-    "href": "chapter-2/linear-transformations.html#summary-linear-algebra",
-    "title": "Linear transformations, eigenvalues, inner products, and the spectral theorem",
-    "section": "Summary linear algebra",
-    "text": "Summary linear algebra\n\\[\n👉\\ \\text{Matrix}:\\ A=\n\\begin{pmatrix}\na&b\\\\\nb&d\n\\end{pmatrix}\n\\]\n\\[\\Downarrow\\]\n\\[\n👉\\ \\text{Eigen values/eigen vectors}:\\ Ae_i=\\lambda_i e_i\n\\]\n\\[\\Downarrow\\]\n\\[\n👉\\ \\text{Spectral theorem}:\\ e_1\\perp e_2\n\\]\n\\[\\Downarrow\\]\n\\[\n👉\\ \\text{Orthonormal matrix}:\\ Q=(e_1\\ e_2)\n\\]\n\\[\\Downarrow\\]\n\\[\n👉\\ \\text{Diagonale matrix}:\\ \\Lambda=\n\\begin{pmatrix}\n\\lambda_1&0\\\\\n0&\\lambda_2\n\\end{pmatrix}\n\\]\n\\[\\Downarrow\\]\n\\[\n👉\\ \\text{Spectral decomposition}:\\ \\boxed{A=Q\\Lambda Q^T}\n\\]",
-    "crumbs": [
-      "Chapter 2 — Linear Algebra",
-      "Linear transformations, eigenvalues, inner products, and the spectral theorem"
-    ]
-  },
-  {
-    "objectID": "demo-index.html",
-    "href": "demo-index.html",
-    "title": "Index of Helion demos",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Fermat’s Last Theorem",
     "section": "",
-    "text": "Note\n\n\n\nVisualizations in this project are created using the Helion library.\n\n\n\n\n\nDemo\nLink to page\n\n\n\n\nComplex functions\nBasic calculus & complex analysis\n\n\nEigen vectors & eigen values\nLinear transformations\n\n\nFourier transform\nLinear algebra\n\n\nPythagoras theorem\nIs Fermat’s Last Theorem actually interesting?\n\n\nReal surfaces\nMultivariable functions\n\n\nRoots of unity\nCalculus\n\n\nRubik’s cube\nGroups\n\n\nTaylor expansion\nLinear algebra\n\n\nSpectral theorem\nLinear transformations",
+    "text": "Note\n\n\n\nNoah Jang is the original creator of the exposition and examples referenced here. The interactive implementations, animations, additional explanations, and contextual material on this site are my own work.\nThe original exposition and examples can be found back in Noah Jang’s video Proof of Fermat Last Theorem FROM SCRATCH.",
     "crumbs": [
-      "Index of Helion demos"
+      "Fermat's Last Theorem"
     ]
   },
   {
-    "objectID": "chapter-1/introduction.html",
-    "href": "chapter-1/introduction.html",
-    "title": "Introduction",
+    "objectID": "index.html#is-fermats-last-theorem-actually-interesting",
+    "href": "index.html#is-fermats-last-theorem-actually-interesting",
+    "title": "Fermat’s Last Theorem",
+    "section": "Is Fermat’s Last Theorem actually interesting?",
+    "text": "Is Fermat’s Last Theorem actually interesting?\nMany of us can remember the Pythagorean theorem from high school. It is a simple and elegant statement about right triangles.\n\n👨‍💻 Pythagorean theorem\n\n\nGoing forward, we will frequently notice that\n\nIn mathematics, we often try to generalize concepts, theorems and/or equations\n\nOne natural generalization here would be to replace the exponent value of two with any arbitrary natural number \\(n\\):\n\\[\na^n + b^n = c^n\n\\]\nFermat’s Last Theorem (FLT) makes a remarkably simple claim: if \\(n &gt; 2\\), there are no positive integers \\(a\\), \\(b\\), and \\(c\\) that satisfy it. This may come as a surprise. After all, we known that we can easily find infinitely many positive integers that satisfy the equation for \\(n=2\\), for example:\n\\[\n3^2 + 4^2 = 5^2\n\\]\nSo why should the case \\(n&gt;2\\) be so special? And why did it take more than three centuries to prove?\nUsually the story starts with that fact that in 1637 Pierre de Fermat wrote in the margin of a book that he had discovered a “truly marvelous” proof, but that the margin was too small to contain it. The problem remained unsolved for centuries, attracting some of the greatest mathematicians in history, until Andrew Wiles finally announced a proof in 1993.\nI vividly remember my excitement when I read on slashdot.org that Wiles’ finally managed to provide a proof.\nBut this story leaves open a more interesting question:\n\nIs Fermat’s Last Theorem genuinely mathematically interesting, or is it famous just because of the hype and the extraordinary story surrounding it?\n\nThis project is an attempt to investigate this question.",
+    "crumbs": [
+      "Fermat's Last Theorem"
+    ]
+  },
+  {
+    "objectID": "index.html#what-does-from-scratch-mean",
+    "href": "index.html#what-does-from-scratch-mean",
+    "title": "Fermat’s Last Theorem",
+    "section": "What does “from scratch” mean?",
+    "text": "What does “from scratch” mean?\nThe purpose of this website is to follow that journey as carefully as possible. The goal is not merely to state Wiles’ proof, or to give a high-level description such as\n\n“Frey constructed an elliptic curve, Ribet proved a theorem, and Wiles proved modularity.”\n\nThat tells us what happened, but not necessarily why. Our approach is different in precisely this aspect: apart from introducing the necessary (fields of) mathematics, the intention is to keep asking the same question:\n\nWhy do we need this?\n\nIf a new mathematical object appears, we should understand what problem it solves. If a theorem is introduced, we should understand why it is relevant. And when the argument becomes abstract, we should try to keep sight of the remarkably simple equation with which we started.\nWe will start with concepts that are familiar from undergraduate mathematics and gradually introduce the more advanced ideas that eventually become necessary.",
+    "crumbs": [
+      "Fermat's Last Theorem"
+    ]
+  },
+  {
+    "objectID": "index.html#from-a-simple-equation-to-modern-mathematics",
+    "href": "index.html#from-a-simple-equation-to-modern-mathematics",
+    "title": "Fermat’s Last Theorem",
+    "section": "From a simple equation to modern mathematics",
+    "text": "From a simple equation to modern mathematics\nThe surprising part of Fermat’s Last Theorem is not simply that the equation has no solutions. The surprising part is what lies behind that simple statement.\nAt first, FLT may seem to be a problem just about integers. We might therefore expect the proof to involve clever manipulations of integers, perhaps together with some increasingly sophisticated number theory. And indeed, that is how the story begins.\nBut in mathematics, we often encounter a problem in one field and eventually discover that its real structure is much easier to understand in another. As mathematicians tried to understand FLT more deeply, this happened as well. Not only did the problem itself turn out to be connected to different fields of mathematics, it also made use of some connections/bridges between those different fields:\n\nLinear algebra,\nabstract algebra (groups and Galois theory),\nelliptic curves,\nmodular forms\n\nSo the topics discussed here are not simply a collection of increasingly complicated tools that happen to be useful for proving the theorem, but constitute a means for the unification of the different fields in mathematics as well (Langlands program). As such, it is very similar to the standard model in physics, one of the greatest achievements in unifying the four different physical forces (except gravity).",
+    "crumbs": [
+      "Fermat's Last Theorem"
+    ]
+  },
+  {
+    "objectID": "index.html#my-motivation",
+    "href": "index.html#my-motivation",
+    "title": "Fermat’s Last Theorem",
+    "section": "My motivation",
+    "text": "My motivation\nFermat’s Last Theorem is a particularly beautiful example of a recurring phenomenon in both physics and mathematics:\n\nA simple question can lead us to a much deeper structure than we could have anticipated.\n\nFor me, the history of Fermat’s Last Theorem is therefore not merely the story of finding a proof. It is also the story of discovering connections between different fields of mathematics.\nThat is primarily what makes the theorem interesting to me.\n\nNot the hype.\nNot the legend of the margin.\nNot even the fact that it took more than three centuries to prove.\n\nThe interesting part is what structures are hiding underneath.",
+    "crumbs": [
+      "Fermat's Last Theorem"
+    ]
+  },
+  {
+    "objectID": "index.html#a-journey-rather-than-a-shortcut",
+    "href": "index.html#a-journey-rather-than-a-shortcut",
+    "title": "Fermat’s Last Theorem",
+    "section": "A journey rather than a shortcut",
+    "text": "A journey rather than a shortcut\nThis is not intended to be a reproduction of Wiles’ original papers. Those papers are highly technical, and understanding every detail of the complete proof requires a substantial amount of modern mathematics.\nInstead, this project aims to construct a coherent path toward the proof.\nThe hope is that, by the time we reach Wiles’ proof, the reader will not necessarily be able to reproduce every technical argument from memory, but will understand the architecture of the proof and, more importantly, why the architecture looks the way it does.",
+    "crumbs": [
+      "Fermat's Last Theorem"
+    ]
+  },
+  {
+    "objectID": "chapter-2/matrices.html",
+    "href": "chapter-2/matrices.html",
+    "title": "Matrices, linear systems, and determinants",
     "section": "",
-    "text": "Before embarking on our journey to understand Fermat’s Last Theorem, it is important to establish a common ground for some mathematical concepts that will be used throughout this project, such as multivariate functions, differentiation and integration, and complex numbers.",
+    "text": "Note\n\n\n\nThis section corresponds to Matrices, Linear Systems, and Determinants — 1:07:03 in the video Proof of Fermat Last Theorem FROM SCRATCH. Noah Jang is the original creator of the exposition and examples referenced here. The interactive implementations, animations, additional explanations, and contextual material are my own work.",
+    "crumbs": [
+      "Chapter 2 — Linear Algebra",
+      "Matrices, linear systems, and determinants"
+    ]
+  },
+  {
+    "objectID": "chapter-2/matrices.html#matrices",
+    "href": "chapter-2/matrices.html#matrices",
+    "title": "Matrices, linear systems, and determinants",
+    "section": "Matrices",
+    "text": "Matrices\n\n📌 Matrix: Definition\n\nA matrix is a rectangular array of scalars from a field \\(F\\).\nAn \\(m \\times n\\) matrix a has \\(m\\) rows and \\(n\\) columns. The entry in the \\(i\\)-th row and \\(j\\)-th column is noted \\(A_{ij}\\).\n\n\\[\nA = \\begin{pmatrix}\nA_{11} && A_{12} && \\dots && A_{1n} \\\\\n\\vdots && \\vdots && \\ddots && \\vdots \\\\\nA_{m1} && A_{m2} && \\dots && \\ A_{mn}\n\\end{pmatrix}\n\\]\nFor now, scalars we can just think of numbers and the field \\(F\\) a number set, where we take the scalars from. More strictly, it is an algebraic structure where addition, subtraction, multiplication, and division (for non-zero elements) are defined.\nGoing forward, \\(F\\) will mostly consider matrices were \\(F\\) is either \\(\\mathbb{R}\\) or \\(\\mathbb{C}\\).\n\n🏷️ Example 1: a \\(2\\) by \\(2\\) matrix\nExample of a \\(2\\) by \\(2\\) matrix, also denoted as \\(2 \\times 2\\) matrix, which has \\(2\\) rows and \\(2\\) columns\n\\[\n\\begin{pmatrix}\n1 && 2 \\\\\n3 && 4\n\\end{pmatrix}\n\\]\n\n\n🏷️ Example 2: a \\(3\\) by \\(2\\) matrix\n\\[\nA = \\begin{pmatrix}\n1 && 2 && 4 \\\\\n7 && -7 && -6\n\\end{pmatrix}\n\\]\nSo \\(A_{12} = 2\\), \\(A_{23} = -6\\), \\(A_{13} = 4\\). Note that for example \\(A_{32}\\) does not exist!\n\n\n🏷️ Example 3: a matrix over \\(\\mathbf{C}\\)\n\\[\nA = \\begin{pmatrix}\n1 + i && -2i \\\\\ni\\sqrt{3} && -7\n\\end{pmatrix}\n\\]",
+    "crumbs": [
+      "Chapter 2 — Linear Algebra",
+      "Matrices, linear systems, and determinants"
+    ]
+  },
+  {
+    "objectID": "chapter-2/matrices.html#matrix-operations",
+    "href": "chapter-2/matrices.html#matrix-operations",
+    "title": "Matrices, linear systems, and determinants",
+    "section": "Matrix: Operations",
+    "text": "Matrix: Operations\n\nAddition: \\[\n(A + B)_{ij} = A_{ij} + B_{ij}\n\\]\nScalar multiplication:\n\n\\[(cA)_{ij} = c \\cdot A_{ij}\\]\n\nMatrix multiplication: If \\(A\\) is \\(m \\times n\\) and B is \\(n \\times p\\), their product \\(AB\\) is an \\(m \\times p\\) matrix with entries:\n\n\\[(AB)_{ij} = \\sum^n_{k=1}A_{ik}B_{kj}\\]\n\nAssociativity, \\((AB)C = A(BC)\\), but not commutative in general, \\(AB\\neq BA\\)\n\n\n🏷️ Example 1: addition\n\\[\n\\begin{pmatrix}\n2 && 3 \\\\\n4 && 1\n\\end{pmatrix}\n+\n\\begin{pmatrix}\n1 && 2 \\\\\n3 && 4\n\\end{pmatrix}\n=\n\\begin{pmatrix}\n3 && 7 \\\\\n5 && 7\n\\end{pmatrix}\n\\]\n\n\n🏷️ Example 2: subtraction\n\\[\n\\begin{pmatrix}\n1 && 3 \\\\\n7 && 4\n\\end{pmatrix}\n-\n\\begin{pmatrix}\n-3 && 2 \\\\\n0 && 7\n\\end{pmatrix}\n=\n\\begin{pmatrix}\n4 && 1 \\\\\n7 && -3\n\\end{pmatrix}\n\\]\n\n\n🏷️ Example 3: scalar multiplication\n\\[\n(-3) \\cdot\n\\begin{pmatrix}\n1 && 2 && 3 \\\\\n4 && 5 && 8\n\\end{pmatrix}\n=\n\\begin{pmatrix}\n-3 && -6 && -9 \\\\\n-12 && -15 && -24\n\\end{pmatrix}\n\\]\n\n\n🏷️ Example 4: scalar multiplication\n\\[\n(7) \\cdot\n\\begin{pmatrix}\n1 && 7 \\\\\n9 && -8\n\\end{pmatrix}\n=\n\\begin{pmatrix}\n7 && 49 \\\\\n63 && -56\n\\end{pmatrix}\n\\]\n\n\n🏷️ Example 5: matrix multiplication\nWe take the \\(i\\)-th row of \\(A\\) and the \\(j\\)-th column of \\(B\\), multiply the corresponding terms and add them:\n\\[\n\\begin{pmatrix}\n1 && 2 \\\\\n3 && 4\n\\end{pmatrix}\n\\begin{pmatrix}\n2 && 4 \\\\\n0 && 3\n\\end{pmatrix}\n=\n\\begin{pmatrix}\n2 && 10 \\\\\n6 && 24\n\\end{pmatrix}\n\\]\n\n\n🏷️ Example 6: matrix multiplication\n\\[\n\\begin{pmatrix}\n1 && 2 && 3 \\\\\n4 && 5 && 6\\end{pmatrix}\n\\begin{pmatrix}\n3 && 2 \\\\\n4 && -4 \\\\\n-1 && 0\n\\end{pmatrix}\n=\n\\begin{pmatrix}\n8 && -6 \\\\\n26 && -12\n\\end{pmatrix}\n\\]\n\n\n🏷️ Example 7: associativity of matrix multiplication\n\\[\n\\left[\n\\begin{pmatrix}\n1 && 2 \\\\\n3 && 4\n\\end{pmatrix}\n\\begin{pmatrix}\n0 && 1 \\\\\n-2 && 3\n\\end{pmatrix}\n\\right]\n\\begin{pmatrix}\n-1 && 1 \\\\\n2 && -2\n\\end{pmatrix}\n=\n\\begin{pmatrix}\n-4 && 7 \\\\\n-8 && 15\n\\end{pmatrix}\n\\begin{pmatrix}\n-1 && 1 \\\\\n2 && -2\n\\end{pmatrix}\n=\n\\begin{pmatrix}\n-18 && 18 \\\\\n38 && -38\n\\end{pmatrix}\n\\]\n\\[\n\\begin{pmatrix}\n1 && 2 \\\\\n3 && 4\n\\end{pmatrix}\n\\left[\n\\begin{pmatrix}\n0 && 1 \\\\\n-2 && 3\n\\end{pmatrix}\n\\begin{pmatrix}\n-1 && 1 \\\\\n2 && -2\n\\end{pmatrix}\n\\right]\n=\n\\begin{pmatrix}\n1 && 2 \\\\\n2 && -2\n\\end{pmatrix}\n\\begin{pmatrix}\n2 && -2 \\\\\n8 && -8\n\\end{pmatrix}\n=\n\\begin{pmatrix}\n-18 && 18 \\\\\n38 && -38\n\\end{pmatrix}\n\\]",
+    "crumbs": [
+      "Chapter 2 — Linear Algebra",
+      "Matrices, linear systems, and determinants"
+    ]
+  },
+  {
+    "objectID": "chapter-2/matrices.html#matrix-types",
+    "href": "chapter-2/matrices.html#matrix-types",
+    "title": "Matrices, linear systems, and determinants",
+    "section": "📌 Matrix: Types",
+    "text": "📌 Matrix: Types\n\nSquare Matrix: A matrix where the number of rows equals the number of columns \\(m=n\\).\nZero Matrix (\\(O\\)): A matrix where all entries are zero. It acts as the additive identity: \\(A + O = A\\).\nDiagonal Matrix: A square matrix where all non-diagonal entries are zero.\nIdentity Matrix (\\(I_n\\)): The \\(n \\times n\\) diagoonal matrix with 1s on the diagonal. It acts as a multiplicative identidy: \\(AI_n = I_n A = A\\)\n\n\n🏷️ Example 1: square matrices\n\\[\nn \\times n,\n\\begin{pmatrix}\n1 && 2 \\\\\n3 && 7\n\\end{pmatrix},\n\\begin{pmatrix}\n1 && 2 && 0 \\\\\n-7 && 6 && 27 \\\\\n0 && -6 && 1\n\\end{pmatrix}\n\\]\n\n\n🏷️ Example 2 : \\(2 \\times 3\\) zero matrix\n\\[\n\\begin{pmatrix}\n1 && 5 && -6 \\\\\n0 && 1 && 2\n\\end{pmatrix}\n\\begin{pmatrix}\n0 && 0 && 0 \\\\\n0 && 0 && 0\n\\end{pmatrix}\n=\n\\begin{pmatrix}\n1 && 5 && -6 \\\\\n0 && 1 && 2\n\\end{pmatrix}\n\\]\n\n\n🏷️ Example 3: diagonal matrices\n\\[\n\\begin{pmatrix}\n1 && 0 \\\\\n0 && 3\n\\end{pmatrix},\n\\begin{pmatrix}\n1 && 0 && 0 \\\\\n0 && 2 && 0 \\\\\n0 && 0 && 4\n\\end{pmatrix}\n\\]\n\n\n🏷️ Example 4: identity matrix\n\\[\nI_2 =\n\\begin{pmatrix}\n1 && 0 \\\\\n0 && 1\n\\end{pmatrix}\n\\]\n\\[\n\\begin{pmatrix}\n1 && 0 \\\\\n0 && 1\n\\end{pmatrix}\n\\begin{pmatrix}\na && b \\\\\nc && d\n\\end{pmatrix}\n=\n\\begin{pmatrix}\na && b \\\\\nc && d\n\\end{pmatrix}\n=\n\\begin{pmatrix}\na && b \\\\\nc && d\n\\end{pmatrix}\n\\begin{pmatrix}\n1 && 0 \\\\\n0 && 1\n\\end{pmatrix},\n\\]",
+    "crumbs": [
+      "Chapter 2 — Linear Algebra",
+      "Matrices, linear systems, and determinants"
+    ]
+  },
+  {
+    "objectID": "chapter-2/matrices.html#matrices-and-systems-of-linear-equations",
+    "href": "chapter-2/matrices.html#matrices-and-systems-of-linear-equations",
+    "title": "Matrices, linear systems, and determinants",
+    "section": "📌 Matrices and Systems of Linear Equations",
+    "text": "📌 Matrices and Systems of Linear Equations\nA system of linear equations can be written as a single matrix equation\n\\[\n\\begin{cases}\na_{11}x_1 + \\cdots +A_{1n}x_1 = b_1 \\\\\n\\vdots                              \\\\\na_{m1}x_1 + \\cdots +A_{mn}x_n = b_m\n\\end{cases}\n\\Longleftrightarrow\n\\begin{pmatrix}\na_{11} && \\cdots && a_{1n} \\\\\n\\vdots && \\ddots && \\vdots \\\\\na_{m1} && \\cdots && a_{mn}\n\\end{pmatrix}\n\\begin{pmatrix}\nx_1 \\\\\n\\vdots \\\\\nx_n\n\\end{pmatrix} =\n\\begin{pmatrix}\nb_1 \\\\\n\\vdots \\\\\nb_m\n\\end{pmatrix}\n\\]\nThat is, \\(A\\bf{x} = \\bf{b}\\)\n\n🏷️ Example 1: how it works\n\\[\n\\begin{cases}\n2x+3y+5z=7 \\\\\nx+4y+8z=-3 \\\\\nx+5y+9z=8\n\\end{cases}\n\\Longleftrightarrow\n\\begin{pmatrix}\n2 && 3 && 5 \\\\\n1 && 4 && 8 \\\\\n1 && 5 && -9\n\\end{pmatrix}\n\\begin{pmatrix}\nx \\\\\ny \\\\\nz\n\\end{pmatrix} =\n\\begin{pmatrix}\n2x+3y+5z \\\\\nx+4y+8z \\\\\nx+5y+9z\n\\end{pmatrix}=\n\\begin{pmatrix}\n7 \\\\\n-3 \\\\\n8\n\\end{pmatrix}\n\\]\nThis can be written as:\n\\[\nA\\vec{x}=\\vec{b}\n\\]\nSo the natural question is, how do we solve \\(x\\), \\(y\\), and \\(z\\)?\nIf \\(\\vec{x}\\) and \\(\\vec{b}\\) were just ordinary numbers \\(x\\) and \\(b\\), we would multiply both left and right with reciprocal \\(\\dfrac{1}{a}\\):\n\\[\n\\dfrac{1}{a}ax = \\dfrac{1}{a}b \\Rightarrow x = \\dfrac{b}{a}\n\\]\nSo the key value here is \\(\\dfrac{1}{A}\\), which gives the identity when multiplied by \\(A\\). Now the identity for matrices is \\(I_n\\), so we are looking for a matrix \\(B\\) for which\n\\[\nAB=BA=I_n\n\\]",
+    "crumbs": [
+      "Chapter 2 — Linear Algebra",
+      "Matrices, linear systems, and determinants"
+    ]
+  },
+  {
+    "objectID": "chapter-2/matrices.html#invertible-matrices",
+    "href": "chapter-2/matrices.html#invertible-matrices",
+    "title": "Matrices, linear systems, and determinants",
+    "section": "📌 Invertible Matrices",
+    "text": "📌 Invertible Matrices\nA square matrix \\(A\\) is invertible if an inverse matrix \\(A^{-1}\\) exists that satisfies\n\\[\nA A^{-1} = A^{-1} A = I_n\n\\]\n\n🏷️ Example 1: invertible \\(2 \\times 2\\) matrix\n\\[\n\\text{Let}\\ A=\n\\begin{pmatrix}\n2 && 3 \\\\\n1 && 2\n\\end{pmatrix},\\ \\text{then }\\ A^{-1}=\n\\begin{pmatrix}\n2 && -3 \\\\\n-1 && 2\n\\end{pmatrix}\n\\]\nThis can easily be verified as follows:\n\\[\nAA^{-1} =\n\\begin{pmatrix}\n2 && 3 \\\\\n1 && 2\n\\end{pmatrix}\n\\begin{pmatrix}\n2 && -3 \\\\\n-1 && 2\n\\end{pmatrix}\n=\n\\begin{pmatrix}\n1 && 0 \\\\\n0 && 1\n\\end{pmatrix}\n\\]\n\n\n🏷️ Example 2: invertible \\(3 \\times 3\\) matrix\n\\[\nB = \\begin{pmatrix}\n1 && 1 && 1 \\\\\n0 && 1 && 1 \\\\\n1 && 0 && 1\n\\end{pmatrix},\\ B^{-1}=\n\\begin{pmatrix}\n1 && -1 && 0 \\\\\n1 && 0 && -1 \\\\\n-1 && 1 && 1\n\\end{pmatrix}\n\\Rightarrow\nBB^{-1}=B^{-1}B=I_3\n\\]\nHowever, not every matrix as an inverse matrix.\n\n\n🏷️ Example 3: a non-invertible matrix\n\\[\nA =\n\\begin{pmatrix}\n0 && 0 \\\\\n0 && 0\n\\end{pmatrix}\n\\Rightarrow\n\\begin{pmatrix}\n0 && 0 \\\\\n0 && 0\n\\end{pmatrix}\n\\begin{pmatrix}\na && b \\\\\nc && d\n\\end{pmatrix}=\n\\begin{pmatrix}\n0 && 0 \\\\\n0 && 0\n\\end{pmatrix}\\neq I_2\n\\]\nSo not every matrix as an inverse! Some matrices have inverses, others don’t.\nUsing this, we can actually solve the above system of linear equations.\n\\[\n\\begin{cases}\n2x + 3y = 13 \\\\\nx+2y = 8\n\\end{cases}\n\\Longleftrightarrow\n\\begin{pmatrix}\n2 && 3 \\\\\n1 && 2\n\\end{pmatrix}\n\\begin{pmatrix}\nx \\\\\ny\n\\end{pmatrix}=\n\\begin{pmatrix}\n13 \\\\\n8\n\\end{pmatrix}\n\\]\nMultiplication by the inverse matrix on both sides gives (for the inverse matrix, see the first example listed under Invertible Matrices):\n\\[\n\\begin{pmatrix}\n2 && -3 \\\\\n-1 && 2\n\\end{pmatrix}\n\\begin{pmatrix}\n2 && 3 \\\\\n1 && 2\n\\end{pmatrix}\n\\begin{pmatrix}\nx \\\\\ny\n\\end{pmatrix}=\n\\begin{pmatrix}\n2 && -3 \\\\\n-1 && 2\n\\end{pmatrix}\n\\begin{pmatrix}\n13 \\\\\n8\n\\end{pmatrix}\n\\Rightarrow\n\\begin{pmatrix}\nx \\\\\ny\n\\end{pmatrix}=\n\\begin{pmatrix}\n2 \\\\\n3\n\\end{pmatrix}\n\\]\nNow that we learned about inverse matrices, we would like to find the inverse of a general matrix\n\\[\n\\begin{pmatrix}\na && b \\\\\nc && d\n\\end{pmatrix}\n\\]\nNote that at this point, we don’t even know if this matrix has an inverse.\nWe are looking for an inverse matrix, so we have\n\\[\n\\begin{pmatrix}\na && b \\\\\nc && d\n\\end{pmatrix}\n\\begin{pmatrix}\nx && y \\\\\nz && w\n\\end{pmatrix}=\n\\begin{pmatrix}\n1 && 0 \\\\\n0 && 1\n\\end{pmatrix}=\n\\begin{pmatrix}\nax+bz && ay+bw \\\\\ncx+dz && cy+dw\n\\end{pmatrix}\n\\]\nFrom this we infer that\n\\[\n\\begin{cases}\nax+bz = 1 \\\\\nay+bw = 0 \\\\\ncx+dz = 0 \\\\\ncy+dw = 1\n\\end{cases} \\Rightarrow\n\\begin{cases}\nadx+bdz = d \\\\\nady+bdw = 0 \\\\\nbcx+bdz = 0 \\\\\nbcy+bdw = b\n\\end{cases}\n\\]\nSubtraction of the first and the third equations and the second and last respectively results in:\n\\[\n\\begin{cases}\nx = \\dfrac{d}{ad-bc} \\\\\ny = \\dfrac{-b}{ad-bc} \\\\\nz = \\dfrac{-c}{ad-bc} \\\\\nw = \\dfrac{a}{ad-bc}\n\\end{cases}, ad-bc\\neq 0 \\Rightarrow\n\\begin{pmatrix}\nx && y \\\\\nz && w\n\\end{pmatrix}=\n\\dfrac{1}{ad-bc}\n\\begin{pmatrix}\nd && -b \\\\\n-c && a\n\\end{pmatrix}\n\\]\n🚨 So the matrix has an inverse if and only if \\(ad-bc\\neq 0\\). So the \\(ad-bc\\) quantity is key here, as it determines if the matrix is invertible or not! This quantity is called the determinant❗\nThe definition of a determinant can be generalized to any \\(n \\times n\\) matrix, but we will refrain from doing so here. Instead, we will focus on the \\(2 \\times 2\\) case, which is sufficient for our purposes.",
+    "crumbs": [
+      "Chapter 2 — Linear Algebra",
+      "Matrices, linear systems, and determinants"
+    ]
+  },
+  {
+    "objectID": "chapter-2/matrices.html#the-determinant",
+    "href": "chapter-2/matrices.html#the-determinant",
+    "title": "Matrices, linear systems, and determinants",
+    "section": "📌 The Determinant",
+    "text": "📌 The Determinant\nA determinant is a function \\[\n\\det: M_{n \\times n}(F) \\rightarrow F\n\\] that assigns a scalar to each square matrix.\n\\[\n👉\\ A\\ \\text{is invertible} \\Longleftrightarrow \\det(A)\\neq 0\n\\]\n\\[\n👉\\ \\det(AB)=\\det(BA)\n\\]\nFor a \\(2\\times2\\) matrix, \\[\n👉\\ \\det\\begin{pmatrix} a && b \\\\ c && d\\end{pmatrix}=ad-bc\n\\]",
+    "crumbs": [
+      "Chapter 2 — Linear Algebra",
+      "Matrices, linear systems, and determinants"
+    ]
+  },
+  {
+    "objectID": "chapter-2/matrices.html#matrix-groups-notation",
+    "href": "chapter-2/matrices.html#matrix-groups-notation",
+    "title": "Matrices, linear systems, and determinants",
+    "section": "📌 Matrix Groups: Notation",
+    "text": "📌 Matrix Groups: Notation\nFor a field \\(F\\) and a positive integer \\(n\\):\n\n\\(Mat_n(F)\\): the set of all \\(n\\times n\\) matrices with entries in F.\n\\(GL_n(F)\\): the general linear group is the group of all invertible matrices in \\(Mat_n(F)\\).\n\n\\[\nGL_n(F) = \\{A\\in Mat_n(F)\\ |\\ \\det(A)\\neq 0\\}.\n\\]\n\n\\(SL_n(F)\\): the special linear group is a subgroup of \\(GL_n(F)\\), consisting of matrices with determinant 1.\n\n\\[\nSL_n(F) = \\{A\\in GL_n(F)\\ |\\ \\det(A)=1\\}.\n\\]\n\n🏷️ Example 1: members of \\(Mat_n(F)\\)\n\\[\nMat_2(\\mathbb{R}):\\ \\begin{pmatrix} 2 && 3 \\\\ -1 && \\sqrt{7}\\end{pmatrix},\\ \\begin{pmatrix} \\pi && 3+\\sqrt{2} \\\\ -7 && \\dfrac{3}{4}\\end{pmatrix}\n\\]\n\n\n🏷️ Example 2 : members of \\(GL_n(F)\\)\n\\[\nGL_2(\\mathbb{R}):\\ \\begin{pmatrix} 1 && 2 \\\\ 3 && 4\\end{pmatrix} \\Rightarrow \\text{det}=-2\n\\]\nHowever, the following matrix is not a member of \\(GL_2(\\mathbb{R})\\), as it is a non-invertible matrix:\n\\[\n\\begin{pmatrix} 2 && 4 \\\\ 5 && 10\\end{pmatrix} \\Rightarrow \\text{det}=-0\n\\]\n\n\n🏷️ Example 3: members of \\(SL_n(F)\\)\n\\[\n\\begin{pmatrix} 3 && 2 \\\\ 7 && 5\\end{pmatrix} \\in SL_2(\\mathbb{R})\n\\]\nBut\n\\[\n\\begin{pmatrix} 4 && 6 \\\\ 0 && 1\\end{pmatrix} \\notin SL_2(\\mathbb{R})\n\\]",
+    "crumbs": [
+      "Chapter 2 — Linear Algebra",
+      "Matrices, linear systems, and determinants"
+    ]
+  },
+  {
+    "objectID": "chapter-2/linear-algebra.html",
+    "href": "chapter-2/linear-algebra.html",
+    "title": "Linear algebra",
+    "section": "",
+    "text": "Note\n\n\n\n🚨 So why do we need linear algebra?\nMathematics is not only about numbers. It is also about structure. A large part of modern mathematics is concerned with understanding structures: what their essential properties are, how they relate to one another, and what can be learned from the transformations that preserve those properties.\nThe goal of linear algebra is not simply to learn how to calculate with matrices. The goal is to learn how to recognize generic structures.\nThe ideas developed in this chapter will reappear in increasingly sophisticated forms. In particular, the language of vector spaces and linear transformations will eventually lead us toward representations of groups and, ultimately, Galois representations.\nRemember that in the introduction we said:\nHere, the deeper idea is that seemingly unrelated mathematical problems can often be described using the same underlying structure. As we will see, we can use these shared concepts to look at certain problems from a new, often more convenient perspective.\nFor example, in linear algebra, we can write any vector with respect to its basis vectors:\n\\[\n\\overrightarrow{v}=c_1\\overrightarrow{e_1}+c_2\\overrightarrow{e_2}+c_3\\overrightarrow{e_3} = \\begin{pmatrix}c_1 \\\\ c_3 \\\\ c_3\\end{pmatrix}\n\\]\nIn the following two examples, we will do the same in the vector space of functions.\nAlthough Fourier analysis and Taylor expansion may seem to belong to a completely different part of mathematics, from the perspective of linear algebra, we can think of a function as an element of a vector space. This allows us to ask:\nJust as an ordinary vector can be written as a linear combination of basis vectors, a function can be written as a linear combination of basis functions.",
+    "crumbs": [
+      "Chapter 2 — Linear Algebra",
+      "Linear algebra"
+    ]
+  },
+  {
+    "objectID": "chapter-2/linear-algebra.html#example-1-taylor-expansion",
+    "href": "chapter-2/linear-algebra.html#example-1-taylor-expansion",
+    "title": "Linear algebra",
+    "section": "🏷️ Example 1: Taylor expansion",
+    "text": "🏷️ Example 1: Taylor expansion\nWe can conceptualize the Taylor expansion as a kind of coordinate representation of a function with respect to a basis of polynomials.\n\n\n\n\n\n\nNote\n\n\n\n🚨 All concepts below will be properly addressed and explained in this very chapter on linear algebra.\n\n\nTake for example a function \\(f(x)\\). Around \\(x=0\\) we can write\n\\[\nf(x)=a_0+a_1x+a_2x^2+a_3x^3+\\cdots\n\\]\nWe can think of the objects\n\\[\n1,\\quad x,\\quad x^2,\\quad x^3,\\ldots\n\\]\nas basis vectors of a vector space of polynomials, exactly those notions that are defined in this chapter on linear algebra! The scalars \\(a_0,a_1,a_2,a_3,\\ldots\\) are exactly the coordinates van \\(f(x)\\) with respect to that basis.\nNote that a Taylor series is not just an arbitrary representation of \\(f(x)\\) in the basis \\(\\{1,x,x^2,x^3,\\ldots\\}\\) as the coordinates are specifically determined by the derivatives of \\(f(x)\\) around the expansion point:\n\\[\na_n=\\frac{f^{(n)}(0)}{n!}.\n\\]\nFor example,\n\\[\ne^x=1+x+\\frac{x^2}{2!}+\\frac{x^3}{3!}+\\cdots\n\\]\ncan be interpreted in the context of linear algebra as:\n\\[\n[e^x]_{\\{1,x,x^2,x^3,\\ldots\\}}\n=\n\\left(1,1,\\dfrac{1}{2!},\\dfrac{1}{3!},\\ldots\\right).\n\\]\n👉 The Taylor series expansion provides a different basis\n\n👨‍💻 Taylor expansion demo\n\n\nWe can look at it in an even more abstract way. Around a point \\(a\\) we have the basis\n\\[\n1,\\quad (x-a),\\quad (x-a)^2,\\quad (x-a)^3,\\ldots\n\\]\nwith which \\(f(x)\\) becomes\n\\[\nf(x)\n=\nf(a)\n+f'(a)(x-a)\n+\\frac{f''(a)}{2!}(x-a)^2+\\cdots.\n\\]\nTherefore, the coordinates with respect to that polynomial basis vectors are\n\\[\n\\boxed{\n\\left(\nf(a),\nf'(a),\n\\frac{f''(a)}{2!},\n\\frac{f^{(3)}(a)}{3!},\\ldots\n\\right)\n}\n\\]\nSo we observe the following analogy in lineaire algebra:\n\n\n\n\n\n\n\nLinear algebra\nTaylor analysis\n\n\n\n\nvector \\(v\\)\nfunction \\(f\\)\n\n\nbasis vectors \\(e_1,e_2,\\ldots\\)\n\\(1,(x-a),(x-a)^2,\\ldots\\)\n\n\ncoordinates \\(c_1,c_2,\\ldots\\)\n\\(f(a),f'(a),f''(a)/2!,\\ldots\\)\n\n\n\\(v=\\sum c_i e_i\\)\n\\(f=\\sum \\frac{f^{(n)}(a)}{n!}(x-a)^n\\)\n\n\n\n👉 We can look at the Taylor expansion as expressing a function in coordinates along the directions \\(1,(x-a),(x-a)^2,\\ldots\\).\nThere exists an even deeper connection: differentiation can be seen as a linear operator that works on these coordinates. This directly leads to a connection between Taylor series, vector spaces, and matrices/operators.",
+    "crumbs": [
+      "Chapter 2 — Linear Algebra",
+      "Linear algebra"
+    ]
+  },
+  {
+    "objectID": "chapter-2/linear-algebra.html#example-2-fourier-transform",
+    "href": "chapter-2/linear-algebra.html#example-2-fourier-transform",
+    "title": "Linear algebra",
+    "section": "🏷️ Example 2: Fourier transform",
+    "text": "🏷️ Example 2: Fourier transform\nHere the connection with linear algebra becomes even more apparent, since the Fourier expansion amounts to a representation of a function in the following orthogonal directions:\n\\[\n1,\\quad \\cos x,\\quad \\sin x,\\quad \\cos 2x,\\quad \\sin 2x,\\quad\\ldots\n\\]\nAny function \\(f\\) can thus be built using this basis:\n\\[\nf(x)\n=\n\\frac{a_0}{2}\n+\\sum_{n=1}^{\\infty}\n\\left(a_n\\cos(nx)+b_n\\sin(nx)\\right).\n\\]\nThe Fourier-coefficiens \\(a_0,a_1,b_1,a_2,b_2,\\ldots\\) are the coordinats of the function \\(f\\) in this basis.\n\n👨‍💻 Fourier transform demo",
+    "crumbs": [
+      "Chapter 2 — Linear Algebra",
+      "Linear algebra"
+    ]
+  },
+  {
+    "objectID": "chapter-2/linear-algebra.html#comparision-between-taylor-and-fourier-series",
+    "href": "chapter-2/linear-algebra.html#comparision-between-taylor-and-fourier-series",
+    "title": "Linear algebra",
+    "section": "Comparision between Taylor and Fourier series",
+    "text": "Comparision between Taylor and Fourier series\n\nOrthogonality\nWe have seen that \\[\n\\text{Taylor}=\\text{coordinates in a polynomial basis}\n\\]\nand\n\\[\n\\text{Fourier}=\\text{coordinates in a trigonometric basis}.\n\\]\nHowever, in the case of Fourier, we have seen yet another concept from linear algebra, namely orthogonality.\nTwo vectors are orthogonal when \\(u\\cdot v=0\\). For functions this can be defined analogously:\n\\[\n\\langle f,g\\rangle\n=\n\\int_{-\\pi}^{\\pi}f(x)g(x),dx.\n\\]\nWith this definition \\(\\cos x\\) and \\(\\sin x\\) turn out to be perpendicular to one another:\n\\[\n\\langle\\cos x,\\sin x\\rangle\n=\n\\int_{-\\pi}^{\\pi}\\cos x\\sin x,dx\n=0.\n\\]\nThe same holds for the different frequencies \\(\\langle\\cos x,\\cos2x\\rangle=0\\) and \\(\\langle\\sin3x,\\cos7x\\rangle=0\\). In fact, we have an infinite-dimensional Euclidean space where the Fourier basis vectors are perpendicular to each other.\nThis orthogonality is then used to find the (frequency) coordinates. Suppose in “ordinary” lineaire algebra we have:\n\\[\n\\overrightarrow{v}=3\\overrightarrow{e_1}+5\\overrightarrow{e_2}.\n\\]\nWhen \\(\\overrightarrow{e_1}\\) and \\(\\overrightarrow{e_2}\\) are prependicular, we can find \\(3\\) by projecting \\(\\overrightarrow{v}\\) onto \\(\\overrightarrow{e_1}\\).\nAnalogously we can find the Fourier coefficients \\(a_n\\) by projecting \\(f\\) onto \\(\\cos(nx)\\). So conceptually:\n\\[\na_n\n\\sim\n\\langle f,\\cos(nx)\\rangle,\n\\quad\nb_n\n\\sim\n\\langle f,\\sin(nx)\\rangle.\n\\]\nWith exact normalisation this results in\n\\[\na_n=\\frac1\\pi\n\\int_{-\\pi}^{\\pi}f(x)\\cos(nx)dx,\n\\quad\nb_n=\\frac1\\pi\n\\int_{-\\pi}^{\\pi}f(x)\\sin(nx),dx.\n\\]\n\n\nGeometric interpretation\nWe have just established that Fourier coefficients are literally projections of the function vector onto orthogonal basis vectors.\n👉 This makes a direct geoemtric interpretation of the Fourier transform possible.\nFor a vector in 3D this geometric interpretation is trivial. For example,\n\\[\n\\overrightarrow{v}=\n\\begin{pmatrix} 3 \\\\ 2 \\\\ 5 \\end{pmatrix}.\n\\]\ntells us that \\(\\overrightarrow{v}\\) consists of 3 units in the \\(x\\)-direction, 2 in the \\(y\\)-direction and 5 in the \\(z\\)-direction. Fourier tells us something similar: this function consists so much of frequencies \\(1\\), that much of frequencies \\(2\\), etc.\nFor example, we could have \\(f(x)= 2\\cos x +0.7\\sin x +3\\cos2x -1.2\\sin3x\\).\nThe two examples may be summarized in a table.\n\n\n\n\n\n\n\n\n\nTaylor\nFourier\n\n\n\n\nVector\nfunction \\(f\\)\nfunction \\(f\\)\n\n\nVector space\nfunctions/polynomials\nfunctions\n\n\nBasis\n\\(1,(x-a),(x-a)^2,\\ldots\\)\n\\(1,\\cos x,\\sin x,\\cos2x,\\sin2x,\\ldots\\)\n\n\nCoördinaten\nderivatives of \\(f\\)\nprojections/integrals\n\n\nIdea\nlocal behaviour\nfrequenty-contents\n\n\nBasis orthogonal?\nno\nyes\n\n\nGeometric interpretation\nless direct\nvery direct",
+    "crumbs": [
+      "Chapter 2 — Linear Algebra",
+      "Linear algebra"
+    ]
+  },
+  {
+    "objectID": "chapter-2/linear-algebra.html#conclusion",
+    "href": "chapter-2/linear-algebra.html#conclusion",
+    "title": "Linear algebra",
+    "section": "🧠 Conclusion",
+    "text": "🧠 Conclusion\n👉 The choice of basis determines which properties of a function become apparent.\n\nWith Taylor local properties become apparent via the derivatives:\n\nDecomposition of \\(f\\) in polynomial directions\nHow does \\(f\\) behave locally around a point \\(a\\)?\n\nWith Fourier frequencies become visible via projection onto the basis vectors:\n\nDecomposition of \\(f\\) in frequency directions\nFrom which frequencies can \\(f\\) be built up?\n\n\n👉 This is why linear algebra can be so powerful:\n\nIt gives us a common language in which very different mathematical problems can reveal the same underlying structure.\nWe can do a basis transformation to look at a certain problem from a new, more convenient perspective.",
+    "crumbs": [
+      "Chapter 2 — Linear Algebra",
+      "Linear algebra"
+    ]
+  },
+  {
+    "objectID": "chapter-1/calculus-complex-analysis.html",
+    "href": "chapter-1/calculus-complex-analysis.html",
+    "title": "Basic calculus & complex analysis",
+    "section": "",
+    "text": "Note\n\n\n\nThis section corresponds to Basic Calculus and Complex Analysis — 38:59 in the video Proof of Fermat Last Theorem FROM SCRATCH. Noah Jang is the original creator of the exposition and examples referenced here. The interactive implementations, animations, additional explanations, and contextual material are my own work.",
     "crumbs": [
       "Chapter 1 — Basics",
-      "Introduction"
+      "Basic calculus &amp; complex analysis"
+    ]
+  },
+  {
+    "objectID": "chapter-1/calculus-complex-analysis.html#taylor-series",
+    "href": "chapter-1/calculus-complex-analysis.html#taylor-series",
+    "title": "Basic calculus & complex analysis",
+    "section": "📌 Taylor series",
+    "text": "📌 Taylor series\nA Taylor series represents a function as an infinite polynomial. With infinitely many terms, it equals the original function within its interval of convergence.\n\n🏷️ Examples\n\\[\n\\begin{array}{rl}\ne^x &= 1 + x + \\dfrac{x^2}{2!} + \\dfrac{x^3}{3!} + \\cdots \\\\\n\\sin x &= x - \\dfrac{x^3}{3!} + \\dfrac{x^5}{5!} - \\dfrac{x^7}{7!}+\\cdots\\\\\n\\cos x &= 1 - \\dfrac{x^2}{2!} + \\dfrac{x^4}{4!}-\\dfrac{x^6}{6!}+\\cdots \\\\\n\\ln(1 + x) &= x - \\dfrac{x^2}{2}+\\dfrac{x^3}{3}-\\dfrac{x^4}{4}+\\cdots \\qquad (-1 &lt; x \\leq 1)\n\\end{array}\n\\]\n\n\n\n\n\n\nNote\n\n\n\nSo why do we need this?\nAlthough this won’t be used frequently in the forthccoming chapters, it appears a few times later.\n\n\n🎯 The Taylor series is a way to represent a given function as an infinite polynomial.\n👉 We will look at the Taylor expansion again from the perspective of linear algebra in chapter two.\n\n\n👨‍💻 Taylor expansion demo",
+    "crumbs": [
+      "Chapter 1 — Basics",
+      "Basic calculus &amp; complex analysis"
+    ]
+  },
+  {
+    "objectID": "chapter-1/calculus-complex-analysis.html#multivariable-functions",
+    "href": "chapter-1/calculus-complex-analysis.html#multivariable-functions",
+    "title": "Basic calculus & complex analysis",
+    "section": "📌 Multivariable functions",
+    "text": "📌 Multivariable functions\nA multivariable function is a map\n\\[\nf: \\mathbb{R}^n \\rightarrow \\mathbb{R}\n\\]\nIn the section above, we have discussed (the Taylor expansion for) functions that depend on one variable only, such as \\(f(x) = e^x\\). In this section, we’ll shortly look at functions that depend on two or even more variables.\nA multivariable function that depends on two variables can naturally be visualized as a surface in three-dimensional space.\n\n👨‍💻 Multivariable functions demo\n\n\n\n\nAnother examples may be choosen from the drop-down menu. The formula of the selected function can be seen in the title.",
+    "crumbs": [
+      "Chapter 1 — Basics",
+      "Basic calculus &amp; complex analysis"
+    ]
+  },
+  {
+    "objectID": "chapter-1/calculus-complex-analysis.html#partial-derivative",
+    "href": "chapter-1/calculus-complex-analysis.html#partial-derivative",
+    "title": "Basic calculus & complex analysis",
+    "section": "📌 Partial derivative",
+    "text": "📌 Partial derivative\nFor functions that depend on more than one variable, we would like to be able to analyse the rate of change in a similar way to that of functions that depend on one variable only. As multivariate functions have several variables, each direction generally has its own rate of change. As a consequence, each direction has its own derivative. When looking for the rate of change in a particular direction, we leave the other variables intentionally unchanged. This means that all the other variables but the one we are interested in can then be treated as constants.\nLet \\(f:\\mathbb{R}^2\\rightarrow\\mathbb{R}\\) be a function. The partial derivative with respect to \\(x_i\\) is defined as\n\\[\n\\dfrac{\\partial f}{\\partial x_i} :=\n\\lim_{h\\rightarrow 0}\n\\dfrac{f(x_1,\\cdots,x_i+h,\\cdots,x_n) - f(x_1,\\cdots,x_n)}{h}\n\\]\nNote that this is very similar to the way in which the derivative is defined for a function of one variable:\n\\[\nf'(x) =\n\\lim_{h\\rightarrow 0}\n\\dfrac{f(x+h) - f(x)}{h}\n\\]\n\n\n\n\n\n\nNote\n\n\n\nSo why do we need this?\nLater these partial derivatives will show up when we talk about singlar points and elliptic curves.\n\n\n\n🏷️ Example\nLet\n\\[\nf(x,y) = x^3+y^3+xy+\\sin x\\cos y\n\\]\nthen\n\\[\n\\begin{array}{ll}\n\\dfrac{\\partial f}{\\partial x} &=\n3x^2 + y + \\cos x\\cos y \\\\\n\\dfrac{\\partial f}{\\partial y} &=\n3y^2 + x - \\sin x\\sin y \\\\\n\\end{array}\n\\]",
+    "crumbs": [
+      "Chapter 1 — Basics",
+      "Basic calculus &amp; complex analysis"
+    ]
+  },
+  {
+    "objectID": "chapter-1/calculus-complex-analysis.html#eurlers-formula-and-eitheta",
+    "href": "chapter-1/calculus-complex-analysis.html#eurlers-formula-and-eitheta",
+    "title": "Basic calculus & complex analysis",
+    "section": "📌 Eurler’s formula and \\(e^{i\\theta}\\)",
+    "text": "📌 Eurler’s formula and \\(e^{i\\theta}\\)\nFor any real number \\(\\theta\\),\n\\[\ne^{i\\theta} = \\cos\\theta + i\\sin\\theta.\n\\]\n\n\n\n\n\n\nNote\n\n\n\nWhy do we need this?\nThis formula tells us concretely what to do/what to think of, whenever we encounter \\(i\\) in an exponent.\n\n\nThe special case where \\(\\theta = \\pi\\) then gives us one of the well-known formulas in mathematics, similar to the \\(E=mc^2\\) equation in physics:\n\\[\ne^{i\\pi} + 1 = 0.\n\\]\nThe reason is that it contains so many important constants in one tiny equation:\n\nEuler’s constant or natural constant \\(e\\)\nThe irrational number \\(pi\\) as the ratio between the circumverence and diameter of a circle\nThe square root of negative one, \\(i\\)\nThe identity with respect to addition, \\(0\\)\nThe identity with respect to multiplication, \\(1\\)\n\nThis formula also matches very well with the aforementioned Taylor series.\n\\[\n\\begin{array}{ll}\ne^x &= 1 + x + \\dfrac{x^2}{2!} + \\dfrac{x^3}{3!} + \\cdots \\\\\ne^{i\\theta} &= 1 + i\\theta - \\dfrac{\\theta^2}{2!} - \\dfrac{\\theta^3}{3!}i + \\dfrac{\\theta^4}{4!} + \\dfrac{\\theta^5}{5!}i - \\dfrac{\\theta^6}{6!} + \\cdots \\\\\n\\quad &= \\left(1 - \\dfrac{\\theta^2}{2!} + \\dfrac{\\theta^4}{4!} - \\dfrac{\\theta^6}{6!} + \\cdots \\right) +i\\left(\\theta - \\dfrac{\\theta^3}{3!}i + \\dfrac{\\theta^5}{5!} + \\cdots\\right) \\\\\n\\quad &= \\cos\\theta \\qquad + \\qquad i\\sin\\theta\n\\end{array}\n\\]\nAs a consequence we have \\(e^{2\\pi i} = 1\\), \\(e^{\\pi i} = -1\\), and \\(e^{\\frac{\\pi}{6}i} = \\dfrac{\\sqrt{3}}{2} +\\dfrac{1}{2}i\\).\nAnd more generally \\[\ne^{i\\theta} =\ne^{i(\\theta + 2n\\pi)},\\quad n\\in\\mathbb{N}.\n\\]",
+    "crumbs": [
+      "Chapter 1 — Basics",
+      "Basic calculus &amp; complex analysis"
+    ]
+  },
+  {
+    "objectID": "chapter-1/calculus-complex-analysis.html#the-n-th-roots-of-unity",
+    "href": "chapter-1/calculus-complex-analysis.html#the-n-th-roots-of-unity",
+    "title": "Basic calculus & complex analysis",
+    "section": "📌 The \\(n\\)-th roots of unity",
+    "text": "📌 The \\(n\\)-th roots of unity\n\n\n\n\n\n\nNote\n\n\n\n🚨 So why do we need this?\nRoots of unity are used in many branches of mathematics, and are especially important in number theory, the theory of group characters, and the discrete Fourier transform. — Wikipedia\n\n\nThe \\(n\\)-th roots of unity are the complex numbers \\(z\\) that satisfy the equation:\n\\[\nz^n =1\\quad \\text{or equivalently}\\quad z^n -1 = 0\n\\]\nusing Euler’s formula, we can find all \\(n\\) distinct roots. They are given by:\n\\[\nz_k=e^{i\\dfrac{2\\pi k}{n}}=\\cos\\left(\\dfrac{2\\pi k}{n}\\right) + i\\sin\\left(\\dfrac{2\\pi k}{n}\\right), \\quad k=0, 1, 2,\\cdots,n-1.\n\\]\nSo how does this work? We are looking for\n\\[\nz^n = 1 = e^{2\\pi k} \\Rightarrow z = e^{\\dfrac{2\\pi ik}{n}},\\quad k \\in \\mathbb{Z}\n\\]\nFilling in the values of \\(k\\), we get\n\\[\n\\underbrace{\n1, e^{\\dfrac{2\\pi i}{n}}, e^{\\dfrac{4\\pi i}{n}}, \\cdots,e^{\\dfrac{2\\pi i(n-1)}{n}}\n},\n\\underbrace{e^{2\\pi i}, e^{\\dfrac{2\\pi i(n+1)}{n}}, \\cdots\n}\n\\]\nBecause of the periodicity, we can limit the values of \\(k\\) to \\(n-1\\).\n\n🏷️ Example 1: \\(n=2\\)\n\\[z_k = e^{i\\dfrac{2\\pi k}{2}} = e^{\\pi ik} \\Rightarrow \\begin{cases} k=0: 1 \\\\ k=1: -1\\end{cases}\n\\]\n\n\n🏷️ Example 2: \\(n=3\\)\n\\[z_k = e^{\\dfrac{2\\pi ik}{3}} \\Rightarrow \\begin{cases} k=0: 1 \\\\ k=1: e^{\\dfrac{2\\pi}{3}}= +\\dfrac{\\sqrt{3}}{2}i-\\dfrac{1}{2} \\\\ k=2: e^{\\dfrac{4\\pi}{3}} = -\\dfrac{\\sqrt{3}}{2}i+\\dfrac{1}{2}\\end{cases}\n\\]\nGeometrically, the roots of unity constitute the vertices of a regular \\(n\\)-gon sitting on a unit circle in the complex plane.\n\n\n👨‍💻 Roots of unity demo",
+    "crumbs": [
+      "Chapter 1 — Basics",
+      "Basic calculus &amp; complex analysis"
+    ]
+  },
+  {
+    "objectID": "chapter-1/calculus-complex-analysis.html#complex-functions-and-holomorphy",
+    "href": "chapter-1/calculus-complex-analysis.html#complex-functions-and-holomorphy",
+    "title": "Basic calculus & complex analysis",
+    "section": "📌 Complex functions and holomorphy",
+    "text": "📌 Complex functions and holomorphy\nA complex function is a map \\[\nf:\\mathbb{C}\\rightarrow\\mathbb{C}\n\\]\n\\(f\\) is complex differentiable at \\(z_0\\) if the limit below exists for \\(h\\in\\mathbb{C}\\).\n\\[\nf'(z_0) := \\lim_{h\\rightarrow 0}\\dfrac{f(z_0+h) - f(z)}{h}\n\\]\nIf \\(f\\) is complex differentiable on an open set, it is called holomorphic.\n\n👨‍💻 Complex functions",
+    "crumbs": [
+      "Chapter 1 — Basics",
+      "Basic calculus &amp; complex analysis"
     ]
   }
 ]

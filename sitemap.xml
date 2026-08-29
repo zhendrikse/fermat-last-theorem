@@ -2,50 +2,46 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://zhendrikse.github.io/fermat-last-theorem/chapter-1/basic-set-number-theory.html</loc>
-    <lastmod>2026-08-29T11:49:33.792Z</lastmod>
-  </url>
-  <url>
-    <loc>https://zhendrikse.github.io/fermat-last-theorem/chapter-1/calculus-complex-analysis.html</loc>
-    <lastmod>2026-08-29T12:37:47.048Z</lastmod>
-  </url>
-  <url>
-    <loc>https://zhendrikse.github.io/fermat-last-theorem/chapter-2/linear-algebra.html</loc>
-    <lastmod>2026-08-28T16:53:23.479Z</lastmod>
-  </url>
-  <url>
-    <loc>https://zhendrikse.github.io/fermat-last-theorem/chapter-2/matrices.html</loc>
-    <lastmod>2026-08-27T07:40:39.215Z</lastmod>
-  </url>
-  <url>
-    <loc>https://zhendrikse.github.io/fermat-last-theorem/index.html</loc>
-    <lastmod>2026-08-29T11:42:44.874Z</lastmod>
-  </url>
-  <url>
-    <loc>https://zhendrikse.github.io/fermat-last-theorem/chapter-3/abstract-algebra.html</loc>
-    <lastmod>2026-08-25T19:29:34.375Z</lastmod>
-  </url>
-  <url>
-    <loc>https://zhendrikse.github.io/fermat-last-theorem/chapter-3/rings.html</loc>
-    <lastmod>2026-08-25T09:09:28.674Z</lastmod>
-  </url>
-  <url>
-    <loc>https://zhendrikse.github.io/fermat-last-theorem/chapter-3/groups.html</loc>
-    <lastmod>2026-08-29T12:35:28.214Z</lastmod>
-  </url>
-  <url>
-    <loc>https://zhendrikse.github.io/fermat-last-theorem/chapter-2/vector-spaces.html</loc>
-    <lastmod>2026-08-26T09:51:44.442Z</lastmod>
-  </url>
-  <url>
-    <loc>https://zhendrikse.github.io/fermat-last-theorem/chapter-2/linear-transformations.html</loc>
-    <lastmod>2026-08-28T11:52:34.814Z</lastmod>
+    <lastmod>2026-08-29T13:10:04.625Z</lastmod>
   </url>
   <url>
     <loc>https://zhendrikse.github.io/fermat-last-theorem/demo-index.html</loc>
     <lastmod>2026-08-28T16:46:02.776Z</lastmod>
   </url>
   <url>
-    <loc>https://zhendrikse.github.io/fermat-last-theorem/chapter-1/introduction.html</loc>
-    <lastmod>2026-08-24T18:13:52.084Z</lastmod>
+    <loc>https://zhendrikse.github.io/fermat-last-theorem/chapter-2/linear-transformations.html</loc>
+    <lastmod>2026-08-29T13:08:06.983Z</lastmod>
+  </url>
+  <url>
+    <loc>https://zhendrikse.github.io/fermat-last-theorem/chapter-2/vector-spaces.html</loc>
+    <lastmod>2026-08-29T13:08:11.339Z</lastmod>
+  </url>
+  <url>
+    <loc>https://zhendrikse.github.io/fermat-last-theorem/chapter-3/groups.html</loc>
+    <lastmod>2026-08-29T13:11:32.459Z</lastmod>
+  </url>
+  <url>
+    <loc>https://zhendrikse.github.io/fermat-last-theorem/chapter-3/rings.html</loc>
+    <lastmod>2026-08-29T13:11:13.774Z</lastmod>
+  </url>
+  <url>
+    <loc>https://zhendrikse.github.io/fermat-last-theorem/chapter-3/abstract-algebra.html</loc>
+    <lastmod>2026-08-29T13:11:51.299Z</lastmod>
+  </url>
+  <url>
+    <loc>https://zhendrikse.github.io/fermat-last-theorem/index.html</loc>
+    <lastmod>2026-08-29T12:54:59.945Z</lastmod>
+  </url>
+  <url>
+    <loc>https://zhendrikse.github.io/fermat-last-theorem/chapter-2/matrices.html</loc>
+    <lastmod>2026-08-29T13:08:24.179Z</lastmod>
+  </url>
+  <url>
+    <loc>https://zhendrikse.github.io/fermat-last-theorem/chapter-2/linear-algebra.html</loc>
+    <lastmod>2026-08-29T13:01:17.635Z</lastmod>
+  </url>
+  <url>
+    <loc>https://zhendrikse.github.io/fermat-last-theorem/chapter-1/calculus-complex-analysis.html</loc>
+    <lastmod>2026-08-29T13:10:09.560Z</lastmod>
   </url>
 </urlset>
