@@ -9,6 +9,38 @@ format: html
 This section corresponds to **38:59** in *Proof of Fermat Last Theorem FROM SCRATCH*.
 :::
 
+## 📌 Taylor series {#taylor-series}
+
+A Taylor series represents a function as an infinite polynomial. With infinitely many terms, it equals the original function within its interval of convergence.
+
+#### 🏷️ **Examples**
+
+$$
+\begin{array}{rl}
+e^x &= 1 + x + \dfrac{x^2}{2!} + \dfrac{x^3}{3!} + \cdots \\
+\sin x &= x - \dfrac{x^3}{3!} + \dfrac{x^5}{5!} - \dfrac{x^7}{7!}+\cdots\\
+\cos x &= 1 - \dfrac{x^2}{2!} + \dfrac{x^4}{4!}-\dfrac{x^6}{6!}+\cdots \\
+\ln(1 + x) &= x - \dfrac{x^2}{2}+\dfrac{x^3}{3}-\dfrac{x^4}{4}+\cdots \qquad (-1 < x \leq 1)
+\end{array}
+$$
+
+::: {.callout-note}
+So why do we need this? 
+
+Although this won't be used frequently in the forthccoming chapters, it appears a few times later.
+:::
+
+🎯 The Taylor series is a way to represent a given function as an infinite polynomial.
+
+👉 We will look at the Taylor expansion again [from the perspective of linear algebra](/chapter-2/linear-algebra.qmd) in chapter two.
+
+### 👨‍💻 Taylor expansion demo
+
+```{=html}
+<div id="taylorSeriesContainer"></div>
+<script type="module" src="https://www.hendrikse.name/helion/examples/taylor_expansion.js"></script>
+```
+
 ## 📌 Multivariable functions
 
 A multivariable function is a map 
@@ -17,7 +49,9 @@ $$
 f: \mathbb{R}^n \rightarrow \mathbb{R}
 $$
 
-We are already familiar with functions of a single variable, which can be visualized as a curve in the plane, such as $f(x) = x^2$. A multivariable function can be visualized as a surface in three-dimensional space.
+In the section above, we have discussed (the Taylor expansion for) functions that depend on one variable only, such as $f(x) = e^x$. In this section, we'll shortly look at functions that depend on two or even more variables. 
+
+A multivariable function that depends on two variables can naturally be visualized as a surface in three-dimensional space.
 
 ### 👨‍💻 Multivariable functions demo
 
@@ -27,12 +61,11 @@ We are already familiar with functions of a single variable, which can be visual
 ```
 
 <p style="clear: all"></p>
-
-Another example would be the distance of a point to the origin in three-dimensional space, $f(x,y,z) = \sqrt{x^2+y^2+z^2}$.
+Another examples may be choosen from the drop-down menu. The formula of the selected function can be seen in the title.
 
 ## 📌 Partial derivative
 
-For functions of several variables, we can also define a derivative. We do this by choosing just one of the many variables to be the actual variable and treating all the other variables as constants. 
+For functions that depend on more than one variable, we would like to be able to analyse the rate of change in a similar way to that of functions that depend on one variable only. As multivariate functions have several variables, each direction generally has its own rate of change. As a consequence, each direction has its own derivative. When looking for the rate of change in a particular direction, we leave the other variables intentionally unchanged. This means that all the other variables but the one we are interested in can then be treated as constants. 
 
 Let $f:\mathbb{R}^2\rightarrow\mathbb{R}$ be a function. The partial derivative with respect to $x_i$ is defined as
 
@@ -75,35 +108,6 @@ $$
 \end{array}
 $$
 
-## 📌 Taylor series {#taylor-series}
-
-A Taylor series represents a function as an infinite polynomial. With infinitely many terms, it equals the original function within its interval of convergence.
-
-#### 🏷️ **Examples**
-
-$$
-\begin{array}{rl}
-e^x &= 1 + x + \dfrac{x^2}{2!} + \dfrac{x^3}{3!} + \cdots \\
-\sin x &= x - \dfrac{x^3}{3!} + \dfrac{x^5}{5!} - \dfrac{x^7}{7!}+\cdots\\
-\cos x &= 1 - \dfrac{x^2}{2!} + \dfrac{x^4}{4!}-\dfrac{x^6}{6!}+\cdots \\
-\ln(1 + x) &= x - \dfrac{x^2}{2}+\dfrac{x^3}{3}-\dfrac{x^4}{4}+\cdots \qquad (-1 < x \leq 1)
-\end{array}
-$$
-
-::: {.callout-note}
-So why do we need this? 
-
-Although this won't be used frequently in the forthccoming chapters, it appears a few times later.
-:::
-
-🎯 The tailer series is a way to represent a given function as an infinite polynomial.
-
-### 👨‍💻 Taylor expansion demo
-
-```{=html}
-<div id="taylorSeriesContainer"></div>
-<script type="module" src="https://www.hendrikse.name/helion/examples/taylor_expansion.js"></script>
-```
 
 ## 📌 Eurler's formula and $e^{i\theta}$
 
@@ -119,7 +123,7 @@ Why do we need this?
 This formula tells us concretely what to do/what to think of, whenever we encounter $i$ in an exponent.
 :::
 
-The special case where $\theta = \pi$ then gives us one of them most beautiful formulas in mathematics.
+The special case where $\theta = \pi$ then gives us one of the well-known formulas in mathematics, similar to the $E=mc^2$ equation in physics:
 
 $$
 e^{i\pi} + 1 = 0.
@@ -144,11 +148,7 @@ e^{i\theta} &= 1 + i\theta - \dfrac{\theta^2}{2!} - \dfrac{\theta^3}{3!}i + \dfr
 \end{array} 
 $$
 
-### Some special values
-
-$$
-e^{2\pi i} = 1,\quad e^{\pi i} = -1, \quad e^{\frac{\pi}{6}i} = \dfrac{\sqrt{3}}{2} +\dfrac{1}{2}i
-$$
+As a consequence we have $e^{2\pi i} = 1$, $e^{\pi i} = -1$, and $e^{\frac{\pi}{6}i} = \dfrac{\sqrt{3}}{2} +\dfrac{1}{2}i$.
 
 And more generally
 $$
@@ -157,6 +157,12 @@ e^{i(\theta + 2n\pi)},\quad n\in\mathbb{N}.
 $$
 
 ## 📌 The $n$-th roots of unity
+
+::: {.callout-note}
+🚨 So why do we need this? 
+
+Roots of unity are used in many branches of mathematics, and are especially important in number theory, the theory of group characters, and the discrete [Fourier transform](/chapter-2/linear-algebra.html#example-2-fourier-transform). &mdash; [Wikipedia](https://en.wikipedia.org/wiki/Root_of_unity)
+:::
 
 The $n$-th roots of unity  are the complex numbers $z$ that satisfy the equation:
 

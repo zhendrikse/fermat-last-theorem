@@ -4,7 +4,9 @@ format: html
 ---
 
 ::: {.callout-note}
-This project and its contents are for a large part inspired by and based on the video *Proof of Fermat Last Theorem FROM SCRATCH*.
+This site is heavily based on the exposition and examples in Noah Jang's video *Proof of Fermat Last Theorem FROM SCRATCH*.
+
+This website is an independent interactive/visual companion, with additional explanations, context, and JavaScript demonstrations.
 
 **Video:** [Proof of Fermat Last Theorem FROM SCRATCH](https://www.youtube.com/watch?v=9f-hGSh8lF0)
 :::

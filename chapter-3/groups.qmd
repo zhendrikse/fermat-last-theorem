@@ -14,11 +14,15 @@ This section corresponds to **2:44:50** in *Proof of Fermat Last Theorem FROM SC
 ::: {.callout-note}
 Why do we need this?
 
-In [fermatically.com](https://fermatically.com/werkzeuge/gruppen/), it is stated that:
+From the website [fermatically.com](https://fermatically.com/werkzeuge/gruppen/), we quote:
 
-For Fermat's Last Theorem, groups play a key role through Galois theory: the symmetries of the roots of a polynomial form a group – the Galois group. This group controls the algebraic structure of the associated field extension.
+For Fermat's Last Theorem, groups play a key role through **Galois theory**: the symmetries of the roots of a polynomial form a group – the **Galois group**. This group controls the algebraic structure of the associated field extension.
 
-[...]
+In Wiles' proof, groups appear in several guises:
+
+1. **The absolute Galois group** $G_\mathbb{Q}=\text{Gal}(\bar{\mathbb{Q}}/\mathbb{Q})$ &mdash; the central symmetry object of algebraic number theory. It acts on the division points of elliptic curves.
+2. **Matrix groups** $GL_2(\mathbb{F}_p)$ and $GL_2(\mathbb{Z}_p)$ &mdash; as target groups of the Galois representations that link elliptic curves with linear algebra.
+3. **Hecke algebras** &mdash; symmetries in the space of modular forms that generate algebraic structures on the Fourier coefficients.
 
 Without groups, Wiles' proof would not even be formulable.
 :::

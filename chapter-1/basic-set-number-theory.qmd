@@ -19,7 +19,7 @@ $$
 \mathbb{N} = \{1, 2, 3,\cdots\}
 $$
 
-👉 $\mathbb{Z}$: the set of integers (the letter "Z" comes from the German word for numbers, namely "Zahle")
+👉 $\mathbb{Z}$: the set of integers. Nice to know: the letter "Z" originates from the German word for numbers, namely "Zahle".
 
 $$
 \mathbb{Z} = \{\cdots, -2, -1, 0,1, 2, 3,\cdots\}
@@ -46,7 +46,8 @@ $$
 A \times B := \{(a,b)\ |\ a \in A, b\in B \}
 $$
 
-Here, the multiplaction sign "$\times$" defines the way in which the new set is be formed from two other sets.
+Note that it is the "$\times$"-symbol that specifically defines how a new set is formed
+from two other sets.
 
 #### 🏷️ **Example** 1 
 
@@ -90,8 +91,6 @@ $$
 a \equiv b\quad (\text{mod}\ {n})\quad \text{means}\ n\ |\ (a-b).
 $$
 
-
-
 #### 🏷️ **Example**s 
 
 $$
@@ -100,7 +99,7 @@ $$
 
 ## 📌 Greatest common divisor
 
-For integers $a,b$ the **greatest common divisor** of $a$ and $b$ is denoted by $\gcd(a,b)$, and is sometimes written as $(a,b)$.
+For integers $a,b$ the **greatest common divisor** of $a$ and $b$ is denoted by $\gcd(a,b)$. Another common way to denote it is $(a,b)$.
 
 - If $(a,c) = 1$, then $(ab,c)=(b,c)$
 - For any integer $k$, $(a,b)=(a,b-ak)$
@@ -109,7 +108,7 @@ For integers $a,b$ the **greatest common divisor** of $a$ and $b$ is denoted by 
 ::: {.callout-note}
 🚨 Why do we need this? 
 
-The material below is used to proof Fermat's last theorem for the cases $n=3$ and $n=4$. Since these cases won't be included on this site, we will skip the proofs and details.
+The above three properties are used to proof Fermat's last theorem for the cases $n=3$ and $n=4$. Since these cases won't be included on this site, we will skip the proofs and details.
 :::
 
 #### 🏷️ **Example**s 

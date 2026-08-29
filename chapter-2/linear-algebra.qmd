@@ -69,7 +69,7 @@ $$
 1,\quad x,\quad x^2,\quad x^3,\ldots
 $$
 
-as [basis vectors](vector-spaces.qmd/#basis-dimension) of a [vector space](vector-spaces.qmd#vector-spaces) of polynomials, exactly those notions that are defined in this chapter on linear algebra! 
+as [basis vectors](chapter-2/vector-spaces.html#basis-dimension) of a [vector space](chapter-2/vector-spaces.html#vector-space-axioms) of polynomials, exactly those notions that are defined in this chapter on linear algebra! 
 The scalars $a_0,a_1,a_2,a_3,\ldots$ are exactly the **coordinates van $f(x)$ with respect to that basis**.
 
 Note that a Taylor series is not just an arbitrary representation of $f(x)$ in the basis $\{1,x,x^2,x^3,\ldots\}$ as the coordinates are specifically determined by the derivatives of $f(x)$ around the expansion point:
