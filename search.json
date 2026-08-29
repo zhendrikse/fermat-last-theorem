@@ -15,7 +15,7 @@
     "href": "chapter-1/basic-set-number-theory.html#common-number-sets",
     "title": "Basic set & number theory",
     "section": "📌 Common number sets",
-    "text": "📌 Common number sets\nWe will use the following standard number systems:\n👉 \\(\\mathbb{N}\\): the set of natural numbers\n\\[\n\\mathbb{N} = \\{1, 2, 3,\\cdots\\}\n\\]\n👉 \\(\\mathbb{Z}\\): the set of integers (the letter “Z” comes from the German word for numbers, namely “Zahle”)\n\\[\n\\mathbb{Z} = \\{\\cdots, -2, -1, 0,1, 2, 3,\\cdots\\}\n\\]\n👉 \\(\\mathbb{Q}\\): the set of rational numbers\n\\[\n\\mathbb{Q} = \\{\\frac{a}{b}\\ \\big|\\ a, b \\in \\mathbb{Z}, b \\neq 0\\}\n\\] 👉 \\(\\mathbb{R}\\): the set of real numbers\n👉 \\(\\mathbb{C}\\): the set of complex numbers\n\\[\n\\mathbb{C} = \\{x +iy\\ |\\ x, y \\in \\mathbb{R}\\}\n\\]",
+    "text": "📌 Common number sets\nWe will use the following standard number systems:\n👉 \\(\\mathbb{N}\\): the set of natural numbers\n\\[\n\\mathbb{N} = \\{1, 2, 3,\\cdots\\}\n\\]\n👉 \\(\\mathbb{Z}\\): the set of integers. Nice to know: the letter “Z” originates from the German word for numbers, namely “Zahle”.\n\\[\n\\mathbb{Z} = \\{\\cdots, -2, -1, 0,1, 2, 3,\\cdots\\}\n\\]\n👉 \\(\\mathbb{Q}\\): the set of rational numbers\n\\[\n\\mathbb{Q} = \\{\\frac{a}{b}\\ \\big|\\ a, b \\in \\mathbb{Z}, b \\neq 0\\}\n\\] 👉 \\(\\mathbb{R}\\): the set of real numbers\n👉 \\(\\mathbb{C}\\): the set of complex numbers\n\\[\n\\mathbb{C} = \\{x +iy\\ |\\ x, y \\in \\mathbb{R}\\}\n\\]",
     "crumbs": [
       "Chapter 1 — Basics",
       "Basic set &amp; number theory"
@@ -26,7 +26,7 @@
     "href": "chapter-1/basic-set-number-theory.html#carthensian-product",
     "title": "Basic set & number theory",
     "section": "📌 Carthensian product",
-    "text": "📌 Carthensian product\nFor sets \\(A\\) and \\(B\\), the Cartesian product is defined as\n\\[\nA \\times B := \\{(a,b)\\ |\\ a \\in A, b\\in B \\}\n\\]\nHere, the multiplaction sign “\\(\\times\\)” defines the way in which the new set is be formed from two other sets.\n\n🏷️ Example 1\nLet \\(A=\\{ 1, 2\\}\\) and \\(B=\\{3, 4, 5\\}\\), then\n\\[\nA \\times B = \\{(1,3), (1,4), (1,5), (2,3), (2,4), (2,5) \\}\n\\]\n\n\n🏷️ Example 2\nLet \\(A=\\{ 1, 2\\}\\), then\n\\[\nA \\times A = A^2 = \\{(1,1), (1,2), (2,1), (2,2) \\}\n\\]\n\n\n🏷️ Example 3: \\(\\mathbb{R}^2\\)\n\\[\n\\mathbb{R}^2= \\{(x,y)\\ |\\ x,y \\in \\mathbb{R}^2 \\}\n\\]",
+    "text": "📌 Carthensian product\nFor sets \\(A\\) and \\(B\\), the Cartesian product is defined as\n\\[\nA \\times B := \\{(a,b)\\ |\\ a \\in A, b\\in B \\}\n\\]\nNote that it is the “\\(\\times\\)”-symbol that specifically defines how a new set is formed from two other sets.\n\n🏷️ Example 1\nLet \\(A=\\{ 1, 2\\}\\) and \\(B=\\{3, 4, 5\\}\\), then\n\\[\nA \\times B = \\{(1,3), (1,4), (1,5), (2,3), (2,4), (2,5) \\}\n\\]\n\n\n🏷️ Example 2\nLet \\(A=\\{ 1, 2\\}\\), then\n\\[\nA \\times A = A^2 = \\{(1,1), (1,2), (2,1), (2,2) \\}\n\\]\n\n\n🏷️ Example 3: \\(\\mathbb{R}^2\\)\n\\[\n\\mathbb{R}^2= \\{(x,y)\\ |\\ x,y \\in \\mathbb{R}^2 \\}\n\\]",
     "crumbs": [
       "Chapter 1 — Basics",
       "Basic set &amp; number theory"
@@ -59,7 +59,7 @@
     "href": "chapter-1/basic-set-number-theory.html#greatest-common-divisor",
     "title": "Basic set & number theory",
     "section": "📌 Greatest common divisor",
-    "text": "📌 Greatest common divisor\nFor integers \\(a,b\\) the greatest common divisor of \\(a\\) and \\(b\\) is denoted by \\(\\gcd(a,b)\\), and is sometimes written as \\((a,b)\\).\n\nIf \\((a,c) = 1\\), then \\((ab,c)=(b,c)\\)\nFor any integer \\(k\\), \\((a,b)=(a,b-ak)\\)\nIf \\((a,b) = 1\\) and \\(a\\ |\\ bc\\), then \\(a\\ |\\ c\\)\n\n\n\n\n\n\n\nNote\n\n\n\n🚨 Why do we need this?\nThe material below is used to proof Fermat’s last theorem for the cases \\(n=3\\) and \\(n=4\\). Since these cases won’t be included on this site, we will skip the proofs and details.\n\n\n\n🏷️ Examples\n\n\\(\\gcd(24, 36)=12\\)\n\\(\\gcd(28, 49)=7\\)\n\\(\\gcd(17, 32)=1\\) (co-primes)",
+    "text": "📌 Greatest common divisor\nFor integers \\(a,b\\) the greatest common divisor of \\(a\\) and \\(b\\) is denoted by \\(\\gcd(a,b)\\). Another common way to denote it is \\((a,b)\\).\n\nIf \\((a,c) = 1\\), then \\((ab,c)=(b,c)\\)\nFor any integer \\(k\\), \\((a,b)=(a,b-ak)\\)\nIf \\((a,b) = 1\\) and \\(a\\ |\\ bc\\), then \\(a\\ |\\ c\\)\n\n\n\n\n\n\n\nNote\n\n\n\n🚨 Why do we need this?\nThe above three properties are used to proof Fermat’s last theorem for the cases \\(n=3\\) and \\(n=4\\). Since these cases won’t be included on this site, we will skip the proofs and details.\n\n\n\n🏷️ Examples\n\n\\(\\gcd(24, 36)=12\\)\n\\(\\gcd(28, 49)=7\\)\n\\(\\gcd(17, 32)=1\\) (co-primes)",
     "crumbs": [
       "Chapter 1 — Basics",
       "Basic set &amp; number theory"
@@ -77,11 +77,22 @@
     ]
   },
   {
+    "objectID": "chapter-1/calculus-complex-analysis.html#taylor-series",
+    "href": "chapter-1/calculus-complex-analysis.html#taylor-series",
+    "title": "Basic calculus & complex analysis",
+    "section": "📌 Taylor series",
+    "text": "📌 Taylor series\nA Taylor series represents a function as an infinite polynomial. With infinitely many terms, it equals the original function within its interval of convergence.\n\n🏷️ Examples\n\\[\n\\begin{array}{rl}\ne^x &= 1 + x + \\dfrac{x^2}{2!} + \\dfrac{x^3}{3!} + \\cdots \\\\\n\\sin x &= x - \\dfrac{x^3}{3!} + \\dfrac{x^5}{5!} - \\dfrac{x^7}{7!}+\\cdots\\\\\n\\cos x &= 1 - \\dfrac{x^2}{2!} + \\dfrac{x^4}{4!}-\\dfrac{x^6}{6!}+\\cdots \\\\\n\\ln(1 + x) &= x - \\dfrac{x^2}{2}+\\dfrac{x^3}{3}-\\dfrac{x^4}{4}+\\cdots \\qquad (-1 &lt; x \\leq 1)\n\\end{array}\n\\]\n\n\n\n\n\n\nNote\n\n\n\nSo why do we need this?\nAlthough this won’t be used frequently in the forthccoming chapters, it appears a few times later.\n\n\n🎯 The Taylor series is a way to represent a given function as an infinite polynomial.\n👉 We will look at the Taylor expansion again from the perspective of linear algebra in chapter two.\n\n\n👨‍💻 Taylor expansion demo",
+    "crumbs": [
+      "Chapter 1 — Basics",
+      "Basic calculus &amp; complex analysis"
+    ]
+  },
+  {
     "objectID": "chapter-1/calculus-complex-analysis.html#multivariable-functions",
     "href": "chapter-1/calculus-complex-analysis.html#multivariable-functions",
     "title": "Basic calculus & complex analysis",
     "section": "📌 Multivariable functions",
-    "text": "📌 Multivariable functions\nA multivariable function is a map\n\\[\nf: \\mathbb{R}^n \\rightarrow \\mathbb{R}\n\\]\nWe are already familiar with functions of a single variable, which can be visualized as a curve in the plane, such as \\(f(x) = x^2\\). A multivariable function can be visualized as a surface in three-dimensional space.\n\n👨‍💻 Multivariable functions demo\n\n\n\n\nAnother example would be the distance of a point to the origin in three-dimensional space, \\(f(x,y,z) = \\sqrt{x^2+y^2+z^2}\\).",
+    "text": "📌 Multivariable functions\nA multivariable function is a map\n\\[\nf: \\mathbb{R}^n \\rightarrow \\mathbb{R}\n\\]\nIn the section above, we have discussed (the Taylor expansion for) functions that depend on one variable only, such as \\(f(x) = e^x\\). In this section, we’ll shortly look at functions that depend on two or even more variables.\nA multivariable function that depends on two variables can naturally be visualized as a surface in three-dimensional space.\n\n👨‍💻 Multivariable functions demo\n\n\n\n\nAnother examples may be choosen from the drop-down menu. The formula of the selected function can be seen in the title.",
     "crumbs": [
       "Chapter 1 — Basics",
       "Basic calculus &amp; complex analysis"
@@ -92,18 +103,7 @@
     "href": "chapter-1/calculus-complex-analysis.html#partial-derivative",
     "title": "Basic calculus & complex analysis",
     "section": "📌 Partial derivative",
-    "text": "📌 Partial derivative\nFor functions of several variables, we can also define a derivative. We do this by choosing just one of the many variables to be the actual variable and treating all the other variables as constants.\nLet \\(f:\\mathbb{R}^2\\rightarrow\\mathbb{R}\\) be a function. The partial derivative with respect to \\(x_i\\) is defined as\n\\[\n\\dfrac{\\partial f}{\\partial x_i} :=\n\\lim_{h\\rightarrow 0}\n\\dfrac{f(x_1,\\cdots,x_i+h,\\cdots,x_n) - f(x_1,\\cdots,x_n)}{h}\n\\]\nNote that this is very similar to the way in which the derivative is defined for a function of one variable:\n\\[\nf'(x) =\n\\lim_{h\\rightarrow 0}\n\\dfrac{f(x+h) - f(x)}{h}\n\\]\n\n\n\n\n\n\nNote\n\n\n\nSo why do we need this?\nLater these partial derivatives will show up when we talk about singlar points and elliptic curves.\n\n\n\n🏷️ Example\nLet\n\\[\nf(x,y) = x^3+y^3+xy+\\sin x\\cos y\n\\]\nthen\n\\[\n\\begin{array}{ll}\n\\dfrac{\\partial f}{\\partial x} &=\n3x^2 + y + \\cos x\\cos y \\\\\n\\dfrac{\\partial f}{\\partial y} &=\n3y^2 + x - \\sin x\\sin y \\\\\n\\end{array}\n\\]",
-    "crumbs": [
-      "Chapter 1 — Basics",
-      "Basic calculus &amp; complex analysis"
-    ]
-  },
-  {
-    "objectID": "chapter-1/calculus-complex-analysis.html#taylor-series",
-    "href": "chapter-1/calculus-complex-analysis.html#taylor-series",
-    "title": "Basic calculus & complex analysis",
-    "section": "📌 Taylor series",
-    "text": "📌 Taylor series\nA Taylor series represents a function as an infinite polynomial. With infinitely many terms, it equals the original function within its interval of convergence.\n\n🏷️ Examples\n\\[\n\\begin{array}{rl}\ne^x &= 1 + x + \\dfrac{x^2}{2!} + \\dfrac{x^3}{3!} + \\cdots \\\\\n\\sin x &= x - \\dfrac{x^3}{3!} + \\dfrac{x^5}{5!} - \\dfrac{x^7}{7!}+\\cdots\\\\\n\\cos x &= 1 - \\dfrac{x^2}{2!} + \\dfrac{x^4}{4!}-\\dfrac{x^6}{6!}+\\cdots \\\\\n\\ln(1 + x) &= x - \\dfrac{x^2}{2}+\\dfrac{x^3}{3}-\\dfrac{x^4}{4}+\\cdots \\qquad (-1 &lt; x \\leq 1)\n\\end{array}\n\\]\n\n\n\n\n\n\nNote\n\n\n\nSo why do we need this?\nAlthough this won’t be used frequently in the forthccoming chapters, it appears a few times later.\n\n\n🎯 The tailer series is a way to represent a given function as an infinite polynomial.\n\n\n👨‍💻 Taylor expansion demo",
+    "text": "📌 Partial derivative\nFor functions that depend on more than one variable, we would like to be able to analyse the rate of change in a similar way to that of functions that depend on one variable only. As multivariate functions have several variables, each direction generally has its own rate of change. As a consequence, each direction has its own derivative. When looking for the rate of change in a particular direction, we leave the other variables intentionally unchanged. This means that all the other variables but the one we are interested in can then be treated as constants.\nLet \\(f:\\mathbb{R}^2\\rightarrow\\mathbb{R}\\) be a function. The partial derivative with respect to \\(x_i\\) is defined as\n\\[\n\\dfrac{\\partial f}{\\partial x_i} :=\n\\lim_{h\\rightarrow 0}\n\\dfrac{f(x_1,\\cdots,x_i+h,\\cdots,x_n) - f(x_1,\\cdots,x_n)}{h}\n\\]\nNote that this is very similar to the way in which the derivative is defined for a function of one variable:\n\\[\nf'(x) =\n\\lim_{h\\rightarrow 0}\n\\dfrac{f(x+h) - f(x)}{h}\n\\]\n\n\n\n\n\n\nNote\n\n\n\nSo why do we need this?\nLater these partial derivatives will show up when we talk about singlar points and elliptic curves.\n\n\n\n🏷️ Example\nLet\n\\[\nf(x,y) = x^3+y^3+xy+\\sin x\\cos y\n\\]\nthen\n\\[\n\\begin{array}{ll}\n\\dfrac{\\partial f}{\\partial x} &=\n3x^2 + y + \\cos x\\cos y \\\\\n\\dfrac{\\partial f}{\\partial y} &=\n3y^2 + x - \\sin x\\sin y \\\\\n\\end{array}\n\\]",
     "crumbs": [
       "Chapter 1 — Basics",
       "Basic calculus &amp; complex analysis"
@@ -114,7 +114,7 @@
     "href": "chapter-1/calculus-complex-analysis.html#eurlers-formula-and-eitheta",
     "title": "Basic calculus & complex analysis",
     "section": "📌 Eurler’s formula and \\(e^{i\\theta}\\)",
-    "text": "📌 Eurler’s formula and \\(e^{i\\theta}\\)\nFor any real number \\(\\theta\\),\n\\[\ne^{i\\theta} = \\cos\\theta + i\\sin\\theta.\n\\]\n\n\n\n\n\n\nNote\n\n\n\nWhy do we need this?\nThis formula tells us concretely what to do/what to think of, whenever we encounter \\(i\\) in an exponent.\n\n\nThe special case where \\(\\theta = \\pi\\) then gives us one of them most beautiful formulas in mathematics.\n\\[\ne^{i\\pi} + 1 = 0.\n\\]\nThe reason is that it contains so many important constants in one tiny equation:\n\nEuler’s constant or natural constant \\(e\\)\nThe irrational number \\(pi\\) as the ratio between the circumverence and diameter of a circle\nThe square root of negative one, \\(i\\)\nThe identity with respect to addition, \\(0\\)\nThe identity with respect to multiplication, \\(1\\)\n\nThis formula also matches very well with the aforementioned Taylor series.\n\\[\n\\begin{array}{ll}\ne^x &= 1 + x + \\dfrac{x^2}{2!} + \\dfrac{x^3}{3!} + \\cdots \\\\\ne^{i\\theta} &= 1 + i\\theta - \\dfrac{\\theta^2}{2!} - \\dfrac{\\theta^3}{3!}i + \\dfrac{\\theta^4}{4!} + \\dfrac{\\theta^5}{5!}i - \\dfrac{\\theta^6}{6!} + \\cdots \\\\\n\\quad &= \\left(1 - \\dfrac{\\theta^2}{2!} + \\dfrac{\\theta^4}{4!} - \\dfrac{\\theta^6}{6!} + \\cdots \\right) +i\\left(\\theta - \\dfrac{\\theta^3}{3!}i + \\dfrac{\\theta^5}{5!} + \\cdots\\right) \\\\\n\\quad &= \\cos\\theta \\qquad + \\qquad i\\sin\\theta\n\\end{array}\n\\]\n\nSome special values\n\\[\ne^{2\\pi i} = 1,\\quad e^{\\pi i} = -1, \\quad e^{\\frac{\\pi}{6}i} = \\dfrac{\\sqrt{3}}{2} +\\dfrac{1}{2}i\n\\]\nAnd more generally \\[\ne^{i\\theta} =\ne^{i(\\theta + 2n\\pi)},\\quad n\\in\\mathbb{N}.\n\\]",
+    "text": "📌 Eurler’s formula and \\(e^{i\\theta}\\)\nFor any real number \\(\\theta\\),\n\\[\ne^{i\\theta} = \\cos\\theta + i\\sin\\theta.\n\\]\n\n\n\n\n\n\nNote\n\n\n\nWhy do we need this?\nThis formula tells us concretely what to do/what to think of, whenever we encounter \\(i\\) in an exponent.\n\n\nThe special case where \\(\\theta = \\pi\\) then gives us one of the well-known formulas in mathematics, similar to the \\(E=mc^2\\) equation in physics:\n\\[\ne^{i\\pi} + 1 = 0.\n\\]\nThe reason is that it contains so many important constants in one tiny equation:\n\nEuler’s constant or natural constant \\(e\\)\nThe irrational number \\(pi\\) as the ratio between the circumverence and diameter of a circle\nThe square root of negative one, \\(i\\)\nThe identity with respect to addition, \\(0\\)\nThe identity with respect to multiplication, \\(1\\)\n\nThis formula also matches very well with the aforementioned Taylor series.\n\\[\n\\begin{array}{ll}\ne^x &= 1 + x + \\dfrac{x^2}{2!} + \\dfrac{x^3}{3!} + \\cdots \\\\\ne^{i\\theta} &= 1 + i\\theta - \\dfrac{\\theta^2}{2!} - \\dfrac{\\theta^3}{3!}i + \\dfrac{\\theta^4}{4!} + \\dfrac{\\theta^5}{5!}i - \\dfrac{\\theta^6}{6!} + \\cdots \\\\\n\\quad &= \\left(1 - \\dfrac{\\theta^2}{2!} + \\dfrac{\\theta^4}{4!} - \\dfrac{\\theta^6}{6!} + \\cdots \\right) +i\\left(\\theta - \\dfrac{\\theta^3}{3!}i + \\dfrac{\\theta^5}{5!} + \\cdots\\right) \\\\\n\\quad &= \\cos\\theta \\qquad + \\qquad i\\sin\\theta\n\\end{array}\n\\]\nAs a consequence we have \\(e^{2\\pi i} = 1\\), \\(e^{\\pi i} = -1\\), and \\(e^{\\frac{\\pi}{6}i} = \\dfrac{\\sqrt{3}}{2} +\\dfrac{1}{2}i\\).\nAnd more generally \\[\ne^{i\\theta} =\ne^{i(\\theta + 2n\\pi)},\\quad n\\in\\mathbb{N}.\n\\]",
     "crumbs": [
       "Chapter 1 — Basics",
       "Basic calculus &amp; complex analysis"
@@ -125,7 +125,7 @@
     "href": "chapter-1/calculus-complex-analysis.html#the-n-th-roots-of-unity",
     "title": "Basic calculus & complex analysis",
     "section": "📌 The \\(n\\)-th roots of unity",
-    "text": "📌 The \\(n\\)-th roots of unity\nThe \\(n\\)-th roots of unity are the complex numbers \\(z\\) that satisfy the equation:\n\\[\nz^n =1\\quad \\text{or equivalently}\\quad z^n -1 = 0\n\\]\nusing Euler’s formula, we can find all \\(n\\) distinct roots. They are given by:\n\\[\nz_k=e^{i\\dfrac{2\\pi k}{n}}=\\cos\\left(\\dfrac{2\\pi k}{n}\\right) + i\\sin\\left(\\dfrac{2\\pi k}{n}\\right), \\quad k=0, 1, 2,\\cdots,n-1.\n\\]\nSo how does this work? We are looking for\n\\[\nz^n = 1 = e^{2\\pi k} \\Rightarrow z = e^{\\dfrac{2\\pi ik}{n}},\\quad k \\in \\mathbb{Z}\n\\]\nFilling in the values of \\(k\\), we get\n\\[\n\\underbrace{\n1, e^{\\dfrac{2\\pi i}{n}}, e^{\\dfrac{4\\pi i}{n}}, \\cdots,e^{\\dfrac{2\\pi i(n-1)}{n}}\n},\n\\underbrace{e^{2\\pi i}, e^{\\dfrac{2\\pi i(n+1)}{n}}, \\cdots\n}\n\\]\nBecause of the periodicity, we can limit the values of \\(k\\) to \\(n-1\\).\n\n🏷️ Example 1: \\(n=2\\)\n\\[z_k = e^{i\\dfrac{2\\pi k}{2}} = e^{\\pi ik} \\Rightarrow \\begin{cases} k=0: 1 \\\\ k=1: -1\\end{cases}\n\\]\n\n\n🏷️ Example 2: \\(n=3\\)\n\\[z_k = e^{\\dfrac{2\\pi ik}{3}} \\Rightarrow \\begin{cases} k=0: 1 \\\\ k=1: e^{\\dfrac{2\\pi}{3}}= +\\dfrac{\\sqrt{3}}{2}i-\\dfrac{1}{2} \\\\ k=2: e^{\\dfrac{4\\pi}{3}} = -\\dfrac{\\sqrt{3}}{2}i+\\dfrac{1}{2}\\end{cases}\n\\]\nGeometrically, the roots of unity constitute the vertices of a regular \\(n\\)-gon sitting on a unit circle in the complex plane.\n\n\n👨‍💻 Roots of unity demo",
+    "text": "📌 The \\(n\\)-th roots of unity\n\n\n\n\n\n\nNote\n\n\n\n🚨 So why do we need this?\nRoots of unity are used in many branches of mathematics, and are especially important in number theory, the theory of group characters, and the discrete Fourier transform. — Wikipedia\n\n\nThe \\(n\\)-th roots of unity are the complex numbers \\(z\\) that satisfy the equation:\n\\[\nz^n =1\\quad \\text{or equivalently}\\quad z^n -1 = 0\n\\]\nusing Euler’s formula, we can find all \\(n\\) distinct roots. They are given by:\n\\[\nz_k=e^{i\\dfrac{2\\pi k}{n}}=\\cos\\left(\\dfrac{2\\pi k}{n}\\right) + i\\sin\\left(\\dfrac{2\\pi k}{n}\\right), \\quad k=0, 1, 2,\\cdots,n-1.\n\\]\nSo how does this work? We are looking for\n\\[\nz^n = 1 = e^{2\\pi k} \\Rightarrow z = e^{\\dfrac{2\\pi ik}{n}},\\quad k \\in \\mathbb{Z}\n\\]\nFilling in the values of \\(k\\), we get\n\\[\n\\underbrace{\n1, e^{\\dfrac{2\\pi i}{n}}, e^{\\dfrac{4\\pi i}{n}}, \\cdots,e^{\\dfrac{2\\pi i(n-1)}{n}}\n},\n\\underbrace{e^{2\\pi i}, e^{\\dfrac{2\\pi i(n+1)}{n}}, \\cdots\n}\n\\]\nBecause of the periodicity, we can limit the values of \\(k\\) to \\(n-1\\).\n\n🏷️ Example 1: \\(n=2\\)\n\\[z_k = e^{i\\dfrac{2\\pi k}{2}} = e^{\\pi ik} \\Rightarrow \\begin{cases} k=0: 1 \\\\ k=1: -1\\end{cases}\n\\]\n\n\n🏷️ Example 2: \\(n=3\\)\n\\[z_k = e^{\\dfrac{2\\pi ik}{3}} \\Rightarrow \\begin{cases} k=0: 1 \\\\ k=1: e^{\\dfrac{2\\pi}{3}}= +\\dfrac{\\sqrt{3}}{2}i-\\dfrac{1}{2} \\\\ k=2: e^{\\dfrac{4\\pi}{3}} = -\\dfrac{\\sqrt{3}}{2}i+\\dfrac{1}{2}\\end{cases}\n\\]\nGeometrically, the roots of unity constitute the vertices of a regular \\(n\\)-gon sitting on a unit circle in the complex plane.\n\n\n👨‍💻 Roots of unity demo",
     "crumbs": [
       "Chapter 1 — Basics",
       "Basic calculus &amp; complex analysis"
@@ -290,7 +290,7 @@
     "href": "index.html",
     "title": "Fermat’s Last Theorem",
     "section": "",
-    "text": "Note\n\n\n\nThis project and its contents are for a large part inspired by and based on the video Proof of Fermat Last Theorem FROM SCRATCH.\nVideo: Proof of Fermat Last Theorem FROM SCRATCH",
+    "text": "Note\n\n\n\nThis site is heavily based on the exposition and examples in Noah Jang’s video Proof of Fermat Last Theorem FROM SCRATCH.\nThis website is an independent interactive/visual companion, with additional explanations, context, and JavaScript demonstrations.\nVideo: Proof of Fermat Last Theorem FROM SCRATCH",
     "crumbs": [
       "Fermat's Last Theorem"
     ]

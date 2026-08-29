@@ -504,19 +504,16 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#multivariable-functions" id="toc-multivariable-functions" class="nav-link active" data-scroll-target="#multivariable-functions">📌 Multivariable functions</a>
+  <li><a href="#taylor-series" id="toc-taylor-series" class="nav-link active" data-scroll-target="#taylor-series">📌 Taylor series</a>
+  <ul class="collapse">
+  <li><a href="#taylor-expansion-demo" id="toc-taylor-expansion-demo" class="nav-link" data-scroll-target="#taylor-expansion-demo">👨‍💻 Taylor expansion demo</a></li>
+  </ul></li>
+  <li><a href="#multivariable-functions" id="toc-multivariable-functions" class="nav-link" data-scroll-target="#multivariable-functions">📌 Multivariable functions</a>
   <ul class="collapse">
   <li><a href="#multivariable-functions-demo" id="toc-multivariable-functions-demo" class="nav-link" data-scroll-target="#multivariable-functions-demo">👨‍💻 Multivariable functions demo</a></li>
   </ul></li>
   <li><a href="#partial-derivative" id="toc-partial-derivative" class="nav-link" data-scroll-target="#partial-derivative">📌 Partial derivative</a></li>
-  <li><a href="#taylor-series" id="toc-taylor-series" class="nav-link" data-scroll-target="#taylor-series">📌 Taylor series</a>
-  <ul class="collapse">
-  <li><a href="#taylor-expansion-demo" id="toc-taylor-expansion-demo" class="nav-link" data-scroll-target="#taylor-expansion-demo">👨‍💻 Taylor expansion demo</a></li>
-  </ul></li>
-  <li><a href="#eurlers-formula-and-eitheta" id="toc-eurlers-formula-and-eitheta" class="nav-link" data-scroll-target="#eurlers-formula-and-eitheta">📌 Eurler’s formula and <span class="math inline">\(e^{i\theta}\)</span></a>
-  <ul class="collapse">
-  <li><a href="#some-special-values" id="toc-some-special-values" class="nav-link" data-scroll-target="#some-special-values">Some special values</a></li>
-  </ul></li>
+  <li><a href="#eurlers-formula-and-eitheta" id="toc-eurlers-formula-and-eitheta" class="nav-link" data-scroll-target="#eurlers-formula-and-eitheta">📌 Eurler’s formula and <span class="math inline">\(e^{i\theta}\)</span></a></li>
   <li><a href="#the-n-th-roots-of-unity" id="toc-the-n-th-roots-of-unity" class="nav-link" data-scroll-target="#the-n-th-roots-of-unity">📌 The <span class="math inline">\(n\)</span>-th roots of unity</a>
   <ul class="collapse">
   <li><a href="#roots-of-unity-demo" id="toc-roots-of-unity-demo" class="nav-link" data-scroll-target="#roots-of-unity-demo">👨‍💻 Roots of unity demo</a></li>
@@ -565,25 +562,62 @@ Note
 <p>This section corresponds to <strong>38:59</strong> in <em>Proof of Fermat Last Theorem FROM SCRATCH</em>.</p>
 </div>
 </div>
+<section id="taylor-series" class="level2">
+<h2 class="anchored" data-anchor-id="taylor-series">📌 Taylor series</h2>
+<p>A Taylor series represents a function as an infinite polynomial. With infinitely many terms, it equals the original function within its interval of convergence.</p>
+<section id="examples" class="level4">
+<h4 class="anchored" data-anchor-id="examples">🏷️ <strong>Examples</strong></h4>
+<p><span class="math display">\[
+\begin{array}{rl}
+e^x &amp;= 1 + x + \dfrac{x^2}{2!} + \dfrac{x^3}{3!} + \cdots \\
+\sin x &amp;= x - \dfrac{x^3}{3!} + \dfrac{x^5}{5!} - \dfrac{x^7}{7!}+\cdots\\
+\cos x &amp;= 1 - \dfrac{x^2}{2!} + \dfrac{x^4}{4!}-\dfrac{x^6}{6!}+\cdots \\
+\ln(1 + x) &amp;= x - \dfrac{x^2}{2}+\dfrac{x^3}{3}-\dfrac{x^4}{4}+\cdots \qquad (-1 &lt; x \leq 1)
+\end{array}
+\]</span></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>So why do we need this?</p>
+<p>Although this won’t be used frequently in the forthccoming chapters, it appears a few times later.</p>
+</div>
+</div>
+<p>🎯 The Taylor series is a way to represent a given function as an infinite polynomial.</p>
+<p>👉 We will look at the Taylor expansion again <a href="../chapter-2/linear-algebra.html">from the perspective of linear algebra</a> in chapter two.</p>
+</section>
+<section id="taylor-expansion-demo" class="level3">
+<h3 class="anchored" data-anchor-id="taylor-expansion-demo">👨‍💻 Taylor expansion demo</h3>
+<div id="taylorSeriesContainer"></div>
+<script type="module" src="https://www.hendrikse.name/helion/examples/taylor_expansion.js"></script>
+</section>
+</section>
 <section id="multivariable-functions" class="level2">
 <h2 class="anchored" data-anchor-id="multivariable-functions">📌 Multivariable functions</h2>
 <p>A multivariable function is a map</p>
 <p><span class="math display">\[
 f: \mathbb{R}^n \rightarrow \mathbb{R}
 \]</span></p>
-<p>We are already familiar with functions of a single variable, which can be visualized as a curve in the plane, such as <span class="math inline">\(f(x) = x^2\)</span>. A multivariable function can be visualized as a surface in three-dimensional space.</p>
+<p>In the section above, we have discussed (the Taylor expansion for) functions that depend on one variable only, such as <span class="math inline">\(f(x) = e^x\)</span>. In this section, we’ll shortly look at functions that depend on two or even more variables.</p>
+<p>A multivariable function that depends on two variables can naturally be visualized as a surface in three-dimensional space.</p>
 <section id="multivariable-functions-demo" class="level3">
 <h3 class="anchored" data-anchor-id="multivariable-functions-demo">👨‍💻 Multivariable functions demo</h3>
 <div id="realSurfacesContainer"></div>
 <script type="module" src="https://www.hendrikse.name/helion/examples/real_surfaces.js"></script>
 <p style="clear: all">
 </p>
-<p>Another example would be the distance of a point to the origin in three-dimensional space, <span class="math inline">\(f(x,y,z) = \sqrt{x^2+y^2+z^2}\)</span>.</p>
+<p>Another examples may be choosen from the drop-down menu. The formula of the selected function can be seen in the title.</p>
 </section>
 </section>
 <section id="partial-derivative" class="level2">
 <h2 class="anchored" data-anchor-id="partial-derivative">📌 Partial derivative</h2>
-<p>For functions of several variables, we can also define a derivative. We do this by choosing just one of the many variables to be the actual variable and treating all the other variables as constants.</p>
+<p>For functions that depend on more than one variable, we would like to be able to analyse the rate of change in a similar way to that of functions that depend on one variable only. As multivariate functions have several variables, each direction generally has its own rate of change. As a consequence, each direction has its own derivative. When looking for the rate of change in a particular direction, we leave the other variables intentionally unchanged. This means that all the other variables but the one we are interested in can then be treated as constants.</p>
 <p>Let <span class="math inline">\(f:\mathbb{R}^2\rightarrow\mathbb{R}\)</span> be a function. The partial derivative with respect to <span class="math inline">\(x_i\)</span> is defined as</p>
 <p><span class="math display">\[
 \dfrac{\partial f}{\partial x_i} :=
@@ -627,41 +661,6 @@ f(x,y) = x^3+y^3+xy+\sin x\cos y
 \]</span></p>
 </section>
 </section>
-<section id="taylor-series" class="level2">
-<h2 class="anchored" data-anchor-id="taylor-series">📌 Taylor series</h2>
-<p>A Taylor series represents a function as an infinite polynomial. With infinitely many terms, it equals the original function within its interval of convergence.</p>
-<section id="examples" class="level4">
-<h4 class="anchored" data-anchor-id="examples">🏷️ <strong>Examples</strong></h4>
-<p><span class="math display">\[
-\begin{array}{rl}
-e^x &amp;= 1 + x + \dfrac{x^2}{2!} + \dfrac{x^3}{3!} + \cdots \\
-\sin x &amp;= x - \dfrac{x^3}{3!} + \dfrac{x^5}{5!} - \dfrac{x^7}{7!}+\cdots\\
-\cos x &amp;= 1 - \dfrac{x^2}{2!} + \dfrac{x^4}{4!}-\dfrac{x^6}{6!}+\cdots \\
-\ln(1 + x) &amp;= x - \dfrac{x^2}{2}+\dfrac{x^3}{3}-\dfrac{x^4}{4}+\cdots \qquad (-1 &lt; x \leq 1)
-\end{array}
-\]</span></p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>So why do we need this?</p>
-<p>Although this won’t be used frequently in the forthccoming chapters, it appears a few times later.</p>
-</div>
-</div>
-<p>🎯 The tailer series is a way to represent a given function as an infinite polynomial.</p>
-</section>
-<section id="taylor-expansion-demo" class="level3">
-<h3 class="anchored" data-anchor-id="taylor-expansion-demo">👨‍💻 Taylor expansion demo</h3>
-<div id="taylorSeriesContainer"></div>
-<script type="module" src="https://www.hendrikse.name/helion/examples/taylor_expansion.js"></script>
-</section>
-</section>
 <section id="eurlers-formula-and-eitheta" class="level2">
 <h2 class="anchored" data-anchor-id="eurlers-formula-and-eitheta">📌 Eurler’s formula and <span class="math inline">\(e^{i\theta}\)</span></h2>
 <p>For any real number <span class="math inline">\(\theta\)</span>,</p>
@@ -682,7 +681,7 @@ Note
 <p>This formula tells us concretely what to do/what to think of, whenever we encounter <span class="math inline">\(i\)</span> in an exponent.</p>
 </div>
 </div>
-<p>The special case where <span class="math inline">\(\theta = \pi\)</span> then gives us one of them most beautiful formulas in mathematics.</p>
+<p>The special case where <span class="math inline">\(\theta = \pi\)</span> then gives us one of the well-known formulas in mathematics, similar to the <span class="math inline">\(E=mc^2\)</span> equation in physics:</p>
 <p><span class="math display">\[
 e^{i\pi} + 1 = 0.
 \]</span></p>
@@ -703,19 +702,28 @@ e^{i\theta} &amp;= 1 + i\theta - \dfrac{\theta^2}{2!} - \dfrac{\theta^3}{3!}i + 
 \quad &amp;= \cos\theta \qquad + \qquad i\sin\theta
 \end{array}
 \]</span></p>
-<section id="some-special-values" class="level3">
-<h3 class="anchored" data-anchor-id="some-special-values">Some special values</h3>
-<p><span class="math display">\[
-e^{2\pi i} = 1,\quad e^{\pi i} = -1, \quad e^{\frac{\pi}{6}i} = \dfrac{\sqrt{3}}{2} +\dfrac{1}{2}i
-\]</span></p>
+<p>As a consequence we have <span class="math inline">\(e^{2\pi i} = 1\)</span>, <span class="math inline">\(e^{\pi i} = -1\)</span>, and <span class="math inline">\(e^{\frac{\pi}{6}i} = \dfrac{\sqrt{3}}{2} +\dfrac{1}{2}i\)</span>.</p>
 <p>And more generally <span class="math display">\[
 e^{i\theta} =
 e^{i(\theta + 2n\pi)},\quad n\in\mathbb{N}.
 \]</span></p>
 </section>
-</section>
 <section id="the-n-th-roots-of-unity" class="level2">
 <h2 class="anchored" data-anchor-id="the-n-th-roots-of-unity">📌 The <span class="math inline">\(n\)</span>-th roots of unity</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>🚨 So why do we need this?</p>
+<p>Roots of unity are used in many branches of mathematics, and are especially important in number theory, the theory of group characters, and the discrete <a href="../chapter-2/linear-algebra.html#example-2-fourier-transform">Fourier transform</a>. — <a href="https://en.wikipedia.org/wiki/Root_of_unity">Wikipedia</a></p>
+</div>
+</div>
 <p>The <span class="math inline">\(n\)</span>-th roots of unity are the complex numbers <span class="math inline">\(z\)</span> that satisfy the equation:</p>
 <p><span class="math display">\[
 z^n =1\quad \text{or equivalently}\quad z^n -1 = 0
