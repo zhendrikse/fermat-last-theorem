@@ -124,18 +124,84 @@
     "href": "chapter-2/linear-transformations.html#eigenvectors-and-eigenvalues",
     "title": "Linear transformations, eigenvalues, inner products, and the spectral theorem",
     "section": "📌 Eigenvectors and eigenvalues",
-    "text": "📌 Eigenvectors and eigenvalues\nAn eigenvector of a linear transformation \\(T:V\\rightarrow V\\) is a non-zero vector \\(v\\in V\\) such that \\(T(v) = \\lambda v\\) for some scalar \\(\\lambda\\). The scalar \\(\\lambda\\) is called the eigenvalue corresponding to the eigenvector \\(v\\).\nNote that:\n\nThe domain and co-domain are the same vector space\nThe eigenvector does not change direction under the transformation, it is only scaled by the eigenvalue.\n\n\n🏷️ Example 1\n\\[\nT:\\mathbb{R}^2\\rightarrow \\mathbb{R}^2\\qquad T\\begin{pmatrix}x\\\\y\\end{pmatrix}=\\begin{pmatrix}2x\\\\3y\\end{pmatrix} = \\begin{pmatrix}2 & 0\\\\0 & 3\\end{pmatrix}\\begin{pmatrix}x\\\\y\\end{pmatrix}\n\\]\n\n\n👨‍💻 Eigenvectors and eigenvalues\nThe interactive demo below illustrates the effects of a transformation matrix by applying the transformation on a two-dimensional grid. It also shows the eigen vectors.",
+    "text": "📌 Eigenvectors and eigenvalues\nAn eigenvector of a linear transformation \\(T:V\\rightarrow V\\) is a non-zero vector \\(v\\in V\\) such that \\(T(v) = \\lambda v\\) for some scalar \\(\\lambda\\). The scalar \\(\\lambda\\) is called the eigenvalue corresponding to the eigenvector \\(v\\).\nNote that:\n\nThe domain and co-domain are the same vector space\nThe eigenvector does not change direction under the transformation, it is only scaled by the eigenvalue.\n\n\n🏷️ Example 1\n\\[\nT:\\mathbb{R}^2\\rightarrow \\mathbb{R}^2\\qquad T\\begin{pmatrix}x\\\\y\\end{pmatrix}=\\begin{pmatrix}2x\\\\3y\\end{pmatrix} = \\begin{pmatrix}2 & 0\\\\0 & 3\\end{pmatrix}\\begin{pmatrix}x\\\\y\\end{pmatrix}\n\\]\nThen we have two eigenvectors:\n\\[\n\\begin{array}{l}\ne_1=\\begin{pmatrix}1\\\\0\\end{pmatrix}:\\quad T(e_1)=\\begin{pmatrix}2\\\\0\\end{pmatrix} = 2e_1\\quad\\text{with eigenvalue}\\ \\lambda_1=2 \\\\\ne_2=\\begin{pmatrix}0\\\\1\\end{pmatrix}:\\quad T(e_2)=\\begin{pmatrix}0\\\\3\\end{pmatrix} = 3e_2\\quad\\text{with eigenvalue}\\ \\lambda_2=3\n\\end{array}\n\\]\n\n\n🏷️ Example 2: infinitely differentiable functions\n\\[\nT:\\mathbb{C}^\\infty\\rightarrow \\mathbb{C}^\\infty\\qquad T(f)=f'\n\\]\nThen we have the following eigenvectors:\n\\[\n\\begin{array}{c}\ne_1(x)=e^x:\\quad T(e_1)=e^x = 1\\cdot e_1\\quad\\text{with eigenvalue}\\ \\lambda_1=1 \\\\\ne_2(x)=e^{2x}:\\quad T(e_2)=2e^{2x} = 2\\cdot e_2\\quad\\text{with eigenvalue}\\ \\lambda_2=2 \\\\\n\\vdots\n\\end{array}\n\\]",
     "crumbs": [
       "Chapter 2 — Linear Algebra",
       "Linear transformations, eigenvalues, inner products, and the spectral theorem"
     ]
   },
   {
-    "objectID": "chapter-2/linear-transformations.html#spectral-theorem",
-    "href": "chapter-2/linear-transformations.html#spectral-theorem",
+    "objectID": "chapter-2/linear-transformations.html#eigenvectors-and-eigenvalues-of-a-matrix",
+    "href": "chapter-2/linear-transformations.html#eigenvectors-and-eigenvalues-of-a-matrix",
     "title": "Linear transformations, eigenvalues, inner products, and the spectral theorem",
-    "section": "📌 Spectral theorem",
-    "text": "📌 Spectral theorem\n\n👨‍💻 Spectral theorem",
+    "section": "📌 Eigenvectors and eigenvalues of a matrix",
+    "text": "📌 Eigenvectors and eigenvalues of a matrix\n\nLet \\(A\\) be an \\(n\\times n\\) (square) matrix. A non-zero vector \\(v\\in F^n\\) is an eigenvector of \\(A\\) if there exists a scalar \\(\\lambda\\) such that \\(Av = \\lambda v\\). The scalar \\(\\lambda\\) is called an eigenvalue of \\(A\\).\nThe polynomial \\(\\chi_A(\\lambda) = \\det(A - \\lambda I)\\) is called the characteristic polynomial of \\(A\\). The eigenvalues of \\(A\\) are the roots of the characteristic polynomial.\n\n\n🏷️ Example\nIf we have the following matrix \\[\nA = \\begin{pmatrix}7 && 2\\\\-4 && 1\\end{pmatrix}\n\\]\nthen we have the following eigenvectors and eigenvalues:\n\\[\n\\begin{array}{l}\n\\begin{pmatrix}7 && 2\\\\-4 && 1\\end{pmatrix}\\begin{pmatrix}1\\\\-1\\end{pmatrix} =\\begin{pmatrix}5\\\\-5\\end{pmatrix}=5\\begin{pmatrix}1\\\\-1\\end{pmatrix}\\\\\n\\begin{pmatrix}7 && 2\\\\-4 && 1\\end{pmatrix}\\begin{pmatrix}1\\\\-2\\end{pmatrix} =\\begin{pmatrix}3\\\\-6\\end{pmatrix}=3\\begin{pmatrix}1\\\\-2\\end{pmatrix}\\\\\n\\end{array}\n\\]\nSimilarly, if we have the following matrix\n\\[\nB = \\begin{pmatrix} 8 && -13 && 7 \\\\3 && -6 && 5 \\\\ 3 && -9 && 8\\end{pmatrix}\n\\]\nThen:\n\\[\n\\begin{pmatrix} 8 && -13 && 7 \\\\3 && -6 && 5 \\\\ 3 && -9 && 8\\end{pmatrix}\\begin{pmatrix}1\\\\1\\\\1\\end{pmatrix} =\\begin{pmatrix}2\\\\2\\\\2\\end{pmatrix}=2\\begin{pmatrix}1\\\\1\\\\1\\end{pmatrix}  \n\\]\n\nSo, more generally, we can say that a vector \\(v\\) is an eigenvector of a matrix \\(A\\) if it satisfies the equation:\n\\[\nAv = \\lambda v\\quad (v\\in F^n, \\lambda \\in F, v\\neq 0)\n\\]\nNow we can apply the following trick:\n\\[\nAv = \\lambda v = \\lambda Iv \\implies Av - \\lambda Iv = 0 \\implies (A - \\lambda I)v = 0\n\\]\nMultiplying left and right by \\((A - \\lambda I)^{-1}\\) gives us:\n\\[\n(A - \\lambda I)^{-1}(A - \\lambda I)v = (A - \\lambda I)^{-1}0 \\implies v = 0\n\\]\nHowever, we know that \\(v\\neq 0\\), so we must have that \\((A - \\lambda I)\\) is not invertible. This means that \\(\\boxed{\\det(A - \\lambda I) = 0}\\) must hold when we look for eigenvalues.\n\nLet’s now revisit the example above and find the eigenvalues of the matrix \\(A\\) by solving the characteristic polynomial:\n\\[\n\\begin{array}{l}\n\\det(A-\\lambda I) &=& \\det\\begin{pmatrix}7-\\lambda && 2\\\\-4 && 1-\\lambda\\end{pmatrix} \\\\\n&=& (7-\\lambda)(1-\\lambda) - (-8) \\\\\n&=& \\lambda^2 - 8\\lambda + 15\\\\\n&=& (\\lambda - 3)(\\lambda - 5) = 0\n\\implies \\boxed{\\lambda_1 = 3, \\lambda_2 = 5}\n\\end{array}\n\\]\n\n\n👨‍💻 Eigenvectors and eigenvalues\nThe interactive demo below illustrates the effects of a transformation matrix by applying the transformation on a two-dimensional grid. It also shows the eigen vectors.",
+    "crumbs": [
+      "Chapter 2 — Linear Algebra",
+      "Linear transformations, eigenvalues, inner products, and the spectral theorem"
+    ]
+  },
+  {
+    "objectID": "chapter-2/linear-transformations.html#trace-of-a-matrix",
+    "href": "chapter-2/linear-transformations.html#trace-of-a-matrix",
+    "title": "Linear transformations, eigenvalues, inner products, and the spectral theorem",
+    "section": "📌 Trace of a matrix",
+    "text": "📌 Trace of a matrix\nThe trace of an \\(n\\times n\\) (square) matrix \\(A\\), denoted \\(\\text{trace}(A)\\), is the sum of its diagonal elements:\n\\[\n\\text{trace}(A) = \\sum_{i=1}^{n} A_{ii}\n\\]\n\n🏷️ Example\n\\[\nB = \\begin{pmatrix} 8 && -13 && 7 \\\\3 && -6 && 5 \\\\ 3 && -9 && 8\\end{pmatrix} \\implies \\text{trace}(B) = 8 + (-6) + 8 = 10\n\\]",
+    "crumbs": [
+      "Chapter 2 — Linear Algebra",
+      "Linear transformations, eigenvalues, inner products, and the spectral theorem"
+    ]
+  },
+  {
+    "objectID": "chapter-2/linear-transformations.html#simlar-matrices",
+    "href": "chapter-2/linear-transformations.html#simlar-matrices",
+    "title": "Linear transformations, eigenvalues, inner products, and the spectral theorem",
+    "section": "📌 Simlar matrices",
+    "text": "📌 Simlar matrices\nLet \\(A\\) and \\(B\\) be two \\(n\\times n\\) matrices over a field \\(F\\). We say that \\(A\\) and \\(B\\) are similar if there exists an invertible matrix \\(P\\) such that:\n\\[\nB = P^{-1}AP\n\\]\nIf \\(A\\) and \\(B\\) are similar, they represent the same linear transformation under different bases. Consequently, they share the same invariants:\n\n\\(\\text{trace}(A) = \\text{trace}(B)\\)\n\\(\\det(A) = \\det(B)\\)\nThey have the same characteristic polynomial and eigenvalues.\n\nStated differently, if \\(A\\) and \\(B\\) are similar, they represent the same linear transformation under different bases, and hence they share the same eigenvalues.\n\n🏷️ Example\n\\[\nA=\\begin{pmatrix} 2 && 1\\\\0 && 3\\end{pmatrix} \\sim B=\\begin{pmatrix} 3 && 2\\\\0 && 2\\end{pmatrix}\\ \\text{with}\\ P = \\begin{pmatrix} 1 && 1\\\\1 && 2\\end{pmatrix}\n\\]\n\nDeterminant the same? \\(\\det(A) = 6 = \\det(B)\\) ꪜ\nTrace the same?  \\(\\text{trace}(A) = 5 = \\text{trace}(B)\\) ꪜ\nCharacteristic polynomial the same?  \\(\\chi_A(\\lambda) = \\lambda^2 - 5\\lambda + 6 = \\chi_B(\\lambda)\\) ꪜ",
+    "crumbs": [
+      "Chapter 2 — Linear Algebra",
+      "Linear transformations, eigenvalues, inner products, and the spectral theorem"
+    ]
+  },
+  {
+    "objectID": "chapter-2/linear-transformations.html#inner-product",
+    "href": "chapter-2/linear-transformations.html#inner-product",
+    "title": "Linear transformations, eigenvalues, inner products, and the spectral theorem",
+    "section": "📌 Inner product",
+    "text": "📌 Inner product\nAn inner product on a complex vector space \\(V\\) is a function \\(\\langle\\cdot,\\cdot\\rangle:\\ V\\times V\\rightarrow\\mathbb{C}\\) that satisfies the following properties for all \\(x, y, z \\in V\\) and \\(c \\in \\mathbb{C}\\):\n\n\\(\\langle x, y \\rangle = \\overline{\\langle y, x \\rangle}\\) (conjugate symmetry)\n\\(\\langle cx, y \\rangle = c\\langle x, y \\rangle\\)\n\\(\\langle x + y, z \\rangle = \\langle x, z \\rangle + \\langle y, z \\rangle\\)\n\\(\\langle x, x \\rangle \\geq 0\\) and \\(\\langle x, x \\rangle = 0 \\Longleftrightarrow x = 0\\)\n\n\n\n\n\n\n\nNote\n\n\n\n\nThe inner product is a generalization of the dot product in Euclidean space (in physics often \\(\\mathbb{R}^2\\) or \\(\\mathbb{R}^3\\)).\nThe inner product allows us to think about geometric properties of abstract vector spaces, including concepts such as length, \\[\n\\|x\\| = \\sqrt{\\langle x, x \\rangle}\n\\] angle, and orthogonality \\[\n\\cos \\theta = \\frac{\\langle x, y \\rangle}{\\|x\\| \\|y\\|} \\implies x \\perp y \\iff \\langle x, y \\rangle = 0.\n\\]",
+    "crumbs": [
+      "Chapter 2 — Linear Algebra",
+      "Linear transformations, eigenvalues, inner products, and the spectral theorem"
+    ]
+  },
+  {
+    "objectID": "chapter-2/linear-transformations.html#inner-product-spaces",
+    "href": "chapter-2/linear-transformations.html#inner-product-spaces",
+    "title": "Linear transformations, eigenvalues, inner products, and the spectral theorem",
+    "section": "📌 Inner product spaces",
+    "text": "📌 Inner product spaces\n\nAn inner product space is a vector space \\(V\\) equipped with an inner product \\(\\langle\\cdot,\\cdot\\rangle\\). The inner product allows us to define geometric concepts such as length, angle, and orthogonality in the vector space.\nThe norm of a vector \\(x\\) is defined as \\(\\|x\\| = \\sqrt{\\langle x, x \\rangle}\\).\nTwo vectors \\(x\\) and \\(y\\) are orthogonal if \\(\\langle x, y \\rangle = 0\\).\nAn orthonormal basis is a basis consisting of mutually orthogonal vectors with norm equal to 1.\n\n\n🏷️ Example 1\n\\[\nV = \\mathbb{R}^n\\quad\\text{with the standard inner product}\\quad \\langle x, y \\rangle = x^Ty\n\\]\nWe can check the four properties of the inner product for this example:\n\nConjugate symmetry: \\(\\langle x, y \\rangle = x^Ty = y^Tx = \\langle y, x \\rangle\\) ꪜ\nLinearity in the first argument: \\(\\langle cx, y \\rangle = (cx)^Ty = c(x^Ty) = c\\langle x, y \\rangle\\) ꪜ\nAdditivity in the first argument: \\(\\langle x + y, z \\rangle = (x + y)^Tz = x^Tz + y^Tz = \\langle x, z \\rangle + \\langle y, z \\rangle\\) ꪜ\nPositive-definiteness: \\(\\langle x, x \\rangle = x^Tx = \\sum_{i=1}^{n} x_i^2 \\geq 0\\) ꪜ\n\n\n\n🏷️ Example 2\nLet’s consider the vector space of all continuous functions on the interval \\(-\\pi\\leq x\\leq\\pi\\):\n\\[\nV=C[-\\pi, \\pi]\\ \\text{with}\\ \\langle f,g\\rangle = \\int_{-\\pi}^{\\pi}f(x)g(x)dx\n\\]\nSo why is this an inner product?\n\n\\(\\langle f,g\\rangle = \\overline{\\langle g,f \\rangle}\\) holds because complex conjugation doesn’t do anything on real numbers ꪜ\n\\(\\langle cf_1 + f_2,g\\rangle = \\int_{-\\pi}^{\\pi}(cf_1 + f_2)gdx = c\\int_{-\\pi}^{\\pi}f_1 gdx + \\int_{-\\pi}^{\\pi}f_2 gdx = c \\langle f_1, g\\rangle + \\langle f_2,g\\rangle\\) ꪜ\n\\(\\langle f,f\\rangle \\geq 0\\ \\text{and}\\ \\langle f,f\\rangle = 0 \\implies f=0\\) ꪜ\n\nAs a consequence, we can show that \\(\\cos x\\) and \\(\\sin x\\) are perpendicular in this vector space:\n\\[\n\\langle \\cos x, \\sin x \\rangle = \\int_{-\\pi}^{\\pi} \\cos x \\sin x dx = \\int_{-\\pi}^{\\pi}\\frac{\\sin 2x}{2}dx = \\bigg[ -\\frac{\\cos 2x}{4} \\bigg]^\\pi_{-\\pi} = 0\n\\]",
+    "crumbs": [
+      "Chapter 2 — Linear Algebra",
+      "Linear transformations, eigenvalues, inner products, and the spectral theorem"
+    ]
+  },
+  {
+    "objectID": "chapter-2/linear-transformations.html#direct-sum-of-subspaces",
+    "href": "chapter-2/linear-transformations.html#direct-sum-of-subspaces",
+    "title": "Linear transformations, eigenvalues, inner products, and the spectral theorem",
+    "section": "📌 Direct sum of subspaces",
+    "text": "📌 Direct sum of subspaces\nLet \\(W_1\\) and \\(W_2\\) be subspaces of a vector space \\(V\\). We write \\[\nV = W_1 \\oplus W_2\n\\] if \\[\nV = W_1 + W_2\\quad\\text{and}\\quad W_1 \\cap W_2 = \\{0\\}\n\\]\nEquivalently, every vector \\(v\\in V\\) can be written uniquely as \\[\nv = w_1 + w_2\\qquad (w_1\\in W_1, w_2\\in W_2)\n\\]\nIf \\(V\\) is an inner product space and \\(W_1 \\perp W_2\\), we call this an orthogonal direct sum.\n\n\n\n\n\n\nNote\n\n\n\nWhy do we need this?\nThis way, a vector space can be broken up into several independent components/subspaces.\n\n\n\n🏷️ Example 1\n\\[\n\\mathbb{R}^2: \\begin{pmatrix}x\\\\0\\end{pmatrix} + \\begin{pmatrix}0\\\\y\\end{pmatrix} \\implies \\mathbb{R}^2 = \\left\\{\\begin{pmatrix}x\\\\0\\end{pmatrix}\\bigg|\\ x\\in\\mathbb{R}\\right\\}\n\\oplus\\left\\{\\begin{pmatrix}0\\\\y\\end{pmatrix}\\bigg|\\ y\\in\\mathbb{R}\\right\\}\n\\]\n\n\n🏷️ Example 2\n\\[\nP_2(\\mathbb{R}) = \\text{span}(1) +  \\text{span}(x) +  \\text{span}(x^2)\n\\]\n\n\n🏷️ Example 3\n\\[\n\\mathbb{R}^2 = \\left\\{x\\begin{pmatrix}1\\\\-1\\end{pmatrix}\\bigg|\\ x\\in\\mathbb{R}\\right\\}\n\\oplus\\left\\{y\\begin{pmatrix}1\\\\1\\end{pmatrix}\\bigg|\\ y\\in\\mathbb{R}\\right\\}\n\\]\nThis is true, since every vector \\(\\begin{pmatrix}x\\\\y\\end{pmatrix}\\) can be written as \\[\n\\begin{pmatrix}x\\\\y\\end{pmatrix} = \\frac{x + y}{2}\\begin{pmatrix}1\\\\1\\end{pmatrix}+\\frac{x - y}{2}\\begin{pmatrix}1\\\\-1\\end{pmatrix}\n\\]\nMoreover, both subspaces only share zero vectors ꪜ",
+    "crumbs": [
+      "Chapter 2 — Linear Algebra",
+      "Linear transformations, eigenvalues, inner products, and the spectral theorem"
+    ]
+  },
+  {
+    "objectID": "chapter-2/linear-transformations.html#spectral-theorem-simultaneous-diagonalization",
+    "href": "chapter-2/linear-transformations.html#spectral-theorem-simultaneous-diagonalization",
+    "title": "Linear transformations, eigenvalues, inner products, and the spectral theorem",
+    "section": "📌 Spectral theorem (simultaneous diagonalization)",
+    "text": "📌 Spectral theorem (simultaneous diagonalization)\nLet \\(V\\) be a finite-dimensional complex inner product space, and let \\(\\{T_i\\}\\) be a family of linear operators on V.\nIf\n\neach \\(T_i\\) is self-adjoint: \\[\n\\langle T_ix, y\\rangle = \\langle x, T_i y \\rangle\\quad \\forall x, y\\in V,\n\\]\nthe operators commute: \\[\nT_iT_j = T_jT_i\\quad \\forall i, j,\n\\]\n\nthe there exists an orthonormal basis of \\(V\\) consisting of simulteneous eigenvectos for all \\(T_i\\).\n\n\n\n\n\n\nNote\n\n\n\nWhy do we need this?\nThis will come back once we arrive at modular forms. It is very powerful, as per this theorem there exists a single orthonormal basis that diagonalizes a whole family of different operators at the same time, and thus can be understood using one common basis.\n\n\n\n👨‍💻 Spectral theorem",
     "crumbs": [
       "Chapter 2 — Linear Algebra",
       "Linear transformations, eigenvalues, inner products, and the spectral theorem"
