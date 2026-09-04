@@ -501,10 +501,15 @@ window.Quarto = {
   <li><a href="#linear-transformations" id="toc-linear-transformations" class="nav-link active" data-scroll-target="#linear-transformations">Linear transformations</a>
   <ul class="collapse">
   <li><a href="#linear-transformations-1" id="toc-linear-transformations-1" class="nav-link" data-scroll-target="#linear-transformations-1">📌 Linear Transformations</a></li>
-  <li><a href="#kernel-and-image" id="toc-kernel-and-image" class="nav-link" data-scroll-target="#kernel-and-image">📌 Kernel and image</a>
+  <li><a href="#kernel-and-image" id="toc-kernel-and-image" class="nav-link" data-scroll-target="#kernel-and-image">📌 Kernel and image</a></li>
+  <li><a href="#representing-transformations-as-matrices" id="toc-representing-transformations-as-matrices" class="nav-link" data-scroll-target="#representing-transformations-as-matrices">📌 Representing transformations as matrices</a></li>
+  <li><a href="#eigenvectors-and-eigenvalues" id="toc-eigenvectors-and-eigenvalues" class="nav-link" data-scroll-target="#eigenvectors-and-eigenvalues">📌 Eigenvectors and eigenvalues</a>
   <ul class="collapse">
-  <li><a href="#eigen-vectors-and-eigen-values" id="toc-eigen-vectors-and-eigen-values" class="nav-link" data-scroll-target="#eigen-vectors-and-eigen-values">👨‍💻 Eigen vectors and eigen values</a></li>
-  <li><a href="#spectral-theorem" id="toc-spectral-theorem" class="nav-link" data-scroll-target="#spectral-theorem">👨‍💻 Spectral theorem</a></li>
+  <li><a href="#eigenvectors-and-eigenvalues-1" id="toc-eigenvectors-and-eigenvalues-1" class="nav-link" data-scroll-target="#eigenvectors-and-eigenvalues-1">👨‍💻 Eigenvectors and eigenvalues</a></li>
+  </ul></li>
+  <li><a href="#spectral-theorem" id="toc-spectral-theorem" class="nav-link" data-scroll-target="#spectral-theorem">📌 Spectral theorem</a>
+  <ul class="collapse">
+  <li><a href="#spectral-theorem-1" id="toc-spectral-theorem-1" class="nav-link" data-scroll-target="#spectral-theorem-1">👨‍💻 Spectral theorem</a></li>
   </ul></li>
   <li><a href="#summary-linear-algebra" id="toc-summary-linear-algebra" class="nav-link" data-scroll-target="#summary-linear-algebra">Summary linear algebra</a></li>
   </ul></li>
@@ -544,7 +549,7 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>This section corresponds to <a href="https://www.youtube.com/watch?v=9f-hGSh8lF0&amp;t=7347s">Linear Transformations, Eigenvalues, Inner Products, and the Spectral Theorem — 2:02:27</a> in the video <em>Proof of Fermat Last Theorem FROM SCRATCH</em>. Noah Jang is the original creator of the exposition and examples referenced here. The interactive implementations, animations, additional explanations, and contextual material are my own work.</p>
+<p>This section corresponds to <a href="https://www.youtube.com/watch?v=9f-hGSh8lF0&amp;t=7347s">Linear Transformations, Eigenvalues, Inner Products, and the Spectral Theorem — 2:02:27</a> in the video <em>Proof of Fermat Last Theorem FROM SCRATCH</em>. <a href="https://www.linkedin.com/in/noah-jang-2111392ba/">Noah Jang</a> is the original creator of the exposition and examples referenced here. The interactive implementations, animations, additional explanations, and contextual material are my own work.</p>
 </div>
 </div>
 <section id="linear-transformations" class="level1">
@@ -610,23 +615,111 @@ T:\mathbb{R}^2 \rightarrow \mathbb{R}\qquad T\begin{pmatrix}x\\ y\end{pmatrix}:=
 <li>The <strong>kernel</strong> of <span class="math inline">\(T:V\rightarrow W\)</span> is the subspace <span class="math inline">\(\ker(T)=\{v\in V\ |\ T(v) = {\bf 0}_W\}\)</span></li>
 <li>The <strong>iamge</strong> of <span class="math inline">\(T:V\rightarrow W\)</span> is the subspace <span class="math inline">\(\text{im}(T)=\{v\in V\ |\ T(v)\}\)</span></li>
 </ul>
-<section id="examples" class="level4">
-<h4 class="anchored" data-anchor-id="examples">🏷️ <strong>Examples</strong></h4>
+<section id="example-1" class="level4">
+<h4 class="anchored" data-anchor-id="example-1">🏷️ <strong>Example 1</strong></h4>
+<p><span class="math display">\[
+T:\mathbb{R}^2 \rightarrow \mathbb{R}^2\qquad T\begin{pmatrix}x\\ y\end{pmatrix}:=\begin{pmatrix}x+y\\0\end{pmatrix}
+\]</span></p>
+<p>The kernel consist of all vectors mapped onto zero:</p>
+<p><span class="math display">\[
+T\begin{pmatrix}x\\ y\end{pmatrix}=\begin{pmatrix}x+y\\0\end{pmatrix}=\begin{pmatrix}0\\0\end{pmatrix}
+\]</span></p>
+<p>From this we can easily infer that</p>
+<p><span class="math display">\[
+\begin{array}{cc}
+\ker{(T)} &amp;=&amp; \bigg\{ \begin{pmatrix} x\\-x\end{pmatrix}\ \bigg|\ x\in\mathbb{R}\bigg\}
+\\
+\text{Im}{(T)} &amp;=&amp; \bigg\{ \begin{pmatrix} x\\0\end{pmatrix}\ \bigg|\ x\in\mathbb{R}\bigg\}
+\end{array}
+\]</span></p>
 </section>
-<section id="eigen-vectors-and-eigen-values" class="level3">
-<h3 class="anchored" data-anchor-id="eigen-vectors-and-eigen-values">👨‍💻 Eigen vectors and eigen values</h3>
+<section id="example-2" class="level4">
+<h4 class="anchored" data-anchor-id="example-2">🏷️ <strong>Example 2</strong></h4>
+<p><span class="math display">\[
+T:\mathbb{R}[x] \rightarrow \mathbb{R}[x] \qquad T(p)=p'
+\]</span></p>
+<p>So what are the kernel and image of this transformation? The kernel consists of all polynomials that are mapped onto zero, so <span class="math inline">\(p'=0\)</span>. This means that the kernel consists of all constant polynomials:</p>
+<p><span class="math display">\[
+\begin{array}{cc}
+\ker{(T)} &amp;=&amp; \{ c\ |\ c\in\mathbb{R}\}
+\\
+\text{Im}{(T)} &amp;=&amp; \mathbb{R}[x]
+\end{array}
+\]</span></p>
+</section>
+</section>
+<section id="representing-transformations-as-matrices" class="level2">
+<h2 class="anchored" data-anchor-id="representing-transformations-as-matrices">📌 Representing transformations as matrices</h2>
+<p>Every linear transformation <span class="math inline">\(T:V\rightarrow W\)</span> can be uniquely represented as a matrix <span class="math inline">\(A\)</span> with respect to a fixed basis of <span class="math inline">\(V\)</span> and <span class="math inline">\(W\)</span>. The columns of the matrix <span class="math inline">\(A\)</span> are the images of the basis vectors of <span class="math inline">\(V\)</span> under the transformation <span class="math inline">\(T\)</span>, expressed in terms of the basis of <span class="math inline">\(W\)</span>.</p>
+<p>This connects the topic of linear transformations to the topic of matrices, which we have discussed in <a href="./matrices.html">the first section of this chapter</a>. Matrix representations allow us to perform computations and analyze the properties of linear transformations using matrix algebra.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>🚨 A linear transformation and a matrix are not the same concept! The actions of a transformation can be described by a matrix when we have chosen a basis in both <span class="math inline">\(V\)</span> and <span class="math inline">\(W\)</span>.</p>
+</div>
+</div>
+<p>So let’s choose a basis for <span class="math inline">\(V\)</span> and <span class="math inline">\(W\)</span> and see how we can represent a linear transformation as a matrix.</p>
+<p><span class="math display">\[
+V = \{v_1, v_2, \ldots, v_n\} \quad\text{and}\quad W = \{w_1, w_2, \ldots, w_m\}
+\]</span></p>
+<p>Now any vector <span class="math inline">\(v\in V\)</span> can be expressed as a linear combination of the basis vectors <span class="math inline">\({\bf v} = a_1v_1 + a_2v_2 + \ldots + a_nv_n\)</span>. The transformation <span class="math inline">\(T\)</span> maps this vector to a vector in <span class="math inline">\(W\)</span>:</p>
+<p><span class="math display">\[
+\begin{array}{ll}
+T({\bf v}) &amp;=&amp; T(a_1v_1 + a_2v_2 + \ldots + a_nv_n)\\
+&amp;=&amp; a_1T(v_1) + a_2T(v_2) + \ldots + a_nT(v_n)\\
+&amp;=&amp; a_1\begin{pmatrix}b_{11}\\b_{21}\\\vdots\\b_{m1}\end{pmatrix} + a_2\begin{pmatrix}b_{12}\\b_{22}\\\vdots\\b_{m2}\end{pmatrix} + \ldots + a_n\begin{pmatrix}b_{1n}\\b_{2n}\\\vdots\\b_{mn}\end{pmatrix} \\
+&amp;=&amp; \begin{pmatrix}b_{11} &amp; b_{12} &amp; \ldots &amp; b_{1n}\\ b_{21} &amp; b_{22} &amp; \ldots &amp; b_{2n}\\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots\\ b_{m1} &amp; b_{m2} &amp; \ldots &amp; b_{mn}\end{pmatrix}\begin{pmatrix}a_1\\a_2\\\vdots\\a_n\end{pmatrix}
+\end{array}
+\]</span></p>
+<section id="example" class="level4">
+<h4 class="anchored" data-anchor-id="example">🏷️ <strong>Example</strong></h4>
+<p><span class="math display">\[
+T:\mathbb{R}^3\rightarrow \mathbb{R}^3\qquad T\begin{pmatrix}x\\y\\z\end{pmatrix}=\begin{pmatrix}x+y\\y+z\\x+z\end{pmatrix} = \begin{pmatrix}1 &amp; 1 &amp; 0\\0 &amp; 1 &amp; 1\\1 &amp; 0 &amp; 1\end{pmatrix}\begin{pmatrix}x\\y\\z\end{pmatrix}
+\]</span></p>
+</section>
+</section>
+<section id="eigenvectors-and-eigenvalues" class="level2">
+<h2 class="anchored" data-anchor-id="eigenvectors-and-eigenvalues">📌 Eigenvectors and eigenvalues</h2>
+<p>An <strong>eigenvector</strong> of a linear transformation <span class="math inline">\(T:V\rightarrow V\)</span> is a non-zero vector <span class="math inline">\(v\in V\)</span> such that <span class="math inline">\(T(v) = \lambda v\)</span> for some scalar <span class="math inline">\(\lambda\)</span>. The scalar <span class="math inline">\(\lambda\)</span> is called the <strong>eigenvalue</strong> corresponding to the eigenvector <span class="math inline">\(v\)</span>.</p>
+<p>Note that:</p>
+<ul>
+<li>The domain and co-domain are the same vector space</li>
+<li>The eigenvector does not change direction under the transformation, it is only scaled by the eigenvalue.</li>
+</ul>
+<section id="example-1-1" class="level4">
+<h4 class="anchored" data-anchor-id="example-1-1">🏷️ <strong>Example 1</strong></h4>
+<p><span class="math display">\[
+T:\mathbb{R}^2\rightarrow \mathbb{R}^2\qquad T\begin{pmatrix}x\\y\end{pmatrix}=\begin{pmatrix}2x\\3y\end{pmatrix} = \begin{pmatrix}2 &amp; 0\\0 &amp; 3\end{pmatrix}\begin{pmatrix}x\\y\end{pmatrix}
+\]</span></p>
+</section>
+<section id="eigenvectors-and-eigenvalues-1" class="level3">
+<h3 class="anchored" data-anchor-id="eigenvectors-and-eigenvalues-1">👨‍💻 Eigenvectors and eigenvalues</h3>
 <p>The interactive demo below illustrates the effects of a transformation matrix by applying the transformation on a two-dimensional grid. It also shows the eigen vectors.</p>
 <div id="matrixTransformationContainer"></div>
 <script type="module" src="https://www.hendrikse.name/helion/examples/matrix_transformation.js"></script>
 </section>
-<section id="spectral-theorem" class="level3">
-<h3 class="anchored" data-anchor-id="spectral-theorem">👨‍💻 Spectral theorem</h3>
+</section>
+<section id="spectral-theorem" class="level2">
+<h2 class="anchored" data-anchor-id="spectral-theorem">📌 Spectral theorem</h2>
+<section id="spectral-theorem-1" class="level3">
+<h3 class="anchored" data-anchor-id="spectral-theorem-1">👨‍💻 Spectral theorem</h3>
 <div id="spectralTheoremContainer"></div>
 <script type="module" src="https://www.hendrikse.name/helion/examples/spectral_theorem.js"></script>
 </section>
 </section>
 <section id="summary-linear-algebra" class="level2">
 <h2 class="anchored" data-anchor-id="summary-linear-algebra">Summary linear algebra</h2>
+<p><span class="math display">\[
+👉\ \text{Linear transformation}\ T:V\rightarrow V
+\]</span></p>
+<p><span class="math display">\[\Downarrow\ \text{Basis}\]</span></p>
 <p><span class="math display">\[
 👉\ \text{Matrix}:\ A=
 \begin{pmatrix}
@@ -648,7 +741,7 @@ b&amp;d
 \]</span></p>
 <p><span class="math display">\[\Downarrow\]</span></p>
 <p><span class="math display">\[
-👉\ \text{Diagonale matrix}:\ \Lambda=
+👉\ \text{Diagonal matrix}:\ \Lambda=
 \begin{pmatrix}
 \lambda_1&amp;0\\
 0&amp;\lambda_2

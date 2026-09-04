@@ -102,7 +102,40 @@
     "href": "chapter-2/linear-transformations.html#kernel-and-image",
     "title": "Linear transformations, eigenvalues, inner products, and the spectral theorem",
     "section": "📌 Kernel and image",
-    "text": "📌 Kernel and image\n\nThe kernel of \\(T:V\\rightarrow W\\) is the subspace \\(\\ker(T)=\\{v\\in V\\ |\\ T(v) = {\\bf 0}_W\\}\\)\nThe iamge of \\(T:V\\rightarrow W\\) is the subspace \\(\\text{im}(T)=\\{v\\in V\\ |\\ T(v)\\}\\)\n\n\n🏷️ Examples\n\n\n👨‍💻 Eigen vectors and eigen values\nThe interactive demo below illustrates the effects of a transformation matrix by applying the transformation on a two-dimensional grid. It also shows the eigen vectors.\n\n\n\n\n👨‍💻 Spectral theorem",
+    "text": "📌 Kernel and image\n\nThe kernel of \\(T:V\\rightarrow W\\) is the subspace \\(\\ker(T)=\\{v\\in V\\ |\\ T(v) = {\\bf 0}_W\\}\\)\nThe iamge of \\(T:V\\rightarrow W\\) is the subspace \\(\\text{im}(T)=\\{v\\in V\\ |\\ T(v)\\}\\)\n\n\n🏷️ Example 1\n\\[\nT:\\mathbb{R}^2 \\rightarrow \\mathbb{R}^2\\qquad T\\begin{pmatrix}x\\\\ y\\end{pmatrix}:=\\begin{pmatrix}x+y\\\\0\\end{pmatrix}\n\\]\nThe kernel consist of all vectors mapped onto zero:\n\\[\nT\\begin{pmatrix}x\\\\ y\\end{pmatrix}=\\begin{pmatrix}x+y\\\\0\\end{pmatrix}=\\begin{pmatrix}0\\\\0\\end{pmatrix}\n\\]\nFrom this we can easily infer that\n\\[\n\\begin{array}{cc}\n\\ker{(T)} &=& \\bigg\\{ \\begin{pmatrix} x\\\\-x\\end{pmatrix}\\ \\bigg|\\ x\\in\\mathbb{R}\\bigg\\}\n\\\\\n\\text{Im}{(T)} &=& \\bigg\\{ \\begin{pmatrix} x\\\\0\\end{pmatrix}\\ \\bigg|\\ x\\in\\mathbb{R}\\bigg\\}\n\\end{array}\n\\]\n\n\n🏷️ Example 2\n\\[\nT:\\mathbb{R}[x] \\rightarrow \\mathbb{R}[x] \\qquad T(p)=p'\n\\]\nSo what are the kernel and image of this transformation? The kernel consists of all polynomials that are mapped onto zero, so \\(p'=0\\). This means that the kernel consists of all constant polynomials:\n\\[\n\\begin{array}{cc}\n\\ker{(T)} &=& \\{ c\\ |\\ c\\in\\mathbb{R}\\}\n\\\\\n\\text{Im}{(T)} &=& \\mathbb{R}[x]\n\\end{array}\n\\]",
+    "crumbs": [
+      "Chapter 2 — Linear Algebra",
+      "Linear transformations, eigenvalues, inner products, and the spectral theorem"
+    ]
+  },
+  {
+    "objectID": "chapter-2/linear-transformations.html#representing-transformations-as-matrices",
+    "href": "chapter-2/linear-transformations.html#representing-transformations-as-matrices",
+    "title": "Linear transformations, eigenvalues, inner products, and the spectral theorem",
+    "section": "📌 Representing transformations as matrices",
+    "text": "📌 Representing transformations as matrices\nEvery linear transformation \\(T:V\\rightarrow W\\) can be uniquely represented as a matrix \\(A\\) with respect to a fixed basis of \\(V\\) and \\(W\\). The columns of the matrix \\(A\\) are the images of the basis vectors of \\(V\\) under the transformation \\(T\\), expressed in terms of the basis of \\(W\\).\nThis connects the topic of linear transformations to the topic of matrices, which we have discussed in the first section of this chapter. Matrix representations allow us to perform computations and analyze the properties of linear transformations using matrix algebra.\n\n\n\n\n\n\nNote\n\n\n\n🚨 A linear transformation and a matrix are not the same concept! The actions of a transformation can be described by a matrix when we have chosen a basis in both \\(V\\) and \\(W\\).\n\n\nSo let’s choose a basis for \\(V\\) and \\(W\\) and see how we can represent a linear transformation as a matrix.\n\\[\nV = \\{v_1, v_2, \\ldots, v_n\\} \\quad\\text{and}\\quad W = \\{w_1, w_2, \\ldots, w_m\\}\n\\]\nNow any vector \\(v\\in V\\) can be expressed as a linear combination of the basis vectors \\({\\bf v} = a_1v_1 + a_2v_2 + \\ldots + a_nv_n\\). The transformation \\(T\\) maps this vector to a vector in \\(W\\):\n\\[\n\\begin{array}{ll}\nT({\\bf v}) &=& T(a_1v_1 + a_2v_2 + \\ldots + a_nv_n)\\\\\n&=& a_1T(v_1) + a_2T(v_2) + \\ldots + a_nT(v_n)\\\\\n&=& a_1\\begin{pmatrix}b_{11}\\\\b_{21}\\\\\\vdots\\\\b_{m1}\\end{pmatrix} + a_2\\begin{pmatrix}b_{12}\\\\b_{22}\\\\\\vdots\\\\b_{m2}\\end{pmatrix} + \\ldots + a_n\\begin{pmatrix}b_{1n}\\\\b_{2n}\\\\\\vdots\\\\b_{mn}\\end{pmatrix} \\\\\n&=& \\begin{pmatrix}b_{11} & b_{12} & \\ldots & b_{1n}\\\\ b_{21} & b_{22} & \\ldots & b_{2n}\\\\ \\vdots & \\vdots & \\ddots & \\vdots\\\\ b_{m1} & b_{m2} & \\ldots & b_{mn}\\end{pmatrix}\\begin{pmatrix}a_1\\\\a_2\\\\\\vdots\\\\a_n\\end{pmatrix}\n\\end{array}\n\\]\n\n🏷️ Example\n\\[\nT:\\mathbb{R}^3\\rightarrow \\mathbb{R}^3\\qquad T\\begin{pmatrix}x\\\\y\\\\z\\end{pmatrix}=\\begin{pmatrix}x+y\\\\y+z\\\\x+z\\end{pmatrix} = \\begin{pmatrix}1 & 1 & 0\\\\0 & 1 & 1\\\\1 & 0 & 1\\end{pmatrix}\\begin{pmatrix}x\\\\y\\\\z\\end{pmatrix}\n\\]",
+    "crumbs": [
+      "Chapter 2 — Linear Algebra",
+      "Linear transformations, eigenvalues, inner products, and the spectral theorem"
+    ]
+  },
+  {
+    "objectID": "chapter-2/linear-transformations.html#eigenvectors-and-eigenvalues",
+    "href": "chapter-2/linear-transformations.html#eigenvectors-and-eigenvalues",
+    "title": "Linear transformations, eigenvalues, inner products, and the spectral theorem",
+    "section": "📌 Eigenvectors and eigenvalues",
+    "text": "📌 Eigenvectors and eigenvalues\nAn eigenvector of a linear transformation \\(T:V\\rightarrow V\\) is a non-zero vector \\(v\\in V\\) such that \\(T(v) = \\lambda v\\) for some scalar \\(\\lambda\\). The scalar \\(\\lambda\\) is called the eigenvalue corresponding to the eigenvector \\(v\\).\nNote that:\n\nThe domain and co-domain are the same vector space\nThe eigenvector does not change direction under the transformation, it is only scaled by the eigenvalue.\n\n\n🏷️ Example 1\n\\[\nT:\\mathbb{R}^2\\rightarrow \\mathbb{R}^2\\qquad T\\begin{pmatrix}x\\\\y\\end{pmatrix}=\\begin{pmatrix}2x\\\\3y\\end{pmatrix} = \\begin{pmatrix}2 & 0\\\\0 & 3\\end{pmatrix}\\begin{pmatrix}x\\\\y\\end{pmatrix}\n\\]\n\n\n👨‍💻 Eigenvectors and eigenvalues\nThe interactive demo below illustrates the effects of a transformation matrix by applying the transformation on a two-dimensional grid. It also shows the eigen vectors.",
+    "crumbs": [
+      "Chapter 2 — Linear Algebra",
+      "Linear transformations, eigenvalues, inner products, and the spectral theorem"
+    ]
+  },
+  {
+    "objectID": "chapter-2/linear-transformations.html#spectral-theorem",
+    "href": "chapter-2/linear-transformations.html#spectral-theorem",
+    "title": "Linear transformations, eigenvalues, inner products, and the spectral theorem",
+    "section": "📌 Spectral theorem",
+    "text": "📌 Spectral theorem\n\n👨‍💻 Spectral theorem",
     "crumbs": [
       "Chapter 2 — Linear Algebra",
       "Linear transformations, eigenvalues, inner products, and the spectral theorem"
@@ -113,7 +146,7 @@
     "href": "chapter-2/linear-transformations.html#summary-linear-algebra",
     "title": "Linear transformations, eigenvalues, inner products, and the spectral theorem",
     "section": "Summary linear algebra",
-    "text": "Summary linear algebra\n\\[\n👉\\ \\text{Matrix}:\\ A=\n\\begin{pmatrix}\na&b\\\\\nb&d\n\\end{pmatrix}\n\\]\n\\[\\Downarrow\\]\n\\[\n👉\\ \\text{Eigen values/eigen vectors}:\\ Ae_i=\\lambda_i e_i\n\\]\n\\[\\Downarrow\\]\n\\[\n👉\\ \\text{Spectral theorem}:\\ e_1\\perp e_2\n\\]\n\\[\\Downarrow\\]\n\\[\n👉\\ \\text{Orthonormal matrix}:\\ Q=(e_1\\ e_2)\n\\]\n\\[\\Downarrow\\]\n\\[\n👉\\ \\text{Diagonale matrix}:\\ \\Lambda=\n\\begin{pmatrix}\n\\lambda_1&0\\\\\n0&\\lambda_2\n\\end{pmatrix}\n\\]\n\\[\\Downarrow\\]\n\\[\n👉\\ \\text{Spectral decomposition}:\\ \\boxed{A=Q\\Lambda Q^T}\n\\]",
+    "text": "Summary linear algebra\n\\[\n👉\\ \\text{Linear transformation}\\ T:V\\rightarrow V\n\\]\n\\[\\Downarrow\\ \\text{Basis}\\]\n\\[\n👉\\ \\text{Matrix}:\\ A=\n\\begin{pmatrix}\na&b\\\\\nb&d\n\\end{pmatrix}\n\\]\n\\[\\Downarrow\\]\n\\[\n👉\\ \\text{Eigen values/eigen vectors}:\\ Ae_i=\\lambda_i e_i\n\\]\n\\[\\Downarrow\\]\n\\[\n👉\\ \\text{Spectral theorem}:\\ e_1\\perp e_2\n\\]\n\\[\\Downarrow\\]\n\\[\n👉\\ \\text{Orthonormal matrix}:\\ Q=(e_1\\ e_2)\n\\]\n\\[\\Downarrow\\]\n\\[\n👉\\ \\text{Diagonal matrix}:\\ \\Lambda=\n\\begin{pmatrix}\n\\lambda_1&0\\\\\n0&\\lambda_2\n\\end{pmatrix}\n\\]\n\\[\\Downarrow\\]\n\\[\n👉\\ \\text{Spectral decomposition}:\\ \\boxed{A=Q\\Lambda Q^T}\n\\]",
     "crumbs": [
       "Chapter 2 — Linear Algebra",
       "Linear transformations, eigenvalues, inner products, and the spectral theorem"
