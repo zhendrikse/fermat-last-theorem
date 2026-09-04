@@ -3,10 +3,8 @@ title: "Linear algebra"
 format: html
 ---
 
-The content of this chapter is designed to be self-contained, so you do not need any prior knowledge of linear algebra to follow along. However, some familiarity with basic algebra and calculus will be helpful.
-
 ::: {.callout-note}
-🚨 So why do we need this? 
+🚨 So why do we need linear algebra? 
 
 Mathematics is not only about numbers. It is also about **structure**. A large part of modern mathematics is concerned with understanding structures: what their essential properties are, how they relate to one another, and what can be learned from the transformations that preserve those properties. 
 

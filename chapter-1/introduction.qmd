@@ -1,9 +1,0 @@
----
-title: "Introduction"
-format: html
----
-
-Before embarking on our journey to understand Fermat's Last Theorem, it is important to establish a common ground for some mathematical concepts that will be used throughout this project, such
-as multivariate functions, differentiation and integration, and complex numbers.
-
-

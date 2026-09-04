@@ -4,9 +4,7 @@ format: html
 ---
 
 ::: {.callout-note}
-**Video:** [Groups, Homomorphisms, and Group Actions — 2:44:50](https://www.youtube.com/watch?v=9f-hGSh8lF0&t=9890s)
-
-This section corresponds to **2:44:50** in *Proof of Fermat Last Theorem FROM SCRATCH*.
+This section corresponds to [Groups, Homomorphisms, and Group Actions — 2:44:50](https://www.youtube.com/watch?v=9f-hGSh8lF0&t=9890s) in the video *Proof of Fermat Last Theorem FROM SCRATCH*. [Noah Jang](https://www.linkedin.com/in/noah-jang-2111392ba/) is the original creator of the exposition and examples referenced here. The interactive implementations, animations, additional explanations, and contextual material are my own work.
 :::
 
 # Groups

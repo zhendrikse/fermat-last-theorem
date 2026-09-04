@@ -3,12 +3,8 @@ title: "Linear transformations, eigenvalues, inner products, and the spectral th
 format: html
 ---
 
-### Copyright notice
-
 ::: {.callout-note}
-**Video:** [Linear Transformations, Eigenvalues, Inner Products, and the Spectral Theorem — 2:02:27](https://www.youtube.com/watch?v=9f-hGSh8lF0&t=7347s)
-
-This section corresponds to **1:07:03** in *Proof of Fermat Last Theorem FROM SCRATCH*.
+This section corresponds to [Linear Transformations, Eigenvalues, Inner Products, and the Spectral Theorem — 2:02:27](https://www.youtube.com/watch?v=9f-hGSh8lF0&t=7347s) in the video *Proof of Fermat Last Theorem FROM SCRATCH*. [Noah Jang](https://www.linkedin.com/in/noah-jang-2111392ba/) is the original creator of the exposition and examples referenced here. The interactive implementations, animations, additional explanations, and contextual material are my own work.
 :::
 
 # Linear transformations
@@ -88,12 +84,187 @@ is not a linear transformation.
 - The **kernel** of $T:V\rightarrow W$ is the subspace $\ker(T)=\{v\in V\ |\ T(v) = {\bf 0}_W\}$
 - The **iamge** of $T:V\rightarrow W$ is the subspace $\text{im}(T)=\{v\in V\ |\ T(v)\}$
 
+#### 🏷️ **Example 1**
 
-#### 🏷️ **Examples**
+$$
+T:\mathbb{R}^2 \rightarrow \mathbb{R}^2\qquad T\begin{pmatrix}x\\ y\end{pmatrix}:=\begin{pmatrix}x+y\\0\end{pmatrix}
+$$
 
+The kernel consist of all vectors mapped onto zero:
 
+$$
+T\begin{pmatrix}x\\ y\end{pmatrix}=\begin{pmatrix}x+y\\0\end{pmatrix}=\begin{pmatrix}0\\0\end{pmatrix}
+$$
 
-### 👨‍💻 Eigen vectors and eigen values 
+From this we can easily infer that
+
+$$
+\begin{array}{cc}
+\ker{(T)} &=& \bigg\{ \begin{pmatrix} x\\-x\end{pmatrix}\ \bigg|\ x\in\mathbb{R}\bigg\}
+\\
+\text{Im}{(T)} &=& \bigg\{ \begin{pmatrix} x\\0\end{pmatrix}\ \bigg|\ x\in\mathbb{R}\bigg\}
+\end{array}
+$$
+
+#### 🏷️ **Example 2**
+
+$$
+T:\mathbb{R}[x] \rightarrow \mathbb{R}[x] \qquad T(p)=p'
+$$
+
+So what are the kernel and image of this transformation? The kernel consists of all polynomials that are mapped onto zero, so $p'=0$. This means that the kernel consists of all constant polynomials:
+
+$$
+\begin{array}{cc}
+\ker{(T)} &=& \{ c\ |\ c\in\mathbb{R}\}
+\\
+\text{Im}{(T)} &=& \mathbb{R}[x]
+\end{array}
+$$
+
+## 📌 Representing transformations as matrices
+
+Every linear transformation $T:V\rightarrow W$ can be uniquely represented as a matrix $A$ with respect to a fixed basis of $V$ and $W$. The columns of the matrix $A$ are the images of the basis vectors of $V$ under the transformation $T$, expressed in terms of the basis of $W$.
+
+This connects the topic of linear transformations to the topic of matrices, which we have discussed in [the first section of this chapter](./matrices.html). Matrix representations allow us to perform computations and analyze the properties of linear transformations using matrix algebra.
+
+::: {.callout-note}
+🚨 A linear transformation and a matrix are not the same concept! The actions of a transformation can be described by a matrix when we have chosen a basis in both $V$ and $W$.
+:::
+
+So let's choose a basis for $V$ and $W$ and see how we can represent a linear transformation as a matrix.
+
+$$
+V = \{v_1, v_2, \ldots, v_n\} \quad\text{and}\quad W = \{w_1, w_2, \ldots, w_m\}
+$$
+
+Now any vector $v\in V$ can be expressed as a linear combination of the basis vectors ${\bf v} = a_1v_1 + a_2v_2 + \ldots + a_nv_n$. The transformation $T$ maps this vector to a vector in $W$:
+
+$$
+\begin{array}{ll}
+T({\bf v}) &=& T(a_1v_1 + a_2v_2 + \ldots + a_nv_n)\\ 
+&=& a_1T(v_1) + a_2T(v_2) + \ldots + a_nT(v_n)\\
+&=& a_1\begin{pmatrix}b_{11}\\b_{21}\\\vdots\\b_{m1}\end{pmatrix} + a_2\begin{pmatrix}b_{12}\\b_{22}\\\vdots\\b_{m2}\end{pmatrix} + \ldots + a_n\begin{pmatrix}b_{1n}\\b_{2n}\\\vdots\\b_{mn}\end{pmatrix} \\
+&=& \begin{pmatrix}b_{11} & b_{12} & \ldots & b_{1n}\\ b_{21} & b_{22} & \ldots & b_{2n}\\ \vdots & \vdots & \ddots & \vdots\\ b_{m1} & b_{m2} & \ldots & b_{mn}\end{pmatrix}\begin{pmatrix}a_1\\a_2\\\vdots\\a_n\end{pmatrix}
+\end{array}
+$$
+
+#### 🏷️ **Example**
+
+$$
+T:\mathbb{R}^3\rightarrow \mathbb{R}^3\qquad T\begin{pmatrix}x\\y\\z\end{pmatrix}=\begin{pmatrix}x+y\\y+z\\x+z\end{pmatrix} = \begin{pmatrix}1 & 1 & 0\\0 & 1 & 1\\1 & 0 & 1\end{pmatrix}\begin{pmatrix}x\\y\\z\end{pmatrix}
+$$
+
+## 📌 Eigenvectors and eigenvalues
+
+An **eigenvector** of a linear transformation $T:V\rightarrow V$ is a non-zero vector $v\in V$ such that $T(v) = \lambda v$ for some scalar $\lambda$. The scalar $\lambda$ is called the **eigenvalue** corresponding to the eigenvector $v$.
+
+Note that:
+
+- The domain and co-domain are the same vector space
+- The eigenvector does not change direction under the transformation, it is only scaled by the eigenvalue.
+
+#### 🏷️ **Example 1**
+
+$$
+T:\mathbb{R}^2\rightarrow \mathbb{R}^2\qquad T\begin{pmatrix}x\\y\end{pmatrix}=\begin{pmatrix}2x\\3y\end{pmatrix} = \begin{pmatrix}2 & 0\\0 & 3\end{pmatrix}\begin{pmatrix}x\\y\end{pmatrix}
+$$
+
+Then we have two eigenvectors:
+
+$$
+\begin{array}{l}
+e_1=\begin{pmatrix}1\\0\end{pmatrix}:\quad T(e_1)=\begin{pmatrix}2\\0\end{pmatrix} = 2e_1\quad\text{with eigenvalue}\ \lambda_1=2 \\
+e_2=\begin{pmatrix}0\\1\end{pmatrix}:\quad T(e_2)=\begin{pmatrix}0\\3\end{pmatrix} = 3e_2\quad\text{with eigenvalue}\ \lambda_2=3
+\end{array}
+$$
+
+#### 🏷️ **Example 2**: infinitely differentiable functions
+
+$$
+T:\mathbb{C}^\infty\rightarrow \mathbb{C}^\infty\qquad T(f)=f'
+$$
+
+Then we have the following eigenvectors:
+
+$$
+\begin{array}{c}
+e_1(x)=e^x:\quad T(e_1)=e^x = 1\cdot e_1\quad\text{with eigenvalue}\ \lambda_1=1 \\
+e_2(x)=e^{2x}:\quad T(e_2)=2e^{2x} = 2\cdot e_2\quad\text{with eigenvalue}\ \lambda_2=2 \\
+\vdots
+\end{array}
+$$
+
+## 📌 Eigenvectors and eigenvalues of a matrix
+
+- Let $A$ be an $n\times n$ (square) matrix. A non-zero vector $v\in F^n$ is an **eigenvector** of $A$ if there exists a scalar $\lambda$ such that $Av = \lambda v$. The scalar $\lambda$ is called an **eigenvalue** of $A$.
+- The polynomial $\chi_A(\lambda) = \det(A - \lambda I)$ is called the **characteristic polynomial** of $A$. The eigenvalues of $A$ are the roots of the characteristic polynomial.
+
+#### 🏷️ **Example**
+
+If we have the following matrix
+$$
+A = \begin{pmatrix}7 && 2\\-4 && 1\end{pmatrix}
+$$
+
+then we have the following eigenvectors and eigenvalues:
+
+$$
+\begin{array}{l}
+\begin{pmatrix}7 && 2\\-4 && 1\end{pmatrix}\begin{pmatrix}1\\-1\end{pmatrix} =\begin{pmatrix}5\\-5\end{pmatrix}=5\begin{pmatrix}1\\-1\end{pmatrix}\\
+\begin{pmatrix}7 && 2\\-4 && 1\end{pmatrix}\begin{pmatrix}1\\-2\end{pmatrix} =\begin{pmatrix}3\\-6\end{pmatrix}=3\begin{pmatrix}1\\-2\end{pmatrix}\\
+\end{array}
+$$
+
+Similarly, if we have the following matrix
+
+$$
+B = \begin{pmatrix} 8 && -13 && 7 \\3 && -6 && 5 \\ 3 && -9 && 8\end{pmatrix}
+$$
+
+Then:
+
+$$
+\begin{pmatrix} 8 && -13 && 7 \\3 && -6 && 5 \\ 3 && -9 && 8\end{pmatrix}\begin{pmatrix}1\\1\\1\end{pmatrix} =\begin{pmatrix}2\\2\\2\end{pmatrix}=2\begin{pmatrix}1\\1\\1\end{pmatrix}  
+$$
+
+---
+
+So, more generally, we can say that a vector $v$ is an eigenvector of a matrix $A$ if it satisfies the equation:
+
+$$
+Av = \lambda v\quad (v\in F^n, \lambda \in F, v\neq 0)
+$$
+
+Now we can apply the following trick:
+
+$$
+Av = \lambda v = \lambda Iv \implies Av - \lambda Iv = 0 \implies (A - \lambda I)v = 0
+$$
+
+Multiplying left and right by $(A - \lambda I)^{-1}$ gives us:
+
+$$
+(A - \lambda I)^{-1}(A - \lambda I)v = (A - \lambda I)^{-1}0 \implies v = 0
+$$
+
+However, we know that $v\neq 0$, so we must have that $(A - \lambda I)$ is not invertible. This means that $\boxed{\det(A - \lambda I) = 0}$ must hold when we look for eigenvalues.
+
+---
+
+Let's now revisit the example above and find the eigenvalues of the matrix $A$ by solving the characteristic polynomial:
+
+$$
+\begin{array}{l}
+\det(A-\lambda I) &=& \det\begin{pmatrix}7-\lambda && 2\\-4 && 1-\lambda\end{pmatrix} \\
+ &=& (7-\lambda)(1-\lambda) - (-8) \\
+ &=& \lambda^2 - 8\lambda + 15\\
+ &=& (\lambda - 3)(\lambda - 5) = 0
+\implies \boxed{\lambda_1 = 3, \lambda_2 = 5}
+\end{array}
+$$
+
+### 👨‍💻 Eigenvectors and eigenvalues
 
 The interactive demo below illustrates the effects of a transformation matrix by applying the transformation on a two-dimensional grid. It also shows the eigen vectors. 
 
@@ -102,6 +273,181 @@ The interactive demo below illustrates the effects of a transformation matrix by
 <script type="module" src="https://www.hendrikse.name/helion/examples/matrix_transformation.js"></script>
 ```
 
+## 📌 Trace of a matrix
+
+The **trace** of an $n\times n$ (square) matrix $A$, denoted $\text{trace}(A)$, is the sum of its diagonal elements:
+
+$$
+\text{trace}(A) = \sum_{i=1}^{n} A_{ii}
+$$
+
+#### 🏷️ **Example**
+
+$$
+B = \begin{pmatrix} 8 && -13 && 7 \\3 && -6 && 5 \\ 3 && -9 && 8\end{pmatrix} \implies \text{trace}(B) = 8 + (-6) + 8 = 10
+$$
+
+## 📌 Simlar matrices
+
+Let $A$ and $B$ be two $n\times n$ matrices over a field $F$. We say that $A$ and $B$ are **similar** if there exists an invertible matrix $P$ such that:
+
+$$
+B = P^{-1}AP
+$$
+
+If $A$ and $B$ are similar, they represent the same linear transformation under different bases. Consequently, they share the same invariants:
+
+- $\text{trace}(A) = \text{trace}(B)$
+- $\det(A) = \det(B)$
+- They have the same characteristic polynomial and  eigenvalues.
+
+Stated differently, if $A$ and $B$ are similar, they represent **the same linear transformation under different bases**, and hence they share the same eigenvalues.
+
+#### 🏷️ **Example**
+
+$$
+A=\begin{pmatrix} 2 && 1\\0 && 3\end{pmatrix} \sim B=\begin{pmatrix} 3 && 2\\0 && 2\end{pmatrix}\ \text{with}\ P = \begin{pmatrix} 1 && 1\\1 && 2\end{pmatrix}
+$$
+
+- Determinant the same?<br/> $\det(A) = 6 = \det(B)$ ꪜ
+- Trace the same? <br/> $\text{trace}(A) = 5 = \text{trace}(B)$ ꪜ
+- Characteristic polynomial the same? <br/> $\chi_A(\lambda) = \lambda^2 - 5\lambda + 6 = \chi_B(\lambda)$ ꪜ
+
+## 📌 Inner product
+
+An **inner product** on a complex vector space $V$ is a function $\langle\cdot,\cdot\rangle:\ V\times V\rightarrow\mathbb{C}$ that satisfies the following properties for all $x, y, z \in V$ and $c \in \mathbb{C}$:
+
+1. $\langle x, y \rangle = \overline{\langle y, x \rangle}$ (conjugate symmetry)
+2. $\langle cx, y \rangle = c\langle x, y \rangle$
+3. $\langle x + y, z \rangle = \langle x, z \rangle + \langle y, z \rangle$
+4. $\langle x, x \rangle \geq 0$ and $\langle x, x \rangle = 0 \Longleftrightarrow x = 0$
+
+::: {.callout-note}
+- The inner product is a _generalization_ of the dot product in Euclidean space (in physics often $\mathbb{R}^2$ or $\mathbb{R}^3$).
+- The inner product allows us to think about geometric properties of abstract vector spaces, including concepts such as length, 
+$$
+\|x\| = \sqrt{\langle x, x \rangle}
+$$
+angle, and orthogonality
+$$
+\cos \theta = \frac{\langle x, y \rangle}{\|x\| \|y\|} \implies x \perp y \iff \langle x, y \rangle = 0.
+$$
+::: 
+
+
+## 📌 Inner product spaces
+
+- An **inner product space** is a vector space $V$ equipped with an inner product $\langle\cdot,\cdot\rangle$. The inner product allows us to define geometric concepts such as length, angle, and orthogonality in the vector space.
+- The **norm** of a vector $x$ is defined as $\|x\| = \sqrt{\langle x, x \rangle}$.
+- Two vectors $x$ and $y$ are **orthogonal** if $\langle x, y \rangle = 0$.
+- An **orthonormal basis** is a basis consisting of mutually orthogonal vectors with norm equal to 1.
+
+#### 🏷️ **Example 1**
+
+$$
+V = \mathbb{R}^n\quad\text{with the standard inner product}\quad \langle x, y \rangle = x^Ty
+$$
+
+We can check the four properties of the inner product for this example:
+
+- Conjugate symmetry: $\langle x, y \rangle = x^Ty = y^Tx = \langle y, x \rangle$ ꪜ
+- Linearity in the first argument: $\langle cx, y \rangle = (cx)^Ty = c(x^Ty) = c\langle x, y \rangle$ ꪜ
+- Additivity in the first argument: $\langle x + y, z \rangle = (x + y)^Tz = x^Tz + y^Tz = \langle x, z \rangle + \langle y, z \rangle$ ꪜ
+- Positive-definiteness: $\langle x, x \rangle = x^Tx = \sum_{i=1}^{n} x_i^2 \geq 0$ ꪜ
+
+
+#### 🏷️ **Example 2**
+
+Let's consider the vector space of all continuous functions on the interval $-\pi\leq x\leq\pi$:
+
+$$
+V=C[-\pi, \pi]\ \text{with}\ \langle f,g\rangle = \int_{-\pi}^{\pi}f(x)g(x)dx
+$$
+
+So why is this an inner product?
+
+- $\langle f,g\rangle = \overline{\langle g,f \rangle}$ holds because complex conjugation doesn't do anything on real numbers ꪜ
+- $\langle cf_1 + f_2,g\rangle = \int_{-\pi}^{\pi}(cf_1 + f_2)gdx = c\int_{-\pi}^{\pi}f_1 gdx + \int_{-\pi}^{\pi}f_2 gdx = c \langle f_1, g\rangle + \langle f_2,g\rangle$ ꪜ 
+- $\langle f,f\rangle \geq 0\ \text{and}\ \langle f,f\rangle = 0 \implies f=0$ ꪜ
+
+As a consequence, we can show that $\cos x$ and $\sin x$ are perpendicular in this vector space:
+
+$$
+\langle \cos x, \sin x \rangle = \int_{-\pi}^{\pi} \cos x \sin x dx = \int_{-\pi}^{\pi}\frac{\sin 2x}{2}dx = \bigg[ -\frac{\cos 2x}{4} \bigg]^\pi_{-\pi} = 0
+$$
+
+## 📌 Direct sum of subspaces
+
+Let $W_1$ and $W_2$ be subspaces of a vector space $V$. We write
+$$
+V = W_1 \oplus W_2
+$$
+if
+$$
+V = W_1 + W_2\quad\text{and}\quad W_1 \cap W_2 = \{0\}
+$$
+
+Equivalently, every vector $v\in V$ can be written uniquely as
+$$
+v = w_1 + w_2\qquad (w_1\in W_1, w_2\in W_2)
+$$
+
+If $V$ is an inner product space and $W_1 \perp W_2$, we call this an **orthogonal direct sum**.
+
+::: {.callout-note}
+Why do we need this?
+
+This way, a vector space can be broken up into several independent components/subspaces.
+:::
+
+#### 🏷️ **Example 1**
+$$
+\mathbb{R}^2: \begin{pmatrix}x\\0\end{pmatrix} + \begin{pmatrix}0\\y\end{pmatrix} \implies \mathbb{R}^2 = \left\{\begin{pmatrix}x\\0\end{pmatrix}\bigg|\ x\in\mathbb{R}\right\}
+\oplus\left\{\begin{pmatrix}0\\y\end{pmatrix}\bigg|\ y\in\mathbb{R}\right\}
+$$
+
+#### 🏷️ **Example 2**
+
+$$
+P_2(\mathbb{R}) = \text{span}(1) +  \text{span}(x) +  \text{span}(x^2)
+$$
+
+#### 🏷️ **Example 3**
+$$
+\mathbb{R}^2 = \left\{x\begin{pmatrix}1\\-1\end{pmatrix}\bigg|\ x\in\mathbb{R}\right\}
+\oplus\left\{y\begin{pmatrix}1\\1\end{pmatrix}\bigg|\ y\in\mathbb{R}\right\}
+$$
+
+This is true, since every vector $\begin{pmatrix}x\\y\end{pmatrix}$ can be written as
+$$
+\begin{pmatrix}x\\y\end{pmatrix} = \frac{x + y}{2}\begin{pmatrix}1\\1\end{pmatrix}+\frac{x - y}{2}\begin{pmatrix}1\\-1\end{pmatrix} 
+$$
+
+Moreover, both subspaces only share zero vectors ꪜ
+
+## 📌 Spectral theorem (simultaneous diagonalization)
+
+Let $V$ be a finite-dimensional complex inner product space, and let $\{T_i\}$ be a family of linear operators on V.
+
+If 
+
+- each $T_i$ is **self-adjoint**:
+$$
+\langle T_ix, y\rangle = \langle x, T_i y \rangle\quad \forall x, y\in V,
+$$
+- the operators **commute**:
+$$
+T_iT_j = T_jT_i\quad \forall i, j,
+$$
+
+the there exists an orthonormal basis of $V$ consisting of simulteneous eigenvectos for all $T_i$.
+
+::: {.callout-note}
+Why do we need this?
+
+This will come back once we arrive at modular forms.
+It is very powerful, as per this theorem there exists a single orthonormal basis that diagonalizes a whole family of different operators at the same time, and thus can be understood using one common basis.
+:::
 
 ### 👨‍💻 Spectral theorem 
 
@@ -113,6 +459,12 @@ The interactive demo below illustrates the effects of a transformation matrix by
 
 
 ## Summary linear algebra
+
+$$
+👉\ \text{Linear transformation}\ T:V\rightarrow V
+$$
+
+$$\Downarrow\ \text{Basis}$$
 
 $$
 👉\ \text{Matrix}:\ A=
@@ -143,7 +495,7 @@ $$
 $$\Downarrow$$
 
 $$
-👉\ \text{Diagonale matrix}:\ \Lambda=
+👉\ \text{Diagonal matrix}:\ \Lambda=
 \begin{pmatrix}
 \lambda_1&0\\
 0&\lambda_2

@@ -4,10 +4,9 @@ format: html
 ---
 
 ::: {.callout-note}
-**Video:** [Vector Spaces, Basis, and Dimension — 1:40:28](https://www.youtube.com/watch?v=9f-hGSh8lF0&t=6028s)
-
-This section corresponds to **1:40:28** in *Proof of Fermat Last Theorem FROM SCRATCH*.
+This section corresponds to [Vector Spaces, Basis, and Dimension — 1:40:28](https://www.youtube.com/watch?v=9f-hGSh8lF0&t=6028s) in the video *Proof of Fermat Last Theorem FROM SCRATCH*. [Noah Jang](https://www.linkedin.com/in/noah-jang-2111392ba/) is the original creator of the exposition and examples referenced here. The interactive implementations, animations, additional explanations, and contextual material are my own work.
 :::
+
 
 # Vector spaces
 

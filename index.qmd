@@ -4,11 +4,9 @@ format: html
 ---
 
 ::: {.callout-note}
-This site is heavily based on the exposition and examples in Noah Jang's video *Proof of Fermat Last Theorem FROM SCRATCH*.
+[Noah Jang](https://www.linkedin.com/in/noah-jang-2111392ba/) is the original creator of the exposition and examples referenced here. The interactive implementations, animations, additional explanations, and contextual material on this site are my own work.
 
-This website is an independent interactive/visual companion, with additional explanations, context, and JavaScript demonstrations.
-
-**Video:** [Proof of Fermat Last Theorem FROM SCRATCH](https://www.youtube.com/watch?v=9f-hGSh8lF0)
+The original exposition and examples can be found back in Noah Jang's video [Proof of Fermat Last Theorem FROM SCRATCH](https://www.youtube.com/watch?v=9f-hGSh8lF0).
 :::
 
 ---

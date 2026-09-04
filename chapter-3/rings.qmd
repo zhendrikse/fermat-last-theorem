@@ -4,7 +4,5 @@ format: html
 ---
 
 ::: {.callout-note}
-**Video:** [Rings, Fields, Ideals, and Unique Factorization — 3:36:07](https://www.youtube.com/watch?v=9f-hGSh8lF0&t=12967s)
-
-This section corresponds to **3:36:07** in *Proof of Fermat Last Theorem FROM SCRATCH*.
+This section corresponds to [Rings, Fields, Ideals, and Unique Factorization — 3:36:07](https://www.youtube.com/watch?v=9f-hGSh8lF0&t=12967s) in the video *Proof of Fermat Last Theorem FROM SCRATCH*. [Noah Jang](https://www.linkedin.com/in/noah-jang-2111392ba/) is the original creator of the exposition and examples referenced here. The interactive implementations, animations, additional explanations, and contextual material are my own work.
 :::
