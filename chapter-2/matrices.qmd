@@ -61,7 +61,7 @@ i\sqrt{3} && -7
 \end{pmatrix}
 $$
 
-## Matrix: Operations
+### 📌 Matrix: Operations
 
 - **Addition**: 
 $$
@@ -250,7 +250,7 @@ $$
 \end{pmatrix}
 $$ 
 
-## 📌 Matrix: Types
+### 📌 Matrix: Types
 
 - **Square Matrix**: A matrix where the number of rows equals the number of columns $m=n$.
 
@@ -342,7 +342,9 @@ c && d
 \end{pmatrix},
 $$
 
-## 📌 Matrices and Systems of Linear Equations
+## Linear systems
+
+### 📌 Matrices and Systems of Linear Equations
 
 A system of linear equations can be written as a single matrix equation
 
@@ -425,7 +427,7 @@ $$
 AB=BA=I_n
 $$
 
-## 📌 Invertible Matrices
+### 📌 Invertible Matrices
 
 A square matrix $A$ is **invertible** if an **inverse** matrix $A^{-1}$ exists that satisfies
 
@@ -641,7 +643,9 @@ This quantity is called the determinant❗
 
 The definition of a determinant can be generalized to any $n \times n$ matrix, but we will refrain from doing so here. Instead, we will focus on the $2 \times 2$ case, which is sufficient for our purposes.
 
-## 📌 The Determinant
+## Determinants
+
+### 📌 The Determinant
 
 A **determinant** is a function
 $$
@@ -662,7 +666,7 @@ $$
 👉\ \det\begin{pmatrix} a && b \\ c && d\end{pmatrix}=ad-bc
 $$
 
-## 📌 Matrix Groups: Notation
+### 📌 Matrix Groups: Notation
 
 For a field $F$ and a positive integer $n$:
 

@@ -8,13 +8,13 @@ This section corresponds to [Vector Spaces, Basis, and Dimension — 1:40:28](ht
 :::
 
 
-# Vector spaces
+## Vector spaces
 
 We stated earlier that mathematics is not only about numbers, 
 it is also about structure. A vector space is one of the most important
 examples of such a structure.
 
-## 📌 Vector Space: Axioms
+### 📌 Vector Space: Axioms
 
 A **vector space** $V$ over a field $F$ is a set with addition ($+, V\times V \rightarrow V$) 
 and scalar multiplication ($\cdot, V\times F \rightarrow V$)
@@ -78,7 +78,7 @@ Also, the set of al continuous functions $C_0(\mathbb{R})$ is a vector space, as
 However, $\mathbb{N}$ is _not_ a vector space, as 0 is not in the set. Also, if we pick any natural number,
 the negative is _not_ in the set.
 
-## 📌 Subspace
+### 📌 Subspace
 
 A **subspace** of a vector space $V$ is a non-empty subset $W$ of $V$ that is itself a vector
 space under the operations inherited from $V$.
@@ -104,7 +104,7 @@ Consequently, we cannot call it a subspace of $\mathbb{R}^2$ either!
 Another example is the set of all real coefficient polynomials with maximum degree two, $P_2[\mathbb{R}]$.
 This is a vector space as well as a subspace of all real coefficient polynomials.
 
-## 📌 Linear combination
+### 📌 Linear combination
 
 We are slowly moving towards the concept of a basis.
 So what is a basis? A basis is one of the most important ideas
@@ -205,7 +205,7 @@ $$
 
 The answer is no, as the third coordinate will always remain zero. So $\begin{pmatrix} 3 \\ 4 \\ 5 \end{pmatrix}$ is _not_ a linear combination of $S$.
 
-## 📌 Span
+### 📌 Span
 
 Let $S$ be a non-empty subset of a vector space $V$. 
 The **span** of $S$, denoted by $\text{span}(S)$, is the
@@ -219,7 +219,7 @@ a_1v_1+\cdots+a_n v_n\ |\ n \geq 1,\ v_i\in S,\ a_i \in F
 \}
 $$
 
-## 📌 Linear independence and dependence
+### 📌 Linear independence and dependence
 
 A set of vectors $S=\{ v_1, v_2,\ \cdots,\ v_k\}$ is 
 **linearly independent** if the only solution to the equation 
@@ -267,7 +267,7 @@ $$
 
 Now finally we can define the concepts of basis and dimension.
 
-## 📌 Basis and dimension {#basis-dimension}
+## Basis and dimension
 
 - A **basis** for a vector space $V$ is a linearly independent subset of $V$ that spans $V$
 

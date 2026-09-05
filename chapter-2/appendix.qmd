@@ -1,0 +1,156 @@
+---
+title: "Optional further context &mdash; Matrix exponentials, determinants, and Lie algebras"
+format: html
+---
+
+::: {.callout-note}
+This contents of this section are taken from the video [Matrix exponentials, determinants, and Lie algebras](https://www.youtube.com/watch?v=Iz7PSlTpjyI) by [Michael Penn](https://www.youtube.com/@MichaelPennMath). Although this section is not needed in the context of the FLT proof, it demonstrates a nice application of many of the concepts dicussed in this chapter on linear algebra nonetheless.
+:::
+
+# 🎯 Goal
+
+Suppose that $A$ is an $n\times n$ matrix. Then
+
+$$
+\boxed{e^{\text{tr}(A)} = \det(e^A)}
+$$
+
+where
+
+$$
+e^A = I + A + \frac{1}{2!}A^2 + \frac{1}{3!}A^3 + \ldots
+$$
+
+# 🏷️ Example
+
+$$
+A=\begin{pmatrix}4 && 2 \\ 1 && 5\end{pmatrix}
+$$
+
+## Find the trace 
+
+Let's first calculate the left-hand side of the equation.
+
+$$
+\boxed{\text{tr}(A) = 9 \implies e^{\text{tr}(A)} = e^9}
+$$
+
+## Find the determinant
+
+### Eigenvalues and eigenvectors
+
+Next, let's calculate the right-hand side of the equation. We do this by finding the eigenvalues and eigenvectors first, as it allows us to diagonalize A and carry out the exponentiation much easier.
+
+The characteristic polynomial for this matrix $A$ is:
+
+$$
+\begin{array}{ll}
+\chi_A(x) &=& \det(A- xI)\\
+&=& \det \begin{pmatrix} 4 - x && 1 \\ 2 && 5 - x \end{pmatrix} \\
+&=& (4-x)(5-x) -2 \\
+&=& x^2 -9x + 18 \\
+&=& (x-3)(x-6)
+\end{array}
+$$
+
+So our eigenvalues are: $\boxed{\lambda_1=3, \lambda_2=6}$
+
+Next, let's find our eigenvectors. This is equivalent to determining the kernel of $(A - \lambda I)$ for each of the two eigenvalues as:
+
+$$
+Av=\lambda v \Rightarrow (A - \lambda I)v = 0 \Rightarrow v\in \ker(A - \lambda I)
+$$
+
+So for $\lambda_1$ we have
+
+$$
+\begin{array}{ll}
+\ker(A - \lambda_1 I) &=& \ker \begin{pmatrix} 4 - 3 && 1 \\ 2 && 5 - 3 \end{pmatrix}\\
+&=& \ker \begin{pmatrix} 1 && 1 \\ 2 && 2  \end{pmatrix} \\
+&=& \ker \begin{pmatrix} 1 && 1 \\ 0 && 0  \end{pmatrix} \Rightarrow \begin{pmatrix} 1 && 1 \\ 0 && 0  \end{pmatrix}\begin{pmatrix} x \\ y  \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \end{pmatrix}
+\end{array}
+$$
+
+This implies that $x = -y$, so we have $\boxed{\overrightarrow{e_1} = \begin{pmatrix} 1 \\ -1 \end{pmatrix}}$.
+
+Analogously, we find that $\boxed{\overrightarrow{e_2} = \begin{pmatrix} 1 \\ 2 \end{pmatrix}}$.
+
+Conseqently, the diagonalizing matrix $P$ becomes
+
+$$
+P = (\overrightarrow{e_1}\ \overrightarrow{e_2}) = \begin{pmatrix} 1 & 1 \\ -1 & 2 \end{pmatrix} \Rightarrow P^{-1} =\frac{1}{3} \begin{pmatrix} 2 & -1 \\ 1 & 1 \end{pmatrix}
+$$
+
+So
+
+$$
+PAP^{-1} = \begin{pmatrix} 3 & 0 \\ 0 & 6 \end{pmatrix} \Rightarrow A = P\begin{pmatrix} 3 & 0 \\ 0 & 6 \end{pmatrix}P^{-1} \Rightarrow
+A^n = P\begin{pmatrix} 3 & 0 \\ 0 & 6 \end{pmatrix}^n P^{-1}
+$$
+
+Now we can move on to calculate the exponential:
+
+$$
+\begin{array}{ll}
+e^A &=& \sum_{n=0}^{\infty} \frac{1}{n!}A^n \\
+    &=& P\bigg[\sum_{n=0}^{\infty}\begin{pmatrix} 3^n & 0 \\ 0 & 6^n \end{pmatrix}\bigg] P^{-1} \\
+    &=& P\begin{pmatrix} e^3 & 0 \\ 0 & e^6 \end{pmatrix} P^{-1} \\
+    &=& \begin{pmatrix} 1 & 1 \\ -1 & 2 \end{pmatrix}\begin{pmatrix} e^3 & 0 \\ 0 & e^6 \end{pmatrix}\frac{1}{3} \begin{pmatrix} 2 & -1 \\ 1 & 1 \end{pmatrix} \\
+    &=& \frac{1}{3}\begin{pmatrix} e^3 & e^6 \\ -e^3 & 2e^6 \end{pmatrix}\begin{pmatrix} 2 & -1 \\ 1 & 1 \end{pmatrix} \\
+    &=& \frac{1}{3}\begin{pmatrix} 2e^3 + e^6 & -e^3+e^6 \\ -2e^3+2e^6 & e^3+2e^6 \end{pmatrix}
+\end{array}
+$$
+
+Finally, we can caculate the determinant:
+
+$$
+\begin{array}{ll}
+\det(e^A) &=& \frac{1}{9}\big((2e^3 + e^6)(e^3+2e^6)+(e^3-e^6)(-2e^3+2e^6) \big) \\
+&=& \frac{1}{9}(2e^6+4e^9 +e^9+2e^{12} -2e^6+2e^9+2e^9-2e^{12} ) \\
+&=& e^9 = e^{\text{tr}(A)}\ ꪜ
+\end{array}
+$$
+
+# What is going on?
+
+📌 $\text{tr}(A)$ is the sum of eigenvalues of $A$.<br/>
+📌 $\det(A)$ is the product of eigenvalues of $A$.<br/>
+📌 $\lambda$ is an eigenvalue of $A \Longleftrightarrow e^\lambda$ is an eigenvector of $e^A$.<br/>
+
+From these it quickly follows that $e^{\text{tr}(A)} = \det(e^A)$.
+
+The proof these statements in general is a bit tricky, so we limit ourselves to the diagonalizable case here, with the following lemma (that can easily be proven using the definition of matrix multiplication):
+
+$$
+\text{tr}(xy)=\text{tr}(yx)
+$$
+
+Let's assume that $A$ is diagonalizable:
+
+$$
+PAP^{-1} = \begin{pmatrix} \lambda_1 & 0 & 0 \\ 0 & \ddots & 0 \\ 0 & 0 & \lambda_n\end{pmatrix} 
+$$
+
+Then we can write
+
+$$
+\text{tr}(A) = \text{tr}\left (P\begin{pmatrix} \lambda_1 & 0 & 0 \\ 0 & \ddots & 0 \\ 0 & 0 & \lambda_n\end{pmatrix}P^{-1}\right )
+$$
+
+Using the above lemma, we can commute the $P$ and $P^{-1}$, so $\text{tr}(A) = \lambda_1+\ldots+\lambda_n$. This gives us
+
+$$
+e^{\text{tr}(A)}=e^{\lambda_1+\ldots+\lambda_n}=\boxed{e^{\lambda_1} \ldots e^{\lambda_n}}
+$$
+
+At the same time,
+
+$$
+e^A = P\begin{pmatrix} e^{\lambda_1} & 0 & 0 \\ 0 & \ddots & 0 \\ 0 & 0 & e^{\lambda_n}\end{pmatrix}P^{-1}
+$$
+
+from which follows
+
+$$
+\det(e^A)=\det(P)\left [e^{\lambda_1}\ldots e^{\lambda_n}\right ]\det(P^{-1}) = \boxed{e^{\lambda_1}\ldots e^{\lambda_n}}
+$$

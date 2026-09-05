@@ -192,7 +192,7 @@ Two vectors are orthogonal when $u\cdot v=0$. For functions this can be defined 
 $$
 \langle f,g\rangle
 =
-\int_{-\pi}^{\pi}f(x)g(x),dx.
+\int_{-\pi}^{\pi}f(x)g(x)dx.
 $$
 
 With this definition $\cos x$ and $\sin x$ turn out to be perpendicular to one another:
@@ -200,7 +200,7 @@ With this definition $\cos x$ and $\sin x$ turn out to be perpendicular to one a
 $$
 \langle\cos x,\sin x\rangle
 =
-\int_{-\pi}^{\pi}\cos x\sin x,dx
+\int_{-\pi}^{\pi}\cos x\sin x dx
 =0.
 $$
 

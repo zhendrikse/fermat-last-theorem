@@ -7,7 +7,9 @@ format: html
 This section corresponds to [Basic Calculus and Complex Analysis — 38:59](https://www.youtube.com/watch?v=9f-hGSh8lF0&t=2339s) in the video *Proof of Fermat Last Theorem FROM SCRATCH*. [Noah Jang](https://www.linkedin.com/in/noah-jang-2111392ba/) is the original creator of the exposition and examples referenced here. The interactive implementations, animations, additional explanations, and contextual material are my own work.
 :::
 
-## 📌 Taylor series {#taylor-series}
+## Basic calculus
+
+### 📌 Taylor series {#taylor-series}
 
 A Taylor series represents a function as an infinite polynomial. With infinitely many terms, it equals the original function within its interval of convergence.
 
@@ -39,7 +41,7 @@ Although this won't be used frequently in the forthccoming chapters, it appears 
 <script type="module" src="https://www.hendrikse.name/helion/examples/taylor_expansion.js"></script>
 ```
 
-## 📌 Multivariable functions
+### 📌 Multivariable functions
 
 A multivariable function is a map 
 
@@ -61,7 +63,7 @@ A multivariable function that depends on two variables can naturally be visualiz
 <p style="clear: all"></p>
 Another examples may be choosen from the drop-down menu. The formula of the selected function can be seen in the title.
 
-## 📌 Partial derivative
+### 📌 Partial derivative
 
 For functions that depend on more than one variable, we would like to be able to analyse the rate of change in a similar way to that of functions that depend on one variable only. As multivariate functions have several variables, each direction generally has its own rate of change. As a consequence, each direction has its own derivative. When looking for the rate of change in a particular direction, we leave the other variables intentionally unchanged. This means that all the other variables but the one we are interested in can then be treated as constants. 
 
@@ -107,7 +109,7 @@ $$
 $$
 
 
-## 📌 Eurler's formula and $e^{i\theta}$
+### 📌 Eurler's formula and $e^{i\theta}$
 
 For any real number $\theta$,
 
@@ -154,7 +156,7 @@ e^{i\theta} =
 e^{i(\theta + 2n\pi)},\quad n\in\mathbb{N}.
 $$
 
-## 📌 The $n$-th roots of unity
+### 📌 The $n$-th roots of unity
 
 ::: {.callout-note}
 🚨 So why do we need this? 
@@ -211,7 +213,9 @@ Geometrically, the roots of unity constitute the vertices of a regular $n$-gon s
 <script type="module" src="https://www.hendrikse.name/helion/examples/roots_of_unity.js"></script>
 ```
 
-## 📌 Complex functions and holomorphy
+## Complex analysis
+
+### 📌 Complex functions and holomorphy
 
 A complex function is a map 
 $$

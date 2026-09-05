@@ -7,11 +7,11 @@ format: html
 This section corresponds to [Linear Transformations, Eigenvalues, Inner Products, and the Spectral Theorem — 2:02:27](https://www.youtube.com/watch?v=9f-hGSh8lF0&t=7347s) in the video *Proof of Fermat Last Theorem FROM SCRATCH*. [Noah Jang](https://www.linkedin.com/in/noah-jang-2111392ba/) is the original creator of the exposition and examples referenced here. The interactive implementations, animations, additional explanations, and contextual material are my own work.
 :::
 
-# Linear transformations
+## Linear transformations
 
 So far, we have mostly talked about a single vector space. Now we move on to functions defined between distinct vector spaces. Of all functions possible between two vector spaces, some functions are especially nice, and these are called linear transformations.
 
-## 📌 Linear Transformations
+### 📌 Linear Transformations
 
 A **linear transformation** is a function $T:\ V\rightarrow W$ that preserves vector space operations:
 
@@ -79,7 +79,7 @@ $$
 is not a linear transformation.
 
 
-## 📌 Kernel and image
+### 📌 Kernel and image
 
 - The **kernel** of $T:V\rightarrow W$ is the subspace $\ker(T)=\{v\in V\ |\ T(v) = {\bf 0}_W\}$
 - The **iamge** of $T:V\rightarrow W$ is the subspace $\text{im}(T)=\{v\in V\ |\ T(v)\}$
@@ -122,7 +122,7 @@ $$
 \end{array}
 $$
 
-## 📌 Representing transformations as matrices
+### 📌 Representing transformations as matrices
 
 Every linear transformation $T:V\rightarrow W$ can be uniquely represented as a matrix $A$ with respect to a fixed basis of $V$ and $W$. The columns of the matrix $A$ are the images of the basis vectors of $V$ under the transformation $T$, expressed in terms of the basis of $W$.
 
@@ -155,7 +155,9 @@ $$
 T:\mathbb{R}^3\rightarrow \mathbb{R}^3\qquad T\begin{pmatrix}x\\y\\z\end{pmatrix}=\begin{pmatrix}x+y\\y+z\\x+z\end{pmatrix} = \begin{pmatrix}1 & 1 & 0\\0 & 1 & 1\\1 & 0 & 1\end{pmatrix}\begin{pmatrix}x\\y\\z\end{pmatrix}
 $$
 
-## 📌 Eigenvectors and eigenvalues
+## Eigenvalues
+
+### 📌 Eigenvectors and eigenvalues
 
 An **eigenvector** of a linear transformation $T:V\rightarrow V$ is a non-zero vector $v\in V$ such that $T(v) = \lambda v$ for some scalar $\lambda$. The scalar $\lambda$ is called the **eigenvalue** corresponding to the eigenvector $v$.
 
@@ -195,7 +197,7 @@ e_2(x)=e^{2x}:\quad T(e_2)=2e^{2x} = 2\cdot e_2\quad\text{with eigenvalue}\ \lam
 \end{array}
 $$
 
-## 📌 Eigenvectors and eigenvalues of a matrix
+### 📌 Eigenvectors and eigenvalues of a matrix
 
 - Let $A$ be an $n\times n$ (square) matrix. A non-zero vector $v\in F^n$ is an **eigenvector** of $A$ if there exists a scalar $\lambda$ such that $Av = \lambda v$. The scalar $\lambda$ is called an **eigenvalue** of $A$.
 - The polynomial $\chi_A(\lambda) = \det(A - \lambda I)$ is called the **characteristic polynomial** of $A$. The eigenvalues of $A$ are the roots of the characteristic polynomial.
@@ -273,7 +275,7 @@ The interactive demo below illustrates the effects of a transformation matrix by
 <script type="module" src="https://www.hendrikse.name/helion/examples/matrix_transformation.js"></script>
 ```
 
-## 📌 Trace of a matrix
+### 📌 Trace of a matrix
 
 The **trace** of an $n\times n$ (square) matrix $A$, denoted $\text{trace}(A)$, is the sum of its diagonal elements:
 
@@ -287,7 +289,7 @@ $$
 B = \begin{pmatrix} 8 && -13 && 7 \\3 && -6 && 5 \\ 3 && -9 && 8\end{pmatrix} \implies \text{trace}(B) = 8 + (-6) + 8 = 10
 $$
 
-## 📌 Simlar matrices
+### 📌 Simlar matrices
 
 Let $A$ and $B$ be two $n\times n$ matrices over a field $F$. We say that $A$ and $B$ are **similar** if there exists an invertible matrix $P$ such that:
 
@@ -313,7 +315,9 @@ $$
 - Trace the same? <br/> $\text{trace}(A) = 5 = \text{trace}(B)$ ꪜ
 - Characteristic polynomial the same? <br/> $\chi_A(\lambda) = \lambda^2 - 5\lambda + 6 = \chi_B(\lambda)$ ꪜ
 
-## 📌 Inner product
+## Inner products
+
+### 📌 Inner product
 
 An **inner product** on a complex vector space $V$ is a function $\langle\cdot,\cdot\rangle:\ V\times V\rightarrow\mathbb{C}$ that satisfies the following properties for all $x, y, z \in V$ and $c \in \mathbb{C}$:
 
@@ -334,8 +338,7 @@ $$
 $$
 ::: 
 
-
-## 📌 Inner product spaces
+### 📌 Inner product spaces
 
 - An **inner product space** is a vector space $V$ equipped with an inner product $\langle\cdot,\cdot\rangle$. The inner product allows us to define geometric concepts such as length, angle, and orthogonality in the vector space.
 - The **norm** of a vector $x$ is defined as $\|x\| = \sqrt{\langle x, x \rangle}$.
@@ -376,7 +379,7 @@ $$
 \langle \cos x, \sin x \rangle = \int_{-\pi}^{\pi} \cos x \sin x dx = \int_{-\pi}^{\pi}\frac{\sin 2x}{2}dx = \bigg[ -\frac{\cos 2x}{4} \bigg]^\pi_{-\pi} = 0
 $$
 
-## 📌 Direct sum of subspaces
+### 📌 Direct sum of subspaces
 
 Let $W_1$ and $W_2$ be subspaces of a vector space $V$. We write
 $$
@@ -401,6 +404,7 @@ This way, a vector space can be broken up into several independent components/su
 :::
 
 #### 🏷️ **Example 1**
+
 $$
 \mathbb{R}^2: \begin{pmatrix}x\\0\end{pmatrix} + \begin{pmatrix}0\\y\end{pmatrix} \implies \mathbb{R}^2 = \left\{\begin{pmatrix}x\\0\end{pmatrix}\bigg|\ x\in\mathbb{R}\right\}
 \oplus\left\{\begin{pmatrix}0\\y\end{pmatrix}\bigg|\ y\in\mathbb{R}\right\}
@@ -425,7 +429,7 @@ $$
 
 Moreover, both subspaces only share zero vectors ꪜ
 
-## 📌 Spectral theorem (simultaneous diagonalization)
+## Spectral theorem (simultaneous diagonalization)
 
 Let $V$ be a finite-dimensional complex inner product space, and let $\{T_i\}$ be a family of linear operators on V.
 
