@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Linear transformations, eigenvalues, inner products, and the spectral theorem – Fermat’s Last Theorem — From Scratch</title>
+<title>Optional further context — Matrix exponentials, determinants, and Lie algebras – Fermat's Last Theorem — From Scratch</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -36,8 +36,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../chapter-2/appendix.html" rel="next">
-<link href="../chapter-2/vector-spaces.html" rel="prev">
+<link href="../chapter-3/abstract-algebra.html" rel="next">
+<link href="../chapter-2/linear-transformations.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -280,7 +280,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapter-2/linear-algebra.html">Chapter 2 — Linear Algebra</a></li><li class="breadcrumb-item"><a href="../chapter-2/linear-transformations.html">Linear transformations, eigenvalues, inner products, and the spectral theorem</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapter-2/linear-algebra.html">Chapter 2 — Linear Algebra</a></li><li class="breadcrumb-item"><a href="../chapter-2/appendix.html">Optional further context — Matrix exponentials, determinants, and Lie algebras</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -372,13 +372,13 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapter-2/linear-transformations.html" class="sidebar-item-text sidebar-link active">
+  <a href="../chapter-2/linear-transformations.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Linear transformations, eigenvalues, inner products, and the spectral theorem</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapter-2/appendix.html" class="sidebar-item-text sidebar-link">
+  <a href="../chapter-2/appendix.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Optional further context — Matrix exponentials, determinants, and Lie algebras</span></a>
   </div>
 </li>
@@ -504,31 +504,16 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#linear-transformations" id="toc-linear-transformations" class="nav-link active" data-scroll-target="#linear-transformations">Linear transformations</a>
+  <li><a href="#goal" id="toc-goal" class="nav-link active" data-scroll-target="#goal">🎯 Goal</a></li>
+  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example">🏷️ Example</a>
   <ul class="collapse">
-  <li><a href="#linear-transformations-1" id="toc-linear-transformations-1" class="nav-link" data-scroll-target="#linear-transformations-1">📌 Linear Transformations</a></li>
-  <li><a href="#kernel-and-image" id="toc-kernel-and-image" class="nav-link" data-scroll-target="#kernel-and-image">📌 Kernel and image</a></li>
-  <li><a href="#representing-transformations-as-matrices" id="toc-representing-transformations-as-matrices" class="nav-link" data-scroll-target="#representing-transformations-as-matrices">📌 Representing transformations as matrices</a></li>
-  </ul></li>
-  <li><a href="#eigenvalues" id="toc-eigenvalues" class="nav-link" data-scroll-target="#eigenvalues">Eigenvalues</a>
+  <li><a href="#find-the-trace" id="toc-find-the-trace" class="nav-link" data-scroll-target="#find-the-trace">Find the trace</a></li>
+  <li><a href="#find-the-determinant" id="toc-find-the-determinant" class="nav-link" data-scroll-target="#find-the-determinant">Find the determinant</a>
   <ul class="collapse">
-  <li><a href="#eigenvectors-and-eigenvalues" id="toc-eigenvectors-and-eigenvalues" class="nav-link" data-scroll-target="#eigenvectors-and-eigenvalues">📌 Eigenvectors and eigenvalues</a></li>
-  <li><a href="#eigenvectors-and-eigenvalues-of-a-matrix" id="toc-eigenvectors-and-eigenvalues-of-a-matrix" class="nav-link" data-scroll-target="#eigenvectors-and-eigenvalues-of-a-matrix">📌 Eigenvectors and eigenvalues of a matrix</a></li>
-  <li><a href="#eigenvectors-and-eigenvalues-1" id="toc-eigenvectors-and-eigenvalues-1" class="nav-link" data-scroll-target="#eigenvectors-and-eigenvalues-1">👨‍💻 Eigenvectors and eigenvalues</a></li>
-  <li><a href="#trace-of-a-matrix" id="toc-trace-of-a-matrix" class="nav-link" data-scroll-target="#trace-of-a-matrix">📌 Trace of a matrix</a></li>
-  <li><a href="#simlar-matrices" id="toc-simlar-matrices" class="nav-link" data-scroll-target="#simlar-matrices">📌 Simlar matrices</a></li>
+  <li><a href="#eigenvalues-and-eigenvectors" id="toc-eigenvalues-and-eigenvectors" class="nav-link" data-scroll-target="#eigenvalues-and-eigenvectors">Eigenvalues and eigenvectors</a></li>
   </ul></li>
-  <li><a href="#inner-products" id="toc-inner-products" class="nav-link" data-scroll-target="#inner-products">Inner products</a>
-  <ul class="collapse">
-  <li><a href="#inner-product" id="toc-inner-product" class="nav-link" data-scroll-target="#inner-product">📌 Inner product</a></li>
-  <li><a href="#inner-product-spaces" id="toc-inner-product-spaces" class="nav-link" data-scroll-target="#inner-product-spaces">📌 Inner product spaces</a></li>
-  <li><a href="#direct-sum-of-subspaces" id="toc-direct-sum-of-subspaces" class="nav-link" data-scroll-target="#direct-sum-of-subspaces">📌 Direct sum of subspaces</a></li>
   </ul></li>
-  <li><a href="#spectral-theorem-simultaneous-diagonalization" id="toc-spectral-theorem-simultaneous-diagonalization" class="nav-link" data-scroll-target="#spectral-theorem-simultaneous-diagonalization">Spectral theorem (simultaneous diagonalization)</a>
-  <ul class="collapse">
-  <li><a href="#spectral-theorem" id="toc-spectral-theorem" class="nav-link" data-scroll-target="#spectral-theorem">👨‍💻 Spectral theorem</a></li>
-  </ul></li>
-  <li><a href="#summary-linear-algebra" id="toc-summary-linear-algebra" class="nav-link" data-scroll-target="#summary-linear-algebra">Summary linear algebra</a></li>
+  <li><a href="#what-is-going-on" id="toc-what-is-going-on" class="nav-link" data-scroll-target="#what-is-going-on">What is going on?</a></li>
   </ul>
 </nav>
     </div>
@@ -536,9 +521,9 @@ window.Quarto = {
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapter-2/linear-algebra.html">Chapter 2 — Linear Algebra</a></li><li class="breadcrumb-item"><a href="../chapter-2/linear-transformations.html">Linear transformations, eigenvalues, inner products, and the spectral theorem</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapter-2/linear-algebra.html">Chapter 2 — Linear Algebra</a></li><li class="breadcrumb-item"><a href="../chapter-2/appendix.html">Optional further context — Matrix exponentials, determinants, and Lie algebras</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Linear transformations, eigenvalues, inner products, and the spectral theorem</h1>
+<h1 class="title">Optional further context — Matrix exponentials, determinants, and Lie algebras</h1>
 </div>
 
 
@@ -565,470 +550,120 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>This section corresponds to <a href="https://www.youtube.com/watch?v=9f-hGSh8lF0&amp;t=7347s">Linear Transformations, Eigenvalues, Inner Products, and the Spectral Theorem — 2:02:27</a> in the video <em>Proof of Fermat Last Theorem FROM SCRATCH</em>. <a href="https://www.linkedin.com/in/noah-jang-2111392ba/">Noah Jang</a> is the original creator of the exposition and examples referenced here. The interactive implementations, animations, additional explanations, and contextual material are my own work.</p>
+<p>This contents of this section are taken from the video <a href="https://www.youtube.com/watch?v=Iz7PSlTpjyI">Matrix exponentials, determinants, and Lie algebras</a> by <a href="https://www.youtube.com/@MichaelPennMath">Michael Penn</a>. Although this section is not needed in the context of the FLT proof, it demonstrates a nice application of many of the concepts dicussed in this chapter on linear algebra nonetheless.</p>
 </div>
 </div>
-<section id="linear-transformations" class="level2">
-<h2 class="anchored" data-anchor-id="linear-transformations">Linear transformations</h2>
-<p>So far, we have mostly talked about a single vector space. Now we move on to functions defined between distinct vector spaces. Of all functions possible between two vector spaces, some functions are especially nice, and these are called linear transformations.</p>
-<section id="linear-transformations-1" class="level3">
-<h3 class="anchored" data-anchor-id="linear-transformations-1">📌 Linear Transformations</h3>
-<p>A <strong>linear transformation</strong> is a function <span class="math inline">\(T:\ V\rightarrow W\)</span> that preserves vector space operations:</p>
+<section id="goal" class="level1">
+<h1>🎯 Goal</h1>
+<p>Suppose that <span class="math inline">\(A\)</span> is an <span class="math inline">\(n\times n\)</span> matrix. Then</p>
 <p><span class="math display">\[
-T(cx + y) = cT(x) + T(y)
+\boxed{e^{\text{tr}(A)} = \det(e^A)}
 \]</span></p>
-<p>We can understand this requirement a bit better by looking at the following concrete values for <span class="math inline">\(x, y\)</span>, and <span class="math inline">\(c\)</span>:</p>
+<p>where</p>
+<p><span class="math display">\[
+e^A = I + A + \frac{1}{2!}A^2 + \frac{1}{3!}A^3 + \ldots
+\]</span></p>
+</section>
+<section id="example" class="level1">
+<h1>🏷️ Example</h1>
+<p><span class="math display">\[
+A=\begin{pmatrix}4 &amp;&amp; 2 \\ 1 &amp;&amp; 5\end{pmatrix}
+\]</span></p>
+<section id="find-the-trace" class="level2">
+<h2 class="anchored" data-anchor-id="find-the-trace">Find the trace</h2>
+<p>Let’s first calculate the left-hand side of the equation.</p>
+<p><span class="math display">\[
+\boxed{\text{tr}(A) = 9 \implies e^{\text{tr}(A)} = e^9}
+\]</span></p>
+</section>
+<section id="find-the-determinant" class="level2">
+<h2 class="anchored" data-anchor-id="find-the-determinant">Find the determinant</h2>
+<section id="eigenvalues-and-eigenvectors" class="level3">
+<h3 class="anchored" data-anchor-id="eigenvalues-and-eigenvectors">Eigenvalues and eigenvectors</h3>
+<p>Next, let’s calculate the right-hand side of the equation. We do this by finding the eigenvalues and eigenvectors first, as it allows us to diagonalize A and carry out the exponentiation much easier.</p>
+<p>The characteristic polynomial for this matrix <span class="math inline">\(A\)</span> is:</p>
 <p><span class="math display">\[
 \begin{array}{ll}
-x = y = 0, c=1 &amp;:&amp; T(0) = T(0) + T(0) = 0\quad T(0) = 0\quad\text{(zero element)} \\
-c=1 &amp;:&amp; T(x + y) = T(x) + T(y)\quad\text{(addition)} \\
-y=0 &amp;:&amp; T(cx) = cT(x)\quad\text{(scalar multiplication)}
+\chi_A(x) &amp;=&amp; \det(A- xI)\\
+&amp;=&amp; \det \begin{pmatrix} 4 - x &amp;&amp; 1 \\ 2 &amp;&amp; 5 - x \end{pmatrix} \\
+&amp;=&amp; (4-x)(5-x) -2 \\
+&amp;=&amp; x^2 -9x + 18 \\
+&amp;=&amp; (x-3)(x-6)
 \end{array}
 \]</span></p>
-<section id="example-1-tmathbbr2-rightarrow-mathbbr2" class="level4">
-<h4 class="anchored" data-anchor-id="example-1-tmathbbr2-rightarrow-mathbbr2">🏷️ <strong>Example 1</strong>: <span class="math inline">\(T:\mathbb{R}^2 \rightarrow \mathbb{R}^2\)</span></h4>
-<p>Is the transformation is defined as <span class="math inline">\(T(x, y)=(2x, 3y)\)</span> also a linear transformation?</p>
+<p>So our eigenvalues are: <span class="math inline">\(\boxed{\lambda_1=3, \lambda_2=6}\)</span></p>
+<p>Next, let’s find our eigenvectors. This is equivalent to determining the kernel of <span class="math inline">\((A - \lambda I)\)</span> for each of the two eigenvalues as:</p>
+<p><span class="math display">\[
+Av=\lambda v \Rightarrow (A - \lambda I)v = 0 \Rightarrow v\in \ker(A - \lambda I)
+\]</span></p>
+<p>So for <span class="math inline">\(\lambda_1\)</span> we have</p>
 <p><span class="math display">\[
 \begin{array}{ll}
-T\left(c\begin{pmatrix}x_1\\ x_2\end{pmatrix} + \begin{pmatrix}y_1\\ y_2\end{pmatrix}\right) &amp;=&amp; T\begin{pmatrix}cx_1+y_1\\ cx_2+y_2\end{pmatrix} \\
-&amp;=&amp; \begin{pmatrix}2cx_1+2cy_1\\3cx_2+3cy_2\end{pmatrix} \\
-&amp;=&amp; c\begin{pmatrix}2x_1\\3x_2\end{pmatrix} + \begin{pmatrix}2y_1\\ 3y_2\end{pmatrix}\\
-&amp;=&amp;
-T\begin{pmatrix}x_1\\x_2\end{pmatrix} + T\begin{pmatrix}y_1\\y_2\end{pmatrix}\quad  ꪜ
+\ker(A - \lambda_1 I) &amp;=&amp; \ker \begin{pmatrix} 4 - 3 &amp;&amp; 1 \\ 2 &amp;&amp; 5 - 3 \end{pmatrix}\\
+&amp;=&amp; \ker \begin{pmatrix} 1 &amp;&amp; 1 \\ 2 &amp;&amp; 2  \end{pmatrix} \\
+&amp;=&amp; \ker \begin{pmatrix} 1 &amp;&amp; 1 \\ 0 &amp;&amp; 0  \end{pmatrix} \Rightarrow \begin{pmatrix} 1 &amp;&amp; 1 \\ 0 &amp;&amp; 0  \end{pmatrix}\begin{pmatrix} x \\ y  \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \end{pmatrix}
 \end{array}
 \]</span></p>
-</section>
-<section id="other-examples" class="level4">
-<h4 class="anchored" data-anchor-id="other-examples">🏷️ <strong>Other Examples</strong></h4>
+<p>This implies that <span class="math inline">\(x = -y\)</span>, so we have <span class="math inline">\(\boxed{\overrightarrow{e_1} = \begin{pmatrix} 1 \\ -1 \end{pmatrix}}\)</span>.</p>
+<p>Analogously, we find that <span class="math inline">\(\boxed{\overrightarrow{e_2} = \begin{pmatrix} 1 \\ 2 \end{pmatrix}}\)</span>.</p>
+<p>Conseqently, the diagonalizing matrix <span class="math inline">\(P\)</span> becomes</p>
 <p><span class="math display">\[
-T:\mathbb{R}^2 \rightarrow \mathbb{R}\qquad T\begin{pmatrix}x\\ y\end{pmatrix}=:y\quad ꪜ
+P = (\overrightarrow{e_1}\ \overrightarrow{e_2}) = \begin{pmatrix} 1 &amp; 1 \\ -1 &amp; 2 \end{pmatrix} \Rightarrow P^{-1} =\frac{1}{3} \begin{pmatrix} 2 &amp; -1 \\ 1 &amp; 1 \end{pmatrix}
 \]</span></p>
+<p>So</p>
 <p><span class="math display">\[
-T:P_2(\mathbb{R}) \rightarrow \mathbb{R}\qquad T(f(x)):=f(0)\quad ꪜ
+PAP^{-1} = \begin{pmatrix} 3 &amp; 0 \\ 0 &amp; 6 \end{pmatrix} \Rightarrow A = P\begin{pmatrix} 3 &amp; 0 \\ 0 &amp; 6 \end{pmatrix}P^{-1} \Rightarrow
+A^n = P\begin{pmatrix} 3 &amp; 0 \\ 0 &amp; 6 \end{pmatrix}^n P^{-1}
 \]</span></p>
-<p><span class="math display">\[
-T:Mat_2(\mathbb{R}) \rightarrow \mathbb{R}\qquad T\begin{pmatrix} a &amp;&amp; b \\ c &amp;&amp; d\end{pmatrix}:=a + d\quad ꪜ
-\]</span></p>
-<p><span class="math display">\[
-T:\mathbb{R}^2 \rightarrow \mathbb{R}^2\qquad T\begin{pmatrix}x\\ y\end{pmatrix}:=\begin{pmatrix}x+1\\y\end{pmatrix}\quad ✗
-\]</span></p>
-<p>This is not a linear transformation, since</p>
-<p><span class="math display">\[
-T\begin{pmatrix}1\\1\end{pmatrix} =\begin{pmatrix}2\\1\end{pmatrix} \\
-T\begin{pmatrix}0\\1\end{pmatrix} =\begin{pmatrix}1\\1\end{pmatrix} \\
-T\begin{pmatrix}1\\2\end{pmatrix} =\begin{pmatrix}2\\2\end{pmatrix} \neq \begin{pmatrix}3\\2\end{pmatrix} = T\begin{pmatrix}1\\1\end{pmatrix} + T\begin{pmatrix}0\\1\end{pmatrix}\\
-\]</span></p>
-<p>Similarly,</p>
-<p><span class="math display">\[
-T:\mathbb{R}^2 \rightarrow \mathbb{R}\qquad T\begin{pmatrix}x\\ y\end{pmatrix}:=xy\quad ✗
-\]</span></p>
-<p>is not a linear transformation.</p>
-</section>
-</section>
-<section id="kernel-and-image" class="level3">
-<h3 class="anchored" data-anchor-id="kernel-and-image">📌 Kernel and image</h3>
-<ul>
-<li>The <strong>kernel</strong> of <span class="math inline">\(T:V\rightarrow W\)</span> is the subspace <span class="math inline">\(\ker(T)=\{v\in V\ |\ T(v) = {\bf 0}_W\}\)</span></li>
-<li>The <strong>iamge</strong> of <span class="math inline">\(T:V\rightarrow W\)</span> is the subspace <span class="math inline">\(\text{im}(T)=\{v\in V\ |\ T(v)\}\)</span></li>
-</ul>
-<section id="example-1" class="level4">
-<h4 class="anchored" data-anchor-id="example-1">🏷️ <strong>Example 1</strong></h4>
-<p><span class="math display">\[
-T:\mathbb{R}^2 \rightarrow \mathbb{R}^2\qquad T\begin{pmatrix}x\\ y\end{pmatrix}:=\begin{pmatrix}x+y\\0\end{pmatrix}
-\]</span></p>
-<p>The kernel consist of all vectors mapped onto zero:</p>
-<p><span class="math display">\[
-T\begin{pmatrix}x\\ y\end{pmatrix}=\begin{pmatrix}x+y\\0\end{pmatrix}=\begin{pmatrix}0\\0\end{pmatrix}
-\]</span></p>
-<p>From this we can easily infer that</p>
-<p><span class="math display">\[
-\begin{array}{cc}
-\ker{(T)} &amp;=&amp; \bigg\{ \begin{pmatrix} x\\-x\end{pmatrix}\ \bigg|\ x\in\mathbb{R}\bigg\}
-\\
-\text{Im}{(T)} &amp;=&amp; \bigg\{ \begin{pmatrix} x\\0\end{pmatrix}\ \bigg|\ x\in\mathbb{R}\bigg\}
-\end{array}
-\]</span></p>
-</section>
-<section id="example-2" class="level4">
-<h4 class="anchored" data-anchor-id="example-2">🏷️ <strong>Example 2</strong></h4>
-<p><span class="math display">\[
-T:\mathbb{R}[x] \rightarrow \mathbb{R}[x] \qquad T(p)=p'
-\]</span></p>
-<p>So what are the kernel and image of this transformation? The kernel consists of all polynomials that are mapped onto zero, so <span class="math inline">\(p'=0\)</span>. This means that the kernel consists of all constant polynomials:</p>
-<p><span class="math display">\[
-\begin{array}{cc}
-\ker{(T)} &amp;=&amp; \{ c\ |\ c\in\mathbb{R}\}
-\\
-\text{Im}{(T)} &amp;=&amp; \mathbb{R}[x]
-\end{array}
-\]</span></p>
-</section>
-</section>
-<section id="representing-transformations-as-matrices" class="level3">
-<h3 class="anchored" data-anchor-id="representing-transformations-as-matrices">📌 Representing transformations as matrices</h3>
-<p>Every linear transformation <span class="math inline">\(T:V\rightarrow W\)</span> can be uniquely represented as a matrix <span class="math inline">\(A\)</span> with respect to a fixed basis of <span class="math inline">\(V\)</span> and <span class="math inline">\(W\)</span>. The columns of the matrix <span class="math inline">\(A\)</span> are the images of the basis vectors of <span class="math inline">\(V\)</span> under the transformation <span class="math inline">\(T\)</span>, expressed in terms of the basis of <span class="math inline">\(W\)</span>.</p>
-<p>This connects the topic of linear transformations to the topic of matrices, which we have discussed in <a href="./matrices.html">the first section of this chapter</a>. Matrix representations allow us to perform computations and analyze the properties of linear transformations using matrix algebra.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>🚨 A linear transformation and a matrix are not the same concept! The actions of a transformation can be described by a matrix when we have chosen a basis in both <span class="math inline">\(V\)</span> and <span class="math inline">\(W\)</span>.</p>
-</div>
-</div>
-<p>So let’s choose a basis for <span class="math inline">\(V\)</span> and <span class="math inline">\(W\)</span> and see how we can represent a linear transformation as a matrix.</p>
-<p><span class="math display">\[
-V = \{v_1, v_2, \ldots, v_n\} \quad\text{and}\quad W = \{w_1, w_2, \ldots, w_m\}
-\]</span></p>
-<p>Now any vector <span class="math inline">\(v\in V\)</span> can be expressed as a linear combination of the basis vectors <span class="math inline">\({\bf v} = a_1v_1 + a_2v_2 + \ldots + a_nv_n\)</span>. The transformation <span class="math inline">\(T\)</span> maps this vector to a vector in <span class="math inline">\(W\)</span>:</p>
+<p>Now we can move on to calculate the exponential:</p>
 <p><span class="math display">\[
 \begin{array}{ll}
-T({\bf v}) &amp;=&amp; T(a_1v_1 + a_2v_2 + \ldots + a_nv_n)\\
-&amp;=&amp; a_1T(v_1) + a_2T(v_2) + \ldots + a_nT(v_n)\\
-&amp;=&amp; a_1\begin{pmatrix}b_{11}\\b_{21}\\\vdots\\b_{m1}\end{pmatrix} + a_2\begin{pmatrix}b_{12}\\b_{22}\\\vdots\\b_{m2}\end{pmatrix} + \ldots + a_n\begin{pmatrix}b_{1n}\\b_{2n}\\\vdots\\b_{mn}\end{pmatrix} \\
-&amp;=&amp; \begin{pmatrix}b_{11} &amp; b_{12} &amp; \ldots &amp; b_{1n}\\ b_{21} &amp; b_{22} &amp; \ldots &amp; b_{2n}\\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots\\ b_{m1} &amp; b_{m2} &amp; \ldots &amp; b_{mn}\end{pmatrix}\begin{pmatrix}a_1\\a_2\\\vdots\\a_n\end{pmatrix}
+e^A &amp;=&amp; \sum_{n=0}^{\infty} \frac{1}{n!}A^n \\
+    &amp;=&amp; P\bigg[\sum_{n=0}^{\infty}\begin{pmatrix} 3^n &amp; 0 \\ 0 &amp; 6^n \end{pmatrix}\bigg] P^{-1} \\
+    &amp;=&amp; P\begin{pmatrix} e^3 &amp; 0 \\ 0 &amp; e^6 \end{pmatrix} P^{-1} \\
+    &amp;=&amp; \begin{pmatrix} 1 &amp; 1 \\ -1 &amp; 2 \end{pmatrix}\begin{pmatrix} e^3 &amp; 0 \\ 0 &amp; e^6 \end{pmatrix}\frac{1}{3} \begin{pmatrix} 2 &amp; -1 \\ 1 &amp; 1 \end{pmatrix} \\
+    &amp;=&amp; \frac{1}{3}\begin{pmatrix} e^3 &amp; e^6 \\ -e^3 &amp; 2e^6 \end{pmatrix}\begin{pmatrix} 2 &amp; -1 \\ 1 &amp; 1 \end{pmatrix} \\
+    &amp;=&amp; \frac{1}{3}\begin{pmatrix} 2e^3 + e^6 &amp; -e^3+e^6 \\ -2e^3+2e^6 &amp; e^3+2e^6 \end{pmatrix}
 \end{array}
 \]</span></p>
-<section id="example" class="level4">
-<h4 class="anchored" data-anchor-id="example">🏷️ <strong>Example</strong></h4>
+<p>Finally, we can caculate the determinant:</p>
 <p><span class="math display">\[
-T:\mathbb{R}^3\rightarrow \mathbb{R}^3\qquad T\begin{pmatrix}x\\y\\z\end{pmatrix}=\begin{pmatrix}x+y\\y+z\\x+z\end{pmatrix} = \begin{pmatrix}1 &amp; 1 &amp; 0\\0 &amp; 1 &amp; 1\\1 &amp; 0 &amp; 1\end{pmatrix}\begin{pmatrix}x\\y\\z\end{pmatrix}
-\]</span></p>
-</section>
-</section>
-</section>
-<section id="eigenvalues" class="level2">
-<h2 class="anchored" data-anchor-id="eigenvalues">Eigenvalues</h2>
-<section id="eigenvectors-and-eigenvalues" class="level3">
-<h3 class="anchored" data-anchor-id="eigenvectors-and-eigenvalues">📌 Eigenvectors and eigenvalues</h3>
-<p>An <strong>eigenvector</strong> of a linear transformation <span class="math inline">\(T:V\rightarrow V\)</span> is a non-zero vector <span class="math inline">\(v\in V\)</span> such that <span class="math inline">\(T(v) = \lambda v\)</span> for some scalar <span class="math inline">\(\lambda\)</span>. The scalar <span class="math inline">\(\lambda\)</span> is called the <strong>eigenvalue</strong> corresponding to the eigenvector <span class="math inline">\(v\)</span>.</p>
-<p>Note that:</p>
-<ul>
-<li>The domain and co-domain are the same vector space</li>
-<li>The eigenvector does not change direction under the transformation, it is only scaled by the eigenvalue.</li>
-</ul>
-<section id="example-1-1" class="level4">
-<h4 class="anchored" data-anchor-id="example-1-1">🏷️ <strong>Example 1</strong></h4>
-<p><span class="math display">\[
-T:\mathbb{R}^2\rightarrow \mathbb{R}^2\qquad T\begin{pmatrix}x\\y\end{pmatrix}=\begin{pmatrix}2x\\3y\end{pmatrix} = \begin{pmatrix}2 &amp; 0\\0 &amp; 3\end{pmatrix}\begin{pmatrix}x\\y\end{pmatrix}
-\]</span></p>
-<p>Then we have two eigenvectors:</p>
-<p><span class="math display">\[
-\begin{array}{l}
-e_1=\begin{pmatrix}1\\0\end{pmatrix}:\quad T(e_1)=\begin{pmatrix}2\\0\end{pmatrix} = 2e_1\quad\text{with eigenvalue}\ \lambda_1=2 \\
-e_2=\begin{pmatrix}0\\1\end{pmatrix}:\quad T(e_2)=\begin{pmatrix}0\\3\end{pmatrix} = 3e_2\quad\text{with eigenvalue}\ \lambda_2=3
-\end{array}
-\]</span></p>
-</section>
-<section id="example-2-infinitely-differentiable-functions" class="level4">
-<h4 class="anchored" data-anchor-id="example-2-infinitely-differentiable-functions">🏷️ <strong>Example 2</strong>: infinitely differentiable functions</h4>
-<p><span class="math display">\[
-T:\mathbb{C}^\infty\rightarrow \mathbb{C}^\infty\qquad T(f)=f'
-\]</span></p>
-<p>Then we have the following eigenvectors:</p>
-<p><span class="math display">\[
-\begin{array}{c}
-e_1(x)=e^x:\quad T(e_1)=e^x = 1\cdot e_1\quad\text{with eigenvalue}\ \lambda_1=1 \\
-e_2(x)=e^{2x}:\quad T(e_2)=2e^{2x} = 2\cdot e_2\quad\text{with eigenvalue}\ \lambda_2=2 \\
-\vdots
+\begin{array}{ll}
+\det(e^A) &amp;=&amp; \frac{1}{9}\big((2e^3 + e^6)(e^3+2e^6)+(e^3-e^6)(-2e^3+2e^6) \big) \\
+&amp;=&amp; \frac{1}{9}(2e^6+4e^9 +e^9+2e^{12} -2e^6+2e^9+2e^9-2e^{12} ) \\
+&amp;=&amp; e^9 = e^{\text{tr}(A)}\ ꪜ
 \end{array}
 \]</span></p>
 </section>
 </section>
-<section id="eigenvectors-and-eigenvalues-of-a-matrix" class="level3">
-<h3 class="anchored" data-anchor-id="eigenvectors-and-eigenvalues-of-a-matrix">📌 Eigenvectors and eigenvalues of a matrix</h3>
-<ul>
-<li>Let <span class="math inline">\(A\)</span> be an <span class="math inline">\(n\times n\)</span> (square) matrix. A non-zero vector <span class="math inline">\(v\in F^n\)</span> is an <strong>eigenvector</strong> of <span class="math inline">\(A\)</span> if there exists a scalar <span class="math inline">\(\lambda\)</span> such that <span class="math inline">\(Av = \lambda v\)</span>. The scalar <span class="math inline">\(\lambda\)</span> is called an <strong>eigenvalue</strong> of <span class="math inline">\(A\)</span>.</li>
-<li>The polynomial <span class="math inline">\(\chi_A(\lambda) = \det(A - \lambda I)\)</span> is called the <strong>characteristic polynomial</strong> of <span class="math inline">\(A\)</span>. The eigenvalues of <span class="math inline">\(A\)</span> are the roots of the characteristic polynomial.</li>
-</ul>
-<section id="example-3" class="level4">
-<h4 class="anchored" data-anchor-id="example-3">🏷️ <strong>Example</strong></h4>
-<p>If we have the following matrix <span class="math display">\[
-A = \begin{pmatrix}7 &amp;&amp; 2\\-4 &amp;&amp; 1\end{pmatrix}
-\]</span></p>
-<p>then we have the following eigenvectors and eigenvalues:</p>
-<p><span class="math display">\[
-\begin{array}{l}
-\begin{pmatrix}7 &amp;&amp; 2\\-4 &amp;&amp; 1\end{pmatrix}\begin{pmatrix}1\\-1\end{pmatrix} =\begin{pmatrix}5\\-5\end{pmatrix}=5\begin{pmatrix}1\\-1\end{pmatrix}\\
-\begin{pmatrix}7 &amp;&amp; 2\\-4 &amp;&amp; 1\end{pmatrix}\begin{pmatrix}1\\-2\end{pmatrix} =\begin{pmatrix}3\\-6\end{pmatrix}=3\begin{pmatrix}1\\-2\end{pmatrix}\\
-\end{array}
-\]</span></p>
-<p>Similarly, if we have the following matrix</p>
-<p><span class="math display">\[
-B = \begin{pmatrix} 8 &amp;&amp; -13 &amp;&amp; 7 \\3 &amp;&amp; -6 &amp;&amp; 5 \\ 3 &amp;&amp; -9 &amp;&amp; 8\end{pmatrix}
-\]</span></p>
-<p>Then:</p>
-<p><span class="math display">\[
-\begin{pmatrix} 8 &amp;&amp; -13 &amp;&amp; 7 \\3 &amp;&amp; -6 &amp;&amp; 5 \\ 3 &amp;&amp; -9 &amp;&amp; 8\end{pmatrix}\begin{pmatrix}1\\1\\1\end{pmatrix} =\begin{pmatrix}2\\2\\2\end{pmatrix}=2\begin{pmatrix}1\\1\\1\end{pmatrix}  
-\]</span></p>
-<hr>
-<p>So, more generally, we can say that a vector <span class="math inline">\(v\)</span> is an eigenvector of a matrix <span class="math inline">\(A\)</span> if it satisfies the equation:</p>
-<p><span class="math display">\[
-Av = \lambda v\quad (v\in F^n, \lambda \in F, v\neq 0)
-\]</span></p>
-<p>Now we can apply the following trick:</p>
-<p><span class="math display">\[
-Av = \lambda v = \lambda Iv \implies Av - \lambda Iv = 0 \implies (A - \lambda I)v = 0
-\]</span></p>
-<p>Multiplying left and right by <span class="math inline">\((A - \lambda I)^{-1}\)</span> gives us:</p>
-<p><span class="math display">\[
-(A - \lambda I)^{-1}(A - \lambda I)v = (A - \lambda I)^{-1}0 \implies v = 0
-\]</span></p>
-<p>However, we know that <span class="math inline">\(v\neq 0\)</span>, so we must have that <span class="math inline">\((A - \lambda I)\)</span> is not invertible. This means that <span class="math inline">\(\boxed{\det(A - \lambda I) = 0}\)</span> must hold when we look for eigenvalues.</p>
-<hr>
-<p>Let’s now revisit the example above and find the eigenvalues of the matrix <span class="math inline">\(A\)</span> by solving the characteristic polynomial:</p>
-<p><span class="math display">\[
-\begin{array}{l}
-\det(A-\lambda I) &amp;=&amp; \det\begin{pmatrix}7-\lambda &amp;&amp; 2\\-4 &amp;&amp; 1-\lambda\end{pmatrix} \\
-&amp;=&amp; (7-\lambda)(1-\lambda) - (-8) \\
-&amp;=&amp; \lambda^2 - 8\lambda + 15\\
-&amp;=&amp; (\lambda - 3)(\lambda - 5) = 0
-\implies \boxed{\lambda_1 = 3, \lambda_2 = 5}
-\end{array}
-\]</span></p>
 </section>
-</section>
-<section id="eigenvectors-and-eigenvalues-1" class="level3">
-<h3 class="anchored" data-anchor-id="eigenvectors-and-eigenvalues-1">👨‍💻 Eigenvectors and eigenvalues</h3>
-<p>The interactive demo below illustrates the effects of a transformation matrix by applying the transformation on a two-dimensional grid. It also shows the eigen vectors.</p>
-<div id="matrixTransformationContainer"></div>
-<script type="module" src="https://www.hendrikse.name/helion/examples/matrix_transformation.js"></script>
-</section>
-<section id="trace-of-a-matrix" class="level3">
-<h3 class="anchored" data-anchor-id="trace-of-a-matrix">📌 Trace of a matrix</h3>
-<p>The <strong>trace</strong> of an <span class="math inline">\(n\times n\)</span> (square) matrix <span class="math inline">\(A\)</span>, denoted <span class="math inline">\(\text{trace}(A)\)</span>, is the sum of its diagonal elements:</p>
+<section id="what-is-going-on" class="level1">
+<h1>What is going on?</h1>
+<p>📌 <span class="math inline">\(\text{tr}(A)\)</span> is the sum of eigenvalues of <span class="math inline">\(A\)</span>.<br> 📌 <span class="math inline">\(\det(A)\)</span> is the product of eigenvalues of <span class="math inline">\(A\)</span>.<br> 📌 <span class="math inline">\(\lambda\)</span> is an eigenvalue of <span class="math inline">\(A \Longleftrightarrow e^\lambda\)</span> is an eigenvector of <span class="math inline">\(e^A\)</span>.<br></p>
+<p>From these it quickly follows that <span class="math inline">\(e^{\text{tr}(A)} = \det(e^A)\)</span>.</p>
+<p>The proof these statements in general is a bit tricky, so we limit ourselves to the diagonalizable case here, with the following lemma (that can easily be proven using the definition of matrix multiplication):</p>
 <p><span class="math display">\[
-\text{trace}(A) = \sum_{i=1}^{n} A_{ii}
+\text{tr}(xy)=\text{tr}(yx)
 \]</span></p>
-<section id="example-4" class="level4">
-<h4 class="anchored" data-anchor-id="example-4">🏷️ <strong>Example</strong></h4>
+<p>Let’s assume that <span class="math inline">\(A\)</span> is diagonalizable:</p>
 <p><span class="math display">\[
-B = \begin{pmatrix} 8 &amp;&amp; -13 &amp;&amp; 7 \\3 &amp;&amp; -6 &amp;&amp; 5 \\ 3 &amp;&amp; -9 &amp;&amp; 8\end{pmatrix} \implies \text{trace}(B) = 8 + (-6) + 8 = 10
+PAP^{-1} = \begin{pmatrix} \lambda_1 &amp; 0 &amp; 0 \\ 0 &amp; \ddots &amp; 0 \\ 0 &amp; 0 &amp; \lambda_n\end{pmatrix}
 \]</span></p>
-</section>
-</section>
-<section id="simlar-matrices" class="level3">
-<h3 class="anchored" data-anchor-id="simlar-matrices">📌 Simlar matrices</h3>
-<p>Let <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> be two <span class="math inline">\(n\times n\)</span> matrices over a field <span class="math inline">\(F\)</span>. We say that <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are <strong>similar</strong> if there exists an invertible matrix <span class="math inline">\(P\)</span> such that:</p>
+<p>Then we can write</p>
 <p><span class="math display">\[
-B = P^{-1}AP
+\text{tr}(A) = \text{tr}\left (P\begin{pmatrix} \lambda_1 &amp; 0 &amp; 0 \\ 0 &amp; \ddots &amp; 0 \\ 0 &amp; 0 &amp; \lambda_n\end{pmatrix}P^{-1}\right )
 \]</span></p>
-<p>If <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are similar, they represent the same linear transformation under different bases. Consequently, they share the same invariants:</p>
-<ul>
-<li><span class="math inline">\(\text{trace}(A) = \text{trace}(B)\)</span></li>
-<li><span class="math inline">\(\det(A) = \det(B)\)</span></li>
-<li>They have the same characteristic polynomial and eigenvalues.</li>
-</ul>
-<p>Stated differently, if <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are similar, they represent <strong>the same linear transformation under different bases</strong>, and hence they share the same eigenvalues.</p>
-<section id="example-5" class="level4">
-<h4 class="anchored" data-anchor-id="example-5">🏷️ <strong>Example</strong></h4>
+<p>Using the above lemma, we can commute the <span class="math inline">\(P\)</span> and <span class="math inline">\(P^{-1}\)</span>, so <span class="math inline">\(\text{tr}(A) = \lambda_1+\ldots+\lambda_n\)</span>. This gives us</p>
 <p><span class="math display">\[
-A=\begin{pmatrix} 2 &amp;&amp; 1\\0 &amp;&amp; 3\end{pmatrix} \sim B=\begin{pmatrix} 3 &amp;&amp; 2\\0 &amp;&amp; 2\end{pmatrix}\ \text{with}\ P = \begin{pmatrix} 1 &amp;&amp; 1\\1 &amp;&amp; 2\end{pmatrix}
+e^{\text{tr}(A)}=e^{\lambda_1+\ldots+\lambda_n}=\boxed{e^{\lambda_1} \ldots e^{\lambda_n}}
 \]</span></p>
-<ul>
-<li>Determinant the same?<br> <span class="math inline">\(\det(A) = 6 = \det(B)\)</span> ꪜ</li>
-<li>Trace the same? <br> <span class="math inline">\(\text{trace}(A) = 5 = \text{trace}(B)\)</span> ꪜ</li>
-<li>Characteristic polynomial the same? <br> <span class="math inline">\(\chi_A(\lambda) = \lambda^2 - 5\lambda + 6 = \chi_B(\lambda)\)</span> ꪜ</li>
-</ul>
-</section>
-</section>
-</section>
-<section id="inner-products" class="level2">
-<h2 class="anchored" data-anchor-id="inner-products">Inner products</h2>
-<section id="inner-product" class="level3">
-<h3 class="anchored" data-anchor-id="inner-product">📌 Inner product</h3>
-<p>An <strong>inner product</strong> on a complex vector space <span class="math inline">\(V\)</span> is a function <span class="math inline">\(\langle\cdot,\cdot\rangle:\ V\times V\rightarrow\mathbb{C}\)</span> that satisfies the following properties for all <span class="math inline">\(x, y, z \in V\)</span> and <span class="math inline">\(c \in \mathbb{C}\)</span>:</p>
-<ol type="1">
-<li><span class="math inline">\(\langle x, y \rangle = \overline{\langle y, x \rangle}\)</span> (conjugate symmetry)</li>
-<li><span class="math inline">\(\langle cx, y \rangle = c\langle x, y \rangle\)</span></li>
-<li><span class="math inline">\(\langle x + y, z \rangle = \langle x, z \rangle + \langle y, z \rangle\)</span></li>
-<li><span class="math inline">\(\langle x, x \rangle \geq 0\)</span> and <span class="math inline">\(\langle x, x \rangle = 0 \Longleftrightarrow x = 0\)</span></li>
-</ol>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ul>
-<li>The inner product is a <em>generalization</em> of the dot product in Euclidean space (in physics often <span class="math inline">\(\mathbb{R}^2\)</span> or <span class="math inline">\(\mathbb{R}^3\)</span>).</li>
-<li>The inner product allows us to think about geometric properties of abstract vector spaces, including concepts such as length, <span class="math display">\[
-\|x\| = \sqrt{\langle x, x \rangle}
-\]</span> angle, and orthogonality <span class="math display">\[
-\cos \theta = \frac{\langle x, y \rangle}{\|x\| \|y\|} \implies x \perp y \iff \langle x, y \rangle = 0.
-\]</span></li>
-</ul>
-</div>
-</div>
-</section>
-<section id="inner-product-spaces" class="level3">
-<h3 class="anchored" data-anchor-id="inner-product-spaces">📌 Inner product spaces</h3>
-<ul>
-<li>An <strong>inner product space</strong> is a vector space <span class="math inline">\(V\)</span> equipped with an inner product <span class="math inline">\(\langle\cdot,\cdot\rangle\)</span>. The inner product allows us to define geometric concepts such as length, angle, and orthogonality in the vector space.</li>
-<li>The <strong>norm</strong> of a vector <span class="math inline">\(x\)</span> is defined as <span class="math inline">\(\|x\| = \sqrt{\langle x, x \rangle}\)</span>.</li>
-<li>Two vectors <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> are <strong>orthogonal</strong> if <span class="math inline">\(\langle x, y \rangle = 0\)</span>.</li>
-<li>An <strong>orthonormal basis</strong> is a basis consisting of mutually orthogonal vectors with norm equal to 1.</li>
-</ul>
-<section id="example-1-2" class="level4">
-<h4 class="anchored" data-anchor-id="example-1-2">🏷️ <strong>Example 1</strong></h4>
+<p>At the same time,</p>
 <p><span class="math display">\[
-V = \mathbb{R}^n\quad\text{with the standard inner product}\quad \langle x, y \rangle = x^Ty
+e^A = P\begin{pmatrix} e^{\lambda_1} &amp; 0 &amp; 0 \\ 0 &amp; \ddots &amp; 0 \\ 0 &amp; 0 &amp; e^{\lambda_n}\end{pmatrix}P^{-1}
 \]</span></p>
-<p>We can check the four properties of the inner product for this example:</p>
-<ul>
-<li>Conjugate symmetry: <span class="math inline">\(\langle x, y \rangle = x^Ty = y^Tx = \langle y, x \rangle\)</span> ꪜ</li>
-<li>Linearity in the first argument: <span class="math inline">\(\langle cx, y \rangle = (cx)^Ty = c(x^Ty) = c\langle x, y \rangle\)</span> ꪜ</li>
-<li>Additivity in the first argument: <span class="math inline">\(\langle x + y, z \rangle = (x + y)^Tz = x^Tz + y^Tz = \langle x, z \rangle + \langle y, z \rangle\)</span> ꪜ</li>
-<li>Positive-definiteness: <span class="math inline">\(\langle x, x \rangle = x^Tx = \sum_{i=1}^{n} x_i^2 \geq 0\)</span> ꪜ</li>
-</ul>
-</section>
-<section id="example-2-1" class="level4">
-<h4 class="anchored" data-anchor-id="example-2-1">🏷️ <strong>Example 2</strong></h4>
-<p>Let’s consider the vector space of all continuous functions on the interval <span class="math inline">\(-\pi\leq x\leq\pi\)</span>:</p>
+<p>from which follows</p>
 <p><span class="math display">\[
-V=C[-\pi, \pi]\ \text{with}\ \langle f,g\rangle = \int_{-\pi}^{\pi}f(x)g(x)dx
-\]</span></p>
-<p>So why is this an inner product?</p>
-<ul>
-<li><span class="math inline">\(\langle f,g\rangle = \overline{\langle g,f \rangle}\)</span> holds because complex conjugation doesn’t do anything on real numbers ꪜ</li>
-<li><span class="math inline">\(\langle cf_1 + f_2,g\rangle = \int_{-\pi}^{\pi}(cf_1 + f_2)gdx = c\int_{-\pi}^{\pi}f_1 gdx + \int_{-\pi}^{\pi}f_2 gdx = c \langle f_1, g\rangle + \langle f_2,g\rangle\)</span> ꪜ</li>
-<li><span class="math inline">\(\langle f,f\rangle \geq 0\ \text{and}\ \langle f,f\rangle = 0 \implies f=0\)</span> ꪜ</li>
-</ul>
-<p>As a consequence, we can show that <span class="math inline">\(\cos x\)</span> and <span class="math inline">\(\sin x\)</span> are perpendicular in this vector space:</p>
-<p><span class="math display">\[
-\langle \cos x, \sin x \rangle = \int_{-\pi}^{\pi} \cos x \sin x dx = \int_{-\pi}^{\pi}\frac{\sin 2x}{2}dx = \bigg[ -\frac{\cos 2x}{4} \bigg]^\pi_{-\pi} = 0
-\]</span></p>
-</section>
-</section>
-<section id="direct-sum-of-subspaces" class="level3">
-<h3 class="anchored" data-anchor-id="direct-sum-of-subspaces">📌 Direct sum of subspaces</h3>
-<p>Let <span class="math inline">\(W_1\)</span> and <span class="math inline">\(W_2\)</span> be subspaces of a vector space <span class="math inline">\(V\)</span>. We write <span class="math display">\[
-V = W_1 \oplus W_2
-\]</span> if <span class="math display">\[
-V = W_1 + W_2\quad\text{and}\quad W_1 \cap W_2 = \{0\}
-\]</span></p>
-<p>Equivalently, every vector <span class="math inline">\(v\in V\)</span> can be written uniquely as <span class="math display">\[
-v = w_1 + w_2\qquad (w_1\in W_1, w_2\in W_2)
-\]</span></p>
-<p>If <span class="math inline">\(V\)</span> is an inner product space and <span class="math inline">\(W_1 \perp W_2\)</span>, we call this an <strong>orthogonal direct sum</strong>.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Why do we need this?</p>
-<p>This way, a vector space can be broken up into several independent components/subspaces.</p>
-</div>
-</div>
-<section id="example-1-3" class="level4">
-<h4 class="anchored" data-anchor-id="example-1-3">🏷️ <strong>Example 1</strong></h4>
-<p><span class="math display">\[
-\mathbb{R}^2: \begin{pmatrix}x\\0\end{pmatrix} + \begin{pmatrix}0\\y\end{pmatrix} \implies \mathbb{R}^2 = \left\{\begin{pmatrix}x\\0\end{pmatrix}\bigg|\ x\in\mathbb{R}\right\}
-\oplus\left\{\begin{pmatrix}0\\y\end{pmatrix}\bigg|\ y\in\mathbb{R}\right\}
-\]</span></p>
-</section>
-<section id="example-2-2" class="level4">
-<h4 class="anchored" data-anchor-id="example-2-2">🏷️ <strong>Example 2</strong></h4>
-<p><span class="math display">\[
-P_2(\mathbb{R}) = \text{span}(1) +  \text{span}(x) +  \text{span}(x^2)
-\]</span></p>
-</section>
-<section id="example-3-1" class="level4">
-<h4 class="anchored" data-anchor-id="example-3-1">🏷️ <strong>Example 3</strong></h4>
-<p><span class="math display">\[
-\mathbb{R}^2 = \left\{x\begin{pmatrix}1\\-1\end{pmatrix}\bigg|\ x\in\mathbb{R}\right\}
-\oplus\left\{y\begin{pmatrix}1\\1\end{pmatrix}\bigg|\ y\in\mathbb{R}\right\}
-\]</span></p>
-<p>This is true, since every vector <span class="math inline">\(\begin{pmatrix}x\\y\end{pmatrix}\)</span> can be written as <span class="math display">\[
-\begin{pmatrix}x\\y\end{pmatrix} = \frac{x + y}{2}\begin{pmatrix}1\\1\end{pmatrix}+\frac{x - y}{2}\begin{pmatrix}1\\-1\end{pmatrix}
-\]</span></p>
-<p>Moreover, both subspaces only share zero vectors ꪜ</p>
-</section>
-</section>
-</section>
-<section id="spectral-theorem-simultaneous-diagonalization" class="level2">
-<h2 class="anchored" data-anchor-id="spectral-theorem-simultaneous-diagonalization">Spectral theorem (simultaneous diagonalization)</h2>
-<p>Let <span class="math inline">\(V\)</span> be a finite-dimensional complex inner product space, and let <span class="math inline">\(\{T_i\}\)</span> be a family of linear operators on V.</p>
-<p>If</p>
-<ul>
-<li>each <span class="math inline">\(T_i\)</span> is <strong>self-adjoint</strong>: <span class="math display">\[
-\langle T_ix, y\rangle = \langle x, T_i y \rangle\quad \forall x, y\in V,
-\]</span></li>
-<li>the operators <strong>commute</strong>: <span class="math display">\[
-T_iT_j = T_jT_i\quad \forall i, j,
-\]</span></li>
-</ul>
-<p>the there exists an orthonormal basis of <span class="math inline">\(V\)</span> consisting of simulteneous eigenvectos for all <span class="math inline">\(T_i\)</span>.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Why do we need this?</p>
-<p>This will come back once we arrive at modular forms. It is very powerful, as per this theorem there exists a single orthonormal basis that diagonalizes a whole family of different operators at the same time, and thus can be understood using one common basis.</p>
-</div>
-</div>
-<section id="spectral-theorem" class="level3">
-<h3 class="anchored" data-anchor-id="spectral-theorem">👨‍💻 Spectral theorem</h3>
-<div id="spectralTheoremContainer"></div>
-<script type="module" src="https://www.hendrikse.name/helion/examples/spectral_theorem.js"></script>
-</section>
-</section>
-<section id="summary-linear-algebra" class="level2">
-<h2 class="anchored" data-anchor-id="summary-linear-algebra">Summary linear algebra</h2>
-<p><span class="math display">\[
-👉\ \text{Linear transformation}\ T:V\rightarrow V
-\]</span></p>
-<p><span class="math display">\[\Downarrow\ \text{Basis}\]</span></p>
-<p><span class="math display">\[
-👉\ \text{Matrix}:\ A=
-\begin{pmatrix}
-a&amp;b\\
-b&amp;d
-\end{pmatrix}
-\]</span></p>
-<p><span class="math display">\[\Downarrow\]</span></p>
-<p><span class="math display">\[
-👉\ \text{Eigen values/eigen vectors}:\ Ae_i=\lambda_i e_i
-\]</span></p>
-<p><span class="math display">\[\Downarrow\]</span></p>
-<p><span class="math display">\[
-👉\ \text{Spectral theorem}:\ e_1\perp e_2
-\]</span></p>
-<p><span class="math display">\[\Downarrow\]</span></p>
-<p><span class="math display">\[
-👉\ \text{Orthonormal matrix}:\ Q=(e_1\ e_2)
-\]</span></p>
-<p><span class="math display">\[\Downarrow\]</span></p>
-<p><span class="math display">\[
-👉\ \text{Diagonal matrix}:\ \Lambda=
-\begin{pmatrix}
-\lambda_1&amp;0\\
-0&amp;\lambda_2
-\end{pmatrix}
-\]</span></p>
-<p><span class="math display">\[\Downarrow\]</span></p>
-<p><span class="math display">\[
-👉\ \text{Spectral decomposition}:\ \boxed{A=Q\Lambda Q^T}
+\det(e^A)=\det(P)\left [e^{\lambda_1}\ldots e^{\lambda_n}\right ]\det(P^{-1}) = \boxed{e^{\lambda_1}\ldots e^{\lambda_n}}
 \]</span></p>
 
 
@@ -1450,13 +1085,13 @@ b&amp;d
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../chapter-2/vector-spaces.html" class="pagination-link" aria-label="Vector spaces, basis, and dimension">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Vector spaces, basis, and dimension</span>
+      <a href="../chapter-2/linear-transformations.html" class="pagination-link" aria-label="Linear transformations, eigenvalues, inner products, and the spectral theorem">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Linear transformations, eigenvalues, inner products, and the spectral theorem</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../chapter-2/appendix.html" class="pagination-link" aria-label="Optional further context &amp;mdash; Matrix exponentials, determinants, and Lie algebras">
-        <span class="nav-page-text">Optional further context — Matrix exponentials, determinants, and Lie algebras</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../chapter-3/abstract-algebra.html" class="pagination-link" aria-label="Abstract algebra">
+        <span class="nav-page-text">Abstract algebra</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

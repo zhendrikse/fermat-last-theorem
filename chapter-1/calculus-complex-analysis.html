@@ -376,6 +376,12 @@ window.Quarto = {
  <span class="menu-text">Linear transformations, eigenvalues, inner products, and the spectral theorem</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapter-2/appendix.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Optional further context — Matrix exponentials, determinants, and Lie algebras</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -498,22 +504,20 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#taylor-series" id="toc-taylor-series" class="nav-link active" data-scroll-target="#taylor-series">📌 Taylor series</a>
+  <li><a href="#basic-calculus" id="toc-basic-calculus" class="nav-link active" data-scroll-target="#basic-calculus">Basic calculus</a>
   <ul class="collapse">
+  <li><a href="#taylor-series" id="toc-taylor-series" class="nav-link" data-scroll-target="#taylor-series">📌 Taylor series</a></li>
   <li><a href="#taylor-expansion-demo" id="toc-taylor-expansion-demo" class="nav-link" data-scroll-target="#taylor-expansion-demo">👨‍💻 Taylor expansion demo</a></li>
-  </ul></li>
-  <li><a href="#multivariable-functions" id="toc-multivariable-functions" class="nav-link" data-scroll-target="#multivariable-functions">📌 Multivariable functions</a>
-  <ul class="collapse">
+  <li><a href="#multivariable-functions" id="toc-multivariable-functions" class="nav-link" data-scroll-target="#multivariable-functions">📌 Multivariable functions</a></li>
   <li><a href="#multivariable-functions-demo" id="toc-multivariable-functions-demo" class="nav-link" data-scroll-target="#multivariable-functions-demo">👨‍💻 Multivariable functions demo</a></li>
-  </ul></li>
   <li><a href="#partial-derivative" id="toc-partial-derivative" class="nav-link" data-scroll-target="#partial-derivative">📌 Partial derivative</a></li>
   <li><a href="#eurlers-formula-and-eitheta" id="toc-eurlers-formula-and-eitheta" class="nav-link" data-scroll-target="#eurlers-formula-and-eitheta">📌 Eurler’s formula and <span class="math inline">\(e^{i\theta}\)</span></a></li>
-  <li><a href="#the-n-th-roots-of-unity" id="toc-the-n-th-roots-of-unity" class="nav-link" data-scroll-target="#the-n-th-roots-of-unity">📌 The <span class="math inline">\(n\)</span>-th roots of unity</a>
-  <ul class="collapse">
+  <li><a href="#the-n-th-roots-of-unity" id="toc-the-n-th-roots-of-unity" class="nav-link" data-scroll-target="#the-n-th-roots-of-unity">📌 The <span class="math inline">\(n\)</span>-th roots of unity</a></li>
   <li><a href="#roots-of-unity-demo" id="toc-roots-of-unity-demo" class="nav-link" data-scroll-target="#roots-of-unity-demo">👨‍💻 Roots of unity demo</a></li>
   </ul></li>
-  <li><a href="#complex-functions-and-holomorphy" id="toc-complex-functions-and-holomorphy" class="nav-link" data-scroll-target="#complex-functions-and-holomorphy">📌 Complex functions and holomorphy</a>
+  <li><a href="#complex-analysis" id="toc-complex-analysis" class="nav-link" data-scroll-target="#complex-analysis">Complex analysis</a>
   <ul class="collapse">
+  <li><a href="#complex-functions-and-holomorphy" id="toc-complex-functions-and-holomorphy" class="nav-link" data-scroll-target="#complex-functions-and-holomorphy">📌 Complex functions and holomorphy</a></li>
   <li><a href="#complex-functions" id="toc-complex-functions" class="nav-link" data-scroll-target="#complex-functions">👨‍💻 Complex functions</a></li>
   </ul></li>
   </ul>
@@ -555,8 +559,10 @@ Note
 <p>This section corresponds to <a href="https://www.youtube.com/watch?v=9f-hGSh8lF0&amp;t=2339s">Basic Calculus and Complex Analysis — 38:59</a> in the video <em>Proof of Fermat Last Theorem FROM SCRATCH</em>. <a href="https://www.linkedin.com/in/noah-jang-2111392ba/">Noah Jang</a> is the original creator of the exposition and examples referenced here. The interactive implementations, animations, additional explanations, and contextual material are my own work.</p>
 </div>
 </div>
-<section id="taylor-series" class="level2">
-<h2 class="anchored" data-anchor-id="taylor-series">📌 Taylor series</h2>
+<section id="basic-calculus" class="level2">
+<h2 class="anchored" data-anchor-id="basic-calculus">Basic calculus</h2>
+<section id="taylor-series" class="level3">
+<h3 class="anchored" data-anchor-id="taylor-series">📌 Taylor series</h3>
 <p>A Taylor series represents a function as an infinite polynomial. With infinitely many terms, it equals the original function within its interval of convergence.</p>
 <section id="examples" class="level4">
 <h4 class="anchored" data-anchor-id="examples">🏷️ <strong>Examples</strong></h4>
@@ -585,20 +591,21 @@ Note
 <p>🎯 The Taylor series is a way to represent a given function as an infinite polynomial.</p>
 <p>👉 We will look at the Taylor expansion again <a href="../chapter-2/linear-algebra.html">from the perspective of linear algebra</a> in chapter two.</p>
 </section>
+</section>
 <section id="taylor-expansion-demo" class="level3">
 <h3 class="anchored" data-anchor-id="taylor-expansion-demo">👨‍💻 Taylor expansion demo</h3>
 <div id="taylorSeriesContainer"></div>
 <script type="module" src="https://www.hendrikse.name/helion/examples/taylor_expansion.js"></script>
 </section>
-</section>
-<section id="multivariable-functions" class="level2">
-<h2 class="anchored" data-anchor-id="multivariable-functions">📌 Multivariable functions</h2>
+<section id="multivariable-functions" class="level3">
+<h3 class="anchored" data-anchor-id="multivariable-functions">📌 Multivariable functions</h3>
 <p>A multivariable function is a map</p>
 <p><span class="math display">\[
 f: \mathbb{R}^n \rightarrow \mathbb{R}
 \]</span></p>
 <p>In the section above, we have discussed (the Taylor expansion for) functions that depend on one variable only, such as <span class="math inline">\(f(x) = e^x\)</span>. In this section, we’ll shortly look at functions that depend on two or even more variables.</p>
 <p>A multivariable function that depends on two variables can naturally be visualized as a surface in three-dimensional space.</p>
+</section>
 <section id="multivariable-functions-demo" class="level3">
 <h3 class="anchored" data-anchor-id="multivariable-functions-demo">👨‍💻 Multivariable functions demo</h3>
 <div id="realSurfacesContainer"></div>
@@ -607,9 +614,8 @@ f: \mathbb{R}^n \rightarrow \mathbb{R}
 </p>
 <p>Another examples may be choosen from the drop-down menu. The formula of the selected function can be seen in the title.</p>
 </section>
-</section>
-<section id="partial-derivative" class="level2">
-<h2 class="anchored" data-anchor-id="partial-derivative">📌 Partial derivative</h2>
+<section id="partial-derivative" class="level3">
+<h3 class="anchored" data-anchor-id="partial-derivative">📌 Partial derivative</h3>
 <p>For functions that depend on more than one variable, we would like to be able to analyse the rate of change in a similar way to that of functions that depend on one variable only. As multivariate functions have several variables, each direction generally has its own rate of change. As a consequence, each direction has its own derivative. When looking for the rate of change in a particular direction, we leave the other variables intentionally unchanged. This means that all the other variables but the one we are interested in can then be treated as constants.</p>
 <p>Let <span class="math inline">\(f:\mathbb{R}^2\rightarrow\mathbb{R}\)</span> be a function. The partial derivative with respect to <span class="math inline">\(x_i\)</span> is defined as</p>
 <p><span class="math display">\[
@@ -654,8 +660,8 @@ f(x,y) = x^3+y^3+xy+\sin x\cos y
 \]</span></p>
 </section>
 </section>
-<section id="eurlers-formula-and-eitheta" class="level2">
-<h2 class="anchored" data-anchor-id="eurlers-formula-and-eitheta">📌 Eurler’s formula and <span class="math inline">\(e^{i\theta}\)</span></h2>
+<section id="eurlers-formula-and-eitheta" class="level3">
+<h3 class="anchored" data-anchor-id="eurlers-formula-and-eitheta">📌 Eurler’s formula and <span class="math inline">\(e^{i\theta}\)</span></h3>
 <p>For any real number <span class="math inline">\(\theta\)</span>,</p>
 <p><span class="math display">\[
 e^{i\theta} = \cos\theta + i\sin\theta.
@@ -701,8 +707,8 @@ e^{i\theta} =
 e^{i(\theta + 2n\pi)},\quad n\in\mathbb{N}.
 \]</span></p>
 </section>
-<section id="the-n-th-roots-of-unity" class="level2">
-<h2 class="anchored" data-anchor-id="the-n-th-roots-of-unity">📌 The <span class="math inline">\(n\)</span>-th roots of unity</h2>
+<section id="the-n-th-roots-of-unity" class="level3">
+<h3 class="anchored" data-anchor-id="the-n-th-roots-of-unity">📌 The <span class="math inline">\(n\)</span>-th roots of unity</h3>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -749,14 +755,17 @@ z^n = 1 = e^{2\pi k} \Rightarrow z = e^{\dfrac{2\pi ik}{n}},\quad k \in \mathbb{
 \]</span></p>
 <p>Geometrically, the roots of unity constitute the vertices of a regular <span class="math inline">\(n\)</span>-gon sitting on a unit circle in the complex plane.</p>
 </section>
+</section>
 <section id="roots-of-unity-demo" class="level3">
 <h3 class="anchored" data-anchor-id="roots-of-unity-demo">👨‍💻 Roots of unity demo</h3>
 <div id="rootsOfUnityContainer"></div>
 <script type="module" src="https://www.hendrikse.name/helion/examples/roots_of_unity.js"></script>
 </section>
 </section>
-<section id="complex-functions-and-holomorphy" class="level2">
-<h2 class="anchored" data-anchor-id="complex-functions-and-holomorphy">📌 Complex functions and holomorphy</h2>
+<section id="complex-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="complex-analysis">Complex analysis</h2>
+<section id="complex-functions-and-holomorphy" class="level3">
+<h3 class="anchored" data-anchor-id="complex-functions-and-holomorphy">📌 Complex functions and holomorphy</h3>
 <p>A complex function is a map <span class="math display">\[
 f:\mathbb{C}\rightarrow\mathbb{C}
 \]</span></p>
@@ -765,6 +774,7 @@ f:\mathbb{C}\rightarrow\mathbb{C}
 f'(z_0) := \lim_{h\rightarrow 0}\dfrac{f(z_0+h) - f(z)}{h}
 \]</span></p>
 <p>If <span class="math inline">\(f\)</span> is complex differentiable on an open set, it is called <strong>holomorphic</strong>.</p>
+</section>
 <section id="complex-functions" class="level3">
 <h3 class="anchored" data-anchor-id="complex-functions">👨‍💻 Complex functions</h3>
 <div id="complexSurfacesContainer"></div>

@@ -376,6 +376,12 @@ window.Quarto = {
  <span class="menu-text">Linear transformations, eigenvalues, inner products, and the spectral theorem</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapter-2/appendix.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Optional further context — Matrix exponentials, determinants, and Lie algebras</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -502,12 +508,12 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
   <li><a href="#binary-operation" id="toc-binary-operation" class="nav-link" data-scroll-target="#binary-operation">📌 Binary operation</a></li>
-  <li><a href="#group" id="toc-group" class="nav-link" data-scroll-target="#group">📌 Group</a>
-  <ul class="collapse">
+  <li><a href="#group" id="toc-group" class="nav-link" data-scroll-target="#group">📌 Group</a></li>
   <li><a href="#rubiks-cube" id="toc-rubiks-cube" class="nav-link" data-scroll-target="#rubiks-cube">👨‍💻 Rubik’s cube</a></li>
-  </ul></li>
   <li><a href="#subgroup" id="toc-subgroup" class="nav-link" data-scroll-target="#subgroup">📌 Subgroup</a></li>
-  <li><a href="#cyclic-groups" id="toc-cyclic-groups" class="nav-link" data-scroll-target="#cyclic-groups">📌 Cyclic groups</a></li>
+  </ul></li>
+  <li><a href="#cyclic-groups" id="toc-cyclic-groups" class="nav-link" data-scroll-target="#cyclic-groups">📌 Cyclic groups</a>
+  <ul class="collapse">
   <li><a href="#isomorphic-groups" id="toc-isomorphic-groups" class="nav-link" data-scroll-target="#isomorphic-groups">📌 Isomorphic groups</a></li>
   <li><a href="#isomorphism-the-map" id="toc-isomorphism-the-map" class="nav-link" data-scroll-target="#isomorphism-the-map">📌 Isomorphism: the map</a></li>
   <li><a href="#the-fundamental-theorem-of-finitely-generated-abelian-groups" id="toc-the-fundamental-theorem-of-finitely-generated-abelian-groups" class="nav-link" data-scroll-target="#the-fundamental-theorem-of-finitely-generated-abelian-groups">📌 The fundamental theorem of finitely generated abelian groups</a></li>
@@ -552,8 +558,8 @@ Note
 <p>This section corresponds to <a href="https://www.youtube.com/watch?v=9f-hGSh8lF0&amp;t=9890s">Groups, Homomorphisms, and Group Actions — 2:44:50</a> in the video <em>Proof of Fermat Last Theorem FROM SCRATCH</em>. <a href="https://www.linkedin.com/in/noah-jang-2111392ba/">Noah Jang</a> is the original creator of the exposition and examples referenced here. The interactive implementations, animations, additional explanations, and contextual material are my own work.</p>
 </div>
 </div>
-<section id="groups" class="level1">
-<h1>Groups</h1>
+<section id="groups" class="level2">
+<h2 class="anchored" data-anchor-id="groups">Groups</h2>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -586,8 +592,8 @@ Note
 </blockquote>
 <p>Before defining a group, we first need to clarify one basic concept first.</p>
 </section>
-<section id="binary-operation" class="level2">
-<h2 class="anchored" data-anchor-id="binary-operation">📌 Binary operation</h2>
+<section id="binary-operation" class="level3">
+<h3 class="anchored" data-anchor-id="binary-operation">📌 Binary operation</h3>
 <p>A <strong>binary operation</strong> <span class="math inline">\(*\)</span> on a set <span class="math inline">\(S\)</span> is a function that assigns to each ordered pair <span class="math inline">\((a,b)\)</span> of elements of <span class="math inline">\(S\)</span> some element of <span class="math inline">\(S\)</span>.</p>
 <ul>
 <li><strong>Associativity</strong>: <span class="math inline">\((a*b)*c = a * (b* c)\)</span></li>
@@ -596,8 +602,8 @@ Note
 <p>The most familiar binary operations we already know would definitely be addition and multiplication. For example, addition can be viewed as an operation that assigns the value 7 to the pair <span class="math inline">\((3, 4)\)</span>. Likewise, multiplication can be seen as an operation that assigns the value of 20 to the pair <span class="math inline">\((4, 5)\)</span>.</p>
 <p>However, we may want to define more unusual operations as well.</p>
 </section>
-<section id="group" class="level2">
-<h2 class="anchored" data-anchor-id="group">📌 Group</h2>
+<section id="group" class="level3">
+<h3 class="anchored" data-anchor-id="group">📌 Group</h3>
 <p>A <strong>group</strong> <span class="math inline">\((G, *)\)</span> is a set <span class="math inline">\(Gf\)</span> with a binary operation <span class="math inline">\(*\)</span> satisfying four axioms:</p>
 <ul>
 <li><strong>Closure</strong>: For all <span class="math inline">\(a, b\in G,\ a * b \in G\)</span>.</li>
@@ -708,15 +714,15 @@ Note
 </div>
 </div>
 </section>
+</section>
 <section id="rubiks-cube" class="level3">
 <h3 class="anchored" data-anchor-id="rubiks-cube">👨‍💻 Rubik’s cube</h3>
 <p>The moves for the Rubik’s cube form a group as well: <span class="math inline">\([R, L, F, B, U, D]\)</span>.</p>
 <div id="rubiksCubeContainer"></div>
 <script type="module" src="https://www.hendrikse.name/helion/examples/rubiks_cube.js"></script>
 </section>
-</section>
-<section id="subgroup" class="level2">
-<h2 class="anchored" data-anchor-id="subgroup">📌 Subgroup</h2>
+<section id="subgroup" class="level3">
+<h3 class="anchored" data-anchor-id="subgroup">📌 Subgroup</h3>
 <p>A subset of <span class="math inline">\(H\)</span> of a group <span class="math inline">\(G\)</span> is a <strong>subgroup</strong> (<span class="math inline">\(H\leq G\)</span>) if <span class="math inline">\(H\)</span> is itself a group under the operations of <span class="math inline">\(G\)</span>.</p>
 <p>It is a concept that is very similar to a subspace or subset, so it is basically a smaller group sitting inside a larger group.</p>
 <section id="examples-1" class="level4">
@@ -729,6 +735,7 @@ Note
 (SL_n(\mathbb{R}), *) \leq (GL_n(\mathbb{R}), *)
 \]</span></p>
 <p>Another example would be <span class="math inline">\((\mu_2, *) \leq (\mu_4, *)\)</span>.</p>
+</section>
 </section>
 </section>
 <section id="cyclic-groups" class="level2">
@@ -766,9 +773,8 @@ a * a * a * a \\
 \mu_n=\langle e^{\frac{2\pi i}{n}}\rangle
 \]</span></p>
 </section>
-</section>
-<section id="isomorphic-groups" class="level2">
-<h2 class="anchored" data-anchor-id="isomorphic-groups">📌 Isomorphic groups</h2>
+<section id="isomorphic-groups" class="level3">
+<h3 class="anchored" data-anchor-id="isomorphic-groups">📌 Isomorphic groups</h3>
 <p>So, to understand the group, we need to understand how the elements interact under that operation. One way to do that is to make an operation table.</p>
 <p>For example, let’s look at the operation tables of both <span class="math inline">\(\mathbb{Z}_3\)</span></p>
 <span class="math display">\[\begin{array}{|c|c|c|c|}
@@ -805,8 +811,8 @@ e^{\frac{4\pi i}{3}} &amp; e^{\frac{4\pi i}{3}} &amp; 1 &amp; e^{\frac{2\pi i}{3
 <p>🧠 What matters is how the elements interact with each other. If two groups have the same operation structure after relabelling the elements, they are called <strong>isomorphic</strong>.</p>
 <p>👉 <span class="math inline">\(\mathbb{Z}_3 \cong \mu_3\)</span></p>
 </section>
-<section id="isomorphism-the-map" class="level2">
-<h2 class="anchored" data-anchor-id="isomorphism-the-map">📌 Isomorphism: the map</h2>
+<section id="isomorphism-the-map" class="level3">
+<h3 class="anchored" data-anchor-id="isomorphism-the-map">📌 Isomorphism: the map</h3>
 <p>The function(s) that can be used to check whether two groups are isomorphic or not is called an <strong>isomorphism</strong>. So what conditions should this function generally satisfy?</p>
 <p>An Isomorphism <span class="math inline">\(\phi\)</span> from a group <span class="math inline">\((G, *)\)</span> to a group <span class="math inline">\((G', *')\)</span> is a function <span class="math inline">\(\phi: G\rightarrow G'\)</span> that satisfies two conditions:</p>
 <ol type="1">
@@ -858,8 +864,8 @@ e^{\frac{4\pi i}{3}} &amp; e^{\frac{4\pi i}{3}} &amp; 1 &amp; e^{\frac{2\pi i}{3
 <p>Although this turns out to be extremely difficult, except for finite Abelian groups. This is called <strong>the fundamental theorem of finitely generated abelian groups</strong>.</p>
 </section>
 </section>
-<section id="the-fundamental-theorem-of-finitely-generated-abelian-groups" class="level2">
-<h2 class="anchored" data-anchor-id="the-fundamental-theorem-of-finitely-generated-abelian-groups">📌 The fundamental theorem of finitely generated abelian groups</h2>
+<section id="the-fundamental-theorem-of-finitely-generated-abelian-groups" class="level3">
+<h3 class="anchored" data-anchor-id="the-fundamental-theorem-of-finitely-generated-abelian-groups">📌 The fundamental theorem of finitely generated abelian groups</h3>
 <p>Every finitely generated abelian group <span class="math inline">\(G\)</span> is isomorphic to a direct product of cyclic groups of the form</p>
 <p><span class="math display">\[
 \mathbb{Z}_{p_1} r_1 \times \mathbb{Z}_{p_2} r_2 \times \cdots \times \mathbb{Z}_{p_n} r_n \times \mathbb{Z}\times \cdots\times \mathbb{Z}
@@ -870,8 +876,8 @@ e^{\frac{4\pi i}{3}} &amp; e^{\frac{4\pi i}{3}} &amp; 1 &amp; e^{\frac{2\pi i}{3
 G \cong \mathbb{Z}_4 \times \mathbb{Z}_3,\ \text{or}\ \mathbb{Z} \times \mathbb{Z}_2 \times \mathbb{Z}_2
 \]</span></p>
 </section>
-<section id="cosets" class="level2">
-<h2 class="anchored" data-anchor-id="cosets">📌 Cosets</h2>
+<section id="cosets" class="level3">
+<h3 class="anchored" data-anchor-id="cosets">📌 Cosets</h3>
 <p>Let <span class="math inline">\(H\)</span> be a subgroup of <span class="math inline">\(G\)</span>, and let <span class="math inline">\(a\in G\)</span>.</p>
 <ul>
 <li>The <strong>left coset</strong> of <span class="math inline">\(H\)</span> containing <span class="math inline">\(a\)</span> is the set <span class="math inline">\(aH=\{ah\ |\ h\in H\}\)</span>.</li>

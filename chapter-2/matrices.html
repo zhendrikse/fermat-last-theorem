@@ -376,6 +376,12 @@ window.Quarto = {
  <span class="menu-text">Linear transformations, eigenvalues, inner products, and the spectral theorem</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapter-2/appendix.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Optional further context — Matrix exponentials, determinants, and Lie algebras</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -501,13 +507,19 @@ window.Quarto = {
   <li><a href="#matrices" id="toc-matrices" class="nav-link active" data-scroll-target="#matrices">Matrices</a>
   <ul class="collapse">
   <li><a href="#matrix-definition" id="toc-matrix-definition" class="nav-link" data-scroll-target="#matrix-definition">📌 Matrix: Definition</a></li>
-  </ul></li>
-  <li><a href="#matrix-operations" id="toc-matrix-operations" class="nav-link" data-scroll-target="#matrix-operations">Matrix: Operations</a></li>
+  <li><a href="#matrix-operations" id="toc-matrix-operations" class="nav-link" data-scroll-target="#matrix-operations">📌 Matrix: Operations</a></li>
   <li><a href="#matrix-types" id="toc-matrix-types" class="nav-link" data-scroll-target="#matrix-types">📌 Matrix: Types</a></li>
+  </ul></li>
+  <li><a href="#linear-systems" id="toc-linear-systems" class="nav-link" data-scroll-target="#linear-systems">Linear systems</a>
+  <ul class="collapse">
   <li><a href="#matrices-and-systems-of-linear-equations" id="toc-matrices-and-systems-of-linear-equations" class="nav-link" data-scroll-target="#matrices-and-systems-of-linear-equations">📌 Matrices and Systems of Linear Equations</a></li>
   <li><a href="#invertible-matrices" id="toc-invertible-matrices" class="nav-link" data-scroll-target="#invertible-matrices">📌 Invertible Matrices</a></li>
+  </ul></li>
+  <li><a href="#determinants" id="toc-determinants" class="nav-link" data-scroll-target="#determinants">Determinants</a>
+  <ul class="collapse">
   <li><a href="#the-determinant" id="toc-the-determinant" class="nav-link" data-scroll-target="#the-determinant">📌 The Determinant</a></li>
   <li><a href="#matrix-groups-notation" id="toc-matrix-groups-notation" class="nav-link" data-scroll-target="#matrix-groups-notation">📌 Matrix Groups: Notation</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -594,9 +606,8 @@ i\sqrt{3} &amp;&amp; -7
 \]</span></p>
 </section>
 </section>
-</section>
-<section id="matrix-operations" class="level2">
-<h2 class="anchored" data-anchor-id="matrix-operations">Matrix: Operations</h2>
+<section id="matrix-operations" class="level3">
+<h3 class="anchored" data-anchor-id="matrix-operations">📌 Matrix: Operations</h3>
 <ul>
 <li><p><strong>Addition</strong>: <span class="math display">\[
 (A + B)_{ij} = A_{ij} + B_{ij}
@@ -780,8 +791,8 @@ i\sqrt{3} &amp;&amp; -7
 \]</span></p>
 </section>
 </section>
-<section id="matrix-types" class="level2">
-<h2 class="anchored" data-anchor-id="matrix-types">📌 Matrix: Types</h2>
+<section id="matrix-types" class="level3">
+<h3 class="anchored" data-anchor-id="matrix-types">📌 Matrix: Types</h3>
 <ul>
 <li><p><strong>Square Matrix</strong>: A matrix where the number of rows equals the number of columns <span class="math inline">\(m=n\)</span>.</p></li>
 <li><p><strong>Zero Matrix (<span class="math inline">\(O\)</span>)</strong>: A matrix where all entries are zero. It acts as the additive identity: <span class="math inline">\(A + O = A\)</span>.</p></li>
@@ -870,8 +881,11 @@ c &amp;&amp; d
 \]</span></p>
 </section>
 </section>
-<section id="matrices-and-systems-of-linear-equations" class="level2">
-<h2 class="anchored" data-anchor-id="matrices-and-systems-of-linear-equations">📌 Matrices and Systems of Linear Equations</h2>
+</section>
+<section id="linear-systems" class="level2">
+<h2 class="anchored" data-anchor-id="linear-systems">Linear systems</h2>
+<section id="matrices-and-systems-of-linear-equations" class="level3">
+<h3 class="anchored" data-anchor-id="matrices-and-systems-of-linear-equations">📌 Matrices and Systems of Linear Equations</h3>
 <p>A system of linear equations can be written as a single matrix equation</p>
 <p><span class="math display">\[
 \begin{cases}
@@ -942,8 +956,8 @@ AB=BA=I_n
 \]</span></p>
 </section>
 </section>
-<section id="invertible-matrices" class="level2">
-<h2 class="anchored" data-anchor-id="invertible-matrices">📌 Invertible Matrices</h2>
+<section id="invertible-matrices" class="level3">
+<h3 class="anchored" data-anchor-id="invertible-matrices">📌 Invertible Matrices</h3>
 <p>A square matrix <span class="math inline">\(A\)</span> is <strong>invertible</strong> if an <strong>inverse</strong> matrix <span class="math inline">\(A^{-1}\)</span> exists that satisfies</p>
 <p><span class="math display">\[
 A A^{-1} = A^{-1} A = I_n
@@ -1136,8 +1150,11 @@ d &amp;&amp; -b \\
 <p>The definition of a determinant can be generalized to any <span class="math inline">\(n \times n\)</span> matrix, but we will refrain from doing so here. Instead, we will focus on the <span class="math inline">\(2 \times 2\)</span> case, which is sufficient for our purposes.</p>
 </section>
 </section>
-<section id="the-determinant" class="level2">
-<h2 class="anchored" data-anchor-id="the-determinant">📌 The Determinant</h2>
+</section>
+<section id="determinants" class="level2">
+<h2 class="anchored" data-anchor-id="determinants">Determinants</h2>
+<section id="the-determinant" class="level3">
+<h3 class="anchored" data-anchor-id="the-determinant">📌 The Determinant</h3>
 <p>A <strong>determinant</strong> is a function <span class="math display">\[
 \det: M_{n \times n}(F) \rightarrow F
 \]</span> that assigns a scalar to each square matrix.</p>
@@ -1151,8 +1168,8 @@ d &amp;&amp; -b \\
 👉\ \det\begin{pmatrix} a &amp;&amp; b \\ c &amp;&amp; d\end{pmatrix}=ad-bc
 \]</span></p>
 </section>
-<section id="matrix-groups-notation" class="level2">
-<h2 class="anchored" data-anchor-id="matrix-groups-notation">📌 Matrix Groups: Notation</h2>
+<section id="matrix-groups-notation" class="level3">
+<h3 class="anchored" data-anchor-id="matrix-groups-notation">📌 Matrix Groups: Notation</h3>
 <p>For a field <span class="math inline">\(F\)</span> and a positive integer <span class="math inline">\(n\)</span>:</p>
 <ul>
 <li><p><span class="math inline">\(Mat_n(F)\)</span>: the set of all <span class="math inline">\(n\times n\)</span> matrices with entries in F.</p></li>
@@ -1194,6 +1211,7 @@ GL_2(\mathbb{R}):\ \begin{pmatrix} 1 &amp;&amp; 2 \\ 3 &amp;&amp; 4\end{pmatrix}
 \]</span></p>
 
 
+</section>
 </section>
 </section>
 

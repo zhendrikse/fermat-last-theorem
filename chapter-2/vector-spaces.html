@@ -376,6 +376,12 @@ window.Quarto = {
  <span class="menu-text">Linear transformations, eigenvalues, inner products, and the spectral theorem</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapter-2/appendix.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Optional further context — Matrix exponentials, determinants, and Lie algebras</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -505,8 +511,8 @@ window.Quarto = {
   <li><a href="#linear-combination" id="toc-linear-combination" class="nav-link" data-scroll-target="#linear-combination">📌 Linear combination</a></li>
   <li><a href="#span" id="toc-span" class="nav-link" data-scroll-target="#span">📌 Span</a></li>
   <li><a href="#linear-independence-and-dependence" id="toc-linear-independence-and-dependence" class="nav-link" data-scroll-target="#linear-independence-and-dependence">📌 Linear independence and dependence</a></li>
-  <li><a href="#basis-dimension" id="toc-basis-dimension" class="nav-link" data-scroll-target="#basis-dimension">📌 Basis and dimension</a></li>
   </ul></li>
+  <li><a href="#basis-and-dimension" id="toc-basis-and-dimension" class="nav-link" data-scroll-target="#basis-and-dimension">Basis and dimension</a></li>
   </ul>
 </nav>
     </div>
@@ -546,11 +552,11 @@ Note
 <p>This section corresponds to <a href="https://www.youtube.com/watch?v=9f-hGSh8lF0&amp;t=6028s">Vector Spaces, Basis, and Dimension — 1:40:28</a> in the video <em>Proof of Fermat Last Theorem FROM SCRATCH</em>. <a href="https://www.linkedin.com/in/noah-jang-2111392ba/">Noah Jang</a> is the original creator of the exposition and examples referenced here. The interactive implementations, animations, additional explanations, and contextual material are my own work.</p>
 </div>
 </div>
-<section id="vector-spaces" class="level1">
-<h1>Vector spaces</h1>
+<section id="vector-spaces" class="level2">
+<h2 class="anchored" data-anchor-id="vector-spaces">Vector spaces</h2>
 <p>We stated earlier that mathematics is not only about numbers, it is also about structure. A vector space is one of the most important examples of such a structure.</p>
-<section id="vector-space-axioms" class="level2">
-<h2 class="anchored" data-anchor-id="vector-space-axioms">📌 Vector Space: Axioms</h2>
+<section id="vector-space-axioms" class="level3">
+<h3 class="anchored" data-anchor-id="vector-space-axioms">📌 Vector Space: Axioms</h3>
 <p>A <strong>vector space</strong> <span class="math inline">\(V\)</span> over a field <span class="math inline">\(F\)</span> is a set with addition (<span class="math inline">\(+, V\times V \rightarrow V\)</span>) and scalar multiplication (<span class="math inline">\(\cdot, V\times F \rightarrow V\)</span>) satisfying these axioms for all <span class="math inline">\(x,y,z\in V\)</span> and <span class="math inline">\(a, b\in F\)</span>:</p>
 <p>Here we intentionally want to generalize the concept of a vector!</p>
 <ul>
@@ -585,8 +591,8 @@ a (x_1, x_2, \dots, x_n) = (ax_1, ax_2, \dots, ax_n)
 <p>However, <span class="math inline">\(\mathbb{N}\)</span> is <em>not</em> a vector space, as 0 is not in the set. Also, if we pick any natural number, the negative is <em>not</em> in the set.</p>
 </section>
 </section>
-<section id="subspace" class="level2">
-<h2 class="anchored" data-anchor-id="subspace">📌 Subspace</h2>
+<section id="subspace" class="level3">
+<h3 class="anchored" data-anchor-id="subspace">📌 Subspace</h3>
 <p>A <strong>subspace</strong> of a vector space <span class="math inline">\(V\)</span> is a non-empty subset <span class="math inline">\(W\)</span> of <span class="math inline">\(V\)</span> that is itself a vector space under the operations inherited from <span class="math inline">\(V\)</span>.</p>
 <p>For example, <span class="math inline">\(\mathbb{R}\)</span> is a subspace of <span class="math inline">\(\mathbb{C}\)</span>, <span class="math inline">\(\mathbb{R}\subset \mathbb{C}\)</span>.</p>
 <p>Another example is</p>
@@ -600,8 +606,8 @@ W' = \{(x,y)\in\mathbb{R} |\ y = x + 1\} \subset \mathbb{R}^2
 <p>is not a vector space, as it does not have a zero vector in it <span class="math inline">\((0, 0) \notin W'\)</span>. Consequently, we cannot call it a subspace of <span class="math inline">\(\mathbb{R}^2\)</span> either!</p>
 <p>Another example is the set of all real coefficient polynomials with maximum degree two, <span class="math inline">\(P_2[\mathbb{R}]\)</span>. This is a vector space as well as a subspace of all real coefficient polynomials.</p>
 </section>
-<section id="linear-combination" class="level2">
-<h2 class="anchored" data-anchor-id="linear-combination">📌 Linear combination</h2>
+<section id="linear-combination" class="level3">
+<h3 class="anchored" data-anchor-id="linear-combination">📌 Linear combination</h3>
 <p>We are slowly moving towards the concept of a basis. So what is a basis? A basis is one of the most important ideas in linear algebra. Roughly speaking, a basis is a minimal set of building blocks for a vector space.</p>
 <p>For example, if we look at <span class="math inline">\(\mathbb{R}^2\)</span>, a basis may be <span class="math inline">\(\{(1, 0), (0, 1)\}\)</span>. This constitutes a valid basis, as we can pick any vector <span class="math inline">\((a,b)\in\mathbb{R}^2\)</span> and write it as a linear combination of the basis vectors:</p>
 <p><span class="math display">\[
@@ -678,8 +684,8 @@ a\begin{pmatrix}
 <p>The answer is no, as the third coordinate will always remain zero. So <span class="math inline">\(\begin{pmatrix} 3 \\ 4 \\ 5 \end{pmatrix}\)</span> is <em>not</em> a linear combination of <span class="math inline">\(S\)</span>.</p>
 </section>
 </section>
-<section id="span" class="level2">
-<h2 class="anchored" data-anchor-id="span">📌 Span</h2>
+<section id="span" class="level3">
+<h3 class="anchored" data-anchor-id="span">📌 Span</h3>
 <p>Let <span class="math inline">\(S\)</span> be a non-empty subset of a vector space <span class="math inline">\(V\)</span>. The <strong>span</strong> of <span class="math inline">\(S\)</span>, denoted by <span class="math inline">\(\text{span}(S)\)</span>, is the smallest subset of <span class="math inline">\(V\)</span> containing <span class="math inline">\(S\)</span>. In practice, it is the set of all linear combinations of elements of <span class="math inline">\(S=\{ v_1, v_2, \cdots, v_n\}\)</span>:</p>
 <p><span class="math display">\[
 \text{span}(S) =
@@ -688,8 +694,8 @@ a_1v_1+\cdots+a_n v_n\ |\ n \geq 1,\ v_i\in S,\ a_i \in F
 \}
 \]</span></p>
 </section>
-<section id="linear-independence-and-dependence" class="level2">
-<h2 class="anchored" data-anchor-id="linear-independence-and-dependence">📌 Linear independence and dependence</h2>
+<section id="linear-independence-and-dependence" class="level3">
+<h3 class="anchored" data-anchor-id="linear-independence-and-dependence">📌 Linear independence and dependence</h3>
 <p>A set of vectors <span class="math inline">\(S=\{ v_1, v_2,\ \cdots,\ v_k\}\)</span> is <strong>linearly independent</strong> if the only solution to the equation</p>
 <p><span class="math display">\[
 a_1v_1+a_2v_2+\cdots+a_k v_k = {\bf 0}
@@ -723,8 +729,9 @@ a_1(1, 2, 3) + a_2(1, 3, 5) + a_3(2, 5, 8) = (0, 0, 0) \Rightarrow a_1=0 \Righta
 <p>Now finally we can define the concepts of basis and dimension.</p>
 </section>
 </section>
-<section id="basis-dimension" class="level2">
-<h2 class="anchored" data-anchor-id="basis-dimension">📌 Basis and dimension</h2>
+</section>
+<section id="basis-and-dimension" class="level2">
+<h2 class="anchored" data-anchor-id="basis-and-dimension">Basis and dimension</h2>
 <ul>
 <li><p>A <strong>basis</strong> for a vector space <span class="math inline">\(V\)</span> is a linearly independent subset of <span class="math inline">\(V\)</span> that spans <span class="math inline">\(V\)</span></p></li>
 <li><p>The <strong>dimension</strong> of <span class="math inline">\(V\)</span>, <span class="math inline">\(\text{dim}(V)\)</span>, is the number of vectors in a basis</p></li>
@@ -816,7 +823,6 @@ b\begin{pmatrix}
 <p>So the dimension of this vector space is four.</p>
 
 
-</section>
 </section>
 </section>
 
