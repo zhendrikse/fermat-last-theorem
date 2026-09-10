@@ -36,6 +36,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../chapter-3/galois-theory.html" rel="next">
 <link href="../chapter-3/groups.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -77,6 +78,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -382,8 +412,11 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </li>
           <li class="sidebar-item">
- <span class="menu-text">chapter-3/galois-theory.qmd</span>
-  </li>
+  <div class="sidebar-item-container"> 
+  <a href="../chapter-3/galois-theory.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">galois-theory.html</span></a>
+  </div>
+</li>
           <li class="sidebar-item">
  <span class="menu-text">chapter-3/galois-representations.qmd</span>
   </li>
@@ -469,8 +502,20 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#rings" id="toc-rings" class="nav-link active" data-scroll-target="#rings">📌 Rings</a>
+  <ul class="collapse">
+  <li><a href="#rings-1" id="toc-rings-1" class="nav-link" data-scroll-target="#rings-1">🏷️ Rings</a>
+  <ul class="collapse">
+  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples">✍️ <strong>Examples</strong></a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -508,8 +553,23 @@ Note
 <p>This section corresponds to <a href="https://www.youtube.com/watch?v=9f-hGSh8lF0&amp;t=12967s">Rings, Fields, Ideals, and Unique Factorization — 3:36:07</a> in the video <em>Proof of Fermat Last Theorem FROM SCRATCH</em>. <a href="https://www.linkedin.com/in/noah-jang-2111392ba/">Noah Jang</a> is the original creator of the exposition and examples referenced here. The interactive implementations, animations, additional explanations, and contextual material are my own work.</p>
 </div>
 </div>
+<section id="rings" class="level1">
+<h1>📌 Rings</h1>
+<section id="rings-1" class="level2">
+<h2 class="anchored" data-anchor-id="rings-1">🏷️ Rings</h2>
+<p>A <strong>ring</strong> <span class="math inline">\(R(+, \cdot)\)</span> is a set with two binary operations (frequently called addition and multiplication) satisfying</p>
+<ul>
+<li><span class="math inline">\(R(+)\)</span> is an Abelian group</li>
+<li><span class="math inline">\(\forall a,b,c\in\mathbb{R},\ (a\cdot b)\cdot c = a\cdot (b\cdot c)\)</span></li>
+<li><span class="math inline">\(\forall a,b,c\in\mathbb{R},\ a(b + c) = ab + ac\ \text{and}\ (a + b)c = ac + bc\)</span></li>
+</ul>
+<section id="examples" class="level3">
+<h3 class="anchored" data-anchor-id="examples">✍️ <strong>Examples</strong></h3>
 
 
+</section>
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -932,6 +992,9 @@ Note
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="../chapter-3/galois-theory.html" class="pagination-link" aria-label="galois-theory.html">
+        <span class="nav-page-text">galois-theory.html</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->

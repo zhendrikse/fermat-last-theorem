@@ -2,11 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://zhendrikse.github.io/fermat-last-theorem/chapter-1/basic-set-number-theory.html</loc>
-    <lastmod>2026-09-10T09:47:17.365Z</lastmod>
+    <lastmod>2026-09-10T09:58:23.838Z</lastmod>
   </url>
   <url>
     <loc>https://zhendrikse.github.io/fermat-last-theorem/demo-index.html</loc>
-    <lastmod>2026-08-28T16:46:02.776Z</lastmod>
+    <lastmod>2026-09-10T13:14:19.199Z</lastmod>
   </url>
   <url>
     <loc>https://zhendrikse.github.io/fermat-last-theorem/chapter-2/linear-algebra.html</loc>
@@ -18,7 +18,7 @@
   </url>
   <url>
     <loc>https://zhendrikse.github.io/fermat-last-theorem/index.html</loc>
-    <lastmod>2026-08-31T12:25:12.800Z</lastmod>
+    <lastmod>2026-09-10T09:54:04.938Z</lastmod>
   </url>
   <url>
     <loc>https://zhendrikse.github.io/fermat-last-theorem/chapter-3/abstract-algebra.html</loc>
@@ -26,11 +26,15 @@
   </url>
   <url>
     <loc>https://zhendrikse.github.io/fermat-last-theorem/chapter-3/rings.html</loc>
-    <lastmod>2026-08-30T09:37:06.049Z</lastmod>
+    <lastmod>2026-09-10T12:58:49.567Z</lastmod>
+  </url>
+  <url>
+    <loc>https://zhendrikse.github.io/fermat-last-theorem/chapter-3/galois-theory.html</loc>
+    <lastmod>2026-09-10T09:53:49.222Z</lastmod>
   </url>
   <url>
     <loc>https://zhendrikse.github.io/fermat-last-theorem/chapter-3/groups.html</loc>
-    <lastmod>2026-09-10T09:38:35.417Z</lastmod>
+    <lastmod>2026-09-10T12:50:54.508Z</lastmod>
   </url>
   <url>
     <loc>https://zhendrikse.github.io/fermat-last-theorem/chapter-2/vector-spaces.html</loc>

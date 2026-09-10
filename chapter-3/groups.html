@@ -412,8 +412,11 @@ window.Quarto = {
   </div>
 </li>
           <li class="sidebar-item">
- <span class="menu-text">chapter-3/galois-theory.qmd</span>
-  </li>
+  <div class="sidebar-item-container"> 
+  <a href="../chapter-3/galois-theory.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">galois-theory.html</span></a>
+  </div>
+</li>
           <li class="sidebar-item">
  <span class="menu-text">chapter-3/galois-representations.qmd</span>
   </li>
@@ -559,10 +562,13 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#group-actions-and-g-sets" id="toc-group-actions-and-g-sets" class="nav-link" data-scroll-target="#group-actions-and-g-sets">🏷️ Group actions and G-sets</a>
   <ul class="collapse">
-  <li><a href="#example-1-2" id="toc-example-1-2" class="nav-link" data-scroll-target="#example-1-2">✍️ <strong>Example 1</strong></a></li>
+  <li><a href="#example-1-translations-in-the-plane-mathbbr2" id="toc-example-1-translations-in-the-plane-mathbbr2" class="nav-link" data-scroll-target="#example-1-translations-in-the-plane-mathbbr2">✍️ <strong>Example 1</strong>: translations in the plane <span class="math inline">\(\mathbb{R}^2\)</span></a></li>
   <li><a href="#example-2-rotations-of-two-dimensiona-vectors-around-the-origin" id="toc-example-2-rotations-of-two-dimensiona-vectors-around-the-origin" class="nav-link" data-scroll-target="#example-2-rotations-of-two-dimensiona-vectors-around-the-origin">✍️ <strong>Example 2</strong>: rotations of two-dimensiona vectors around the origin</a></li>
   </ul></li>
-  <li><a href="#orbit" id="toc-orbit" class="nav-link" data-scroll-target="#orbit">🏷️ Orbit</a></li>
+  <li><a href="#orbit" id="toc-orbit" class="nav-link" data-scroll-target="#orbit">🏷️ Orbit</a>
+  <ul class="collapse">
+  <li><a href="#orbits-demo" id="toc-orbits-demo" class="nav-link" data-scroll-target="#orbits-demo">👨‍💻 Orbits demo</a></li>
+  </ul></li>
   </ul></li>
   </ul>
 </nav>
@@ -1087,10 +1093,10 @@ Note
 <li><span class="math inline">\(e*x = x\quad \forall x\in X\)</span></li>
 <li><span class="math inline">\((g_1g_2)*x = g_1*(g_2 * x)\quad \forall g_1, g_2 \in G\ \text{and}\ x\in X\)</span></li>
 </ol>
-<section id="example-1-2" class="level3">
-<h3 class="anchored" data-anchor-id="example-1-2">✍️ <strong>Example 1</strong></h3>
+<section id="example-1-translations-in-the-plane-mathbbr2" class="level3">
+<h3 class="anchored" data-anchor-id="example-1-translations-in-the-plane-mathbbr2">✍️ <strong>Example 1</strong>: translations in the plane <span class="math inline">\(\mathbb{R}^2\)</span></h3>
 <p><span class="math display">\[
-G=\mathbb{Z},\quad X=\mathbb{R},\quad n*x=n+x
+G=\mathbb{Z},\quad X=\mathbb{R}^2,\quad n*x=n+x
 \]</span></p>
 <p>Does <span class="math inline">\(X\)</span> suffice the conditions of a G-set?</p>
 <ol type="1">
@@ -1118,8 +1124,14 @@ G=\mathbb{R},\quad X=\mathbb{R^2},\quad \theta(x, y) = \begin{pmatrix} \cos\thet
 O_x = \{ g*x\ |\ g\in G\} \subseteq X
 \]</span></p>
 <p>Stated differently, let all group actions work on <span class="math inline">\(x\)</span> and collect the resulting elements. This collection is called an orbit. Generally, this is a subset of <span class="math inline">\(X\)</span>.</p>
+<section id="orbits-demo" class="level3">
+<h3 class="anchored" data-anchor-id="orbits-demo">👨‍💻 Orbits demo</h3>
+<p>Experiment to see how each norm <span class="math inline">\(\|x\|\)</span> determines exactly one orbit, and hence how the plane <span class="math inline">\(\mathbb{R}^2\)</span> can be partitioned into orbits of the G-set of rotations.</p>
+<div id="orbitsContainer"></div>
+<script type="module" src="https://www.hendrikse.name/helion/examples/orbits.js"></script>
 
 
+</section>
 </section>
 </section>
 

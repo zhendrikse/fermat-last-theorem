@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Optional further context — Matrix exponentials, determinants, and Lie algebras – Fermat's Last Theorem — From Scratch</title>
+<title>galois-theory – Fermat's Last Theorem — From Scratch</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -36,8 +36,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../chapter-3/abstract-algebra.html" rel="next">
-<link href="../chapter-2/linear-transformations.html" rel="prev">
+<link href="../chapter-3/rings.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -78,35 +77,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -280,7 +250,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapter-2/linear-algebra.html">Chapter 2 — Linear Algebra</a></li><li class="breadcrumb-item"><a href="../chapter-2/appendix.html">Optional further context — Matrix exponentials, determinants, and Lie algebras</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapter-3/abstract-algebra.html">Chapter 3 — Abstract Algebra</a></li><li class="breadcrumb-item"><a href="../chapter-3/galois-theory.html">galois-theory.html</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -378,7 +348,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapter-2/appendix.html" class="sidebar-item-text sidebar-link active">
+  <a href="../chapter-2/appendix.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Optional further context — Matrix exponentials, determinants, and Lie algebras</span></a>
   </div>
 </li>
@@ -413,7 +383,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapter-3/galois-theory.html" class="sidebar-item-text sidebar-link">
+  <a href="../chapter-3/galois-theory.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">galois-theory.html</span></a>
   </div>
 </li>
@@ -502,187 +472,18 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#goal" id="toc-goal" class="nav-link active" data-scroll-target="#goal">🎯 Goal</a></li>
-  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example">✍️ Example</a>
-  <ul class="collapse">
-  <li><a href="#find-the-trace" id="toc-find-the-trace" class="nav-link" data-scroll-target="#find-the-trace">Find the trace</a></li>
-  <li><a href="#find-the-determinant" id="toc-find-the-determinant" class="nav-link" data-scroll-target="#find-the-determinant">Find the determinant</a>
-  <ul class="collapse">
-  <li><a href="#eigenvalues-and-eigenvectors" id="toc-eigenvalues-and-eigenvectors" class="nav-link" data-scroll-target="#eigenvalues-and-eigenvectors">Eigenvalues and eigenvectors</a></li>
-  </ul></li>
-  </ul></li>
-  <li><a href="#what-is-going-on" id="toc-what-is-going-on" class="nav-link" data-scroll-target="#what-is-going-on">📌 What is going on?</a></li>
-  <li><a href="#lie-groups-and-lie-algebras" id="toc-lie-groups-and-lie-algebras" class="nav-link" data-scroll-target="#lie-groups-and-lie-algebras">📌 Lie groups and Lie algebras</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapter-2/linear-algebra.html">Chapter 2 — Linear Algebra</a></li><li class="breadcrumb-item"><a href="../chapter-2/appendix.html">Optional further context — Matrix exponentials, determinants, and Lie algebras</a></li></ol></nav>
-<div class="quarto-title">
-<h1 class="title">Optional further context — Matrix exponentials, determinants, and Lie algebras</h1>
-</div>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapter-3/abstract-algebra.html">Chapter 3 — Abstract Algebra</a></li><li class="breadcrumb-item"><a href="../chapter-3/galois-theory.html">galois-theory.html</a></li></ol></nav></header>
 
 
 
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
 
 
-</header>
 
 
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>This contents of this section are taken from the video <a href="https://www.youtube.com/watch?v=Iz7PSlTpjyI">Matrix exponentials, determinants, and Lie algebras</a> by <a href="https://www.youtube.com/@MichaelPennMath">Michael Penn</a>. Although this section is not needed in the context of the FLT proof, it demonstrates a nice application of many of the concepts dicussed in this chapter on linear algebra nonetheless.</p>
-</div>
-</div>
-<section id="goal" class="level1">
-<h1>🎯 Goal</h1>
-<p>Suppose that <span class="math inline">\(A\)</span> is an <span class="math inline">\(n\times n\)</span> matrix. Then</p>
-<p><span class="math display">\[
-\boxed{e^{\text{tr}(A)} = \det(e^A)}
-\]</span></p>
-<p>where</p>
-<p><span class="math display">\[
-e^A = I + A + \frac{1}{2!}A^2 + \frac{1}{3!}A^3 + \ldots
-\]</span></p>
-</section>
-<section id="example" class="level1">
-<h1>✍️ Example</h1>
-<p><span class="math display">\[
-A=\begin{pmatrix}4 &amp;&amp; 2 \\ 1 &amp;&amp; 5\end{pmatrix}
-\]</span></p>
-<section id="find-the-trace" class="level2">
-<h2 class="anchored" data-anchor-id="find-the-trace">Find the trace</h2>
-<p>Let’s first calculate the left-hand side of the equation.</p>
-<p><span class="math display">\[
-\boxed{\text{tr}(A) = 9 \implies e^{\text{tr}(A)} = e^9}
-\]</span></p>
-</section>
-<section id="find-the-determinant" class="level2">
-<h2 class="anchored" data-anchor-id="find-the-determinant">Find the determinant</h2>
-<section id="eigenvalues-and-eigenvectors" class="level3">
-<h3 class="anchored" data-anchor-id="eigenvalues-and-eigenvectors">Eigenvalues and eigenvectors</h3>
-<p>Next, let’s calculate the right-hand side of the equation. We do this by finding the eigenvalues and eigenvectors first, as it allows us to diagonalize A and carry out the exponentiation much easier.</p>
-<p>The characteristic polynomial for this matrix <span class="math inline">\(A\)</span> is:</p>
-<p><span class="math display">\[
-\begin{array}{ll}
-\chi_A(x) &amp;=&amp; \det(A- xI)\\
-&amp;=&amp; \det \begin{pmatrix} 4 - x &amp;&amp; 1 \\ 2 &amp;&amp; 5 - x \end{pmatrix} \\
-&amp;=&amp; (4-x)(5-x) -2 \\
-&amp;=&amp; x^2 -9x + 18 \\
-&amp;=&amp; (x-3)(x-6)
-\end{array}
-\]</span></p>
-<p>So our eigenvalues are: <span class="math inline">\(\boxed{\lambda_1=3, \lambda_2=6}\)</span></p>
-<p>Next, let’s find our eigenvectors. This is equivalent to determining the kernel of <span class="math inline">\((A - \lambda I)\)</span> for each of the two eigenvalues as:</p>
-<p><span class="math display">\[
-Av=\lambda v \Rightarrow (A - \lambda I)v = 0 \Rightarrow v\in \ker(A - \lambda I)
-\]</span></p>
-<p>So for <span class="math inline">\(\lambda_1\)</span> we have</p>
-<p><span class="math display">\[
-\begin{array}{ll}
-\ker(A - \lambda_1 I) &amp;=&amp; \ker \begin{pmatrix} 4 - 3 &amp;&amp; 1 \\ 2 &amp;&amp; 5 - 3 \end{pmatrix}\\
-&amp;=&amp; \ker \begin{pmatrix} 1 &amp;&amp; 1 \\ 2 &amp;&amp; 2  \end{pmatrix} \\
-&amp;=&amp; \ker \begin{pmatrix} 1 &amp;&amp; 1 \\ 0 &amp;&amp; 0  \end{pmatrix} \Rightarrow \begin{pmatrix} 1 &amp;&amp; 1 \\ 0 &amp;&amp; 0  \end{pmatrix}\begin{pmatrix} x \\ y  \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \end{pmatrix}
-\end{array}
-\]</span></p>
-<p>This implies that <span class="math inline">\(x = -y\)</span>, so we have <span class="math inline">\(\boxed{\overrightarrow{e_1} = \begin{pmatrix} 1 \\ -1 \end{pmatrix}}\)</span>.</p>
-<p>Analogously, we find that <span class="math inline">\(\boxed{\overrightarrow{e_2} = \begin{pmatrix} 1 \\ 2 \end{pmatrix}}\)</span>.</p>
-<p>Conseqently, the diagonalizing matrix <span class="math inline">\(P\)</span> becomes</p>
-<p><span class="math display">\[
-P = (\overrightarrow{e_1}\ \overrightarrow{e_2}) = \begin{pmatrix} 1 &amp; 1 \\ -1 &amp; 2 \end{pmatrix} \Rightarrow P^{-1} =\frac{1}{3} \begin{pmatrix} 2 &amp; -1 \\ 1 &amp; 1 \end{pmatrix}
-\]</span></p>
-<p>So</p>
-<p><span class="math display">\[
-PAP^{-1} = \begin{pmatrix} 3 &amp; 0 \\ 0 &amp; 6 \end{pmatrix} \Rightarrow A = P\begin{pmatrix} 3 &amp; 0 \\ 0 &amp; 6 \end{pmatrix}P^{-1} \Rightarrow
-A^n = P\begin{pmatrix} 3 &amp; 0 \\ 0 &amp; 6 \end{pmatrix}^n P^{-1}
-\]</span></p>
-<p>Now we can move on to calculate the exponential:</p>
-<p><span class="math display">\[
-\begin{array}{ll}
-e^A &amp;=&amp; \sum_{n=0}^{\infty} \frac{1}{n!}A^n \\
-    &amp;=&amp; P\bigg[\sum_{n=0}^{\infty}\begin{pmatrix} 3^n &amp; 0 \\ 0 &amp; 6^n \end{pmatrix}\bigg] P^{-1} \\
-    &amp;=&amp; P\begin{pmatrix} e^3 &amp; 0 \\ 0 &amp; e^6 \end{pmatrix} P^{-1} \\
-    &amp;=&amp; \begin{pmatrix} 1 &amp; 1 \\ -1 &amp; 2 \end{pmatrix}\begin{pmatrix} e^3 &amp; 0 \\ 0 &amp; e^6 \end{pmatrix}\frac{1}{3} \begin{pmatrix} 2 &amp; -1 \\ 1 &amp; 1 \end{pmatrix} \\
-    &amp;=&amp; \frac{1}{3}\begin{pmatrix} e^3 &amp; e^6 \\ -e^3 &amp; 2e^6 \end{pmatrix}\begin{pmatrix} 2 &amp; -1 \\ 1 &amp; 1 \end{pmatrix} \\
-    &amp;=&amp; \frac{1}{3}\begin{pmatrix} 2e^3 + e^6 &amp; -e^3+e^6 \\ -2e^3+2e^6 &amp; e^3+2e^6 \end{pmatrix}
-\end{array}
-\]</span></p>
-<p>Finally, we can caculate the determinant:</p>
-<p><span class="math display">\[
-\begin{array}{ll}
-\det(e^A) &amp;=&amp; \frac{1}{9}\big((2e^3 + e^6)(e^3+2e^6)+(e^3-e^6)(-2e^3+2e^6) \big) \\
-&amp;=&amp; \frac{1}{9}(2e^6+4e^9 +e^9+2e^{12} -2e^6+2e^9+2e^9-2e^{12} ) \\
-&amp;=&amp; e^9 = e^{\text{tr}(A)}\ ꪜ
-\end{array}
-\]</span></p>
-</section>
-</section>
-</section>
-<section id="what-is-going-on" class="level1">
-<h1>📌 What is going on?</h1>
-<p>👉 <span class="math inline">\(\text{tr}(A)\)</span> is the sum of eigenvalues of <span class="math inline">\(A\)</span>.<br> 👉 <span class="math inline">\(\det(A)\)</span> is the product of eigenvalues of <span class="math inline">\(A\)</span>.<br> 👉 <span class="math inline">\(\lambda\)</span> is an eigenvalue of <span class="math inline">\(A \Longleftrightarrow e^\lambda\)</span> is an eigenvector of <span class="math inline">\(e^A\)</span>.<br></p>
-<p>From these it quickly follows that <span class="math inline">\(e^{\text{tr}(A)} = \det(e^A)\)</span>.</p>
-<p>The proof these statements in general is a bit tricky, so we limit ourselves to the diagonalizable case here, with the following lemma (that can easily be proven using the definition of matrix multiplication):</p>
-<p><span class="math display">\[
-\text{tr}(xy)=\text{tr}(yx)
-\]</span></p>
-<p>Let’s assume that <span class="math inline">\(A\)</span> is diagonalizable:</p>
-<p><span class="math display">\[
-PAP^{-1} = \begin{pmatrix} \lambda_1 &amp; 0 &amp; 0 \\ 0 &amp; \ddots &amp; 0 \\ 0 &amp; 0 &amp; \lambda_n\end{pmatrix}
-\]</span></p>
-<p>Then we can write</p>
-<p><span class="math display">\[
-\text{tr}(A) = \text{tr}\left (P\begin{pmatrix} \lambda_1 &amp; 0 &amp; 0 \\ 0 &amp; \ddots &amp; 0 \\ 0 &amp; 0 &amp; \lambda_n\end{pmatrix}P^{-1}\right )
-\]</span></p>
-<p>Using the above lemma, we can commute the <span class="math inline">\(P\)</span> and <span class="math inline">\(P^{-1}\)</span>, so <span class="math inline">\(\text{tr}(A) = \lambda_1+\ldots+\lambda_n\)</span>. This gives us</p>
-<p><span class="math display">\[
-e^{\text{tr}(A)}=e^{\lambda_1+\ldots+\lambda_n}=\boxed{e^{\lambda_1} \ldots e^{\lambda_n}}
-\]</span></p>
-<p>At the same time,</p>
-<p><span class="math display">\[
-e^A = P\begin{pmatrix} e^{\lambda_1} &amp; 0 &amp; 0 \\ 0 &amp; \ddots &amp; 0 \\ 0 &amp; 0 &amp; e^{\lambda_n}\end{pmatrix}P^{-1}
-\]</span></p>
-<p>from which follows</p>
-<p><span class="math display">\[
-\det(e^A)=\det(P)\left [e^{\lambda_1}\ldots e^{\lambda_n}\right ]\det(P^{-1}) = \boxed{e^{\lambda_1}\ldots e^{\lambda_n}}
-\]</span></p>
-</section>
-<section id="lie-groups-and-lie-algebras" class="level1">
-<h1>📌 Lie groups and Lie algebras</h1>
-<p><span class="math display">\[
-\begin{array}{l}
-SL_n(\mathbb{C})=\{X\ |\ \det(X) = 1\} \\
-sl_n(\mathbb{C})=\{x\ |\ \text{tr}(x)=0 \},\ \text{e.g.}\ \begin{pmatrix} -2 &amp; 3 \\ 4 &amp; 2 \end{pmatrix} \in sl_2
-\end{array}
-\]</span></p>
-<p>Note that if <span class="math inline">\(x\in sl_n(\mathbb{C})\)</span>, set <span class="math inline">\(X=e^x\)</span>. Then <span class="math inline">\(\det(X) = \det(e^x) = e^{\text{tr}(x)} = 1\)</span>. That is exactly the requirement that we have for <span class="math inline">\(X\)</span> to be an element of <span class="math inline">\(SL_2(\mathbb{C})\)</span>!</p>
-<p>🧠 Concluding, <span class="math inline">\(\boxed{e^{\text{tr}(A)} = \det(e^A)}\)</span> gives us a mechanism to go from the Lie group to the Lie algebra and vice versa.</p>
-
-
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1100,14 +901,11 @@ sl_n(\mathbb{C})=\{x\ |\ \text{tr}(x)=0 \},\ \text{e.g.}\ \begin{pmatrix} -2 &am
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../chapter-2/linear-transformations.html" class="pagination-link" aria-label="Linear transformations, eigenvalues, inner products, and the spectral theorem">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Linear transformations, eigenvalues, inner products, and the spectral theorem</span>
+      <a href="../chapter-3/rings.html" class="pagination-link" aria-label="Rings, Fields, Ideals, and Unique Factorization">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Rings, Fields, Ideals, and Unique Factorization</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../chapter-3/abstract-algebra.html" class="pagination-link" aria-label="Abstract algebra">
-        <span class="nav-page-text">Abstract algebra</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
