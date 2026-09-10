@@ -26,7 +26,7 @@ $$
 👉 $\mathbb{Q}$: the set of rational numbers
 
 $$
-\mathbb{Q} = \{\frac{a}{b}\ \big|\ a, b \in \mathbb{Z}, b \neq 0\}
+\mathbb{Q} = \left\{\frac{a}{b}\ \bigg|\ a, b \in \mathbb{Z}, b \neq 0\right\}
 $$
 👉 $\mathbb{R}$: the set of real numbers
 
@@ -66,7 +66,7 @@ $$
 ### ✍️ **Example** 3: $\mathbb{R}^2$
 
 $$
-\mathbb{R}^2= \{(x,y)\ |\ x,y \in \mathbb{R}^2 \}
+\mathbb{R}^2= \left\{ \begin{pmatrix} x \\ y \end{pmatrix}\ \bigg|\ x,y \in \mathbb{R}^2 \right\}
 $$
 
 ## 🏷️ Symbols and abbreviations
