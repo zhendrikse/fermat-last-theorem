@@ -537,10 +537,10 @@ A set $X$ is called a **G-set** if there is a map (called a **group action**) $*
 1. $e*x = x\quad \forall x\in X$
 2. $(g_1g_2)*x = g_1*(g_2 * x)\quad \forall g_1, g_2 \in G\ \text{and}\ x\in X$
 
-### ✍️ **Example 1**
+### ✍️ **Example 1**: translations in the plane $\mathbb{R}^2$
 
 $$
-G=\mathbb{Z},\quad X=\mathbb{R},\quad n*x=n+x
+G=\mathbb{Z},\quad X=\mathbb{R}^2,\quad n*x=n+x
 $$
 
 Does $X$ suffice the conditions of a G-set?
@@ -572,4 +572,13 @@ $$
 Stated differently, let all group actions work on $x$ and collect the resulting elements. This collection is called an orbit. Generally, this is a subset of $X$.
 
 
+### 👨‍💻 Orbits demo
+
+Experiment to see how each norm $\|x\|$ determines exactly one orbit, and hence
+how the plane $\mathbb{R}^2$ can be partitioned into orbits of the G-set of rotations. 
+
+```{=html}
+<div id="orbitsContainer"></div>
+<script type="module" src="https://www.hendrikse.name/helion/examples/orbits.js"></script>
+```
 
