@@ -518,6 +518,17 @@ window.Quarto = {
   <li><a href="#isomorphism-the-map" id="toc-isomorphism-the-map" class="nav-link" data-scroll-target="#isomorphism-the-map">📌 Isomorphism: the map</a></li>
   <li><a href="#the-fundamental-theorem-of-finitely-generated-abelian-groups" id="toc-the-fundamental-theorem-of-finitely-generated-abelian-groups" class="nav-link" data-scroll-target="#the-fundamental-theorem-of-finitely-generated-abelian-groups">📌 The fundamental theorem of finitely generated abelian groups</a></li>
   <li><a href="#cosets" id="toc-cosets" class="nav-link" data-scroll-target="#cosets">📌 Cosets</a></li>
+  <li><a href="#factor-groups-quotient-groups" id="toc-factor-groups-quotient-groups" class="nav-link" data-scroll-target="#factor-groups-quotient-groups">📌 Factor groups (quotient groups)</a></li>
+  </ul></li>
+  <li><a href="#homomorphisms" id="toc-homomorphisms" class="nav-link" data-scroll-target="#homomorphisms">Homomorphisms</a>
+  <ul class="collapse">
+  <li><a href="#homomorphism" id="toc-homomorphism" class="nav-link" data-scroll-target="#homomorphism">📌 Homomorphism</a></li>
+  <li><a href="#kernel-and-image" id="toc-kernel-and-image" class="nav-link" data-scroll-target="#kernel-and-image">📌 Kernel and image</a></li>
+  </ul></li>
+  <li><a href="#group-actions" id="toc-group-actions" class="nav-link" data-scroll-target="#group-actions">Group actions</a>
+  <ul class="collapse">
+  <li><a href="#group-actions-and-g-sets" id="toc-group-actions-and-g-sets" class="nav-link" data-scroll-target="#group-actions-and-g-sets">📌 Group actions and G-sets</a></li>
+  <li><a href="#orbit" id="toc-orbit" class="nav-link" data-scroll-target="#orbit">📌 Orbit</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -636,11 +647,11 @@ Note
 <p>Note that the addition operation is defined differently here: <span class="math inline">\(a + b\ (\text{mod}\ n)\)</span></p>
 <p>Take for example <span class="math inline">\((\mathbb{Z}_3, +)\)</span></p>
 <p><span class="math display">\[
-\begin{array}{l}
-1 + 0 = 1 \\
-1 + 1 = 2 \\
-1 + 2 = 0
-\end{array}
+\begin{eqnarray}
+1 + 0 &amp;=&amp; 1 \\
+1 + 1 &amp;=&amp; 2 \\
+1 + 2 &amp;=&amp; 0
+\end{eqnarray}
 \]</span></p>
 <p>Let’s verify that <span class="math inline">\((\mathbb{Z}_5, +)\)</span> is a group:</p>
 <ul>
@@ -649,11 +660,11 @@ Note
 <li>Every element has an inverse ꪜ</li>
 </ul>
 <p><span class="math display">\[
-\begin{array}{l}
-1 + 4 = 4 + 1 = 0\ (\text{mod}\ 5)  \\
-2 + 3 = 3 + 2 = 0\ (\text{mod}\ 5)  \\
+\begin{eqnarray}
+1 + 4 = 4 + 1 &amp;=&amp; 0\ (\text{mod}\ 5)  \\
+2 + 3 = 3 + 2 &amp;=&amp; 0\ (\text{mod}\ 5)  \\
 \vdots
-\end{array}
+\end{eqnarray}
 \]</span></p>
 <p>Similarly, <span class="math inline">\((\mathbb{Z}_n, +)\)</span> is a group.</p>
 </section>
@@ -665,11 +676,11 @@ Note
 \]</span></p>
 <p>With this operation, it forms a group. Let’s check this for <span class="math inline">\((\mathbb{Z}_3 \times \mathbb{Z}_4, +)\)</span>:</p>
 <ul>
-<li>With the above addition operation, we always get another element in the group ✔️ <span class="math display">\[
-\begin{array}{l}
-1 + 2 = 1 + 3 = (2, 1) \in \mathbb{Z}_3 \times \mathbb{Z}_4 \\
-2 + 3 = 3 + 2 = (1, 1) \in \mathbb{Z}_3 \times \mathbb{Z}_4
-\end{array}
+<li>With the above addition operation, we always get another element in the group ꪜ <span class="math display">\[
+\begin{eqnarray}
+1 + 2 = 1 + 3 &amp;=&amp; (2, 1) \in \mathbb{Z}_3 \times \mathbb{Z}_4 \\
+2 + 3 = 3 + 2 &amp;=&amp; (1, 1) \in \mathbb{Z}_3 \times \mathbb{Z}_4
+\end{eqnarray}
 \]</span></li>
 <li>The zero element is <span class="math inline">\((0, 0)\)</span> ꪜ</li>
 <li>For every element, there is an inverse, for example <span class="math inline">\((2, 2) + (1, 2) = (0, 0)\)</span> ꪜ</li>
@@ -800,7 +811,7 @@ e^{\frac{4\pi i}{3}} &amp; e^{\frac{4\pi i}{3}} &amp; 1 &amp; e^{\frac{2\pi i}{3
 \]</span></p>
 <p>Upon closer inspection, we notice that these operation tables have exactly the same structure, as there turns out to be an obvious one-to-one correspondence between the elements of each group:</p>
 <p><span class="math display">\[
-\begin{array}{c}
+\begin{array}{l}
 0 \longleftrightarrow 1 \\
 1 \longleftrightarrow e^{\frac{2\pi i}{3}} \\  
 2 \longleftrightarrow e^{\frac{4\pi i}{3}} \\  
@@ -887,9 +898,194 @@ G \cong \mathbb{Z}_4 \times \mathbb{Z}_3,\ \text{or}\ \mathbb{Z} \times \mathbb{
 <section id="example-1-5mathbbz-leq-mathbbz" class="level4">
 <h4 class="anchored" data-anchor-id="example-1-5mathbbz-leq-mathbbz">🏷️ <strong>Example 1</strong>: <span class="math inline">\(5\mathbb{Z} \leq \mathbb{Z}\)</span></h4>
 <p>So what are some cosets of <span class="math inline">\(5\mathbb{Z}\)</span> (all multiples of 5)?</p>
-
-
+<p><span class="math display">\[
+\begin{eqnarray}
+1 + 5\mathbb{Z} &amp;=&amp; \{1, 6, 11, 16, \ldots\}\\
+2 + 5\mathbb{Z} &amp;=&amp; \{2, 7, 12, 17, \ldots\}\\
+3 + 5\mathbb{Z} &amp;=&amp; \{-2, 3, 8, 13, \ldots\}\\
+4 + 5\mathbb{Z} &amp;=&amp; \{-1, 4, 9, 14, \ldots\}\\
+11 + 5\mathbb{Z} &amp;=&amp; \{-4, 1, 6, 11, 16, \ldots\}
+\end{eqnarray}
+\]</span></p>
+<p>We now see that each coset is not unique (and nor is it a subgroup):</p>
+<p><span class="math display">\[
+1 + 5\mathbb{Z} = 6 + 5\mathbb{Z} = 21 + 5\mathbb{Z} = \dots
+\]</span></p>
+<p>A coset <em>does</em> partition a group nicely into disjoint pieces/partitions:</p>
+<p><span class="math display">\[
+\mathbb{Z} = 5\mathbb{Z} \cup (1 + 5\mathbb{Z}) \cup (2 +5\mathbb{Z}) \cup (3+ 5\mathbb{Z}) \cup (4 + 5\mathbb{Z})
+\]</span></p>
 </section>
+<section id="example-2-h0-4-leq-mathbbz_8" class="level4">
+<h4 class="anchored" data-anchor-id="example-2-h0-4-leq-mathbbz_8">🏷️ <strong>Example 2</strong>: <span class="math inline">\(H=\{0, 4\} \leq \mathbb{Z}_8\)</span></h4>
+<p><span class="math inline">\(H\)</span> is a subgroup of <span class="math inline">\(\mathbb{Z}_8\)</span>. The follwing four cosets partition the group <span class="math inline">\(\mathbb{Z}_8\)</span>:</p>
+<p><span class="math display">\[
+\begin{eqnarray}
+H &amp;=&amp; \{0, 4\}\\
+1 + H &amp;=&amp; \{1, 5\}\\
+2 + H &amp;=&amp; \{2, 6\}\\
+3 + H &amp;=&amp; \{3, 7\}
+\end{eqnarray}
+\]</span></p>
+</section>
+<section id="example-3-h0-4-8-leq-mathbbz_12" class="level4">
+<h4 class="anchored" data-anchor-id="example-3-h0-4-8-leq-mathbbz_12">🏷️ <strong>Example 3</strong>: <span class="math inline">\(H=\{0, 4, 8\} \leq \mathbb{Z}_12\)</span></h4>
+<p><span class="math inline">\(H\)</span> is a subgroup of <span class="math inline">\(\mathbb{Z}_12\)</span>. The follwing four cosets partition the group <span class="math inline">\(\mathbb{Z}_12\)</span>:</p>
+<p><span class="math display">\[
+\begin{eqnarray}
+H &amp;=&amp; \{0, 4, 8\}\\
+1 + H &amp;=&amp; \{1, 5, 9\}\\
+2 + H &amp;=&amp; \{2, 6, 10\}\\
+3 + H &amp;=&amp; \{3, 7, 11\}
+\end{eqnarray}
+\]</span></p>
+</section>
+</section>
+<section id="factor-groups-quotient-groups" class="level3">
+<h3 class="anchored" data-anchor-id="factor-groups-quotient-groups">📌 Factor groups (quotient groups)</h3>
+<p>If <span class="math inline">\(N\)</span> is a normal subgroup of <span class="math inline">\(G\)</span>, the set of cosets, denoted by <span class="math inline">\(G/N\)</span>, forms the <strong>factor group</strong>. The operation is defined as <span class="math inline">\((aN)(bN)=(ab)N\)</span>. This operations is well-defined only if <span class="math inline">\(N\)</span> is normal.</p>
+<p>We have just seen that</p>
+<p><span class="math display">\[
+\mathbb{Z} / 5\mathbb{Z} = \{5\mathbb{Z}, 5\mathbb{Z}+1,5\mathbb{Z}+2, 5\mathbb{Z}+3, 5\mathbb{Z} + 4\}
+\]</span></p>
+<p>👉 All the integers with the same remainder modulo 5 are grouped together into the same basket.</p>
+<p>As such, factor group closely resembles, i.e.&nbsp;is isomorphic to <span class="math inline">\(\mathbb{Z}_5=\{0, 1, 2, 3, 4\}\)</span>. The operation between the cosets is then given by the multiplication of the representatives (<span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>) of each coset:</p>
+<p><span class="math display">\[
+(5\mathbb{Z} + 2) + (5\mathbb{Z} + 4) := (5\mathbb{Z}) + (2 + 4) = (5\mathbb{Z} + 1)
+\]</span></p>
+<p>Concluding, we have</p>
+<p><span class="math display">\[
+\mathbb{Z} / 5\mathbb{Z} \cong \mathbb{Z}_5
+\]</span></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The notion of a normal group falls outside the scope of this chapter, as going forward most groups will be normal anyhow.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="homomorphisms" class="level2">
+<h2 class="anchored" data-anchor-id="homomorphisms">Homomorphisms</h2>
+<section id="homomorphism" class="level3">
+<h3 class="anchored" data-anchor-id="homomorphism">📌 Homomorphism</h3>
+<p>A <strong>homomorphism</strong> <span class="math inline">\(\phi\)</span> from a group <span class="math inline">\((G, *)\)</span> to a group <span class="math inline">\((G', *')\)</span> is a map <span class="math inline">\(\phi:G\rightarrow G\)</span> that preserves the group operation.</p>
+<p>This means that for all <span class="math inline">\(a,b\in G\)</span>:</p>
+<p><span class="math display">\[
+\phi(a*b) = \phi(a) *'\phi(b)
+\]</span></p>
+<p>A homomorphism is a map that respects the structure of the group.</p>
+<p>For some context, let’s recall our two requirements of an <a href="#isomorphism-the-map">isomorphism</a>: bijection and preservation of the operation of the groups. If we remove the requirement of the bijection, we get a homomorphism. As a consequence, all isomorphism are homomorphisms.</p>
+<section id="example-1" class="level4">
+<h4 class="anchored" data-anchor-id="example-1">🏷️ <strong>Example 1</strong></h4>
+<p><span class="math display">\[
+\phi: \mathbb{Z} \rightarrow \mathbb{Z},\quad\phi(n)=2n
+\]</span></p>
+<p>This is not a bijection, but it preserves the group action:</p>
+<p><span class="math display">\[
+\phi(n_1+n_2) = 2(n_1 + n_2) = 2n_1 + 2n_2 = \phi(n_1) + \phi(n_2)\ ꪜ
+\]</span></p>
+</section>
+<section id="example-2" class="level4">
+<h4 class="anchored" data-anchor-id="example-2">🏷️ <strong>Example 2</strong></h4>
+<p><span class="math display">\[
+\phi: GL_n(\mathbb{R}) \rightarrow \mathbb{R}-\{0\},\quad\phi(A)=\det(A)
+\]</span></p>
+<p>This is a homomorphism as</p>
+<p><span class="math display">\[
+\phi(AB) = \det(AB) = \det(A)\det(B) = \phi(A)\phi(B)\ ꪜ
+\]</span></p>
+</section>
+</section>
+<section id="kernel-and-image" class="level3">
+<h3 class="anchored" data-anchor-id="kernel-and-image">📌 Kernel and image</h3>
+<p>The <strong>kernel</strong> of a homomorphism <span class="math inline">\(\phi: G\rightarrow G'\)</span> is the set of elements in <span class="math inline">\(G\)</span> that map to the identity in <span class="math inline">\(G'\)</span>.</p>
+<p><span class="math display">\[
+\ker(\phi) = \{g\in G\ |\ \phi(g)=e'\}
+\]</span></p>
+<p>The <strong>image</strong> of <span class="math inline">\(\phi\)</span> is the set of all elements in <span class="math inline">\(G'\)</span> that are mapped to by some element of <span class="math inline">\(G\)</span>.</p>
+<p><span class="math display">\[
+\text{im}(\phi) = \{\phi(g)\ |\ g\in G\}
+\]</span></p>
+<p>This is defined similarly as for <a href="../chapter-2/linear-transformations.html#kernel-and-image">the kernel and image of linear transformations</a>.</p>
+<section id="example-1-1" class="level4">
+<h4 class="anchored" data-anchor-id="example-1-1">🏷️ <strong>Example 1</strong></h4>
+<p><span class="math display">\[
+\phi: \mathbb{Z} \rightarrow \mathbb{Z},\quad\phi(n)=3n \Rightarrow\ \begin{cases}\ker(\phi) &amp;=&amp; \{0\} \\ \text{im}(\phi) &amp;=&amp; 3\mathbb{Z}\end{cases}
+\]</span></p>
+</section>
+<section id="example-2-1" class="level4">
+<h4 class="anchored" data-anchor-id="example-2-1">🏷️ <strong>Example 2</strong></h4>
+<p><span class="math display">\[
+\phi: \mathbb{R}^2 \rightarrow \mathbb{R},\quad\phi\begin{pmatrix} x \\ y \end{pmatrix}=x+y \Rightarrow\ \begin{cases}\ker(\phi) &amp;=&amp; \left\{a\begin{pmatrix} 1 \\ -1 \end{pmatrix}\ |\ a\in\mathbb{R} \right\} \\ \text{im}(\phi) &amp;=&amp; \mathbb{R}\end{cases}
+\]</span></p>
+</section>
+</section>
+</section>
+<section id="group-actions" class="level2">
+<h2 class="anchored" data-anchor-id="group-actions">Group actions</h2>
+<p>Thus far we have looked at groups as objects of study by themselves. Very often though, the elements of a group represent a transformation that acts on something else, for example the group of rotations acting on vectors.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Why do we need this?</p>
+<p>This becomes very important when we are going to look at Galois theories and modular, as the study of many abstract groups becomes way easier when we see how they act on other elements.</p>
+</div>
+</div>
+<section id="group-actions-and-g-sets" class="level3">
+<h3 class="anchored" data-anchor-id="group-actions-and-g-sets">📌 Group actions and G-sets</h3>
+<p>A set <span class="math inline">\(X\)</span> is called a <strong>G-set</strong> if there is a map (called a <strong>group action</strong>) <span class="math inline">\(*:G\times X\rightarrow X\)</span> that satisfies the following conditions:</p>
+<ol type="1">
+<li><span class="math inline">\(e*x = x\quad \forall x\in X\)</span></li>
+<li><span class="math inline">\((g_1g_2)*x = g_1*(g_2 * x)\quad \forall g_1, g_2 \in G\ \text{and}\ x\in X\)</span></li>
+</ol>
+<section id="example-1-2" class="level4">
+<h4 class="anchored" data-anchor-id="example-1-2">🏷️ <strong>Example 1</strong></h4>
+<p><span class="math display">\[
+G=\mathbb{Z},\quad X=\mathbb{R},\quad n*x=n+x
+\]</span></p>
+<p>Does <span class="math inline">\(X\)</span> suffice the conditions of a G-set?</p>
+<ol type="1">
+<li>$ 0 * x =x$ ꪜ</li>
+<li><span class="math inline">\((n_1+n_2) *x = n_1 * (n_2 * x)\)</span> holds because of the associativity of addition ꪜ</li>
+</ol>
+</section>
+<section id="example-2-rotations-of-two-dimensiona-vectors-around-the-origin" class="level4">
+<h4 class="anchored" data-anchor-id="example-2-rotations-of-two-dimensiona-vectors-around-the-origin">🏷️ <strong>Example 2</strong>: rotations of two-dimensiona vectors around the origin</h4>
+<p><span class="math display">\[
+G=\mathbb{R},\quad X=\mathbb{R^2},\quad \theta(x, y) = \begin{pmatrix} \cos\theta &amp; -\sin\theta \\ \sin\theta &amp; \cos\theta\end{pmatrix}\begin{pmatrix}x \\ y \end{pmatrix}
+\]</span></p>
+<p>Does <span class="math inline">\(X\)</span> suffice the conditions of a G-set?</p>
+<ol type="1">
+<li><span class="math inline">\(\theta = 0 = \begin{pmatrix} \cos 0 &amp; -\sin 0 \\ \sin 0 &amp; \cos 0\end{pmatrix}\begin{pmatrix}x \\ y \end{pmatrix} = \begin{pmatrix}x \\ y \end{pmatrix}\)</span> ꪜ</li>
+<li><span class="math inline">\(\begin{pmatrix} \cos\theta_1 &amp; -\sin\theta_1 \\ \sin\theta_1 &amp; \cos\theta_1\end{pmatrix}\begin{pmatrix} \cos\theta_2 &amp; -\sin\theta_2 \\ \sin\theta_2 &amp; \cos\theta_2\end{pmatrix}\begin{pmatrix}x \\ y \end{pmatrix}\)</span> holds because of the associativity of matrix multiplication ꪜ</li>
+</ol>
+<p>The concept of <strong>orbit</strong> now follows quite naturally, as we often may want to know and study all outcomes resulting from group actions <span class="math inline">\(g_n*x\)</span> (<span class="math inline">\(g_n \in G\)</span>) on an element <span class="math inline">\(x\in X\)</span>.</p>
+</section>
+</section>
+<section id="orbit" class="level3">
+<h3 class="anchored" data-anchor-id="orbit">📌 Orbit</h3>
+<p>Let <span class="math inline">\(X\)</span> be a G-set. For an element <span class="math inline">\(x\in X\)</span>: the <strong>orbit</strong> of <span class="math inline">\(x\)</span> is the set of all elements in <span class="math inline">\(X\)</span> to which <span class="math inline">\(x\)</span> can be moved by elements of <span class="math inline">\(G\)</span>:</p>
+<p><span class="math display">\[
+O_x = \{ g*x\ |\ g\in G\} \subseteq X
+\]</span></p>
+<p>Stated differently, let all group actions work on <span class="math inline">\(x\)</span> and collect the resulting elements. This collection is called an orbit. Generally, this is a subset of <span class="math inline">\(X\)</span>.</p>
+
+
 </section>
 </section>
 

@@ -514,6 +514,7 @@ window.Quarto = {
   </ul></li>
   </ul></li>
   <li><a href="#what-is-going-on" id="toc-what-is-going-on" class="nav-link" data-scroll-target="#what-is-going-on">What is going on?</a></li>
+  <li><a href="#lie-groups-and-lie-algebras" id="toc-lie-groups-and-lie-algebras" class="nav-link" data-scroll-target="#lie-groups-and-lie-algebras">Lie groups and Lie algebras</a></li>
   </ul>
 </nav>
     </div>
@@ -665,6 +666,17 @@ e^A = P\begin{pmatrix} e^{\lambda_1} &amp; 0 &amp; 0 \\ 0 &amp; \ddots &amp; 0 \
 <p><span class="math display">\[
 \det(e^A)=\det(P)\left [e^{\lambda_1}\ldots e^{\lambda_n}\right ]\det(P^{-1}) = \boxed{e^{\lambda_1}\ldots e^{\lambda_n}}
 \]</span></p>
+</section>
+<section id="lie-groups-and-lie-algebras" class="level1">
+<h1>Lie groups and Lie algebras</h1>
+<p><span class="math display">\[
+\begin{array}{l}
+SL_n(\mathbb{C})=\{X\ |\ \det(X) = 1\} \\
+sl_n(\mathbb{C})=\{x\ |\ \text{tr}(x)=0 \},\ \text{e.g.}\ \begin{pmatrix} -2 &amp; 3 \\ 4 &amp; 2 \end{pmatrix} \in sl_2
+\end{array}
+\]</span></p>
+<p>Note that if <span class="math inline">\(x\in sl_n(\mathbb{C})\)</span>, set <span class="math inline">\(X=e^x\)</span>. Then <span class="math inline">\(\det(X) = \det(e^x) = e^{\text{tr}(x)} = 1\)</span>. That is exactly the requirement that we have for <span class="math inline">\(X\)</span> to be an element of <span class="math inline">\(SL_2(\mathbb{C})\)</span>!</p>
+<p>🧠 Concluding, <span class="math inline">\(\boxed{e^{\text{tr}(A)} = \det(e^A)}\)</span> gives us a mechanism to go from the Lie group to the Lie algebra and vice versa.</p>
 
 
 </section>
