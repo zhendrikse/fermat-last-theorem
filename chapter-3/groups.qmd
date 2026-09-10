@@ -85,11 +85,11 @@ Note that the addition operation is defined differently here: $a + b\ (\text{mod
 Take for example $(\mathbb{Z}_3, +)$
 
 $$
-\begin{array}{l}
-1 + 0 = 1 \\
-1 + 1 = 2 \\
-1 + 2 = 0
-\end{array}
+\begin{eqnarray}
+1 + 0 &=& 1 \\
+1 + 1 &=& 2 \\
+1 + 2 &=& 0
+\end{eqnarray}
 $$
 
 Let's verify that $(\mathbb{Z}_5, +)$ is a group:
@@ -99,11 +99,11 @@ Let's verify that $(\mathbb{Z}_5, +)$ is a group:
 - Every element has an inverse ꪜ 
 
 $$
-\begin{array}{l}
-1 + 4 = 4 + 1 = 0\ (\text{mod}\ 5)  \\
-2 + 3 = 3 + 2 = 0\ (\text{mod}\ 5)  \\
+\begin{eqnarray}
+1 + 4 = 4 + 1 &=& 0\ (\text{mod}\ 5)  \\
+2 + 3 = 3 + 2 &=& 0\ (\text{mod}\ 5)  \\
 \vdots
-\end{array}
+\end{eqnarray}
 $$
 
 Similarly, $(\mathbb{Z}_n, +)$ is a group.
@@ -118,12 +118,12 @@ $$
 
 With this operation, it forms a group. Let's check this for $(\mathbb{Z}_3 \times \mathbb{Z}_4, +)$:
 
-- With the above addition operation, we always get another element in the group ✔️
+- With the above addition operation, we always get another element in the group ꪜ
 $$
-\begin{array}{l}
-1 + 2 = 1 + 3 = (2, 1) \in \mathbb{Z}_3 \times \mathbb{Z}_4 \\
-2 + 3 = 3 + 2 = (1, 1) \in \mathbb{Z}_3 \times \mathbb{Z}_4
-\end{array}
+\begin{eqnarray}
+1 + 2 = 1 + 3 &=& (2, 1) \in \mathbb{Z}_3 \times \mathbb{Z}_4 \\
+2 + 3 = 3 + 2 &=& (1, 1) \in \mathbb{Z}_3 \times \mathbb{Z}_4
+\end{eqnarray}
 $$
 - The zero element is $(0, 0)$ ꪜ
 - For every element, there is an inverse, for example $(2, 2) + (1, 2) = (0, 0)$ ꪜ
@@ -269,7 +269,7 @@ $$
 Upon closer inspection, we notice that these operation tables have exactly the same structure, as there turns out to be an obvious one-to-one correspondence between the elements of each group:
 
 $$
-\begin{array}{c}
+\begin{array}{l}
 0 \longleftrightarrow 1 \\
 1 \longleftrightarrow e^{\frac{2\pi i}{3}} \\  
 2 \longleftrightarrow e^{\frac{4\pi i}{3}} \\  
@@ -376,7 +376,200 @@ Let $H$ be a subgroup of $G$, and let $a\in G$.
 
 So what are some cosets of $5\mathbb{Z}$ (all multiples of 5)?
 
+$$
+\begin{eqnarray}
+1 + 5\mathbb{Z} &=& \{1, 6, 11, 16, \ldots\}\\
+2 + 5\mathbb{Z} &=& \{2, 7, 12, 17, \ldots\}\\
+3 + 5\mathbb{Z} &=& \{-2, 3, 8, 13, \ldots\}\\
+4 + 5\mathbb{Z} &=& \{-1, 4, 9, 14, \ldots\}\\
+11 + 5\mathbb{Z} &=& \{-4, 1, 6, 11, 16, \ldots\}
+\end{eqnarray}
+$$
 
+We now see that each coset is not unique (and nor is it a subgroup):
+
+$$
+1 + 5\mathbb{Z} = 6 + 5\mathbb{Z} = 21 + 5\mathbb{Z} = \dots
+$$
+
+A coset _does_ partition a group nicely  into disjoint pieces/partitions:
+
+$$
+\mathbb{Z} = 5\mathbb{Z} \cup (1 + 5\mathbb{Z}) \cup (2 +5\mathbb{Z}) \cup (3+ 5\mathbb{Z}) \cup (4 + 5\mathbb{Z})
+$$
+
+#### 🏷️ **Example 2**: $H=\{0, 4\} \leq \mathbb{Z}_8$
+
+$H$ is a subgroup of $\mathbb{Z}_8$. The follwing four cosets partition the group $\mathbb{Z}_8$:
+
+$$
+\begin{eqnarray}
+H &=& \{0, 4\}\\
+1 + H &=& \{1, 5\}\\
+2 + H &=& \{2, 6\}\\
+3 + H &=& \{3, 7\}
+\end{eqnarray}
+$$
+
+#### 🏷️ **Example 3**: $H=\{0, 4, 8\} \leq \mathbb{Z}_12$
+
+$H$ is a subgroup of $\mathbb{Z}_12$. The follwing four cosets partition the group $\mathbb{Z}_12$:
+
+$$
+\begin{eqnarray}
+H &=& \{0, 4, 8\}\\
+1 + H &=& \{1, 5, 9\}\\
+2 + H &=& \{2, 6, 10\}\\
+3 + H &=& \{3, 7, 11\}
+\end{eqnarray}
+$$
+
+### 📌 Factor groups (quotient groups)
+
+If $N$ is a normal subgroup of $G$, the set of cosets, denoted by $G/N$, forms the **factor group**. The operation is defined as $(aN)(bN)=(ab)N$. This operations is well-defined only if $N$ is normal. 
+
+We have just seen that
+
+$$
+\mathbb{Z} / 5\mathbb{Z} = \{5\mathbb{Z}, 5\mathbb{Z}+1,5\mathbb{Z}+2, 5\mathbb{Z}+3, 5\mathbb{Z} + 4\}
+$$
+
+👉 All the integers with the same remainder modulo 5 are grouped together into the same basket.
+
+As such, factor group closely resembles, i.e. is isomorphic to $\mathbb{Z}_5=\{0, 1, 2, 3, 4\}$. The operation between the cosets is then given by the multiplication of the representatives ($a$ and $b$) of each coset:
+
+$$
+(5\mathbb{Z} + 2) + (5\mathbb{Z} + 4) := (5\mathbb{Z}) + (2 + 4) = (5\mathbb{Z} + 1)
+$$
+
+Concluding, we have
+
+$$
+\mathbb{Z} / 5\mathbb{Z} \cong \mathbb{Z}_5 
+$$
+
+::: {.callout-note}
+The notion of a normal group falls outside the scope of this chapter, as going forward most groups will be normal anyhow.
+:::
+
+## Homomorphisms
+
+### 📌 Homomorphism
+
+A **homomorphism** $\phi$ from a group $(G, *)$ to a group $(G', *')$ is a map $\phi:G\rightarrow G$ that preserves the group operation. 
+
+This means that for all $a,b\in G$:
+
+$$
+\phi(a*b) = \phi(a) *'\phi(b)
+$$
+
+A homomorphism is a map that respects the structure of the group.
+
+For some context, let's recall our two requirements of an [isomorphism](#isomorphism-the-map): bijection and preservation of the operation of the groups. If we remove the requirement of the bijection, we get a homomorphism. As a consequence, all isomorphism are homomorphisms.
+
+#### 🏷️ **Example 1**
+
+$$
+\phi: \mathbb{Z} \rightarrow \mathbb{Z},\quad\phi(n)=2n
+$$
+
+This is not a bijection, but it preserves the group action:
+
+$$
+\phi(n_1+n_2) = 2(n_1 + n_2) = 2n_1 + 2n_2 = \phi(n_1) + \phi(n_2)\ ꪜ
+$$
+
+#### 🏷️ **Example 2**
+
+$$
+\phi: GL_n(\mathbb{R}) \rightarrow \mathbb{R}-\{0\},\quad\phi(A)=\det(A)
+$$
+
+This is a homomorphism as
+
+$$
+\phi(AB) = \det(AB) = \det(A)\det(B) = \phi(A)\phi(B)\ ꪜ 
+$$
+
+### 📌 Kernel and image
+
+The **kernel** of a homomorphism $\phi: G\rightarrow G'$ is the set of elements in $G$ that map to the identity in $G'$.
+
+$$
+\ker(\phi) = \{g\in G\ |\ \phi(g)=e'\}
+$$
+
+The **image** of $\phi$ is the set of all elements in $G'$ that are mapped to by some element of $G$.
+
+$$
+\text{im}(\phi) = \{\phi(g)\ |\ g\in G\}
+$$
+
+This is defined similarly as for [the kernel and image of linear transformations](/chapter-2/linear-transformations.qmd#kernel-and-image).
+
+#### 🏷️ **Example 1**
+
+$$
+\phi: \mathbb{Z} \rightarrow \mathbb{Z},\quad\phi(n)=3n \Rightarrow\ \begin{cases}\ker(\phi) &=& \{0\} \\ \text{im}(\phi) &=& 3\mathbb{Z}\end{cases}
+$$
+
+#### 🏷️ **Example 2**
+
+$$
+\phi: \mathbb{R}^2 \rightarrow \mathbb{R},\quad\phi\begin{pmatrix} x \\ y \end{pmatrix}=x+y \Rightarrow\ \begin{cases}\ker(\phi) &=& \left\{a\begin{pmatrix} 1 \\ -1 \end{pmatrix}\ |\ a\in\mathbb{R} \right\} \\ \text{im}(\phi) &=& \mathbb{R}\end{cases}
+$$
+
+## Group actions
+
+Thus far we have looked at groups as objects of study by themselves. Very often though, the elements of a group represent a transformation that acts on something else, for example the group of rotations acting on vectors. 
+
+::: {.callout-note}
+Why do we need this?
+
+This becomes very important when we are going to look at Galois theories and modular, as the study of many abstract groups becomes way easier when we see how they act on other elements. 
+:::
+
+### 📌 Group actions and G-sets
+
+A set $X$ is called a **G-set** if there is a map (called a **group action**) $*:G\times X\rightarrow X$ that satisfies the following conditions:
+
+1. $e*x = x\quad \forall x\in X$
+2. $(g_1g_2)*x = g_1*(g_2 * x)\quad \forall g_1, g_2 \in G\ \text{and}\ x\in X$
+
+#### 🏷️ **Example 1**
+
+$$
+G=\mathbb{Z},\quad X=\mathbb{R},\quad n*x=n+x
+$$
+
+Does $X$ suffice the conditions of a G-set?
+
+1. $ 0 * x =x$ ꪜ
+2. $(n_1+n_2) *x = n_1 * (n_2 * x)$ holds because of the associativity of addition ꪜ
+
+#### 🏷️ **Example 2**: rotations of two-dimensiona vectors around the origin
+
+$$
+G=\mathbb{R},\quad X=\mathbb{R^2},\quad \theta(x, y) = \begin{pmatrix} \cos\theta & -\sin\theta \\ \sin\theta & \cos\theta\end{pmatrix}\begin{pmatrix}x \\ y \end{pmatrix}
+$$
+
+Does $X$ suffice the conditions of a G-set?
+
+1. $\theta = 0 = \begin{pmatrix} \cos 0 & -\sin 0 \\ \sin 0 & \cos 0\end{pmatrix}\begin{pmatrix}x \\ y \end{pmatrix} = \begin{pmatrix}x \\ y \end{pmatrix}$ ꪜ
+2. $\begin{pmatrix} \cos\theta_1 & -\sin\theta_1 \\ \sin\theta_1 & \cos\theta_1\end{pmatrix}\begin{pmatrix} \cos\theta_2 & -\sin\theta_2 \\ \sin\theta_2 & \cos\theta_2\end{pmatrix}\begin{pmatrix}x \\ y \end{pmatrix}$ holds because of the associativity of matrix multiplication ꪜ
+
+The concept of **orbit** now follows quite naturally, as we often may want to know and study all outcomes resulting from group actions $g_n*x$ ($g_n \in G$) on an element $x\in X$.
+
+### 📌 Orbit
+
+Let $X$ be a G-set. For an element $x\in X$: the **orbit** of $x$ is the set of all elements in $X$ to which $x$ can be moved by elements of $G$:
+
+$$
+O_x = \{ g*x\ |\ g\in G\} \subseteq X
+$$
+
+Stated differently, let all group actions work on $x$ and collect the resulting elements. This collection is called an orbit. Generally, this is a subset of $X$.
 
 
 

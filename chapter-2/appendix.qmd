@@ -154,3 +154,17 @@ from which follows
 $$
 \det(e^A)=\det(P)\left [e^{\lambda_1}\ldots e^{\lambda_n}\right ]\det(P^{-1}) = \boxed{e^{\lambda_1}\ldots e^{\lambda_n}}
 $$
+
+# Lie groups and Lie algebras
+
+$$
+\begin{array}{l}
+SL_n(\mathbb{C})=\{X\ |\ \det(X) = 1\} \\
+sl_n(\mathbb{C})=\{x\ |\ \text{tr}(x)=0 \},\ \text{e.g.}\ \begin{pmatrix} -2 & 3 \\ 4 & 2 \end{pmatrix} \in sl_2
+\end{array}
+$$
+
+Note that if $x\in sl_n(\mathbb{C})$, set $X=e^x$. Then $\det(X) = \det(e^x) = e^{\text{tr}(x)} = 1$. That is exactly the requirement that we have for $X$ to be an element of $SL_2(\mathbb{C})$!
+
+🧠 Concluding, $\boxed{e^{\text{tr}(A)} = \det(e^A)}$ gives us a mechanism to go from the Lie group to the Lie algebra and vice versa.
+
