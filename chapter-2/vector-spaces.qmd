@@ -7,14 +7,13 @@ format: html
 This section corresponds to [Vector Spaces, Basis, and Dimension — 1:40:28](https://www.youtube.com/watch?v=9f-hGSh8lF0&t=6028s) in the video *Proof of Fermat Last Theorem FROM SCRATCH*. [Noah Jang](https://www.linkedin.com/in/noah-jang-2111392ba/) is the original creator of the exposition and examples referenced here. The interactive implementations, animations, additional explanations, and contextual material are my own work.
 :::
 
-
-## Vector spaces
+# 📌 Vector spaces
 
 We stated earlier that mathematics is not only about numbers, 
 it is also about structure. A vector space is one of the most important
 examples of such a structure.
 
-### 📌 Vector Space: Axioms
+## 🏷️ Vector Space: Axioms
 
 A **vector space** $V$ over a field $F$ is a set with addition ($+, V\times V \rightarrow V$) 
 and scalar multiplication ($\cdot, V\times F \rightarrow V$)
@@ -45,7 +44,7 @@ automatically assume that $x + y = y + x$ always holds.
 For example, assume $V=\mathbb{R}$ and we define $a + b := a^b + e^ab^{72}\in \mathbb{R}$.
 This definition of addition does _not_ statisfy **VS 1** and **VS 2**!
 
-#### 🏷️ Example vector spaces
+### ✍️ Example vector spaces
 
 $\mathbb{R}$, $\mathbb{C}$, and the cartesian product $\mathbb{R}^n$ are all examples of vector spaces.
 
@@ -78,7 +77,7 @@ Also, the set of al continuous functions $C_0(\mathbb{R})$ is a vector space, as
 However, $\mathbb{N}$ is _not_ a vector space, as 0 is not in the set. Also, if we pick any natural number,
 the negative is _not_ in the set.
 
-### 📌 Subspace
+## 🏷️ Subspace
 
 A **subspace** of a vector space $V$ is a non-empty subset $W$ of $V$ that is itself a vector
 space under the operations inherited from $V$.
@@ -104,7 +103,7 @@ Consequently, we cannot call it a subspace of $\mathbb{R}^2$ either!
 Another example is the set of all real coefficient polynomials with maximum degree two, $P_2[\mathbb{R}]$.
 This is a vector space as well as a subspace of all real coefficient polynomials.
 
-### 📌 Linear combination
+## 🏷️ Linear combination
 
 We are slowly moving towards the concept of a basis.
 So what is a basis? A basis is one of the most important ideas
@@ -132,7 +131,7 @@ $$
 
 where $a_1, a_2, \dots, a_k$ are scalars in the field $F$.
 
-#### 🏷️ **Example 1**: a linear combination in $\mathbb{R}^2$?
+### ✍️ **Example 1**: a linear combination in $\mathbb{R}^2$?
 
 Let's take the subset of vectors
 
@@ -175,7 +174,7 @@ $$
 
 And indeed, this holds true for $a=2$ and $b=1$, so $\begin{pmatrix} 5 \\ 8\end{pmatrix}$ _is_ a linear combination of $S$!
 
-#### 🏷️ **Example 2**: a linear combination in $\mathbb{R}^3$?
+### ✍️ **Example 2**: a linear combination in $\mathbb{R}^3$?
 
 Let's take the subset of vectors
 
@@ -205,7 +204,7 @@ $$
 
 The answer is no, as the third coordinate will always remain zero. So $\begin{pmatrix} 3 \\ 4 \\ 5 \end{pmatrix}$ is _not_ a linear combination of $S$.
 
-### 📌 Span
+## 🏷️ Span
 
 Let $S$ be a non-empty subset of a vector space $V$. 
 The **span** of $S$, denoted by $\text{span}(S)$, is the
@@ -219,7 +218,7 @@ a_1v_1+\cdots+a_n v_n\ |\ n \geq 1,\ v_i\in S,\ a_i \in F
 \}
 $$
 
-### 📌 Linear independence and dependence
+## 🏷️ Linear independence and dependence
 
 A set of vectors $S=\{ v_1, v_2,\ \cdots,\ v_k\}$ is 
 **linearly independent** if the only solution to the equation 
@@ -231,7 +230,7 @@ $$
 is the trivial solution $a_1=a_2=\cdots=a_k=0$. If a set is
 not linearly independent, it is called **linearly dependent**.
 
-#### 🏷️ **Example 1**: linear dependence in $\mathbb{R}^2$
+### ✍️ **Example 1**: linear dependence in $\mathbb{R}^2$
 
 In $\mathbb{R}^2$, are $\{(1, 2), (1, 0)\}$ linearly independent? 
 
@@ -243,7 +242,7 @@ $$
 
 So these vectors are linearly independent.
 
-#### 🏷️ **Example 2**: linear dependence in $\mathbb{R}^3$
+### ✍️ **Example 2**: linear dependence in $\mathbb{R}^3$
 
 In $\mathbb{R}^3$, are $\{(1, 2, 3), (1, 3, 5), (2, 5, 8)\}$ linearly independent? 
 
@@ -255,7 +254,7 @@ $$
 
 Now we find a solution for $a1 = 1,\ a2 = 1,\ a3= -1$, so these vectors are linearly dependent.
 
-#### 🏷️ **Example 3**: linear dependence in $\mathbb{R}_{[x]}$
+### ✍️ **Example 3**: linear dependence in $\mathbb{R}_{[x]}$
 
 In $\mathbb{R}_{[x]}$, the collection of all real coefficient polynomials, is $1 + x, x^2 + x, 2 + 3x +x^2$ linearly dependent or independent?
 
@@ -267,13 +266,13 @@ $$
 
 Now finally we can define the concepts of basis and dimension.
 
-## Basis and dimension
+# 📌 Basis and dimension
 
 - A **basis** for a vector space $V$ is a linearly independent subset of $V$ that spans $V$
 
 - The **dimension** of $V$, $\text{dim}(V)$, is the number of vectors in a basis
 
-#### 🏷️ **Example 1**: $\mathbb{R}^2$
+### ✍️ **Example 1**: $\mathbb{R}^2$
 
 Basis:
 
@@ -300,7 +299,7 @@ $$
 
 Note that we want to have a set that is large enough to span the whole space, but at the same time is small enough to contain only the necessary information.
 
-#### 🏷️ **Example 2**: $\mathbb{R}^3$
+### ✍️ **Example 2**: $\mathbb{R}^3$
 
 Most of the time, we take as basis:
 
@@ -336,11 +335,11 @@ $$
 \right\}
 $$
 
-#### 🏷️ **Example 3**: $P_2(\mathbb{R})$
+### ✍️ **Example 3**: $P_2(\mathbb{R})$
 
 Possible basis are $\{1, x, x^2\}$ and $\{7, x + x^2, -x\}$. Since there are three vectors in the basis, the dimension of $P_2(\mathbb{R})$ is three.
 
-#### 🏷️ **Example 4**: $Mat_2(\mathbb{R})$
+### ✍️ **Example 4**: $Mat_2(\mathbb{R})$
 
 The most easy basis would be
 

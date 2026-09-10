@@ -21,7 +21,7 @@ $$
 e^A = I + A + \frac{1}{2!}A^2 + \frac{1}{3!}A^3 + \ldots
 $$
 
-# 🏷️ Example
+# ✍️ Example
 
 $$
 A=\begin{pmatrix}4 && 2 \\ 1 && 5\end{pmatrix}
@@ -111,11 +111,11 @@ $$
 \end{array}
 $$
 
-# What is going on?
+# 📌 What is going on?
 
-📌 $\text{tr}(A)$ is the sum of eigenvalues of $A$.<br/>
-📌 $\det(A)$ is the product of eigenvalues of $A$.<br/>
-📌 $\lambda$ is an eigenvalue of $A \Longleftrightarrow e^\lambda$ is an eigenvector of $e^A$.<br/>
+👉 $\text{tr}(A)$ is the sum of eigenvalues of $A$.<br/>
+👉 $\det(A)$ is the product of eigenvalues of $A$.<br/>
+👉 $\lambda$ is an eigenvalue of $A \Longleftrightarrow e^\lambda$ is an eigenvector of $e^A$.<br/>
 
 From these it quickly follows that $e^{\text{tr}(A)} = \det(e^A)$.
 
@@ -155,7 +155,7 @@ $$
 \det(e^A)=\det(P)\left [e^{\lambda_1}\ldots e^{\lambda_n}\right ]\det(P^{-1}) = \boxed{e^{\lambda_1}\ldots e^{\lambda_n}}
 $$
 
-# Lie groups and Lie algebras
+# 📌 Lie groups and Lie algebras
 
 $$
 \begin{array}{l}

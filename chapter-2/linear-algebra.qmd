@@ -47,7 +47,7 @@ Although Fourier analysis and Taylor expansion may seem to belong to a completel
 
 Just as an ordinary vector can be written as a linear combination of basis vectors, a function can be written as a linear combination of basis functions.
 
-## 🏷️ **Example 1**: Taylor expansion
+## ✍️ **Example 1**: Taylor expansion
 
 We can conceptualize the [Taylor expansion](../chapter-1/calculus-complex-analysis.qmd#taylor-series) as a kind of **coordinate representation of a function with respect to a basis of polynomials**.
 
@@ -141,7 +141,7 @@ So we observe the following analogy in lineaire algebra:
 
 There exists an even deeper connection: **differentiation can be seen as a linear operator that works on these coordinates**. This directly leads to a connection between Taylor series, vector spaces, and matrices/operators.
 
-## 🏷️ **Example 2**: Fourier transform
+## ✍️ **Example 2**: Fourier transform
 
 Here the connection with linear algebra becomes even more apparent, since the Fourier expansion amounts to a representation of a function in the following **orthogonal** directions:
 
