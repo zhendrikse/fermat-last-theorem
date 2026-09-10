@@ -504,21 +504,35 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#basic-calculus" id="toc-basic-calculus" class="nav-link active" data-scroll-target="#basic-calculus">Basic calculus</a>
+  <li><a href="#basic-calculus" id="toc-basic-calculus" class="nav-link active" data-scroll-target="#basic-calculus">📌 Basic calculus</a>
   <ul class="collapse">
-  <li><a href="#taylor-series" id="toc-taylor-series" class="nav-link" data-scroll-target="#taylor-series">📌 Taylor series</a></li>
+  <li><a href="#taylor-series" id="toc-taylor-series" class="nav-link" data-scroll-target="#taylor-series">🏷️ Taylor series</a>
+  <ul class="collapse">
+  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples">✍️ <strong>Examples</strong></a></li>
   <li><a href="#taylor-expansion-demo" id="toc-taylor-expansion-demo" class="nav-link" data-scroll-target="#taylor-expansion-demo">👨‍💻 Taylor expansion demo</a></li>
-  <li><a href="#multivariable-functions" id="toc-multivariable-functions" class="nav-link" data-scroll-target="#multivariable-functions">📌 Multivariable functions</a></li>
+  </ul></li>
+  <li><a href="#multivariable-functions" id="toc-multivariable-functions" class="nav-link" data-scroll-target="#multivariable-functions">🏷️ Multivariable functions</a>
+  <ul class="collapse">
   <li><a href="#multivariable-functions-demo" id="toc-multivariable-functions-demo" class="nav-link" data-scroll-target="#multivariable-functions-demo">👨‍💻 Multivariable functions demo</a></li>
-  <li><a href="#partial-derivative" id="toc-partial-derivative" class="nav-link" data-scroll-target="#partial-derivative">📌 Partial derivative</a></li>
-  <li><a href="#eurlers-formula-and-eitheta" id="toc-eurlers-formula-and-eitheta" class="nav-link" data-scroll-target="#eurlers-formula-and-eitheta">📌 Eurler’s formula and <span class="math inline">\(e^{i\theta}\)</span></a></li>
-  <li><a href="#the-n-th-roots-of-unity" id="toc-the-n-th-roots-of-unity" class="nav-link" data-scroll-target="#the-n-th-roots-of-unity">📌 The <span class="math inline">\(n\)</span>-th roots of unity</a></li>
+  </ul></li>
+  <li><a href="#partial-derivative" id="toc-partial-derivative" class="nav-link" data-scroll-target="#partial-derivative">🏷️ Partial derivative</a>
+  <ul class="collapse">
+  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example">✍️ <strong>Example</strong></a></li>
+  </ul></li>
+  <li><a href="#eurlers-formula-and-eitheta" id="toc-eurlers-formula-and-eitheta" class="nav-link" data-scroll-target="#eurlers-formula-and-eitheta">🏷️ Eurler’s formula and <span class="math inline">\(e^{i\theta}\)</span></a></li>
+  <li><a href="#the-n-th-roots-of-unity" id="toc-the-n-th-roots-of-unity" class="nav-link" data-scroll-target="#the-n-th-roots-of-unity">🏷️ The <span class="math inline">\(n\)</span>-th roots of unity</a>
+  <ul class="collapse">
+  <li><a href="#example-1-n2" id="toc-example-1-n2" class="nav-link" data-scroll-target="#example-1-n2">✍️ <strong>Example</strong> 1: <span class="math inline">\(n=2\)</span></a></li>
+  <li><a href="#example-2-n3" id="toc-example-2-n3" class="nav-link" data-scroll-target="#example-2-n3">✍️ <strong>Example</strong> 2: <span class="math inline">\(n=3\)</span></a></li>
   <li><a href="#roots-of-unity-demo" id="toc-roots-of-unity-demo" class="nav-link" data-scroll-target="#roots-of-unity-demo">👨‍💻 Roots of unity demo</a></li>
   </ul></li>
-  <li><a href="#complex-analysis" id="toc-complex-analysis" class="nav-link" data-scroll-target="#complex-analysis">Complex analysis</a>
+  </ul></li>
+  <li><a href="#complex-analysis" id="toc-complex-analysis" class="nav-link" data-scroll-target="#complex-analysis">📌 Complex analysis</a>
   <ul class="collapse">
-  <li><a href="#complex-functions-and-holomorphy" id="toc-complex-functions-and-holomorphy" class="nav-link" data-scroll-target="#complex-functions-and-holomorphy">📌 Complex functions and holomorphy</a></li>
+  <li><a href="#complex-functions-and-holomorphy" id="toc-complex-functions-and-holomorphy" class="nav-link" data-scroll-target="#complex-functions-and-holomorphy">🏷️ Complex functions and holomorphy</a>
+  <ul class="collapse">
   <li><a href="#complex-functions" id="toc-complex-functions" class="nav-link" data-scroll-target="#complex-functions">👨‍💻 Complex functions</a></li>
+  </ul></li>
   </ul></li>
   </ul>
 </nav>
@@ -559,13 +573,13 @@ Note
 <p>This section corresponds to <a href="https://www.youtube.com/watch?v=9f-hGSh8lF0&amp;t=2339s">Basic Calculus and Complex Analysis — 38:59</a> in the video <em>Proof of Fermat Last Theorem FROM SCRATCH</em>. <a href="https://www.linkedin.com/in/noah-jang-2111392ba/">Noah Jang</a> is the original creator of the exposition and examples referenced here. The interactive implementations, animations, additional explanations, and contextual material are my own work.</p>
 </div>
 </div>
-<section id="basic-calculus" class="level2">
-<h2 class="anchored" data-anchor-id="basic-calculus">Basic calculus</h2>
-<section id="taylor-series" class="level3">
-<h3 class="anchored" data-anchor-id="taylor-series">📌 Taylor series</h3>
+<section id="basic-calculus" class="level1">
+<h1>📌 Basic calculus</h1>
+<section id="taylor-series" class="level2">
+<h2 class="anchored" data-anchor-id="taylor-series">🏷️ Taylor series</h2>
 <p>A Taylor series represents a function as an infinite polynomial. With infinitely many terms, it equals the original function within its interval of convergence.</p>
-<section id="examples" class="level4">
-<h4 class="anchored" data-anchor-id="examples">🏷️ <strong>Examples</strong></h4>
+<section id="examples" class="level3">
+<h3 class="anchored" data-anchor-id="examples">✍️ <strong>Examples</strong></h3>
 <p><span class="math display">\[
 \begin{array}{rl}
 e^x &amp;= 1 + x + \dfrac{x^2}{2!} + \dfrac{x^3}{3!} + \cdots \\
@@ -591,21 +605,20 @@ Note
 <p>🎯 The Taylor series is a way to represent a given function as an infinite polynomial.</p>
 <p>👉 We will look at the Taylor expansion again <a href="../chapter-2/linear-algebra.html">from the perspective of linear algebra</a> in chapter two.</p>
 </section>
-</section>
 <section id="taylor-expansion-demo" class="level3">
 <h3 class="anchored" data-anchor-id="taylor-expansion-demo">👨‍💻 Taylor expansion demo</h3>
 <div id="taylorSeriesContainer"></div>
 <script type="module" src="https://www.hendrikse.name/helion/examples/taylor_expansion.js"></script>
 </section>
-<section id="multivariable-functions" class="level3">
-<h3 class="anchored" data-anchor-id="multivariable-functions">📌 Multivariable functions</h3>
+</section>
+<section id="multivariable-functions" class="level2">
+<h2 class="anchored" data-anchor-id="multivariable-functions">🏷️ Multivariable functions</h2>
 <p>A multivariable function is a map</p>
 <p><span class="math display">\[
 f: \mathbb{R}^n \rightarrow \mathbb{R}
 \]</span></p>
 <p>In the section above, we have discussed (the Taylor expansion for) functions that depend on one variable only, such as <span class="math inline">\(f(x) = e^x\)</span>. In this section, we’ll shortly look at functions that depend on two or even more variables.</p>
 <p>A multivariable function that depends on two variables can naturally be visualized as a surface in three-dimensional space.</p>
-</section>
 <section id="multivariable-functions-demo" class="level3">
 <h3 class="anchored" data-anchor-id="multivariable-functions-demo">👨‍💻 Multivariable functions demo</h3>
 <div id="realSurfacesContainer"></div>
@@ -614,8 +627,9 @@ f: \mathbb{R}^n \rightarrow \mathbb{R}
 </p>
 <p>Another examples may be choosen from the drop-down menu. The formula of the selected function can be seen in the title.</p>
 </section>
-<section id="partial-derivative" class="level3">
-<h3 class="anchored" data-anchor-id="partial-derivative">📌 Partial derivative</h3>
+</section>
+<section id="partial-derivative" class="level2">
+<h2 class="anchored" data-anchor-id="partial-derivative">🏷️ Partial derivative</h2>
 <p>For functions that depend on more than one variable, we would like to be able to analyse the rate of change in a similar way to that of functions that depend on one variable only. As multivariate functions have several variables, each direction generally has its own rate of change. As a consequence, each direction has its own derivative. When looking for the rate of change in a particular direction, we leave the other variables intentionally unchanged. This means that all the other variables but the one we are interested in can then be treated as constants.</p>
 <p>Let <span class="math inline">\(f:\mathbb{R}^2\rightarrow\mathbb{R}\)</span> be a function. The partial derivative with respect to <span class="math inline">\(x_i\)</span> is defined as</p>
 <p><span class="math display">\[
@@ -643,8 +657,8 @@ Note
 <p>Later these partial derivatives will show up when we talk about singlar points and elliptic curves.</p>
 </div>
 </div>
-<section id="example" class="level4">
-<h4 class="anchored" data-anchor-id="example">🏷️ <strong>Example</strong></h4>
+<section id="example" class="level3">
+<h3 class="anchored" data-anchor-id="example">✍️ <strong>Example</strong></h3>
 <p>Let</p>
 <p><span class="math display">\[
 f(x,y) = x^3+y^3+xy+\sin x\cos y
@@ -660,8 +674,8 @@ f(x,y) = x^3+y^3+xy+\sin x\cos y
 \]</span></p>
 </section>
 </section>
-<section id="eurlers-formula-and-eitheta" class="level3">
-<h3 class="anchored" data-anchor-id="eurlers-formula-and-eitheta">📌 Eurler’s formula and <span class="math inline">\(e^{i\theta}\)</span></h3>
+<section id="eurlers-formula-and-eitheta" class="level2">
+<h2 class="anchored" data-anchor-id="eurlers-formula-and-eitheta">🏷️ Eurler’s formula and <span class="math inline">\(e^{i\theta}\)</span></h2>
 <p>For any real number <span class="math inline">\(\theta\)</span>,</p>
 <p><span class="math display">\[
 e^{i\theta} = \cos\theta + i\sin\theta.
@@ -707,8 +721,8 @@ e^{i\theta} =
 e^{i(\theta + 2n\pi)},\quad n\in\mathbb{N}.
 \]</span></p>
 </section>
-<section id="the-n-th-roots-of-unity" class="level3">
-<h3 class="anchored" data-anchor-id="the-n-th-roots-of-unity">📌 The <span class="math inline">\(n\)</span>-th roots of unity</h3>
+<section id="the-n-th-roots-of-unity" class="level2">
+<h2 class="anchored" data-anchor-id="the-n-th-roots-of-unity">🏷️ The <span class="math inline">\(n\)</span>-th roots of unity</h2>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -744,17 +758,16 @@ z^n = 1 = e^{2\pi k} \Rightarrow z = e^{\dfrac{2\pi ik}{n}},\quad k \in \mathbb{
 }
 \]</span></p>
 <p>Because of the periodicity, we can limit the values of <span class="math inline">\(k\)</span> to <span class="math inline">\(n-1\)</span>.</p>
-<section id="example-1-n2" class="level4">
-<h4 class="anchored" data-anchor-id="example-1-n2">🏷️ <strong>Example</strong> 1: <span class="math inline">\(n=2\)</span></h4>
+<section id="example-1-n2" class="level3">
+<h3 class="anchored" data-anchor-id="example-1-n2">✍️ <strong>Example</strong> 1: <span class="math inline">\(n=2\)</span></h3>
 <p><span class="math display">\[z_k = e^{i\dfrac{2\pi k}{2}} = e^{\pi ik} \Rightarrow \begin{cases} k=0: 1 \\ k=1: -1\end{cases}
 \]</span></p>
 </section>
-<section id="example-2-n3" class="level4">
-<h4 class="anchored" data-anchor-id="example-2-n3">🏷️ <strong>Example</strong> 2: <span class="math inline">\(n=3\)</span></h4>
+<section id="example-2-n3" class="level3">
+<h3 class="anchored" data-anchor-id="example-2-n3">✍️ <strong>Example</strong> 2: <span class="math inline">\(n=3\)</span></h3>
 <p><span class="math display">\[z_k = e^{\dfrac{2\pi ik}{3}} \Rightarrow \begin{cases} k=0: 1 \\ k=1: e^{\dfrac{2\pi}{3}}= +\dfrac{\sqrt{3}}{2}i-\dfrac{1}{2} \\ k=2: e^{\dfrac{4\pi}{3}} = -\dfrac{\sqrt{3}}{2}i+\dfrac{1}{2}\end{cases}
 \]</span></p>
 <p>Geometrically, the roots of unity constitute the vertices of a regular <span class="math inline">\(n\)</span>-gon sitting on a unit circle in the complex plane.</p>
-</section>
 </section>
 <section id="roots-of-unity-demo" class="level3">
 <h3 class="anchored" data-anchor-id="roots-of-unity-demo">👨‍💻 Roots of unity demo</h3>
@@ -762,10 +775,11 @@ z^n = 1 = e^{2\pi k} \Rightarrow z = e^{\dfrac{2\pi ik}{n}},\quad k \in \mathbb{
 <script type="module" src="https://www.hendrikse.name/helion/examples/roots_of_unity.js"></script>
 </section>
 </section>
-<section id="complex-analysis" class="level2">
-<h2 class="anchored" data-anchor-id="complex-analysis">Complex analysis</h2>
-<section id="complex-functions-and-holomorphy" class="level3">
-<h3 class="anchored" data-anchor-id="complex-functions-and-holomorphy">📌 Complex functions and holomorphy</h3>
+</section>
+<section id="complex-analysis" class="level1">
+<h1>📌 Complex analysis</h1>
+<section id="complex-functions-and-holomorphy" class="level2">
+<h2 class="anchored" data-anchor-id="complex-functions-and-holomorphy">🏷️ Complex functions and holomorphy</h2>
 <p>A complex function is a map <span class="math display">\[
 f:\mathbb{C}\rightarrow\mathbb{C}
 \]</span></p>
@@ -774,13 +788,13 @@ f:\mathbb{C}\rightarrow\mathbb{C}
 f'(z_0) := \lim_{h\rightarrow 0}\dfrac{f(z_0+h) - f(z)}{h}
 \]</span></p>
 <p>If <span class="math inline">\(f\)</span> is complex differentiable on an open set, it is called <strong>holomorphic</strong>.</p>
-</section>
 <section id="complex-functions" class="level3">
 <h3 class="anchored" data-anchor-id="complex-functions">👨‍💻 Complex functions</h3>
 <div id="complexSurfacesContainer"></div>
 <script type="module" src="https://www.hendrikse.name/helion/examples/complex_surfaces.js"></script>
 
 
+</section>
 </section>
 </section>
 
