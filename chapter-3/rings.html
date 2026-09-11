@@ -509,10 +509,18 @@ window.Quarto = {
   <ul>
   <li><a href="#rings" id="toc-rings" class="nav-link active" data-scroll-target="#rings">📌 Rings</a>
   <ul class="collapse">
-  <li><a href="#rings-1" id="toc-rings-1" class="nav-link" data-scroll-target="#rings-1">🏷️ Rings</a>
+  <li><a href="#ring-definition" id="toc-ring-definition" class="nav-link" data-scroll-target="#ring-definition">🏷️ Ring — definition</a>
   <ul class="collapse">
   <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples">✍️ <strong>Examples</strong></a></li>
   </ul></li>
+  <li><a href="#characteristic-of-a-ring" id="toc-characteristic-of-a-ring" class="nav-link" data-scroll-target="#characteristic-of-a-ring">🏷️ Characteristic of a ring</a>
+  <ul class="collapse">
+  <li><a href="#examples-1" id="toc-examples-1" class="nav-link" data-scroll-target="#examples-1">✍️ <strong>Examples</strong></a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#fields" id="toc-fields" class="nav-link" data-scroll-target="#fields">📌 Fields</a>
+  <ul class="collapse">
+  <li><a href="#fields-integral-domains-and-zero-divisors" id="toc-fields-integral-domains-and-zero-divisors" class="nav-link" data-scroll-target="#fields-integral-domains-and-zero-divisors">🏷️ Fields, integral domains, and zero divisors</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -555,19 +563,74 @@ Note
 </div>
 <section id="rings" class="level1">
 <h1>📌 Rings</h1>
-<section id="rings-1" class="level2">
-<h2 class="anchored" data-anchor-id="rings-1">🏷️ Rings</h2>
+<section id="ring-definition" class="level2">
+<h2 class="anchored" data-anchor-id="ring-definition">🏷️ Ring — definition</h2>
 <p>A <strong>ring</strong> <span class="math inline">\(R(+, \cdot)\)</span> is a set with two binary operations (frequently called addition and multiplication) satisfying</p>
 <ul>
 <li><span class="math inline">\(R(+)\)</span> is an Abelian group</li>
-<li><span class="math inline">\(\forall a,b,c\in\mathbb{R},\ (a\cdot b)\cdot c = a\cdot (b\cdot c)\)</span></li>
-<li><span class="math inline">\(\forall a,b,c\in\mathbb{R},\ a(b + c) = ab + ac\ \text{and}\ (a + b)c = ac + bc\)</span></li>
+<li><span class="math inline">\(\forall a,b,c\in\mathbb{R},\ (a\cdot b)\cdot c = a\cdot (b\cdot c)\)</span> (associative)</li>
+<li><span class="math inline">\(\forall a,b,c\in\mathbb{R},\ a(b + c) = ab + ac\ \text{and}\ (a + b)c = ac + bc\)</span> (distributive)</li>
 </ul>
+<p>Futhermore:</p>
+<ul>
+<li>A ring is <strong>commutative</strong> if its multiplication is commutative.</li>
+<li>A <strong>unity</strong> (or identity) is a multiplicative identity element, denoted by 1.</li>
+<li>A <strong>unit</strong> is an element in a ring with unity that has a multiplicative inverse: <span class="math inline">\(\forall a\in R \exists b: ab=ba =1\)</span></li>
+</ul>
+<p>👉 Note that the existence of a unity is not always guaranteed. However, going forward most of our rings will have a unity.</p>
+<p>👉 Examples of units are -1 and 1 when we take <span class="math inline">\(R=\mathbb{Z}\)</span>. For <span class="math inline">\(R=\mathbb{Q}\)</span> <em>all elements are unit</em>, except for zero. Finally, if we take for example <span class="math inline">\(R = \mathbb{Z}_9\)</span>, 5 is a unit as <span class="math inline">\(5\cdot 2 \equiv 1\mod(9)\)</span>, but 3 is not, as there is no integer for which <span class="math inline">\(3a \equiv 1\mod(9)\)</span>!</p>
 <section id="examples" class="level3">
 <h3 class="anchored" data-anchor-id="examples">✍️ <strong>Examples</strong></h3>
-
-
+<ul>
+<li><span class="math inline">\(\mathbb{Z}, \mathbb{Q}, \mathbb{R}, \mathbb{C}\)</span> with addition and multiplication</li>
+<li><span class="math inline">\(Math_n(\mathbb{R})\)</span></li>
+<li><span class="math inline">\(\mathbb{Z}_n\)</span>, with multiplication defined as <span class="math inline">\(a\cdot b = ab\mod(n)\)</span></li>
+<li><span class="math inline">\(\mathbb{R}[x]\)</span>, the set of polynomials with real coefficients</li>
+</ul>
+<p>However, <span class="math inline">\(\mathbb{N}\)</span> is not a ring, as it is not a(n Abelian) group!</p>
 </section>
+</section>
+<section id="characteristic-of-a-ring" class="level2">
+<h2 class="anchored" data-anchor-id="characteristic-of-a-ring">🏷️ Characteristic of a ring</h2>
+<p>The <strong>characteristic</strong> of a ring <span class="math inline">\(R\)</span> is the smallest possible integer <span class="math inline">\(n\)</span> such that for all <span class="math inline">\(a\in R\)</span></p>
+<p><span class="math display">\[
+\underbrace{a+a+\ldots+a}_{n\ \text{times}} = n\cdot a = 0
+\]</span></p>
+<p>If <span class="math inline">\(n\)</span> exists, then we say the characteristic of <span class="math inline">\(R\)</span> is <span class="math inline">\(n\)</span>, and if not, it is said to be zero.</p>
+<section id="examples-1" class="level3">
+<h3 class="anchored" data-anchor-id="examples-1">✍️ <strong>Examples</strong></h3>
+<ul>
+<li>For <span class="math inline">\(\mathbb{Z}, \mathbb{Q}, \mathbb{R}, \mathbb{C}\)</span> the characteristic is zero</li>
+<li>For <span class="math inline">\(\mathbb{Z}_n\)</span> the characteristic is <span class="math inline">\(n\)</span>, since for any number <span class="math inline">\(a\in\mathbb{Z}_n\)</span>, we can add <span class="math inline">\(a\)</span> <span class="math inline">\(n\)</span> times, and <span class="math inline">\(na = 0 \mod(n)\)</span>.</li>
+<li>For <span class="math inline">\(\mathbb{Z}_2\times\mathbb{Z}_3\)</span> the characteristic is 6, since for any <span class="math inline">\((a, b)\in \mathbb{Z}_2\times\mathbb{Z}_3\)</span> we have that <span class="math inline">\([6](a, b) = (6a, 6b) = (0, 0)\)</span>.</li>
+</ul>
+</section>
+</section>
+</section>
+<section id="fields" class="level1">
+<h1>📌 Fields</h1>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>🚨 In what follows next, many similar and closely related terms are introduced, such as unit and unity. Read and study these concepts carefully, and don’t feel embarassed to backtrack if needed!</p>
+</div>
+</div>
+<section id="fields-integral-domains-and-zero-divisors" class="level2">
+<h2 class="anchored" data-anchor-id="fields-integral-domains-and-zero-divisors">🏷️ Fields, integral domains, and zero divisors</h2>
+<ul>
+<li>A <strong>zero divisor</strong> is a non-zero element <span class="math inline">\(a\)</span> for which there exists a non-zero <span class="math inline">\(b\)</span> such that <span class="math inline">\(ab=0\)</span></li>
+<li>An <strong>integral domain</strong> is a commutative ring with unity <span class="math inline">\(1\neq 0\)</span> that has no zero divisors</li>
+<li>A <strong>field</strong> is a commutative ring with unity where every non-zero element is a unit.</li>
+</ul>
+
+
 </section>
 </section>
 

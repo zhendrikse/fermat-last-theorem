@@ -301,11 +301,33 @@
     ]
   },
   {
-    "objectID": "chapter-3/rings.html#rings-1",
-    "href": "chapter-3/rings.html#rings-1",
+    "objectID": "chapter-3/rings.html#ring-definition",
+    "href": "chapter-3/rings.html#ring-definition",
     "title": "Rings, Fields, Ideals, and Unique Factorization",
-    "section": "🏷️ Rings",
-    "text": "🏷️ Rings\nA ring \\(R(+, \\cdot)\\) is a set with two binary operations (frequently called addition and multiplication) satisfying\n\n\\(R(+)\\) is an Abelian group\n\\(\\forall a,b,c\\in\\mathbb{R},\\ (a\\cdot b)\\cdot c = a\\cdot (b\\cdot c)\\)\n\\(\\forall a,b,c\\in\\mathbb{R},\\ a(b + c) = ab + ac\\ \\text{and}\\ (a + b)c = ac + bc\\)\n\n\n✍️ Examples",
+    "section": "🏷️ Ring — definition",
+    "text": "🏷️ Ring — definition\nA ring \\(R(+, \\cdot)\\) is a set with two binary operations (frequently called addition and multiplication) satisfying\n\n\\(R(+)\\) is an Abelian group\n\\(\\forall a,b,c\\in\\mathbb{R},\\ (a\\cdot b)\\cdot c = a\\cdot (b\\cdot c)\\) (associative)\n\\(\\forall a,b,c\\in\\mathbb{R},\\ a(b + c) = ab + ac\\ \\text{and}\\ (a + b)c = ac + bc\\) (distributive)\n\nFuthermore:\n\nA ring is commutative if its multiplication is commutative.\nA unity (or identity) is a multiplicative identity element, denoted by 1.\nA unit is an element in a ring with unity that has a multiplicative inverse: \\(\\forall a\\in R \\exists b: ab=ba =1\\)\n\n👉 Note that the existence of a unity is not always guaranteed. However, going forward most of our rings will have a unity.\n👉 Examples of units are -1 and 1 when we take \\(R=\\mathbb{Z}\\). For \\(R=\\mathbb{Q}\\) all elements are unit, except for zero. Finally, if we take for example \\(R = \\mathbb{Z}_9\\), 5 is a unit as \\(5\\cdot 2 \\equiv 1\\mod(9)\\), but 3 is not, as there is no integer for which \\(3a \\equiv 1\\mod(9)\\)!\n\n✍️ Examples\n\n\\(\\mathbb{Z}, \\mathbb{Q}, \\mathbb{R}, \\mathbb{C}\\) with addition and multiplication\n\\(Math_n(\\mathbb{R})\\)\n\\(\\mathbb{Z}_n\\), with multiplication defined as \\(a\\cdot b = ab\\mod(n)\\)\n\\(\\mathbb{R}[x]\\), the set of polynomials with real coefficients\n\nHowever, \\(\\mathbb{N}\\) is not a ring, as it is not a(n Abelian) group!",
+    "crumbs": [
+      "Chapter 3 — Abstract Algebra",
+      "Rings, Fields, Ideals, and Unique Factorization"
+    ]
+  },
+  {
+    "objectID": "chapter-3/rings.html#characteristic-of-a-ring",
+    "href": "chapter-3/rings.html#characteristic-of-a-ring",
+    "title": "Rings, Fields, Ideals, and Unique Factorization",
+    "section": "🏷️ Characteristic of a ring",
+    "text": "🏷️ Characteristic of a ring\nThe characteristic of a ring \\(R\\) is the smallest possible integer \\(n\\) such that for all \\(a\\in R\\)\n\\[\n\\underbrace{a+a+\\ldots+a}_{n\\ \\text{times}} = n\\cdot a = 0\n\\]\nIf \\(n\\) exists, then we say the characteristic of \\(R\\) is \\(n\\), and if not, it is said to be zero.\n\n✍️ Examples\n\nFor \\(\\mathbb{Z}, \\mathbb{Q}, \\mathbb{R}, \\mathbb{C}\\) the characteristic is zero\nFor \\(\\mathbb{Z}_n\\) the characteristic is \\(n\\), since for any number \\(a\\in\\mathbb{Z}_n\\), we can add \\(a\\) \\(n\\) times, and \\(na = 0 \\mod(n)\\).\nFor \\(\\mathbb{Z}_2\\times\\mathbb{Z}_3\\) the characteristic is 6, since for any \\((a, b)\\in \\mathbb{Z}_2\\times\\mathbb{Z}_3\\) we have that \\([6](a, b) = (6a, 6b) = (0, 0)\\).",
+    "crumbs": [
+      "Chapter 3 — Abstract Algebra",
+      "Rings, Fields, Ideals, and Unique Factorization"
+    ]
+  },
+  {
+    "objectID": "chapter-3/rings.html#fields-integral-domains-and-zero-divisors",
+    "href": "chapter-3/rings.html#fields-integral-domains-and-zero-divisors",
+    "title": "Rings, Fields, Ideals, and Unique Factorization",
+    "section": "🏷️ Fields, integral domains, and zero divisors",
+    "text": "🏷️ Fields, integral domains, and zero divisors\n\nA zero divisor is a non-zero element \\(a\\) for which there exists a non-zero \\(b\\) such that \\(ab=0\\)\nAn integral domain is a commutative ring with unity \\(1\\neq 0\\) that has no zero divisors\nA field is a commutative ring with unity where every non-zero element is a unit.",
     "crumbs": [
       "Chapter 3 — Abstract Algebra",
       "Rings, Fields, Ideals, and Unique Factorization"
