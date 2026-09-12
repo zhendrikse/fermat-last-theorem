@@ -338,7 +338,51 @@
     "href": "chapter-3/rings.html#zero-divisors",
     "title": "Rings, Fields, Ideals, and Unique Factorization",
     "section": "🏷️ Zero divisors",
-    "text": "🏷️ Zero divisors\n\nA zero divisor is a non-zero element \\(a\\) for which there exists a non-zero \\(b\\) such that \\(ab=0\\)\n\n\n✍️ Example\nIn \\(\\mathbb{Z}_6\\) the numbers 2 and 3 are zero divisors, as \\(2\\cdot 3 \\equiv 0\\mod(6)\\). The same holds for the numbers 6 and 4 in \\(\\mathbb{Z}_8\\).\nHowever, 5 is not a zero divisor in the ring \\(\\mathbb{Z}_6\\), as there is no \\(a\\in \\mathbb{Z}_6\\) for which \\(5\\cdot a\\equiv 0\\mod(6)\\)\nNext, we can distinguish between two types of rings: integral domains and fields.\n\n\n🏷️ Integral domains\n\nAn integral domain is a commutative ring with unity \\(1\\neq 0\\) that has no zero divisors\n\n\n\n✍️ Example\n\\(\\mathbb{Z}\\) is a commutative ring and has no zero divisors, since we have \\(a\\cdot b = 0 \\Leftrightarrow a=0 \\lor b=0\\). Therefore \\(\\mathbb{Z}\\) is an integral domain.\n\n\n🏷️ Fields\n\nA field is a commutative ring with unity where every non-zero element is a unit.\n\nA field is one of the most restricted structures. It may most easily be remembered as a number system where addition, subtraction, multiplication and division (except for zero) are all possible.\n\n\n✍️ Examples\n\n\\(\\mathbb{Q}\\), \\(\\mathbb{R}\\), and \\(\\mathbb{C}\\) are a commutative rings where every non-zero element is a unit.\nIs \\(\\mathbb{Z}_7\\) a ring? Yes, every non-zero element a unit:\n\nLet’s start by checking if 1 is a unit. Check, as \\(1\\cdot 1\\).\nAre 2 and 4 units? Yes, because \\(2\\cdot 4\\equiv 1\\mod(7)\\).\nSimilarly, is there an element \\(a\\) such that \\(a\\cdot 3\\equiv 1\\mod(7)\\)? The answer is 5.\nFinally, 6 is a unit as \\(6\\cdot 6\\equiv 1\\mod(7)\\)\n\n\n\n\n🏷️ Finite fields\nA finite field is a field with finitely many elements.\nFor every finite field the number of elements is equal to a the power of a certain prime:\n👉 For each prime \\(p\\) and integer \\(n\\geq 1\\), there exists a unique (up to isomorphism) finite field with \\(p^n\\) elements, denoted by \\(\\mathbb{F}_{p^n}\\).\n\n\n✍️ Examples\n\n\\(\\mathbb{Q}\\), \\(\\mathbb{R}\\), and \\(\\mathbb{C}\\) have inifintely many elements!\n\\(\\mathbb{Z}_7\\) is a finite ring.",
+    "text": "🏷️ Zero divisors\n\nA zero divisor is a non-zero element \\(a\\) for which there exists a non-zero \\(b\\) such that \\(ab=0\\)\n\n\n✍️ Example\nIn \\(\\mathbb{Z}_6\\) the numbers 2 and 3 are zero divisors, as \\(2\\cdot 3 \\equiv 0\\mod(6)\\). The same holds for the numbers 6 and 4 in \\(\\mathbb{Z}_8\\).\nHowever, 5 is not a zero divisor in the ring \\(\\mathbb{Z}_6\\), as there is no \\(a\\in \\mathbb{Z}_6\\) for which \\(5\\cdot a\\equiv 0\\mod(6)\\)\nNext, we can distinguish between two types of rings: integral domains and fields.",
+    "crumbs": [
+      "Chapter 3 — Abstract Algebra",
+      "Rings, Fields, Ideals, and Unique Factorization"
+    ]
+  },
+  {
+    "objectID": "chapter-3/rings.html#integral-domains",
+    "href": "chapter-3/rings.html#integral-domains",
+    "title": "Rings, Fields, Ideals, and Unique Factorization",
+    "section": "🏷️ Integral domains",
+    "text": "🏷️ Integral domains\nAn integral domain is a commutative ring with unity \\(1\\neq 0\\) that has no zero divisors\n\n✍️ Example\n\\(\\mathbb{Z}\\) is a commutative ring and has no zero divisors, since we have \\(a\\cdot b = 0 \\Leftrightarrow a=0 \\lor b=0\\). Therefore \\(\\mathbb{Z}\\) is an integral domain.",
+    "crumbs": [
+      "Chapter 3 — Abstract Algebra",
+      "Rings, Fields, Ideals, and Unique Factorization"
+    ]
+  },
+  {
+    "objectID": "chapter-3/rings.html#fields-1",
+    "href": "chapter-3/rings.html#fields-1",
+    "title": "Rings, Fields, Ideals, and Unique Factorization",
+    "section": "🏷️ Fields",
+    "text": "🏷️ Fields\nA field is a commutative ring with unity where every non-zero element is a unit.\nA field is one of the most restricted structures. It may most easily be remembered as a number system where addition, subtraction, multiplication and division (except for zero) are all possible.\n\n✍️ Examples\n\n\\(\\mathbb{Q}\\), \\(\\mathbb{R}\\), and \\(\\mathbb{C}\\) are a commutative rings where every non-zero element is a unit.\nIs \\(\\mathbb{Z}_7\\) a ring? Yes, every non-zero element a unit:\n\nLet’s start by checking if 1 is a unit. Check, as \\(1\\cdot 1\\).\nAre 2 and 4 units? Yes, because \\(2\\cdot 4\\equiv 1\\mod(7)\\).\nSimilarly, is there an element \\(a\\) such that \\(a\\cdot 3\\equiv 1\\mod(7)\\)? The answer is 5.\nFinally, 6 is a unit as \\(6\\cdot 6\\equiv 1\\mod(7)\\)\n\nBy contrast, the factor group \\(\\mathbb{Z} / 6\\mathbb{Z}\\) is not field, as \\(2\\cdot 3 = 0\\).",
+    "crumbs": [
+      "Chapter 3 — Abstract Algebra",
+      "Rings, Fields, Ideals, and Unique Factorization"
+    ]
+  },
+  {
+    "objectID": "chapter-3/rings.html#finite-fields",
+    "href": "chapter-3/rings.html#finite-fields",
+    "title": "Rings, Fields, Ideals, and Unique Factorization",
+    "section": "🏷️ Finite fields",
+    "text": "🏷️ Finite fields\nA finite field is a field with finitely many elements.\nFor every finite field the number of elements is equal to a the power of a certain prime:\n👉 For each prime \\(p\\) and integer \\(n\\geq 1\\), there exists a unique (up to isomorphism) finite field with \\(p^n\\) elements, denoted by \\(\\mathbb{F}_{p^n}\\).\n\n✍️ Examples\n\n\\(\\mathbb{Q}\\), \\(\\mathbb{R}\\), and \\(\\mathbb{C}\\) have inifintely many elements!\n\\(\\mathbb{Z}_7\\) is a finite ring.\nFinite fields can contain \\(2, 3, 5, 8, 9, 11, 16, \\cdots\\) elements, as these can all be written as powers of a prime \\(2^1, 3^1, 5^1, 2^3, 3^3, 11^1, 4^2, \\cdots\\). However, \\(6, 10, \\cdots\\) cannot be written as a power of a prime, hence no finite groups exist with those quantities of elements.",
+    "crumbs": [
+      "Chapter 3 — Abstract Algebra",
+      "Rings, Fields, Ideals, and Unique Factorization"
+    ]
+  },
+  {
+    "objectID": "chapter-3/rings.html#ideals-definition",
+    "href": "chapter-3/rings.html#ideals-definition",
+    "title": "Rings, Fields, Ideals, and Unique Factorization",
+    "section": "🏷️ Ideals — definition",
+    "text": "🏷️ Ideals — definition\nAn additive subgroup \\(N\\) of a ring \\(R\\) satisfyiing below properties is an ideal.\n\\[\naN \\subseteq N\\quad\\text{and}\\quad Nb\\subseteq N\\quad \\forall a, b\\in R\n\\]\nIn a commutative ring \\(R\\), an ideal \\(N\\neq R\\) is prime if\n\\[\n\\forall a,b\\in R, ab\\in N\\Rightarrow a\\in N \\lor b\\in N.\n\\]",
     "crumbs": [
       "Chapter 3 — Abstract Algebra",
       "Rings, Fields, Ideals, and Unique Factorization"
@@ -448,7 +492,7 @@
     "href": "chapter-3/groups.html#factor-groups-quotient-groups",
     "title": "Groups, Homomorphisms, and Group Actions",
     "section": "🏷️ Factor groups (quotient groups)",
-    "text": "🏷️ Factor groups (quotient groups)\nIf \\(N\\) is a normal subgroup of \\(G\\), the set of cosets, denoted by \\(G/N\\), forms the factor group. The operation is defined as \\((aN)(bN)=(ab)N\\). This operations is well-defined only if \\(N\\) is normal.\nWe have just seen that\n\\[\n\\mathbb{Z} / 5\\mathbb{Z} = \\{5\\mathbb{Z}, 5\\mathbb{Z}+1,5\\mathbb{Z}+2, 5\\mathbb{Z}+3, 5\\mathbb{Z} + 4\\}\n\\]\n👉 All the integers with the same remainder modulo 5 are grouped together into the same basket.\nAs such, factor group closely resembles, i.e. is isomorphic to \\(\\mathbb{Z}_5=\\{0, 1, 2, 3, 4\\}\\). The operation between the cosets is then given by the multiplication of the representatives (\\(a\\) and \\(b\\)) of each coset:\n\\[\n(5\\mathbb{Z} + 2) + (5\\mathbb{Z} + 4) := (5\\mathbb{Z}) + (2 + 4) = (5\\mathbb{Z} + 1)\n\\]\nConcluding, we have\n\\[\n\\mathbb{Z} / 5\\mathbb{Z} \\cong \\mathbb{Z}_5\n\\]\n\n\n\n\n\n\nNote\n\n\n\nThe notion of a normal group falls outside the scope of this chapter, as going forward most groups will be normal anyhow.",
+    "text": "🏷️ Factor groups (quotient groups)\nIf \\(N\\) is a normal subgroup of \\(G\\), the set of cosets, denoted by \\(G/N\\), forms the factor group. The operation is defined as \\((aN)(bN)=(ab)N\\). This operations is well-defined only if \\(N\\) is normal.\nWe have just seen that\n\\[\n\\mathbb{Z} / 5\\mathbb{Z} = \\{5\\mathbb{Z}, 5\\mathbb{Z}+1,5\\mathbb{Z}+2, 5\\mathbb{Z}+3, 5\\mathbb{Z} + 4\\}\n\\]\n👉 All the integers with the same remainder modulo 5 are grouped together into the same basket.\nAs such, this factor group closely resembles (i.e. is isomorphic to) \\(\\mathbb{Z}_5=\\{0, 1, 2, 3, 4\\}\\). The operation between the cosets is then given by the multiplication of the representatives (\\(a\\) and \\(b\\)) of each coset:\n\\[\n(5\\mathbb{Z} + 2) + (5\\mathbb{Z} + 4) := (5\\mathbb{Z}) + (2 + 4) = (5\\mathbb{Z} + 1)\n\\]\nConcluding, we have\n\\[\n\\mathbb{Z} / 5\\mathbb{Z} \\cong \\mathbb{Z}_5\n\\]\n\n\n\n\n\n\nNote\n\n\n\nThe notion of a normal group falls outside the scope of this chapter, as going forward most groups will be normal anyhow.",
     "crumbs": [
       "Chapter 3 — Abstract Algebra",
       "Groups, Homomorphisms, and Group Actions"
