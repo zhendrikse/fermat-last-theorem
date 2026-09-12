@@ -301,11 +301,22 @@
     ]
   },
   {
-    "objectID": "chapter-3/rings.html#ring-definition",
-    "href": "chapter-3/rings.html#ring-definition",
+    "objectID": "chapter-3/rings.html#rings-definition",
+    "href": "chapter-3/rings.html#rings-definition",
     "title": "Rings, Fields, Ideals, and Unique Factorization",
-    "section": "🏷️ Ring — definition",
-    "text": "🏷️ Ring — definition\nA ring \\(R(+, \\cdot)\\) is a set with two binary operations (frequently called addition and multiplication) satisfying\n\n\\(R(+)\\) is an Abelian group\n\\(\\forall a,b,c\\in\\mathbb{R},\\ (a\\cdot b)\\cdot c = a\\cdot (b\\cdot c)\\) (associative)\n\\(\\forall a,b,c\\in\\mathbb{R},\\ a(b + c) = ab + ac\\ \\text{and}\\ (a + b)c = ac + bc\\) (distributive)\n\nFuthermore:\n\nA ring is commutative if its multiplication is commutative.\nA unity (or identity) is a multiplicative identity element, denoted by 1.\nA unit is an element in a ring with unity that has a multiplicative inverse: \\(\\forall a\\in R \\exists b: ab=ba =1\\)\n\n👉 Note that the existence of a unity is not always guaranteed. However, going forward most of our rings will have a unity.\n👉 Examples of units are -1 and 1 when we take \\(R=\\mathbb{Z}\\). For \\(R=\\mathbb{Q}\\) all elements are unit, except for zero. Finally, if we take for example \\(R = \\mathbb{Z}_9\\), 5 is a unit as \\(5\\cdot 2 \\equiv 1\\mod(9)\\), but 3 is not, as there is no integer for which \\(3a \\equiv 1\\mod(9)\\)!\n\n✍️ Examples\n\n\\(\\mathbb{Z}, \\mathbb{Q}, \\mathbb{R}, \\mathbb{C}\\) with addition and multiplication\n\\(Math_n(\\mathbb{R})\\)\n\\(\\mathbb{Z}_n\\), with multiplication defined as \\(a\\cdot b = ab\\mod(n)\\)\n\\(\\mathbb{R}[x]\\), the set of polynomials with real coefficients\n\nHowever, \\(\\mathbb{N}\\) is not a ring, as it is not a(n Abelian) group!",
+    "section": "🏷️ Rings — definition",
+    "text": "🏷️ Rings — definition\nA ring \\(R(+, \\cdot)\\) is a set with two binary operations (frequently called addition and multiplication) satisfying\n\n\\(R(+)\\) is an Abelian group\n\\(\\forall a,b,c\\in\\mathbb{R},\\ (a\\cdot b)\\cdot c = a\\cdot (b\\cdot c)\\) (associative)\n\\(\\forall a,b,c\\in\\mathbb{R},\\ a(b + c) = ab + ac\\ \\text{and}\\ (a + b)c = ac + bc\\) (distributive)\n\n\n✍️ Examples\n\n\\(\\mathbb{Z}, \\mathbb{Q}, \\mathbb{R}, \\mathbb{C}\\) with addition and multiplication\n\\(Math_n(\\mathbb{R})\\)\n\\(\\mathbb{Z}_n\\), with multiplication defined as \\(a\\cdot b = ab\\mod(n)\\)\n\\(\\mathbb{R}[x]\\), the set of polynomials with real coefficients\n\nHowever, \\(\\mathbb{N}\\) is not a ring, as it is not a(n Abelian) group!",
+    "crumbs": [
+      "Chapter 3 — Abstract Algebra",
+      "Rings, Fields, Ideals, and Unique Factorization"
+    ]
+  },
+  {
+    "objectID": "chapter-3/rings.html#commutativity-unit-and-unity",
+    "href": "chapter-3/rings.html#commutativity-unit-and-unity",
+    "title": "Rings, Fields, Ideals, and Unique Factorization",
+    "section": "🏷️ Commutativity, unit, and unity",
+    "text": "🏷️ Commutativity, unit, and unity\n\nA ring is commutative if its multiplication is commutative.\nA unity (or identity) is a multiplicative identity element, denoted by 1.\nA unit is an element in a ring with unity that has a multiplicative inverse: \\(\\forall a\\in R \\exists b: ab=ba =1\\)\n\n👉 Note that the existence of a unity is not always guaranteed. However, going forward most of our rings will have a unity.\n\n✍️ Examples\nSome examples of units are\n\nThe elements -1 and 1 when we take \\(R=\\mathbb{Z}\\).\nFor \\(R=\\mathbb{Q}\\) all elements are unit, except for zero.\nFinally, if we take for example \\(R = \\mathbb{Z}_9\\), 5 is a unit as \\(5\\cdot 2 \\equiv 1\\mod(9)\\), but 3 is not, as there is no integer for which \\(3a \\equiv 1\\mod(9)\\)!",
     "crumbs": [
       "Chapter 3 — Abstract Algebra",
       "Rings, Fields, Ideals, and Unique Factorization"
@@ -323,11 +334,11 @@
     ]
   },
   {
-    "objectID": "chapter-3/rings.html#fields-integral-domains-and-zero-divisors",
-    "href": "chapter-3/rings.html#fields-integral-domains-and-zero-divisors",
+    "objectID": "chapter-3/rings.html#zero-divisors",
+    "href": "chapter-3/rings.html#zero-divisors",
     "title": "Rings, Fields, Ideals, and Unique Factorization",
-    "section": "🏷️ Fields, integral domains, and zero divisors",
-    "text": "🏷️ Fields, integral domains, and zero divisors\n\nA zero divisor is a non-zero element \\(a\\) for which there exists a non-zero \\(b\\) such that \\(ab=0\\)\nAn integral domain is a commutative ring with unity \\(1\\neq 0\\) that has no zero divisors\nA field is a commutative ring with unity where every non-zero element is a unit.",
+    "section": "🏷️ Zero divisors",
+    "text": "🏷️ Zero divisors\n\nA zero divisor is a non-zero element \\(a\\) for which there exists a non-zero \\(b\\) such that \\(ab=0\\)\n\n\n✍️ Example\nIn \\(\\mathbb{Z}_6\\) the numbers 2 and 3 are zero divisors, as \\(2\\cdot 3 \\equiv 0\\mod(6)\\). The same holds for the numbers 6 and 4 in \\(\\mathbb{Z}_8\\).\nHowever, 5 is not a zero divisor in the ring \\(\\mathbb{Z}_6\\), as there is no \\(a\\in \\mathbb{Z}_6\\) for which \\(5\\cdot a\\equiv 0\\mod(6)\\)\nNext, we can distinguish between two types of rings: integral domains and fields.\n\n\n🏷️ Integral domains\n\nAn integral domain is a commutative ring with unity \\(1\\neq 0\\) that has no zero divisors\n\n\n\n✍️ Example\n\\(\\mathbb{Z}\\) is a commutative ring and has no zero divisors, since we have \\(a\\cdot b = 0 \\Leftrightarrow a=0 \\lor b=0\\). Therefore \\(\\mathbb{Z}\\) is an integral domain.\n\n\n🏷️ Fields\n\nA field is a commutative ring with unity where every non-zero element is a unit.\n\nA field is one of the most restricted structures. It may most easily be remembered as a number system where addition, subtraction, multiplication and division (except for zero) are all possible.\n\n\n✍️ Examples\n\n\\(\\mathbb{Q}\\), \\(\\mathbb{R}\\), and \\(\\mathbb{C}\\) are a commutative rings where every non-zero element is a unit.\nIs \\(\\mathbb{Z}_7\\) a ring? Yes, every non-zero element a unit:\n\nLet’s start by checking if 1 is a unit. Check, as \\(1\\cdot 1\\).\nAre 2 and 4 units? Yes, because \\(2\\cdot 4\\equiv 1\\mod(7)\\).\nSimilarly, is there an element \\(a\\) such that \\(a\\cdot 3\\equiv 1\\mod(7)\\)? The answer is 5.\nFinally, 6 is a unit as \\(6\\cdot 6\\equiv 1\\mod(7)\\)\n\n\n\n\n🏷️ Finite fields\nA finite field is a field with finitely many elements.\nFor every finite field the number of elements is equal to a the power of a certain prime:\n👉 For each prime \\(p\\) and integer \\(n\\geq 1\\), there exists a unique (up to isomorphism) finite field with \\(p^n\\) elements, denoted by \\(\\mathbb{F}_{p^n}\\).\n\n\n✍️ Examples\n\n\\(\\mathbb{Q}\\), \\(\\mathbb{R}\\), and \\(\\mathbb{C}\\) have inifintely many elements!\n\\(\\mathbb{Z}_7\\) is a finite ring.",
     "crumbs": [
       "Chapter 3 — Abstract Algebra",
       "Rings, Fields, Ideals, and Unique Factorization"

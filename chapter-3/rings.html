@@ -509,18 +509,31 @@ window.Quarto = {
   <ul>
   <li><a href="#rings" id="toc-rings" class="nav-link active" data-scroll-target="#rings">📌 Rings</a>
   <ul class="collapse">
-  <li><a href="#ring-definition" id="toc-ring-definition" class="nav-link" data-scroll-target="#ring-definition">🏷️ Ring — definition</a>
+  <li><a href="#rings-definition" id="toc-rings-definition" class="nav-link" data-scroll-target="#rings-definition">🏷️ Rings — definition</a>
   <ul class="collapse">
   <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples">✍️ <strong>Examples</strong></a></li>
   </ul></li>
-  <li><a href="#characteristic-of-a-ring" id="toc-characteristic-of-a-ring" class="nav-link" data-scroll-target="#characteristic-of-a-ring">🏷️ Characteristic of a ring</a>
+  <li><a href="#commutativity-unit-and-unity" id="toc-commutativity-unit-and-unity" class="nav-link" data-scroll-target="#commutativity-unit-and-unity">🏷️ Commutativity, unit, and unity</a>
   <ul class="collapse">
   <li><a href="#examples-1" id="toc-examples-1" class="nav-link" data-scroll-target="#examples-1">✍️ <strong>Examples</strong></a></li>
+  </ul></li>
+  <li><a href="#characteristic-of-a-ring" id="toc-characteristic-of-a-ring" class="nav-link" data-scroll-target="#characteristic-of-a-ring">🏷️ Characteristic of a ring</a>
+  <ul class="collapse">
+  <li><a href="#examples-2" id="toc-examples-2" class="nav-link" data-scroll-target="#examples-2">✍️ <strong>Examples</strong></a></li>
   </ul></li>
   </ul></li>
   <li><a href="#fields" id="toc-fields" class="nav-link" data-scroll-target="#fields">📌 Fields</a>
   <ul class="collapse">
-  <li><a href="#fields-integral-domains-and-zero-divisors" id="toc-fields-integral-domains-and-zero-divisors" class="nav-link" data-scroll-target="#fields-integral-domains-and-zero-divisors">🏷️ Fields, integral domains, and zero divisors</a></li>
+  <li><a href="#zero-divisors" id="toc-zero-divisors" class="nav-link" data-scroll-target="#zero-divisors">🏷️ Zero divisors</a>
+  <ul class="collapse">
+  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example">✍️ <strong>Example</strong></a></li>
+  <li><a href="#integral-domains" id="toc-integral-domains" class="nav-link" data-scroll-target="#integral-domains">🏷️ Integral domains</a></li>
+  <li><a href="#example-1" id="toc-example-1" class="nav-link" data-scroll-target="#example-1">✍️ <strong>Example</strong></a></li>
+  <li><a href="#fields-1" id="toc-fields-1" class="nav-link" data-scroll-target="#fields-1">🏷️ Fields</a></li>
+  <li><a href="#examples-3" id="toc-examples-3" class="nav-link" data-scroll-target="#examples-3">✍️ <strong>Examples</strong></a></li>
+  <li><a href="#finite-fields" id="toc-finite-fields" class="nav-link" data-scroll-target="#finite-fields">🏷️ Finite fields</a></li>
+  <li><a href="#examples-4" id="toc-examples-4" class="nav-link" data-scroll-target="#examples-4">✍️ <strong>Examples</strong></a></li>
+  </ul></li>
   </ul></li>
   </ul>
 </nav>
@@ -563,22 +576,14 @@ Note
 </div>
 <section id="rings" class="level1">
 <h1>📌 Rings</h1>
-<section id="ring-definition" class="level2">
-<h2 class="anchored" data-anchor-id="ring-definition">🏷️ Ring — definition</h2>
+<section id="rings-definition" class="level2">
+<h2 class="anchored" data-anchor-id="rings-definition">🏷️ Rings — definition</h2>
 <p>A <strong>ring</strong> <span class="math inline">\(R(+, \cdot)\)</span> is a set with two binary operations (frequently called addition and multiplication) satisfying</p>
 <ul>
 <li><span class="math inline">\(R(+)\)</span> is an Abelian group</li>
 <li><span class="math inline">\(\forall a,b,c\in\mathbb{R},\ (a\cdot b)\cdot c = a\cdot (b\cdot c)\)</span> (associative)</li>
 <li><span class="math inline">\(\forall a,b,c\in\mathbb{R},\ a(b + c) = ab + ac\ \text{and}\ (a + b)c = ac + bc\)</span> (distributive)</li>
 </ul>
-<p>Futhermore:</p>
-<ul>
-<li>A ring is <strong>commutative</strong> if its multiplication is commutative.</li>
-<li>A <strong>unity</strong> (or identity) is a multiplicative identity element, denoted by 1.</li>
-<li>A <strong>unit</strong> is an element in a ring with unity that has a multiplicative inverse: <span class="math inline">\(\forall a\in R \exists b: ab=ba =1\)</span></li>
-</ul>
-<p>👉 Note that the existence of a unity is not always guaranteed. However, going forward most of our rings will have a unity.</p>
-<p>👉 Examples of units are -1 and 1 when we take <span class="math inline">\(R=\mathbb{Z}\)</span>. For <span class="math inline">\(R=\mathbb{Q}\)</span> <em>all elements are unit</em>, except for zero. Finally, if we take for example <span class="math inline">\(R = \mathbb{Z}_9\)</span>, 5 is a unit as <span class="math inline">\(5\cdot 2 \equiv 1\mod(9)\)</span>, but 3 is not, as there is no integer for which <span class="math inline">\(3a \equiv 1\mod(9)\)</span>!</p>
 <section id="examples" class="level3">
 <h3 class="anchored" data-anchor-id="examples">✍️ <strong>Examples</strong></h3>
 <ul>
@@ -590,6 +595,24 @@ Note
 <p>However, <span class="math inline">\(\mathbb{N}\)</span> is not a ring, as it is not a(n Abelian) group!</p>
 </section>
 </section>
+<section id="commutativity-unit-and-unity" class="level2">
+<h2 class="anchored" data-anchor-id="commutativity-unit-and-unity">🏷️ Commutativity, unit, and unity</h2>
+<ul>
+<li>A ring is <strong>commutative</strong> if its multiplication is commutative.</li>
+<li>A <strong>unity</strong> (or identity) is a multiplicative identity element, denoted by 1.</li>
+<li>A <strong>unit</strong> is an element in a ring with unity that has a multiplicative inverse: <span class="math inline">\(\forall a\in R \exists b: ab=ba =1\)</span></li>
+</ul>
+<p>👉 Note that the existence of a unity is not always guaranteed. However, going forward most of our rings will have a unity.</p>
+<section id="examples-1" class="level3">
+<h3 class="anchored" data-anchor-id="examples-1">✍️ <strong>Examples</strong></h3>
+<p>Some examples of units are</p>
+<ul>
+<li>The elements -1 and 1 when we take <span class="math inline">\(R=\mathbb{Z}\)</span>.</li>
+<li>For <span class="math inline">\(R=\mathbb{Q}\)</span> <em>all elements are unit</em>, except for zero.</li>
+<li>Finally, if we take for example <span class="math inline">\(R = \mathbb{Z}_9\)</span>, 5 is a unit as <span class="math inline">\(5\cdot 2 \equiv 1\mod(9)\)</span>, but 3 is not, as there is no integer for which <span class="math inline">\(3a \equiv 1\mod(9)\)</span>!</li>
+</ul>
+</section>
+</section>
 <section id="characteristic-of-a-ring" class="level2">
 <h2 class="anchored" data-anchor-id="characteristic-of-a-ring">🏷️ Characteristic of a ring</h2>
 <p>The <strong>characteristic</strong> of a ring <span class="math inline">\(R\)</span> is the smallest possible integer <span class="math inline">\(n\)</span> such that for all <span class="math inline">\(a\in R\)</span></p>
@@ -597,8 +620,8 @@ Note
 \underbrace{a+a+\ldots+a}_{n\ \text{times}} = n\cdot a = 0
 \]</span></p>
 <p>If <span class="math inline">\(n\)</span> exists, then we say the characteristic of <span class="math inline">\(R\)</span> is <span class="math inline">\(n\)</span>, and if not, it is said to be zero.</p>
-<section id="examples-1" class="level3">
-<h3 class="anchored" data-anchor-id="examples-1">✍️ <strong>Examples</strong></h3>
+<section id="examples-2" class="level3">
+<h3 class="anchored" data-anchor-id="examples-2">✍️ <strong>Examples</strong></h3>
 <ul>
 <li>For <span class="math inline">\(\mathbb{Z}, \mathbb{Q}, \mathbb{R}, \mathbb{C}\)</span> the characteristic is zero</li>
 <li>For <span class="math inline">\(\mathbb{Z}_n\)</span> the characteristic is <span class="math inline">\(n\)</span>, since for any number <span class="math inline">\(a\in\mathbb{Z}_n\)</span>, we can add <span class="math inline">\(a\)</span> <span class="math inline">\(n\)</span> times, and <span class="math inline">\(na = 0 \mod(n)\)</span>.</li>
@@ -622,15 +645,62 @@ Note
 <p>🚨 In what follows next, many similar and closely related terms are introduced, such as unit and unity. Read and study these concepts carefully, and don’t feel embarassed to backtrack if needed!</p>
 </div>
 </div>
-<section id="fields-integral-domains-and-zero-divisors" class="level2">
-<h2 class="anchored" data-anchor-id="fields-integral-domains-and-zero-divisors">🏷️ Fields, integral domains, and zero divisors</h2>
+<section id="zero-divisors" class="level2">
+<h2 class="anchored" data-anchor-id="zero-divisors">🏷️ Zero divisors</h2>
 <ul>
 <li>A <strong>zero divisor</strong> is a non-zero element <span class="math inline">\(a\)</span> for which there exists a non-zero <span class="math inline">\(b\)</span> such that <span class="math inline">\(ab=0\)</span></li>
-<li>An <strong>integral domain</strong> is a commutative ring with unity <span class="math inline">\(1\neq 0\)</span> that has no zero divisors</li>
-<li>A <strong>field</strong> is a commutative ring with unity where every non-zero element is a unit.</li>
+</ul>
+<section id="example" class="level3">
+<h3 class="anchored" data-anchor-id="example">✍️ <strong>Example</strong></h3>
+<p>In <span class="math inline">\(\mathbb{Z}_6\)</span> the numbers 2 and 3 are zero divisors, as <span class="math inline">\(2\cdot 3 \equiv 0\mod(6)\)</span>. The same holds for the numbers 6 and 4 in <span class="math inline">\(\mathbb{Z}_8\)</span>.</p>
+<p>However, 5 is <em>not</em> a zero divisor in the ring <span class="math inline">\(\mathbb{Z}_6\)</span>, as there is no <span class="math inline">\(a\in \mathbb{Z}_6\)</span> for which <span class="math inline">\(5\cdot a\equiv 0\mod(6)\)</span></p>
+<p>Next, we can distinguish between two types of rings: integral domains and fields.</p>
+</section>
+<section id="integral-domains" class="level3">
+<h3 class="anchored" data-anchor-id="integral-domains">🏷️ Integral domains</h3>
+<ul>
+<li>An <strong>integral domain</strong> is a commutative ring with <a href="rings.html#commutativity-unit-and-unity">unity</a> <span class="math inline">\(1\neq 0\)</span> that has no <a href="rings.html#zero-divisors">zero divisors</a></li>
+</ul>
+</section>
+<section id="example-1" class="level3">
+<h3 class="anchored" data-anchor-id="example-1">✍️ <strong>Example</strong></h3>
+<p><span class="math inline">\(\mathbb{Z}\)</span> is a commutative ring and has no <a href="rings.html#zero-divisors">zero divisors</a>, since we have <span class="math inline">\(a\cdot b = 0 \Leftrightarrow a=0 \lor b=0\)</span>. Therefore <span class="math inline">\(\mathbb{Z}\)</span> is an integral domain.</p>
+</section>
+<section id="fields-1" class="level3">
+<h3 class="anchored" data-anchor-id="fields-1">🏷️ Fields</h3>
+<ul>
+<li>A <strong>field</strong> is a <a href="rings.html#commutativity-unit-and-unity">commutative ring</a> with <a href="rings.html#commutativity-unit-and-unity">unity</a> where every <em>non-zero</em> element is a <a href="rings.html#commutativity-unit-and-unity">unit</a>.</li>
+</ul>
+<p>A field is one of the most restricted structures. It may most easily be remembered as a number system where addition, subtraction, multiplication and division (except for zero) are all possible.</p>
+</section>
+<section id="examples-3" class="level3">
+<h3 class="anchored" data-anchor-id="examples-3">✍️ <strong>Examples</strong></h3>
+<ul>
+<li><span class="math inline">\(\mathbb{Q}\)</span>, <span class="math inline">\(\mathbb{R}\)</span>, and <span class="math inline">\(\mathbb{C}\)</span> are a commutative rings where every non-zero element is a unit.</li>
+<li>Is <span class="math inline">\(\mathbb{Z}_7\)</span> a ring? Yes, every non-zero element a unit:
+<ul>
+<li>Let’s start by checking if 1 is a unit. Check, as <span class="math inline">\(1\cdot 1\)</span>.</li>
+<li>Are 2 and 4 units? Yes, because <span class="math inline">\(2\cdot 4\equiv 1\mod(7)\)</span>.</li>
+<li>Similarly, is there an element <span class="math inline">\(a\)</span> such that <span class="math inline">\(a\cdot 3\equiv 1\mod(7)\)</span>? The answer is 5.</li>
+<li>Finally, 6 is a unit as <span class="math inline">\(6\cdot 6\equiv 1\mod(7)\)</span></li>
+</ul></li>
+</ul>
+</section>
+<section id="finite-fields" class="level3">
+<h3 class="anchored" data-anchor-id="finite-fields">🏷️ Finite fields</h3>
+<p>A <strong>finite field</strong> is a field with finitely many elements.</p>
+<p>For every finite field the number of elements is equal to a the power of a certain prime:</p>
+<p>👉 For each prime <span class="math inline">\(p\)</span> and integer <span class="math inline">\(n\geq 1\)</span>, there exists a unique (up to isomorphism) finite field with <span class="math inline">\(p^n\)</span> elements, denoted by <span class="math inline">\(\mathbb{F}_{p^n}\)</span>.</p>
+</section>
+<section id="examples-4" class="level3">
+<h3 class="anchored" data-anchor-id="examples-4">✍️ <strong>Examples</strong></h3>
+<ul>
+<li><span class="math inline">\(\mathbb{Q}\)</span>, <span class="math inline">\(\mathbb{R}\)</span>, and <span class="math inline">\(\mathbb{C}\)</span> have inifintely many elements!</li>
+<li><span class="math inline">\(\mathbb{Z}_7\)</span> is a finite ring.</li>
 </ul>
 
 
+</section>
 </section>
 </section>
 
