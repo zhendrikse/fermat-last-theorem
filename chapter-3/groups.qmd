@@ -9,6 +9,8 @@ This section corresponds to [Groups, Homomorphisms, and Group Actions — 2:44:5
 
 # 📌 Groups
 
+The concept of groups plays a pivotal role in both physics and mathematics. It is deeply connected with the notion of symmetry.
+
 ::: {.callout-note}
 Why do we need this?
 
@@ -436,7 +438,7 @@ $$
 
 👉 All the integers with the same remainder modulo 5 are grouped together into the same basket.
 
-As such, factor group closely resembles, i.e. is isomorphic to $\mathbb{Z}_5=\{0, 1, 2, 3, 4\}$. The operation between the cosets is then given by the multiplication of the representatives ($a$ and $b$) of each coset:
+As such, this factor group closely resembles (i.e. is isomorphic to) $\mathbb{Z}_5=\{0, 1, 2, 3, 4\}$. The operation between the cosets is then given by the multiplication of the representatives ($a$ and $b$) of each coset:
 
 $$
 (5\mathbb{Z} + 2) + (5\mathbb{Z} + 4) := (5\mathbb{Z}) + (2 + 4) = (5\mathbb{Z} + 1)
@@ -571,7 +573,6 @@ $$
 
 Stated differently, let all group actions work on $x$ and collect the resulting elements. This collection is called an orbit. Generally, this is a subset of $X$.
 
-
 ### 👨‍💻 Orbits demo
 
 Experiment to see how each norm $\|x\|$ determines exactly one orbit, and hence
@@ -582,3 +583,6 @@ how the plane $\mathbb{R}^2$ can be partitioned into orbits of the G-set of rota
 <script type="module" src="https://www.hendrikse.name/helion/examples/orbits.js"></script>
 ```
 
+# 📖 Further reading
+
+- [Groups – Symmetry as the Language of Mathematics](https://fermatically.com/werkzeuge/gruppen/)

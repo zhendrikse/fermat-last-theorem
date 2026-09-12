@@ -9,13 +9,149 @@ This section corresponds to [Rings, Fields, Ideals, and Unique Factorization —
 
 # 📌 Rings
 
-## 🏷️ Rings
+::: {.callout-note}
+Why do we need this?
+
+From the website [fermatically.com](https://fermatically.com/werkzeuge/gruppen/), we quote:
+
+In a group we have one operation. But even the integers $\mathbb{Z}$ have two: addition and multiplication. To capture both simultaneously, we need a richer structure &mdash; the **ring**.
+
+The motivation comes directly from number theory: Fermat's Last Theorem is about the equation $x^n + y^n = z^n$ in the integers. The proofs for $n=3$ and $n=4$ shows that sometimes one must extend the number domain. All these number domains are rings.
+:::
+
+## 🏷️ Rings &mdash; definition
 
 A **ring** $R(+, \cdot)$ is a set with two binary operations (frequently called addition and multiplication) satisfying
 
 - $R(+)$ is an Abelian group
-- $\forall a,b,c\in\mathbb{R},\ (a\cdot b)\cdot c = a\cdot (b\cdot c)$
-- $\forall a,b,c\in\mathbb{R},\ a(b + c) = ab + ac\ \text{and}\ (a + b)c = ac + bc$
+- $\forall a,b,c\in\mathbb{R},\ (a\cdot b)\cdot c = a\cdot (b\cdot c)$ (associative)
+- $\forall a,b,c\in\mathbb{R},\ a(b + c) = ab + ac\ \text{and}\ (a + b)c = ac + bc$ (distributive)
 
 ### ✍️ **Examples**
 
+- $\mathbb{Z}, \mathbb{Q}, \mathbb{R}, \mathbb{C}$ with addition and multiplication
+- $Math_n(\mathbb{R})$
+- $\mathbb{Z}_n$, with multiplication defined as $a\cdot b = ab\mod(n)$
+- $\mathbb{R}[x]$, the set of polynomials with real coefficients
+
+However, $\mathbb{N}$ is not a ring, as it is not a(n Abelian) group!
+
+## 🏷️ Commutativity, unit, and unity
+
+- A ring is **commutative** if its multiplication is commutative.
+- A **unity** (or identity) is a multiplicative identity element, denoted by 1.
+- A **unit** is an element in a ring with unity that has a multiplicative inverse: $\forall a\in R \exists b: ab=ba =1$ 
+
+👉 Note that the existence of a unity is not always guaranteed. However, going forward most of our rings will have a unity.
+
+### ✍️ **Examples**
+
+Some examples of units are 
+
+- The elements -1 and 1 when we take $R=\mathbb{Z}$. 
+- For $R=\mathbb{Q}$ _all elements are unit_, except for zero. 
+- Finally, if we take for example
+$R = \mathbb{Z}_9$, 5 is a unit as $5\cdot 2 \equiv 1\mod(9)$, but 3 is not, as there is no integer for which $3a \equiv 1\mod(9)$! 
+
+## 🏷️ Characteristic of a ring
+
+The **characteristic** of a ring $R$ is the smallest possible integer $n$ such that for all $a\in R$
+
+$$
+\underbrace{a+a+\ldots+a}_{n\ \text{times}} = n\cdot a = 0
+$$
+
+If $n$ exists, then we say the characteristic of $R$ is $n$, and if not, 
+it is said to be zero.
+
+### ✍️ **Examples**
+
+- For $\mathbb{Z}, \mathbb{Q}, \mathbb{R}, \mathbb{C}$ the characteristic is zero
+- For $\mathbb{Z}_n$ the characteristic is $n$, since for any number $a\in\mathbb{Z}_n$, 
+  we can add $a$ $n$ times, and $na = 0 \mod(n)$.
+- For $\mathbb{Z}_2\times\mathbb{Z}_3$ the characteristic is 6, since for any
+  $(a, b)\in \mathbb{Z}_2\times\mathbb{Z}_3$ we have that $[6](a, b) = (6a, 6b) = (0, 0)$.
+
+# 📌 Fields
+
+::: {.callout-note}
+ 🚨 In what follows next, many similar and closely related terms are 
+ introduced, such as unit and unity. Read and study these concepts 
+ carefully, and don't feel embarassed to backtrack if needed! 
+:::
+
+## 🏷️ Zero divisors
+
+- A **zero divisor** is a non-zero element $a$ for which there exists a non-zero $b$ such that $ab=0$
+
+### ✍️ **Example**
+
+In $\mathbb{Z}_6$ the numbers 2 and 3 are zero divisors, as $2\cdot 3 \equiv 0\mod(6)$. The same holds for the numbers 6 and 4 in $\mathbb{Z}_8$.
+
+However, 5 is _not_ a zero divisor in the ring $\mathbb{Z}_6$, as there is no $a\in \mathbb{Z}_6$ for which $5\cdot a\equiv 0\mod(6)$
+
+Next, we can distinguish between two types of rings: [integral domains](rings.html#integral-domains) and [fields](rings.html#fields).
+
+## 🏷️ Integral domains
+
+An **integral domain** is a commutative ring with [unity](rings.html#commutativity-unit-and-unity) $1\neq 0$ that has no [zero divisors](rings.html#zero-divisors)
+
+### ✍️ **Example**
+
+$\mathbb{Z}$ is a commutative ring and has no [zero divisors](rings.html#zero-divisors), since we have $a\cdot b = 0 \Leftrightarrow a=0 \lor b=0$. Therefore $\mathbb{Z}$ is an integral domain.
+
+## 🏷️ Fields
+
+A **field** is a [commutative ring](rings.html#commutativity-unit-and-unity) with [unity](rings.html#commutativity-unit-and-unity) where every _non-zero_ element is a [unit](rings.html#commutativity-unit-and-unity).
+
+A field is one of the most restricted structures. It may most easily be remembered as a number system where addition, subtraction, multiplication and division (except for zero) are all possible.
+
+### ✍️ **Examples**
+
+- $\mathbb{Q}$, $\mathbb{R}$, and $\mathbb{C}$ are a commutative rings where every non-zero element is a unit.
+- Is $\mathbb{Z}_7$ a ring? Yes, every non-zero element a unit:
+  - Let's start by checking if 1 is a unit. Check, as $1\cdot 1$. 
+  - Are 2 and 4 units? Yes, because $2\cdot 4\equiv 1\mod(7)$. 
+  - Similarly, is there an element $a$ such that $a\cdot 3\equiv 1\mod(7)$? The answer is 5.
+  - Finally, 6 is a unit as $6\cdot 6\equiv 1\mod(7)$
+- By contrast, the [factor group](/chapter-3/groups.html#factor-groups-quotient-groups) $\mathbb{Z} / 6\mathbb{Z}$ is _not_  field, as $2\cdot 3 = 0$.
+
+## 🏷️ Finite fields
+
+A **finite field** is a field with finitely many elements. 
+
+For every finite field the number of elements is equal to a the power of a certain prime:
+
+👉 For each prime $p$ and integer $n\geq 1$, there exists a unique (up to isomorphism) finite field with $p^n$ elements, denoted by $\mathbb{F}_{p^n}$. 
+
+### ✍️ **Examples**
+
+- $\mathbb{Q}$, $\mathbb{R}$, and $\mathbb{C}$ have inifintely many elements!
+- $\mathbb{Z}_7$ is a finite ring.
+- Finite fields can contain $2, 3, 5, 8, 9, 11, 16, \cdots$ elements, as these can all be written as powers of a prime $2^1, 3^1, 5^1, 2^3, 3^3, 11^1, 4^2, \cdots$. However, $6, 10, \cdots$ cannot be written as a power of a prime, hence no finite groups exist with those quantities of elements.
+
+# 📌 Ideals
+
+In the previous section, we introduced
+[factor groups (quotient groups)](/chapter-3/groups.html#factor-groups-quotient-groups). Roughly speaking, we divided a group into cosets, after which we could treat those cosets as elements of a new group. We would like to define an analogous concept to a quotient group for rings as well, namely factor or quotient rings.
+
+For the concept of a quotient group, we needed a special condition on the subgroup, called normonality (see [definition of quotient groups)](/chapter-3/groups.html#factor-groups-quotient-groups)). Although we did not elaborate on normal groups at that point, here we cannot take any random subset either, and we need a similar condition on the subset that is compatible with ring operations. That special kind of object is called an **ideal**.
+
+## 🏷️ Ideals &mdash; definition
+
+An additive subgroup $N$ of a ring $R$ satisfyiing below properties is an **ideal**.
+
+$$
+aN \subseteq N\quad\text{and}\quad Nb\subseteq N\quad \forall a, b\in R
+$$
+
+In a commutative ring $R$, an ideal $N\neq R$ is **prime** if 
+
+$$
+\forall a,b\in R, ab\in N\Rightarrow a\in N \lor b\in N.
+$$
+
+
+# 📖 Further reading
+
+- [Rings and Fields &mdash; The World Beyond the Rational Numbers](https://fermatically.com/werkzeuge/ringe-koerper/)

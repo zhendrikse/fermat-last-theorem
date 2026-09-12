@@ -11,7 +11,7 @@ This section corresponds to [Matrices, Linear Systems, and Determinants — 1:07
 
 ## 🏷️ Matrix: Definition
 
-- A **matrix** is a rectangular array of scalars from a field $F$.
+- A **matrix** is a rectangular array of scalars from [a field](/chapter-3/rings.html#fields-1) $F$.
 - An $m \times n$ matrix a has $m$ rows and $n$ columns. The entry in the $i$-th row and $j$-th column is noted $A_{ij}$.
 
 $$
@@ -22,9 +22,8 @@ A_{m1} && A_{m2} && \dots && \ A_{mn}
 \end{pmatrix}
 $$
 
-For now, scalars we can just think of numbers and the field $F$ a number set,
-where we take the scalars from. More strictly, it is an algebraic structure where
-addition, subtraction, multiplication, and division (for non-zero elements) are defined.
+For now, scalars we can just think of numbers and [the field](/chapter-3/rings.html#fields-1) $F$ a number set, where we take the scalars from. 
+More strictly, it is an algebraic structure where addition, subtraction, multiplication, and division (for non-zero elements) are defined.
 
 Going forward, $F$ will mostly consider matrices were $F$ is either
 $\mathbb{R}$ or $\mathbb{C}$.
