@@ -543,7 +543,23 @@ window.Quarto = {
   </ul></li>
   <li><a href="#ideals" id="toc-ideals" class="nav-link" data-scroll-target="#ideals">📌 Ideals</a>
   <ul class="collapse">
-  <li><a href="#ideals-definition" id="toc-ideals-definition" class="nav-link" data-scroll-target="#ideals-definition">🏷️ Ideals — definition</a></li>
+  <li><a href="#ideals-definition" id="toc-ideals-definition" class="nav-link" data-scroll-target="#ideals-definition">🏷️ Ideals — definition</a>
+  <ul class="collapse">
+  <li><a href="#example-1-1" id="toc-example-1-1" class="nav-link" data-scroll-target="#example-1-1">✍️ <strong>Example 1</strong></a></li>
+  <li><a href="#example-2" id="toc-example-2" class="nav-link" data-scroll-target="#example-2">✍️ <strong>Example 2</strong></a></li>
+  <li><a href="#counter-example" id="toc-counter-example" class="nav-link" data-scroll-target="#counter-example">✍️ <strong>Counter example</strong></a></li>
+  <li><a href="#examples-prime-ideal" id="toc-examples-prime-ideal" class="nav-link" data-scroll-target="#examples-prime-ideal">✍️ <strong>Examples</strong>: prime ideal</a></li>
+  </ul></li>
+  <li><a href="#factor-rings-quotient-rings" id="toc-factor-rings-quotient-rings" class="nav-link" data-scroll-target="#factor-rings-quotient-rings">🏷️ Factor rings (quotient rings)</a>
+  <ul class="collapse">
+  <li><a href="#example-1-2" id="toc-example-1-2" class="nav-link" data-scroll-target="#example-1-2">✍️ <strong>Example 1</strong></a></li>
+  <li><a href="#example-2-1" id="toc-example-2-1" class="nav-link" data-scroll-target="#example-2-1">✍️ <strong>Example 2</strong></a></li>
+  </ul></li>
+  <li><a href="#rings-of-polynomials" id="toc-rings-of-polynomials" class="nav-link" data-scroll-target="#rings-of-polynomials">🏷️ Rings of polynomials</a>
+  <ul class="collapse">
+  <li><a href="#examples-5" id="toc-examples-5" class="nav-link" data-scroll-target="#examples-5">✍️ <strong>Examples</strong></a></li>
+  </ul></li>
+  <li><a href="#divisibility-and-associates" id="toc-divisibility-and-associates" class="nav-link" data-scroll-target="#divisibility-and-associates">🏷️ Divisibility and associates</a></li>
   </ul></li>
   <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading">📖 Further reading</a></li>
   </ul>
@@ -740,6 +756,155 @@ aN \subseteq N\quad\text{and}\quad Nb\subseteq N\quad \forall a, b\in R
 <p><span class="math display">\[
 \forall a,b\in R, ab\in N\Rightarrow a\in N \lor b\in N.
 \]</span></p>
+<section id="example-1-1" class="level3">
+<h3 class="anchored" data-anchor-id="example-1-1">✍️ <strong>Example 1</strong></h3>
+<p>An example is the ring <span class="math inline">\(R=\mathbb{Z}\)</span> with ideal <span class="math inline">\(N=I=6\mathbb{Z}\)</span>. This is an ideal, since <span class="math inline">\(\forall a\in\mathbb{Z}:\ a(6\mathbb{Z}) \subseteq 6\mathbb{Z}\)</span> (all multiples of <span class="math inline">\(6\mathbb{Z}\)</span> are in <span class="math inline">\(6\mathbb{Z}\)</span>).</p>
+</section>
+<section id="example-2" class="level3">
+<h3 class="anchored" data-anchor-id="example-2">✍️ <strong>Example 2</strong></h3>
+<p>The ring of polynomials with real coefficients <span class="math inline">\(R=\mathbb{R}[x]\)</span> has an ideal <span class="math inline">\(N=I=\langle x^+1\rangle= \{(x^2+1)f(x)\mid f(x)\in R[x]\}\)</span>, i.e.&nbsp;the subgroup of all multiples of <span class="math inline">\((x^2 +1\)</span> such as <span class="math inline">\((x^2 + 1)(x^3 + 4x +1)\)</span>.</p>
+<p>1. Is the ideal closed under addition? Let’s check for <span class="math inline">\(p(x)=(x^2+1)f(x)\)</span> and <span class="math inline">\(q(x)=(x^2+1)g(x)\)</span>. Then we have have:</p>
+<p><span class="math display">\[
+p(x)-q(x)
+=(x^2+1)f(x)-(x^2+1)g(x)
+=(x^2+1)(f(x)-g(x)).
+\]</span></p>
+<p>This is again a multiple of <span class="math inline">\(x^2+1\)</span> and hence part of the ideal. ꪜ</p>
+<p>2. Absorption under multiplication</p>
+<p>For any arbitrary polynomial <span class="math inline">\(h(x)\in \mathbb{R}[x]\)</span> and an element of <span class="math inline">\(I\)</span> <span class="math inline">\(p(x)=(x^2+1)f(x)\)</span> we can write:</p>
+<p><span class="math display">\[
+h(x)p(x)
+=h(x)(x^2+1)f(x)
+=(x^2+1)(h(x)f(x)).
+\]</span></p>
+<p>This is also a multiple <span class="math inline">\(x^2+1\)</span>, hence <span class="math inline">\(h(x)p(x)\in N\)</span>. Because <span class="math inline">\(\mathbb{R}[x]\)</span> is commutative, we also have that <span class="math inline">\(p(x)h(x)\in I.\quad\)</span> ꪜ</p>
+<p>Intuitively we can consider <span class="math inline">\(I=(x^2+1)\)</span> as all polynomials that are “divisible” by <span class="math inline">\(x^2+1\)</span>, for example <span class="math inline">\(2x^3+2x=2x(x^2+1)\in I\)</span> and <span class="math inline">\(x^4+2x^2+1=(x^2+1)^2\in I\)</span>. However, <span class="math inline">\(x+1\notin I\)</span>, as <span class="math inline">\(x+1\)</span> is not divisible by <span class="math inline">\(x^2+1\)</span>.</p>
+<p>Loosely speaking, we may say that all elements <span class="math inline">\(r\in\mathbb{R}[x]\)</span> are “absorbed” by the ideal:</p>
+<p><span class="math display">\[
+\boxed{r\in R[x],\ a\in I\quad\Longrightarrow\quad ra\in I.}
+\]</span></p>
+</section>
+<section id="counter-example" class="level3">
+<h3 class="anchored" data-anchor-id="counter-example">✍️ <strong>Counter example</strong></h3>
+<p>On the contrary, with <span class="math inline">\(R=\mathbb{Z}^2\)</span>, the following additive subgroup is not an ideal:</p>
+<p><span class="math display">\[
+N=
+\left\{
+\begin{pmatrix}a\\a\end{pmatrix}
+\;\middle|\;
+a\in\mathbb Z
+\right\}=
+\left\{
+\begin{pmatrix}0\\0\end{pmatrix},
+\begin{pmatrix}1\\1\end{pmatrix},
+\begin{pmatrix}2\\2\end{pmatrix},
+\begin{pmatrix}-1\\-1\end{pmatrix},
+\ldots
+\right\}.
+\]</span></p>
+<p>For an ideal we need to have <span class="math display">\[
+r\in R,\quad n\in N
+\quad\Longrightarrow\quad
+rn\in N.
+\]</span></p>
+<p>But how is the multiplication defined here? The ring structure on <span class="math inline">\(\mathbb Z^2\)</span> uses component-wise multiplication:</p>
+<p><span class="math display">\[
+\begin{pmatrix}a\\b\end{pmatrix}
+\begin{pmatrix}c\\d\end{pmatrix}
+=
+\begin{pmatrix}ac\\bd\end{pmatrix}.
+\]</span></p>
+<p>So if we take</p>
+<p><span class="math display">\[
+n=
+\begin{pmatrix}1\\1\end{pmatrix}\in N,\quad r=
+\begin{pmatrix}1\\2\end{pmatrix}\in R
+\]</span></p>
+<p>Then:</p>
+<p><span class="math display">\[
+rn=
+\begin{pmatrix}1\\2\end{pmatrix}
+\begin{pmatrix}1\\1\end{pmatrix}
+=
+\begin{pmatrix}1\\2\end{pmatrix}\notin N.
+\]</span></p>
+</section>
+<section id="examples-prime-ideal" class="level3">
+<h3 class="anchored" data-anchor-id="examples-prime-ideal">✍️ <strong>Examples</strong>: prime ideal</h3>
+<p>We can easily see that <span class="math inline">\(I=5\mathbb{Z}\)</span> is an ideal of <span class="math inline">\(\mathbb{Z}\)</span>. But is it a prime ideal? Yes, because</p>
+<p><span class="math display">\[
+ab\in 5\mathbb{Z} \Rightarrow a\in 5\mathbb{Z} \lor b\in 5\mathbb{Z}
+\]</span></p>
+<p>However, <span class="math inline">\(I=6\mathbb{Z}\)</span> is not a <em>prime</em> ideal, as <span class="math inline">\(12\in 6\mathbb{Z}\)</span>, but 12 can be written as <span class="math inline">\(3\times 4\)</span>, and neither 3 nor 4 are in <span class="math inline">\(6\mathbb{Z}\)</span>.</p>
+</section>
+</section>
+<section id="factor-rings-quotient-rings" class="level2">
+<h2 class="anchored" data-anchor-id="factor-rings-quotient-rings">🏷️ Factor rings (quotient rings)</h2>
+<p>if <span class="math inline">\(I\)</span> is an ideal of ring <span class="math inline">\(R\)</span>, we can form the <strong>factor ring</strong> <span class="math inline">\(R/I\)</span>.</p>
+<ul>
+<li>Its elements are the additive cosets <span class="math inline">\(a+I\ \forall a\in R\)</span>.</li>
+<li>Operations are defined as
+<ul>
+<li><span class="math inline">\((a+I)+(b+I)=(a+b)I\)</span></li>
+<li><span class="math inline">\((a+I)(b+I) = (ab)I\)</span></li>
+</ul></li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This is similar to what we discussed in the <a href="../chapter-3/groups.html#factor-groups-quotient-groups">section on quotient groups</a>, where we considered complete <a href="../chapter-3/groups.html#cosets">cosets</a> as elements of a new group.</p>
+<p>The difference is that in the case of quotient groups we only have one operation, whereas for rings we have two (addition and multiplication)! The “absorption property” of an ideal makes the multiplication between cosets well-defined.</p>
+</div>
+</div>
+<section id="example-1-2" class="level3">
+<h3 class="anchored" data-anchor-id="example-1-2">✍️ <strong>Example 1</strong></h3>
+<p>Let <span class="math inline">\(p\)</span> be a prime number. Then <span class="math inline">\(\mathbb{Z}/p\mathbb{Z}\)</span> is a factor ring. For example <span class="math inline">\(\mathbb{Z}/7\mathbb{Z}\)</span>:</p>
+<p><span class="math display">\[
+\begin{eqnarray}
+(1+7\mathbb{Z}) + (5+7\mathbb{Z}) =(6+7\mathbb{Z}) \\
+(2+7\mathbb{Z})(4+7\mathbb{Z})=(1+7\mathbb{Z})
+\end{eqnarray}
+\]</span></p>
+</section>
+<section id="example-2-1" class="level3">
+<h3 class="anchored" data-anchor-id="example-2-1">✍️ <strong>Example 2</strong></h3>
+<p>The quotient ring of polynomials: <span class="math inline">\(R=\mathbb{R}[x]/\langle x^2+1\rangle\)</span>.</p>
+<p>Fun fact: <span class="math inline">\(R=\mathbb{R}[x]/\langle x^2+1\rangle \cong \mathbb{C} \cong \mathbb{R}^2\)</span>.</p>
+</section>
+</section>
+<section id="rings-of-polynomials" class="level2">
+<h2 class="anchored" data-anchor-id="rings-of-polynomials">🏷️ Rings of polynomials</h2>
+<ul>
+<li>If <span class="math inline">\(F\)</span> is a field, then <span class="math inline">\(F[x]\)</span>, the set of polynomials in the indermediate <span class="math inline">\(x\)</span> with coefficients from <span class="math inline">\(F\)</span>, is a commutative ring with unity.</li>
+<li>A polynomial <span class="math inline">\(f(x) \in F[x]\)</span> is <strong>irreducible</strong> over <span class="math inline">\(F\)</span> if it cannot be factored in two lower-degree non-constant polynomials in <span class="math inline">\(F[x]\)</span>. It is reducible otherwise.</li>
+</ul>
+<section id="examples-5" class="level3">
+<h3 class="anchored" data-anchor-id="examples-5">✍️ <strong>Examples</strong></h3>
+<p>Examples are <span class="math inline">\(\mathbb{R}[x]\)</span>, <span class="math inline">\(\mathbb{Q}[x]\)</span>, and <span class="math inline">\(\mathbb{C}[x]\)</span>, that can more explicitly be written as</p>
+<p><span class="math display">\[
+F[x] = a_0 + a_1x + a_2x^2 +\ldots+ a_n x^n
+\]</span></p>
+<p>where <span class="math inline">\(a_0, a_1, \ldots a_n\)</span> are taken from <span class="math inline">\(\mathbb{R}\)</span>, <span class="math inline">\(\mathbb{Q}\)</span>, or <span class="math inline">\(\mathbb{C}[x]\)</span> respectively.</p>
+<p>Next, let’s take a look a reducibility.</p>
+<p><span class="math display">\[
+f(x)=x^2-4x+3=(x-1)(x-3)\quad (x-1)\in\mathbb{R}, (x-3)\in\mathbb{R}
+\]</span></p>
+<p>And although <span class="math inline">\(g(x)=x^2+1\)</span> is <em>not</em> reducible in <span class="math inline">\(\mathbb{R}\)</span>, it is in <span class="math inline">\(\mathbb{C}\)</span> (as it can be written as <span class="math inline">\((x+i)(x-i)\)</span>.</p>
+</section>
+</section>
+<section id="divisibility-and-associates" class="level2">
+<h2 class="anchored" data-anchor-id="divisibility-and-associates">🏷️ Divisibility and associates</h2>
+<ul>
+<li>Let <span class="math inline">\(R\)</span> be a commutative ring. For <span class="math inline">\(a,b\in R\)</span>, we write <span class="math inline">\(b\mid a\)</span> if <span class="math inline">\(\exists c\in R\)</span> such that <span class="math inline">\(a=bc\)</span>.</li>
+<li>Two elements <span class="math inline">\(a,b\in R\)</span> are <strong>associates</strong> if <span class="math inline">\(a=bu\)</span> for some unit <span class="math inline">\(u\in U(R)\)</span>. They are considered equivalent in terms of divisibility.</li>
+</ul>
 </section>
 </section>
 <section id="further-reading" class="level1">
