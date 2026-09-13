@@ -12,7 +12,7 @@ The original exposition and examples can be found back in Noah Jang's video [Pro
 ---
 
 ::: {.callout-note}
-Visualizations in this project are created using the [Helion library](https://www.hendrikse.name/helion/).
+Visualizations in this project are created with my own [Helion library](https://www.hendrikse.name/helion/).
 :::
 
 ---

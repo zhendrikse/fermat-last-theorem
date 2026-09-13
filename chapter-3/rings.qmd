@@ -151,6 +151,176 @@ $$
 \forall a,b\in R, ab\in N\Rightarrow a\in N \lor b\in N.
 $$
 
+### ✍️ **Example 1**
+
+An example is the ring $R=\mathbb{Z}$ with ideal $N=I=6\mathbb{Z}$. 
+This is an ideal, since $\forall a\in\mathbb{Z}:\ a(6\mathbb{Z}) \subseteq 6\mathbb{Z}$
+(all multiples of $6\mathbb{Z}$ are in $6\mathbb{Z}$).
+
+### ✍️ **Example 2**
+
+The ring of polynomials with real coefficients 
+$R=\mathbb{R}[x]$ has an ideal $N=I=\langle x^+1\rangle= \{(x^2+1)f(x)\mid f(x)\in R[x]\}$, 
+i.e. the subgroup of all multiples of $(x^2 +1$ such as $(x^2 + 1)(x^3 + 4x +1)$. 
+
+1\. Is the ideal closed under addition? Let's check for $p(x)=(x^2+1)f(x)$ and $q(x)=(x^2+1)g(x)$. Then we have have:
+
+ $$
+p(x)-q(x)
+=(x^2+1)f(x)-(x^2+1)g(x)
+=(x^2+1)(f(x)-g(x)).
+$$
+
+This is again a multiple of $x^2+1$ and hence part of the ideal.  ꪜ
+
+ 2\. Absorption under multiplication
+
+ For any arbitrary polynomial $h(x)\in \mathbb{R}[x]$ and an element of $I$ $p(x)=(x^2+1)f(x)$ we can write:
+
+ $$
+h(x)p(x)
+=h(x)(x^2+1)f(x)
+=(x^2+1)(h(x)f(x)).
+$$
+
+This is also a multiple $x^2+1$, hence $h(x)p(x)\in N$.
+Because $\mathbb{R}[x]$ is commutative, we also have that $p(x)h(x)\in I.\quad$  ꪜ
+
+Intuitively we can consider $I=(x^2+1)$ as all polynomials
+that are "divisible" by $x^2+1$, for example $2x^3+2x=2x(x^2+1)\in I$
+and $x^4+2x^2+1=(x^2+1)^2\in I$. However, $x+1\notin I$, as
+$x+1$ is not divisible by $x^2+1$.
+
+Loosely speaking, we may say that all elements $r\in\mathbb{R}[x]$ are "absorbed" by the ideal:
+
+ $$
+\boxed{r\in R[x],\ a\in I\quad\Longrightarrow\quad ra\in I.}
+$$
+
+### ✍️ **Counter example**
+
+On the contrary, with $R=\mathbb{Z}^2$, the following additive subgroup is not an ideal:
+
+ $$
+N=
+\left\{
+\begin{pmatrix}a\\a\end{pmatrix}
+\;\middle|\;
+a\in\mathbb Z
+\right\}=
+\left\{
+\begin{pmatrix}0\\0\end{pmatrix},
+\begin{pmatrix}1\\1\end{pmatrix},
+\begin{pmatrix}2\\2\end{pmatrix},
+\begin{pmatrix}-1\\-1\end{pmatrix},
+\ldots
+\right\}.
+$$
+
+For an ideal we need to have
+ $$
+r\in R,\quad n\in N
+\quad\Longrightarrow\quad
+rn\in N.
+$$
+
+But how is the multiplication defined here?
+The ring structure on $\mathbb Z^2$ uses component-wise multiplication:
+
+ $$
+\begin{pmatrix}a\\b\end{pmatrix}
+\begin{pmatrix}c\\d\end{pmatrix}
+=
+\begin{pmatrix}ac\\bd\end{pmatrix}.
+$$
+
+So if we take
+
+ $$
+n=
+\begin{pmatrix}1\\1\end{pmatrix}\in N,\quad r=
+\begin{pmatrix}1\\2\end{pmatrix}\in R
+$$
+
+ Then:
+
+ $$
+rn=
+\begin{pmatrix}1\\2\end{pmatrix}
+\begin{pmatrix}1\\1\end{pmatrix}
+=
+\begin{pmatrix}1\\2\end{pmatrix}\notin N.
+$$
+
+### ✍️ **Examples**: prime ideal
+
+We can easily see that $I=5\mathbb{Z}$ is an ideal of $\mathbb{Z}$. But is it a prime ideal? Yes, because
+
+$$
+ab\in 5\mathbb{Z} \Rightarrow a\in 5\mathbb{Z} \lor b\in 5\mathbb{Z}
+$$
+
+However, $I=6\mathbb{Z}$ is not a _prime_ ideal, as $12\in 6\mathbb{Z}$, but 12 can be written as $3\times 4$, and neither 3 nor 4 are in $6\mathbb{Z}$.
+
+## 🏷️ Factor rings (quotient rings)
+
+if $I$ is an ideal of ring $R$, we can form the **factor ring** $R/I$.
+
+- Its elements are the additive cosets $a+I\ \forall a\in R$.
+- Operations are defined as
+  - $(a+I)+(b+I)=(a+b)I$
+  - $(a+I)(b+I) = (ab)I$
+
+::: {.callout-note}
+This is similar to what we discussed in the [section on quotient groups](/chapter-3/groups.html#factor-groups-quotient-groups), where we considered complete [cosets](/chapter-3/groups.html#cosets) as elements of a new group.
+
+The difference is that in the case of quotient groups we only have one operation, whereas for rings we have two (addition and multiplication)! The "absorption property" of an ideal makes the multiplication between cosets well-defined.
+:::
+
+### ✍️ **Example 1**
+
+Let $p$ be a prime number. Then $\mathbb{Z}/p\mathbb{Z}$ is a factor ring. For example $\mathbb{Z}/7\mathbb{Z}$:
+
+$$
+\begin{eqnarray}
+(1+7\mathbb{Z}) + (5+7\mathbb{Z}) =(6+7\mathbb{Z}) \\
+(2+7\mathbb{Z})(4+7\mathbb{Z})=(1+7\mathbb{Z})
+\end{eqnarray}
+$$
+
+### ✍️ **Example 2**
+
+The quotient ring of polynomials: $R=\mathbb{R}[x]/\langle x^2+1\rangle$. 
+
+Fun fact: $R=\mathbb{R}[x]/\langle x^2+1\rangle \cong \mathbb{C} \cong \mathbb{R}^2$.
+
+## 🏷️ Rings of polynomials
+
+- If $F$ is a field, then $F[x]$, the set of polynomials in the indermediate $x$ with coefficients from $F$, is a commutative ring with unity.
+- A polynomial $f(x) \in F[x]$ is **irreducible** over $F$ if it cannot be factored in two lower-degree non-constant polynomials in $F[x]$. It is reducible otherwise.
+
+### ✍️ **Examples**
+
+Examples are $\mathbb{R}[x]$, $\mathbb{Q}[x]$, and $\mathbb{C}[x]$, that can more explicitly be written as
+
+$$
+F[x] = a_0 + a_1x + a_2x^2 +\ldots+ a_n x^n
+$$
+
+where $a_0, a_1, \ldots a_n$ are taken from $\mathbb{R}$, $\mathbb{Q}$, or $\mathbb{C}[x]$ respectively.
+
+Next, let's take a look a reducibility. 
+
+$$
+f(x)=x^2-4x+3=(x-1)(x-3)\quad (x-1)\in\mathbb{R}, (x-3)\in\mathbb{R}
+$$
+
+And although $g(x)=x^2+1$ is _not_ reducible in $\mathbb{R}$, it is in $\mathbb{C}$ (as it can be written as $(x+i)(x-i)$.
+
+## 🏷️ Divisibility and associates
+
+- Let $R$ be a commutative ring. For $a,b\in R$, we write $b\mid a$ if $\exists c\in R$ such that $a=bc$.
+- Two elements $a,b\in R$ are **associates** if $a=bu$ for some unit $u\in U(R)$. They are considered equivalent in terms of divisibility.
 
 # 📖 Further reading
 

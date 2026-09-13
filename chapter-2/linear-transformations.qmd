@@ -80,8 +80,8 @@ is not a linear transformation.
 
 ## 🏷️ Kernel and image
 
-- The **kernel** of $T:V\rightarrow W$ is the subspace $\ker(T)=\{v\in V\ |\ T(v) = {\bf 0}_W\}$
-- The **iamge** of $T:V\rightarrow W$ is the subspace $\text{im}(T)=\{v\in V\ |\ T(v)\}$
+- The **kernel** of $T:V\rightarrow W$ is the subspace $\ker(T)=\{v\in V\mid T(v) = {\bf 0}_W\}$
+- The **iamge** of $T:V\rightarrow W$ is the subspace $\text{im}(T)=\{v\in V\mid T(v)\}$
 
 ### ✍️ **Example 1**
 
@@ -115,7 +115,7 @@ So what are the kernel and image of this transformation? The kernel consists of 
 
 $$
 \begin{array}{cc}
-\ker{(T)} &=& \{ c\ |\ c\in\mathbb{R}\}
+\ker{(T)} &=& \{ c\mid c\in\mathbb{R}\}
 \\
 \text{Im}{(T)} &=& \mathbb{R}[x]
 \end{array}

@@ -674,13 +674,13 @@ For a field $F$ and a positive integer $n$:
 - $GL_n(F)$: the general linear group is the group of all invertible matrices in $Mat_n(F)$.
 
 $$
-GL_n(F) = \{A\in Mat_n(F)\ |\ \det(A)\neq 0\}.
+GL_n(F) = \{A\in Mat_n(F)\mid \det(A)\neq 0\}.
 $$
 
 - $SL_n(F)$: the special linear group is a subgroup of $GL_n(F)$, consisting of matrices with determinant 1.
 
 $$
-SL_n(F) = \{A\in GL_n(F)\ |\ \det(A)=1\}.
+SL_n(F) = \{A\in GL_n(F)\mid \det(A)=1\}.
 $$
 
 ### ✍️ **Example 1**: members of $Mat_n(F)$
