@@ -48,14 +48,14 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-f9576fd48472fd5cf4ef5011d33b3d99.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-d700665feb99415b95902130766537d1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-8ec087257bd97290e2aed26b3b01c23b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-f68a912faa5d058e6f16e0b0f3338c43.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
-  "location": "sidebar",
+  "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
-  "panel-placement": "start",
-  "type": "textbox",
+  "panel-placement": "end",
+  "type": "overlay",
   "limit": 50,
   "keyboard-shortcut": [
     "f",
@@ -82,7 +82,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="../styles.css">
 </head>
 
-<body class="nav-sidebar docked quarto-dark"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-sidebar docked nav-fixed quarto-dark"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -246,6 +246,39 @@ ul.task-list li input[type="checkbox"] {
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Fermat’s Last Theorem — From Scratch</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="htts://www.hendrikse.name/"> 
+<span class="menu-text">Zeger’s page</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../index.html" aria-current="page"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <span class="nav-link">
+<span class="menu-text">about.qmd</span>
+    </span>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
@@ -261,17 +294,9 @@ ul.task-list li input[type="checkbox"] {
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
-    <div class="sidebar-title mb-0 py-0">
-      <a href="../">Fermat’s Last Theorem — From Scratch</a> 
-        <div class="sidebar-tools-main">
-  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
-</div>
-    </div>
-      </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Search"></div>
@@ -478,7 +503,11 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#abstract-algebra" id="toc-abstract-algebra" class="nav-link active" data-scroll-target="#abstract-algebra">Abstract algebra</a></li>
+  <li><a href="#abstract-algebra" id="toc-abstract-algebra" class="nav-link active" data-scroll-target="#abstract-algebra">Abstract algebra</a>
+  <ul class="collapse">
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#what-is-abstract-algebra" id="toc-what-is-abstract-algebra" class="nav-link" data-scroll-target="#what-is-abstract-algebra">What is abstract algebra?</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -520,6 +549,27 @@ Note
 </div>
 <section id="abstract-algebra" class="level1">
 <h1>Abstract algebra</h1>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>In high school, I already learned about Plato’s <a href="https://en.wikipedia.org/wiki/Theory_of_Forms">theory of forms</a>: “the timeless, absolute, non-physical, and unchangeable essences of all things, which objects and matter in the physical world merely participate in, imitate, or resemble”.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://en.wikipedia.org/wiki/Allegory_of_the_cave#/media/File:An_Illustration_of_The_Allegory_of_the_Cave,_from_Plato%E2%80%99s_Republic.jpg"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8d/An_Illustration_of_The_Allegory_of_the_Cave%2C_from_Plato%E2%80%99s_Republic.jpg/1920px-An_Illustration_of_The_Allegory_of_the_Cave%2C_from_Plato%E2%80%99s_Republic.jpg" title="Cave allegory by Plato on WikiPedia" class="img-fluid figure-img"></a></p>
+<figcaption>Cave allegory</figcaption>
+</figure>
+</div>
+<p>He illustrated this concept with his famous <a href="https://en.wikipedia.org/wiki/Allegory_of_the_Cave">Allegory of the Cave</a>: we humans are much like chained prisoners in a cave and can only perceive shadows of objects on the wall of this cave, but the real forms remain outside, unreachable, and can therefore never be observed directly.</p>
+<p>His theory of forms was already predated by the Pythagoreans, who attributed this timeless, absolute, non-physical, and unchangeable essences of things to a somewhat narrower abstraction: as opposed to Plato’s rich collection of forms, they focused on the numbers. They believed that the numbers represented the abstractions behind the physical world.</p>
+<p>In a similarl fashion, abstract algebra entails the study to generelize common algebraic structures, and to establish an axiomatic common (abstract) ground for them by rigorously formulating a collection of (abstract)structures such as groups, rings, and fields.</p>
+<p>On the one hand, it is precisely this abstraction that allows us to study the properties of these structures in a general setting, and to apply these properties to a wide range of mathematical objects, including elliptic curves and modular forms. On the other hand, it this abstraction and axiomatic rigor make abstract algebra often such a challenging subject to study and master. For people merely acquainted with regular high school mathematics and/or calculus, it requires a major shift in thinking from concrete examples to multiple layers of abstract concepts stacked on top of each other.</p>
+</section>
+<section id="what-is-abstract-algebra" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-abstract-algebra">What is abstract algebra?</h2>
+<p>Abstract algebra studies the structural algebraic manipulations of mathematical objects in a general setting. Some questions that abstract algebra seeks to answer are:</p>
+<ul>
+<li>Does every element in a collection of objects have an inverse with respect to a certain operation? This is the case for the integers with respect to addition, but not for the natural numbers. This is important when we are trying to solve equations, because we need to be able to “undo” operations in order to isolate variables on one side of the equation.</li>
+<li>What are the properties of the operations that can be defined on a collection of objects? For example, addition and multiplication of integers are both associative and commutative, but subtraction is neither. These properties are important when we are trying to simplify expressions or solve equations, because they allow us to rearrange terms and combine like terms.</li>
+</ul>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -530,14 +580,15 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>🚨 Why do we need this?</p>
+<p>🚨 Why do we need abstract algebra?</p>
 <p>The main topics for proving Fermat’s last theorem will be elliptic curves and modular forms. One of the most important facts about elliptic curves is the fact that their points form a group. It is the reason why we can view elliptic curves as algebraic objects.</p>
 </div>
 </div>
 <p>We start with groups, then we move on to rings and fields. These are the algebraic structrures we need before elliptic curves start making sense.</p>
-<p>At the end, we will also take a glimpse at Galois theory. This will become extremely important later, because Galois representations are one of the most important objects that establish a connection between elliptic curves and modular forms.</p>
+<p>At the end, we will also take a glimpse at <a href="galois_theory.qmd">Galois theory</a>. This will become extremely important later, because <a href="../chapter-3/galois_representations.html">Galois representations</a> are one of the most important objects that establish a connection between elliptic curves and modular forms.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

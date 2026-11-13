@@ -47,14 +47,14 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-f9576fd48472fd5cf4ef5011d33b3d99.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-d700665feb99415b95902130766537d1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-8ec087257bd97290e2aed26b3b01c23b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-f68a912faa5d058e6f16e0b0f3338c43.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
-  "location": "sidebar",
+  "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
-  "panel-placement": "start",
-  "type": "textbox",
+  "panel-placement": "end",
+  "type": "overlay",
   "limit": 50,
   "keyboard-shortcut": [
     "f",
@@ -110,7 +110,7 @@ window.Quarto = {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-sidebar docked quarto-dark"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-sidebar docked nav-fixed quarto-dark"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -274,6 +274,39 @@ window.Quarto = {
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Fermat’s Last Theorem — From Scratch</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="htts://www.hendrikse.name/"> 
+<span class="menu-text">Zeger’s page</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./index.html" aria-current="page"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <span class="nav-link">
+<span class="menu-text">about.qmd</span>
+    </span>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
@@ -289,17 +322,9 @@ window.Quarto = {
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
-    <div class="sidebar-title mb-0 py-0">
-      <a href="./">Fermat’s Last Theorem — From Scratch</a> 
-        <div class="sidebar-tools-main">
-  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
-</div>
-    </div>
-      </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Search"></div>
@@ -506,13 +531,12 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#hype-or-holy-grail" id="toc-hype-or-holy-grail" class="nav-link active" data-scroll-target="#hype-or-holy-grail">Hype or holy grail?</a>
-  <ul class="collapse">
+  <li><a href="#who-is-this-site-meant-for" id="toc-who-is-this-site-meant-for" class="nav-link active" data-scroll-target="#who-is-this-site-meant-for">Who is this site meant for?</a></li>
+  <li><a href="#hype-or-holy-grail" id="toc-hype-or-holy-grail" class="nav-link" data-scroll-target="#hype-or-holy-grail">Hype or holy grail?</a></li>
   <li><a href="#what-does-from-scratch-mean" id="toc-what-does-from-scratch-mean" class="nav-link" data-scroll-target="#what-does-from-scratch-mean">What does “from scratch” mean?</a></li>
   <li><a href="#from-a-simple-equation-to-modern-mathematics" id="toc-from-a-simple-equation-to-modern-mathematics" class="nav-link" data-scroll-target="#from-a-simple-equation-to-modern-mathematics">From a simple equation to modern mathematics</a></li>
   <li><a href="#my-motivation" id="toc-my-motivation" class="nav-link" data-scroll-target="#my-motivation">My motivation</a></li>
   <li><a href="#a-journey-rather-than-a-shortcut" id="toc-a-journey-rather-than-a-shortcut" class="nav-link" data-scroll-target="#a-journey-rather-than-a-shortcut">A journey rather than a shortcut</a></li>
-  </ul></li>
   </ul>
 </nav>
     </div>
@@ -523,6 +547,7 @@ window.Quarto = {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Fermat’s Last Theorem</h1>
+<p class="subtitle lead">How a basic question may reveal profound and beautiful structures</p>
 </div>
 
 
@@ -539,7 +564,18 @@ window.Quarto = {
 </header>
 
 
-<div class="callout callout-style-default callout-note callout-titled">
+<section id="who-is-this-site-meant-for" class="level3">
+<h3 class="anchored" data-anchor-id="who-is-this-site-meant-for">Who is this site meant for?</h3>
+<figure style="width: 33%; float: right; margin: 0em 1em 0em 1em; display: flex; flex-direction: column; align-items: center;" class="figure">
+<img style="width: 100%; height: auto;" alt="Pierre de Fermat" src="https://upload.wikimedia.org/wikipedia/commons/3/3b/Pierre_de_Fermat3.jpg" class="figure-img">
+<figcaption>
+<i><a href="https://en.wikipedia.org/wiki/Pierre_de_Fermat">Pierre de Fermat</a><a></a></i><a>
+</a></figcaption><a>
+</a></figure><a>
+<p>This site is meant for anyone who is interested in mathematics and wants to understand the proof of Fermat’s Last Theorem on a technical level without the necessity of being and expert in number theory.</p>
+<p>As the content is regularly illustrated with interactive v visualizations, it is especially targeted at people who are receptive to the beauty of pure mathematics and are interested to learn more about the context, easthetics, and interconnections between different areas of mathematics.</p>
+<p>The proposed audience for this content would therefore most likely consist of students, technically interested people, mathematics teachers, and anyone who wants to learn how to appreciate the beauty of purely mathematical structures.</p>
+</a><div class="callout callout-style-default callout-note callout-titled"><a>
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -548,8 +584,8 @@ window.Quarto = {
 Note
 </div>
 </div>
-<div class="callout-body-container callout-body">
-<p><a href="https://www.linkedin.com/in/noah-jang-2111392ba/">Noah Jang</a> is the original creator of the exposition and examples referenced here. The interactive simulations, additional explanations, and contextual material are my own work on this site are my own work.</p>
+</a><div class="callout-body-container callout-body"><a>
+</a><p><a></a><a href="https://www.linkedin.com/in/noah-jang-2111392ba/">Noah Jang</a> is the original creator of the exposition and examples referenced here. The interactive simulations, additional explanations, and contextual material are my own work on this site are my own work.</p>
 <p>The original exposition and examples can be found back in Noah Jang’s video <a href="https://www.youtube.com/watch?v=9f-hGSh8lF0">Proof of Fermat Last Theorem FROM SCRATCH</a>.</p>
 </div>
 </div>
@@ -568,8 +604,9 @@ Note
 </div>
 </div>
 <hr>
-<section id="hype-or-holy-grail" class="level1">
-<h1>Hype or holy grail?</h1>
+</section>
+<section id="hype-or-holy-grail" class="level2">
+<h2 class="anchored" data-anchor-id="hype-or-holy-grail">Hype or holy grail?</h2>
 <p>For the Pythagoreans numbers weren’t merely serving a practical purpose. Instead, they regarded numbers as means to get a deeper and fundamental understanding of the structure of reality:</p>
 <blockquote class="blockquote">
 <p>Tὰ ὄντα ἀριθμοί εἰσιν (the things that are, are numbers) — Paraphrase of a Pythagorean doctrine described by Aristotle (<a href="https://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0052%3Abook%3D1"><em>Metaphysics</em></a>).</p>
@@ -583,7 +620,7 @@ Note
 <li>Astronomia: numbers in motion, the study of the motions of celestial bodies</li>
 </ul>
 <figure style="width: 45%; float: right; margin: 0em 1em 0em 1em; display: flex; flex-direction: column; align-items: center;" class="figure">
-<img style="width: 100%; height: auto;" alt="Aperture grid" src="images/Diophantus-cover-Fermat.jpg" class="figure-img">
+<img style="width: 100%; height: auto;" alt="Title page of the 1670 edition of Arithmetica" src="images/Diophantus-cover-Fermat.jpg" class="figure-img">
 <figcaption>
 <i>Title page of the 1670 edition of Arithmetica, containing <a href="https://en.wikipedia.org/wiki/Pierre_de_Fermat">Pierre de Fermat</a><a>’s commentary — </a><a href="https://en.wikipedia.org/wiki/Diophantus#/media/File:Diophantus-cover-Fermat.jpg">Wikipedia</a>.</i>
 </figcaption>
@@ -616,6 +653,7 @@ x^n + y^n - z^n = 0\ \Leftrightarrow\ x^n + y^n = z^n
 <p><strong>Is Fermat’s Last Theorem genuinely mathematically interesting, or is it famous just because of the hype and the extraordinary story surrounding it?</strong></p>
 </blockquote>
 <p>This project is an attempt to investigate this question.</p>
+</section>
 <section id="what-does-from-scratch-mean" class="level2">
 <h2 class="anchored" data-anchor-id="what-does-from-scratch-mean">What does “from scratch” mean?</h2>
 <p>The purpose of this website is to follow that journey as carefully as possible. The goal is not merely to state Wiles’ proof, or to give a high-level description such as</p>
@@ -665,7 +703,6 @@ x^n + y^n - z^n = 0\ \Leftrightarrow\ x^n + y^n = z^n
 <p>The hope is that, by the time we reach Wiles’ proof, the reader will not necessarily be able to reproduce every technical argument from memory, but will understand the architecture of the proof and, more importantly, why the architecture looks the way it does.</p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
