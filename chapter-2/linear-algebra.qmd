@@ -96,7 +96,7 @@ $$
 
 ```{=html}
 <div id="taylorSeriesContainer"></div>
-<script type="module" src="https://www.hendrikse.name/helion/examples/taylor_expansion.js"></script>
+<script type="module" src="https://www.hendrikse.name/helion/examples/mathematics/scenes/taylor_expansion.js"></script>
 ```
 
 We can look at it in an even more abstract way. Around a point $a$ we have the basis
@@ -166,7 +166,7 @@ The Fourier-coefficiens $a_0,a_1,b_1,a_2,b_2,\ldots$ are the **coordinats of the
 <p style="clear: both;"></p>
 ```{=html}
 <div id="fourierTransformContainer"></div>
-<script type="module" src="https://www.hendrikse.name/helion/examples/fourier_transform.js"></script>
+<script type="module" src="https://www.hendrikse.name/helion/examples/mathematics/scenes/fourier_transform.js"></script>
 ```
 <p style="clear: both;"></p>
 

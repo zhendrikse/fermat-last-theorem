@@ -38,7 +38,7 @@ Although this won't be used frequently in the forthccoming chapters, it appears 
 
 ```{=html}
 <div id="taylorSeriesContainer"></div>
-<script type="module" src="https://www.hendrikse.name/helion/examples/taylor_expansion.js"></script>
+<script type="module" src="https://www.hendrikse.name/helion/examples/mathematics/scenes/taylor_expansion.js"></script>
 ```
 
 ## 🏷️ Multivariable functions
@@ -57,7 +57,7 @@ A multivariable function that depends on two variables can naturally be visualiz
 
 ```{=html}
 <div id="realSurfacesContainer"></div>
-<script type="module" src="https://www.hendrikse.name/helion/examples/real_surfaces.js"></script>
+<script type="module" src="https://www.hendrikse.name/helion/examples/mathematics/scenes/real_surfaces.js"></script>
 ```
 
 <p style="clear: all"></p>
@@ -210,7 +210,7 @@ Geometrically, the roots of unity constitute the vertices of a regular $n$-gon s
 
 ```{=html}
 <div id="rootsOfUnityContainer"></div>
-<script type="module" src="https://www.hendrikse.name/helion/examples/roots_of_unity.js"></script>
+<script type="module" src="https://www.hendrikse.name/helion/examples/mathematics/scenes/roots_of_unity.js"></script>
 ```
 
 # 📌 Complex analysis
@@ -234,5 +234,5 @@ If $f$ is complex differentiable on an open set, it is called **holomorphic**.
 
 ```{=html}
 <div id="complexSurfacesContainer"></div>
-<script type="module" src="https://www.hendrikse.name/helion/examples/complex_surfaces.js"></script>
+<script type="module" src="https://www.hendrikse.name/helion/examples/mathematics/scenes/complex_surfaces.js"></script>
 ```

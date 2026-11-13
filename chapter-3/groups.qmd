@@ -169,7 +169,7 @@ The moves for the Rubik's cube form a group as well: $[R, L, F, B, U, D]$.
 
 ```{=html}
 <div id="rubiksCubeContainer"></div>
-<script type="module" src="https://www.hendrikse.name/helion/examples/rubiks_cube.js"></script>
+<script type="module" src="https://www.hendrikse.name/helion/examples/mathematics/scenes/rubiks_cube.js"></script>
 ```
 
 ## 🏷️ Subgroup
@@ -580,7 +580,7 @@ how the plane $\mathbb{R}^2$ can be partitioned into orbits of the G-set of rota
 
 ```{=html}
 <div id="orbitsContainer"></div>
-<script type="module" src="https://www.hendrikse.name/helion/examples/orbits.js"></script>
+<script type="module" src="https://www.hendrikse.name/helion/examples/mathematics/scenes/orbits.js"></script>
 ```
 
 # 📖 Further reading

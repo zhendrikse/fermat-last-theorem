@@ -1,9 +1,26 @@
 project:
   type: website
 
+format:
+  html:
+    css: styles.css
+    theme:
+      dark: darkly
+      light: flatly
+    toc: true
+
 website:
   title: "Fermat's Last Theorem — From Scratch"
   page-navigation: true
+
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: https://www.hendrikse.name/
+        text: About me
+      - href: https://www.hendrikse.name/helion/
+        text: Helion's page
 
   sidebar:
     style: "docked"
@@ -58,11 +75,4 @@ website:
           - chapter-6/serre-ribet-frey.qmd
           - chapter-6/final-proof.qmd
 
-format:
-  html:
-    css: styles.css
-    theme:
-      dark: darkly
-      light: flatly
-    toc: true
 
