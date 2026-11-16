@@ -540,11 +540,11 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#taylor-expansion-demo" id="toc-taylor-expansion-demo" class="nav-link" data-scroll-target="#taylor-expansion-demo">👨‍💻 Taylor expansion demo</a></li>
   </ul></li>
-  <li><a href="#example-2-fourier-transform" id="toc-example-2-fourier-transform" class="nav-link" data-scroll-target="#example-2-fourier-transform">✍️ <strong>Example 2</strong>: Fourier transform</a>
+  <li><a href="#example-2-fourier-series" id="toc-example-2-fourier-series" class="nav-link" data-scroll-target="#example-2-fourier-series">✍️ <strong>Example 2</strong>: Fourier series</a>
   <ul class="collapse">
-  <li><a href="#fourier-transform-demo" id="toc-fourier-transform-demo" class="nav-link" data-scroll-target="#fourier-transform-demo">👨‍💻 Fourier transform demo</a></li>
+  <li><a href="#fourier-series-demo" id="toc-fourier-series-demo" class="nav-link" data-scroll-target="#fourier-series-demo">👨‍💻 Fourier series demo</a></li>
   </ul></li>
-  <li><a href="#comparision-between-taylor-and-fourier-series" id="toc-comparision-between-taylor-and-fourier-series" class="nav-link" data-scroll-target="#comparision-between-taylor-and-fourier-series">Comparision between Taylor and Fourier series</a>
+  <li><a href="#comparison-between-taylor-and-fourier-series" id="toc-comparison-between-taylor-and-fourier-series" class="nav-link" data-scroll-target="#comparison-between-taylor-and-fourier-series">Comparison between Taylor and Fourier series</a>
   <ul class="collapse">
   <li><a href="#orthogonality" id="toc-orthogonality" class="nav-link" data-scroll-target="#orthogonality">Orthogonality</a></li>
   <li><a href="#geometric-interpretation" id="toc-geometric-interpretation" class="nav-link" data-scroll-target="#geometric-interpretation">Geometric interpretation</a></li>
@@ -556,12 +556,12 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#goal" id="toc-goal" class="nav-link" data-scroll-target="#goal">🎯 Goal</a></li>
   </ul></li>
-  <li><a href="#example-with-a-in-mathbbglmathbbr_2" id="toc-example-with-a-in-mathbbglmathbbr_2" class="nav-link" data-scroll-target="#example-with-a-in-mathbbglmathbbr_2">✍️ Example with <span class="math inline">\(A \in \mathbb{GL}(\mathbb{R}_2)\)</span></a>
+  <li><a href="#example-with-a-in-operatornameglmathbbr_2" id="toc-example-with-a-in-operatornameglmathbbr_2" class="nav-link" data-scroll-target="#example-with-a-in-operatornameglmathbbr_2">✍️ Example with <span class="math inline">\(A \in \operatorname{GL}(\mathbb{R}_2)\)</span></a>
   <ul class="collapse">
   <li><a href="#find-the-trace" id="toc-find-the-trace" class="nav-link" data-scroll-target="#find-the-trace">Find the trace</a></li>
   <li><a href="#find-the-determinant" id="toc-find-the-determinant" class="nav-link" data-scroll-target="#find-the-determinant">Find the determinant</a></li>
   <li><a href="#what-is-going-on" id="toc-what-is-going-on" class="nav-link" data-scroll-target="#what-is-going-on">🤔 What is going on?</a></li>
-  <li><a href="#connetion-to-lie-groups-and-lie-algebras" id="toc-connetion-to-lie-groups-and-lie-algebras" class="nav-link" data-scroll-target="#connetion-to-lie-groups-and-lie-algebras">🔗 Connetion to Lie groups and Lie algebras</a></li>
+  <li><a href="#connection-to-lie-groups-and-lie-algebras" id="toc-connection-to-lie-groups-and-lie-algebras" class="nav-link" data-scroll-target="#connection-to-lie-groups-and-lie-algebras">🔗 Connection to Lie groups and Lie algebras</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -602,10 +602,7 @@ window.Quarto = {
 <li>Fourier series: using a trigonometric basis.</li>
 <li>Laplace transform: using a representation in the complex frequency domain, where differentiation becomes multiplication.</li>
 </ul>
-<p>Although Fourier analysis, Taylor, and Laplace expansions may seem to be completely different tools in calculus, they are all examples of the same underlying principle:</p>
-<blockquote class="blockquote">
-<p><strong>What are the right basis vectors, and what are the coordinates of our object in that basis?</strong></p>
-</blockquote>
+<p>Although Taylor series, Fourier series, and the Laplace transform may seem to be completely different tools in calculus, they share an important underlying idea: choosing a suitable representation can make certain mathematical properties much easier to understand.</p>
 <p>Each representation reveals a different mathematical structure and makes certain problems easier to solve.</p>
 <pre class="text"><code>         Linear algebra
                |
@@ -616,10 +613,10 @@ window.Quarto = {
          Representations
         /       |       \
    Taylor    Fourier    Laplace
-      |         |          |
-Polynomial  Trigonometric  Exponential
-   basis       basis      eigenfunctions
-      |         |          |
+      |         |            |
+Polynomial  Trigonometric  Integral
+   basis       basis       transform
+      |         |            |
 Approximation  Frequency  Differentiation
                analysis   becomes multiplication
                              |
@@ -663,12 +660,12 @@ e^x=1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+\cdots
 =
 \left(1,1,\dfrac{1}{2!},\dfrac{1}{3!},\ldots\right).
 \]</span></p>
-<p>👉 <strong>The Taylor series expansion provides a different basis</strong></p>
+<p>👉 <strong>The Taylor series provides a representation of a function in terms of polynomial basis functions.</strong></p>
 <section id="taylor-expansion-demo" class="level3">
 <h3 class="anchored" data-anchor-id="taylor-expansion-demo">👨‍💻 Taylor expansion demo</h3>
 <div id="taylorSeriesContainer"></div>
 <script type="module" src="https://www.hendrikse.name/helion/examples/mathematics/scenes/taylor_expansion.js"></script>
-<p>We can look at it in an even more abstract way. Around a point <span class="math inline">\(a\)</span> we have the basis</p>
+<p>We can look at it in an even more abstract way. If <span class="math inline">\(f(x)\)</span> is analytic around <span class="math inline">\(x=a\)</span>, we can represent it by its Taylor series</p>
 <p><span class="math display">\[
 1,\quad (x-a),\quad (x-a)^2,\quad (x-a)^3,\ldots
 \]</span></p>
@@ -691,7 +688,7 @@ f'(a),
 \right)
 }
 \]</span></p>
-<p>So we observe the following analogy in lineaire algebra:</p>
+<p>So we observe the following analogy in linear algebra:</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 44%">
@@ -700,7 +697,7 @@ f'(a),
 <thead>
 <tr class="header">
 <th>Linear algebra</th>
-<th>Taylor analysis</th>
+<th>Taylor series</th>
 </tr>
 </thead>
 <tbody>
@@ -726,8 +723,8 @@ f'(a),
 <p>There exists an even deeper connection: <strong>differentiation can be seen as a linear operator that works on these coordinates</strong>. This directly leads to a connection between Taylor series, vector spaces, and matrices/operators.</p>
 </section>
 </section>
-<section id="example-2-fourier-transform" class="level2">
-<h2 class="anchored" data-anchor-id="example-2-fourier-transform">✍️ <strong>Example 2</strong>: Fourier transform</h2>
+<section id="example-2-fourier-series" class="level2">
+<h2 class="anchored" data-anchor-id="example-2-fourier-series">✍️ <strong>Example 2</strong>: Fourier series</h2>
 <p>Here the connection with linear algebra becomes even more apparent, since the Fourier expansion amounts to a representation of a function in the following <strong>orthogonal</strong> directions:</p>
 <p><span class="math display">\[
 1,\quad \cos x,\quad \sin x,\quad \cos 2x,\quad \sin 2x,\quad\ldots
@@ -740,9 +737,9 @@ f(x)
 +\sum_{n=1}^{\infty}
 \left(a_n\cos(nx)+b_n\sin(nx)\right).
 \]</span></p>
-<p>The Fourier-coefficiens <span class="math inline">\(a_0,a_1,b_1,a_2,b_2,\ldots\)</span> are the <strong>coordinats of the function <span class="math inline">\(f\)</span> in this basis</strong>.</p>
-<section id="fourier-transform-demo" class="level3">
-<h3 class="anchored" data-anchor-id="fourier-transform-demo">👨‍💻 Fourier transform demo</h3>
+<p>The Fourier coefficiens <span class="math inline">\(a_0,a_1,b_1,a_2,b_2,\ldots\)</span> are the <strong>coordinates of the function <span class="math inline">\(f\)</span> in this basis</strong>.</p>
+<section id="fourier-series-demo" class="level3">
+<h3 class="anchored" data-anchor-id="fourier-series-demo">👨‍💻 Fourier series demo</h3>
 <p style="clear: both;">
 </p>
 <div id="fourierTransformContainer"></div>
@@ -751,8 +748,8 @@ f(x)
 </p>
 </section>
 </section>
-<section id="comparision-between-taylor-and-fourier-series" class="level2">
-<h2 class="anchored" data-anchor-id="comparision-between-taylor-and-fourier-series">Comparision between Taylor and Fourier series</h2>
+<section id="comparison-between-taylor-and-fourier-series" class="level2">
+<h2 class="anchored" data-anchor-id="comparison-between-taylor-and-fourier-series">Comparison between Taylor and Fourier series</h2>
 <section id="orthogonality" class="level3">
 <h3 class="anchored" data-anchor-id="orthogonality">Orthogonality</h3>
 <p>We have seen that <span class="math display">\[
@@ -776,12 +773,12 @@ f(x)
 \int_{-\pi}^{\pi}\cos x\sin x dx
 =0.
 \]</span></p>
-<p>The same holds for the different frequencies <span class="math inline">\(\langle\cos x,\cos2x\rangle=0\)</span> and <span class="math inline">\(\langle\sin3x,\cos7x\rangle=0\)</span>. In fact, we have an <strong>infinite-dimensional Euclidean space</strong> where the Fourier basis vectors are perpendicular to each other.</p>
-<p>This orthogonality is then used to find the (frequency) coordinates. Suppose in “ordinary” lineaire algebra we have:</p>
+<p>The same holds for the different frequencies <span class="math inline">\(\langle\cos x,\cos2x\rangle=0\)</span> and <span class="math inline">\(\langle\sin3x,\cos7x\rangle=0\)</span>. In fact, we can think of this as an infinite-dimensional inner product space, more specifically a Hilbert space, where the Fourier basis functions are mutually orthogonal.</p>
+<p>This orthogonality is then used to find the (frequency) coordinates. Suppose in “ordinary” lineair algebra we have:</p>
 <p><span class="math display">\[
 \overrightarrow{v}=3\overrightarrow{e_1}+5\overrightarrow{e_2}.
 \]</span></p>
-<p>When <span class="math inline">\(\overrightarrow{e_1}\)</span> and <span class="math inline">\(\overrightarrow{e_2}\)</span> are prependicular, we can find <span class="math inline">\(3\)</span> by projecting <span class="math inline">\(\overrightarrow{v}\)</span> onto <span class="math inline">\(\overrightarrow{e_1}\)</span>.</p>
+<p>When <span class="math inline">\(\overrightarrow{e_1}\)</span> and <span class="math inline">\(\overrightarrow{e_2}\)</span> are perpendicular, we can find <span class="math inline">\(3\)</span> by projecting <span class="math inline">\(\overrightarrow{v}\)</span> onto <span class="math inline">\(\overrightarrow{e_1}\)</span>.</p>
 <p>Analogously we can find the Fourier coefficients <span class="math inline">\(a_n\)</span> by projecting <span class="math inline">\(f\)</span> onto <span class="math inline">\(\cos(nx)\)</span>. So conceptually:</p>
 <p><span class="math display">\[
 a_n
@@ -795,16 +792,16 @@ b_n
 <p>With exact normalisation this results in</p>
 <p><span class="math display">\[
 a_n=\frac1\pi
-\int_{-\pi}^{\pi}f(x)\cos(nx)dx,
+\int_{-\pi}^{\pi}f(x)\cos(nx)\,dx,
 \quad
 b_n=\frac1\pi
-\int_{-\pi}^{\pi}f(x)\sin(nx),dx.
+\int_{-\pi}^{\pi}f(x)\sin(nx)\,dx.
 \]</span></p>
 </section>
 <section id="geometric-interpretation" class="level3">
 <h3 class="anchored" data-anchor-id="geometric-interpretation">Geometric interpretation</h3>
 <p>We have just established that Fourier coefficients are literally <strong>projections of the function vector onto orthogonal basis vectors</strong>.</p>
-<p>👉 This makes a <strong>direct geoemtric interpretation</strong> of the Fourier transform possible.</p>
+<p>👉 This makes a <strong>direct geometric interpretation</strong> of the Fourier series possible.</p>
 <p>For a vector in 3D this geometric interpretation is trivial. For example,</p>
 <p><span class="math display">\[
 \overrightarrow{v}=
@@ -821,17 +818,9 @@ b_n=\frac1\pi
 A\overrightarrow{v_i}=\lambda_i\overrightarrow{v_i}.
 \]</span></p>
 <p>When working with matrices, this is called <strong>diagonalization</strong>, as we can write our matrix <span class="math inline">\(A\)</span> in diagonal form with respect to the eigenvector basis: <span class="math inline">\(A = PDP^{-1}\)</span>. For obvious reasons, a diagonal matrix simplifies multiplication a lot, as we can simply multiply the coordinates of a vector by the eigenvalues <span class="math inline">\(\lambda_i\)</span>.</p>
-<p>Likewwise, we can look for a basis of (eigen)functions in which the differentiation operator becomes diagonal, i.e.&nbsp;look for a <strong>spectral representation</strong> of the differentiation operator:</p>
-<p><span class="math display">\[
-D(f)=f′(x)
-\]</span></p>
-<p>Obviously, expotential functions are eigenfunctions of the differentiation operator:</p>
-<p><span class="math display">\[
-D(e^{sx})=se^{sx}.
-\]</span></p>
-<blockquote class="blockquote">
-<p>In a representation with exponential eigenfuncties differentiation acts as a multiplication with eigenvalue s, or stated differently, just as an eigenvector of a matrix is only scaled by that matrix, an exponential function is only scaled when differentiated.</p>
-</blockquote>
+<p>We can apply a similar idea to linear differential operators. Consider the differentiation operator <span class="math inline">\(D(f(x))=f'(x)\)</span>. We know from differential equations that exponential functions have a particularly interesting property <span class="math inline">\(D(e^{sx})=se^{sx}\)</span>.</p>
+<p>In other words, exponential functions are eigenfunctions of the differentiation operator. This is closely related to diagonalization in linear algebra: in an eigenvector basis, a matrix acts by simply scaling each basis vector.</p>
+<p>Let’s now see how the Laplace transform exploits this property by mapping functions to the complex frequency domain, where differentiation becomes an algebraic operation (with an additional term accounting for the initial value).</p>
 <p>The Laplace transform is defined as:</p>
 <p><span class="math display">\[
 \mathcal{L}\{f(x)\}=F(s)=\int_0^\infty f(x)e^{-sx}\,dx.
@@ -839,7 +828,7 @@ D(e^{sx})=se^{sx}.
 <p>Let’s see what happens when we apply it to an exponential function:</p>
 <p><span class="math display">\[
 \begin{align}
-\mathcal\{e^{ax}\}  &amp;= \int_0^\infty e^{ax}e^{-sx}\,dx \\
+\mathcal{L}\{e^{ax}\}   &amp;= \int_0^\infty e^{ax}e^{-sx}\,dx \\
 &amp;= \int_0^\infty e^{(a-s)x}\,dx \\
 &amp;= \left[ \frac{e^{(a-s)x}}{a-s} \right]_0^\infty \\
 &amp;= \frac{1}{s-a}\quad \text{for}\ \operatorname{Re}(s) &gt; \operatorname{Re}(a)
@@ -856,7 +845,7 @@ D(e^{sx})=se^{sx}.
 &amp;= -f(0)+sF(s)
 \end{aligned}
 \]</span></p>
-<p>So we have</p>
+<p>So assuming that <span class="math inline">\(f(x)e^{-sx} \to 0\)</span> as <span class="math inline">\(x \to \infty\)</span>, which holds under the usual exponential-order conditions for sufficiently large <span class="math inline">\(\operatorname{Re}(s)\)</span>, we have</p>
 <p><span class="math display">\[
 \boxed{
 \mathcal{L}\{f'(x)\}=sF(s)-f(0)
@@ -878,7 +867,7 @@ sY(s)−2=3Y(s) \Leftrightarrow Y(s)=\frac{2}{s−3}
 <p><span class="math display">\[
 y(x)=2e^{3x}
 \]</span></p>
-<p>We have transformed a differential equation into an ordinary algebraic equation!</p>
+<p>We have transformed a differential equation into an algebraic equation, solved it in the Laplace domain, and transformed the result back into the original domain.</p>
 <p>👉 The deeper idea: just as choosing an eigenvector basis makes a matrix easier to understand, the Laplace transform provides a representation in which differentiation becomes a simple algebraic operation.</p>
 </section>
 </section>
@@ -938,8 +927,8 @@ y(x)=2e^{3x}
 </tr>
 <tr class="odd">
 <td><strong>Key property</strong></td>
-<td>polynomial approximation</td>
-<td>orthogonal basis functions</td>
+<td>local polynomial approximation</td>
+<td>decomposition into orthogonal frequency components</td>
 <td>differentiation becomes multiplication by <span class="math inline">\(s\)</span>, plus initial-value terms</td>
 </tr>
 <tr class="even">
@@ -969,10 +958,11 @@ y(x)=2e^{3x}
 <li>From which frequencies can <span class="math inline">\(f\)</span> be built up?</li>
 </ul></li>
 </ul>
+<p>With Laplace, differential operators become algebraic operations: - Differentiation becomes multiplication by <span class="math inline">\(s\)</span>, together with terms representing initial conditions. - Differential equations can therefore be transformed into algebraic equations.</p>
 <p>👉 This is why linear algebra can be so powerful:</p>
 <ul>
-<li><p>It gives us a common language in which very different mathematical problems can reveal the same underlying structure.</p></li>
-<li><p>We can do a basis transformation to look at a certain problem from a new, more convenient perspective.</p></li>
+<li>It gives us a common language in which very different mathematical problems can reveal the same underlying structure.</li>
+<li>We can choose a suitable representation to look at a problem from a new, more convenient perspective.</li>
 </ul>
 </section>
 </section>
@@ -988,7 +978,7 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>This contents of this section are taken from the video <a href="https://www.youtube.com/watch?v=Iz7PSlTpjyI">Matrix exponentials, determinants, and Lie algebras</a> by <a href="https://www.youtube.com/@MichaelPennMath">Michael Penn</a>. Although this section is not needed in the context of the FLT proof, it demonstrates a nice application of many of the concepts dicussed in this chapter on linear algebra nonetheless.</p>
+<p>The contents of this section are taken from the video <a href="https://www.youtube.com/watch?v=Iz7PSlTpjyI">Matrix exponentials, determinants, and Lie algebras</a> by <a href="https://www.youtube.com/@MichaelPennMath">Michael Penn</a>. Although this section is not needed in the context of the FLT proof, it demonstrates a nice application of many of the concepts discussed in this chapter on linear algebra nonetheless.</p>
 </div>
 </div>
 <section id="goal" class="level2">
@@ -1003,10 +993,11 @@ e^A = I + A + \frac{1}{2!}A^2 + \frac{1}{3!}A^3 + \ldots
 \]</span></p>
 </section>
 </section>
-<section id="example-with-a-in-mathbbglmathbbr_2" class="level1">
-<h1>✍️ Example with <span class="math inline">\(A \in \mathbb{GL}(\mathbb{R}_2)\)</span></h1>
+<section id="example-with-a-in-operatornameglmathbbr_2" class="level1">
+<h1>✍️ Example with <span class="math inline">\(A \in \operatorname{GL}(\mathbb{R}_2)\)</span></h1>
+<p>Let’s consider the matrix</p>
 <p><span class="math display">\[
-A=\begin{pmatrix}4 &amp;&amp; 2 \\ 1 &amp;&amp; 5\end{pmatrix}
+A=\begin{pmatrix}4 &amp;&amp; 1 \\ 2 &amp;&amp; 5\end{pmatrix}
 \]</span></p>
 <section id="find-the-trace" class="level3">
 <h3 class="anchored" data-anchor-id="find-the-trace">Find the trace</h3>
@@ -1045,7 +1036,7 @@ Av=\lambda v \Rightarrow (A - \lambda I)v = 0 \Rightarrow v\in \ker(A - \lambda 
 \]</span></p>
 <p>This implies that <span class="math inline">\(x = -y\)</span>, so we have <span class="math inline">\(\boxed{\overrightarrow{e_1} = \begin{pmatrix} 1 \\ -1 \end{pmatrix}}\)</span>.</p>
 <p>Analogously, we find that <span class="math inline">\(\boxed{\overrightarrow{e_2} = \begin{pmatrix} 1 \\ 2 \end{pmatrix}}\)</span>.</p>
-<p>Conseqently, the diagonalizing matrix <span class="math inline">\(P\)</span> becomes</p>
+<p>Consequently, the diagonalizing matrix <span class="math inline">\(P\)</span> becomes</p>
 <p><span class="math display">\[
 P = (\overrightarrow{e_1}\ \overrightarrow{e_2}) = \begin{pmatrix} 1 &amp; 1 \\ -1 &amp; 2 \end{pmatrix} \Rightarrow P^{-1} =\frac{1}{3} \begin{pmatrix} 2 &amp; -1 \\ 1 &amp; 1 \end{pmatrix}
 \]</span></p>
@@ -1065,7 +1056,7 @@ e^A &amp;=&amp; \sum_{n=0}^{\infty} \frac{1}{n!}A^n \\
     &amp;=&amp; \frac{1}{3}\begin{pmatrix} 2e^3 + e^6 &amp; -e^3+e^6 \\ -2e^3+2e^6 &amp; e^3+2e^6 \end{pmatrix}
 \end{array}
 \]</span></p>
-<p>Finally, we can caculate the determinant:</p>
+<p>Finally, we can calculate the determinant:</p>
 <p><span class="math display">\[
 \begin{array}{ll}
 \det(e^A) &amp;=&amp; \frac{1}{9}\big((2e^3 + e^6)(e^3+2e^6)+(e^3-e^6)(-2e^3+2e^6) \big) \\
@@ -1077,7 +1068,7 @@ e^A &amp;=&amp; \sum_{n=0}^{\infty} \frac{1}{n!}A^n \\
 </section>
 <section id="what-is-going-on" class="level2">
 <h2 class="anchored" data-anchor-id="what-is-going-on">🤔 What is going on?</h2>
-<p>👉 <span class="math inline">\(\text{tr}(A)\)</span> is the sum of eigenvalues of <span class="math inline">\(A\)</span>.<br> 👉 <span class="math inline">\(\det(A)\)</span> is the product of eigenvalues of <span class="math inline">\(A\)</span>.<br> 👉 <span class="math inline">\(\lambda\)</span> is an eigenvalue of <span class="math inline">\(A \Longleftrightarrow e^\lambda\)</span> is an eigenvector of <span class="math inline">\(e^A\)</span>.<br></p>
+<p>👉 <span class="math inline">\(\text{tr}(A)\)</span> is the sum of eigenvalues of <span class="math inline">\(A\)</span>.<br> 👉 <span class="math inline">\(\det(A)\)</span> is the product of eigenvalues of <span class="math inline">\(A\)</span>.<br> 👉 If <span class="math inline">\(\lambda\)</span> is an eigenvalue of <span class="math inline">\(A \Longleftrightarrow e^\lambda\)</span> is an eigenvector of <span class="math inline">\(e^A\)</span>.<br></p>
 <p>From these it quickly follows that <span class="math inline">\(e^{\text{tr}(A)} = \det(e^A)\)</span>.</p>
 <p>The proof these statements in general is a bit tricky, so we limit ourselves to the diagonalizable case here, with the following lemma (that can easily be proven using the definition of matrix multiplication):</p>
 <p><span class="math display">\[
@@ -1104,8 +1095,8 @@ e^A = P\begin{pmatrix} e^{\lambda_1} &amp; 0 &amp; 0 \\ 0 &amp; \ddots &amp; 0 \
 \det(e^A)=\det(P)\left [e^{\lambda_1}\ldots e^{\lambda_n}\right ]\det(P^{-1}) = \boxed{e^{\lambda_1}\ldots e^{\lambda_n}}
 \]</span></p>
 </section>
-<section id="connetion-to-lie-groups-and-lie-algebras" class="level2">
-<h2 class="anchored" data-anchor-id="connetion-to-lie-groups-and-lie-algebras">🔗 Connetion to Lie groups and Lie algebras</h2>
+<section id="connection-to-lie-groups-and-lie-algebras" class="level2">
+<h2 class="anchored" data-anchor-id="connection-to-lie-groups-and-lie-algebras">🔗 Connection to Lie groups and Lie algebras</h2>
 <p>Consider</p>
 <p><span class="math display">\[
 \begin{array}{l}
@@ -1114,7 +1105,9 @@ sl_n(\mathbb{C})=\{x\ |\ \text{tr}(x)=0 \},\ \text{e.g.}\ \begin{pmatrix} -2 &am
 \end{array}
 \]</span></p>
 <p>Note that if <span class="math inline">\(x\in sl_n(\mathbb{C})\)</span>, set <span class="math inline">\(X=e^x\)</span>. Then <span class="math inline">\(\det(X) = \det(e^x) = e^{\text{tr}(x)} = 1\)</span>. That is exactly the requirement that we have for <span class="math inline">\(X\)</span> to be an element of <span class="math inline">\(SL_2(\mathbb{C})\)</span>!</p>
-<p>🧠 Concluding, <span class="math inline">\(\boxed{e^{\text{tr}(A)} = \det(e^A)}\)</span> gives us a mechanism to go from the Lie group to the Lie algebra and vice versa.</p>
+<p>🧠 Concluding,</p>
+<p><span class="math display">\[\boxed{e^{\text{tr}(A)} = \det(e^A)}\]</span></p>
+<p>gives us a mechanism to go from the Lie group to the Lie algebra and vice versa.</p>
 
 
 </section>

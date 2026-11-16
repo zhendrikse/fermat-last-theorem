@@ -578,9 +578,9 @@ window.Quarto = {
   <li><a href="#the-determinant" id="toc-the-determinant" class="nav-link" data-scroll-target="#the-determinant">🏷️ The Determinant</a></li>
   <li><a href="#matrix-groups-notation" id="toc-matrix-groups-notation" class="nav-link" data-scroll-target="#matrix-groups-notation">🏷️ Matrix Groups: Notation</a>
   <ul class="collapse">
-  <li><a href="#example-1-members-of-mat_nf" id="toc-example-1-members-of-mat_nf" class="nav-link" data-scroll-target="#example-1-members-of-mat_nf">✍️ <strong>Example 1</strong>: members of <span class="math inline">\(Mat_n(F)\)</span></a></li>
-  <li><a href="#example-2-members-of-gl_nf" id="toc-example-2-members-of-gl_nf" class="nav-link" data-scroll-target="#example-2-members-of-gl_nf">✍️ <strong>Example 2 </strong>: members of <span class="math inline">\(GL_n(F)\)</span></a></li>
-  <li><a href="#example-3-members-of-sl_nf" id="toc-example-3-members-of-sl_nf" class="nav-link" data-scroll-target="#example-3-members-of-sl_nf">✍️ <strong>Example 3</strong>: members of <span class="math inline">\(SL_n(F)\)</span></a></li>
+  <li><a href="#example-1-members-of-operatornamemat_nf" id="toc-example-1-members-of-operatornamemat_nf" class="nav-link" data-scroll-target="#example-1-members-of-operatornamemat_nf">✍️ <strong>Example 1</strong>: members of <span class="math inline">\(\operatorname{Mat}_n(F)\)</span></a></li>
+  <li><a href="#example-2-members-of-operatornamegl_nf" id="toc-example-2-members-of-operatornamegl_nf" class="nav-link" data-scroll-target="#example-2-members-of-operatornamegl_nf">✍️ <strong>Example 2 </strong>: members of <span class="math inline">\(\operatorname{GL}_n(F)\)</span></a></li>
+  <li><a href="#example-3-members-of-operatornamesl_nf" id="toc-example-3-members-of-operatornamesl_nf" class="nav-link" data-scroll-target="#example-3-members-of-operatornamesl_nf">✍️ <strong>Example 3</strong>: members of <span class="math inline">\(\operatorname{SL}_n(F)\)</span></a></li>
   </ul></li>
   </ul></li>
   </ul>
@@ -1235,42 +1235,42 @@ d &amp;&amp; -b \\
 <h2 class="anchored" data-anchor-id="matrix-groups-notation">🏷️ Matrix Groups: Notation</h2>
 <p>For a field <span class="math inline">\(F\)</span> and a positive integer <span class="math inline">\(n\)</span>:</p>
 <ul>
-<li><p><span class="math inline">\(Mat_n(F)\)</span>: the set of all <span class="math inline">\(n\times n\)</span> matrices with entries in F.</p></li>
-<li><p><span class="math inline">\(GL_n(F)\)</span>: the general linear group is the group of all invertible matrices in <span class="math inline">\(Mat_n(F)\)</span>.</p></li>
+<li><p><span class="math inline">\(\operatorname{Mat}_n(F)\)</span>: the set of all <span class="math inline">\(n\times n\)</span> matrices with entries in F.</p></li>
+<li><p><span class="math inline">\(\operatorname{GL}_n(F)\)</span>: the general linear group is the group of all invertible matrices in <span class="math inline">\(\operatorname{Mat}_n(F)\)</span>.</p></li>
 </ul>
 <p><span class="math display">\[
-GL_n(F) = \{A\in Mat_n(F)\mid \det(A)\neq 0\}.
+\operatorname{GL}_n(F) = \{A\in \operatorname{Mat}_n(F)\mid \det(A)\neq 0\}.
 \]</span></p>
 <ul>
-<li><span class="math inline">\(SL_n(F)\)</span>: the special linear group is a subgroup of <span class="math inline">\(GL_n(F)\)</span>, consisting of matrices with determinant 1.</li>
+<li><span class="math inline">\(\operatorname{SL}_n(F)\)</span>: the special linear group is a subgroup of <span class="math inline">\(\operatorname{GL}_n(F)\)</span>, consisting of matrices with determinant 1.</li>
 </ul>
 <p><span class="math display">\[
-SL_n(F) = \{A\in GL_n(F)\mid \det(A)=1\}.
+\operatorname{SL}_n(F) = \{A\in \operatorname{GL}_n(F)\mid \det(A)=1\}.
 \]</span></p>
-<section id="example-1-members-of-mat_nf" class="level3">
-<h3 class="anchored" data-anchor-id="example-1-members-of-mat_nf">✍️ <strong>Example 1</strong>: members of <span class="math inline">\(Mat_n(F)\)</span></h3>
+<section id="example-1-members-of-operatornamemat_nf" class="level3">
+<h3 class="anchored" data-anchor-id="example-1-members-of-operatornamemat_nf">✍️ <strong>Example 1</strong>: members of <span class="math inline">\(\operatorname{Mat}_n(F)\)</span></h3>
 <p><span class="math display">\[
-Mat_2(\mathbb{R}):\ \begin{pmatrix} 2 &amp;&amp; 3 \\ -1 &amp;&amp; \sqrt{7}\end{pmatrix},\ \begin{pmatrix} \pi &amp;&amp; 3+\sqrt{2} \\ -7 &amp;&amp; \dfrac{3}{4}\end{pmatrix}
+\operatorname{Mat}_2(\mathbb{R}):\ \begin{pmatrix} 2 &amp;&amp; 3 \\ -1 &amp;&amp; \sqrt{7}\end{pmatrix},\ \begin{pmatrix} \pi &amp;&amp; 3+\sqrt{2} \\ -7 &amp;&amp; \dfrac{3}{4}\end{pmatrix}
 \]</span></p>
 </section>
-<section id="example-2-members-of-gl_nf" class="level3">
-<h3 class="anchored" data-anchor-id="example-2-members-of-gl_nf">✍️ <strong>Example 2 </strong>: members of <span class="math inline">\(GL_n(F)\)</span></h3>
+<section id="example-2-members-of-operatornamegl_nf" class="level3">
+<h3 class="anchored" data-anchor-id="example-2-members-of-operatornamegl_nf">✍️ <strong>Example 2 </strong>: members of <span class="math inline">\(\operatorname{GL}_n(F)\)</span></h3>
 <p><span class="math display">\[
-GL_2(\mathbb{R}):\ \begin{pmatrix} 1 &amp;&amp; 2 \\ 3 &amp;&amp; 4\end{pmatrix} \Rightarrow \text{det}=-2
+\operatorname{GL}_2(\mathbb{R}):\ \begin{pmatrix} 1 &amp;&amp; 2 \\ 3 &amp;&amp; 4\end{pmatrix} \Rightarrow \text{det}=-2
 \]</span></p>
-<p>However, the following matrix is <em>not</em> a member of <span class="math inline">\(GL_2(\mathbb{R})\)</span>, as it is a non-invertible matrix:</p>
+<p>However, the following matrix is <em>not</em> a member of <span class="math inline">\(\operatorname{GL}_2(\mathbb{R})\)</span>, as it is a non-invertible matrix:</p>
 <p><span class="math display">\[
 \begin{pmatrix} 2 &amp;&amp; 4 \\ 5 &amp;&amp; 10\end{pmatrix} \Rightarrow \text{det}=-0
 \]</span></p>
 </section>
-<section id="example-3-members-of-sl_nf" class="level3">
-<h3 class="anchored" data-anchor-id="example-3-members-of-sl_nf">✍️ <strong>Example 3</strong>: members of <span class="math inline">\(SL_n(F)\)</span></h3>
+<section id="example-3-members-of-operatornamesl_nf" class="level3">
+<h3 class="anchored" data-anchor-id="example-3-members-of-operatornamesl_nf">✍️ <strong>Example 3</strong>: members of <span class="math inline">\(\operatorname{SL}_n(F)\)</span></h3>
 <p><span class="math display">\[
-\begin{pmatrix} 3 &amp;&amp; 2 \\ 7 &amp;&amp; 5\end{pmatrix} \in SL_2(\mathbb{R})
+\begin{pmatrix} 3 &amp;&amp; 2 \\ 7 &amp;&amp; 5\end{pmatrix} \in \operatorname{SL}_2(\mathbb{R})
 \]</span></p>
 <p>But</p>
 <p><span class="math display">\[
-\begin{pmatrix} 4 &amp;&amp; 6 \\ 0 &amp;&amp; 1\end{pmatrix} \notin SL_2(\mathbb{R})
+\begin{pmatrix} 4 &amp;&amp; 6 \\ 0 &amp;&amp; 1\end{pmatrix} \notin \operatorname{SL}_2(\mathbb{R})
 \]</span></p>
 
 
