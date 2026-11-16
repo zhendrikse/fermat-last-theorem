@@ -1,13 +1,383 @@
 ---
-title: "Optional further context &mdash; Matrix exponentials, determinants, and Lie algebras"
+title: "Optional context: insights from linear algebra"
 format: html
 ---
 
+# 📌 Bases and Representations of Functions 
+
+One particularly powerful idea from linear algebra is that _the choice of basis determines how we represent a vector, and can make certain operations much easier to understand_.
+
+In linear algebra, we can express any vector as a linear combination of its basis vectors:
+
+$$
+\overrightarrow{v}=c_1\overrightarrow{e_1}+c_2\overrightarrow{e_2}+c_3\overrightarrow{e_3} = \begin{pmatrix}c_1 \\ c_2 \\ c_3\end{pmatrix}
+$$
+
+We can apply exactly the same idea to the vector space of functions by expressing a function in terms of **basis functions**. In the following three examples, we will explore three different representations of functions:
+
+- Taylor series: using a polynomial basis.
+- Fourier series: using a trigonometric basis.
+- Laplace transform: using a representation in the complex frequency
+  domain, where differentiation becomes multiplication.
+
+Although Taylor series, Fourier series, and the Laplace transform may seem to be completely different tools in calculus, they share an important underlying idea: choosing a suitable representation can make certain mathematical properties much easier to understand.
+
+Each representation reveals a different mathematical structure and makes certain problems easier to solve.
+
+```text
+         Linear algebra
+               |
+         Vector spaces
+               |
+         Function spaces
+               |
+         Representations
+        /       |       \
+   Taylor    Fourier    Laplace
+      |         |            |
+Polynomial  Trigonometric  Integral
+   basis       basis       transform
+      |         |            |
+Approximation  Frequency  Differentiation
+               analysis   becomes multiplication
+                             |
+                          Differential equations
+```
+
+## ✍️ **Example 1**: Taylor expansion
+
+We can conceptualize the [Taylor expansion](../chapter-1/calculus-complex-analysis.qmd#taylor-series) as a kind of **coordinate representation of a function with respect to a basis of polynomials**.
+
 ::: {.callout-note}
-This contents of this section are taken from the video [Matrix exponentials, determinants, and Lie algebras](https://www.youtube.com/watch?v=Iz7PSlTpjyI) by [Michael Penn](https://www.youtube.com/@MichaelPennMath). Although this section is not needed in the context of the FLT proof, it demonstrates a nice application of many of the concepts dicussed in this chapter on linear algebra nonetheless.
+🚨 All concepts below will be properly addressed and explained in this very chapter on linear algebra.
 :::
 
-# 🎯 Goal
+Take for example a function $f(x)$. Around $x=0$ we can write
+
+$$
+f(x)=a_0+a_1x+a_2x^2+a_3x^3+\cdots
+$$
+
+We can think of the objects
+
+$$
+1,\quad x,\quad x^2,\quad x^3,\ldots
+$$
+
+as [basis vectors](chapter-2/vector-spaces.html#basis-dimension) of a [vector space](chapter-2/vector-spaces.html#vector-space-axioms) of polynomials, exactly those notions that are defined in this chapter on linear algebra! 
+The scalars $a_0,a_1,a_2,a_3,\ldots$ are exactly the **coordinates van $f(x)$ with respect to that basis**.
+
+Note that a Taylor series is not just an arbitrary representation of $f(x)$ in the basis $\{1,x,x^2,x^3,\ldots\}$ as the coordinates are specifically determined by the derivatives of $f(x)$ around the expansion point:
+
+$$
+a_n=\frac{f^{(n)}(0)}{n!}.
+$$
+
+For example,
+
+$$
+e^x=1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+\cdots
+$$
+
+can be interpreted in the context of linear algebra as:
+
+$$
+[e^x]_{\{1,x,x^2,x^3,\ldots\}}
+=
+\left(1,1,\dfrac{1}{2!},\dfrac{1}{3!},\ldots\right).
+$$
+
+👉 **The Taylor series provides a representation of a function in terms of polynomial basis functions.**
+
+### 👨‍💻 Taylor expansion demo
+
+```{=html}
+<div id="taylorSeriesContainer"></div>
+<script type="module" src="https://www.hendrikse.name/helion/examples/mathematics/scenes/taylor_expansion.js"></script>
+```
+
+We can look at it in an even more abstract way. If $f(x)$
+is analytic around $x=a$, we can represent it by its Taylor series
+
+$$
+1,\quad (x-a),\quad (x-a)^2,\quad (x-a)^3,\ldots
+$$
+
+with which $f(x)$ becomes
+
+$$
+f(x)
+=
+f(a)
++f'(a)(x-a)
++\frac{f''(a)}{2!}(x-a)^2+\cdots.
+$$
+
+Therefore, the coordinates with respect to that polynomial basis vectors are
+
+$$
+\boxed{
+\left(
+f(a),
+f'(a),
+\frac{f''(a)}{2!},
+\frac{f^{(3)}(a)}{3!},\ldots
+\right)
+}
+$$
+
+So we observe the following analogy in linear algebra:
+
+| Linear algebra                 | Taylor series                         |
+| ------------------------------ | ------------------------------------- |
+| vector $v$                     | function $f$                          |
+| basis vectors $e_1,e_2,\ldots$ | $1,(x-a),(x-a)^2,\ldots$              |
+| coordinates $c_1,c_2,\ldots$   | $f(a),f'(a),f''(a)/2!,\ldots$         |
+| $v=\sum c_i e_i$               | $f=\sum \frac{f^{(n)}(a)}{n!}(x-a)^n$ |
+
+👉 We can look at the Taylor expansion as expressing a function in coordinates along the directions $1,(x-a),(x-a)^2,\ldots$.
+
+There exists an even deeper connection: **differentiation can be seen as a linear operator that works on these coordinates**. This directly leads to a connection between Taylor series, vector spaces, and matrices/operators.
+
+## ✍️ **Example 2**: Fourier series
+
+Here the connection with linear algebra becomes even more apparent, since the Fourier expansion amounts to a representation of a function in the following **orthogonal** directions:
+
+$$
+1,\quad \cos x,\quad \sin x,\quad \cos 2x,\quad \sin 2x,\quad\ldots
+$$
+
+Any function $f$ can thus be built using this basis:
+
+$$
+f(x)
+=
+\frac{a_0}{2}
++\sum_{n=1}^{\infty}
+\left(a_n\cos(nx)+b_n\sin(nx)\right).
+$$
+
+The Fourier coefficiens $a_0,a_1,b_1,a_2,b_2,\ldots$ are the **coordinates of the function $f$ in this basis**.
+
+### 👨‍💻 Fourier series demo
+
+<p style="clear: both;"></p>
+```{=html}
+<div id="fourierTransformContainer"></div>
+<script type="module" src="https://www.hendrikse.name/helion/examples/mathematics/scenes/fourier_transform.js"></script>
+```
+<p style="clear: both;"></p>
+
+## Comparison between Taylor and Fourier series
+
+### Orthogonality
+
+We have seen that
+$$
+\text{Taylor}=\text{coordinates in a polynomial basis}
+$$
+
+and
+
+$$
+\text{Fourier}=\text{coordinates in a trigonometric basis}.
+$$
+
+However, in the case of Fourier, we have seen yet another concept from linear algebra, namely **orthogonality**. 
+
+Two vectors are orthogonal when $u\cdot v=0$. For functions this can be defined analogously:
+
+$$
+\langle f,g\rangle
+=
+\int_{-\pi}^{\pi}f(x)g(x)\,dx.
+$$
+
+With this definition $\cos x$ and $\sin x$ turn out to be perpendicular to one another:
+
+$$
+\langle\cos x,\sin x\rangle
+=
+\int_{-\pi}^{\pi}\cos x\sin x\,dx
+=0.
+$$
+
+The same holds for the different frequencies $\langle\cos x,\cos2x\rangle=0$ and $\langle\sin3x,\cos7x\rangle=0$. In fact, we can think of this as an infinite-dimensional inner product space, more specifically a Hilbert space, where the Fourier basis functions are mutually orthogonal.
+
+This orthogonality is then used to find the (frequency) coordinates. Suppose in "ordinary" lineair algebra we have:
+
+$$
+\overrightarrow{v}=3\overrightarrow{e_1}+5\overrightarrow{e_2}.
+$$
+
+When $\overrightarrow{e_1}$ and $\overrightarrow{e_2}$ are perpendicular, we can find $3$ by projecting $\overrightarrow{v}$ onto $\overrightarrow{e_1}$.
+
+Analogously we can find the Fourier coefficients $a_n$ by projecting $f$ onto $\cos(nx)$. So conceptually:
+
+$$
+a_n
+\sim
+\langle f,\cos(nx)\rangle,
+\quad
+b_n
+\sim
+\langle f,\sin(nx)\rangle.
+$$
+
+With exact normalisation this results in
+
+$$
+a_n=\frac1\pi
+\int_{-\pi}^{\pi}f(x)\cos(nx)\,dx,
+\quad
+b_n=\frac1\pi
+\int_{-\pi}^{\pi}f(x)\sin(nx)\,dx.
+$$
+
+### Geometric interpretation
+
+We have just established that Fourier coefficients are literally **projections of the function vector onto orthogonal basis vectors**. 
+
+👉 This makes a **direct geometric interpretation** of the Fourier series possible.
+
+For a vector in 3D this geometric interpretation is trivial. For example, 
+
+$$
+\overrightarrow{v}=
+\begin{pmatrix} 3 \\ 2 \\ 5 \end{pmatrix}.
+$$
+
+tells us that $\overrightarrow{v}$ consists of 3 units in the $x$-direction, 2 in the $y$-direction and 5 in the $z$-direction. Fourier tells us something similar: this function consists so much of frequencies $1$, that much of frequencies $2$, etc. 
+
+For example, we could have $f(x)= 2\cos x +0.7\sin x +3\cos2x -1.2\sin3x$. 
+
+
+## ✍️ **Example 3**: Laplace transform
+
+There is another particularly interesting connection between linear algebra and function spaces: 
+the Laplace transform. In linear algebra, we often are looking for a basis in which a linear operator becomes diagonal, i.e. it simply scales the basis vectors instead of mixing them:
+
+$$
+A\overrightarrow{v_i}=\lambda_i\overrightarrow{v_i}.
+$$
+
+When working with matrices, this is called **diagonalization**, as we can write our matrix $A$ in diagonal form with respect to the eigenvector basis: $A = PDP^{-1}$. For obvious reasons, a diagonal matrix simplifies multiplication a lot, as we can simply multiply the coordinates of a vector by the eigenvalues $\lambda_i$.
+
+We can apply a similar idea to linear differential operators. Consider the differentiation operator $D(f(x))=f'(x)$. We know from differential equations that exponential functions have a particularly interesting property $D(e^{sx})=se^{sx}$.
+
+In other words, exponential functions are eigenfunctions of the differentiation operator. This is closely related to diagonalization in linear algebra: in an eigenvector basis, a matrix acts by simply scaling each basis vector.
+
+Let's now see how the Laplace transform exploits this property by mapping functions to the complex frequency domain, where differentiation becomes an algebraic operation (with an additional term accounting for the initial value).
+
+The Laplace transform is defined as:
+
+$$
+\mathcal{L}\{f(x)\}=F(s)=\int_0^\infty f(x)e^{-sx}\,dx.
+$$
+
+Let's see what happens when we apply it to an exponential function:
+
+$$
+\begin{align}
+\mathcal{L}\{e^{ax}\}	&= \int_0^\infty e^{ax}e^{-sx}\,dx \\
+&= \int_0^\infty e^{(a-s)x}\,dx \\
+&= \left[ \frac{e^{(a-s)x}}{a-s} \right]_0^\infty \\
+&= \frac{1}{s-a}\quad \text{for}\ \operatorname{Re}(s) > \operatorname{Re}(a)
+\end{align}
+$$
+
+Notice that exponential functions become simple algebraic expressions in the Laplace domain. Next, let's see what happens to differentiation. Using integration by parts, we obtain:
+
+$$
+\begin{aligned}
+\mathcal{L}\{f'(x)\}
+&= \int_0^\infty f'(x)e^{-sx}\,dx\\
+&= \int_0^\infty e^{-sx}\,df(x)\\
+&= \left[e^{-sx}f(x)\right]_0^\infty -\int_0^\infty f(x)\,d(e^{-sx})\\
+&= \lim_{x\to\infty}e^{-sx}f(x)-f(0) +s\int_0^\infty f(x)e^{-sx}\,dx\\
+&= -f(0)+sF(s)
+\end{aligned}
+$$
+
+So assuming that $f(x)e^{-sx} \to 0$ as $x \to \infty$, which holds under the usual exponential-order conditions for sufficiently large $\operatorname{Re}(s)$, we have
+
+$$
+\boxed{
+\mathcal{L}\{f'(x)\}=sF(s)-f(0)
+}
+$$
+
+If the initial value is zero, this simplifies to: $\mathcal{L}\{f'(x)\}=sF(s)$.
+In other words, differentiation becomes multiplication by $s$!
+
+This is closely related to diagonalization in linear algebra. When we express a linear operator in an eigenvector basis, the operator becomes diagonal: instead of mixing different directions, it simply scales each eigenvector.
+
+#### ✍️ Example
+
+Consider the differential equation:
+
+$$
+y′(x)=3y(x),\quad y(0)=2
+$$
+
+Applying the Laplace transform gives:
+
+$$
+sY(s)−2=3Y(s) \Leftrightarrow Y(s)=\frac{2}{s−3}
+$$
+
+Taking the inverse Laplace transform:
+
+$$
+y(x)=2e^{3x}
+$$
+
+We have transformed a differential equation into an algebraic equation, solved it in the Laplace domain, and transformed the result back into the original domain.
+
+👉 The deeper idea: just as choosing an eigenvector basis makes a matrix easier to understand, the Laplace transform provides a representation in which differentiation becomes a simple algebraic operation.
+
+## 🧠 Conclusion
+
+|  | Taylor | Fourier | Laplace |
+| --- | --- | --- | --- |
+| **Object** | function $f(x)$ | function $f(x)$ | function $f(x)$ |
+| **Function space** | analytic functions (locally) | periodic functions (typically) | suitable functions on $[0,\infty)$ |
+| **Representation** | power series | trigonometric series | integral transform |
+| **Basis / kernel** | $1,(x-a),(x-a)^2,\ldots$ | $1,\cos x,\sin x,\cos 2x,\sin 2x,\ldots$ | $e^{-sx}$ |
+| **Coefficients / coordinates** | derivatives of $f$ at $a$ | Fourier coefficients (projections/integrals) | $F(s)=\int_0^\infty f(x)e^{-sx}\,dx$ |
+| **Main idea** | local behaviour | frequency content | behaviour in the complex frequency domain |
+| **Key property** | local polynomial approximation | decomposition into orthogonal frequency components  | differentiation becomes multiplication by $s$, plus initial-value terms |
+| **Typical application** | local approximation | signal and frequency analysis | solving differential equations |
+| **Basis orthogonal?** | No | Yes (under the usual inner product) | Not a conventional orthogonal basis expansion |
+
+👉 The choice of basis determines **which properties of a function become apparent.**
+
+* With Taylor local properties become apparent via the derivatives: 
+    - Decomposition of $f$ in **polynomial directions**
+    - How does $f$ behave locally around a point $a$?
+
+* With Fourier frequencies become visible via projection onto the basis vectors: 
+    - Decomposition of $f$ in **frequency directions**
+    - From which frequencies can $f$ be built up?
+
+With Laplace, differential operators become algebraic operations:
+    - Differentiation becomes multiplication by $s$,
+      together with terms representing initial conditions.
+    - Differential equations can therefore be transformed into algebraic equations.
+
+👉 This is why linear algebra can be so powerful: 
+
+* It gives us a common language in which very different mathematical problems can reveal the same underlying structure.
+* We can choose a suitable representation to look at a problem from a new, more convenient perspective.
+
+
+# 📌 Matrix exponentials, determinants, and Lie algebras
+
+::: {.callout-note}
+The contents of this section are taken from the video [Matrix exponentials, determinants, and Lie algebras](https://www.youtube.com/watch?v=Iz7PSlTpjyI) by [Michael Penn](https://www.youtube.com/@MichaelPennMath). Although this section is not needed in the context of the FLT proof, it demonstrates a nice application of many of the concepts discussed in this chapter on linear algebra nonetheless.
+:::
+
+## 🎯 Goal
 
 Suppose that $A$ is an $n\times n$ matrix. Then
 
@@ -21,13 +391,15 @@ $$
 e^A = I + A + \frac{1}{2!}A^2 + \frac{1}{3!}A^3 + \ldots
 $$
 
-# ✍️ Example
+# ✍️ Example with $A \in \operatorname{GL}(\mathbb{R}_2)$
+
+Let's consider the matrix
 
 $$
-A=\begin{pmatrix}4 && 2 \\ 1 && 5\end{pmatrix}
+A=\begin{pmatrix}4 && 1 \\ 2 && 5\end{pmatrix}
 $$
 
-## Find the trace 
+### Find the trace 
 
 Let's first calculate the left-hand side of the equation.
 
@@ -35,9 +407,9 @@ $$
 \boxed{\text{tr}(A) = 9 \implies e^{\text{tr}(A)} = e^9}
 $$
 
-## Find the determinant
+### Find the determinant
 
-### Eigenvalues and eigenvectors
+#### Eigenvalues and eigenvectors
 
 Next, let's calculate the right-hand side of the equation. We do this by finding the eigenvalues and eigenvectors first, as it allows us to diagonalize A and carry out the exponentiation much easier.
 
@@ -75,7 +447,7 @@ This implies that $x = -y$, so we have $\boxed{\overrightarrow{e_1} = \begin{pma
 
 Analogously, we find that $\boxed{\overrightarrow{e_2} = \begin{pmatrix} 1 \\ 2 \end{pmatrix}}$.
 
-Conseqently, the diagonalizing matrix $P$ becomes
+Consequently, the diagonalizing matrix $P$ becomes
 
 $$
 P = (\overrightarrow{e_1}\ \overrightarrow{e_2}) = \begin{pmatrix} 1 & 1 \\ -1 & 2 \end{pmatrix} \Rightarrow P^{-1} =\frac{1}{3} \begin{pmatrix} 2 & -1 \\ 1 & 1 \end{pmatrix}
@@ -101,7 +473,7 @@ e^A &=& \sum_{n=0}^{\infty} \frac{1}{n!}A^n \\
 \end{array}
 $$
 
-Finally, we can caculate the determinant:
+Finally, we can calculate the determinant:
 
 $$
 \begin{array}{ll}
@@ -111,11 +483,11 @@ $$
 \end{array}
 $$
 
-# 📌 What is going on?
+## 🤔 What is going on?
 
 👉 $\text{tr}(A)$ is the sum of eigenvalues of $A$.<br/>
 👉 $\det(A)$ is the product of eigenvalues of $A$.<br/>
-👉 $\lambda$ is an eigenvalue of $A \Longleftrightarrow e^\lambda$ is an eigenvector of $e^A$.<br/>
+👉 If $\lambda$ is an eigenvalue of $A \Longleftrightarrow e^\lambda$ is an eigenvector of $e^A$.<br/>
 
 From these it quickly follows that $e^{\text{tr}(A)} = \det(e^A)$.
 
@@ -155,7 +527,9 @@ $$
 \det(e^A)=\det(P)\left [e^{\lambda_1}\ldots e^{\lambda_n}\right ]\det(P^{-1}) = \boxed{e^{\lambda_1}\ldots e^{\lambda_n}}
 $$
 
-# 📌 Lie groups and Lie algebras
+## 🔗 Connection to Lie groups and Lie algebras
+
+Consider
 
 $$
 \begin{array}{l}
@@ -166,5 +540,9 @@ $$
 
 Note that if $x\in sl_n(\mathbb{C})$, set $X=e^x$. Then $\det(X) = \det(e^x) = e^{\text{tr}(x)} = 1$. That is exactly the requirement that we have for $X$ to be an element of $SL_2(\mathbb{C})$!
 
-🧠 Concluding, $\boxed{e^{\text{tr}(A)} = \det(e^A)}$ gives us a mechanism to go from the Lie group to the Lie algebra and vice versa.
+🧠 Concluding, 
+
+$$\boxed{e^{\text{tr}(A)} = \det(e^A)}$$ 
+
+gives us a mechanism to go from the Lie group to the Lie algebra and vice versa.
 

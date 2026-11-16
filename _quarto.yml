@@ -19,8 +19,8 @@ website:
         text: Home
       - href: https://www.hendrikse.name/
         text: About me
-      - href: https://www.hendrikse.name/helion/
-        text: Helion's page
+      - href: demo-index.qmd
+        text: All demos
 
   sidebar:
     style: "docked"
@@ -29,7 +29,6 @@ website:
 
     contents:
       - index.qmd
-      - demo-index.qmd
 
       - section: "Chapter 1 — Basics"
         contents:
@@ -43,6 +42,7 @@ website:
           - chapter-2/vector-spaces.qmd
           - chapter-2/linear-transformations.qmd
           - chapter-2/appendix.qmd
+          
 
       - section: "Chapter 3 — Abstract Algebra"
         contents:
@@ -52,6 +52,7 @@ website:
           - chapter-3/galois-theory.qmd
           - chapter-3/galois-representations.qmd
           - chapter-3/p-adic.qmd
+          - chapter-3/exercises.qmd
 
       - section: "Chapter 4 — Elliptic Curves"
         contents:

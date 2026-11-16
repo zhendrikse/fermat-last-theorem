@@ -55,9 +55,11 @@ A **group** $(G, *)$ is a set $Gf$ with a binary operation $*$ satisfying four a
 - **Identity element**: There is an element $e\in G$ such that $e*x = a * e = a$ for all $a \in G$. 
 - **Inverses**: For each $a\in G$, there is an element $a^{-1}\in G$, such that $a*a^{-1}=a^{-1}* a=e$. This is called an inverse element.
 
-A group is **abelian** (or commutative) if its operation is also commutative &mdash; named after Niels Henrik Abel.
+👉 A group is **abelian** (or commutative) if its operation is also commutative &mdash; named after Niels Henrik Abel.
 
-The number of elements in a group $G$ is called its **order**, denoted by $|G|$.
+👉 The number of elements in a group $G$ is called its **order**, denoted by $|G|$.
+
+👉 The **order of an element** $g$ in a group $G$ is the smallest positive integer $n$ such that $g^n = e$, where $e$ is the identity element of the group.
 
 ### ✍️ **Examples**
 

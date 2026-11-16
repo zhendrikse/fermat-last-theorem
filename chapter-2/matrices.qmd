@@ -669,46 +669,46 @@ $$
 
 For a field $F$ and a positive integer $n$:
 
-- $Mat_n(F)$: the set of all $n\times n$ matrices with entries in F.
+- $\operatorname{Mat}_n(F)$: the set of all $n\times n$ matrices with entries in F.
 
-- $GL_n(F)$: the general linear group is the group of all invertible matrices in $Mat_n(F)$.
-
-$$
-GL_n(F) = \{A\in Mat_n(F)\mid \det(A)\neq 0\}.
-$$
-
-- $SL_n(F)$: the special linear group is a subgroup of $GL_n(F)$, consisting of matrices with determinant 1.
+- $\operatorname{GL}_n(F)$: the general linear group is the group of all invertible matrices in $\operatorname{Mat}_n(F)$.
 
 $$
-SL_n(F) = \{A\in GL_n(F)\mid \det(A)=1\}.
+\operatorname{GL}_n(F) = \{A\in \operatorname{Mat}_n(F)\mid \det(A)\neq 0\}.
 $$
 
-### ✍️ **Example 1**: members of $Mat_n(F)$
+- $\operatorname{SL}_n(F)$: the special linear group is a subgroup of $\operatorname{GL}_n(F)$, consisting of matrices with determinant 1.
 
 $$
-Mat_2(\mathbb{R}):\ \begin{pmatrix} 2 && 3 \\ -1 && \sqrt{7}\end{pmatrix},\ \begin{pmatrix} \pi && 3+\sqrt{2} \\ -7 && \dfrac{3}{4}\end{pmatrix}
+\operatorname{SL}_n(F) = \{A\in \operatorname{GL}_n(F)\mid \det(A)=1\}.
 $$
 
-### ✍️ **Example 2 **: members of $GL_n(F)$
+### ✍️ **Example 1**: members of $\operatorname{Mat}_n(F)$
 
 $$
-GL_2(\mathbb{R}):\ \begin{pmatrix} 1 && 2 \\ 3 && 4\end{pmatrix} \Rightarrow \text{det}=-2
+\operatorname{Mat}_2(\mathbb{R}):\ \begin{pmatrix} 2 && 3 \\ -1 && \sqrt{7}\end{pmatrix},\ \begin{pmatrix} \pi && 3+\sqrt{2} \\ -7 && \dfrac{3}{4}\end{pmatrix}
 $$
 
-However, the following matrix is _not_ a member of $GL_2(\mathbb{R})$, as it is a non-invertible matrix:
+### ✍️ **Example 2 **: members of $\operatorname{GL}_n(F)$
+
+$$
+\operatorname{GL}_2(\mathbb{R}):\ \begin{pmatrix} 1 && 2 \\ 3 && 4\end{pmatrix} \Rightarrow \text{det}=-2
+$$
+
+However, the following matrix is _not_ a member of $\operatorname{GL}_2(\mathbb{R})$, as it is a non-invertible matrix:
 
 $$
 \begin{pmatrix} 2 && 4 \\ 5 && 10\end{pmatrix} \Rightarrow \text{det}=-0
 $$
 
-### ✍️ **Example 3**: members of $SL_n(F)$
+### ✍️ **Example 3**: members of $\operatorname{SL}_n(F)$
 
 $$
-\begin{pmatrix} 3 && 2 \\ 7 && 5\end{pmatrix} \in SL_2(\mathbb{R})
+\begin{pmatrix} 3 && 2 \\ 7 && 5\end{pmatrix} \in \operatorname{SL}_2(\mathbb{R})
 $$
 
 But
 
 $$
-\begin{pmatrix} 4 && 6 \\ 0 && 1\end{pmatrix} \notin SL_2(\mathbb{R})
+\begin{pmatrix} 4 && 6 \\ 0 && 1\end{pmatrix} \notin \operatorname{SL}_2(\mathbb{R})
 $$
