@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Optional further context — Matrix exponentials, determinants, and Lie algebras – Fermat's Last Theorem — From Scratch</title>
+<title>Optional context: insights from linear algebra – Fermat’s Last Theorem — From Scratch</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -297,8 +297,8 @@ window.Quarto = {
 <span class="menu-text">About me</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://www.hendrikse.name/helion/"> 
-<span class="menu-text">Helion’s page</span></a>
+    <a class="nav-link" href="../demo-index.html"> 
+<span class="menu-text">All demos</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -312,7 +312,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapter-2/linear-algebra.html">Chapter 2 — Linear Algebra</a></li><li class="breadcrumb-item"><a href="../chapter-2/appendix.html">Optional further context — Matrix exponentials, determinants, and Lie algebras</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapter-2/linear-algebra.html">Chapter 2 — Linear Algebra</a></li><li class="breadcrumb-item"><a href="../chapter-2/appendix.html">Optional context: insights from linear algebra</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -336,12 +336,6 @@ window.Quarto = {
   <div class="sidebar-item-container"> 
   <a href="../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Fermat’s Last Theorem</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../demo-index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Index of Helion demos</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -403,7 +397,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapter-2/appendix.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Optional further context — Matrix exponentials, determinants, and Lie algebras</span></a>
+ <span class="menu-text">Optional context: insights from linear algebra</span></a>
   </div>
 </li>
       </ul>
@@ -450,6 +444,12 @@ window.Quarto = {
           <li class="sidebar-item">
  <span class="menu-text">chapter-3/p-adic.qmd</span>
   </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapter-3/exercises.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercises</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -534,17 +534,35 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#goal" id="toc-goal" class="nav-link active" data-scroll-target="#goal">🎯 Goal</a></li>
-  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example">✍️ Example</a>
+  <li><a href="#bases-and-representations-of-functions" id="toc-bases-and-representations-of-functions" class="nav-link active" data-scroll-target="#bases-and-representations-of-functions">📌 Bases and Representations of Functions</a>
+  <ul class="collapse">
+  <li><a href="#example-1-taylor-expansion" id="toc-example-1-taylor-expansion" class="nav-link" data-scroll-target="#example-1-taylor-expansion">✍️ <strong>Example 1</strong>: Taylor expansion</a>
+  <ul class="collapse">
+  <li><a href="#taylor-expansion-demo" id="toc-taylor-expansion-demo" class="nav-link" data-scroll-target="#taylor-expansion-demo">👨‍💻 Taylor expansion demo</a></li>
+  </ul></li>
+  <li><a href="#example-2-fourier-transform" id="toc-example-2-fourier-transform" class="nav-link" data-scroll-target="#example-2-fourier-transform">✍️ <strong>Example 2</strong>: Fourier transform</a>
+  <ul class="collapse">
+  <li><a href="#fourier-transform-demo" id="toc-fourier-transform-demo" class="nav-link" data-scroll-target="#fourier-transform-demo">👨‍💻 Fourier transform demo</a></li>
+  </ul></li>
+  <li><a href="#comparision-between-taylor-and-fourier-series" id="toc-comparision-between-taylor-and-fourier-series" class="nav-link" data-scroll-target="#comparision-between-taylor-and-fourier-series">Comparision between Taylor and Fourier series</a>
+  <ul class="collapse">
+  <li><a href="#orthogonality" id="toc-orthogonality" class="nav-link" data-scroll-target="#orthogonality">Orthogonality</a></li>
+  <li><a href="#geometric-interpretation" id="toc-geometric-interpretation" class="nav-link" data-scroll-target="#geometric-interpretation">Geometric interpretation</a></li>
+  </ul></li>
+  <li><a href="#example-3-laplace-transform" id="toc-example-3-laplace-transform" class="nav-link" data-scroll-target="#example-3-laplace-transform">✍️ <strong>Example 3</strong>: Laplace transform</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">🧠 Conclusion</a></li>
+  </ul></li>
+  <li><a href="#matrix-exponentials-determinants-and-lie-algebras" id="toc-matrix-exponentials-determinants-and-lie-algebras" class="nav-link" data-scroll-target="#matrix-exponentials-determinants-and-lie-algebras">📌 Matrix exponentials, determinants, and Lie algebras</a>
+  <ul class="collapse">
+  <li><a href="#goal" id="toc-goal" class="nav-link" data-scroll-target="#goal">🎯 Goal</a></li>
+  </ul></li>
+  <li><a href="#example-with-a-in-mathbbglmathbbr_2" id="toc-example-with-a-in-mathbbglmathbbr_2" class="nav-link" data-scroll-target="#example-with-a-in-mathbbglmathbbr_2">✍️ Example with <span class="math inline">\(A \in \mathbb{GL}(\mathbb{R}_2)\)</span></a>
   <ul class="collapse">
   <li><a href="#find-the-trace" id="toc-find-the-trace" class="nav-link" data-scroll-target="#find-the-trace">Find the trace</a></li>
-  <li><a href="#find-the-determinant" id="toc-find-the-determinant" class="nav-link" data-scroll-target="#find-the-determinant">Find the determinant</a>
-  <ul class="collapse">
-  <li><a href="#eigenvalues-and-eigenvectors" id="toc-eigenvalues-and-eigenvectors" class="nav-link" data-scroll-target="#eigenvalues-and-eigenvectors">Eigenvalues and eigenvectors</a></li>
+  <li><a href="#find-the-determinant" id="toc-find-the-determinant" class="nav-link" data-scroll-target="#find-the-determinant">Find the determinant</a></li>
+  <li><a href="#what-is-going-on" id="toc-what-is-going-on" class="nav-link" data-scroll-target="#what-is-going-on">🤔 What is going on?</a></li>
+  <li><a href="#connetion-to-lie-groups-and-lie-algebras" id="toc-connetion-to-lie-groups-and-lie-algebras" class="nav-link" data-scroll-target="#connetion-to-lie-groups-and-lie-algebras">🔗 Connetion to Lie groups and Lie algebras</a></li>
   </ul></li>
-  </ul></li>
-  <li><a href="#what-is-going-on" id="toc-what-is-going-on" class="nav-link" data-scroll-target="#what-is-going-on">📌 What is going on?</a></li>
-  <li><a href="#lie-groups-and-lie-algebras" id="toc-lie-groups-and-lie-algebras" class="nav-link" data-scroll-target="#lie-groups-and-lie-algebras">📌 Lie groups and Lie algebras</a></li>
   </ul>
 </nav>
     </div>
@@ -552,9 +570,9 @@ window.Quarto = {
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapter-2/linear-algebra.html">Chapter 2 — Linear Algebra</a></li><li class="breadcrumb-item"><a href="../chapter-2/appendix.html">Optional further context — Matrix exponentials, determinants, and Lie algebras</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapter-2/linear-algebra.html">Chapter 2 — Linear Algebra</a></li><li class="breadcrumb-item"><a href="../chapter-2/appendix.html">Optional context: insights from linear algebra</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Optional further context — Matrix exponentials, determinants, and Lie algebras</h1>
+<h1 class="title">Optional context: insights from linear algebra</h1>
 </div>
 
 
@@ -571,6 +589,395 @@ window.Quarto = {
 </header>
 
 
+<section id="bases-and-representations-of-functions" class="level1">
+<h1>📌 Bases and Representations of Functions</h1>
+<p>One particularly powerful idea from linear algebra is that <em>the choice of basis determines how we represent a vector, and can make certain operations much easier to understand</em>.</p>
+<p>In linear algebra, we can express any vector as a linear combination of its basis vectors:</p>
+<p><span class="math display">\[
+\overrightarrow{v}=c_1\overrightarrow{e_1}+c_2\overrightarrow{e_2}+c_3\overrightarrow{e_3} = \begin{pmatrix}c_1 \\ c_2 \\ c_3\end{pmatrix}
+\]</span></p>
+<p>We can apply exactly the same idea to the vector space of functions by expressing a function in terms of <strong>basis functions</strong>. In the following three examples, we will explore three different representations of functions:</p>
+<ul>
+<li>Taylor series: using a polynomial basis.</li>
+<li>Fourier series: using a trigonometric basis.</li>
+<li>Laplace transform: using a representation in the complex frequency domain, where differentiation becomes multiplication.</li>
+</ul>
+<p>Although Fourier analysis, Taylor, and Laplace expansions may seem to be completely different tools in calculus, they are all examples of the same underlying principle:</p>
+<blockquote class="blockquote">
+<p><strong>What are the right basis vectors, and what are the coordinates of our object in that basis?</strong></p>
+</blockquote>
+<p>Each representation reveals a different mathematical structure and makes certain problems easier to solve.</p>
+<pre class="text"><code>         Linear algebra
+               |
+         Vector spaces
+               |
+         Function spaces
+               |
+         Representations
+        /       |       \
+   Taylor    Fourier    Laplace
+      |         |          |
+Polynomial  Trigonometric  Exponential
+   basis       basis      eigenfunctions
+      |         |          |
+Approximation  Frequency  Differentiation
+               analysis   becomes multiplication
+                             |
+                          Differential equations</code></pre>
+<section id="example-1-taylor-expansion" class="level2">
+<h2 class="anchored" data-anchor-id="example-1-taylor-expansion">✍️ <strong>Example 1</strong>: Taylor expansion</h2>
+<p>We can conceptualize the <a href="../chapter-1/calculus-complex-analysis.html#taylor-series">Taylor expansion</a> as a kind of <strong>coordinate representation of a function with respect to a basis of polynomials</strong>.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>🚨 All concepts below will be properly addressed and explained in this very chapter on linear algebra.</p>
+</div>
+</div>
+<p>Take for example a function <span class="math inline">\(f(x)\)</span>. Around <span class="math inline">\(x=0\)</span> we can write</p>
+<p><span class="math display">\[
+f(x)=a_0+a_1x+a_2x^2+a_3x^3+\cdots
+\]</span></p>
+<p>We can think of the objects</p>
+<p><span class="math display">\[
+1,\quad x,\quad x^2,\quad x^3,\ldots
+\]</span></p>
+<p>as <a href="chapter-2/vector-spaces.html#basis-dimension">basis vectors</a> of a <a href="chapter-2/vector-spaces.html#vector-space-axioms">vector space</a> of polynomials, exactly those notions that are defined in this chapter on linear algebra! The scalars <span class="math inline">\(a_0,a_1,a_2,a_3,\ldots\)</span> are exactly the <strong>coordinates van <span class="math inline">\(f(x)\)</span> with respect to that basis</strong>.</p>
+<p>Note that a Taylor series is not just an arbitrary representation of <span class="math inline">\(f(x)\)</span> in the basis <span class="math inline">\(\{1,x,x^2,x^3,\ldots\}\)</span> as the coordinates are specifically determined by the derivatives of <span class="math inline">\(f(x)\)</span> around the expansion point:</p>
+<p><span class="math display">\[
+a_n=\frac{f^{(n)}(0)}{n!}.
+\]</span></p>
+<p>For example,</p>
+<p><span class="math display">\[
+e^x=1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+\cdots
+\]</span></p>
+<p>can be interpreted in the context of linear algebra as:</p>
+<p><span class="math display">\[
+[e^x]_{\{1,x,x^2,x^3,\ldots\}}
+=
+\left(1,1,\dfrac{1}{2!},\dfrac{1}{3!},\ldots\right).
+\]</span></p>
+<p>👉 <strong>The Taylor series expansion provides a different basis</strong></p>
+<section id="taylor-expansion-demo" class="level3">
+<h3 class="anchored" data-anchor-id="taylor-expansion-demo">👨‍💻 Taylor expansion demo</h3>
+<div id="taylorSeriesContainer"></div>
+<script type="module" src="https://www.hendrikse.name/helion/examples/mathematics/scenes/taylor_expansion.js"></script>
+<p>We can look at it in an even more abstract way. Around a point <span class="math inline">\(a\)</span> we have the basis</p>
+<p><span class="math display">\[
+1,\quad (x-a),\quad (x-a)^2,\quad (x-a)^3,\ldots
+\]</span></p>
+<p>with which <span class="math inline">\(f(x)\)</span> becomes</p>
+<p><span class="math display">\[
+f(x)
+=
+f(a)
++f'(a)(x-a)
++\frac{f''(a)}{2!}(x-a)^2+\cdots.
+\]</span></p>
+<p>Therefore, the coordinates with respect to that polynomial basis vectors are</p>
+<p><span class="math display">\[
+\boxed{
+\left(
+f(a),
+f'(a),
+\frac{f''(a)}{2!},
+\frac{f^{(3)}(a)}{3!},\ldots
+\right)
+}
+\]</span></p>
+<p>So we observe the following analogy in lineaire algebra:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 44%">
+<col style="width: 55%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Linear algebra</th>
+<th>Taylor analysis</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>vector <span class="math inline">\(v\)</span></td>
+<td>function <span class="math inline">\(f\)</span></td>
+</tr>
+<tr class="even">
+<td>basis vectors <span class="math inline">\(e_1,e_2,\ldots\)</span></td>
+<td><span class="math inline">\(1,(x-a),(x-a)^2,\ldots\)</span></td>
+</tr>
+<tr class="odd">
+<td>coordinates <span class="math inline">\(c_1,c_2,\ldots\)</span></td>
+<td><span class="math inline">\(f(a),f'(a),f''(a)/2!,\ldots\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(v=\sum c_i e_i\)</span></td>
+<td><span class="math inline">\(f=\sum \frac{f^{(n)}(a)}{n!}(x-a)^n\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>👉 We can look at the Taylor expansion as expressing a function in coordinates along the directions <span class="math inline">\(1,(x-a),(x-a)^2,\ldots\)</span>.</p>
+<p>There exists an even deeper connection: <strong>differentiation can be seen as a linear operator that works on these coordinates</strong>. This directly leads to a connection between Taylor series, vector spaces, and matrices/operators.</p>
+</section>
+</section>
+<section id="example-2-fourier-transform" class="level2">
+<h2 class="anchored" data-anchor-id="example-2-fourier-transform">✍️ <strong>Example 2</strong>: Fourier transform</h2>
+<p>Here the connection with linear algebra becomes even more apparent, since the Fourier expansion amounts to a representation of a function in the following <strong>orthogonal</strong> directions:</p>
+<p><span class="math display">\[
+1,\quad \cos x,\quad \sin x,\quad \cos 2x,\quad \sin 2x,\quad\ldots
+\]</span></p>
+<p>Any function <span class="math inline">\(f\)</span> can thus be built using this basis:</p>
+<p><span class="math display">\[
+f(x)
+=
+\frac{a_0}{2}
++\sum_{n=1}^{\infty}
+\left(a_n\cos(nx)+b_n\sin(nx)\right).
+\]</span></p>
+<p>The Fourier-coefficiens <span class="math inline">\(a_0,a_1,b_1,a_2,b_2,\ldots\)</span> are the <strong>coordinats of the function <span class="math inline">\(f\)</span> in this basis</strong>.</p>
+<section id="fourier-transform-demo" class="level3">
+<h3 class="anchored" data-anchor-id="fourier-transform-demo">👨‍💻 Fourier transform demo</h3>
+<p style="clear: both;">
+</p>
+<div id="fourierTransformContainer"></div>
+<script type="module" src="https://www.hendrikse.name/helion/examples/mathematics/scenes/fourier_transform.js"></script>
+<p style="clear: both;">
+</p>
+</section>
+</section>
+<section id="comparision-between-taylor-and-fourier-series" class="level2">
+<h2 class="anchored" data-anchor-id="comparision-between-taylor-and-fourier-series">Comparision between Taylor and Fourier series</h2>
+<section id="orthogonality" class="level3">
+<h3 class="anchored" data-anchor-id="orthogonality">Orthogonality</h3>
+<p>We have seen that <span class="math display">\[
+\text{Taylor}=\text{coordinates in a polynomial basis}
+\]</span></p>
+<p>and</p>
+<p><span class="math display">\[
+\text{Fourier}=\text{coordinates in a trigonometric basis}.
+\]</span></p>
+<p>However, in the case of Fourier, we have seen yet another concept from linear algebra, namely <strong>orthogonality</strong>.</p>
+<p>Two vectors are orthogonal when <span class="math inline">\(u\cdot v=0\)</span>. For functions this can be defined analogously:</p>
+<p><span class="math display">\[
+\langle f,g\rangle
+=
+\int_{-\pi}^{\pi}f(x)g(x)dx.
+\]</span></p>
+<p>With this definition <span class="math inline">\(\cos x\)</span> and <span class="math inline">\(\sin x\)</span> turn out to be perpendicular to one another:</p>
+<p><span class="math display">\[
+\langle\cos x,\sin x\rangle
+=
+\int_{-\pi}^{\pi}\cos x\sin x dx
+=0.
+\]</span></p>
+<p>The same holds for the different frequencies <span class="math inline">\(\langle\cos x,\cos2x\rangle=0\)</span> and <span class="math inline">\(\langle\sin3x,\cos7x\rangle=0\)</span>. In fact, we have an <strong>infinite-dimensional Euclidean space</strong> where the Fourier basis vectors are perpendicular to each other.</p>
+<p>This orthogonality is then used to find the (frequency) coordinates. Suppose in “ordinary” lineaire algebra we have:</p>
+<p><span class="math display">\[
+\overrightarrow{v}=3\overrightarrow{e_1}+5\overrightarrow{e_2}.
+\]</span></p>
+<p>When <span class="math inline">\(\overrightarrow{e_1}\)</span> and <span class="math inline">\(\overrightarrow{e_2}\)</span> are prependicular, we can find <span class="math inline">\(3\)</span> by projecting <span class="math inline">\(\overrightarrow{v}\)</span> onto <span class="math inline">\(\overrightarrow{e_1}\)</span>.</p>
+<p>Analogously we can find the Fourier coefficients <span class="math inline">\(a_n\)</span> by projecting <span class="math inline">\(f\)</span> onto <span class="math inline">\(\cos(nx)\)</span>. So conceptually:</p>
+<p><span class="math display">\[
+a_n
+\sim
+\langle f,\cos(nx)\rangle,
+\quad
+b_n
+\sim
+\langle f,\sin(nx)\rangle.
+\]</span></p>
+<p>With exact normalisation this results in</p>
+<p><span class="math display">\[
+a_n=\frac1\pi
+\int_{-\pi}^{\pi}f(x)\cos(nx)dx,
+\quad
+b_n=\frac1\pi
+\int_{-\pi}^{\pi}f(x)\sin(nx),dx.
+\]</span></p>
+</section>
+<section id="geometric-interpretation" class="level3">
+<h3 class="anchored" data-anchor-id="geometric-interpretation">Geometric interpretation</h3>
+<p>We have just established that Fourier coefficients are literally <strong>projections of the function vector onto orthogonal basis vectors</strong>.</p>
+<p>👉 This makes a <strong>direct geoemtric interpretation</strong> of the Fourier transform possible.</p>
+<p>For a vector in 3D this geometric interpretation is trivial. For example,</p>
+<p><span class="math display">\[
+\overrightarrow{v}=
+\begin{pmatrix} 3 \\ 2 \\ 5 \end{pmatrix}.
+\]</span></p>
+<p>tells us that <span class="math inline">\(\overrightarrow{v}\)</span> consists of 3 units in the <span class="math inline">\(x\)</span>-direction, 2 in the <span class="math inline">\(y\)</span>-direction and 5 in the <span class="math inline">\(z\)</span>-direction. Fourier tells us something similar: this function consists so much of frequencies <span class="math inline">\(1\)</span>, that much of frequencies <span class="math inline">\(2\)</span>, etc.</p>
+<p>For example, we could have <span class="math inline">\(f(x)= 2\cos x +0.7\sin x +3\cos2x -1.2\sin3x\)</span>.</p>
+</section>
+</section>
+<section id="example-3-laplace-transform" class="level2">
+<h2 class="anchored" data-anchor-id="example-3-laplace-transform">✍️ <strong>Example 3</strong>: Laplace transform</h2>
+<p>There is another particularly interesting connection between linear algebra and function spaces: the Laplace transform. In linear algebra, we often are looking for a basis in which a linear operator becomes diagonal, i.e.&nbsp;it simply scales the basis vectors instead of mixing them:</p>
+<p><span class="math display">\[
+A\overrightarrow{v_i}=\lambda_i\overrightarrow{v_i}.
+\]</span></p>
+<p>When working with matrices, this is called <strong>diagonalization</strong>, as we can write our matrix <span class="math inline">\(A\)</span> in diagonal form with respect to the eigenvector basis: <span class="math inline">\(A = PDP^{-1}\)</span>. For obvious reasons, a diagonal matrix simplifies multiplication a lot, as we can simply multiply the coordinates of a vector by the eigenvalues <span class="math inline">\(\lambda_i\)</span>.</p>
+<p>Likewwise, we can look for a basis of (eigen)functions in which the differentiation operator becomes diagonal, i.e.&nbsp;look for a <strong>spectral representation</strong> of the differentiation operator:</p>
+<p><span class="math display">\[
+D(f)=f′(x)
+\]</span></p>
+<p>Obviously, expotential functions are eigenfunctions of the differentiation operator:</p>
+<p><span class="math display">\[
+D(e^{sx})=se^{sx}.
+\]</span></p>
+<blockquote class="blockquote">
+<p>In a representation with exponential eigenfuncties differentiation acts as a multiplication with eigenvalue s, or stated differently, just as an eigenvector of a matrix is only scaled by that matrix, an exponential function is only scaled when differentiated.</p>
+</blockquote>
+<p>The Laplace transform is defined as:</p>
+<p><span class="math display">\[
+\mathcal{L}\{f(x)\}=F(s)=\int_0^\infty f(x)e^{-sx}\,dx.
+\]</span></p>
+<p>Let’s see what happens when we apply it to an exponential function:</p>
+<p><span class="math display">\[
+\begin{align}
+\mathcal\{e^{ax}\}  &amp;= \int_0^\infty e^{ax}e^{-sx}\,dx \\
+&amp;= \int_0^\infty e^{(a-s)x}\,dx \\
+&amp;= \left[ \frac{e^{(a-s)x}}{a-s} \right]_0^\infty \\
+&amp;= \frac{1}{s-a}\quad \text{for}\ \operatorname{Re}(s) &gt; \operatorname{Re}(a)
+\end{align}
+\]</span></p>
+<p>Notice that exponential functions become simple algebraic expressions in the Laplace domain. Next, let’s see what happens to differentiation. Using integration by parts, we obtain:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\mathcal{L}\{f'(x)\}
+&amp;= \int_0^\infty f'(x)e^{-sx}\,dx\\
+&amp;= \int_0^\infty e^{-sx}\,df(x)\\
+&amp;= \left[e^{-sx}f(x)\right]_0^\infty -\int_0^\infty f(x)\,d(e^{-sx})\\
+&amp;= \lim_{x\to\infty}e^{-sx}f(x)-f(0) +s\int_0^\infty f(x)e^{-sx}\,dx\\
+&amp;= -f(0)+sF(s)
+\end{aligned}
+\]</span></p>
+<p>So we have</p>
+<p><span class="math display">\[
+\boxed{
+\mathcal{L}\{f'(x)\}=sF(s)-f(0)
+}
+\]</span></p>
+<p>If the initial value is zero, this simplifies to: <span class="math inline">\(\mathcal{L}\{f'(x)\}=sF(s)\)</span>. In other words, differentiation becomes multiplication by <span class="math inline">\(s\)</span>!</p>
+<p>This is closely related to diagonalization in linear algebra. When we express a linear operator in an eigenvector basis, the operator becomes diagonal: instead of mixing different directions, it simply scales each eigenvector.</p>
+<section id="example" class="level4">
+<h4 class="anchored" data-anchor-id="example">✍️ Example</h4>
+<p>Consider the differential equation:</p>
+<p><span class="math display">\[
+y′(x)=3y(x),\quad y(0)=2
+\]</span></p>
+<p>Applying the Laplace transform gives:</p>
+<p><span class="math display">\[
+sY(s)−2=3Y(s) \Leftrightarrow Y(s)=\frac{2}{s−3}
+\]</span></p>
+<p>Taking the inverse Laplace transform:</p>
+<p><span class="math display">\[
+y(x)=2e^{3x}
+\]</span></p>
+<p>We have transformed a differential equation into an ordinary algebraic equation!</p>
+<p>👉 The deeper idea: just as choosing an eigenvector basis makes a matrix easier to understand, the Laplace transform provides a representation in which differentiation becomes a simple algebraic operation.</p>
+</section>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">🧠 Conclusion</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>Taylor</th>
+<th>Fourier</th>
+<th>Laplace</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Object</strong></td>
+<td>function <span class="math inline">\(f(x)\)</span></td>
+<td>function <span class="math inline">\(f(x)\)</span></td>
+<td>function <span class="math inline">\(f(x)\)</span></td>
+</tr>
+<tr class="even">
+<td><strong>Function space</strong></td>
+<td>analytic functions (locally)</td>
+<td>periodic functions (typically)</td>
+<td>suitable functions on <span class="math inline">\([0,\infty)\)</span></td>
+</tr>
+<tr class="odd">
+<td><strong>Representation</strong></td>
+<td>power series</td>
+<td>trigonometric series</td>
+<td>integral transform</td>
+</tr>
+<tr class="even">
+<td><strong>Basis / kernel</strong></td>
+<td><span class="math inline">\(1,(x-a),(x-a)^2,\ldots\)</span></td>
+<td><span class="math inline">\(1,\cos x,\sin x,\cos 2x,\sin 2x,\ldots\)</span></td>
+<td><span class="math inline">\(e^{-sx}\)</span></td>
+</tr>
+<tr class="odd">
+<td><strong>Coefficients / coordinates</strong></td>
+<td>derivatives of <span class="math inline">\(f\)</span> at <span class="math inline">\(a\)</span></td>
+<td>Fourier coefficients (projections/integrals)</td>
+<td><span class="math inline">\(F(s)=\int_0^\infty f(x)e^{-sx}\,dx\)</span></td>
+</tr>
+<tr class="even">
+<td><strong>Main idea</strong></td>
+<td>local behaviour</td>
+<td>frequency content</td>
+<td>behaviour in the complex frequency domain</td>
+</tr>
+<tr class="odd">
+<td><strong>Key property</strong></td>
+<td>polynomial approximation</td>
+<td>orthogonal basis functions</td>
+<td>differentiation becomes multiplication by <span class="math inline">\(s\)</span>, plus initial-value terms</td>
+</tr>
+<tr class="even">
+<td><strong>Typical application</strong></td>
+<td>local approximation</td>
+<td>signal and frequency analysis</td>
+<td>solving differential equations</td>
+</tr>
+<tr class="odd">
+<td><strong>Basis orthogonal?</strong></td>
+<td>No</td>
+<td>Yes (under the usual inner product)</td>
+<td>Not a conventional orthogonal basis expansion</td>
+</tr>
+</tbody>
+</table>
+<p>👉 The choice of basis determines <strong>which properties of a function become apparent.</strong></p>
+<ul>
+<li>With Taylor local properties become apparent via the derivatives:
+<ul>
+<li>Decomposition of <span class="math inline">\(f\)</span> in <strong>polynomial directions</strong></li>
+<li>How does <span class="math inline">\(f\)</span> behave locally around a point <span class="math inline">\(a\)</span>?</li>
+</ul></li>
+<li>With Fourier frequencies become visible via projection onto the basis vectors:
+<ul>
+<li>Decomposition of <span class="math inline">\(f\)</span> in <strong>frequency directions</strong></li>
+<li>From which frequencies can <span class="math inline">\(f\)</span> be built up?</li>
+</ul></li>
+</ul>
+<p>👉 This is why linear algebra can be so powerful:</p>
+<ul>
+<li><p>It gives us a common language in which very different mathematical problems can reveal the same underlying structure.</p></li>
+<li><p>We can do a basis transformation to look at a certain problem from a new, more convenient perspective.</p></li>
+</ul>
+</section>
+</section>
+<section id="matrix-exponentials-determinants-and-lie-algebras" class="level1">
+<h1>📌 Matrix exponentials, determinants, and Lie algebras</h1>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -584,8 +991,8 @@ Note
 <p>This contents of this section are taken from the video <a href="https://www.youtube.com/watch?v=Iz7PSlTpjyI">Matrix exponentials, determinants, and Lie algebras</a> by <a href="https://www.youtube.com/@MichaelPennMath">Michael Penn</a>. Although this section is not needed in the context of the FLT proof, it demonstrates a nice application of many of the concepts dicussed in this chapter on linear algebra nonetheless.</p>
 </div>
 </div>
-<section id="goal" class="level1">
-<h1>🎯 Goal</h1>
+<section id="goal" class="level2">
+<h2 class="anchored" data-anchor-id="goal">🎯 Goal</h2>
 <p>Suppose that <span class="math inline">\(A\)</span> is an <span class="math inline">\(n\times n\)</span> matrix. Then</p>
 <p><span class="math display">\[
 \boxed{e^{\text{tr}(A)} = \det(e^A)}
@@ -595,22 +1002,23 @@ Note
 e^A = I + A + \frac{1}{2!}A^2 + \frac{1}{3!}A^3 + \ldots
 \]</span></p>
 </section>
-<section id="example" class="level1">
-<h1>✍️ Example</h1>
+</section>
+<section id="example-with-a-in-mathbbglmathbbr_2" class="level1">
+<h1>✍️ Example with <span class="math inline">\(A \in \mathbb{GL}(\mathbb{R}_2)\)</span></h1>
 <p><span class="math display">\[
 A=\begin{pmatrix}4 &amp;&amp; 2 \\ 1 &amp;&amp; 5\end{pmatrix}
 \]</span></p>
-<section id="find-the-trace" class="level2">
-<h2 class="anchored" data-anchor-id="find-the-trace">Find the trace</h2>
+<section id="find-the-trace" class="level3">
+<h3 class="anchored" data-anchor-id="find-the-trace">Find the trace</h3>
 <p>Let’s first calculate the left-hand side of the equation.</p>
 <p><span class="math display">\[
 \boxed{\text{tr}(A) = 9 \implies e^{\text{tr}(A)} = e^9}
 \]</span></p>
 </section>
-<section id="find-the-determinant" class="level2">
-<h2 class="anchored" data-anchor-id="find-the-determinant">Find the determinant</h2>
-<section id="eigenvalues-and-eigenvectors" class="level3">
-<h3 class="anchored" data-anchor-id="eigenvalues-and-eigenvectors">Eigenvalues and eigenvectors</h3>
+<section id="find-the-determinant" class="level3">
+<h3 class="anchored" data-anchor-id="find-the-determinant">Find the determinant</h3>
+<section id="eigenvalues-and-eigenvectors" class="level4">
+<h4 class="anchored" data-anchor-id="eigenvalues-and-eigenvectors">Eigenvalues and eigenvectors</h4>
 <p>Next, let’s calculate the right-hand side of the equation. We do this by finding the eigenvalues and eigenvectors first, as it allows us to diagonalize A and carry out the exponentiation much easier.</p>
 <p>The characteristic polynomial for this matrix <span class="math inline">\(A\)</span> is:</p>
 <p><span class="math display">\[
@@ -667,9 +1075,8 @@ e^A &amp;=&amp; \sum_{n=0}^{\infty} \frac{1}{n!}A^n \\
 \]</span></p>
 </section>
 </section>
-</section>
-<section id="what-is-going-on" class="level1">
-<h1>📌 What is going on?</h1>
+<section id="what-is-going-on" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-going-on">🤔 What is going on?</h2>
 <p>👉 <span class="math inline">\(\text{tr}(A)\)</span> is the sum of eigenvalues of <span class="math inline">\(A\)</span>.<br> 👉 <span class="math inline">\(\det(A)\)</span> is the product of eigenvalues of <span class="math inline">\(A\)</span>.<br> 👉 <span class="math inline">\(\lambda\)</span> is an eigenvalue of <span class="math inline">\(A \Longleftrightarrow e^\lambda\)</span> is an eigenvector of <span class="math inline">\(e^A\)</span>.<br></p>
 <p>From these it quickly follows that <span class="math inline">\(e^{\text{tr}(A)} = \det(e^A)\)</span>.</p>
 <p>The proof these statements in general is a bit tricky, so we limit ourselves to the diagonalizable case here, with the following lemma (that can easily be proven using the definition of matrix multiplication):</p>
@@ -697,8 +1104,9 @@ e^A = P\begin{pmatrix} e^{\lambda_1} &amp; 0 &amp; 0 \\ 0 &amp; \ddots &amp; 0 \
 \det(e^A)=\det(P)\left [e^{\lambda_1}\ldots e^{\lambda_n}\right ]\det(P^{-1}) = \boxed{e^{\lambda_1}\ldots e^{\lambda_n}}
 \]</span></p>
 </section>
-<section id="lie-groups-and-lie-algebras" class="level1">
-<h1>📌 Lie groups and Lie algebras</h1>
+<section id="connetion-to-lie-groups-and-lie-algebras" class="level2">
+<h2 class="anchored" data-anchor-id="connetion-to-lie-groups-and-lie-algebras">🔗 Connetion to Lie groups and Lie algebras</h2>
+<p>Consider</p>
 <p><span class="math display">\[
 \begin{array}{l}
 SL_n(\mathbb{C})=\{X\ |\ \det(X) = 1\} \\
@@ -709,6 +1117,7 @@ sl_n(\mathbb{C})=\{x\ |\ \text{tr}(x)=0 \},\ \text{e.g.}\ \begin{pmatrix} -2 &am
 <p>🧠 Concluding, <span class="math inline">\(\boxed{e^{\text{tr}(A)} = \det(e^A)}\)</span> gives us a mechanism to go from the Lie group to the Lie algebra and vice versa.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
